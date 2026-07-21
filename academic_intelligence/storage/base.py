@@ -32,6 +32,7 @@ Output / consumers:
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 from academic_intelligence.core.models import Author, Citation, Paper
@@ -365,5 +366,53 @@ class BaseStorage(ABC):
             ``"total_authors"``, ``"total_citations"``, etc.
 
         TODO: Implement in concrete subclass.
+        """
+        ...  # type: ignore[empty-body]
+
+    # ------------------------------------------------------------------
+    # Incremental update metadata
+    # ------------------------------------------------------------------
+
+    @abstractmethod
+    async def get_paper_hash(self, paper_id: str) -> Optional[str]:
+        """Return the stored content hash for a paper, if any.
+
+        Args:
+            paper_id: The paper record ID.
+
+        Returns:
+            Hex hash string, or ``None`` if not stored.
+        """
+        ...  # type: ignore[empty-body]
+
+    @abstractmethod
+    async def save_paper_hash(self, paper_id: str, hash: str) -> None:
+        """Persist a content hash for a paper.
+
+        Args:
+            paper_id: The paper record ID.
+            hash: Content hash string (e.g. SHA-256 prefix).
+        """
+        ...  # type: ignore[empty-body]
+
+    @abstractmethod
+    async def get_last_update_time(self, source: str) -> Optional[datetime]:
+        """Return the last successful incremental update time for a source.
+
+        Args:
+            source: Source identifier (e.g. ``"semantic_scholar"``).
+
+        Returns:
+            Timestamp of last update, or ``None`` if never updated.
+        """
+        ...  # type: ignore[empty-body]
+
+    @abstractmethod
+    async def save_last_update_time(self, source: str, time: datetime) -> None:
+        """Record the last successful incremental update time for a source.
+
+        Args:
+            source: Source identifier.
+            time: Update timestamp (preferably timezone-aware UTC).
         """
         ...  # type: ignore[empty-body]

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import re
 from datetime import datetime, timezone
+from enum import Enum
 from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
 
@@ -286,5 +287,65 @@ class CollectionResult(BaseModel):
 
     @classmethod
     def from_json(cls, raw: str) -> CollectionResult:
+        """Deserialize from a JSON string."""
+        return cls.model_validate_json(raw)
+
+
+class ChangeType(str, Enum):
+    """Classification of a paper record change during incremental update."""
+
+    NEW = "new"  # New record
+    UPDATED = "updated"  # Field-level update
+    UNCHANGED = "unchanged"  # No meaningful change
+    DELETED = "deleted"  # Record removal (optional)
+
+
+class ChangeDetection(BaseModel):
+    """Result of comparing one stored paper against a newly collected version."""
+
+    paper_id: str
+    change_type: ChangeType
+    changed_fields: List[str] = Field(default_factory=list)
+    old_values: Dict[str, Any] = Field(default_factory=dict)
+    new_values: Dict[str, Any] = Field(default_factory=dict)
+    confidence_delta: float = 0.0
+    # Optional full paper payloads used when applying merges
+    old_paper: Optional[Paper] = None
+    new_paper: Optional[Paper] = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize to a plain dictionary (JSON-compatible)."""
+        return self.model_dump(mode="json")
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> ChangeDetection:
+        """Deserialize from a plain dictionary."""
+        return cls.model_validate(data)
+
+
+class IncrementalUpdateResult(BaseModel):
+    """Aggregate result of an incremental update pass."""
+
+    new: List[Paper] = Field(default_factory=list)
+    updated: List[ChangeDetection] = Field(default_factory=list)
+    unchanged: List[str] = Field(default_factory=list)  # paper_id list
+    total_checked: int = 0
+    sources_used: List[str] = Field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize to a plain dictionary (JSON-compatible)."""
+        return self.model_dump(mode="json")
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> IncrementalUpdateResult:
+        """Deserialize from a plain dictionary."""
+        return cls.model_validate(data)
+
+    def to_json(self, *, indent: int = 2) -> str:
+        """Serialize to a JSON string."""
+        return self.model_dump_json(indent=indent)
+
+    @classmethod
+    def from_json(cls, raw: str) -> IncrementalUpdateResult:
         """Deserialize from a JSON string."""
         return cls.model_validate_json(raw)

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
 from sqlalchemy import (
@@ -80,6 +80,25 @@ class CitationRow(Base):
     citing_paper_id: Mapped[str] = mapped_column(String(64), nullable=False, index=True)
     cited_paper_id: Mapped[str] = mapped_column(String(64), nullable=False, index=True)
     evidence: Mapped[Any] = mapped_column(JSON, nullable=False)
+
+
+class PaperHashRow(Base):
+    """Content hash cache for incremental change detection."""
+
+    __tablename__ = "paper_hashes"
+
+    paper_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    content_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    updated_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+
+class SourceUpdateRow(Base):
+    """Last successful incremental update timestamp per source."""
+
+    __tablename__ = "source_updates"
+
+    source: Mapped[str] = mapped_column(String(64), primary_key=True)
+    last_update: Mapped[datetime] = mapped_column(DateTime, nullable=False)
 
 
 def _new_id() -> str:
@@ -482,3 +501,57 @@ class SQLiteStorage(BaseStorage):
                 "backend": self.backend_name,
                 "db_path": self.db_path,
             }
+
+    # ------------------------------------------------------------------
+    # Incremental update metadata
+    # ------------------------------------------------------------------
+
+    async def get_paper_hash(self, paper_id: str) -> Optional[str]:
+        async with self._session() as session:
+            row = await session.get(PaperHashRow, paper_id)
+            return row.content_hash if row else None
+
+    async def save_paper_hash(self, paper_id: str, hash: str) -> None:
+        try:
+            async with self._session() as session:
+                existing = await session.get(PaperHashRow, paper_id)
+                now = datetime.now(timezone.utc).replace(tzinfo=None)
+                if existing is not None:
+                    existing.content_hash = hash
+                    existing.updated_at = now
+                else:
+                    session.add(
+                        PaperHashRow(
+                            paper_id=paper_id,
+                            content_hash=hash,
+                            updated_at=now,
+                        )
+                    )
+                await session.commit()
+        except Exception as exc:
+            raise StorageError(
+                f"Failed to save paper hash: {exc}",
+                backend=self.backend_name,
+            ) from exc
+
+    async def get_last_update_time(self, source: str) -> Optional[datetime]:
+        async with self._session() as session:
+            row = await session.get(SourceUpdateRow, source)
+            return row.last_update if row else None
+
+    async def save_last_update_time(self, source: str, time: datetime) -> None:
+        try:
+            async with self._session() as session:
+                existing = await session.get(SourceUpdateRow, source)
+                # Store as naive UTC for SQLite DateTime compatibility
+                stored = time.replace(tzinfo=None) if time.tzinfo else time
+                if existing is not None:
+                    existing.last_update = stored
+                else:
+                    session.add(SourceUpdateRow(source=source, last_update=stored))
+                await session.commit()
+        except Exception as exc:
+            raise StorageError(
+                f"Failed to save last update time: {exc}",
+                backend=self.backend_name,
+            ) from exc

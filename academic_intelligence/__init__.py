@@ -8,17 +8,23 @@ confidence scoring, deduplication, and incremental updates.
 from __future__ import annotations
 
 import os
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Sequence, Union
 
 from academic_intelligence.collectors.base import MultiSourceCollector
 from academic_intelligence.core.models import (
     Author,
+    ChangeDetection,
+    ChangeType,
     Citation,
     CollectionResult,
     Evidence,
+    IncrementalUpdateResult,
     Paper,
 )
 from academic_intelligence.core.types import AntiCrawlStrategy, Config, SourceType
+from academic_intelligence.processors.deduplicator import Deduplicator
+from academic_intelligence.processors.incremental import IncrementalProcessor
 from academic_intelligence.sources.base import BaseSource
 from academic_intelligence.sources.google_scholar import GoogleScholarSource
 from academic_intelligence.sources.openalex import OpenAlexSource
@@ -31,10 +37,13 @@ from academic_intelligence.utils.http import HTTPClient
 __all__ = [
     "AcademicIntelligence",
     "Author",
+    "ChangeDetection",
+    "ChangeType",
     "Citation",
     "CollectionResult",
     "Config",
     "Evidence",
+    "IncrementalUpdateResult",
     "Paper",
     "AntiCrawlStrategy",
     "SourceType",
@@ -295,6 +304,99 @@ class AcademicIntelligence:
         """Return storage statistics."""
         await self._ensure()
         return await self.storage.get_stats()
+
+    async def update_author_papers(
+        self,
+        name: str,
+        sources: list[str] | None = None,
+    ) -> IncrementalUpdateResult:
+        """Incrementally update papers for an author.
+
+        Flow:
+            1. Load stored papers for the author
+            2. Collect fresh data from sources
+            3. Deduplicate / fuse new data
+            4. Detect changes (new / updated / unchanged)
+            5. Apply only necessary writes
+            6. Record per-source last-update timestamps
+        """
+        await self._ensure()
+        processor = IncrementalProcessor(self.storage)
+
+        old_papers = await self.storage.query_papers(author=name, limit=10_000)
+
+        collection = await self.collect_author_papers(
+            name,
+            sources=sources,
+            persist=False,
+        )
+        deduper = Deduplicator()
+        fused = deduper.deduplicate_papers(collection.papers)
+
+        result = await processor.detect_changes(fused, old_papers)
+        await processor.apply_changes(result)
+
+        now = datetime.now(timezone.utc)
+        for src in result.sources_used or self._source_names(sources):
+            await self.storage.save_last_update_time(src, now)
+
+        return result
+
+    async def update_paper(
+        self,
+        paper_id: str,
+        sources: list[str] | None = None,
+    ) -> IncrementalUpdateResult:
+        """Incrementally update a single paper by stored id.
+
+        Loads the existing paper, re-collects metadata using its title (or DOI
+        as query), detects field-level changes, and applies a confidence-weighted
+        merge when updates are found.
+        """
+        await self._ensure()
+        processor = IncrementalProcessor(self.storage)
+
+        old = await self.storage.get_paper(paper_id)
+        if old is None:
+            return IncrementalUpdateResult(
+                new=[],
+                updated=[],
+                unchanged=[],
+                total_checked=0,
+                sources_used=self._source_names(sources),
+            )
+
+        query = old.doi or old.title
+        collection = await self.collect_paper(
+            query,
+            sources=sources,
+            persist=False,
+            limit=10,
+        )
+        deduper = Deduplicator()
+        fused = deduper.deduplicate_papers(collection.papers)
+
+        # Ensure newly collected matches inherit the stored id when possible
+        aligned: List[Paper] = []
+        for p in fused:
+            if p.id is None:
+                aligned.append(p.model_copy(update={"id": paper_id}))
+            else:
+                aligned.append(p)
+
+        result = await processor.detect_changes(aligned, [old])
+        await processor.apply_changes(result)
+
+        now = datetime.now(timezone.utc)
+        for src in result.sources_used or self._source_names(sources):
+            await self.storage.save_last_update_time(src, now)
+
+        return result
+
+    def _source_names(self, sources: Optional[Sequence[str]]) -> List[str]:
+        if sources is None:
+            return list(self._sources.keys())
+        return [s.lower().strip() for s in sources]
 
     async def _persist(self, result: CollectionResult) -> None:
         await self.storage.save_batch(

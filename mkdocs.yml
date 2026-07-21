@@ -1,0 +1,98 @@
+site_name: Academic Intelligence
+site_description: A modular Python library for academic data collection, fusion, and analysis
+site_url: https://paper-research-crawler.github.io/academic-intelligence
+repo_url: https://github.com/paper-research-crawler/academic-intelligence
+repo_name: paper-research-crawler/academic-intelligence
+
+# Project-manager internal docs and design archives stay on disk; exclude from the public site build.
+# Leading slash = docs root only (do not match development/architecture.md etc.).
+exclude_docs: |
+  /api.md
+  /architecture.md
+  /decisions.md
+  /deploy.md
+  /features.md
+  /progress.md
+  /requirements.md
+  /tech-stack.md
+  /superpowers/**
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_category_heading: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+    - Configuration: getting-started/configuration.md
+  - User Guide:
+    - Core Concepts: user-guide/core-concepts.md
+    - Data Sources: user-guide/data-sources.md
+    - Collection: user-guide/collection.md
+    - Storage: user-guide/storage.md
+    - CLI: user-guide/cli.md
+  - API Reference:
+    - Core Models: api/core-models.md
+    - Sources: api/sources.md
+    - Collectors: api/collectors.md
+    - Processors: api/processors.md
+    - Storage: api/storage.md
+    - Utils: api/utils.md
+  - Development:
+    - Architecture: development/architecture.md
+    - Contributing: development/contributing.md
+    - Testing: development/testing.md
+  - Changelog: changelog.md

@@ -1,0 +1,287 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/works",
+        "params_contains": {"search": "machine learning"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "results": [
+            {
+              "id": "https://openalex.org/W1234567890",
+              "title": "Machine Learning: A Review",
+              "display_name": "Machine Learning: A Review",
+              "publication_year": 2020,
+              "doi": "https://doi.org/10.1234/ml.review.2020",
+              "cited_by_count": 150,
+              "authorships": [
+                {"author": {"display_name": "Jane Doe"}},
+                {"author": {"display_name": "John Smith"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "Journal of ML"},
+                "landing_page_url": "https://openalex.org/W1234567890",
+                "pdf_url": null
+              },
+              "ids": {
+                "openalex": "https://openalex.org/W1234567890",
+                "doi": "https://doi.org/10.1234/ml.review.2020"
+              },
+              "keywords": [{"display_name": "machine learning"}]
+            },
+            {
+              "id": "https://openalex.org/W9876543210",
+              "title": "Deep Learning Foundations",
+              "display_name": "Deep Learning Foundations",
+              "publication_year": 2019,
+              "doi": "https://doi.org/10.1234/dl.found.2019",
+              "cited_by_count": 320,
+              "authorships": [
+                {"author": {"display_name": "Alice ML"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "NeurIPS"},
+                "landing_page_url": "https://openalex.org/W9876543210"
+              },
+              "ids": {"openalex": "https://openalex.org/W9876543210"},
+              "keywords": []
+            },
+            {
+              "id": "https://openalex.org/W1111111111",
+              "title": "Supervised Learning Survey",
+              "display_name": "Supervised Learning Survey",
+              "publication_year": 2021,
+              "cited_by_count": 45,
+              "authorships": [
+                {"author": {"display_name": "Bob Analyst"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "ICML"},
+                "landing_page_url": "https://openalex.org/W1111111111"
+              },
+              "ids": {"openalex": "https://openalex.org/W1111111111"}
+            },
+            {
+              "id": "https://openalex.org/W2222222222",
+              "title": "Unsupervised Learning Methods",
+              "display_name": "Unsupervised Learning Methods",
+              "publication_year": 2018,
+              "cited_by_count": 88,
+              "authorships": [
+                {"author": {"display_name": "Carol Cluster"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "JMLR"},
+                "landing_page_url": "https://openalex.org/W2222222222"
+              },
+              "ids": {"openalex": "https://openalex.org/W2222222222"}
+            },
+            {
+              "id": "https://openalex.org/W3333333333",
+              "title": "Reinforcement Learning Basics",
+              "display_name": "Reinforcement Learning Basics",
+              "publication_year": 2022,
+              "cited_by_count": 60,
+              "authorships": [
+                {"author": {"display_name": "Dave Agent"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "AAAI"},
+                "landing_page_url": "https://openalex.org/W3333333333"
+              },
+              "ids": {"openalex": "https://openalex.org/W3333333333"}
+            }
+          ],
+          "meta": {"count": 5}
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/works/https://doi.org/"
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "id": "https://openalex.org/W2741809807",
+          "title": "Deep learning",
+          "display_name": "Deep learning",
+          "publication_year": 2015,
+          "doi": "https://doi.org/10.1038/nature14539",
+          "cited_by_count": 50000,
+          "authorships": [
+            {"author": {"display_name": "Yann LeCun"}},
+            {"author": {"display_name": "Yoshua Bengio"}},
+            {"author": {"display_name": "Geoffrey Hinton"}}
+          ],
+          "primary_location": {
+            "source": {"display_name": "Nature"},
+            "landing_page_url": "https://doi.org/10.1038/nature14539"
+          },
+          "ids": {
+            "openalex": "https://openalex.org/W2741809807",
+            "doi": "https://doi.org/10.1038/nature14539"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/authors",
+        "params_contains": {"search": "Geoffrey Hinton"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "results": [
+            {
+              "id": "https://openalex.org/A5023888391",
+              "display_name": "Geoffrey E. Hinton",
+              "cited_by_count": 600000,
+              "last_known_institution": {
+                "display_name": "University of Toronto"
+              },
+              "summary_stats": {"h_index": 180}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/works",
+        "params_contains": {"filter": "author.id:"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "results": [
+            {
+              "id": "https://openalex.org/W2741809807",
+              "title": "Deep learning",
+              "display_name": "Deep learning",
+              "publication_year": 2015,
+              "doi": "https://doi.org/10.1038/nature14539",
+              "cited_by_count": 50000,
+              "authorships": [
+                {"author": {"display_name": "Geoffrey Hinton"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "Nature"},
+                "landing_page_url": "https://openalex.org/W2741809807"
+              },
+              "ids": {
+                "openalex": "https://openalex.org/W2741809807",
+                "doi": "https://doi.org/10.1038/nature14539"
+              }
+            },
+            {
+              "id": "https://openalex.org/W2101780755",
+              "title": "Learning representations by back-propagating errors",
+              "display_name": "Learning representations by back-propagating errors",
+              "publication_year": 1986,
+              "cited_by_count": 30000,
+              "authorships": [
+                {"author": {"display_name": "David E. Rumelhart"}},
+                {"author": {"display_name": "Geoffrey E. Hinton"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "Nature"},
+                "landing_page_url": "https://openalex.org/W2101780755"
+              },
+              "ids": {"openalex": "https://openalex.org/W2101780755"}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/works",
+        "params_contains": {"search": "attention is all you need"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "results": [
+            {
+              "id": "https://openalex.org/W2963407363",
+              "title": "Attention is All you Need",
+              "display_name": "Attention is All you Need",
+              "publication_year": 2017,
+              "doi": "https://doi.org/10.48550/arXiv.1706.03762",
+              "cited_by_count": 100000,
+              "authorships": [
+                {"author": {"display_name": "Ashish Vaswani"}},
+                {"author": {"display_name": "Noam Shazeer"}}
+              ],
+              "primary_location": {
+                "source": {"display_name": "NeurIPS"},
+                "landing_page_url": "https://openalex.org/W2963407363"
+              },
+              "ids": {
+                "openalex": "https://openalex.org/W2963407363",
+                "doi": "https://doi.org/10.48550/arXiv.1706.03762"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/works",
+        "params_contains": {"search": "Test Author"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "results": [
+            {
+              "id": "https://openalex.org/W999",
+              "title": "A Test Paper by Test Author",
+              "display_name": "A Test Paper by Test Author",
+              "publication_year": 2023,
+              "cited_by_count": 1,
+              "authorships": [{"author": {"display_name": "Test Author"}}],
+              "primary_location": {
+                "source": {"display_name": "Test Venue"},
+                "landing_page_url": "https://openalex.org/W999"
+              },
+              "ids": {"openalex": "https://openalex.org/W999"}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/authors",
+        "params_contains": {"search": "Test Author"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "results": [
+            {
+              "id": "https://openalex.org/A999",
+              "display_name": "Test Author",
+              "cited_by_count": 10,
+              "last_known_institution": {"display_name": "Test U"},
+              "summary_stats": {"h_index": 2}
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

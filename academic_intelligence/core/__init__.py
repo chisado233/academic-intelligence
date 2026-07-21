@@ -8,9 +8,12 @@ from __future__ import annotations
 
 from academic_intelligence.core.models import (
     Author,
+    ChangeDetection,
+    ChangeType,
     Citation,
     CollectionResult,
     Evidence,
+    IncrementalUpdateResult,
     Paper,
 )
 from academic_intelligence.core.types import (
@@ -40,6 +43,9 @@ __all__ = [
     "Citation",
     "Evidence",
     "CollectionResult",
+    "ChangeType",
+    "ChangeDetection",
+    "IncrementalUpdateResult",
     # Types
     "SourceType",
     "AntiCrawlStrategy",

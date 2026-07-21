@@ -1,0 +1,184 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "api.semanticscholar.org",
+        "path_contains": "/paper/search",
+        "params_contains": {"query": "machine learning"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "data": [
+            {
+              "paperId": "abc123ml",
+              "title": "Machine Learning Survey",
+              "abstract": "A survey of ML methods.",
+              "year": 2020,
+              "venue": "JMLR",
+              "citationCount": 200,
+              "externalIds": {"DOI": "10.1234/s2.ml.2020"},
+              "url": "https://www.semanticscholar.org/paper/abc123ml",
+              "openAccessPdf": null,
+              "authors": [{"name": "Jane Doe"}, {"name": "John Smith"}],
+              "fieldsOfStudy": ["Computer Science"]
+            },
+            {
+              "paperId": "def456dl",
+              "title": "Deep Networks Explained",
+              "year": 2019,
+              "venue": "ICML",
+              "citationCount": 90,
+              "externalIds": {},
+              "url": "https://www.semanticscholar.org/paper/def456dl",
+              "authors": [{"name": "Alice ML"}],
+              "fieldsOfStudy": ["Machine Learning"]
+            },
+            {
+              "paperId": "ghi789sl",
+              "title": "Supervised Learning Primer",
+              "year": 2021,
+              "citationCount": 40,
+              "externalIds": {},
+              "url": "https://www.semanticscholar.org/paper/ghi789sl",
+              "authors": [{"name": "Bob Analyst"}],
+              "fieldsOfStudy": []
+            },
+            {
+              "paperId": "jkl012ul",
+              "title": "Unsupervised Clustering",
+              "year": 2018,
+              "citationCount": 70,
+              "externalIds": {},
+              "url": "https://www.semanticscholar.org/paper/jkl012ul",
+              "authors": [{"name": "Carol Cluster"}],
+              "fieldsOfStudy": []
+            },
+            {
+              "paperId": "mno345rl",
+              "title": "RL for Beginners",
+              "year": 2022,
+              "citationCount": 55,
+              "externalIds": {},
+              "url": "https://www.semanticscholar.org/paper/mno345rl",
+              "authors": [{"name": "Dave Agent"}],
+              "fieldsOfStudy": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.semanticscholar.org",
+        "path_contains": "/paper/DOI:"
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "paperId": "nature14539",
+          "title": "Deep learning",
+          "abstract": "Deep learning allows computational models...",
+          "year": 2015,
+          "venue": "Nature",
+          "citationCount": 50000,
+          "externalIds": {"DOI": "10.1038/nature14539"},
+          "url": "https://www.semanticscholar.org/paper/nature14539",
+          "authors": [
+            {"name": "Yann LeCun"},
+            {"name": "Yoshua Bengio"},
+            {"name": "Geoffrey Hinton"}
+          ],
+          "fieldsOfStudy": ["Computer Science"]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.semanticscholar.org",
+        "path_contains": "/author/search",
+        "params_contains": {"query": "Geoffrey Hinton"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "data": [
+            {
+              "authorId": "1695689",
+              "name": "Geoffrey E. Hinton",
+              "affiliations": ["University of Toronto"],
+              "hIndex": 180,
+              "citationCount": 600000,
+              "url": "https://www.semanticscholar.org/author/1695689"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.semanticscholar.org",
+        "path_contains": "/author/1695689/papers"
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "data": [
+            {
+              "paperId": "nature14539",
+              "title": "Deep learning",
+              "year": 2015,
+              "venue": "Nature",
+              "citationCount": 50000,
+              "externalIds": {"DOI": "10.1038/nature14539"},
+              "url": "https://www.semanticscholar.org/paper/nature14539",
+              "authors": [{"name": "Geoffrey Hinton"}],
+              "fieldsOfStudy": []
+            },
+            {
+              "paperId": "backprop1986",
+              "title": "Learning representations by back-propagating errors",
+              "year": 1986,
+              "citationCount": 30000,
+              "externalIds": {},
+              "url": "https://www.semanticscholar.org/paper/backprop1986",
+              "authors": [
+                {"name": "David E. Rumelhart"},
+                {"name": "Geoffrey E. Hinton"}
+              ],
+              "fieldsOfStudy": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "api.semanticscholar.org",
+        "path_contains": "/paper/search",
+        "params_contains": {"query": "attention is all you need"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "data": [
+            {
+              "paperId": "transformer2017",
+              "title": "Attention Is All You Need",
+              "year": 2017,
+              "venue": "NeurIPS",
+              "citationCount": 100000,
+              "externalIds": {"DOI": "10.48550/arXiv.1706.03762", "ArXiv": "1706.03762"},
+              "url": "https://www.semanticscholar.org/paper/transformer2017",
+              "authors": [
+                {"name": "Ashish Vaswani"},
+                {"name": "Noam Shazeer"}
+              ],
+              "fieldsOfStudy": ["Computer Science"]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

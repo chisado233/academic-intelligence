@@ -1,0 +1,15 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "export.arxiv.org",
+        "path_contains": "/api/query"
+      },
+      "response": {
+        "status_code": 200,
+        "headers": {"Content-Type": "application/atom+xml"},
+        "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<feed xmlns=\"http://www.w3.org/2005/Atom\" xmlns:arxiv=\"http://arxiv.org/schemas/atom\">\n  <entry>\n    <id>http://arxiv.org/abs/1706.03762v7</id>\n    <title>Attention Is All You Need</title>\n    <summary>The dominant sequence transduction models are based on complex recurrent or convolutional neural networks.</summary>\n    <published>2017-06-12T17:57:34Z</published>\n    <author><name>Ashish Vaswani</name></author>\n    <author><name>Noam Shazeer</name></author>\n    <link href=\"http://arxiv.org/abs/1706.03762v7\" rel=\"alternate\" type=\"text/html\"/>\n    <link title=\"pdf\" href=\"http://arxiv.org/pdf/1706.03762v7\" rel=\"related\" type=\"application/pdf\"/>\n    <arxiv:primary_category term=\"cs.CL\"/>\n    <category term=\"cs.CL\"/>\n    <category term=\"cs.LG\"/>\n    <arxiv:doi>10.48550/arXiv.1706.03762</arxiv:doi>\n  </entry>\n  <entry>\n    <id>http://arxiv.org/abs/1409.0473v7</id>\n    <title>Neural Machine Translation by Jointly Learning to Align and Translate</title>\n    <summary>Neural machine translation is a recently proposed approach.</summary>\n    <published>2014-09-01T00:00:00Z</published>\n    <author><name>Dzmitry Bahdanau</name></author>\n    <link href=\"http://arxiv.org/abs/1409.0473v7\" rel=\"alternate\" type=\"text/html\"/>\n    <link title=\"pdf\" href=\"http://arxiv.org/pdf/1409.0473v7\" rel=\"related\" type=\"application/pdf\"/>\n    <arxiv:primary_category term=\"cs.CL\"/>\n    <category term=\"cs.CL\"/>\n  </entry>\n</feed>\n"
+      }
+    }
+  ]
+}

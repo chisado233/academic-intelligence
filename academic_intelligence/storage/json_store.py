@@ -9,6 +9,7 @@ from __future__ import annotations
 import asyncio
 import json
 import uuid
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -37,13 +38,17 @@ class JSONStorage(BaseStorage):
         self._papers_file = self.base_path / "papers.json"
         self._authors_file = self.base_path / "authors.json"
         self._citations_file = self.base_path / "citations.json"
+        self._hashes_file = self.base_path / "paper_hashes.json"
+        self._source_updates_file = self.base_path / "source_updates.json"
         self._papers: Dict[str, dict] = {}
         self._authors: Dict[str, dict] = {}
         self._citations: Dict[str, dict] = {}
+        self._hashes: Dict[str, str] = {}
+        self._source_updates: Dict[str, str] = {}
         self._lock = asyncio.Lock()
         self._connected = False
 
-    def _load_file(self, path: Path) -> Dict[str, dict]:
+    def _load_file(self, path: Path) -> Dict[str, Any]:
         if not path.exists():
             return {}
         try:
@@ -57,7 +62,7 @@ class JSONStorage(BaseStorage):
                 backend=self.backend_name,
             ) from exc
 
-    def _save_file(self, path: Path, data: Dict[str, dict]) -> None:
+    def _save_file(self, path: Path, data: Dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=2, default=str),
@@ -71,6 +76,11 @@ class JSONStorage(BaseStorage):
             self._papers = self._load_file(self._papers_file)
             self._authors = self._load_file(self._authors_file)
             self._citations = self._load_file(self._citations_file)
+            raw_hashes = self._load_file(self._hashes_file)
+            self._hashes = {k: str(v) for k, v in raw_hashes.items()}
+            self._source_updates = {
+                k: str(v) for k, v in self._load_file(self._source_updates_file).items()
+            }
             self._connected = True
         except StorageError:
             raise
@@ -87,6 +97,8 @@ class JSONStorage(BaseStorage):
                 self._save_file(self._papers_file, self._papers)
                 self._save_file(self._authors_file, self._authors)
                 self._save_file(self._citations_file, self._citations)
+                self._save_file(self._hashes_file, self._hashes)
+                self._save_file(self._source_updates_file, self._source_updates)
                 self._connected = False
             except Exception as exc:
                 raise StorageError(
@@ -98,6 +110,8 @@ class JSONStorage(BaseStorage):
         self._save_file(self._papers_file, self._papers)
         self._save_file(self._authors_file, self._authors)
         self._save_file(self._citations_file, self._citations)
+        self._save_file(self._hashes_file, self._hashes)
+        self._save_file(self._source_updates_file, self._source_updates)
 
     async def save_paper(self, paper: Paper) -> str:
         async with self._lock:
@@ -285,3 +299,29 @@ class JSONStorage(BaseStorage):
             "backend": self.backend_name,
             "base_path": str(self.base_path),
         }
+
+    # ------------------------------------------------------------------
+    # Incremental update metadata
+    # ------------------------------------------------------------------
+
+    async def get_paper_hash(self, paper_id: str) -> Optional[str]:
+        return self._hashes.get(paper_id)
+
+    async def save_paper_hash(self, paper_id: str, hash: str) -> None:
+        async with self._lock:
+            self._hashes[paper_id] = hash
+            await self._persist()
+
+    async def get_last_update_time(self, source: str) -> Optional[datetime]:
+        raw = self._source_updates.get(source)
+        if not raw:
+            return None
+        try:
+            return datetime.fromisoformat(raw)
+        except ValueError:
+            return None
+
+    async def save_last_update_time(self, source: str, time: datetime) -> None:
+        async with self._lock:
+            self._source_updates[source] = time.isoformat()
+            await self._persist()

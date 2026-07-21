@@ -1,0 +1,159 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "serpapi.com",
+        "path_contains": "/search.json",
+        "params_contains": {"q": "machine learning"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "organic_results": [
+            {
+              "result_id": "gs_ml_1",
+              "title": "Machine Learning",
+              "link": "https://example.com/ml-book",
+              "snippet": "A comprehensive introduction to machine learning.",
+              "publication_info": {
+                "summary": "T Mitchell - 1997 - McGraw Hill",
+                "authors": [{"name": "Tom Mitchell"}]
+              },
+              "inline_links": {"cited_by": {"total": 50000}},
+              "resources": []
+            },
+            {
+              "result_id": "gs_ml_2",
+              "title": "Pattern Recognition and Machine Learning",
+              "link": "https://example.com/prml",
+              "snippet": "PRML textbook.",
+              "publication_info": {
+                "summary": "C Bishop - 2006 - Springer",
+                "authors": [{"name": "Christopher Bishop"}]
+              },
+              "inline_links": {"cited_by": {"total": 40000}},
+              "resources": [{"file_format": "PDF", "link": "https://example.com/prml.pdf"}]
+            },
+            {
+              "result_id": "gs_ml_3",
+              "title": "A Few Useful Things to Know about Machine Learning",
+              "link": "https://example.com/domingos",
+              "snippet": "Useful advice for practitioners.",
+              "publication_info": {
+                "summary": "P Domingos - Communications of the ACM, 2012",
+                "authors": [{"name": "Pedro Domingos"}]
+              },
+              "inline_links": {"cited_by": {"total": 5000}},
+              "resources": []
+            },
+            {
+              "result_id": "gs_ml_4",
+              "title": "Machine learning in medicine",
+              "link": "https://example.com/ml-med",
+              "snippet": "Applications in healthcare.",
+              "publication_info": {
+                "summary": "A Rajkomar - NEJM, 2019",
+                "authors": [{"name": "Alvin Rajkomar"}]
+              },
+              "inline_links": {"cited_by": {"total": 2000}},
+              "resources": []
+            },
+            {
+              "result_id": "gs_ml_5",
+              "title": "An Introduction to Machine Learning",
+              "link": "https://example.com/intro-ml",
+              "snippet": "Introductory overview.",
+              "publication_info": {
+                "summary": "E Alpaydin - 2020 - MIT Press",
+                "authors": [{"name": "Ethem Alpaydin"}]
+              },
+              "inline_links": {"cited_by": {"total": 1000}},
+              "resources": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "serpapi.com",
+        "path_contains": "/search.json",
+        "params_contains": {"q": "doi:"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "organic_results": [
+            {
+              "result_id": "gs_nature_dl",
+              "title": "Deep learning",
+              "link": "https://www.nature.com/articles/nature14539",
+              "snippet": "Deep learning allows computational models composed of multiple processing layers.",
+              "publication_info": {
+                "summary": "Y LeCun, Y Bengio, G Hinton - nature, 2015",
+                "authors": [
+                  {"name": "Yann LeCun"},
+                  {"name": "Yoshua Bengio"},
+                  {"name": "Geoffrey Hinton"}
+                ]
+              },
+              "inline_links": {"cited_by": {"total": 50000}},
+              "resources": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "serpapi.com",
+        "path_contains": "/search.json",
+        "params_contains": {"q": "test"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "organic_results": [
+            {
+              "result_id": "gs_test_1",
+              "title": "Test Paper Result",
+              "link": "https://example.com/test",
+              "snippet": "A test result.",
+              "publication_info": {
+                "summary": "T Author - 2020",
+                "authors": [{"name": "T Author"}]
+              },
+              "inline_links": {"cited_by": {"total": 1}},
+              "resources": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "serpapi.com",
+        "path_contains": "/search.json"
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "organic_results": [
+            {
+              "result_id": "gs_generic",
+              "title": "Generic Scholar Result",
+              "link": "https://example.com/generic",
+              "snippet": "Fallback cassette entry.",
+              "publication_info": {
+                "summary": "A Author - 2021",
+                "authors": [{"name": "A Author"}]
+              },
+              "inline_links": {"cited_by": {"total": 3}},
+              "resources": []
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
