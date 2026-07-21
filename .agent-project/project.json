@@ -1,0 +1,24 @@
+{
+  "apiVersion": "agent-project/v1",
+  "kind": "Project",
+  "metadata": {
+    "id": "paper-research-crawler",
+    "name": "Paper Research Crawler",
+    "description": "论文信息爬取与验证系统：爬取各大论文平台的最新论文，提取并验证作者、机构、出版物等元信息",
+    "root": "D:\\agent_workspace\\projects\\paper-research-crawler",
+    "owner": "千束",
+    "tags": [
+      "paper",
+      "crawler",
+      "research"
+    ]
+  },
+  "spec": {
+    "project_type": "coding",
+    "project_mode": "finite"
+  },
+  "timestamps": {
+    "created_at": "2026-07-20T02:25:23+08:00",
+    "updated_at": "2026-07-20T02:25:23+08:00"
+  }
+}
