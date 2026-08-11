@@ -1,0 +1,15 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "api.openalex.org",
+        "path_contains": "/works",
+        "params_contains": {"search": "definitely-no-papers-xyz"}
+      },
+      "response": {
+        "status_code": 200,
+        "json": {"results": [], "meta": {"count": 0}}
+      }
+    }
+  ]
+}

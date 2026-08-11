@@ -1461,15 +1461,17 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">cache_ttl</span><span class="o">=</span><span class="mi">3600</span><span class="p">,</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">timeout</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">max_concurrent_sources</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">anti_crawl</span><span class="o">=</span><span class="n">AntiCrawlStrategy</span><span class="p">(</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="n">base_delay</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="n">retry_backoff</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">),</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">)</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">async</span> <span class="k">with</span> <span class="n">AcademicIntelligence</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">as</span> <span class="n">ai</span><span class="p">:</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="o">...</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">max_concurrent_requests</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">enable_google_scholar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">anti_crawl</span><span class="o">=</span><span class="n">AntiCrawlStrategy</span><span class="p">(</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="n">base_delay</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="n">retry_backoff</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="p">),</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">async</span> <span class="k">with</span> <span class="n">AcademicIntelligence</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">as</span> <span class="n">ai</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="o">...</span>
 </code></pre></div>
 <h2 id="configuration-fields">Configuration fields<a class="headerlink" href="#configuration-fields" title="Permanent link">&para;</a></h2>
 <table>
@@ -1492,7 +1494,7 @@
 <td><code>rate_limit</code></td>
 <td><code>float</code></td>
 <td><code>1.0</code></td>
-<td>Global requests-per-second hint</td>
+<td>Enforced global requests-per-second ceiling</td>
 </tr>
 <tr>
 <td><code>proxy</code></td>
@@ -1567,6 +1569,12 @@
 <td>Email for OpenAlex polite pool</td>
 </tr>
 <tr>
+<td><code>ieee_api_key</code></td>
+<td><code>str \| None</code></td>
+<td><code>None</code></td>
+<td>IEEE Xplore Metadata API key (env: <code>IEEE_API_KEY</code>)</td>
+</tr>
+<tr>
 <td><code>anti_crawl</code></td>
 <td><code>AntiCrawlStrategy</code></td>
 <td>defaults</td>
@@ -1577,6 +1585,66 @@
 <td><code>int</code></td>
 <td><code>3</code></td>
 <td>Parallel source queries</td>
+</tr>
+<tr>
+<td><code>enable_google_scholar</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Gate for Google Scholar registration; <code>sources</code> alone does not enable it</td>
+</tr>
+<tr>
+<td><code>download_delay</code></td>
+<td><code>float</code></td>
+<td><code>1.0</code></td>
+<td>Delay between downloads (s)</td>
+</tr>
+<tr>
+<td><code>max_concurrent_requests</code></td>
+<td><code>int</code></td>
+<td><code>4</code></td>
+<td>Enforced global in-flight HTTP request ceiling</td>
+</tr>
+<tr>
+<td><code>max_expand_depth</code></td>
+<td><code>int</code></td>
+<td><code>3</code></td>
+<td>Graph expansion depth limit</td>
+</tr>
+<tr>
+<td><code>max_expand_nodes</code></td>
+<td><code>int</code></td>
+<td><code>50</code></td>
+<td>Max nodes per graph expansion pass</td>
+</tr>
+<tr>
+<td><code>graph_cache_size</code></td>
+<td><code>int</code></td>
+<td><code>5000</code></td>
+<td>Knowledge graph cache capacity (nodes)</td>
+</tr>
+<tr>
+<td><code>auto_merge_threshold</code></td>
+<td><code>float</code></td>
+<td><code>0.85</code></td>
+<td>Disambiguation auto-merge threshold</td>
+</tr>
+<tr>
+<td><code>ambiguous_threshold</code></td>
+<td><code>float</code></td>
+<td><code>0.60</code></td>
+<td>Disambiguation ambiguous threshold</td>
+</tr>
+<tr>
+<td><code>paper_refresh_days</code></td>
+<td><code>int</code></td>
+<td><code>7</code></td>
+<td>Days before a paper is refreshed incrementally</td>
+</tr>
+<tr>
+<td><code>author_refresh_days</code></td>
+<td><code>int</code></td>
+<td><code>30</code></td>
+<td>Days before an author profile is refreshed</td>
 </tr>
 </tbody>
 </table>
@@ -1665,17 +1733,23 @@
 <td><code>OPENALEX_EMAIL</code></td>
 <td><code>openalex_email</code></td>
 </tr>
+<tr>
+<td><code>IEEE_API_KEY</code></td>
+<td><code>ieee_api_key</code> (IEEE Xplore)</td>
+</tr>
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Linux / macOS</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SERPAPI_KEY</span><span class="o">=</span>...
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">SEMANTIC_SCHOLAR_API_KEY</span><span class="o">=</span>...
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OPENALEX_EMAIL</span><span class="o">=</span>you@example.com
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Windows PowerShell</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nv">$env</span>:SERPAPI_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">$env</span>:SEMANTIC_SCHOLAR_API_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nv">$env</span>:OPENALEX_EMAIL<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">IEEE_API_KEY</span><span class="o">=</span>...
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Windows PowerShell</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">$env</span>:SERPAPI_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nv">$env</span>:SEMANTIC_SCHOLAR_API_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nv">$env</span>:OPENALEX_EMAIL<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nv">$env</span>:IEEE_API_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
 </code></pre></div>
 <h2 id="config-file-example">Config file example<a class="headerlink" href="#config-file-example" title="Permanent link">&para;</a></h2>
 <p>There is no required on-disk config format; load JSON/YAML yourself and validate:</p>
@@ -1738,7 +1812,7 @@
 </tr>
 </tbody>
 </table>
-<p>Planned / enumerated but not all implemented as adapters yet: <code>arxiv</code>, <code>pubmed</code>, <code>ieee</code> (see <code>SourceType</code> enum). Unsupported names are skipped at runtime for forward compatibility.</p>
+<p>All six adapters (<code>arxiv</code>, <code>openalex</code>, <code>semantic_scholar</code>, <code>pubmed</code>, <code>ieee</code>, <code>google_scholar</code>) are implemented and wired into <code>_build_sources</code>; aliases only exist for the three above. Google Scholar additionally requires <code>enable_google_scholar=True</code>; otherwise it is skipped even when listed in <code>sources</code>. IEEE queries without an API key warn at startup and degrade gracefully. Unsupported names are skipped at runtime for forward compatibility.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../user-guide/data-sources/">Data Sources</a> — keys and capabilities per source</li>

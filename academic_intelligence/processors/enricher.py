@@ -9,11 +9,12 @@ from __future__ import annotations
 import abc
 import logging
 import re
-from typing import Any, Dict, List, Optional, Protocol, Sequence
+from collections.abc import Sequence
+from typing import Any, Protocol
 
 from academic_intelligence.core.constants import DEFAULT_MIN_CONFIDENCE
 from academic_intelligence.core.exceptions import EnrichmentError
-from academic_intelligence.core.models import Author, Citation, Paper
+from academic_intelligence.core.models import Author, AuthorRef, Citation, Paper
 
 logger = logging.getLogger(__name__)
 
@@ -114,17 +115,17 @@ class AuthorListNormalizeStrategy(BaseEnrichmentStrategy):
     def enrich(self, paper: Paper) -> Paper:
         if not paper.authors:
             return paper
-        cleaned: List[str] = []
+        cleaned: list[AuthorRef] = []
         seen: set[str] = set()
-        for a in paper.authors:
-            if not a or not a.strip():
+        for ref in paper.authors:
+            if not ref.name or not ref.name.strip():
                 continue
-            name = re.sub(r"\s+", " ", a).strip()
+            name = re.sub(r"\s+", " ", ref.name).strip()
             key = name.lower()
             if key in seen:
                 continue
             seen.add(key)
-            cleaned.append(name)
+            cleaned.append(ref.model_copy(update={"name": name, "position": len(cleaned) + 1}))
         if cleaned != paper.authors:
             return paper.model_copy(update={"authors": cleaned})
         return paper
@@ -170,15 +171,15 @@ class Enricher:
 
     def __init__(
         self,
-        strategies: Optional[Sequence[BaseEnrichmentStrategy]] = None,
+        strategies: Sequence[BaseEnrichmentStrategy] | None = None,
         min_confidence: float = DEFAULT_MIN_CONFIDENCE,
     ) -> None:
-        self.strategies: List[BaseEnrichmentStrategy] = list(
+        self.strategies: list[BaseEnrichmentStrategy] = list(
             strategies or self._default_strategies()
         )
         self.strategies.sort(key=lambda s: s.priority)
         self.min_confidence: float = min_confidence
-        self.stats: Dict[str, Any] = {
+        self.stats: dict[str, Any] = {
             "papers_processed": 0,
             "papers_enriched": 0,
             "papers_failed": 0,
@@ -194,15 +195,15 @@ class Enricher:
     def unregister(self, name: str) -> None:
         self.strategies = [s for s in self.strategies if s.name != name]
 
-    def enrich_papers(self, papers: List[Paper]) -> List[Paper]:
-        results: List[Paper] = []
+    def enrich_papers(self, papers: list[Paper]) -> list[Paper]:
+        results: list[Paper] = []
         for paper in papers:
             results.append(self._enrich_single(paper))
         return results
 
-    def enrich_authors(self, authors: List[Author]) -> List[Author]:
+    def enrich_authors(self, authors: list[Author]) -> list[Author]:
         """Normalize author fields (local heuristics)."""
-        results: List[Author] = []
+        results: list[Author] = []
         for author in authors:
             name = re.sub(r"\s+", " ", author.name).strip()
             interests = list(dict.fromkeys(author.interests))  # dedupe preserve order
@@ -212,22 +213,26 @@ class Enricher:
                 results.append(author)
         return results
 
-    def enrich_citations(self, citations: List[Citation]) -> List[Citation]:
+    def enrich_citations(self, citations: list[Citation]) -> list[Citation]:
         return list(citations)
 
-    def cross_validate_papers(self, papers: List[Paper]) -> List[Paper]:
+    def cross_validate_papers(self, papers: list[Paper]) -> list[Paper]:
         """Boost confidence slightly when DOI + year + title all present."""
-        out: List[Paper] = []
+        out: list[Paper] = []
         for p in papers:
-            score = p.evidence.confidence
+            primary = p.primary_evidence
+            if primary is None:
+                out.append(p)
+                continue
+            score = primary.confidence
             if p.doi:
                 score = min(1.0, score + 0.05)
             if p.year:
                 score = min(1.0, score + 0.02)
             if p.abstract:
                 score = min(1.0, score + 0.02)
-            if score != p.evidence.confidence:
-                ev = p.evidence.model_copy(update={"confidence": score})
+            if score != primary.confidence:
+                ev = primary.model_copy(update={"confidence": score})
                 out.append(p.model_copy(update={"evidence": ev}))
             else:
                 out.append(p)
@@ -264,14 +269,14 @@ class Enricher:
     def _count_filled_fields(paper: Paper) -> int:
         filled = 0
         for key, value in paper.model_dump().items():
-            if key in {"id", "evidence"}:
+            if key in {"id", "evidence", "evidence_list"}:
                 continue
             if value is not None and value != [] and value != {}:
                 filled += 1
         return filled
 
     @staticmethod
-    def _default_strategies() -> List[BaseEnrichmentStrategy]:
+    def _default_strategies() -> list[BaseEnrichmentStrategy]:
         return [
             TitleNormalizeStrategy(),
             VenueNormalizationStrategy(),
@@ -282,7 +287,7 @@ class Enricher:
             AffiliationEnrichmentStrategy(),
         ]
 
-    def get_stats(self) -> Dict[str, Any]:
+    def get_stats(self) -> dict[str, Any]:
         return dict(self.stats)
 
     def reset_stats(self) -> None:
@@ -295,9 +300,9 @@ class Enricher:
 
 
 def enrich_papers(
-    papers: List[Paper],
-    strategies: Optional[Sequence[BaseEnrichmentStrategy]] = None,
+    papers: list[Paper],
+    strategies: Sequence[BaseEnrichmentStrategy] | None = None,
     min_confidence: float = DEFAULT_MIN_CONFIDENCE,
-) -> List[Paper]:
+) -> list[Paper]:
     enricher = Enricher(strategies=strategies, min_confidence=min_confidence)
     return enricher.enrich_papers(papers)

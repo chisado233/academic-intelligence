@@ -1537,13 +1537,16 @@
 <td><code>pytest</code></td>
 </tr>
 <tr>
-<td>Integration / network</td>
-<td>Live APIs</td>
-<td>Marked <code>@pytest.mark.network</code> (opt-in)</td>
+<td>Integration</td>
+<td>End-to-end pipelines and §17 acceptance</td>
+<td><code>pytest</code> + offline VCR-style cassettes</td>
 </tr>
 </tbody>
 </table>
-<p>Goals for v0.1:</p>
+<p>Integration tests never touch live APIs: <code>tests/cassette_replay.py</code> replays
+JSON cassettes from <code>tests/cassettes/</code> by monkeypatching <code>HTTPClient.get</code>, so
+the whole suite (including <code>@pytest.mark.network</code> tests) runs offline in CI.</p>
+<p>Goals:</p>
 <ul>
 <li>Fast default suite (no live network)</li>
 <li>High coverage on models, processors, storage, utils</li>
@@ -1562,10 +1565,10 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># One file</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>pytest<span class="w"> </span>tests/test_models.py
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Skip slow tests</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;not slow&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Fast development subset (omits scale, boundary, and performance suites)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;not slow and not boundary and not performance&quot;</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Network tests only (requires keys / network)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Network-marked tests (offline cassette replay — no keys / network needed)</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>pytest<span class="w"> </span>-m<span class="w"> </span>network
 </code></pre></div>
 <p>Coverage reports (configured in <code>pyproject.toml</code>):</p>
@@ -1647,6 +1650,14 @@
 <tr>
 <td><code>network</code></td>
 <td>Requires network access</td>
+</tr>
+<tr>
+<td><code>boundary</code></td>
+<td>Large/input-boundary and concurrency stress tests</td>
+</tr>
+<tr>
+<td><code>performance</code></td>
+<td>Explicit latency/throughput regression tests</td>
 </tr>
 </tbody>
 </table>

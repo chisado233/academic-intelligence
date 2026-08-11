@@ -188,7 +188,7 @@ async def test_retry_decorator() -> None:
     async def flaky() -> str:
         calls["n"] += 1
         if calls["n"] < 2:
-            raise RuntimeError("x")
+            raise httpx.TransportError("x")
         return "ok"
 
     assert await flaky() == "ok"

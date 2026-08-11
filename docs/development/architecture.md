@@ -17,12 +17,13 @@ Academic Intelligence is a **pure Python library** with an optional CLI. There i
 └───────┬──────────────────┬──────────────────┬────────────────┘
         │                  │                  │
         ▼                  ▼                  ▼
-   sources/*          collectors/*        storage/*
-   (BaseSource)    (MultiSourceCollector) (SQLite/JSON)
-        │                  │
+   sources/*          collectors/*        graph/*
+   (6 adapters)    (MultiSourceCollector) (KnowledgeGraph,
+        │                  │                traversal, cache)
         │                  ▼
         │            processors/*
-        │       (dedup / enrich / validate)
+        │       (dedup / disambiguate / score /
+        │        enrich / validate / incremental)
         ▼
      utils/*   (http, proxy, rate_limiter, retry, cache)
         │
@@ -37,21 +38,31 @@ academic_intelligence/
 ├── __init__.py          # AcademicIntelligence facade, public exports
 ├── cli.py               # `ai` console script
 ├── core/
-│   ├── models.py        # Evidence, Author, Paper, Citation, CollectionResult
+│   ├── models.py        # Evidence, AuthorRef, Author, Paper, Citation, CollectionResult, ExpandResult
 │   ├── types.py         # SourceType, Config, AntiCrawlStrategy
 │   ├── exceptions.py    # Error hierarchy
 │   └── constants.py
 ├── sources/
 │   ├── base.py          # BaseSource ABC
-│   ├── google_scholar.py
+│   ├── arxiv.py
+│   ├── openalex.py
 │   ├── semantic_scholar.py
-│   └── openalex.py
+│   ├── pubmed.py
+│   ├── ieee.py
+│   └── google_scholar.py
 ├── collectors/
 │   └── base.py          # BaseCollector, MultiSourceCollector
 ├── processors/
 │   ├── deduplicator.py
+│   ├── disambiguator.py
+│   ├── scorer.py
 │   ├── enricher.py
-│   └── validator.py
+│   ├── validator.py
+│   └── incremental.py
+├── graph/
+│   ├── knowledge_graph.py
+│   ├── traversal.py
+│   └── cache.py
 ├── storage/
 │   ├── base.py
 │   ├── sqlite_store.py

@@ -7,8 +7,9 @@ import asyncio
 import random
 import time
 from abc import ABC, abstractmethod
+from collections.abc import AsyncIterator, Callable
 from contextlib import asynccontextmanager
-from typing import AsyncIterator, Callable, Dict, Optional
+from typing import Any
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -141,7 +142,7 @@ class AdaptiveRateLimiter(RateLimiter):
         self,
         config: RateLimitConfig,
         *,
-        adaptive_config: Optional[AdaptiveDelayConfig] = None,
+        adaptive_config: AdaptiveDelayConfig | None = None,
     ) -> None:
         super().__init__(config)
         self._adaptive_config = adaptive_config or AdaptiveDelayConfig()
@@ -175,21 +176,21 @@ class AdaptiveRateLimiter(RateLimiter):
 
         if 200 <= status_code < 300:
             self._consecutive_errors = 0
-            if latency_ms > cfg.target_latency_ms:
-                self._current_delay = min(
-                    cfg.max_delay_seconds,
-                    self._current_delay * cfg.increase_factor,
-                )
-            else:
+            # (Q2) A slow-but-successful response is NOT an overload signal:
+            # a source that answers slowly (e.g. arxiv) must not keep pushing
+            # the shared adaptive delay up and penalize every other source on
+            # the same HTTPClient.  Only throttling (429/503/504) or errors
+            # raise the delay; a slow 200 leaves it unchanged, a fast 200
+            # pulls it back toward the 1/rps baseline.
+            if latency_ms <= cfg.target_latency_ms:
                 self._current_delay = max(
                     cfg.min_delay_seconds,
                     self._current_delay * cfg.decrease_factor,
                 )
-            # Keep roughly near 1/rps baseline
-            baseline = 1.0 / self._config.requests_per_second
-            self._current_delay = max(cfg.min_delay_seconds, min(cfg.max_delay_seconds, self._current_delay))
-            # Soft pull toward baseline when healthy
-            if latency_ms <= cfg.target_latency_ms:
+                # Keep roughly near 1/rps baseline
+                baseline = 1.0 / self._config.requests_per_second
+                self._current_delay = max(cfg.min_delay_seconds, min(cfg.max_delay_seconds, self._current_delay))
+                # Soft pull toward baseline when healthy
                 self._current_delay = 0.7 * self._current_delay + 0.3 * baseline
             return
 
@@ -205,7 +206,7 @@ class RateLimiterRegistry:
     """Global registry that maps source identifiers to their rate limiters."""
 
     def __init__(self) -> None:
-        self._limiters: Dict[str, RateLimiter] = {}
+        self._limiters: dict[str, RateLimiter] = {}
         self._lock = asyncio.Lock()
 
     async def get_or_create(
@@ -224,7 +225,7 @@ class RateLimiterRegistry:
         async with self._lock:
             self._limiters[source_id] = limiter
 
-    async def unregister(self, source_id: str) -> Optional[RateLimiter]:
+    async def unregister(self, source_id: str) -> RateLimiter | None:
         """Remove and return the limiter associated with *source_id*."""
         async with self._lock:
             return self._limiters.pop(source_id, None)
@@ -234,7 +235,7 @@ def create_rate_limiter(
     strategy: str = "adaptive",
     *,
     requests_per_second: float = 2.0,
-    **kwargs: object,
+    **kwargs: Any,
 ) -> RateLimiter:
     """Factory function that creates a rate limiter by *strategy* name.
 
@@ -250,7 +251,7 @@ def create_rate_limiter(
     if strategy in ("fixed", "fixed_interval"):
         return FixedIntervalRateLimiter(config)
     if strategy in ("token_bucket", "token"):
-        bucket_size = int(kwargs.get("bucket_size", 10))  # type: ignore[arg-type]
+        bucket_size = int(kwargs.get("bucket_size", 10))
         return TokenBucketRateLimiter(config, bucket_size=bucket_size)
     if strategy == "adaptive":
         return AdaptiveRateLimiter(config)

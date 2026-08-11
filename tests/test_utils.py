@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import httpx
 import pytest
 
 from academic_intelligence.utils.cache import Cache
@@ -47,7 +48,7 @@ async def test_retry_handler_success() -> None:
     async def flaky() -> str:
         calls["n"] += 1
         if calls["n"] < 2:
-            raise RuntimeError("transient")
+            raise httpx.TransportError("transient")
         return "ok"
 
     handler = RetryHandler(RetryConfig(max_retries=3, base_delay=0.01, jitter=False))

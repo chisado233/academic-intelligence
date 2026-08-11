@@ -2,6 +2,77 @@
 
 > 记录项目中的关键选择：为什么选 A 不选 B、踩过的坑、重要的边界划分。
 > 按时间倒序，新决策加在最上面。
+> 编号约定：`D-YYYY-MM-DD-N`。早期（2026-07-21）的 5 条决策在编号约定前记录，未编号。
+
+---
+
+### 2026-08-10 — 精确标识符在 collector 分类并只路由 capable 来源
+- **编号**：D-2026-08-10-1
+- **日期**：2026-08-10
+- **决策**：完整现代/旧式 arXiv ID（含可选版本、前缀、URL）在 collector 入口严格分类，仅调用支持 `get_paper_by_arxiv_id` 的来源；adapter 使用 `id_list` 并对返回记录做 canonical ID 匹配。
+- **原因**：把裸 ID 当 `all:<id>` 搜索会混入“正文提及该 ID”的无关论文；在 collector 分类能保持 facade/CLI 语义一致，adapter 二次校验则防止上游异常响应污染结果。
+- **边界**：包含 ID 的自然语言仍是全文搜索；不新增通用 identifier registry、异常类型或依赖。
+
+### 2026-08-10 — 重试策略归 transport，终止元数据跨包装保留
+- **编号**：D-2026-08-10-2
+- **日期**：2026-08-10
+- **决策**：`RetryHandler` 只在终止异常上记录实际已消耗 retry count；`SourceFailure` 用最多 16 个唯一异常节点的 cause/context 链恢复 retry/status，外层显式上下文优先。
+- **原因**：来源 adapter 会把 `HTTPStatusError` 包装为领域异常，过去导致实际重试 2 次却报告 0 次/无 HTTP 状态。保留 transport 对策略的唯一所有权，避免 adapter 或 agent 叠加无界重试。
+- **自动化契约**：默认无外层重试；显式恢复最多 1 次。部分可用结果为 `PARTIAL`，所有 capable 来源仍受外部条件阻塞为 `BLOCKED` 并停止。
+
+### 2026-08-09 — Cursor 使用实体 ID，排序值由后端解析
+- **编号**：D-2026-08-09-1
+- **日期**：2026-08-09
+- **决策**：`after`/`cursor` 始终传上一页最后实体 ID；后端读取其排序列值并按 `(sort_value, id)` 翻页。
+- **原因**：比暴露自定义编码 cursor 更易用，同时用 ID tie-breaker 保证非唯一排序列无重复、无遗漏。
+
+### 2026-08-09 — Graph snapshot 独立于 storage
+- **编号**：D-2026-08-09-2
+- **日期**：2026-08-09
+- **决策**：graph 持久化采用版本化独立 JSON snapshot 和原子替换，不修改 SQLite/JSON storage schema。
+- **原因**：保持 graph 会话语义和主数据持久化边界，最小化迁移风险，并直接解决 CLI 跨进程丢图。
+
+### 2026-08-09 — Parquet 保持可选依赖
+- **编号**：D-2026-08-09-3
+- **日期**：2026-08-09
+- **决策**：CSV 使用标准库、JSONL 逐行写；Parquet 懒导入 pyarrow，由 `academic-intelligence[export]` extra 安装。
+- **原因**：不增加核心安装体积，同时保留分块 ParquetWriter 路径和明确的缺依赖错误。
+
+### 2026-08-09 — JSON 后端单进程单写者，SQLite 承担并发
+
+- **决策**：同一进程内，同一解析目录只允许一个已连接的 `JSONStorage` 写者；重复连接 fail-closed。JSON 不承诺跨进程锁，并发写入使用 SQLite。
+- **原因**：避免两个内存快照在 close 时互相覆盖，同时保持 JSON 后端简单、可移植的定位。
+
+### 2026-08-09 — 导出显式区分 raw CSV 与 Excel-safe CSV
+
+- **决策**：默认 CSV 保持无 BOM 的原始 UTF-8；`excel_safe=True`/`--excel-safe` 才添加 BOM 并中和公式前缀。Parquet 的嵌套字段用确定性 JSON 字符串和固定 schema。
+- **原因**：机器互换不应被静默改写，同时为 Excel 用户提供明确的编码与公式注入防护。
+
+### 2026-08-07 — 抓取层保留 httpx 实现，Scrapling 不做强制迁移
+- **编号**：D-2026-08-07-1
+- **日期**：2026-08-07
+- **决策**：抓取层保留 httpx 实现，Scrapling 不做强制迁移
+- **原因**：3A v2 设计原文"抓取层全面采用 Scrapling 并移除 utils/"未落地——环境无 Scrapling 且其为重型浏览器依赖链；现有 httpx 实现 364 测试全绿
+- **实现**：演进式——保留 `utils/`（http / proxy / rate_limiter / retry / cache），不引入 Scrapling 依赖；若未来需要 Google Scholar 无 API 反爬增强，再评估 `scrapling[fetchers]` 可选集成
+- **影响**：v2 §2 / §3 / §14 中 Scrapling 相关内容以本文档为准
+
+### 2026-08-07 — 作者消歧为独立阶段，不替换名字去重
+- **编号**：D-2026-08-07-2
+- **日期**：2026-08-07
+- **决策**：作者消歧为独立阶段，不替换名字去重
+- **原因**：`AuthorDisambiguator`（ID 直连 + 启发式聚类）作为 `Deduplicator` 去重后的独立阶段由调用方使用；"同名不同人"的管线级拆分依赖 §6.2 第三层 `confirm_split`（Phase 2 预留），当前不做
+
+### 2026-08-07 — 全源失败保留 AllSourcesFailedError
+- **编号**：D-2026-08-07-3
+- **日期**：2026-08-07
+- **决策**：全源失败保留 `AllSourcesFailedError`，不映射为 `SourceUnavailableError`
+- **原因**：已扩展 `failures` 字段携带每源失败原因，满足 §11.2 的信息要求
+
+### 2026-08-07 — 图谱层不引入 networkx
+- **编号**：D-2026-08-07-4
+- **日期**：2026-08-07
+- **决策**：图谱层不引入 networkx
+- **原因**：纯 Python 有向图 + `OrderedDict` LRU 实现 `KnowledgeGraph` / `GraphCache`，避免新增依赖
 
 ---
 

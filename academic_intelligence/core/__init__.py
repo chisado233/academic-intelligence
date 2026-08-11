@@ -6,8 +6,23 @@ system, including data models, type definitions, constants, and custom exception
 
 from __future__ import annotations
 
+from academic_intelligence.core.constants import (
+    DEFAULT_MAX_RETRIES,
+    DEFAULT_MIN_CONFIDENCE,
+    DEFAULT_RATE_LIMIT,
+    SUPPORTED_SOURCES,
+)
+from academic_intelligence.core.exceptions import (
+    AcademicIntelligenceError,
+    DataValidationError,
+    DeduplicationError,
+    RateLimitError,
+    SourceUnavailableError,
+    StorageError,
+)
 from academic_intelligence.core.models import (
     Author,
+    AuthorRef,
     ChangeDetection,
     ChangeType,
     Citation,
@@ -21,24 +36,11 @@ from academic_intelligence.core.types import (
     Config,
     SourceType,
 )
-from academic_intelligence.core.constants import (
-    DEFAULT_RATE_LIMIT,
-    DEFAULT_MAX_RETRIES,
-    DEFAULT_MIN_CONFIDENCE,
-    SUPPORTED_SOURCES,
-)
-from academic_intelligence.core.exceptions import (
-    AcademicIntelligenceError,
-    SourceUnavailableError,
-    RateLimitError,
-    DataValidationError,
-    DeduplicationError,
-    StorageError,
-)
 
 __all__ = [
     # Data Models
     "Author",
+    "AuthorRef",
     "Paper",
     "Citation",
     "Evidence",

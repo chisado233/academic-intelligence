@@ -827,6 +827,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ai-collect-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai collect citations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ai-query" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -842,6 +853,39 @@
     <span class="md-ellipsis">
       
         ai stats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-expand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai expand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-export-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai export-papers
       
     </span>
   </a>
@@ -1408,6 +1452,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ai-collect-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai collect citations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ai-query" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1423,6 +1478,39 @@
     <span class="md-ellipsis">
       
         ai stats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-expand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai expand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-export-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai export-papers
       
     </span>
   </a>
@@ -1554,12 +1642,44 @@
 <td>Collect by DOI or title</td>
 </tr>
 <tr>
+<td><code>ai collect citations &lt;paper_id&gt;</code></td>
+<td>Collect citing works for a paper id</td>
+</tr>
+<tr>
+<td><code>ai paper &lt;query&gt;</code></td>
+<td>Direct alias for <code>ai collect paper</code></td>
+</tr>
+<tr>
+<td><code>ai author &lt;name&gt;</code></td>
+<td>Collect an author profile and associated papers</td>
+</tr>
+<tr>
+<td><code>ai author-papers &lt;name&gt;</code></td>
+<td>Direct alias for <code>ai collect author</code></td>
+</tr>
+<tr>
+<td><code>ai update --author &lt;name&gt;</code></td>
+<td>Incrementally refresh an author's papers</td>
+</tr>
+<tr>
 <td><code>ai query papers</code></td>
 <td>Query stored papers</td>
 </tr>
 <tr>
 <td><code>ai stats</code></td>
 <td>Show storage statistics</td>
+</tr>
+<tr>
+<td><code>ai expand &lt;entity_id&gt;</code></td>
+<td>Expand an entity's relations in the session knowledge graph</td>
+</tr>
+<tr>
+<td><code>ai export</code></td>
+<td>Export the subgraph around a center entity as JSON</td>
+</tr>
+<tr>
+<td><code>ai export-papers</code></td>
+<td>Stream stored papers to CSV, JSONL, or optional Parquet</td>
 </tr>
 </tbody>
 </table>
@@ -1635,8 +1755,8 @@
 <tr>
 <td><code>--output</code></td>
 <td><code>-o</code></td>
-<td>stdout JSON</td>
-<td>Output path</td>
+<td>none</td>
+<td>Versioned graph snapshot path</td>
 </tr>
 <tr>
 <td><code>--storage-type</code></td>
@@ -1668,8 +1788,59 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ai<span class="w"> </span>collect<span class="w"> </span>paper<span class="w"> </span><span class="s2">&quot;10.1038/nature14539&quot;</span><span class="w"> </span>--sources<span class="w"> </span>all<span class="w"> </span>-o<span class="w"> </span>paper.json
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ai<span class="w"> </span>collect<span class="w"> </span>paper<span class="w"> </span><span class="s2">&quot;Attention is All You Need&quot;</span><span class="w"> </span>-s<span class="w"> </span>ss,openalex<span class="w"> </span>--limit<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
+<h2 id="ai-collect-citations"><code>ai collect citations</code><a class="headerlink" href="#ai-collect-citations" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ai<span class="w"> </span>collect<span class="w"> </span>citations<span class="w"> </span>&lt;paper_id&gt;<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+<p>Collects citing works for a paper id (e.g. an OpenAlex work id like <code>W2626778328</code>). Sources that expose citing works also return the full citing-paper records so they can be persisted.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Short</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--sources</code></td>
+<td><code>-s</code></td>
+<td>config default</td>
+<td>Sources or <code>all</code></td>
+</tr>
+<tr>
+<td><code>--output</code></td>
+<td><code>-o</code></td>
+<td>stdout JSON</td>
+<td>Output path</td>
+</tr>
+<tr>
+<td><code>--storage-type</code></td>
+<td></td>
+<td><code>sqlite</code></td>
+<td>Backend type</td>
+</tr>
+<tr>
+<td><code>--storage-path</code></td>
+<td></td>
+<td><code>./academic_intelligence.db</code></td>
+<td>Backend path</td>
+</tr>
+<tr>
+<td><code>--persist</code></td>
+<td></td>
+<td>off</td>
+<td>Save to storage</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ai<span class="w"> </span>collect<span class="w"> </span>citations<span class="w"> </span><span class="s2">&quot;W2626778328&quot;</span><span class="w"> </span>--sources<span class="w"> </span>openalex<span class="w"> </span>--persist
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ai<span class="w"> </span>collect<span class="w"> </span>citations<span class="w"> </span><span class="s2">&quot;W2626778328&quot;</span><span class="w"> </span>-o<span class="w"> </span>citing.json
+</code></pre></div>
+<p>Prints a summary line (<code>Found N citations, M citing papers</code>), surfaces soft source errors / multi-source warnings as yellow messages, and writes the <code>CollectionResult.to_dict()</code> payload to the output path (or prints it). Citation collection is capped at <strong>50 citing works per request</strong> (<code>per_page</code>), so "top N" is window-based. On an empty result it prints a <code>No results</code> hint and returns without writing output.</p>
 <h2 id="ai-query"><code>ai query</code><a class="headerlink" href="#ai-query" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </code></pre></div>
 <p>Currently only the <code>papers</code> entity is supported.</p>
 <table>
@@ -1724,14 +1895,143 @@
 </tbody>
 </table>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--author<span class="w"> </span><span class="s2">&quot;Hinton&quot;</span><span class="w"> </span>--year<span class="w"> </span><span class="m">2020</span>-2024<span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--venue<span class="w"> </span>NeurIPS<span class="w"> </span>--year<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-o<span class="w"> </span>out.json
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--keyword<span class="w"> </span>transformer<span class="w"> </span>--storage-path<span class="w"> </span>./my.db
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--author<span class="w"> </span><span class="s2">&quot;Hinton&quot;</span><span class="w"> </span>--year<span class="w"> </span><span class="m">2020</span>-2024<span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--venue<span class="w"> </span>NeurIPS<span class="w"> </span>--year<span class="w"> </span><span class="m">2023</span><span class="w"> </span>-o<span class="w"> </span>out.json
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--keyword<span class="w"> </span>transformer<span class="w"> </span>--storage-path<span class="w"> </span>./my.db
 </code></pre></div>
 <h2 id="ai-stats"><code>ai stats</code><a class="headerlink" href="#ai-stats" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ai<span class="w"> </span>stats<span class="w"> </span><span class="o">[</span>--storage-type<span class="w"> </span>sqlite<span class="o">]</span><span class="w"> </span><span class="o">[</span>--storage-path<span class="w"> </span>./academic_intelligence.db<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ai<span class="w"> </span>stats<span class="w"> </span><span class="o">[</span>--storage-type<span class="w"> </span>sqlite<span class="o">]</span><span class="w"> </span><span class="o">[</span>--storage-path<span class="w"> </span>./academic_intelligence.db<span class="o">]</span>
 </code></pre></div>
 <p>Prints key/value storage statistics in a table.</p>
+<h2 id="ai-expand"><code>ai expand</code><a class="headerlink" href="#ai-expand" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ai<span class="w"> </span>expand<span class="w"> </span>&lt;entity_id&gt;<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+<p>Expands an entity's relationships (papers: <code>references</code>, <code>citations</code>, <code>authors</code>; authors: <code>papers</code>, <code>coauthors</code>) in the session knowledge graph. Storage-first; misses are fetched from the data sources when <code>--fetch-missing</code> is on.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Short</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--relations</code></td>
+<td><code>-r</code></td>
+<td>all applicable</td>
+<td>Comma-separated: <code>references,citations,authors,papers,coauthors</code></td>
+</tr>
+<tr>
+<td><code>--depth</code></td>
+<td><code>-d</code></td>
+<td><code>1</code></td>
+<td>Expansion depth (max <code>Config.max_expand_depth</code>, 3)</td>
+</tr>
+<tr>
+<td><code>--sources</code></td>
+<td><code>-s</code></td>
+<td>config default</td>
+<td>Sources or <code>all</code></td>
+</tr>
+<tr>
+<td><code>--fetch-missing</code></td>
+<td></td>
+<td>on</td>
+<td><code>--no-fetch-missing</code> to only use stored data</td>
+</tr>
+<tr>
+<td><code>--output</code></td>
+<td><code>-o</code></td>
+<td>stdout JSON</td>
+<td>Output path</td>
+</tr>
+<tr>
+<td><code>--storage-type</code></td>
+<td></td>
+<td><code>sqlite</code></td>
+<td>Backend type</td>
+</tr>
+<tr>
+<td><code>--storage-path</code></td>
+<td></td>
+<td><code>./academic_intelligence.db</code></td>
+<td>Backend path</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--keyword<span class="w"> </span><span class="s2">&quot;Deep learning&quot;</span><span class="w"> </span>--output<span class="w"> </span>persisted-papers.json
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ai<span class="w"> </span>expand<span class="w"> </span><span class="s2">&quot;&lt;paper.id&gt;&quot;</span><span class="w"> </span>--relations<span class="w"> </span>references,citations,authors<span class="w"> </span>--depth<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>ai<span class="w"> </span>expand<span class="w"> </span><span class="s2">&quot;1695689&quot;</span><span class="w"> </span>--relations<span class="w"> </span>papers,coauthors<span class="w"> </span>--no-fetch-missing<span class="w"> </span>-o<span class="w"> </span>graph.json
+</code></pre></div>
+<p>The console reports <code>ExpandResult</code> statistics. With <code>--output</code>, the file is the complete session graph snapshot (<code>version</code>, <code>nodes</code>, <code>edges</code>, counts), written atomically for a later <code>ai export --snapshot</code> call.</p>
+<p>Graph operations require the persisted internal <code>Paper.id</code>/<code>Author.id</code>; a DOI suffix
+such as <code>nature14539</code> is not an internal ID. Persist collection results, then read the
+ID from the result or <code>ai query</code> output. A total relation failure with no useful node,
+edge, cache hit, or fetched record exits 2; useful partial results exit 0 and retain
+their warnings.</p>
+<h2 id="ai-export"><code>ai export</code><a class="headerlink" href="#ai-export" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ai<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--center<span class="w"> </span>&lt;entity_id&gt;<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+<p>Exports the subgraph around a center entity (undirected ego-graph traversal, radius default 2) as JSON.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Short</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--center</code></td>
+<td><code>-c</code></td>
+<td>(required)</td>
+<td>Center entity id</td>
+</tr>
+<tr>
+<td><code>--radius</code></td>
+<td><code>-r</code></td>
+<td><code>2</code></td>
+<td>Subgraph radius</td>
+</tr>
+<tr>
+<td><code>--output</code></td>
+<td><code>-o</code></td>
+<td>stdout JSON</td>
+<td>Output path</td>
+</tr>
+<tr>
+<td><code>--snapshot</code></td>
+<td></td>
+<td>current process graph</td>
+<td>Versioned snapshot from <code>ai expand --output</code></td>
+</tr>
+<tr>
+<td><code>--storage-type</code></td>
+<td></td>
+<td><code>sqlite</code></td>
+<td>Backend type</td>
+</tr>
+<tr>
+<td><code>--storage-path</code></td>
+<td></td>
+<td><code>./academic_intelligence.db</code></td>
+<td>Backend path</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ai<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--snapshot<span class="w"> </span>graph.json<span class="w"> </span>--center<span class="w"> </span><span class="s2">&quot;&lt;paper.id&gt;&quot;</span><span class="w"> </span>--radius<span class="w"> </span><span class="m">2</span><span class="w"> </span>--output<span class="w"> </span>subgraph.json
+</code></pre></div>
+<p>The payload is a serializable dict with <code>nodes</code>, <code>edges</code>, <code>center</code>, <code>radius</code>, <code>node_count</code>, <code>edge_count</code>.</p>
+<h2 id="ai-export-papers"><code>ai export-papers</code><a class="headerlink" href="#ai-export-papers" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ai<span class="w"> </span>export-papers<span class="w"> </span>--format<span class="w"> </span>csv<span class="w"> </span>--output<span class="w"> </span>papers.csv<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
+</code></pre></div>
+<p><code>--format</code> accepts <code>csv</code>, <code>jsonl</code>, or <code>parquet</code>; <code>--after &lt;paper-id&gt;</code> resumes after a previous ID cursor and <code>--batch-size</code> defaults to 500. Raw CSV uses UTF-8 and preserves values exactly. CSV-only <code>--excel-safe</code> adds a UTF-8 BOM and prefixes cells beginning with <code>=</code>, <code>+</code>, <code>-</code>, <code>@</code>, tab, or carriage return with an apostrophe. Nested model fields are deterministic JSON strings. JSONL writes one compact raw object per line. Parquet uses a declared stable schema and lazily imports pyarrow; install <code>academic-intelligence[export]</code> when unavailable or ABI-incompatible.</p>
 <h2 id="source-aliases">Source aliases<a class="headerlink" href="#source-aliases" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1773,14 +2073,16 @@
 </ul>
 <h2 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
 <p>API keys are read from the environment (see <a href="../../getting-started/configuration/">Configuration</a>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$env</span>:SERPAPI_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$env</span>:SEMANTIC_SCHOLAR_API_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nv">$env</span>:OPENALEX_EMAIL<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$env</span>:SERPAPI_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">$env</span>:SEMANTIC_SCHOLAR_API_KEY<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nv">$env</span>:OPENALEX_EMAIL<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;you@example.com&quot;</span>
 </code></pre></div>
 <h2 id="exit-behavior">Exit behavior<a class="headerlink" href="#exit-behavior" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Invalid year format or unsupported entity → Typer/<code>BadParameter</code> error</li>
 <li>Soft source errors print as yellow warnings but still emit partial JSON when possible</li>
+<li>Invalid input, corrupt snapshots, and total expansion failure exit with code 2</li>
+<li>Partial expansion with useful results exits 0 and prints relation failures</li>
 </ul>
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>

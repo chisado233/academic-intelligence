@@ -1,0 +1,31 @@
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build and generated documentation output
+build/
+dist/
+*.egg-info/
+site/
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+.env.*
+auth.json
+
+# Local data stores and transient files
+*.db
+*.db-shm
+*.db-wal
+*.tmp-*
+
+# Temporary workspace (framework clones, one-off scripts)
+tmp/

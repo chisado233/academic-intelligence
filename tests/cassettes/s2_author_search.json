@@ -1,0 +1,273 @@
+{
+ "interactions": [
+  {
+   "request": {
+    "host": "api.semanticscholar.org",
+    "path_contains": "/author/search",
+    "params_contains": {
+     "query": "haoyu lu"
+    }
+   },
+   "response": {
+    "status_code": 200,
+    "json": {
+     "total": 37,
+     "offset": 0,
+     "next": 25,
+     "data": [
+      {
+       "authorId": "66534892",
+       "url": "https://www.semanticscholar.org/author/66534892",
+       "name": "Luo Haoyu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 11,
+       "citationCount": 27,
+       "hIndex": 3
+      },
+      {
+       "authorId": "2118043903",
+       "url": "https://www.semanticscholar.org/author/2118043903",
+       "name": "Hao Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 6,
+       "citationCount": 41,
+       "hIndex": 2
+      },
+      {
+       "authorId": "50979781",
+       "url": "https://www.semanticscholar.org/author/50979781",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 41,
+       "citationCount": 447,
+       "hIndex": 12
+      },
+      {
+       "authorId": "2268377249",
+       "url": "https://www.semanticscholar.org/author/2268377249",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 29,
+       "citationCount": 53,
+       "hIndex": 4
+      },
+      {
+       "authorId": "2188558196",
+       "url": "https://www.semanticscholar.org/author/2188558196",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 6,
+       "citationCount": 92,
+       "hIndex": 4
+      },
+      {
+       "authorId": "2353119720",
+       "url": "https://www.semanticscholar.org/author/2353119720",
+       "name": "Hao Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 2,
+       "citationCount": 2,
+       "hIndex": 1
+      },
+      {
+       "authorId": "2115607965",
+       "url": "https://www.semanticscholar.org/author/2115607965",
+       "name": "Haoyuan Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 5,
+       "citationCount": 24,
+       "hIndex": 3
+      },
+      {
+       "authorId": "101136941",
+       "url": "https://www.semanticscholar.org/author/101136941",
+       "name": "LU Hao-yu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 4,
+       "citationCount": 0,
+       "hIndex": 0
+      },
+      {
+       "authorId": "30549647",
+       "url": "https://www.semanticscholar.org/author/30549647",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 8,
+       "citationCount": 441,
+       "hIndex": 5
+      },
+      {
+       "authorId": "2284865804",
+       "url": "https://www.semanticscholar.org/author/2284865804",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 9,
+       "citationCount": 17,
+       "hIndex": 2
+      },
+      {
+       "authorId": "2304780283",
+       "url": "https://www.semanticscholar.org/author/2304780283",
+       "name": "Hao-Yu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 6,
+       "citationCount": 15,
+       "hIndex": 2
+      },
+      {
+       "authorId": "2115606081",
+       "url": "https://www.semanticscholar.org/author/2115606081",
+       "name": "Hao Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 4,
+       "citationCount": 100,
+       "hIndex": 3
+      },
+      {
+       "authorId": "2218830983",
+       "url": "https://www.semanticscholar.org/author/2218830983",
+       "name": "H. Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 3,
+       "citationCount": 0,
+       "hIndex": 0
+      },
+      {
+       "authorId": "2115608152",
+       "url": "https://www.semanticscholar.org/author/2115608152",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 19,
+       "citationCount": 874,
+       "hIndex": 12
+      },
+      {
+       "authorId": "2327580321",
+       "url": "https://www.semanticscholar.org/author/2327580321",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 4,
+       "citationCount": 19,
+       "hIndex": 2
+      },
+      {
+       "authorId": "2115607412",
+       "url": "https://www.semanticscholar.org/author/2115607412",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 4,
+       "citationCount": 79,
+       "hIndex": 3
+      },
+      {
+       "authorId": "2220326014",
+       "url": "https://www.semanticscholar.org/author/2220326014",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 4,
+       "citationCount": 9,
+       "hIndex": 2
+      },
+      {
+       "authorId": "2331583524",
+       "url": "https://www.semanticscholar.org/author/2331583524",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 4,
+       "citationCount": 4,
+       "hIndex": 2
+      },
+      {
+       "authorId": "2353119718",
+       "url": "https://www.semanticscholar.org/author/2353119718",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 2,
+       "citationCount": 5,
+       "hIndex": 1
+      },
+      {
+       "authorId": "2450759075",
+       "url": "https://www.semanticscholar.org/author/2450759075",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 1,
+       "citationCount": 0,
+       "hIndex": 0
+      },
+      {
+       "authorId": "2341614056",
+       "url": "https://www.semanticscholar.org/author/2341614056",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 11,
+       "citationCount": 1492,
+       "hIndex": 5
+      },
+      {
+       "authorId": "2306061596",
+       "url": "https://www.semanticscholar.org/author/2306061596",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 9,
+       "citationCount": 96,
+       "hIndex": 5
+      },
+      {
+       "authorId": "2115607841",
+       "url": "https://www.semanticscholar.org/author/2115607841",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 2,
+       "citationCount": 63,
+       "hIndex": 2
+      },
+      {
+       "authorId": "2240232053",
+       "url": "https://www.semanticscholar.org/author/2240232053",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 2,
+       "citationCount": 0,
+       "hIndex": 0
+      },
+      {
+       "authorId": "2446376126",
+       "url": "https://www.semanticscholar.org/author/2446376126",
+       "name": "Haoyu Lu",
+       "affiliations": [],
+       "homepage": null,
+       "paperCount": 1,
+       "citationCount": 0,
+       "hIndex": 0
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

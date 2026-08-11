@@ -7,9 +7,13 @@
 | Unit | Models, processors, utils, pure logic | `pytest` |
 | Storage | SQLite / JSON backends with temp paths | `pytest` + tmp_path |
 | CLI / import | Entry points and package exports | `pytest` |
-| Integration / network | Live APIs | Marked `@pytest.mark.network` (opt-in) |
+| Integration | End-to-end pipelines and §17 acceptance | `pytest` + offline VCR-style cassettes |
 
-Goals for v0.1:
+Integration tests never touch live APIs: `tests/cassette_replay.py` replays
+JSON cassettes from `tests/cassettes/` by monkeypatching `HTTPClient.get`, so
+the whole suite (including `@pytest.mark.network` tests) runs offline in CI.
+
+Goals:
 
 - Fast default suite (no live network)
 - High coverage on models, processors, storage, utils
@@ -30,10 +34,10 @@ pytest -v
 # One file
 pytest tests/test_models.py
 
-# Skip slow tests
-pytest -m "not slow"
+# Fast development subset (omits scale, boundary, and performance suites)
+pytest -m "not slow and not boundary and not performance"
 
-# Network tests only (requires keys / network)
+# Network-marked tests (offline cassette replay — no keys / network needed)
 pytest -m network
 ```
 
@@ -116,6 +120,8 @@ Defined in `pyproject.toml`:
 | `slow` | Long-running tests |
 | `integration` | Cross-module integration |
 | `network` | Requires network access |
+| `boundary` | Large/input-boundary and concurrency stress tests |
+| `performance` | Explicit latency/throughput regression tests |
 
 ```python
 import pytest

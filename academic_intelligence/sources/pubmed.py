@@ -11,17 +11,32 @@ from __future__ import annotations
 
 import logging
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from datetime import UTC, datetime
+from typing import Any
+
+import httpx
 
 from academic_intelligence.core.exceptions import (
     ParseError,
     RateLimitError,
     SourceUnavailableError,
+    TimeoutError,
 )
-from academic_intelligence.core.models import Author, Citation, Evidence, Paper
+from academic_intelligence.core.models import (
+    Author,
+    AuthorRef,
+    Citation,
+    Evidence,
+    Paper,
+    normalize_doi,
+    normalize_pmid,
+)
 from academic_intelligence.core.types import AntiCrawlStrategy, SourceType
-from academic_intelligence.sources.base import BaseSource
+from academic_intelligence.sources.base import (
+    BaseSource,
+    is_rate_limit_status,
+    retry_after_from_error,
+)
 from academic_intelligence.utils.http import HTTPClient
 from academic_intelligence.utils.rate_limiter import create_rate_limiter
 
@@ -40,7 +55,7 @@ def _normalize_doi(doi: str) -> str:
     return cleaned
 
 
-def _text(el: Optional[ET.Element]) -> str:
+def _text(el: ET.Element | None) -> str:
     if el is None:
         return ""
     # Join all nested text (e.g. AbstractText with tags)
@@ -48,14 +63,25 @@ def _text(el: Optional[ET.Element]) -> str:
     return " ".join(" ".join(parts).split())
 
 
-def _safe_doi(doi: Optional[str], title: str, evidence: Evidence) -> Optional[str]:
-    if not doi:
-        return None
-    try:
-        Paper.model_validate({"title": title or "untitled", "doi": doi, "evidence": evidence})
-        return doi
-    except Exception:
-        return None
+def _safe_doi(doi: str | None, title: str, evidence: Evidence) -> str | None:
+    # (FIX-AB-3) Validate the DOI with the lightweight field-level helper
+    # instead of constructing a whole ``Paper`` just to run its validator:
+    # the per-article ``Paper.model_validate`` calls dominated the parse hot
+    # path (measured ~6 pydantic validations per article, two of them only
+    # for the DOI/PMID guards).  ``title`` / ``evidence`` are kept for
+    # signature stability — the old full-model guard validated only the DOI.
+    return normalize_doi(doi)
+
+
+def _safe_pmid(pmid: str | None) -> str | None:
+    """Return *pmid* when it satisfies the NCBI 1-8 digit spec, else None.
+
+    (FIX-S S2) The model now rejects malformed PMIDs, so the parser softens
+    an invalid value instead of letting the whole article fail to parse.
+    (FIX-AB-3) Validated with the shared field-level helper instead of a
+    full ``Paper.model_validate``.
+    """
+    return normalize_pmid(pmid)
 
 
 class PubMedSource(BaseSource):
@@ -63,15 +89,23 @@ class PubMedSource(BaseSource):
 
     name = "pubmed"
     source_type = SourceType.PUBMED
+    capabilities = {
+        **BaseSource.capabilities,
+        # C1 revision: PubMed implements author lookups and elink citations.
+        "citations": True,
+        "get_author_papers": True,
+        "get_author_profile": True,
+        "get_citations": True,
+    }
 
     def __init__(
         self,
-        http_client: Optional[HTTPClient] = None,
+        http_client: HTTPClient | None = None,
         *,
-        api_key: Optional[str] = None,
+        api_key: str | None = None,
         tool: str = "academic_intelligence",
-        email: Optional[str] = None,
-        confidence: float = 0.9,
+        email: str | None = None,
+        confidence: float = 0.92,
     ) -> None:
         self._http = http_client
         self._owns_client = http_client is None
@@ -102,19 +136,25 @@ class PubMedSource(BaseSource):
             await self._http.close()
             self._http = None
 
-    def _common_params(self) -> Dict[str, Any]:
-        params: Dict[str, Any] = {"tool": self.tool}
+    def _common_params(self) -> dict[str, Any]:
+        params: dict[str, Any] = {"tool": self.tool}
         if self.email:
             params["email"] = self.email
         if self.api_key:
             params["api_key"] = self.api_key
         return params
 
-    def _evidence(self, url: str, raw: Optional[Dict[str, Any]] = None) -> Evidence:
+    def _evidence(
+        self,
+        url: str,
+        raw: dict[str, Any] | None = None,
+        source_id: str | None = None,
+    ) -> Evidence:
         return Evidence(
             source=self.source_type,
+            source_id=source_id,
             source_url=url,
-            collected_at=datetime.now(timezone.utc),
+            collected_at=datetime.now(UTC),
             confidence=self.confidence,
             raw_data=raw,
         )
@@ -122,7 +162,7 @@ class PubMedSource(BaseSource):
     async def _get(
         self,
         endpoint: str,
-        params: Optional[Dict[str, Any]] = None,
+        params: dict[str, Any] | None = None,
         *,
         expect_json: bool = False,
     ) -> Any:
@@ -131,7 +171,18 @@ class PubMedSource(BaseSource):
         query = {**self._common_params(), **(params or {})}
         try:
             response = await client.get(url, params=query)
+        except httpx.TimeoutException as exc:
+            raise TimeoutError(
+                f"PubMed request timed out: {exc}",
+                source_name=self.name,
+            ) from exc
         except Exception as exc:
+            if is_rate_limit_status(exc):
+                raise RateLimitError(
+                    "PubMed / NCBI rate limit exceeded",
+                    source_name=self.name,
+                    retry_after=retry_after_from_error(exc),
+                ) from exc
             raise SourceUnavailableError(
                 f"PubMed request failed: {exc}",
                 source_name=self.name,
@@ -161,7 +212,7 @@ class PubMedSource(BaseSource):
                 ) from exc
         return response.text
 
-    async def _esearch(self, term: str, *, retmax: int = 10) -> List[str]:
+    async def _esearch(self, term: str, *, retmax: int = 10) -> list[str]:
         data = await self._get(
             "esearch.fcgi",
             {
@@ -179,13 +230,15 @@ class PubMedSource(BaseSource):
         idlist = result.get("idlist") or result.get("idList") or []
         return [str(i) for i in idlist if i]
 
-    def _parse_article(self, article: ET.Element) -> Optional[Paper]:
+    def _parse_article(self, article: ET.Element) -> Paper | None:
         medline = article.find("MedlineCitation")
         if medline is None:
             return None
 
         pmid_el = medline.find("PMID")
-        pmid = _text(pmid_el) or None
+        # Soften a malformed PMID (FIX-S S2) so one bad value never drops
+        # the whole article.
+        pmid = _safe_pmid(_text(pmid_el) or None)
 
         article_el = medline.find("Article")
         if article_el is None:
@@ -196,7 +249,7 @@ class PubMedSource(BaseSource):
             return None
 
         # Abstract: may be multiple AbstractText nodes
-        abstract_parts: List[str] = []
+        abstract_parts: list[str] = []
         abstract_el = article_el.find("Abstract")
         if abstract_el is not None:
             for abs_text in abstract_el.findall("AbstractText"):
@@ -206,7 +259,7 @@ class PubMedSource(BaseSource):
                     abstract_parts.append(f"{label}: {body}" if label else body)
         abstract = " ".join(abstract_parts) if abstract_parts else None
 
-        authors: List[str] = []
+        authors: list[AuthorRef] = []
         author_list = article_el.find("AuthorList")
         if author_list is not None:
             for author in author_list.findall("Author"):
@@ -214,16 +267,16 @@ class PubMedSource(BaseSource):
                 fore = _text(author.find("ForeName")) or _text(author.find("Initials"))
                 collective = _text(author.find("CollectiveName"))
                 if last and fore:
-                    authors.append(f"{fore} {last}")
+                    authors.append(AuthorRef(name=f"{fore} {last}", position=len(authors) + 1))
                 elif last:
-                    authors.append(last)
+                    authors.append(AuthorRef(name=last, position=len(authors) + 1))
                 elif collective:
-                    authors.append(collective)
+                    authors.append(AuthorRef(name=collective, position=len(authors) + 1))
 
         # Year from Journal Issue / PubDate
-        year: Optional[int] = None
+        year: int | None = None
         journal = article_el.find("Journal")
-        venue: Optional[str] = None
+        venue: str | None = None
         if journal is not None:
             venue = _text(journal.find("Title")) or _text(journal.find("ISOAbbreviation")) or None
             pub_date = journal.find("JournalIssue/PubDate")
@@ -237,7 +290,7 @@ class PubMedSource(BaseSource):
                         year = int(medline_date[:4])
 
         # DOI from ArticleIdList (PubmedData) or ELocationID
-        doi: Optional[str] = None
+        doi: str | None = None
         pubmed_data = article.find("PubmedData")
         if pubmed_data is not None:
             for aid in pubmed_data.findall("ArticleIdList/ArticleId"):
@@ -250,7 +303,7 @@ class PubMedSource(BaseSource):
                     doi = _text(eloc) or None
                     break
 
-        keywords: List[str] = []
+        keywords: list[str] = []
         # MeSH headings
         mesh_list = medline.find("MeshHeadingList")
         if mesh_list is not None:
@@ -267,7 +320,7 @@ class PubMedSource(BaseSource):
                     keywords.append(val)
 
         url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else "https://pubmed.ncbi.nlm.nih.gov/"
-        evidence = self._evidence(url, raw={"pmid": pmid, "mesh": keywords[:20]})
+        evidence = self._evidence(url, raw={"pmid": pmid, "mesh": keywords[:20]}, source_id=pmid)
         safe_doi = _safe_doi(doi, title, evidence)
 
         return Paper(
@@ -278,14 +331,15 @@ class PubMedSource(BaseSource):
             venue=venue,
             abstract=abstract,
             doi=safe_doi,
+            pmid=pmid,
             url=url if url.startswith("http") else None,
             pdf_url=None,
             citations=None,
             keywords=keywords[:30],
-            evidence=evidence,
+            evidence_list=[evidence],
         )
 
-    def _parse_efetch_xml(self, xml_text: str) -> List[Paper]:
+    def _parse_efetch_xml(self, xml_text: str) -> list[Paper]:
         try:
             root = ET.fromstring(xml_text)
         except ET.ParseError as exc:
@@ -295,7 +349,7 @@ class PubMedSource(BaseSource):
                 raw_snippet=xml_text[:300],
             ) from exc
 
-        papers: List[Paper] = []
+        papers: list[Paper] = []
         # Root is usually PubmedArticleSet
         articles = root.findall("PubmedArticle")
         if not articles and root.tag.endswith("PubmedArticle"):
@@ -309,7 +363,7 @@ class PubMedSource(BaseSource):
                 logger.debug("Skip PubMed article parse: %s", exc)
         return papers
 
-    async def _fetch_by_ids(self, ids: List[str]) -> List[Paper]:
+    async def _fetch_by_ids(self, ids: list[str]) -> list[Paper]:
         if not ids:
             return []
         xml_text = await self._get(
@@ -324,7 +378,7 @@ class PubMedSource(BaseSource):
         )
         return self._parse_efetch_xml(str(xml_text))
 
-    async def search_papers(self, query: str, limit: int = 10) -> List[Paper]:
+    async def search_papers(self, query: str, limit: int = 10) -> list[Paper]:
         """Search PubMed (supports free text and MeSH-style terms)."""
         q = query.strip()
         if not q:
@@ -333,7 +387,7 @@ class PubMedSource(BaseSource):
         papers = await self._fetch_by_ids(ids)
         return papers[:limit]
 
-    async def get_paper_by_doi(self, doi: str) -> Optional[Paper]:
+    async def get_paper_by_doi(self, doi: str) -> Paper | None:
         """Fetch a PubMed article by DOI."""
         cleaned = _normalize_doi(doi)
         if not cleaned:
@@ -348,7 +402,7 @@ class PubMedSource(BaseSource):
                 return paper
         return papers[0] if papers else None
 
-    async def get_author_papers(self, author_name: str) -> List[Paper]:
+    async def get_author_papers(self, author_name: str) -> list[Paper]:
         """Search papers by author name using the Author field tag."""
         name = author_name.strip()
         if not name:
@@ -357,7 +411,7 @@ class PubMedSource(BaseSource):
         ids = await self._esearch(f"{name}[Author]", retmax=50)
         return await self._fetch_by_ids(ids)
 
-    async def get_author_profile(self, author_name: str) -> Optional[Author]:
+    async def get_author_profile(self, author_name: str) -> Author | None:
         """Build a lightweight author profile from PubMed search results.
 
         PubMed has no dedicated author profile API; interests are derived
@@ -371,11 +425,11 @@ class PubMedSource(BaseSource):
             return None
 
         matched_name = name
-        interests: List[str] = []
+        interests: list[str] = []
         for paper in papers:
-            for a in paper.authors:
-                if a.lower() == name.lower() or name.lower() in a.lower():
-                    matched_name = a
+            for ref in paper.authors:
+                if ref.name.lower() == name.lower() or name.lower() in ref.name.lower():
+                    matched_name = ref.name
                     break
             for kw in paper.keywords:
                 if kw and kw not in interests:
@@ -396,10 +450,12 @@ class PubMedSource(BaseSource):
             citations=None,
             interests=interests[:15],
             profile_url=profile_url,
-            evidence=self._evidence(profile_url, raw={"paper_count": len(papers)}),
+            evidence_list=[
+                self._evidence(profile_url, raw={"paper_count": len(papers)})
+            ],
         )
 
-    async def get_citations(self, paper_id: str) -> List[Citation]:
+    async def get_citations(self, paper_id: str) -> list[Citation]:
         """Fetch papers that cite *paper_id* via elink (pubmed_pubmed_citedin).
 
         *paper_id* should be a PubMed PMID. Returns empty list on failure.
@@ -426,7 +482,7 @@ class PubMedSource(BaseSource):
         if not data or not isinstance(data, dict):
             return []
 
-        citations: List[Citation] = []
+        citations: list[Citation] = []
         source_url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
         linksets = data.get("linksets") or data.get("linkSets") or []
         for linkset in linksets:

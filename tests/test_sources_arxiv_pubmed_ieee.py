@@ -215,7 +215,7 @@ async def test_arxiv_search_papers_parses_atom() -> None:
 
     assert len(papers) == 2
     assert papers[0].title == "Attention Is All You Need"
-    assert "Ashish Vaswani" in papers[0].authors
+    assert any(a.name == "Ashish Vaswani" for a in papers[0].authors)
     assert papers[0].year == 2017
     assert papers[0].id == "1706.03762v7"
     assert papers[0].url and "arxiv.org/abs" in papers[0].url
@@ -298,7 +298,7 @@ async def test_pubmed_search_papers_two_step() -> None:
     assert len(papers) == 2
     assert papers[0].id == "12345678"
     assert papers[0].title == "Deep learning for medical imaging"
-    assert "Jane Smith" in papers[0].authors
+    assert any(a.name == "Jane Smith" for a in papers[0].authors)
     assert papers[0].year == 2020
     assert papers[0].venue == "Nature"
     assert papers[0].doi == "10.1038/s41586-020-0001-1"
@@ -392,7 +392,7 @@ async def test_ieee_search_papers() -> None:
 
     assert len(papers) == 2
     assert papers[0].title.startswith("A Novel Vision Transformer")
-    assert "Alice Chen" in papers[0].authors
+    assert any(a.name == "Alice Chen" for a in papers[0].authors)
     assert papers[0].year == 2021
     assert papers[0].doi == "10.1109/TPAMI.2020.1234567"
     assert papers[0].citations == 42

@@ -1536,13 +1536,14 @@
 <hr />
 <h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>academic_intelligence/
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── core/           # Models, types, exceptions
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── sources/        # Data source plugins
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>├── collectors/     # Collection orchestration
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>├── processors/     # Deduplication, enrichment, validation
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>├── storage/        # SQLite / JSON backends
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>├── utils/          # HTTP, proxy, rate limiter, retry, cache
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>└── cli.py          # Command-line interface
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── core/           # Models (v2), types/Config, exceptions, constants
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── sources/        # Source adapters (arXiv, OpenAlex, S2, PubMed, IEEE, Google Scholar)
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>├── collectors/     # Multi-source collection orchestration
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>├── processors/     # Deduplication, disambiguation, scoring, enrichment, validation, incremental
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>├── graph/          # Knowledge graph (expand / subgraph / path)
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>├── storage/        # SQLite / JSON backends
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>├── utils/          # HTTP, proxy, rate limiter, retry, cache
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>└── cli.py          # Command-line interface
 </code></pre></div>
 <p>See <a href="development/architecture/">Architecture</a> for module boundaries and extension points.</p>
 <hr />

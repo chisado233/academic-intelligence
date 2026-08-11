@@ -9,19 +9,32 @@ from __future__ import annotations
 
 import logging
 import re
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from datetime import UTC, datetime
+from typing import Any
 from urllib.parse import quote_plus
+
+import httpx
 
 from academic_intelligence.core.exceptions import (
     AuthenticationError,
     ParseError,
     RateLimitError,
     SourceUnavailableError,
+    TimeoutError,
 )
-from academic_intelligence.core.models import Author, Citation, Evidence, Paper
+from academic_intelligence.core.models import (
+    Author,
+    AuthorRef,
+    Citation,
+    Evidence,
+    Paper,
+)
 from academic_intelligence.core.types import SourceType
-from academic_intelligence.sources.base import BaseSource
+from academic_intelligence.sources.base import (
+    BaseSource,
+    is_rate_limit_status,
+    retry_after_from_error,
+)
 from academic_intelligence.utils.http import HTTPClient
 
 logger = logging.getLogger(__name__)
@@ -41,12 +54,20 @@ class GoogleScholarSource(BaseSource):
 
     name = "google_scholar"
     source_type = SourceType.GOOGLE_SCHOLAR
+    capabilities = {
+        **BaseSource.capabilities,
+        # C1 revision: kept for consistency (adapter disabled by default).
+        "citations": True,
+        "get_author_papers": True,
+        "get_author_profile": True,
+        "get_citations": True,
+    }
 
     def __init__(
         self,
-        http_client: Optional[HTTPClient] = None,
+        http_client: HTTPClient | None = None,
         *,
-        serpapi_key: Optional[str] = None,
+        serpapi_key: str | None = None,
         confidence: float = 0.75,
     ) -> None:
         """Initialize Google Scholar source.
@@ -82,23 +103,40 @@ class GoogleScholarSource(BaseSource):
             )
         return self.serpapi_key
 
-    def _evidence(self, url: str, raw: Optional[Dict[str, Any]] = None) -> Evidence:
+    def _evidence(
+        self,
+        url: str,
+        raw: dict[str, Any] | None = None,
+        source_id: str | None = None,
+    ) -> Evidence:
         return Evidence(
             source=self.source_type,
+            source_id=source_id,
             source_url=url,
-            collected_at=datetime.now(timezone.utc),
+            collected_at=datetime.now(UTC),
             confidence=self.confidence,
             raw_data=raw,
         )
 
-    async def _serpapi_get(self, params: Dict[str, Any]) -> Dict[str, Any]:
+    async def _serpapi_get(self, params: dict[str, Any]) -> dict[str, Any]:
         key = self._require_key()
         client = await self._client()
         # Callers may override engine (e.g. google_scholar_profiles); keep api_key last
         query_params = {"engine": "google_scholar", **params, "api_key": key}
         try:
             response = await client.get(_SERPAPI_URL, params=query_params)
+        except httpx.TimeoutException as exc:
+            raise TimeoutError(
+                f"SerpAPI request timed out: {exc}",
+                source_name=self.name,
+            ) from exc
         except Exception as exc:
+            if is_rate_limit_status(exc):
+                raise RateLimitError(
+                    "SerpAPI rate limit exceeded",
+                    source_name=self.name,
+                    retry_after=retry_after_from_error(exc),
+                ) from exc
             raise SourceUnavailableError(
                 f"SerpAPI request failed: {exc}",
                 source_name=self.name,
@@ -108,6 +146,7 @@ class GoogleScholarSource(BaseSource):
             raise RateLimitError(
                 "SerpAPI rate limit exceeded",
                 source_name=self.name,
+                retry_after=int(response.headers.get("Retry-After", "1") or 1),
             )
         if response.status_code == 401:
             raise AuthenticationError(
@@ -135,37 +174,52 @@ class GoogleScholarSource(BaseSource):
             )
         return data  # type: ignore[no-any-return]
 
-    def _parse_organic(self, item: Dict[str, Any], source_url: str) -> Optional[Paper]:
+    def _parse_organic(self, item: dict[str, Any], source_url: str) -> Paper | None:
         title = (item.get("title") or "").strip()
         if not title:
             return None
         publication_info = item.get("publication_info") or {}
         summary = publication_info.get("summary") or ""
-        authors: List[str] = []
+        authors: list[AuthorRef] = []
         if "authors" in publication_info and isinstance(publication_info["authors"], list):
-            authors = [
-                a.get("name", a) if isinstance(a, dict) else str(a)
-                for a in publication_info["authors"]
-            ]
+            for a in publication_info["authors"]:
+                name = a.get("name", a) if isinstance(a, dict) else str(a)
+                authors.append(AuthorRef(name=str(name), position=len(authors) + 1))
         elif summary:
             # "A Author, B Author - Venue, 2020 - publisher"
             head = summary.split(" - ")[0]
-            authors = [a.strip() for a in head.split(",") if a.strip()]
+            for name in (a.strip() for a in head.split(",") if a.strip()):
+                authors.append(AuthorRef(name=name, position=len(authors) + 1))
 
-        year: Optional[int] = None
+        year: int | None = None
         year_match = _YEAR_RE.search(summary) or _YEAR_RE.search(title)
         if year_match:
             year = int(year_match.group(0))
 
-        venue: Optional[str] = None
+        venue: str | None = None
         parts = [p.strip() for p in summary.split(" - ") if p.strip()]
-        if len(parts) >= 2:
-            venue_part = parts[1]
-            venue = _YEAR_RE.sub("", venue_part).strip(" ,")
+        if len(parts) >= 3:
+            # "Author(s) - Venue, 2020 - publisher"
+            if not _YEAR_RE.sub("", parts[1]).strip():
+                # "T Mitchell - 1997 - McGraw Hill": parts[1] is the year
+                # itself, so the venue segment is missing and the trailing
+                # publisher stands in for it (FIX-J J-1)
+                venue = parts[2].strip(" ,")
+            else:
+                venue = _YEAR_RE.sub("", parts[1]).strip(" ,")
+        elif len(parts) == 2:
+            if _YEAR_RE.search(parts[0]) and not _YEAR_RE.search(parts[1]):
+                # "Conference on X, 2019 - IEEE": no author segment; the venue
+                # (with its year) precedes the publisher
+                venue = parts[0].strip(" ,")
+            else:
+                venue = _YEAR_RE.sub("", parts[1]).strip(" ,")
+        else:
+            venue = None
 
         inline = item.get("inline_links") or {}
         cited_by = inline.get("cited_by") or {}
-        citation_count: Optional[int] = None
+        citation_count: int | None = None
         if isinstance(cited_by, dict) and cited_by.get("total") is not None:
             try:
                 citation_count = int(cited_by["total"])
@@ -176,7 +230,7 @@ class GoogleScholarSource(BaseSource):
         url = link if isinstance(link, str) and link.startswith("http") else source_url
 
         resources = item.get("resources") or []
-        pdf_url: Optional[str] = None
+        pdf_url: str | None = None
         for res in resources:
             if isinstance(res, dict) and res.get("file_format", "").upper() == "PDF":
                 pdf_url = res.get("link")
@@ -194,15 +248,17 @@ class GoogleScholarSource(BaseSource):
             pdf_url=pdf_url,
             citations=citation_count,
             keywords=[],
-            evidence=self._evidence(source_url, raw=item),
+            evidence_list=[
+                self._evidence(source_url, raw=item, source_id=item.get("result_id"))
+            ],
         )
 
-    async def search_papers(self, query: str, limit: int = 10) -> List[Paper]:
+    async def search_papers(self, query: str, limit: int = 10) -> list[Paper]:
         """Search Google Scholar for papers matching *query*."""
         data = await self._serpapi_get({"q": query, "num": min(limit, 20)})
         source_url = f"https://scholar.google.com/scholar?q={quote_plus(query)}"
         organic = data.get("organic_results") or []
-        papers: List[Paper] = []
+        papers: list[Paper] = []
         for item in organic:
             if not isinstance(item, dict):
                 continue
@@ -213,7 +269,7 @@ class GoogleScholarSource(BaseSource):
                 break
         return papers
 
-    async def get_paper_by_doi(self, doi: str) -> Optional[Paper]:
+    async def get_paper_by_doi(self, doi: str) -> Paper | None:
         """Search Scholar by DOI string."""
         papers = await self.search_papers(f'doi:"{doi}"', limit=5)
         cleaned = doi.lower().strip()
@@ -223,12 +279,12 @@ class GoogleScholarSource(BaseSource):
         # Fall back to first result if DOI is in title/snippet context
         return papers[0] if papers else None
 
-    async def get_author_papers(self, author_name: str) -> List[Paper]:
+    async def get_author_papers(self, author_name: str) -> list[Paper]:
         """Retrieve papers by author via Scholar author search query."""
         query = f'author:"{author_name}"'
         return await self.search_papers(query, limit=20)
 
-    async def get_author_profile(self, author_name: str) -> Optional[Author]:
+    async def get_author_profile(self, author_name: str) -> Author | None:
         """Retrieve a basic author profile from Scholar author search.
 
         Uses SerpAPI ``google_scholar_profiles`` when available.
@@ -254,7 +310,7 @@ class GoogleScholarSource(BaseSource):
             f"https://scholar.google.com/citations?view_op=search_authors&mauthors="
             f"{quote_plus(author_name)}"
         )
-        interests: List[str] = []
+        interests: list[str] = []
         for item in profile.get("interests") or []:
             if isinstance(item, dict) and item.get("title"):
                 interests.append(str(item["title"]))
@@ -262,7 +318,7 @@ class GoogleScholarSource(BaseSource):
                 interests.append(item)
 
         cited_by = profile.get("cited_by")
-        citations: Optional[int] = None
+        citations: int | None = None
         if cited_by is not None:
             try:
                 citations = int(cited_by)
@@ -279,13 +335,17 @@ class GoogleScholarSource(BaseSource):
             citations=citations,
             interests=interests,
             profile_url=source_url if isinstance(source_url, str) else None,
-            evidence=self._evidence(
-                source_url if isinstance(source_url, str) else "https://scholar.google.com",
-                raw=profile,
-            ),
+            evidence_list=[
+                self._evidence(
+                    source_url
+                    if isinstance(source_url, str)
+                    else "https://scholar.google.com",
+                    raw=profile,
+                )
+            ],
         )
 
-    async def get_citations(self, paper_id: str) -> List[Citation]:
+    async def get_citations(self, paper_id: str) -> list[Citation]:
         """Retrieve citing papers for a Scholar result id via SerpAPI cites.
 
         Note: Google Scholar citation edges are modeled as citing → cited,
@@ -299,7 +359,7 @@ class GoogleScholarSource(BaseSource):
         )
         source_url = f"https://scholar.google.com/scholar?cites={quote_plus(paper_id)}"
         organic = data.get("organic_results") or []
-        citations: List[Citation] = []
+        citations: list[Citation] = []
         for item in organic:
             if not isinstance(item, dict):
                 continue

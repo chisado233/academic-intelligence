@@ -8,7 +8,6 @@ from __future__ import annotations
 
 from academic_intelligence.core.types import SourceType
 
-
 # ---------------------------------------------------------------------------
 # Rate Limiting Defaults
 # ---------------------------------------------------------------------------
@@ -28,8 +27,8 @@ DEFAULT_RETRY_BACKOFF: float = 2.0
 DEFAULT_MIN_CONFIDENCE: float = 0.5
 """Default minimum confidence score for accepting collected data."""
 
-DEFAULT_DEDUPLICATION_THRESHOLD: float = 0.95
-"""Default similarity threshold for deduplication (0.0-1.0)."""
+DEFAULT_DEDUPLICATION_THRESHOLD: float = 0.85
+"""Default similarity threshold for deduplication (0.0-1.0); mirrors ``Config.deduplication_threshold`` (0.85)."""
 
 
 # ---------------------------------------------------------------------------

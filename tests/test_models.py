@@ -7,6 +7,7 @@ from pydantic import ValidationError
 
 from academic_intelligence.core.models import (
     Author,
+    AuthorRef,
     Citation,
     CollectionResult,
     Evidence,
@@ -66,3 +67,53 @@ def test_collection_result_json_roundtrip() -> None:
 def test_author_invalid_email() -> None:
     with pytest.raises(ValidationError):
         Author(name="Ada", email="not-an-email", evidence=_evidence())
+
+
+# ---------------------------------------------------------------------------
+# I-8: input size limits
+# ---------------------------------------------------------------------------
+
+
+def test_paper_overlong_title_rejected() -> None:
+    with pytest.raises(ValidationError):
+        Paper(title="x" * 501, evidence=_evidence())
+
+
+def test_paper_overlong_abstract_rejected() -> None:
+    with pytest.raises(ValidationError):
+        Paper(title="T", abstract="a" * 20001, evidence=_evidence())
+
+
+def test_paper_overlong_venue_rejected() -> None:
+    with pytest.raises(ValidationError):
+        Paper(title="T", venue="v" * 301, evidence=_evidence())
+
+
+def test_paper_overlong_keyword_rejected() -> None:
+    with pytest.raises(ValidationError):
+        Paper(title="T", keywords=["k" * 101], evidence=_evidence())
+
+
+def test_author_overlong_name_rejected() -> None:
+    with pytest.raises(ValidationError):
+        Author(name="n" * 201, evidence=_evidence())
+
+
+def test_author_ref_overlong_name_rejected() -> None:
+    with pytest.raises(ValidationError):
+        AuthorRef(name="n" * 201)
+
+
+def test_evidence_overlong_source_url_rejected() -> None:
+    with pytest.raises(ValidationError):
+        Evidence(source=SourceType.OPENALEX, source_url="https://e.com/" + "u" * 2000)
+
+
+def test_paper_evidence_list_capped() -> None:
+    with pytest.raises(ValidationError):
+        Paper(title="T", evidence_list=[_evidence() for _ in range(501)])
+
+
+def test_author_evidence_list_capped() -> None:
+    with pytest.raises(ValidationError):
+        Author(name="Ada", evidence_list=[_evidence() for _ in range(501)])

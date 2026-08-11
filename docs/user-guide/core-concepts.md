@@ -98,11 +98,13 @@ When merging duplicates, higher-confidence field values generally win; multi-sou
 
 | Model | Role |
 |-------|------|
-| `Evidence` | Provenance + confidence |
-| `Author` | Scholar profile |
-| `Paper` | Publication metadata |
+| `Evidence` | Provenance + confidence (one entry per confirming source) |
+| `AuthorRef` | Lightweight byline author inside a paper (order, correspondence) |
+| `Author` | Scholar profile (incl. identity IDs and disambiguation status) |
+| `Paper` | Publication metadata (incl. `arxiv_id` / `pmid` / `fields_of_study` / graph relations) |
 | `Citation` | Citing → cited edge |
 | `CollectionResult` | Batch outcome of a collect call |
+| `ExpandResult` / `ExpandStats` | Outcome of a graph `expand` pass |
 | `Config` / `AntiCrawlStrategy` | Runtime configuration |
 
 See [API: Core Models](../api/core-models.md) for generated field docs.

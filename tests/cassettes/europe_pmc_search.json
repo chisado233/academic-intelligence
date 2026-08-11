@@ -1,0 +1,1398 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "www.ebi.ac.uk",
+        "path_contains": "/search",
+        "params_contains": {
+          "query": "deepseek",
+          "format": "json"
+        }
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "version": "6.9",
+          "hitCount": 4745,
+          "nextCursorMark": "AoIIQIYr7ig1NTk2MTY0Mw==",
+          "nextPageUrl": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=deepseek&cursorMark=AoIIQIYr7ig1NTk2MTY0Mw==&resultType=core&pageSize=3&format=json",
+          "request": {
+            "queryString": "deepseek",
+            "resultType": "core",
+            "cursorMark": "*",
+            "pageSize": 3,
+            "sort": "",
+            "synonym": false
+          },
+          "resultList": {
+            "result": [
+              {
+                "id": "PPR1280713",
+                "source": "PPR",
+                "doi": "10.21203/rs.3.rs-10292081/v1",
+                "title": "DeepSeek for Pathology Report Understanding: A Benchmark Study of Cancer Type Extraction, AJCC Staging, and Prognosis Prediction",
+                "authorString": "Kone M, Haidara G, Hou C, Wang S.",
+                "authorList": {
+                  "author": [
+                    {
+                      "fullName": "Kone M",
+                      "firstName": "Mohamed",
+                      "lastName": "Kone",
+                      "initials": "M"
+                    },
+                    {
+                      "fullName": "Haidara G",
+                      "firstName": "Gaoussou",
+                      "lastName": "Haidara",
+                      "initials": "G"
+                    },
+                    {
+                      "fullName": "Hou C",
+                      "firstName": "Chao",
+                      "lastName": "Hou",
+                      "initials": "C"
+                    },
+                    {
+                      "fullName": "Wang S",
+                      "firstName": "Shulin",
+                      "lastName": "Wang",
+                      "initials": "S"
+                    }
+                  ]
+                },
+                "pubYear": "2026",
+                "abstractText": "<title>Abstract</title>  <p>Background: Pathology reports contain clinically important information for cancer diagnosis, staging, and outcome research, but their unstructured format limits scalable reuse. We evaluated whether DeepSeek can support pathology report understanding across cancer type extraction, AJCC stage prediction, and prognosis classification. <h4>Methods:</h4> We conducted an inde",
+                "pubTypeList": {
+                  "pubType": [
+                    "Preprint"
+                  ]
+                },
+                "bookOrReportDetails": {
+                  "publisher": "Research Square",
+                  "yearOfPublication": 2026
+                },
+                "fullTextUrlList": {
+                  "fullTextUrl": [
+                    {
+                      "availability": "Free",
+                      "availabilityCode": "F",
+                      "documentStyle": "doi",
+                      "site": "DOI",
+                      "url": "https://doi.org/10.21203/rs.3.rs-10292081/v1"
+                    }
+                  ]
+                },
+                "isOpenAccess": "N",
+                "inEPMC": "N",
+                "inPMC": "N",
+                "hasPDF": "N",
+                "hasBook": "N",
+                "hasSuppl": "N",
+                "citedByCount": 0,
+                "hasData": "N",
+                "hasReferences": "N",
+                "hasTextMinedTerms": "Y",
+                "hasDbCrossReferences": "N",
+                "hasLabsLinks": "N",
+                "license": "cc by",
+                "versionList": {
+                  "version": [
+                    {
+                      "id": "PPR1280713",
+                      "source": "PPR",
+                      "firstPublishDate": "2026-07-17",
+                      "versionNumber": 1,
+                      "pubTypeList": {
+                        "pubType": [
+                          "preprint"
+                        ]
+                      },
+                      "hasEvaluations": "N"
+                    }
+                  ]
+                },
+                "versionNumber": 1,
+                "hasEvaluations": "N",
+                "authMan": "N",
+                "epmcAuthMan": "N",
+                "nihAuthMan": "N",
+                "hasTMAccessionNumbers": "N",
+                "dateOfCreation": "2026-07-18",
+                "firstIndexDate": "2026-07-18",
+                "firstPublicationDate": "2026-07-17"
+              },
+              {
+                "id": "42520216",
+                "source": "MED",
+                "pmid": "42520216",
+                "doi": "10.2196/93890",
+                "title": "The Performance of ChatGPT-4o and DeepSeek-R1 in Interpreting Thyroid Nodule Ultrasound Text Reports: Multicenter Study.",
+                "authorString": "Xie Y, Liu J, Zhan B, Zhang K, Li Y, Ning C.",
+                "authorList": {
+                  "author": [
+                    {
+                      "fullName": "Xie Y",
+                      "firstName": "Yujie",
+                      "lastName": "Xie",
+                      "initials": "Y",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0009-0009-4877-616X"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Ultrasound, Affiliated Hospital of Qingdao University, No. 16 Jiangsu Road, Qingdao, Shandong, 266000, China, 86 18661806751."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Liu J",
+                      "firstName": "Jiarui",
+                      "lastName": "Liu",
+                      "initials": "J",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0009-0009-0587-4632"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Ultrasound, Affiliated Hospital of Qingdao University, No. 16 Jiangsu Road, Qingdao, Shandong, 266000, China, 86 18661806751."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Zhan B",
+                      "firstName": "Bing",
+                      "lastName": "Zhan",
+                      "initials": "B",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0009-0007-2588-1114"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Ultrasound, JiaoZhou Central Hospital of Qingdao, Qingdao, China."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Zhang K",
+                      "firstName": "Kangfan",
+                      "lastName": "Zhang",
+                      "initials": "K",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0009-0006-6862-0021"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Ultrasound, Tai'an City Central Hospital, Tai'an, China."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Li Y",
+                      "firstName": "Yuchen",
+                      "lastName": "Li",
+                      "initials": "Y",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0009-0009-2169-1182"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Ultrasound, Affiliated Hospital of Qingdao University, No. 16 Jiangsu Road, Qingdao, Shandong, 266000, China, 86 18661806751."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Ning C",
+                      "firstName": "Chunping",
+                      "lastName": "Ning",
+                      "initials": "C",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0003-1045-077X"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Ultrasound, Affiliated Hospital of Qingdao University, No. 16 Jiangsu Road, Qingdao, Shandong, 266000, China, 86 18661806751."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "authorIdList": {
+                  "authorId": [
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0003-1045-077X"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0009-0006-6862-0021"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0009-0007-2588-1114"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0009-0009-0587-4632"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0009-0009-2169-1182"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0009-0009-4877-616X"
+                    }
+                  ]
+                },
+                "journalInfo": {
+                  "volume": "28",
+                  "journalIssueId": 4225053,
+                  "dateOfPublication": "2026 Jul",
+                  "monthOfPublication": 7,
+                  "yearOfPublication": 2026,
+                  "printPublicationDate": "2026-07-01",
+                  "journal": {
+                    "title": "Journal of medical Internet research",
+                    "medlineAbbreviation": "J Med Internet Res",
+                    "isoabbreviation": "J Med Internet Res",
+                    "nlmid": "100959882",
+                    "issn": "1439-4456",
+                    "essn": "1438-8871"
+                  }
+                },
+                "pubYear": "2026",
+                "pageInfo": "e93890",
+                "abstractText": "<h4>Background</h4>Although thyroid nodules are detected in up to 60% of adults on ultrasound, the vast majority are benign, creating a substantial decision-making burden compounded by heterogeneous practice guidelines. Large language models (LLMs) show promise in processing unstructured medical text and are emerging as tools for report interpretation among both clinicians and patients. However, t",
+                "affiliation": "Department of Ultrasound, Affiliated Hospital of Qingdao University, No. 16 Jiangsu Road, Qingdao, Shandong, 266000, China, 86 18661806751.",
+                "publicationStatus": "epublish",
+                "language": "eng",
+                "pubModel": "Electronic",
+                "pubTypeList": {
+                  "pubType": [
+                    "Multicenter Study",
+                    "Journal Article"
+                  ]
+                },
+                "meshHeadingList": {
+                  "meshHeading": [
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Humans"
+                    },
+                    {
+                      "majorTopic_YN": "Y",
+                      "descriptorName": "Thyroid Nodule",
+                      "meshQualifierList": {
+                        "meshQualifier": [
+                          {
+                            "abbreviation": "DG",
+                            "qualifierName": "diagnostic imaging",
+                            "majorTopic_YN": "N"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Ultrasonography"
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Retrospective Studies"
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Reproducibility of Results"
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Large Language Models"
+                    }
+                  ]
+                },
+                "keywordList": {
+                  "keyword": [
+                    "Artificial intelligence",
+                    "ultrasound",
+                    "Thyroid Nodule",
+                    "C-Tirads",
+                    "Chatgpt",
+                    "Large Language Model",
+                    "Chinese Thyroid Imaging Reporting And Data System",
+                    "Deepseek"
+                  ]
+                },
+                "subsetList": {
+                  "subset": [
+                    {
+                      "code": "IM",
+                      "name": "Index Medicus"
+                    }
+                  ]
+                },
+                "fullTextUrlList": {
+                  "fullTextUrl": [
+                    {
+                      "availability": "Subscription required",
+                      "availabilityCode": "S",
+                      "documentStyle": "doi",
+                      "site": "DOI",
+                      "url": "https://doi.org/10.2196/93890"
+                    }
+                  ]
+                },
+                "isOpenAccess": "N",
+                "inEPMC": "N",
+                "inPMC": "N",
+                "hasPDF": "N",
+                "hasBook": "N",
+                "hasSuppl": "N",
+                "citedByCount": 0,
+                "hasData": "N",
+                "hasReferences": "Y",
+                "hasTextMinedTerms": "Y",
+                "hasDbCrossReferences": "N",
+                "hasLabsLinks": "N",
+                "hasEvaluations": "N",
+                "authMan": "N",
+                "epmcAuthMan": "N",
+                "nihAuthMan": "N",
+                "hasTMAccessionNumbers": "N",
+                "dateOfCompletion": "2026-07-29",
+                "dateOfCreation": "2026-07-28",
+                "firstIndexDate": "2026-07-30",
+                "dateOfRevision": "2026-07-31",
+                "electronicPublicationDate": "2026-07-28",
+                "firstPublicationDate": "2026-07-28"
+              },
+              {
+                "id": "42443861",
+                "source": "MED",
+                "pmid": "42443861",
+                "doi": "10.1186/s12909-026-09918-w",
+                "title": "Medical students' attitudes, usage patterns, and associated factors with DeepSeek adoption in education: a cross-sectional study in China.",
+                "authorString": "Liu W, Cao LL, Chen XY, Pan HF.",
+                "authorList": {
+                  "author": [
+                    {
+                      "fullName": "Liu W",
+                      "firstName": "Wei",
+                      "lastName": "Liu",
+                      "initials": "W",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "School of Public Health, Anhui Medical University, 81 Meishan Road, Hefei, Anhui, China."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Cao LL",
+                      "firstName": "Lei-Lei",
+                      "lastName": "Cao",
+                      "initials": "LL",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "School of Public Health, Anhui Medical University, 81 Meishan Road, Hefei, Anhui, China."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Chen XY",
+                      "firstName": "Xiao-Yu",
+                      "lastName": "Chen",
+                      "initials": "XY",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Preventive Medicine, School of Public Health, Anhui Medical University, 81 Meishan Road, Hefei, Anhui, China."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Pan HF",
+                      "firstName": "Hai-Feng",
+                      "lastName": "Pan",
+                      "initials": "HF",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Epidemiology and Biostatistics, School of Public Health, Anhui Medical University, 81 Meishan Road, Hefei, Anhui, China. panhaifeng@ahmu.edu.cn."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "journalInfo": {
+                  "journalIssueId": 4223328,
+                  "dateOfPublication": "2026 Jul",
+                  "monthOfPublication": 7,
+                  "yearOfPublication": 2026,
+                  "printPublicationDate": "2026-07-01",
+                  "journal": {
+                    "title": "BMC medical education",
+                    "medlineAbbreviation": "BMC Med Educ",
+                    "isoabbreviation": "BMC Med Educ",
+                    "nlmid": "101088679",
+                    "issn": "1472-6920",
+                    "essn": "1472-6920"
+                  }
+                },
+                "pubYear": "2026",
+                "abstractText": "<h4>Background</h4>With the growing integration of generative Artificial Intelligence (AI) into healthcare, the DeepSeek large language model has emerged as a versatile tool for medical students, offering adaptive learning solutions tailored to various medical scenarios. However, the adoption of AI in medicine also raises ethical concerns that require warrant consideration. This study aimed to inv",
+                "affiliation": "School of Public Health, Anhui Medical University, 81 Meishan Road, Hefei, Anhui, China.",
+                "publicationStatus": "aheadofprint",
+                "language": "eng",
+                "pubModel": "Print-Electronic",
+                "pubTypeList": {
+                  "pubType": [
+                    "Journal Article"
+                  ]
+                },
+                "keywordList": {
+                  "keyword": [
+                    "Medical education",
+                    "Medical Students",
+                    "Attitude Study",
+                    "Usage Behavior",
+                    "Deepseek"
+                  ]
+                },
+                "subsetList": {
+                  "subset": [
+                    {
+                      "code": "IM",
+                      "name": "Index Medicus"
+                    }
+                  ]
+                },
+                "fullTextUrlList": {
+                  "fullTextUrl": [
+                    {
+                      "availability": "Subscription required",
+                      "availabilityCode": "S",
+                      "documentStyle": "doi",
+                      "site": "DOI",
+                      "url": "https://doi.org/10.1186/s12909-026-09918-w"
+                    }
+                  ]
+                },
+                "isOpenAccess": "N",
+                "inEPMC": "N",
+                "inPMC": "N",
+                "hasPDF": "N",
+                "hasBook": "N",
+                "hasSuppl": "N",
+                "citedByCount": 0,
+                "hasData": "N",
+                "hasReferences": "N",
+                "hasTextMinedTerms": "N",
+                "hasDbCrossReferences": "N",
+                "hasLabsLinks": "N",
+                "hasEvaluations": "N",
+                "authMan": "N",
+                "epmcAuthMan": "N",
+                "nihAuthMan": "N",
+                "hasTMAccessionNumbers": "N",
+                "dateOfCreation": "2026-07-14",
+                "firstIndexDate": "2026-07-15",
+                "dateOfRevision": "2026-07-14",
+                "electronicPublicationDate": "2026-07-13",
+                "firstPublicationDate": "2026-07-13"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "www.ebi.ac.uk",
+        "path_contains": "/search",
+        "params_contains": {
+          "query": "DOI:"
+        }
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "version": "6.9",
+          "hitCount": 1,
+          "request": {
+            "queryString": "DOI:\"10.1038/s41586-020-2649-2\"",
+            "resultType": "core",
+            "cursorMark": "*",
+            "pageSize": 1,
+            "sort": "",
+            "synonym": false
+          },
+          "resultList": {
+            "result": [
+              {
+                "id": "32939066",
+                "source": "MED",
+                "pmid": "32939066",
+                "pmcid": "PMC7759461",
+                "fullTextIdList": {
+                  "fullTextId": [
+                    "PMC7759461"
+                  ]
+                },
+                "doi": "10.1038/s41586-020-2649-2",
+                "title": "Array programming with NumPy.",
+                "authorString": "Harris CR, Millman KJ, van der Walt SJ, Gommers R, Virtanen P, Cournapeau D, Wieser E, Taylor J, Berg S, Smith NJ, Kern R, Picus M, Hoyer S, van Kerkwijk MH, Brett M, Haldane A, Del Río JF, Wiebe M, Peterson P, Gérard-Marchant P, Sheppard K, Reddy T, Weckesser W, Abbasi H, Gohlke C, Oliphant TE.",
+                "authorList": {
+                  "author": [
+                    {
+                      "fullName": "Harris CR",
+                      "firstName": "Charles R",
+                      "lastName": "Harris",
+                      "initials": "CR",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Independent researcher, Logan, UT, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Millman KJ",
+                      "firstName": "K Jarrod",
+                      "lastName": "Millman",
+                      "initials": "KJ",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0002-5263-5070"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Brain Imaging Center, University of California, Berkeley, Berkeley, CA, USA. millman@berkeley.edu."
+                          },
+                          {
+                            "affiliation": "Division of Biostatistics, University of California, Berkeley, Berkeley, CA, USA. millman@berkeley.edu."
+                          },
+                          {
+                            "affiliation": "Berkeley Institute for Data Science, University of California, Berkeley, Berkeley, CA, USA. millman@berkeley.edu."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "van der Walt SJ",
+                      "firstName": "Stéfan J",
+                      "lastName": "van der Walt",
+                      "initials": "SJ",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-9276-1891"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Brain Imaging Center, University of California, Berkeley, Berkeley, CA, USA. stefanv@berkeley.edu."
+                          },
+                          {
+                            "affiliation": "Berkeley Institute for Data Science, University of California, Berkeley, Berkeley, CA, USA. stefanv@berkeley.edu."
+                          },
+                          {
+                            "affiliation": "Applied Mathematics, Stellenbosch University, Stellenbosch, South Africa. stefanv@berkeley.edu."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Gommers R",
+                      "firstName": "Ralf",
+                      "lastName": "Gommers",
+                      "initials": "R",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0002-0300-3333"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Quansight, Austin, TX, USA. ralf.gommers@gmail.com."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Virtanen P",
+                      "firstName": "Pauli",
+                      "lastName": "Virtanen",
+                      "initials": "P",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-9957-1257"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Physics, University of Jyväskylä, Jyväskylä, Finland."
+                          },
+                          {
+                            "affiliation": "Nanoscience Center, University of Jyväskylä, Jyväskylä, Finland."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Cournapeau D",
+                      "firstName": "David",
+                      "lastName": "Cournapeau",
+                      "initials": "D",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Mercari JP, Tokyo, Japan."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Wieser E",
+                      "firstName": "Eric",
+                      "lastName": "Wieser",
+                      "initials": "E",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0003-0412-4978"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Engineering, University of Cambridge, Cambridge, UK."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Taylor J",
+                      "firstName": "Julian",
+                      "lastName": "Taylor",
+                      "initials": "J",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Independent researcher, Karlsruhe, Germany."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Berg S",
+                      "firstName": "Sebastian",
+                      "lastName": "Berg",
+                      "initials": "S",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Berkeley Institute for Data Science, University of California, Berkeley, Berkeley, CA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Smith NJ",
+                      "firstName": "Nathaniel J",
+                      "lastName": "Smith",
+                      "initials": "NJ",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Independent researcher, Berkeley, CA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Kern R",
+                      "firstName": "Robert",
+                      "lastName": "Kern",
+                      "initials": "R",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Enthought, Austin, TX, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Picus M",
+                      "firstName": "Matti",
+                      "lastName": "Picus",
+                      "initials": "M",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0002-1771-9949"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Berkeley Institute for Data Science, University of California, Berkeley, Berkeley, CA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Hoyer S",
+                      "firstName": "Stephan",
+                      "lastName": "Hoyer",
+                      "initials": "S",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0002-5207-0380"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Google Research, Mountain View, CA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "van Kerkwijk MH",
+                      "firstName": "Marten H",
+                      "lastName": "van Kerkwijk",
+                      "initials": "MH",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0002-5830-8505"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Astronomy and Astrophysics, University of Toronto, Toronto, Ontario, Canada."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Brett M",
+                      "firstName": "Matthew",
+                      "lastName": "Brett",
+                      "initials": "M",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Brain Imaging Center, University of California, Berkeley, Berkeley, CA, USA."
+                          },
+                          {
+                            "affiliation": "School of Psychology, University of Birmingham, Edgbaston, Birmingham, UK."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Haldane A",
+                      "firstName": "Allan",
+                      "lastName": "Haldane",
+                      "initials": "A",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Physics, Temple University, Philadelphia, PA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Del Río JF",
+                      "firstName": "Jaime Fernández",
+                      "lastName": "Del Río",
+                      "initials": "JF",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Google, Zurich, Switzerland."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Wiebe M",
+                      "firstName": "Mark",
+                      "lastName": "Wiebe",
+                      "initials": "M",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0003-3603-8038"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Physics and Astronomy, The University of British Columbia, Vancouver, British Columbia, Canada."
+                          },
+                          {
+                            "affiliation": "Amazon, Seattle, WA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Peterson P",
+                      "firstName": "Pearu",
+                      "lastName": "Peterson",
+                      "initials": "P",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-7328-4305"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Quansight, Austin, TX, USA."
+                          },
+                          {
+                            "affiliation": "Independent researcher, Saue, Estonia."
+                          },
+                          {
+                            "affiliation": "Department of Mechanics and Applied Mathematics, Institute of Cybernetics at Tallinn Technical University, Tallinn, Estonia."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Gérard-Marchant P",
+                      "firstName": "Pierre",
+                      "lastName": "Gérard-Marchant",
+                      "initials": "P",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Biological and Agricultural Engineering, University of Georgia, Athens, GA, USA."
+                          },
+                          {
+                            "affiliation": "France-IX Services, Paris, France."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Sheppard K",
+                      "firstName": "Kevin",
+                      "lastName": "Sheppard",
+                      "initials": "K",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-8700-2292"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Department of Economics, University of Oxford, Oxford, UK."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Reddy T",
+                      "firstName": "Tyler",
+                      "lastName": "Reddy",
+                      "initials": "T",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "CCS-7, Los Alamos National Laboratory, Los Alamos, NM, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Weckesser W",
+                      "firstName": "Warren",
+                      "lastName": "Weckesser",
+                      "initials": "W",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Berkeley Institute for Data Science, University of California, Berkeley, Berkeley, CA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Abbasi H",
+                      "firstName": "Hameer",
+                      "lastName": "Abbasi",
+                      "initials": "H",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Quansight, Austin, TX, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Gohlke C",
+                      "firstName": "Christoph",
+                      "lastName": "Gohlke",
+                      "initials": "C",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-8108-7707"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Laboratory for Fluorescence Dynamics, Biomedical Engineering Department, University of California, Irvine, Irvine, CA, USA."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Oliphant TE",
+                      "firstName": "Travis E",
+                      "lastName": "Oliphant",
+                      "initials": "TE",
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Quansight, Austin, TX, USA."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "authorIdList": {
+                  "authorId": [
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-7328-4305"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-8108-7707"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-8700-2292"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-9276-1891"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-9957-1257"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0002-0300-3333"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0002-1771-9949"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0002-5207-0380"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0002-5263-5070"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0002-5830-8505"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0003-0412-4978"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0003-3603-8038"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0009-0001-1459-4562"
+                    }
+                  ]
+                },
+                "dataLinksTagsList": {
+                  "dataLinkstag": [
+                    "supporting_data",
+                    "recommended_reviews"
+                  ]
+                },
+                "journalInfo": {
+                  "issue": "7825",
+                  "volume": "585",
+                  "journalIssueId": 3010253,
+                  "dateOfPublication": "2020 Sep",
+                  "monthOfPublication": 9,
+                  "yearOfPublication": 2020,
+                  "printPublicationDate": "2020-09-01",
+                  "journal": {
+                    "title": "Nature",
+                    "medlineAbbreviation": "Nature",
+                    "isoabbreviation": "Nature",
+                    "nlmid": "0410462",
+                    "issn": "0028-0836",
+                    "essn": "1476-4687"
+                  }
+                },
+                "pubYear": "2020",
+                "pageInfo": "357-362",
+                "abstractText": "Array programming provides a powerful, compact and expressive syntax for accessing, manipulating and operating on data in vectors, matrices and higher-dimensional arrays. NumPy is the primary array programming library for the Python language. It has an essential role in research analysis pipelines in fields as diverse as physics, chemistry, astronomy, geoscience, biology, psychology, materials science, engineering, finance and economics. For example, in astronomy, NumPy was an important part of the software stack used in the discovery of gravitational waves<sup>1</sup> and in the first imaging of a black hole<sup>2</sup>. Here we review how a few fundamental array concepts lead to a simple and powerful programming paradigm for organizing, exploring and analysing scientific data. NumPy is the foundation upon which the scientific Python ecosystem is constructed. It is so pervasive that several projects, targeting audiences with specialized needs, have developed their own NumPy-like interfaces and array objects. Owing to its central position in the ecosystem, NumPy increasingly acts as an interoperability layer between such array computation libraries and, together with its application programming interface (API), provides a flexible framework to support the next decade of scientific and industrial analysis.",
+                "affiliation": "Independent researcher, Logan, UT, USA.",
+                "publicationStatus": "ppublish",
+                "language": "eng",
+                "pubModel": "Print-Electronic",
+                "pubTypeList": {
+                  "pubType": [
+                    "Research Support, Non-U.S. Gov't",
+                    "review-article",
+                    "Review",
+                    "Journal Article"
+                  ]
+                },
+                "meshHeadingList": {
+                  "meshHeading": [
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Computational Biology",
+                      "meshQualifierList": {
+                        "meshQualifier": [
+                          {
+                            "abbreviation": "MT",
+                            "qualifierName": "methods",
+                            "majorTopic_YN": "Y"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "majorTopic_YN": "Y",
+                      "descriptorName": "Mathematics"
+                    },
+                    {
+                      "majorTopic_YN": "Y",
+                      "descriptorName": "Programming Languages"
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Software Design"
+                    }
+                  ]
+                },
+                "subsetList": {
+                  "subset": [
+                    {
+                      "code": "IM",
+                      "name": "Index Medicus"
+                    }
+                  ]
+                },
+                "fullTextUrlList": {
+                  "fullTextUrl": [
+                    {
+                      "availability": "Subscription required",
+                      "availabilityCode": "S",
+                      "documentStyle": "doi",
+                      "site": "DOI",
+                      "url": "https://doi.org/10.1038/s41586-020-2649-2"
+                    },
+                    {
+                      "availability": "Open access",
+                      "availabilityCode": "OA",
+                      "documentStyle": "html",
+                      "site": "Europe_PMC",
+                      "url": "https://europepmc.org/articles/PMC7759461"
+                    },
+                    {
+                      "availability": "Open access",
+                      "availabilityCode": "OA",
+                      "documentStyle": "pdf",
+                      "site": "Europe_PMC",
+                      "url": "https://europepmc.org/articles/PMC7759461?pdf=render"
+                    }
+                  ]
+                },
+                "isOpenAccess": "Y",
+                "inEPMC": "Y",
+                "inPMC": "Y",
+                "hasPDF": "Y",
+                "hasBook": "N",
+                "hasSuppl": "Y",
+                "citedByCount": 7572,
+                "hasData": "Y",
+                "hasReferences": "Y",
+                "hasTextMinedTerms": "Y",
+                "hasDbCrossReferences": "N",
+                "hasLabsLinks": "Y",
+                "license": "cc by",
+                "hasEvaluations": "N",
+                "authMan": "N",
+                "epmcAuthMan": "N",
+                "nihAuthMan": "N",
+                "hasTMAccessionNumbers": "Y",
+                "tmAccessionTypeList": {
+                  "accessionType": [
+                    "doi"
+                  ]
+                },
+                "dateOfCompletion": "2020-10-29",
+                "dateOfCreation": "2020-09-17",
+                "firstIndexDate": "2020-09-23",
+                "fullTextReceivedDate": "2025-02-03",
+                "dateOfRevision": "2021-02-20",
+                "electronicPublicationDate": "2020-09-16",
+                "firstPublicationDate": "2020-09-16"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "www.ebi.ac.uk",
+        "path_contains": "/search",
+        "params_contains": {
+          "query": "EXT_ID:33033895"
+        }
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "version": "6.9",
+          "hitCount": 1,
+          "request": {
+            "queryString": "EXT_ID:33033895",
+            "resultType": "core",
+            "cursorMark": "*",
+            "pageSize": 1,
+            "sort": "",
+            "synonym": false
+          },
+          "resultList": {
+            "result": [
+              {
+                "id": "33033895",
+                "source": "MED",
+                "pmid": "33033895",
+                "doi": "10.1007/s00426-020-01427-9",
+                "title": "Is the construction of spatial models multimodal? New evidences towards sensory-motor information involvement from temporary blindness study.",
+                "authorString": "Grison E, Jaco AA.",
+                "authorList": {
+                  "author": [
+                    {
+                      "fullName": "Grison E",
+                      "firstName": "Elise",
+                      "lastName": "Grison",
+                      "initials": "E",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-7282-9094"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "IFSTTAR, Laboratoire de Psychologie des Comportements et des mobilités, 78000, Versailles, France. eligrison@gmail.com."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "fullName": "Jaco AA",
+                      "firstName": "Amandine Afonso",
+                      "lastName": "Jaco",
+                      "initials": "AA",
+                      "authorId": {
+                        "type": "ORCID",
+                        "value": "0000-0001-5341-562X"
+                      },
+                      "authorAffiliationDetailsList": {
+                        "authorAffiliation": [
+                          {
+                            "affiliation": "Université de Paris, Laboratoire Mémoire, Cerveau et Cognition, 92100, Boulogne Billancourt, France."
+                          },
+                          {
+                            "affiliation": "Université Lumière Lyon 2, Laboratoire Développement, Individu, Processus, Handicap, Éducation, 69676, Bron Cedex, France."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "authorIdList": {
+                  "authorId": [
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-5341-562X"
+                    },
+                    {
+                      "type": "ORCID",
+                      "value": "0000-0001-7282-9094"
+                    }
+                  ]
+                },
+                "journalInfo": {
+                  "issue": "7",
+                  "volume": "85",
+                  "journalIssueId": 3234303,
+                  "dateOfPublication": "2021 Oct",
+                  "monthOfPublication": 10,
+                  "yearOfPublication": 2021,
+                  "printPublicationDate": "2021-10-01",
+                  "journal": {
+                    "title": "Psychological research",
+                    "medlineAbbreviation": "Psychol Res",
+                    "isoabbreviation": "Psychol Res",
+                    "nlmid": "0435062",
+                    "issn": "0340-0727",
+                    "essn": "1430-2772"
+                  }
+                },
+                "pubYear": "2021",
+                "pageInfo": "2636-2653",
+                "abstractText": "Using new developments of interference paradigm, this paper addresses the raising question of the involvement of sensory-motor information in the construction of elaborate spatial models (Johnson-Laird in Mental models: towards a cognitive science of language, inference, and consciousness Cambridge University Press Cambridge, 1983). In two experiments, 112 participants had to explore and memorize the spatial arrangement of 12 objects, disposed on 3 tables. Participants were either sighted or blindfolded, leading to a visual or a more sensory-motor based exploration of the room. During exploration, participants were required to perform a classical verbal, a visuo-spatial dual task or none. In the second experiment, more exploratory, we draw on interference paradigm literature and its recent development in the embodied field to develop two original dual tasks meant to interfere directly with the acquisition of sensory-motor information (haptic and action). After this learning phase, five tasks addressing spatial memory and reasoning used in the construction of spatial models were performed. Results showed classical effects for both verbal and visuo-spatial tasks for sighted participants, but not for blindfolded sighted ones, suggesting that a temporary visual deprivation led participants to use other way to build their spatial models. Our second experiment confirmed this point by showing effect of both sensory-motor dual tasks, especially for blindfolded sighted participants. Taking together, our results support a multimodal view of spatial models, and that exploration modality will influence the information used to construct them. Moreover, this challenges the Baddeley's dualist view of working memory as a reference to theorize the construction of spatial models and provide new experimental evidences towards an embodied view of spatial models.",
+                "affiliation": "IFSTTAR, Laboratoire de Psychologie des Comportements et des mobilités, 78000, Versailles, France. eligrison@gmail.com.",
+                "publicationStatus": "ppublish",
+                "language": "eng",
+                "pubModel": "Print-Electronic",
+                "pubTypeList": {
+                  "pubType": [
+                    "Journal Article"
+                  ]
+                },
+                "grantsList": {
+                  "grant": [
+                    {
+                      "grantId": "ANR-18-CE38-0004",
+                      "agency": "ANR RASPUTIN",
+                      "orderIn": 0
+                    },
+                    {
+                      "grantId": "ANR-13-APPR-009-01",
+                      "agency": "ANR SIMULANG",
+                      "orderIn": 0
+                    }
+                  ]
+                },
+                "meshHeadingList": {
+                  "meshHeading": [
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Humans"
+                    },
+                    {
+                      "majorTopic_YN": "Y",
+                      "descriptorName": "Blindness"
+                    },
+                    {
+                      "majorTopic_YN": "Y",
+                      "descriptorName": "Memory, Short-Term"
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Problem Solving"
+                    },
+                    {
+                      "majorTopic_YN": "N",
+                      "descriptorName": "Vision, Ocular"
+                    }
+                  ]
+                },
+                "subsetList": {
+                  "subset": [
+                    {
+                      "code": "IM",
+                      "name": "Index Medicus"
+                    }
+                  ]
+                },
+                "fullTextUrlList": {
+                  "fullTextUrl": [
+                    {
+                      "availability": "Subscription required",
+                      "availabilityCode": "S",
+                      "documentStyle": "doi",
+                      "site": "DOI",
+                      "url": "https://doi.org/10.1007/s00426-020-01427-9"
+                    }
+                  ]
+                },
+                "isOpenAccess": "N",
+                "inEPMC": "N",
+                "inPMC": "N",
+                "hasPDF": "N",
+                "hasBook": "N",
+                "hasSuppl": "N",
+                "citedByCount": 2,
+                "hasData": "N",
+                "hasReferences": "Y",
+                "hasTextMinedTerms": "Y",
+                "hasDbCrossReferences": "N",
+                "hasLabsLinks": "N",
+                "hasEvaluations": "N",
+                "authMan": "N",
+                "epmcAuthMan": "N",
+                "nihAuthMan": "N",
+                "hasTMAccessionNumbers": "N",
+                "dateOfCompletion": "2021-09-16",
+                "dateOfCreation": "2020-10-09",
+                "firstIndexDate": "2020-10-16",
+                "dateOfRevision": "2021-09-16",
+                "electronicPublicationDate": "2020-10-09",
+                "firstPublicationDate": "2020-10-09"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "host": "www.ebi.ac.uk",
+        "path_contains": "/PMC7759461/fullTextXML"
+      },
+      "response": {
+        "status_code": 200,
+        "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><article xml:lang=\"en\" article-type=\"review-article\"><front><journal-meta><journal-id journal-id-type=\"pmc-domain-id\">981</journal-id><journal-id journal-id-type=\"pmc-domain\">npgopen</journal-id><journal-title-group><journal-title>Nature</journal-title><abbrev-journal-title>Nature</abbrev-journal-title></journal-title-group></journal-meta><article-meta><article-id pub-id-type=\"pmcid\">PMC7759461</article-id><article-id pub-id-type=\"pmcaid\">7759461</article-id><article-id pub-id-type=\"pmcaiid\">7759461</article-id><article-id pub-id-type=\"pmid\">32939066</article-id><article-id pub-id-type=\"doi\">10.1038/s41586-020-2649-2</article-id><title-group><article-title>Array programming with NumPy</article-title></title-group><contrib-group content-type=\"author\"><contrib><name name-style=\"western\"><surname>Harris</surname><given-names initials=\"CR\">Charles R</given-names></name><xref ref-type=\"aff\" rid=\"Aff1\">1</xref></contrib><contrib><name name-style=\"western\"><surname>Millman</surname><given-names initials=\"KJ\">K Jarrod</given-names></name><xref ref-type=\"aff\" rid=\"Aff2\">2</xref><xref ref-type=\"aff\" rid=\"Aff3\">3</xref><xref ref-type=\"aff\" rid=\"Aff4\">4</xref><xref ref-type=\"author-notes\" rid=\"_fncrsp93pmc__\">✉</xref></contrib><contrib><name name-style=\"western\"><surname>van der Walt</surname><given-names initials=\"SJ\">Stéfan J</given-names></name><xref ref-type=\"aff\" rid=\"Aff2\">2</xref><xref ref-type=\"aff\" rid=\"Aff4\">4</xref><xref ref-type=\"aff\" rid=\"Aff5\">5</xref><xref ref-type=\"author-notes\" rid=\"_fncrsp93pmc__\">✉</xref></contrib><contrib><name name-style=\"western\"><surname>Gommers</surname><given-names initials=\"R\">Ralf</given-names></name><xref ref-type=\"aff\" rid=\"Aff6\">6</xref><xref ref-type=\"author-notes\" rid=\"_fncrsp93pmc__\">✉</xref></contrib><contrib><name name-style=\"western\"><surname>Virtanen</surname><given-names initials=\"P\">Pauli</given-names></name><xref ref-type=\"aff\" rid=\"Aff7\">7</xref><xref ref-type=\"aff\" rid=\"Aff8\">8</xref></contrib><contrib><name name-style=\"western\"><surname>Cournapeau</surname><given-names initials=\"D\">David</given-names></name><xref ref-type=\"aff\" rid=\"Aff9\">9</xref></contrib><contrib><name name-style=\"western\"><surname>Wieser</surname><given-names initials=\"E\">Eric</given-names></name><xref ref-type=\"aff\" rid=\"Aff10\">10</xref></contrib><contrib><name name-style=\"western\"><surname>Taylor</surname><given-names initials=\"J\">Julian</given-names></name><xref ref-type=\"aff\" rid=\"Aff11\">11</xref></contrib><contrib><name name-style=\"western\"><surname>Berg</surname><given-names initials=\"S\">Sebastian</given-names></name><xref ref-type=\"aff\" rid=\"Aff4\">4</xref></contrib><contrib><name name-style=\"western\"><surname>Smith</surname><given-names initials=\"NJ\">Nathaniel J</given-names></name><xref ref-type=\"aff\" rid=\"Aff12\">12</xref></contrib><contrib><name name-style=\"western\"><surname>Kern</surname><given-names initials=\"R\">Robert</given-names></name><xref ref-type=\"aff\" rid=\"Aff13\">13</xref><"
+      }
+    },
+    {
+      "request": {
+        "host": "www.ebi.ac.uk",
+        "path_contains": "/PMC7292645/fullTextXML"
+      },
+      "response": {
+        "status_code": 200,
+        "text": "\n<!DOCTYPE article\n  PUBLIC \"-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN\" \"JATS-archivearticle1-4-mathml3.dtd\">\n<article article-type=\"research-article\" xml:lang=\"en\" dtd-version=\"1.4\"><front><journal-meta><journal-id journal-id-type=\"nlm-ta\">eLife</journal-id><journal-id journal-id-type=\"iso-abbrev\">Elife</journal-id><journal-id journal-id-type=\"pmc-domain-id\">1894</journal-id><journal-id journal-id-type=\"pmc-domain\">elife</journal-id><journal-id journal-id-type=\"nlm-id\">101579614</journal-id><journal-id journal-id-type=\"publisher-id\">eLife</journal-id><journal-title-group><journal-title>eLife</journal-title></journal-title-group><issn pub-type=\"epub\">2050-084X</issn><?publisher_abbrev elifesci?><publisher><publisher-name>eLife Sciences Publications, Ltd</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type=\"pmcid\">PMC7292645</article-id><article-id pub-id-type=\"pmcid-ver\">PMC7292645.1</article-id><article-id pub-id-type=\"pmcaid\">7292645</article-id><article-id pub-id-type=\"pmcaiid\">7292645</article-id><article-id pub-id-type=\"pmid\">32479259</article-id><article-id pub-id-type=\"doi\">10.7554/eLife.55096</article-id><article-id pub-id-type=\"publisher-id\">55096</article-id><article-version article-version-type=\"pmc-version\">1</article-version><article-categories><subj-group subj-group-type=\"display-channel\"><subject>Research Article</subject></subj-group><subj-group subj-group-type=\"heading\"><subject>Cell Biology</subject></subj-group></article-categories><title-group><article-title>The copy-number and varied strengths of MELT motifs in Spc105 balance the strength and responsiveness of the spindle assembly checkpoint</article-title></title-group><contrib-group><contrib id=\"author-171201\" contrib-type=\"author\"><name name-style=\"western\"><surname>Roy</surname><given-names initials=\"B\">Babhrubahan</given-names></name><contrib-id authenticated=\"true\" contrib-id-type=\"orcid\">https://orcid.org/0000-0003-1815-8714</contrib-id><xref ref-type=\"aff\" rid=\"aff1\"/><xref ref-type=\"fn\" rid=\"con1\"/><xref ref-type=\"fn\" rid=\"conf1\"/></contrib><contrib id=\"author-171198\" contrib-type=\"author\"><name name-style=\"western\"><surname>Han</surname><given-names initials=\"SJY\">Simon JY</given-names></name><contrib-id authenticated=\"true\" contrib-id-type=\"orcid\">https://orcid.org/0000-0001-8039-510X</contrib-id><xref ref-type=\"aff\" rid=\"aff1\"/><xref ref-type=\"fn\" rid=\"con2\"/><xref ref-type=\"fn\" rid=\"conf1\"/><xref ref-type=\"author-notes\" rid=\"pa1\">†</xref></contrib><contrib id=\"author-187836\" contrib-type=\"author\"><name name-style=\"western\"><surname>Fontan</surname><given-names initials=\"AN\">Adrienne Nicole</given-names></name><xref ref-type=\"aff\" rid=\"aff1\"/><xref ref-type=\"fn\" rid=\"con3\"/><xref ref-type=\"fn\" rid=\"conf1\"/><xref ref-type=\"author-notes\" rid=\"pa2\">‡</xref></contrib><contrib id=\"author-11655\" contrib-type=\"author\" corresp=\"yes\"><name name-style=\"western\"><surname>Joglekar</surname><given"
+      }
+    }
+  ]
+}

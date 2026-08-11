@@ -11,18 +11,32 @@ from __future__ import annotations
 import logging
 import re
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from datetime import UTC, datetime
+from typing import Any
 from urllib.parse import quote_plus
+
+import httpx
 
 from academic_intelligence.core.exceptions import (
     ParseError,
     RateLimitError,
     SourceUnavailableError,
+    TimeoutError,
 )
-from academic_intelligence.core.models import Author, Citation, Evidence, Paper
+from academic_intelligence.core.models import (
+    Author,
+    AuthorRef,
+    Citation,
+    Evidence,
+    Paper,
+    normalize_doi,
+)
 from academic_intelligence.core.types import AntiCrawlStrategy, SourceType
-from academic_intelligence.sources.base import BaseSource
+from academic_intelligence.sources.base import (
+    BaseSource,
+    is_rate_limit_status,
+    retry_after_from_error,
+)
 from academic_intelligence.utils.http import HTTPClient
 from academic_intelligence.utils.rate_limiter import create_rate_limiter
 
@@ -30,12 +44,58 @@ logger = logging.getLogger(__name__)
 
 _API_BASE = "http://export.arxiv.org/api/query"
 _ATOM_NS = {"atom": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
-# arXiv ID patterns: YYMM.number[vN] or archive/YYMMNNN
+# arXiv ID patterns: YYMM.number[vN] or archive/YYMMNNN[vN].
 _ARXIV_ID_RE = re.compile(
-    r"(?:arXiv:)?((?:\d{4}\.\d{4,5})(?:v\d+)?|[a-z\-]+(?:\.[A-Z]{2})?/\d{7})(?:v\d+)?",
+    r"((?:\d{4}\.\d{4,5}|[a-z\-]+(?:\.[a-z]{2})?/\d{7})(?:v\d+)?)",
     re.IGNORECASE,
 )
+_ARXIV_ID_PREFIXES = (
+    "arxiv:",
+    "https://arxiv.org/abs/",
+    "http://arxiv.org/abs/",
+    "https://arxiv.org/pdf/",
+    "http://arxiv.org/pdf/",
+)
 _DOI_PREFIXES = ("https://doi.org/", "http://doi.org/", "doi:")
+# arXiv-native DOI namespace (Y-1): the API's ``doi:"..."`` field search does
+# not match these even though the Atom metadata carries them.
+_ARXIV_DOI_PREFIX = "10.48550/arxiv."
+
+# Noise segments commonly appended to arXiv journal_ref strings (volume /
+# issue / pages / year / ISSN / DOI); the venue field should keep only the
+# journal name (FIX-L F3).  The volume:pages alternation also covers the
+# compact journal citation form (``Med Image Anal. 42:60-88``,
+# ``J. Neurosci. 33(4):1234-1245``) whose noise carries no keyword (FIX-M M2).
+_JOURNAL_REF_NOISE_RE = re.compile(
+    r"ISSN\s*[:\s]?\d{4}[-–]\d{3,4}[Xx]?"
+    r"|\b(?:volume|vol|issue|no)\.?\s*\d+[A-Za-z]?"
+    r"|\bpp?\.?\s*\d+\s*[-–,to]+\s*\d+"
+    r"|\bpp?\.?\s*\d+\b"
+    r"|\d+(?:\(\d+\))?\s*:\s*\d+(?:-\d+)?"
+    r"|\(\s*(?:19|20)\d{2}\s*\)"
+    r"|\b(?:19|20)\d{2}\b"
+    r"|\bDOI\s*:?\s*10\.\S+",
+    re.IGNORECASE,
+)
+
+
+def _clean_journal_ref(raw: str) -> str:
+    """Extract the bare journal name from an arXiv ``journal_ref`` string.
+
+    arXiv journal_ref values append volume / issue / pages / year / ISSN
+    noise, e.g. ``"Medical Image Analysis, Volume 71, 2021, 102062, ISSN
+    1361-8415"``. The venue field should carry the bare journal name, so the
+    noise is stripped and the leading segment kept.
+    """
+    s = raw.strip()
+    if not s:
+        return ""
+    s = _JOURNAL_REF_NOISE_RE.sub(" ", s)
+    # Keep the leading segment (the journal name).
+    s = re.split(r"[,;|]", s, maxsplit=1)[0]
+    # Drop a trailing bare volume/article number, e.g. "Phys. Rev. Lett. 124".
+    s = re.sub(r"\s+\d+(?:\s*\([^)]*\))?\s*$", "", s)
+    return " ".join(s.split())
 
 
 def _normalize_doi(doi: str) -> str:
@@ -47,20 +107,53 @@ def _normalize_doi(doi: str) -> str:
     return cleaned
 
 
-def _text(el: Optional[ET.Element]) -> str:
+def _arxiv_id_from_doi(doi: str) -> str | None:
+    """Extract the bare arXiv ID from an arXiv-native DOI (Y-1).
+
+    arXiv registers preprints under ``10.48550/arXiv.<id>``; the API's
+    ``doi:"..."`` field search never matches those DOIs even though the Atom
+    metadata carries them, so callers must route to the ``id_list`` lookup
+    instead.  Returns ``None`` for any other DOI.
+    """
+    if not doi.lower().startswith(_ARXIV_DOI_PREFIX):
+        return None
+    return doi[len(_ARXIV_DOI_PREFIX) :].strip() or None
+
+
+def _parse_arxiv_id(value: str) -> str | None:
+    """Return a complete arXiv identifier, rejecting embedded free text."""
+    cleaned = value.strip().rstrip("/")
+    lowered = cleaned.lower()
+    for prefix in _ARXIV_ID_PREFIXES:
+        if lowered.startswith(prefix):
+            cleaned = cleaned[len(prefix) :].strip().rstrip("/")
+            break
+    if cleaned.lower().endswith(".pdf"):
+        cleaned = cleaned[:-4]
+    match = _ARXIV_ID_RE.fullmatch(cleaned)
+    return match.group(1) if match else None
+
+
+def _canonical_arxiv_id(value: str) -> str | None:
+    """Normalize an arXiv identifier for equality, ignoring its version."""
+    parsed = _parse_arxiv_id(value)
+    if parsed is None:
+        return None
+    return re.sub(r"v\d+$", "", parsed, flags=re.IGNORECASE)
+
+
+def _text(el: ET.Element | None) -> str:
     if el is None or el.text is None:
         return ""
     return " ".join(el.text.split())
 
 
-def _safe_doi(doi: Optional[str], title: str, evidence: Evidence) -> Optional[str]:
-    if not doi:
-        return None
-    try:
-        Paper.model_validate({"title": title or "untitled", "doi": doi, "evidence": evidence})
-        return doi
-    except Exception:
-        return None
+def _safe_doi(doi: str | None, title: str, evidence: Evidence) -> str | None:
+    # (FIX-AB-3) Lightweight field-level DOI validation instead of a full
+    # ``Paper.model_validate`` per entry (dominated the parse hot path).
+    # ``title`` / ``evidence`` kept for signature stability; the old
+    # full-model guard validated only the DOI.
+    return normalize_doi(doi)
 
 
 class ArxivSource(BaseSource):
@@ -72,12 +165,20 @@ class ArxivSource(BaseSource):
 
     name = "arxiv"
     source_type = SourceType.ARXIV
+    capabilities = {
+        **BaseSource.capabilities,
+        # C1 revision: author ops are real here, citation graph is not.
+        "get_author_papers": True,
+        "get_author_profile": True,
+        "get_citations": False,
+        "get_paper_by_arxiv_id": True,
+    }
 
     def __init__(
         self,
-        http_client: Optional[HTTPClient] = None,
+        http_client: HTTPClient | None = None,
         *,
-        confidence: float = 0.92,
+        confidence: float = 0.95,
         min_interval_seconds: float = 3.0,
     ) -> None:
         self._http = http_client
@@ -103,11 +204,17 @@ class ArxivSource(BaseSource):
             await self._http.close()
             self._http = None
 
-    def _evidence(self, url: str, raw: Optional[Dict[str, Any]] = None) -> Evidence:
+    def _evidence(
+        self,
+        url: str,
+        raw: dict[str, Any] | None = None,
+        source_id: str | None = None,
+    ) -> Evidence:
         return Evidence(
             source=self.source_type,
+            source_id=source_id,
             source_url=url,
-            collected_at=datetime.now(timezone.utc),
+            collected_at=datetime.now(UTC),
             confidence=self.confidence,
             raw_data=raw,
         )
@@ -123,7 +230,18 @@ class ArxivSource(BaseSource):
         }
         try:
             response = await client.get(_API_BASE, params=params)
+        except httpx.TimeoutException as exc:
+            raise TimeoutError(
+                f"arXiv request timed out: {exc}",
+                source_name=self.name,
+            ) from exc
         except Exception as exc:
+            if is_rate_limit_status(exc):
+                raise RateLimitError(
+                    "arXiv rate limit exceeded",
+                    source_name=self.name,
+                    retry_after=retry_after_from_error(exc),
+                ) from exc
             raise SourceUnavailableError(
                 f"arXiv request failed: {exc}",
                 source_name=self.name,
@@ -143,26 +261,26 @@ class ArxivSource(BaseSource):
             )
         return response.text
 
-    def _parse_entry(self, entry: ET.Element) -> Optional[Paper]:
+    def _parse_entry(self, entry: ET.Element) -> Paper | None:
         title = _text(entry.find("atom:title", _ATOM_NS))
         if not title:
             return None
 
         abstract = _text(entry.find("atom:summary", _ATOM_NS)) or None
         published = _text(entry.find("atom:published", _ATOM_NS))
-        year: Optional[int] = None
+        year: int | None = None
         if published and len(published) >= 4 and published[:4].isdigit():
             year = int(published[:4])
 
-        authors: List[str] = []
+        authors: list[AuthorRef] = []
         for author_el in entry.findall("atom:author", _ATOM_NS):
             name = _text(author_el.find("atom:name", _ATOM_NS))
             if name:
-                authors.append(name)
+                authors.append(AuthorRef(name=name, position=len(authors) + 1))
 
         # Prefer abs HTML link, then atom:id
-        url: Optional[str] = None
-        pdf_url: Optional[str] = None
+        url: str | None = None
+        pdf_url: str | None = None
         for link in entry.findall("atom:link", _ATOM_NS):
             rel = link.get("rel") or ""
             href = link.get("href") or ""
@@ -176,10 +294,13 @@ class ArxivSource(BaseSource):
                 url = href.replace("http://", "https://", 1)
 
         entry_id = _text(entry.find("atom:id", _ATOM_NS))
-        arxiv_id: Optional[str] = None
+        arxiv_id: str | None = None
         if entry_id:
             # http://arxiv.org/abs/2301.00001v1 -> 2301.00001v1
-            arxiv_id = entry_id.rstrip("/").split("/")[-1]
+            if "/abs/" in entry_id:
+                arxiv_id = entry_id.split("/abs/", 1)[1].rstrip("/")
+            else:
+                arxiv_id = entry_id.rstrip("/").rsplit("/", 1)[-1]
             if not url:
                 bare = arxiv_id.split("v")[0] if "v" in arxiv_id else arxiv_id
                 url = f"https://arxiv.org/abs/{bare}"
@@ -192,7 +313,7 @@ class ArxivSource(BaseSource):
         doi_raw = _text(doi_el) if doi_el is not None else ""
         # Also check journal_ref / comment for DOI occasionally omitted
 
-        categories: List[str] = []
+        categories: list[str] = []
         primary = entry.find("arxiv:primary_category", _ATOM_NS)
         if primary is not None and primary.get("term"):
             categories.append(primary.get("term") or "")
@@ -202,7 +323,7 @@ class ArxivSource(BaseSource):
                 categories.append(term)
 
         journal = entry.find("arxiv:journal_ref", _ATOM_NS)
-        venue = _text(journal) if journal is not None else None
+        venue = _clean_journal_ref(_text(journal)) if journal is not None else None
         if not venue and categories:
             venue = f"arXiv:{categories[0]}"
 
@@ -215,6 +336,7 @@ class ArxivSource(BaseSource):
                 "categories": categories,
                 "published": published,
             },
+            source_id=arxiv_id,
         )
         safe_doi = _safe_doi(doi_raw or None, title, evidence)
 
@@ -226,14 +348,15 @@ class ArxivSource(BaseSource):
             venue=venue,
             abstract=abstract,
             doi=safe_doi,
+            arxiv_id=arxiv_id,
             url=url if url and url.startswith("http") else None,
             pdf_url=pdf_url if pdf_url and pdf_url.startswith("http") else None,
             citations=None,
             keywords=categories,
-            evidence=evidence,
+            evidence_list=[evidence],
         )
 
-    def _parse_feed(self, xml_text: str) -> List[Paper]:
+    def _parse_feed(self, xml_text: str) -> list[Paper]:
         try:
             root = ET.fromstring(xml_text)
         except ET.ParseError as exc:
@@ -243,7 +366,7 @@ class ArxivSource(BaseSource):
                 raw_snippet=xml_text[:300],
             ) from exc
 
-        papers: List[Paper] = []
+        papers: list[Paper] = []
         for entry in root.findall("atom:entry", _ATOM_NS):
             try:
                 paper = self._parse_entry(entry)
@@ -253,7 +376,7 @@ class ArxivSource(BaseSource):
                 logger.debug("Skip arXiv entry parse error: %s", exc)
         return papers
 
-    async def search_papers(self, query: str, limit: int = 10) -> List[Paper]:
+    async def search_papers(self, query: str, limit: int = 10) -> list[Paper]:
         """Search arXiv papers.
 
         Free-text is mapped to ``all:`` field search. Callers may also pass
@@ -263,20 +386,28 @@ class ArxivSource(BaseSource):
         if not q:
             return []
         # If caller already provided field prefixes, use as-is
-        if re.search(r"\b(all|ti|au|abs|co|jr|cat|rn):", q):
-            search_query = q
-        else:
-            search_query = f"all:{q}"
+        search_query = (
+            q if re.search(r"\b(all|ti|au|abs|co|jr|cat|rn):", q) else f"all:{q}"
+        )
 
         xml_text = await self._query(search_query, max_results=min(limit, 2000))
         papers = self._parse_feed(xml_text)
         return papers[:limit]
 
-    async def get_paper_by_doi(self, doi: str) -> Optional[Paper]:
-        """Fetch a paper by DOI via arXiv ``doi:`` field search."""
+    async def get_paper_by_doi(self, doi: str) -> Paper | None:
+        """Fetch a paper by DOI.
+
+        arXiv-native DOIs (``10.48550/arXiv.<id>``, case-insensitive) are
+        routed to the ``id_list`` lookup: the API's ``doi:"..."`` field search
+        returns nothing for them even though the metadata carries the DOI
+        (Y-1).  All other DOIs keep the ``doi:"..."`` field search.
+        """
         cleaned = _normalize_doi(doi)
         if not cleaned:
             return None
+        arxiv_id = _arxiv_id_from_doi(cleaned)
+        if arxiv_id is not None:
+            return await self.get_paper_by_arxiv_id(arxiv_id)
         xml_text = await self._query(f'doi:"{cleaned}"', max_results=5)
         papers = self._parse_feed(xml_text)
         for paper in papers:
@@ -284,33 +415,52 @@ class ArxivSource(BaseSource):
                 return paper
         return papers[0] if papers else None
 
-    async def get_paper_by_arxiv_id(self, arxiv_id: str) -> Optional[Paper]:
+    async def get_paper_by_arxiv_id(self, arxiv_id: str) -> Paper | None:
         """Fetch a single paper by arXiv ID (convenience helper)."""
-        match = _ARXIV_ID_RE.search(arxiv_id.strip())
-        if not match:
+        parsed = _parse_arxiv_id(arxiv_id)
+        if parsed is None:
             return None
-        bare = match.group(1)
-        # id_list is more precise but search_query id: works for new IDs
+        requested = _canonical_arxiv_id(parsed)
+        # ``id_list`` provides exact identifier semantics for modern and old IDs.
         client = await self._client()
-        params = {"id_list": bare, "max_results": 1}
+        params = {"id_list": parsed, "max_results": 1}
         try:
             response = await client.get(_API_BASE, params=params)
+        except httpx.TimeoutException as exc:
+            raise TimeoutError(
+                f"arXiv request timed out: {exc}",
+                source_name=self.name,
+            ) from exc
         except Exception as exc:
+            if is_rate_limit_status(exc):
+                raise RateLimitError(
+                    "arXiv rate limit exceeded",
+                    source_name=self.name,
+                    retry_after=retry_after_from_error(exc),
+                ) from exc
             raise SourceUnavailableError(
                 f"arXiv request failed: {exc}",
                 source_name=self.name,
             ) from exc
         if response.status_code == 429:
-            raise RateLimitError("arXiv rate limit exceeded", source_name=self.name, retry_after=3)
+            raise RateLimitError(
+                "arXiv rate limit exceeded",
+                source_name=self.name,
+                retry_after=int(response.headers.get("Retry-After", "3") or 3),
+            )
         if response.status_code >= 400:
             raise SourceUnavailableError(
                 f"arXiv HTTP {response.status_code}",
                 source_name=self.name,
             )
         papers = self._parse_feed(response.text)
-        return papers[0] if papers else None
+        for paper in papers:
+            candidate = paper.arxiv_id or paper.id
+            if candidate is not None and _canonical_arxiv_id(candidate) == requested:
+                return paper
+        return None
 
-    async def get_author_papers(self, author_name: str) -> List[Paper]:
+    async def get_author_papers(self, author_name: str) -> list[Paper]:
         """Search papers by author name using the ``au:`` field."""
         name = author_name.strip()
         if not name:
@@ -319,7 +469,7 @@ class ArxivSource(BaseSource):
         xml_text = await self._query(f'au:"{name}"', max_results=50)
         return self._parse_feed(xml_text)
 
-    async def get_author_profile(self, author_name: str) -> Optional[Author]:
+    async def get_author_profile(self, author_name: str) -> Author | None:
         """Build a lightweight author profile from search results.
 
         arXiv has no dedicated author profile endpoint; we aggregate from
@@ -334,11 +484,11 @@ class ArxivSource(BaseSource):
 
         # Prefer an exact (case-insensitive) author match from paper lists
         matched_name = name
-        interests: List[str] = []
+        interests: list[str] = []
         for paper in papers:
-            for a in paper.authors:
-                if a.lower() == name.lower() or name.lower() in a.lower():
-                    matched_name = a
+            for ref in paper.authors:
+                if ref.name.lower() == name.lower() or name.lower() in ref.name.lower():
+                    matched_name = ref.name
                     break
             for kw in paper.keywords:
                 if kw and kw not in interests:
@@ -357,9 +507,9 @@ class ArxivSource(BaseSource):
             citations=None,
             interests=interests[:10],
             profile_url=profile_url,
-            evidence=self._evidence(profile_url, raw={"paper_count": len(papers)}),
+            evidence_list=[self._evidence(profile_url, raw={"paper_count": len(papers)})],
         )
 
-    async def get_citations(self, paper_id: str) -> List[Citation]:
+    async def get_citations(self, paper_id: str) -> list[Citation]:
         """arXiv does not expose citation links; returns empty list."""
         return []

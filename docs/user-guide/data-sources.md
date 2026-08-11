@@ -2,18 +2,23 @@
 
 Academic Intelligence talks to scholarly APIs and search services through **source plugins** under `academic_intelligence.sources`. Each plugin implements `BaseSource`.
 
-## Supported sources (v0.1)
+## Supported sources
 
 | Source | Enum / name | Status | API key | Notes |
 |--------|-------------|--------|---------|-------|
 | Semantic Scholar | `semantic_scholar` (`ss`, `s2`) | Implemented | Optional (`SEMANTIC_SCHOLAR_API_KEY`) | Higher rate limits with key |
 | OpenAlex | `openalex` (`oa`) | Implemented | Email recommended (`OPENALEX_EMAIL`) | Polite pool via email |
-| Google Scholar | `google_scholar` (`gs`) | Implemented | **Required** SerpAPI (`SERPAPI_KEY`) | Via SerpAPI, not direct scrape |
-| arXiv | `arxiv` | Enumerated | None | Adapter planned / not wired in `_build_sources` |
-| PubMed | `pubmed` | Enumerated | None (NCBI email best practice) | Adapter planned |
-| IEEE Xplore | `ieee` | Enumerated | API key when available | Adapter planned |
+| Google Scholar | `google_scholar` (`gs`) | Implemented, **not registered by default** | **Required** SerpAPI (`SERPAPI_KEY`) | Via SerpAPI; needs `enable_google_scholar=True` |
+| arXiv | `arxiv` | Implemented | None | Atom XML API |
+| PubMed | `pubmed` | Implemented | None (NCBI email best practice) | E-utilities API |
+| IEEE Xplore | `ieee` | Implemented | API key (`IEEE_API_KEY`) | Degrades gracefully without a key |
+| Crossref | `crossref` | Implemented | Email recommended (`CROSSREF_MAILTO`) | Polite pool via mailto |
+| Unpaywall | `unpaywall` | Implemented | **Required** (`UNPAYWALL_EMAIL`) | Legal OA full-text locator |
+| Europe PMC | `europe_pmc` (`epmc`, `europe-pmc`) | Implemented | None | Search / get / fulltext |
+| OpenCitations | `opencitations` (`coci`) | Implemented | None | Citation graph (COCI) |
+| CORE | `core` | Implemented | Optional (`CORE_API_KEY`) | Legal OA full-text aggregator |
 
-Implemented adapters are registered in `AcademicIntelligence._build_sources`. Unknown names are skipped for forward compatibility.
+All adapters are registered in `AcademicIntelligence._build_sources` (Google Scholar only when `enable_google_scholar=True`) and can be queried directly or through the CLI (`--sources`). Unknown names are skipped for forward compatibility.
 
 ## Comparison
 
@@ -102,9 +107,13 @@ await ai.collect_paper("doi:10.1038/...", sources=["all"])
 CLI:
 
 ```bash
-ai collect author "Name" --sources gs,ss,openalex
-ai collect paper "10.1038/nature14539" --sources all
+paper collect author "Name" --sources gs,ss,openalex
+paper collect paper "10.1038/nature14539" --sources all
 ```
+
+See [CLI: `paper source`](cli.md#paper-source-source-operation) for running a
+single adapter directly (e.g. `paper source crossref search "deep learning"`),
+and `paper sources status` for the capability matrix.
 
 ## Rate limits and etiquette
 

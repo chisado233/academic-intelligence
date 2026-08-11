@@ -1508,7 +1508,7 @@
 <ul>
 <li>Implementation: <code>academic_intelligence.storage.sqlite_store.SQLiteStorage</code></li>
 <li>Uses SQLAlchemy async + <code>aiosqlite</code></li>
-<li>Tables for papers, authors, and citations with serialized evidence JSON</li>
+<li>Tables: <code>papers</code>, <code>authors</code>, <code>citations</code>, <code>authorships</code>, <code>coauthorships</code>, <code>evidence</code> (one row per confirming source), plus <code>paper_hashes</code> / <code>source_updates</code> / <code>entity_sync</code> for incremental tracking (the <code>entity_sync</code> table records per-<code>(entity, source)</code> refresh gating, FIX-B2); query indexes: <code>paper_author_tokens</code> (B-tree) + <code>paper_author_names_fts</code> (FTS5 trigram) serving <code>query_papers(author=...)</code> and <code>paper_text_fts</code> (FTS5 trigram) serving <code>query_papers(keyword=...)</code>, all auto-maintained on write paths and auto-backfilled on connect; v2 columns are auto-migrated for pre-existing databases</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ai<span class="w"> </span>collect<span class="w"> </span>author<span class="w"> </span><span class="s2">&quot;Name&quot;</span><span class="w"> </span>--storage-type<span class="w"> </span>sqlite<span class="w"> </span>--storage-path<span class="w"> </span>./my.db<span class="w"> </span>--persist
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ai<span class="w"> </span>query<span class="w"> </span>papers<span class="w"> </span>--storage-path<span class="w"> </span>./my.db<span class="w"> </span>--author<span class="w"> </span><span class="s2">&quot;Name&quot;</span>
@@ -1523,8 +1523,12 @@
 <h2 id="json-storage">JSON storage<a class="headerlink" href="#json-storage" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Implementation: <code>academic_intelligence.storage.json_store.JSONStorage</code></li>
-<li>Files under <code>storage_path</code> (authors / papers / citations collections)</li>
-<li>Good for inspection with standard tools; weaker for complex queries</li>
+<li>Intended for single-process/single-writer, small-dataset use; a second live <code>JSONStorage</code> instance for the same resolved directory fails closed with <code>StorageError</code></li>
+<li>There is no cross-process writer lock; use SQLite for concurrent processes or larger libraries</li>
+<li><code>store.json</code> is the atomically replaced source-of-truth snapshot; blocking disk I/O is delegated off the event loop</li>
+<li>Historical <code>authors.json</code> / <code>papers.json</code> / relation files remain readable as migration inputs and are refreshed as inspection mirrors on clean close</li>
+<li>Citation identity is the directed <code>(citing_paper_id, cited_paper_id)</code> pair, and coauthorship counts are derived from current authorships, making batch replay and byline replacement idempotent</li>
+<li>Writes after <code>close()</code> raise <code>StorageError</code>; use the async context manager or reconnect explicitly</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">storage_type</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">,</span> <span class="n">storage_path</span><span class="o">=</span><span class="s2">&quot;./data/export&quot;</span><span class="p">)</span>
 </code></pre></div>

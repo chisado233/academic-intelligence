@@ -1,0 +1,80 @@
+[
+  {
+    "id": "W1",
+    "title": "Attention Is All You Need",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Ashish Vaswani",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2017,
+    "venue": "NeurIPS",
+    "venue_type": null,
+    "abstract": null,
+    "doi": "10.48550/arXiv.1706.03762",
+    "arxiv_id": "1706.03762",
+    "pmid": null,
+    "url": null,
+    "pdf_url": null,
+    "citations": 50000,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "arxiv",
+        "source_id": "1706.03762",
+        "source_url": "https://example.org/1706.03762",
+        "collected_at": "2026-08-09T12:33:38.992855Z",
+        "confidence": 0.95,
+        "raw_data": null
+      }
+    ],
+    "synthetic_confidence": 1.0
+  },
+  {
+    "id": "W2",
+    "title": "Deep Learning",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Geoffrey Hinton",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2015,
+    "venue": "Nature",
+    "venue_type": null,
+    "abstract": null,
+    "doi": "10.1038/nature14539",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": null,
+    "pdf_url": null,
+    "citations": 30000,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "openalex",
+        "source_id": "W2",
+        "source_url": "https://example.org/W2",
+        "collected_at": "2026-08-09T12:33:38.993394Z",
+        "confidence": 0.9,
+        "raw_data": null
+      }
+    ],
+    "synthetic_confidence": 0.9500000000000001
+  }
+]

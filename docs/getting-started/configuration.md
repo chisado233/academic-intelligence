@@ -19,6 +19,8 @@ config = Config(
     cache_ttl=3600,
     timeout=30.0,
     max_concurrent_sources=3,
+    max_concurrent_requests=4,
+    enable_google_scholar=True,
     anti_crawl=AntiCrawlStrategy(
         base_delay=1.0,
         max_retries=3,
@@ -35,7 +37,7 @@ async with AcademicIntelligence(config) as ai:
 | Field | Type | Default | Description |
 |-------|------|---------|-------------|
 | `sources` | `list[str]` | `semantic_scholar`, `openalex`, `google_scholar` | Enabled sources (order matters for priority) |
-| `rate_limit` | `float` | `1.0` | Global requests-per-second hint |
+| `rate_limit` | `float` | `1.0` | Enforced global requests-per-second ceiling |
 | `proxy` | `str \| None` | `None` | Single proxy URL |
 | `proxies` | `list[str]` | `[]` | Additional proxy URLs |
 | `storage_type` | `str` | `"sqlite"` | `"sqlite"` or `"json"` |
@@ -48,8 +50,19 @@ async with AcademicIntelligence(config) as ai:
 | `serpapi_key` | `str \| None` | `None` | SerpAPI key (Google Scholar) |
 | `semantic_scholar_api_key` | `str \| None` | `None` | Semantic Scholar API key |
 | `openalex_email` | `str \| None` | `None` | Email for OpenAlex polite pool |
+| `ieee_api_key` | `str \| None` | `None` | IEEE Xplore Metadata API key (env: `IEEE_API_KEY`) |
 | `anti_crawl` | `AntiCrawlStrategy` | defaults | Nested anti-crawl settings |
 | `max_concurrent_sources` | `int` | `3` | Parallel source queries |
+| `enable_google_scholar` | `bool` | `False` | Gate for Google Scholar registration; `sources` alone does not enable it |
+| `download_delay` | `float` | `1.0` | Delay between downloads (s) |
+| `max_concurrent_requests` | `int` | `4` | Enforced global in-flight HTTP request ceiling |
+| `max_expand_depth` | `int` | `3` | Graph expansion depth limit |
+| `max_expand_nodes` | `int` | `50` | Max nodes per graph expansion pass |
+| `graph_cache_size` | `int` | `5000` | Knowledge graph cache capacity (nodes) |
+| `auto_merge_threshold` | `float` | `0.85` | Disambiguation auto-merge threshold |
+| `ambiguous_threshold` | `float` | `0.60` | Disambiguation ambiguous threshold |
+| `paper_refresh_days` | `int` | `7` | Days before a paper is refreshed incrementally |
+| `author_refresh_days` | `int` | `30` | Days before an author profile is refreshed |
 
 ### AntiCrawlStrategy
 
@@ -77,17 +90,20 @@ Secrets are filled from the environment when not set on `Config`:
 | `SERPAPI_KEY` | `serpapi_key` (Google Scholar via SerpAPI) |
 | `SEMANTIC_SCHOLAR_API_KEY` | `semantic_scholar_api_key` |
 | `OPENALEX_EMAIL` | `openalex_email` |
+| `IEEE_API_KEY` | `ieee_api_key` (IEEE Xplore) |
 
 ```bash
 # Linux / macOS
 export SERPAPI_KEY=...
 export SEMANTIC_SCHOLAR_API_KEY=...
 export OPENALEX_EMAIL=you@example.com
+export IEEE_API_KEY=...
 
 # Windows PowerShell
 $env:SERPAPI_KEY = "..."
 $env:SEMANTIC_SCHOLAR_API_KEY = "..."
 $env:OPENALEX_EMAIL = "you@example.com"
+$env:IEEE_API_KEY = "..."
 ```
 
 ## Config file example
@@ -130,7 +146,7 @@ Example `ai-config.json`:
 CLI commands accept storage and sources flags instead of a full config file:
 
 ```bash
-ai collect author "Name" \
+paper collect author "Name" \
   --sources gs,ss,openalex \
   --storage-type sqlite \
   --storage-path ./academic_intelligence.db \
@@ -149,7 +165,7 @@ When listing sources (API or CLI):
 | `semantic_scholar` | `ss`, `s2` |
 | `openalex` | `oa` |
 
-Planned / enumerated but not all implemented as adapters yet: `arxiv`, `pubmed`, `ieee` (see `SourceType` enum). Unsupported names are skipped at runtime for forward compatibility.
+All six adapters (`arxiv`, `openalex`, `semantic_scholar`, `pubmed`, `ieee`, `google_scholar`) are implemented and wired into `_build_sources`; aliases only exist for the three above. Google Scholar additionally requires `enable_google_scholar=True`; otherwise it is skipped even when listed in `sources`. IEEE queries without an API key warn at startup and degrade gracefully. Unsupported names are skipped at runtime for forward compatibility.
 
 ## Next steps
 

@@ -8,9 +8,9 @@ from __future__ import annotations
 
 import asyncio
 import logging
-import random
+import re
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 import httpx
 
@@ -18,8 +18,6 @@ from academic_intelligence.core.types import AntiCrawlStrategy
 from academic_intelligence.utils.cache import Cache
 from academic_intelligence.utils.proxy import ProxyPool
 from academic_intelligence.utils.rate_limiter import (
-    AdaptiveRateLimiter,
-    RateLimitConfig,
     RateLimiter,
     create_rate_limiter,
 )
@@ -27,7 +25,143 @@ from academic_intelligence.utils.retry import RetryConfig, RetryHandler
 
 logger = logging.getLogger(__name__)
 
-USER_AGENTS: List[str] = [
+# Query-param names whose values must never appear in error messages or logs
+# (FIX-AF F1 / AF-1): SerpAPI passes its key as ``api_key``, IEEE as
+# ``apikey``.  A transport failure embeds the full request URL (params
+# included) into the exception message, which then flows into
+# ``SourceUnavailableError``, retry logs, ``CollectionResult.errors`` and
+# ``AllSourcesFailedError``.  The list also covers the other common
+# credential-style query params so a future source cannot re-introduce the
+# leak through a different spelling.
+_SENSITIVE_QUERY_PARAMS = frozenset(
+    {
+        "api_key",
+        "apikey",
+        "api-key",
+        "key",
+        "token",
+        "access_token",
+        "auth",
+        "authorization",
+        "sig",
+        "signature",
+        "secret",
+        "password",
+        "passwd",
+        "client_secret",
+        "credential",
+    }
+)
+
+_QUERY_SECRET_RE = re.compile(
+    r"(?i)([?&](?:"
+    + "|".join(re.escape(p) for p in _SENSITIVE_QUERY_PARAMS)
+    + r")=)([^&#\s]*)"
+)
+
+_SENSITIVE_HEADERS = frozenset(
+    {
+        "authorization",
+        "proxy-authorization",
+        "cookie",
+        "set-cookie",
+        "x-api-key",
+        "api-key",
+        "apikey",
+        "x-auth-token",
+    }
+)
+
+
+def redact_url_secrets(text: str) -> str:
+    """Replace sensitive query-param values in *text* with ``***``.
+
+    Applies anywhere a URL can be embedded — httpx exception messages,
+    retry log lines, wrapped source errors.  Only the *values* of the
+    sensitive parameters are masked (``?api_key=SECRET`` → ``?api_key=***``,
+    matched case-insensitively); the rest of the URL — scheme, host, path
+    and every other query parameter — survives byte-for-byte, keeping the
+    error diagnosable (AF-1).
+    """
+    return _QUERY_SECRET_RE.sub(r"\1***", text)
+
+
+def _redact_exception(exc: BaseException) -> BaseException:
+    """Return an exception whose message *and HTTP attributes* are safe.
+
+    ``httpx`` keeps the original request on transport/status exceptions, so
+    rewriting ``args[0]`` alone still exposes query keys and authorization
+    headers to callers.  Rebuild HTTP exceptions with a diagnostic request
+    that retains method/host/path/non-secret parameters but masks credentials.
+    """
+    message = redact_url_secrets(str(exc))
+
+    if isinstance(exc, httpx.HTTPStatusError):
+        status_request = _redacted_request(exc.request)
+        response = _redacted_response(exc.response, status_request)
+        return httpx.HTTPStatusError(
+            message, request=status_request, response=response
+        )
+
+    if isinstance(exc, httpx.RequestError):
+        safe_request: httpx.Request | None
+        try:
+            safe_request = _redacted_request(exc.request)
+        except RuntimeError:
+            safe_request = None
+        if safe_request is not None:
+            try:
+                return type(exc)(message, request=safe_request)
+            except TypeError:
+                return httpx.RequestError(message, request=safe_request)
+
+    if exc.args and isinstance(exc.args[0], str):
+        redacted = redact_url_secrets(exc.args[0])
+        if redacted != exc.args[0]:
+            exc.args = (redacted, *exc.args[1:])
+    return exc
+
+
+def _redacted_request(request: httpx.Request) -> httpx.Request:
+    """Build a credential-free diagnostic copy of an HTTP request."""
+    safe_headers = {
+        name: "***" if name.casefold() in _SENSITIVE_HEADERS else value
+        for name, value in request.headers.multi_items()
+    }
+    return httpx.Request(
+        request.method,
+        redact_url_secrets(str(request.url)),
+        headers=safe_headers,
+        extensions=dict(request.extensions),
+    )
+
+
+def _redacted_response(
+    response: httpx.Response,
+    request: httpx.Request,
+) -> httpx.Response:
+    """Build a safe status-response copy linked to the redacted request."""
+    safe_headers = {
+        name: (
+            "***"
+            if name.casefold() in _SENSITIVE_HEADERS
+            else redact_url_secrets(value)
+        )
+        for name, value in response.headers.multi_items()
+    }
+    try:
+        content = redact_url_secrets(response.text).encode(response.encoding or "utf-8")
+    except (httpx.ResponseNotRead, UnicodeError):
+        content = b""
+    return httpx.Response(
+        response.status_code,
+        headers=safe_headers,
+        content=content,
+        request=request,
+        extensions=dict(response.extensions),
+    )
+
+USER_AGENTS: list[str] = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
@@ -52,13 +186,15 @@ class HTTPClient:
 
     def __init__(
         self,
-        strategy: Optional[AntiCrawlStrategy] = None,
-        proxies: Optional[List[str]] = None,
+        strategy: AntiCrawlStrategy | None = None,
+        proxies: list[str] | None = None,
         *,
-        rate_limiter: Optional[RateLimiter] = None,
-        cache: Optional[Cache] = None,
+        rate_limiter: RateLimiter | None = None,
+        cache: Cache | None = None,
         timeout: float = 30.0,
         enable_cache: bool = True,
+        requests_per_second: float | None = None,
+        max_concurrent_requests: int = 4,
     ) -> None:
         """Initialize HTTP client.
 
@@ -69,12 +205,15 @@ class HTTPClient:
             cache: Optional response cache.
             timeout: Default request timeout in seconds.
             enable_cache: Whether GET responses should be cached.
+            requests_per_second: Global request-rate ceiling. When omitted,
+                derive it from ``strategy.base_delay`` for compatibility.
+            max_concurrent_requests: Maximum in-flight HTTP requests.
         """
         self.strategy = strategy or AntiCrawlStrategy()
         proxy_list = list(proxies or []) + list(self.strategy.proxy_pool)
         # Deduplicate
         seen: set[str] = set()
-        unique_proxies: List[str] = []
+        unique_proxies: list[str] = []
         for p in proxy_list:
             if p not in seen:
                 seen.add(p)
@@ -83,17 +222,25 @@ class HTTPClient:
         self._proxy_pool = ProxyPool(unique_proxies)
         self._rate_limiter = rate_limiter or create_rate_limiter(
             "adaptive" if self.strategy.adaptive_delay else "fixed",
-            requests_per_second=1.0 / max(self.strategy.base_delay, 0.01),
+            requests_per_second=(
+                requests_per_second
+                if requests_per_second is not None
+                else 1.0 / max(self.strategy.base_delay, 0.01)
+            ),
         )
+        if max_concurrent_requests < 1:
+            raise ValueError("max_concurrent_requests must be >= 1")
+        self._request_semaphore = asyncio.Semaphore(max_concurrent_requests)
         self._cache = cache if enable_cache else None
         self._timeout = timeout
-        self._client: Optional[httpx.AsyncClient] = None
+        self._client: httpx.AsyncClient | None = None
         self._request_count = 0
         self._ua_index = 0
         self._retry_handler = RetryHandler(
             RetryConfig(
                 max_retries=self.strategy.max_retries,
                 backoff=self.strategy.retry_backoff,
+                base_delay=self.strategy.base_delay,
                 jitter=self.strategy.jitter,
                 retry_on_status=self.strategy.retry_on_status,
             )
@@ -129,7 +276,7 @@ class HTTPClient:
             raise RuntimeError("HTTPClient is not connected; call connect() first")
         return self._client
 
-    def _get_proxy(self) -> Optional[str]:
+    def _get_proxy(self) -> str | None:
         """Select next proxy from rotation pool."""
         if not self.proxies:
             return None
@@ -151,8 +298,8 @@ class HTTPClient:
         """Apply rate limiting delay before request."""
         await self._rate_limiter.acquire()
 
-    def _merge_headers(self, headers: Optional[Dict[str, str]]) -> Dict[str, str]:
-        merged: Dict[str, str] = {"User-Agent": self._get_user_agent()}
+    def _merge_headers(self, headers: dict[str, str] | None) -> dict[str, str]:
+        merged: dict[str, str] = {"User-Agent": self._get_user_agent()}
         if headers:
             merged.update(headers)
         return merged
@@ -162,45 +309,67 @@ class HTTPClient:
         method: str,
         url: str,
         *,
-        headers: Optional[Dict[str, str]] = None,
-        params: Optional[Dict[str, Any]] = None,
-        json: Optional[Dict[str, Any]] = None,
-        data: Optional[Dict[str, Any]] = None,
+        headers: dict[str, str] | None = None,
+        params: dict[str, Any] | None = None,
+        json: dict[str, Any] | None = None,
+        data: dict[str, Any] | None = None,
         use_cache: bool = True,
         **kwargs: Any,
     ) -> httpx.Response:
         """Perform an HTTP request with anti-crawl measures."""
         client = self._ensure_client()
 
-        cache_key: Optional[str] = None
+        cache_key: str | None = None
         if use_cache and self._cache is not None and method.upper() == "GET":
             cache_key = Cache.make_key(method, url, params or {})
             cached = await self._cache.get(cache_key)
             if cached is not None and isinstance(cached, dict) and "text" in cached:
-                # Reconstruct a lightweight Response from cached body for GET hits
+                # Reconstruct a lightweight Response from cached body for GET hits.
+                # The cached body is already decoded text, so strip the framing /
+                # compression headers: keeping ``content-encoding`` would make
+                # httpx decompress the decoded body a second time (brotli double
+                # decode), and ``content-length``/``transfer-encoding`` would no
+                # longer match the stored text.
+                headers = {
+                    key: value
+                    for key, value in (cached.get("headers") or {}).items()
+                    if key.lower()
+                    not in {"content-encoding", "content-length", "transfer-encoding"}
+                }
                 request = httpx.Request(method, url, params=params)
                 return httpx.Response(
                     status_code=int(cached.get("status_code", 200)),
-                    headers=cached.get("headers") or {},
+                    headers=headers,
                     text=str(cached.get("text", "")),
                     request=request,
                 )
 
-        async def _do() -> httpx.Response:
+        async def _do_request() -> httpx.Response:
             await self._apply_rate_limit()
             proxy = self._get_proxy()
             req_headers = self._merge_headers(headers)
             self._request_count += 1
             start = time.monotonic()
-            # httpx 0.28+: proxy is a client-level option, not request()
             try:
-                if proxy:
-                    async with httpx.AsyncClient(
-                        timeout=self._timeout,
-                        follow_redirects=True,
-                        proxy=proxy,
-                    ) as proxy_client:
-                        response = await proxy_client.request(
+                # httpx 0.28+: proxy is a client-level option, not request()
+                try:
+                    if proxy:
+                        async with httpx.AsyncClient(
+                            timeout=self._timeout,
+                            follow_redirects=True,
+                            proxy=proxy,
+                        ) as proxy_client:
+                            response = await proxy_client.request(
+                                method,
+                                url,
+                                headers=req_headers,
+                                params=params,
+                                json=json,
+                                data=data,
+                                **kwargs,
+                            )
+                    else:
+                        response = await client.request(
                             method,
                             url,
                             headers=req_headers,
@@ -209,33 +378,35 @@ class HTTPClient:
                             data=data,
                             **kwargs,
                         )
-                else:
-                    response = await client.request(
-                        method,
-                        url,
-                        headers=req_headers,
-                        params=params,
-                        json=json,
-                        data=data,
-                        **kwargs,
+                except httpx.ProxyError:
+                    if proxy:
+                        self._proxy_pool.mark_unhealthy(proxy)
+                    raise
+                latency_ms = (time.monotonic() - start) * 1000.0
+                await self._rate_limiter.report_status(response.status_code, latency_ms)
+
+                if response.status_code in self.strategy.retry_on_status:
+                    err = httpx.HTTPStatusError(
+                        f"HTTP {response.status_code} for {url}",
+                        request=response.request,
+                        response=response,
                     )
-            except httpx.ProxyError:
-                if proxy:
-                    self._proxy_pool.mark_unhealthy(proxy)
-                raise
-            latency_ms = (time.monotonic() - start) * 1000.0
-            await self._rate_limiter.report_status(response.status_code, latency_ms)
+                    raise err
 
-            if response.status_code in self.strategy.retry_on_status:
-                err = httpx.HTTPStatusError(
-                    f"HTTP {response.status_code} for {url}",
-                    request=response.request,
-                    response=response,
-                )
-                setattr(err, "status_code", response.status_code)
-                raise err
+                return response
+            except BaseException as exc:
+                # (FIX-AF F1 / AF-1) Redact query-param secrets (``api_key``
+                # / ``apikey`` ...) from the message before it reaches the
+                # RetryHandler log or the source-level ``except`` that wraps
+                # it into ``SourceUnavailableError`` / ``CollectionResult``.
+                safe_exc = _redact_exception(exc)
+                if safe_exc is exc:
+                    raise
+                raise safe_exc from None
 
-            return response
+        async def _do() -> httpx.Response:
+            async with self._request_semaphore:
+                return await _do_request()
 
         response = await self._retry_handler.execute(_do)
 
@@ -263,8 +434,8 @@ class HTTPClient:
     async def get(
         self,
         url: str,
-        headers: Optional[Dict[str, str]] = None,
-        params: Optional[Dict[str, Any]] = None,
+        headers: dict[str, str] | None = None,
+        params: dict[str, Any] | None = None,
         **kwargs: Any,
     ) -> httpx.Response:
         """Perform GET request with anti-crawl measures."""
@@ -273,9 +444,9 @@ class HTTPClient:
     async def post(
         self,
         url: str,
-        headers: Optional[Dict[str, str]] = None,
-        json: Optional[Dict[str, Any]] = None,
-        data: Optional[Dict[str, Any]] = None,
+        headers: dict[str, str] | None = None,
+        json: dict[str, Any] | None = None,
+        data: dict[str, Any] | None = None,
         **kwargs: Any,
     ) -> httpx.Response:
         """Perform POST request with anti-crawl measures."""
@@ -292,11 +463,14 @@ class HTTPClient:
     async def get_json(
         self,
         url: str,
-        headers: Optional[Dict[str, str]] = None,
-        params: Optional[Dict[str, Any]] = None,
+        headers: dict[str, str] | None = None,
+        params: dict[str, Any] | None = None,
         **kwargs: Any,
     ) -> Any:
         """GET and parse JSON body."""
         response = await self.get(url, headers=headers, params=params, **kwargs)
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except httpx.HTTPStatusError as exc:
+            raise _redact_exception(exc) from None
         return response.json()

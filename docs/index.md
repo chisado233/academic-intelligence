@@ -44,7 +44,7 @@ A modular Python library for academic data collection, fusion, and analysis.
 
     ---
 
-    Import and use programmatically — no web server required. Optional CLI via the `ai` entry point.
+    Import and use programmatically — no web server required. Optional CLI via the `paper` entry point (`ai` is a deprecated shim that prints a rename message and exits 2).
 
 </div>
 
@@ -101,13 +101,13 @@ asyncio.run(main())
 
 ```bash
 # Collect papers by author
-ai collect author "Geoffrey Hinton" --sources ss,openalex --output papers.json
+paper collect author "Geoffrey Hinton" --sources ss,openalex --output papers.json
 
 # Collect paper by DOI
-ai collect paper "10.1038/nature14539" --sources all --output paper.json
+paper collect paper "10.1038/nature14539" --sources all --output paper.json
 
 # Query stored data
-ai query papers --author "Hinton" --year 2020-2024 --limit 10
+paper query papers --author "Hinton" --year 2020-2024 --limit 10
 ```
 
 ---
@@ -116,10 +116,11 @@ ai query papers --author "Hinton" --year 2020-2024 --limit 10
 
 ```
 academic_intelligence/
-├── core/           # Models, types, exceptions
-├── sources/        # Data source plugins
-├── collectors/     # Collection orchestration
-├── processors/     # Deduplication, enrichment, validation
+├── core/           # Models (v2), types/Config, exceptions, constants
+├── sources/        # Source adapters (arXiv, OpenAlex, S2, PubMed, IEEE, Google Scholar)
+├── collectors/     # Multi-source collection orchestration
+├── processors/     # Deduplication, disambiguation, scoring, enrichment, validation, incremental
+├── graph/          # Knowledge graph (expand / subgraph / path)
 ├── storage/        # SQLite / JSON backends
 ├── utils/          # HTTP, proxy, rate limiter, retry, cache
 └── cli.py          # Command-line interface

@@ -26,12 +26,12 @@ async with AcademicIntelligence(config) as ai:
 
 - Implementation: `academic_intelligence.storage.sqlite_store.SQLiteStorage`
 - Uses SQLAlchemy async + `aiosqlite`
-- Tables for papers, authors, and citations with serialized evidence JSON
+- Tables: `papers`, `authors`, `citations`, `authorships`, `coauthorships`, `evidence` (one row per confirming source), plus `paper_hashes` / `source_updates` / `entity_sync` for incremental tracking (the `entity_sync` table records per-`(entity, source)` refresh gating, FIX-B2); query indexes: `paper_author_tokens` (B-tree) + `paper_author_names_fts` (FTS5 trigram) serving `query_papers(author=...)` and `paper_text_fts` (FTS5 trigram) serving `query_papers(keyword=...)`, all auto-maintained on write paths and auto-backfilled on connect; v2 columns are auto-migrated for pre-existing databases
 
 ```bash
-ai collect author "Name" --storage-type sqlite --storage-path ./my.db --persist
-ai query papers --storage-path ./my.db --author "Name"
-ai stats --storage-path ./my.db
+paper collect author "Name" --storage-type sqlite --storage-path ./my.db --persist
+paper query papers --storage-path ./my.db --author "Name"
+paper stats --storage-path ./my.db
 ```
 
 ### Typical lifecycle
@@ -46,8 +46,12 @@ async with AcademicIntelligence(Config(storage_path="./my.db")) as ai:
 ## JSON storage
 
 - Implementation: `academic_intelligence.storage.json_store.JSONStorage`
-- Files under `storage_path` (authors / papers / citations collections)
-- Good for inspection with standard tools; weaker for complex queries
+- Intended for single-process/single-writer, small-dataset use; a second live `JSONStorage` instance for the same resolved directory fails closed with `StorageError`
+- There is no cross-process writer lock; use SQLite for concurrent processes or larger libraries
+- `store.json` is the atomically replaced source-of-truth snapshot; blocking disk I/O is delegated off the event loop
+- Historical `authors.json` / `papers.json` / relation files remain readable as migration inputs and are refreshed as inspection mirrors on clean close
+- Citation identity is the directed `(citing_paper_id, cited_paper_id)` pair, and coauthorship counts are derived from current authorships, making batch replay and byline replacement idempotent
+- Writes after `close()` raise `StorageError`; use the async context manager or reconnect explicitly
 
 ```python
 config = Config(storage_type="json", storage_path="./data/export")
@@ -124,7 +128,7 @@ For schema evolution of SQLite, prefer export → re-import after model changes,
 
 - Use absolute paths in production to avoid CWD surprises
 - Keep secrets out of the DB; evidence `raw_data` may contain API payloads — scrub if needed
-- `ai stats` is a quick health check for empty vs populated stores
+- `paper stats` is a quick health check for empty vs populated stores
 
 ## Related
 

@@ -44,7 +44,7 @@ async def main():
                 print(f"Warning: {err}")
 
         for paper in result.papers[:5]:
-            conf = paper.evidence.confidence
+            conf = paper.primary_evidence.confidence
             print(f"- [{paper.year}] {paper.title[:70]} (conf={conf:.2f})")
 
 asyncio.run(main())
@@ -60,7 +60,7 @@ async with AcademicIntelligence() as ai:
         limit=5,
     )
     for p in result.papers:
-        print(p.title, p.doi, p.evidence.source)
+        print(p.title, p.doi, p.primary_evidence.source)
 ```
 
 ### Query stored records
@@ -76,19 +76,19 @@ async with AcademicIntelligence() as ai:
 
 ```bash
 # Author papers → JSON file
-ai collect author "Geoffrey Hinton" \
+paper collect author "Geoffrey Hinton" \
   --sources ss,openalex \
   --output papers.json \
   --persist
 
 # Paper by DOI
-ai collect paper "10.1038/nature14539" --sources all --output paper.json
+paper collect paper "10.1038/nature14539" --sources all --output paper.json
 
 # Query local DB
-ai query papers --author "Hinton" --year 2020-2024 --limit 10
+paper query papers --author "Hinton" --year 2020-2024 --limit 10
 
 # Storage statistics
-ai stats
+paper stats
 ```
 
 Source aliases for `--sources`:
@@ -98,6 +98,8 @@ Source aliases for `--sources`:
 | `gs` | Google Scholar |
 | `ss` / `s2` | Semantic Scholar |
 | `oa` / `openalex` | OpenAlex |
+| `epmc` / `europe-pmc` | Europe PMC |
+| `coci` | OpenCitations |
 | `all` | All configured sources |
 
 ## Common use cases
@@ -117,7 +119,7 @@ async with AcademicIntelligence(Config(storage_path="./hinton.db")) as ai:
 async with AcademicIntelligence() as ai:
     result = await ai.collect_paper("Attention is All You Need", sources=["all"], limit=10)
     for p in result.papers:
-        print(p.evidence.source, p.citations, p.venue)
+        print(p.primary_evidence.source, p.citations, p.venue)
 ```
 
 ### 3. Export without persistence

@@ -117,9 +117,9 @@ class TestUtilsBoundary:
 
         async def always_fail() -> None:
             calls["n"] += 1
-            raise ConnectionError("Always fails")
+            raise httpx.ConnectError("Always fails")
 
-        with pytest.raises(ConnectionError, match="Always fails"):
+        with pytest.raises(httpx.TransportError, match="Always fails"):
             await handler.execute(always_fail)
         # initial try + 2 retries = 3
         assert calls["n"] == 3

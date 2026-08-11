@@ -1,0 +1,29 @@
+{
+  "directed": true,
+  "nodes": [
+    {
+      "id": "W2",
+      "type": "paper",
+      "loaded": true,
+      "title": "Deep Learning",
+      "year": 2015
+    },
+    {
+      "id": "~Geoffrey Hinton",
+      "type": "author",
+      "loaded": false,
+      "name": "Geoffrey Hinton"
+    }
+  ],
+  "edges": [
+    {
+      "source": "W2",
+      "target": "~Geoffrey Hinton",
+      "relation": "authored_by"
+    }
+  ],
+  "node_count": 2,
+  "edge_count": 1,
+  "center": "W2",
+  "radius": 2
+}

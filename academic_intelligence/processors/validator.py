@@ -7,8 +7,8 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from typing import Dict, List, Optional, Protocol, Set
+from datetime import UTC, datetime
+from typing import Any, Protocol
 from urllib.parse import urlparse
 
 from academic_intelligence.core.exceptions import DataValidationError
@@ -23,7 +23,7 @@ class ValidatorConfig:
     require_doi: bool = False
     strict_email: bool = True
     max_title_length: int = 500
-    allowed_sources: Set[str] = field(default_factory=set)
+    allowed_sources: set[str] = field(default_factory=set)
 
 
 @dataclass
@@ -31,10 +31,10 @@ class ValidationResult:
     """Outcome of validating a single record."""
 
     is_valid: bool = True
-    errors: List[str] = field(default_factory=list)
-    warnings: List[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
     confidence_score: float = 0.0
-    field_issues: Dict[str, List[str]] = field(default_factory=dict)
+    field_issues: dict[str, list[str]] = field(default_factory=dict)
 
     def add_error(self, field_name: str, message: str) -> None:
         self.is_valid = False
@@ -57,7 +57,7 @@ class ValidatorProtocol(Protocol):
 class Validator:
     """Default validation engine for Academic Intelligence records."""
 
-    def __init__(self, config: Optional[ValidatorConfig] = None) -> None:
+    def __init__(self, config: ValidatorConfig | None = None) -> None:
         self.config: ValidatorConfig = config or ValidatorConfig()
         self._doi_pattern: re.Pattern[str] = re.compile(
             r"^10\.\d{4,9}/[-._;()/:A-Z0-9]+$",
@@ -82,7 +82,7 @@ class Validator:
             result.add_warning("authors", "no authors listed")
 
         if paper.year is not None:
-            current = datetime.now(timezone.utc).year
+            current = datetime.now(UTC).year
             if paper.year < 1800 or paper.year > current + 1:
                 result.add_error("year", f"implausible year: {paper.year}")
 
@@ -101,9 +101,14 @@ class Validator:
         if paper.citations is not None and paper.citations < 0:
             result.add_error("citations", "citations must be non-negative")
 
-        self._validate_evidence(paper.evidence, result)
+        evidences = self._evidence_entries(paper)
+        if not evidences:
+            result.add_error("evidence", "evidence is required")
+        for ev in evidences:
+            self._validate_evidence(ev, result)
+        primary = paper.primary_evidence
         result.confidence_score = self._score_record(
-            paper.evidence,
+            primary,
             completeness=self._paper_completeness(paper),
         )
         if result.confidence_score < self.config.min_confidence:
@@ -119,9 +124,12 @@ class Validator:
         if not author.name or not author.name.strip():
             result.add_error("name", "name is required")
 
-        if author.email:
-            if self.config.strict_email and not self._email_pattern.match(author.email):
-                result.add_error("email", f"invalid email: {author.email}")
+        if (
+            author.email
+            and self.config.strict_email
+            and not self._email_pattern.match(author.email)
+        ):
+            result.add_error("email", f"invalid email: {author.email}")
 
         for field_name in ("homepage", "profile_url"):
             url_err = self._check_url(getattr(author, field_name))
@@ -133,8 +141,12 @@ class Validator:
         if author.citations is not None and author.citations < 0:
             result.add_error("citations", "citations must be non-negative")
 
-        self._validate_evidence(author.evidence, result)
-        result.confidence_score = self._score_evidence(author.evidence)
+        evidences = self._evidence_entries(author)
+        if not evidences:
+            result.add_error("evidence", "evidence is required")
+        for ev in evidences:
+            self._validate_evidence(ev, result)
+        result.confidence_score = self._score_evidence(author.primary_evidence)
         return result
 
     def validate_citation(self, citation: Citation) -> ValidationResult:
@@ -156,13 +168,13 @@ class Validator:
 
     def validate_papers(
         self,
-        papers: List[Paper],
+        papers: list[Paper],
         *,
         raise_on_invalid: bool = False,
-    ) -> List[ValidationResult]:
+    ) -> list[ValidationResult]:
         results = [self.validate_paper(p) for p in papers]
         if raise_on_invalid:
-            for p, r in zip(papers, results):
+            for p, r in zip(papers, results, strict=True):
                 if not r.is_valid:
                     raise DataValidationError(
                         f"Invalid paper: {p.title}",
@@ -171,32 +183,41 @@ class Validator:
                     )
         return results
 
-    def filter_valid_papers(self, papers: List[Paper]) -> List[Paper]:
+    def filter_valid_papers(self, papers: list[Paper]) -> list[Paper]:
         return [p for p in papers if self.validate_paper(p).is_valid]
 
     def _validate_evidence(self, evidence: Evidence, result: ValidationResult) -> None:
-        if evidence is None:
-            result.add_error("evidence", "evidence is required")
-            return
         if not evidence.source_url:
             result.add_error("evidence.source_url", "required")
         if evidence.confidence < 0 or evidence.confidence > 1:
             result.add_error("evidence.confidence", "must be in [0, 1]")
-        if self.config.allowed_sources:
-            if evidence.source.value not in self.config.allowed_sources:
-                result.add_error(
-                    "evidence.source",
-                    f"source {evidence.source.value} not in allowed set",
-                )
+        if (
+            self.config.allowed_sources
+            and evidence.source.value not in self.config.allowed_sources
+        ):
+            result.add_error(
+                "evidence.source",
+                f"source {evidence.source.value} not in allowed set",
+            )
 
-    def _score_evidence(self, evidence: Evidence) -> float:
+    @staticmethod
+    def _evidence_entries(record: Any) -> list[Evidence]:
+        """Return the evidence entries of a record (evidence_list first)."""
+        if getattr(record, "evidence_list", None):
+            return list(record.evidence_list)
+        legacy = getattr(record, "evidence", None)
+        return [legacy] if legacy is not None else []
+
+    def _score_evidence(self, evidence: Evidence | None) -> float:
+        if evidence is None:
+            return 0.0
         score = evidence.confidence
         if evidence.raw_data:
             score = min(1.0, score + 0.02)
         # Mild recency boost if collected within 30 days
         try:
-            age = datetime.now(timezone.utc) - evidence.collected_at.replace(
-                tzinfo=evidence.collected_at.tzinfo or timezone.utc
+            age = datetime.now(UTC) - evidence.collected_at.replace(
+                tzinfo=evidence.collected_at.tzinfo or UTC
             )
             if age.days <= 30:
                 score = min(1.0, score + 0.01)
@@ -204,7 +225,7 @@ class Validator:
             pass
         return max(0.0, min(1.0, score))
 
-    def _score_record(self, evidence: Evidence, completeness: float) -> float:
+    def _score_record(self, evidence: Evidence | None, completeness: float) -> float:
         base = self._score_evidence(evidence)
         return max(0.0, min(1.0, 0.7 * base + 0.3 * completeness))
 
@@ -223,7 +244,7 @@ class Validator:
         filled = sum(1 for f in fields if f is not None and f != [] and f != "")
         return filled / len(fields)
 
-    def _check_url(self, url: Optional[str]) -> Optional[str]:
+    def _check_url(self, url: str | None) -> str | None:
         if url is None or url == "":
             return None
         try:
@@ -234,7 +255,7 @@ class Validator:
             return f"invalid URL: {url}"
         return None
 
-    def _check_doi(self, doi: Optional[str]) -> Optional[str]:
+    def _check_doi(self, doi: str | None) -> str | None:
         if doi is None or doi == "":
             return None
         if not self._doi_pattern.match(doi):

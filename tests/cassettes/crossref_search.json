@@ -1,0 +1,61 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "api.crossref.org",
+        "path_contains": "/works",
+        "params_contains": {
+          "query.bibliographic": "deep learning transformers",
+          "rows": "5",
+          "mailto": "test@example.com"
+        }
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "status": "ok",
+          "message-type": "work-list",
+          "message": {
+            "total-results": 2,
+            "items": [
+              {
+                "DOI": "10.1038/s41586-025-09422-z",
+                "title": [
+                  "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning"
+                ],
+                "publisher": "Springer Nature",
+                "container-title": ["Nature"],
+                "author": [
+                  {
+                    "given": "Dayiheng",
+                    "family": "Liu",
+                    "affiliation": [{ "name": "DeepSeek-AI" }]
+                  }
+                ],
+                "issued": { "date-parts": [[2025, 9, 18]] },
+                "is-referenced-by-count": 128
+              },
+              {
+                "DOI": "10.1007/s10462-023-10456-3",
+                "title": [
+                  "Transformers in deep learning: a survey"
+                ],
+                "publisher": "Springer",
+                "container-title": ["Artificial Intelligence Review"],
+                "author": [
+                  {
+                    "given": "Salman",
+                    "family": "Khan",
+                    "affiliation": [{ "name": "University of Oxford" }]
+                  }
+                ],
+                "issued": { "date-parts": [[2023, 4, 1]] },
+                "is-referenced-by-count": 42
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

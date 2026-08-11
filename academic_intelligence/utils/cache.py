@@ -7,11 +7,15 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
+import inspect
 import json
 import logging
+import os
 import time
+import uuid
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable, Optional, Union
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +30,7 @@ class Cache:
         self,
         ttl: int = 3600,
         persistent: bool = False,
-        persist_path: Optional[Union[str, Path]] = None,
+        persist_path: str | Path | None = None,
     ) -> None:
         """Initialize cache.
 
@@ -41,6 +45,7 @@ class Cache:
         # key -> (value, expires_at)
         self._memory: dict[str, tuple[Any, float]] = {}
         self._lock = asyncio.Lock()
+        self._inflight: dict[str, asyncio.Task[Any]] = {}
         if self.persistent and self.persist_path.exists():
             self._load_from_disk()
 
@@ -66,14 +71,21 @@ class Cache:
                 if exp > now
             }
             self.persist_path.parent.mkdir(parents=True, exist_ok=True)
-            self.persist_path.write_text(
-                json.dumps(payload, ensure_ascii=False, default=str),
-                encoding="utf-8",
+            temporary = self.persist_path.with_name(
+                f"{self.persist_path.name}.tmp-{uuid.uuid4().hex}"
             )
+            try:
+                with temporary.open("w", encoding="utf-8") as handle:
+                    json.dump(payload, handle, ensure_ascii=False, default=str)
+                    handle.flush()
+                    os.fsync(handle.fileno())
+                os.replace(temporary, self.persist_path)
+            finally:
+                temporary.unlink(missing_ok=True)
         except Exception as exc:
             logger.warning("Failed to persist cache to %s: %s", self.persist_path, exc)
 
-    async def get(self, key: str) -> Optional[Any]:
+    async def get(self, key: str) -> Any | None:
         """Get value from cache.
 
         Args:
@@ -92,7 +104,7 @@ class Cache:
                 return None
             return value
 
-    async def set(self, key: str, value: Any, ttl: Optional[int] = None) -> None:
+    async def set(self, key: str, value: Any, ttl: int | None = None) -> None:
         """Set value in cache.
 
         Args:
@@ -103,7 +115,7 @@ class Cache:
         async with self._lock:
             expires_at = time.time() + float(ttl if ttl is not None else self.ttl)
             self._memory[key] = (value, expires_at)
-            self._save_to_disk()
+            await asyncio.to_thread(self._save_to_disk)
 
     async def get_or_set(
         self,
@@ -126,27 +138,51 @@ class Cache:
         cached = await self.get(key)
         if cached is not None:
             return cached
-        result = factory(*args, **kwargs)
-        if asyncio.iscoroutine(result):
-            result = await result
-        await self.set(key, result)
-        return result
+        async with self._lock:
+            entry = self._memory.get(key)
+            if entry is not None and time.time() < entry[1]:
+                return entry[0]
+            task = self._inflight.get(key)
+            if task is None:
+                task = asyncio.create_task(
+                    self._compute_and_store(key, factory, args, kwargs)
+                )
+                self._inflight[key] = task
+        # A caller cancelling its own wait must not cancel the shared
+        # single-flight computation for every other waiter.
+        return await asyncio.shield(task)
+
+    async def _compute_and_store(
+        self,
+        key: str,
+        factory: Callable[..., Any],
+        args: tuple[Any, ...],
+        kwargs: dict[str, Any],
+    ) -> Any:
+        task = asyncio.current_task()
+        try:
+            result = factory(*args, **kwargs)
+            if inspect.isawaitable(result):
+                result = await result
+            await self.set(key, result)
+            return result
+        finally:
+            async with self._lock:
+                if self._inflight.get(key) is task:
+                    self._inflight.pop(key, None)
 
     async def invalidate(self, key: str) -> None:
         """Remove a key from cache."""
         async with self._lock:
             self._memory.pop(key, None)
-            self._save_to_disk()
+            await asyncio.to_thread(self._save_to_disk)
 
     async def clear(self) -> None:
         """Clear all cached entries."""
         async with self._lock:
             self._memory.clear()
             if self.persistent and self.persist_path.exists():
-                try:
-                    self.persist_path.unlink()
-                except OSError:
-                    pass
+                await asyncio.to_thread(self.persist_path.unlink, missing_ok=True)
 
     async def size(self) -> int:
         """Return number of non-expired entries (purges expired first)."""

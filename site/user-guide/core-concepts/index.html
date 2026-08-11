@@ -1515,15 +1515,19 @@
 <tbody>
 <tr>
 <td><code>Evidence</code></td>
-<td>Provenance + confidence</td>
+<td>Provenance + confidence (one entry per confirming source)</td>
+</tr>
+<tr>
+<td><code>AuthorRef</code></td>
+<td>Lightweight byline author inside a paper (order, correspondence)</td>
 </tr>
 <tr>
 <td><code>Author</code></td>
-<td>Scholar profile</td>
+<td>Scholar profile (incl. identity IDs and disambiguation status)</td>
 </tr>
 <tr>
 <td><code>Paper</code></td>
-<td>Publication metadata</td>
+<td>Publication metadata (incl. <code>arxiv_id</code> / <code>pmid</code> / <code>fields_of_study</code> / graph relations)</td>
 </tr>
 <tr>
 <td><code>Citation</code></td>
@@ -1532,6 +1536,10 @@
 <tr>
 <td><code>CollectionResult</code></td>
 <td>Batch outcome of a collect call</td>
+</tr>
+<tr>
+<td><code>ExpandResult</code> / <code>ExpandStats</code></td>
+<td>Outcome of a graph <code>expand</code> pass</td>
 </tr>
 <tr>
 <td><code>Config</code> / <code>AntiCrawlStrategy</code></td>

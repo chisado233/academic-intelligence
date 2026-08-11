@@ -47,7 +47,7 @@ def test_enricher_normalizes() -> None:
     )
     out = Enricher().enrich_papers([paper])[0]
     assert out.title == "Hello World"
-    assert out.authors == ["Ada Lovelace"]
+    assert [a.name for a in out.authors] == ["Ada Lovelace"]
 
 
 def test_validator_paper() -> None:

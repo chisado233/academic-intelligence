@@ -41,8 +41,11 @@ dependencies = [
     "pydantic>=2.0",
     "sqlalchemy[asyncio]>=2.0",
     "aiosqlite>=0.20.0",
+    "click>=8.1.0",
     "typer>=0.12.0",
     "rich>=13.0",
+    "trafilatura>=1.8",
+    "pdfplumber>=0.11.0",
 ]
 
 [project.optional-dependencies]
@@ -56,15 +59,39 @@ dev = [
     "mypy>=1.10",
     "pre-commit>=3.7",
 ]
+# WebCrawler extra: TLS-fingerprint transport (curl_cffi), browser rendering
+# (scrapling) and LLM schema extraction (crawl4ai).  All three are optional,
+# import-detected, and degrade gracefully to httpx / rule-mode extraction.
+# trafilatura is listed here too so `pip install ".[crawler]"` brings the
+# complete crawler stack (it is otherwise a formal dependency already).
+crawler = [
+    "curl_cffi>=0.7",
+    "trafilatura>=1.8",
+    "scrapling>=0.1",
+    "crawl4ai>=0.6",
+]
+# PyMuPDF extra: AGPL-3.0-only PDF backend for the full-text parser
+# (pdfplumber, MIT, is the default and a formal dependency).  Optional per
+# upgrade I2: AGPL is only acceptable for personal local use — install with
+# `pip install "academic-intelligence[pymupdf]"`.
+pymupdf = [
+    "pymupdf>=1.24",
+]
 docs = [
     "mkdocs>=1.6",
     "mkdocs-material>=9.5",
     "mkdocstrings[python]>=0.25",
     "pymdown-extensions>=10.0",
 ]
+export = [
+    "pyarrow>=16.0",
+]
 
 [project.scripts]
-ai = "academic_intelligence.cli:main"
+paper = "academic_intelligence.cli:main"
+# One-version-period compatibility shim: `ai` prints the rename notice and
+# exits 2 (technical-design.md §8 migration).  The official command is `paper`.
+ai = "academic_intelligence.cli:ai_legacy_shim"
 
 [project.urls]
 Homepage = "https://github.com/paper-research-crawler/academic-intelligence"
@@ -78,6 +105,8 @@ packages = ["academic_intelligence"]
 [tool.ruff]
 target-version = "py311"
 line-length = 100
+
+[tool.ruff.lint]
 select = [
     "E",   # pycodestyle errors
     "F",   # Pyflakes
@@ -138,7 +167,6 @@ source = ["academic_intelligence"]
 omit = [
     "*/tests/*",
     "*/__pycache__/*",
-    "academic_intelligence/cli.py",
 ]
 
 [tool.coverage.report]

@@ -41,8 +41,12 @@ Typical usage
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+import builtins
+from collections.abc import Mapping
+from dataclasses import dataclass
+from typing import Any
 
+import httpx
 
 # ---------------------------------------------------------------------------
 # Base exception
@@ -60,7 +64,7 @@ class AcademicIntelligenceError(Exception):
         self,
         message: str,
         *,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message)
         self.message = message
@@ -84,10 +88,38 @@ class SourceError(AcademicIntelligenceError):
         message: str,
         *,
         source_name: str,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.source_name = source_name
+
+
+class NotSupportedError(SourceError):
+    """Raised when a source adapter does not support a requested operation.
+
+    Sources that lack a capability (e.g. Unpaywall has no citation graph and
+    no metadata search) raise this instead of returning an empty result, so
+    callers can tell "the source does not implement this operation" apart
+    from "no data found" (upgrade technical-design §1.1.1 C1 revision).
+    """
+
+
+class TimeoutError(SourceError):
+    """Raised when a source request times out (read/connect/pool/write).
+
+    Distinct from :class:`SourceUnavailableError` so callers can tell "the
+    source is slow / timed out" apart from "the source is unreachable", and
+    decide on their own retry/fallback policy (FIX-J F3).
+    """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        source_name: str,
+        context: dict[str, Any] | None = None,
+    ) -> None:
+        super().__init__(message, source_name=source_name, context=context)
 
 
 class SourceUnavailableError(SourceError):
@@ -101,7 +133,7 @@ class SourceUnavailableError(SourceError):
         message: str,
         *,
         source_name: str,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, source_name=source_name, context=context)
         # TODO: track retry_count and last_contact timestamp.
@@ -118,8 +150,8 @@ class RateLimitError(SourceError):
         message: str,
         *,
         source_name: str,
-        retry_after: Optional[int] = None,
-        context: Optional[Dict[str, Any]] = None,
+        retry_after: int | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, source_name=source_name, context=context)
         self.retry_after = retry_after
@@ -137,7 +169,7 @@ class AuthenticationError(SourceError):
         message: str,
         *,
         source_name: str,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, source_name=source_name, context=context)
         # TODO: add `help_url` or `config_key` attribute.
@@ -154,12 +186,151 @@ class ParseError(SourceError):
         message: str,
         *,
         source_name: str,
-        raw_snippet: Optional[str] = None,
-        context: Optional[Dict[str, Any]] = None,
+        raw_snippet: str | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, source_name=source_name, context=context)
         self.raw_snippet = raw_snippet
         # TODO: cap raw_snippet length to avoid memory bloat.
+
+
+@dataclass(frozen=True, eq=False)
+class SourceFailure:
+    """Structured, string-compatible description of a failed source call."""
+
+    source: str
+    operation: str
+    error_type: str
+    message: str
+    retry_count: int = 0
+    http_status: int | None = None
+    transient: bool = False
+    permanent: bool = True
+
+    def __str__(self) -> str:
+        return f"{self.source}: {self.message}"
+
+    def __contains__(self, value: object) -> bool:
+        return isinstance(value, str) and value in str(self)
+
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, str):
+            return other in {self.message, str(self)}
+        if not isinstance(other, SourceFailure):
+            return NotImplemented
+        return self.to_dict() == other.to_dict()
+
+    def to_dict(self) -> dict[str, str | int | bool | None]:
+        """Return a JSON-compatible representation."""
+        return {
+            "source": self.source,
+            "operation": self.operation,
+            "error_type": self.error_type,
+            "message": self.message,
+            "retry_count": self.retry_count,
+            "http_status": self.http_status,
+            "transient": self.transient,
+            "permanent": self.permanent,
+        }
+
+    @classmethod
+    def from_message(
+        cls,
+        *,
+        source: str,
+        operation: str,
+        message: str,
+        error_type: str = "SourceError",
+        retry_count: int = 0,
+        http_status: int | None = None,
+        transient: bool = False,
+        permanent: bool | None = None,
+    ) -> SourceFailure:
+        """Build a structured record from a legacy string failure."""
+        return cls(
+            source=source,
+            operation=operation,
+            error_type=error_type,
+            message=message,
+            retry_count=retry_count,
+            http_status=http_status,
+            transient=transient,
+            permanent=not transient if permanent is None else permanent,
+        )
+
+    @classmethod
+    def from_exception(
+        cls,
+        *,
+        source: str,
+        operation: str,
+        exc: BaseException,
+    ) -> SourceFailure:
+        """Extract retry/status/classification metadata from an exception."""
+        retry_count: int | None = None
+        status: int | None = None
+        current: BaseException | None = exc
+        seen: set[int] = set()
+
+        # Adapters deliberately wrap transport errors in domain exceptions.
+        # Walk a small, cycle-safe chain so retry/status metadata survives the
+        # boundary.  Outer explicit context wins, including retry_count=0.
+        while current is not None and len(seen) < 16:
+            identity = id(current)
+            if identity in seen:
+                break
+            seen.add(identity)
+
+            raw_context = getattr(current, "context", None)
+            context = raw_context if isinstance(raw_context, Mapping) else {}
+            if retry_count is None:
+                retry_count = cls._metadata_int(context.get("retry_count"))
+                if retry_count is None:
+                    retry_count = cls._metadata_int(getattr(current, "retry_count", None))
+            if status is None:
+                status = cls._metadata_int(context.get("http_status"))
+                if status is None:
+                    status = cls._metadata_int(getattr(current, "status_code", None))
+                if status is None:
+                    response = getattr(current, "response", None)
+                    status = cls._metadata_int(getattr(response, "status_code", None))
+
+            cause = current.__cause__
+            if cause is not None:
+                current = cause
+            elif not current.__suppress_context__:
+                current = current.__context__
+            else:
+                current = None
+        is_transient = isinstance(
+            exc,
+            (
+                RateLimitError,
+                TimeoutError,
+                SourceUnavailableError,
+                builtins.TimeoutError,
+                httpx.TransportError,
+            ),
+        )
+        return cls.from_message(
+            source=source,
+            operation=operation,
+            error_type=exc.__class__.__name__,
+            message=getattr(exc, "message", str(exc)),
+            retry_count=retry_count or 0,
+            http_status=status,
+            transient=is_transient,
+        )
+
+    @staticmethod
+    def _metadata_int(value: object) -> int | None:
+        """Return integer exception metadata without letting bad values escape."""
+        if isinstance(value, bool) or not isinstance(value, int | str):
+            return None
+        try:
+            return int(value)
+        except ValueError:
+            return None
 
 
 # ---------------------------------------------------------------------------
@@ -173,7 +344,7 @@ class CollectorError(AcademicIntelligenceError):
         self,
         message: str,
         *,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
 
@@ -181,7 +352,11 @@ class CollectorError(AcademicIntelligenceError):
 class AllSourcesFailedError(CollectorError):
     """Raised when every configured source fails for a given query.
 
-    TODO: Aggregate per-source exceptions into `failures` list.
+    Attributes:
+        query: The query that triggered the collection.
+        sources_attempted: Names of every source that was tried.
+        failures: Mapping ``source_name -> failure reason`` for each failed
+            source (3A v2 §11.2: the exception message includes every reason).
     """
 
     def __init__(
@@ -189,13 +364,38 @@ class AllSourcesFailedError(CollectorError):
         message: str,
         *,
         query: str,
-        sources_attempted: List[str],
-        context: Optional[Dict[str, Any]] = None,
+        sources_attempted: list[str],
+        failures: Mapping[str, str | SourceFailure] | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.query = query
-        self.sources_attempted = sources_attempted
-        # TODO: capture the nested exceptions that caused each source to fail.
+        self.sources_attempted = list(sources_attempted)
+        self.failures = {
+            source: (
+                failure
+                if isinstance(failure, SourceFailure)
+                else SourceFailure.from_message(
+                    source=source,
+                    operation="unknown",
+                    message=failure,
+                )
+            )
+            for source, failure in (failures or {}).items()
+        }
+
+    def __str__(self) -> str:
+        bits: list[str] = []
+        if self.failures:
+            reasons = ", ".join(
+                f"{source}: {reason.message}"
+                for source, reason in self.failures.items()
+            )
+            bits.append(f"source failures: {reasons}")
+        if self.context:
+            bits.append(f"context={self.context}")
+        suffix = f" ({'; '.join(bits)})" if bits else ""
+        return f"{self.message}{suffix}"
 
 
 class PartialResultError(CollectorError):
@@ -209,8 +409,8 @@ class PartialResultError(CollectorError):
         message: str,
         *,
         partial_result: Any,
-        failed_sources: List[str],
-        context: Optional[Dict[str, Any]] = None,
+        failed_sources: list[str],
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.partial_result = partial_result
@@ -229,7 +429,7 @@ class ProcessorError(AcademicIntelligenceError):
         self,
         message: str,
         *,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
 
@@ -244,9 +444,9 @@ class DataValidationError(ProcessorError):
         self,
         message: str,
         *,
-        record_id: Optional[str] = None,
-        details: Optional[Dict[str, Any]] = None,
-        context: Optional[Dict[str, Any]] = None,
+        record_id: str | None = None,
+        details: dict[str, Any] | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.record_id = record_id
@@ -264,8 +464,8 @@ class DeduplicationError(ProcessorError):
         self,
         message: str,
         *,
-        conflicting_ids: Optional[List[str]] = None,
-        context: Optional[Dict[str, Any]] = None,
+        conflicting_ids: list[str] | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.conflicting_ids = conflicting_ids or []
@@ -283,7 +483,7 @@ class EnrichmentError(ProcessorError):
         message: str,
         *,
         enrichment_step: str,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.enrichment_step = enrichment_step
@@ -302,7 +502,7 @@ class StorageError(AcademicIntelligenceError):
         message: str,
         *,
         backend: str,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.backend = backend
@@ -319,8 +519,8 @@ class RecordNotFoundError(StorageError):
         message: str,
         *,
         backend: str,
-        record_id: Optional[str] = None,
-        context: Optional[Dict[str, Any]] = None,
+        record_id: str | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, backend=backend, context=context)
         self.record_id = record_id
@@ -338,8 +538,8 @@ class StorageIntegrityError(StorageError):
         message: str,
         *,
         backend: str,
-        constraint: Optional[str] = None,
-        context: Optional[Dict[str, Any]] = None,
+        constraint: str | None = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, backend=backend, context=context)
         self.constraint = constraint
@@ -358,7 +558,7 @@ class CLIError(AcademicIntelligenceError):
         message: str,
         *,
         exit_code: int = 1,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, context=context)
         self.exit_code = exit_code
@@ -374,9 +574,9 @@ class ConfigurationError(CLIError):
         self,
         message: str,
         *,
-        config_key: Optional[str] = None,
+        config_key: str | None = None,
         exit_code: int = 2,
-        context: Optional[Dict[str, Any]] = None,
+        context: dict[str, Any] | None = None,
     ) -> None:
         super().__init__(message, exit_code=exit_code, context=context)
         self.config_key = config_key

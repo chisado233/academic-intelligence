@@ -2,78 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/changelog/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://paper-research-crawler.github.io/academic-intelligence/agent-eval/capability-boundaries/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://paper-research-crawler.github.io/academic-intelligence/agent-eval/task-suite/</loc>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/api/collectors/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/api/core-models/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/api/processors/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/api/sources/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/api/storage/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/api/utils/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/development/architecture/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/development/contributing/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/development/testing/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/getting-started/configuration/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/getting-started/installation/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/getting-started/quick-start/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://paper-research-crawler.github.io/academic-intelligence/goals/active/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://paper-research-crawler.github.io/academic-intelligence/plans/2026-08-09-academic-intelligence-hardening-design/</loc>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/user-guide/cli/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/user-guide/collection/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/user-guide/core-concepts/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/user-guide/data-sources/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
     <url>
          <loc>https://paper-research-crawler.github.io/academic-intelligence/user-guide/storage/</loc>
-         <lastmod>2026-07-21</lastmod>
+         <lastmod>2026-08-09</lastmod>
     </url>
 </urlset>

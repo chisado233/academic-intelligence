@@ -34,10 +34,12 @@ class TestModelBoundary:
             Paper(title="   ", authors=["Test Author"], evidence=_evidence())
 
     def test_paper_very_long_title(self) -> None:
-        """Very long titles are accepted (no max length enforced)."""
-        title = "A" * 10000
-        paper = Paper(title=title, authors=["Test Author"], evidence=_evidence())
-        assert len(paper.title) == 10000
+        """Very long titles are rejected (I-8 max length 500)."""
+        with pytest.raises(ValidationError):
+            Paper(title="A" * 501, authors=["Test Author"], evidence=_evidence())
+        # a 500-char title is still accepted
+        ok = Paper(title="A" * 500, authors=["Test Author"], evidence=_evidence())
+        assert len(ok.title) == 500
 
     def test_paper_invalid_year(self) -> None:
         """Year far in the future is rejected."""

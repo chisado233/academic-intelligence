@@ -139,3 +139,94 @@ class TestStorageBoundary:
             assert stats["total_papers"] == 50
         finally:
             await store.close()
+
+
+# ---------------------------------------------------------------------------
+# FIX-H F5 (H6): typed errors on the read path + connect() rebuild warning
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.asyncio
+async def test_sqlite_dropped_table_read_raises_storage_error(
+    tmp_path: Path,
+) -> None:
+    """H6: querying after the ``papers`` table was dropped must raise a typed
+    :class:`StorageError`, not a raw ``sqlite3.OperationalError``."""
+    import sqlite3
+
+    db = tmp_path / "h6.db"
+    store = SQLiteStorage(str(db))
+    await store.connect()
+    try:
+        await store.save_paper(_paper(1, with_id=True))
+        conn = sqlite3.connect(str(db))
+        conn.execute("DROP TABLE papers")
+        conn.commit()
+        conn.close()
+
+        with pytest.raises(StorageError) as excinfo:
+            await store.query_papers()
+        # not the raw DBAPI exception leaking out
+        assert not isinstance(excinfo.value, sqlite3.OperationalError)
+        assert excinfo.value.backend == "sqlite"
+    finally:
+        await store.close()
+
+
+@pytest.mark.asyncio
+async def test_sqlite_corrupt_json_cell_read_raises_storage_error(
+    tmp_path: Path,
+) -> None:
+    """H6: a corrupt JSON cell must raise a typed :class:`StorageError`
+    instead of a bare ``json.JSONDecodeError`` poisoning get_paper."""
+    import json
+    import sqlite3
+
+    db = tmp_path / "h6b.db"
+    store = SQLiteStorage(str(db))
+    await store.connect()
+    try:
+        await store.save_paper(_paper(1, with_id=True))
+        conn = sqlite3.connect(str(db))
+        conn.execute("UPDATE papers SET authors = 'not-json' WHERE id = 'paper-1'")
+        conn.commit()
+        conn.close()
+
+        with pytest.raises(StorageError) as excinfo:
+            await store.get_paper("paper-1")
+        assert not isinstance(excinfo.value, json.JSONDecodeError)
+    finally:
+        await store.close()
+
+
+@pytest.mark.asyncio
+async def test_sqlite_connect_warns_when_core_table_missing(
+    tmp_path: Path, caplog: pytest.LogCaptureFixture
+) -> None:
+    """H6: reconnecting to an existing db file that lost its core tables must
+    log a warning instead of silently rebuilding empty tables."""
+    import logging
+    import sqlite3
+
+    db = tmp_path / "h6c.db"
+    store = SQLiteStorage(str(db))
+    await store.connect()
+    await store.save_paper(_paper(1, with_id=True))
+    await store.close()
+
+    conn = sqlite3.connect(str(db))
+    conn.execute("DROP TABLE papers")
+    conn.commit()
+    conn.close()
+
+    store2 = SQLiteStorage(str(db))
+    with caplog.at_level(
+        logging.WARNING, logger="academic_intelligence.storage.sqlite_store"
+    ):
+        await store2.connect()
+    try:
+        assert any("core tables" in record.message for record in caplog.records)
+        # the rebuild still works (empty tables recreated)
+        assert await store2.query_papers() == []
+    finally:
+        await store2.close()

@@ -10,18 +10,31 @@ from __future__ import annotations
 
 import logging
 import os
-from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from datetime import UTC, datetime
+from typing import Any
+
+import httpx
 
 from academic_intelligence.core.exceptions import (
     AuthenticationError,
     ParseError,
     RateLimitError,
     SourceUnavailableError,
+    TimeoutError,
 )
-from academic_intelligence.core.models import Author, Citation, Evidence, Paper
+from academic_intelligence.core.models import (
+    Author,
+    AuthorRef,
+    Citation,
+    Evidence,
+    Paper,
+)
 from academic_intelligence.core.types import AntiCrawlStrategy, SourceType
-from academic_intelligence.sources.base import BaseSource
+from academic_intelligence.sources.base import (
+    BaseSource,
+    is_rate_limit_status,
+    retry_after_from_error,
+)
 from academic_intelligence.utils.http import HTTPClient
 from academic_intelligence.utils.rate_limiter import create_rate_limiter
 
@@ -40,11 +53,13 @@ def _normalize_doi(doi: str) -> str:
     return cleaned
 
 
-def _safe_doi(doi: Optional[str], title: str, evidence: Evidence) -> Optional[str]:
+def _safe_doi(doi: str | None, title: str, evidence: Evidence) -> str | None:
     if not doi:
         return None
     try:
-        Paper.model_validate({"title": title or "untitled", "doi": doi, "evidence": evidence})
+        Paper.model_validate(
+            {"title": title or "untitled", "doi": doi, "evidence_list": [evidence]}
+        )
         return doi
     except Exception:
         return None
@@ -59,13 +74,20 @@ class IEEESource(BaseSource):
 
     name = "ieee"
     source_type = SourceType.IEEE
+    capabilities = {
+        **BaseSource.capabilities,
+        # C1 revision: author ops are real here, citation graph is not.
+        "get_author_papers": True,
+        "get_author_profile": True,
+        "get_citations": False,
+    }
 
     def __init__(
         self,
-        http_client: Optional[HTTPClient] = None,
+        http_client: HTTPClient | None = None,
         *,
-        api_key: Optional[str] = None,
-        confidence: float = 0.88,
+        api_key: str | None = None,
+        confidence: float = 0.85,
         requests_per_second: float = 2.0,
     ) -> None:
         self._http = http_client
@@ -104,22 +126,39 @@ class IEEESource(BaseSource):
             )
         return self.api_key
 
-    def _evidence(self, url: str, raw: Optional[Dict[str, Any]] = None) -> Evidence:
+    def _evidence(
+        self,
+        url: str,
+        raw: dict[str, Any] | None = None,
+        source_id: str | None = None,
+    ) -> Evidence:
         return Evidence(
             source=self.source_type,
+            source_id=source_id,
             source_url=url,
-            collected_at=datetime.now(timezone.utc),
+            collected_at=datetime.now(UTC),
             confidence=self.confidence,
             raw_data=raw,
         )
 
-    async def _search(self, params: Dict[str, Any]) -> Dict[str, Any]:
+    async def _search(self, params: dict[str, Any]) -> dict[str, Any]:
         key = self._require_key()
         client = await self._client()
         query = {"apikey": key, **params}
         try:
             response = await client.get(_API_BASE, params=query)
+        except httpx.TimeoutException as exc:
+            raise TimeoutError(
+                f"IEEE Xplore request timed out: {exc}",
+                source_name=self.name,
+            ) from exc
         except Exception as exc:
+            if is_rate_limit_status(exc):
+                raise RateLimitError(
+                    "IEEE Xplore rate limit exceeded",
+                    source_name=self.name,
+                    retry_after=retry_after_from_error(exc),
+                ) from exc
             raise SourceUnavailableError(
                 f"IEEE Xplore request failed: {exc}",
                 source_name=self.name,
@@ -160,8 +199,8 @@ class IEEESource(BaseSource):
             )
         return data
 
-    def _parse_authors(self, data: Dict[str, Any]) -> List[str]:
-        authors: List[str] = []
+    def _parse_authors(self, data: dict[str, Any]) -> list[str]:
+        authors: list[str] = []
         # authors.authors is the common shape
         authors_block = data.get("authors")
         if isinstance(authors_block, dict):
@@ -186,12 +225,15 @@ class IEEESource(BaseSource):
             authors = [a.strip() for a in raw.replace(";", ",").split(",") if a.strip()]
         return authors
 
-    def _parse_paper(self, data: Dict[str, Any]) -> Paper:
+    def _parse_paper(self, data: dict[str, Any]) -> Paper:
         title = (data.get("title") or data.get("article_title") or "").strip() or "Untitled"
-        authors = self._parse_authors(data)
+        authors = [
+            AuthorRef(name=name, position=i + 1)
+            for i, name in enumerate(self._parse_authors(data))
+        ]
 
         year_raw = data.get("publication_year") or data.get("year")
-        year: Optional[int] = None
+        year: int | None = None
         if year_raw is not None:
             try:
                 year = int(str(year_raw)[:4])
@@ -208,13 +250,10 @@ class IEEESource(BaseSource):
             venue = venue.strip() or None
 
         abstract = data.get("abstract")
-        if isinstance(abstract, str):
-            abstract = abstract.strip() or None
-        else:
-            abstract = None
+        abstract = (abstract.strip() or None) if isinstance(abstract, str) else None
 
         doi_raw = data.get("doi")
-        doi: Optional[str] = None
+        doi: str | None = None
         if isinstance(doi_raw, str) and doi_raw.strip():
             doi = _normalize_doi(doi_raw)
 
@@ -231,11 +270,11 @@ class IEEESource(BaseSource):
 
         citations = data.get("citing_paper_count") or data.get("citation_count")
         try:
-            citations_int: Optional[int] = int(citations) if citations is not None else None
+            citations_int: int | None = int(citations) if citations is not None else None
         except (TypeError, ValueError):
             citations_int = None
 
-        keywords: List[str] = []
+        keywords: list[str] = []
         index_terms = data.get("index_terms") or {}
         if isinstance(index_terms, dict):
             for key in ("ieee_terms", "author_terms", "controlledterms", "controlled_terms"):
@@ -268,7 +307,11 @@ class IEEESource(BaseSource):
             if isinstance(html_url, str) and html_url.startswith("http")
             else "https://ieeexplore.ieee.org"
         )
-        evidence = self._evidence(source_url, raw=data if isinstance(data, dict) else None)
+        evidence = self._evidence(
+            source_url,
+            raw=data if isinstance(data, dict) else None,
+            source_id=paper_id,
+        )
         safe_doi = _safe_doi(doi, title, evidence)
 
         return Paper(
@@ -283,16 +326,16 @@ class IEEESource(BaseSource):
             pdf_url=pdf_url if isinstance(pdf_url, str) and pdf_url.startswith("http") else None,
             citations=citations_int,
             keywords=keywords[:30],
-            evidence=evidence,
+            evidence_list=[evidence],
         )
 
-    def _articles_from_response(self, data: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def _articles_from_response(self, data: dict[str, Any]) -> list[dict[str, Any]]:
         articles = data.get("articles") or data.get("article") or []
         if isinstance(articles, dict):
             articles = [articles]
         return [a for a in articles if isinstance(a, dict)]
 
-    async def search_papers(self, query: str, limit: int = 10) -> List[Paper]:
+    async def search_papers(self, query: str, limit: int = 10) -> list[Paper]:
         """Search IEEE Xplore articles by free-text query."""
         q = query.strip()
         if not q:
@@ -306,7 +349,7 @@ class IEEESource(BaseSource):
                 "sort_field": "relevance",
             }
         )
-        papers: List[Paper] = []
+        papers: list[Paper] = []
         for item in self._articles_from_response(data):
             try:
                 papers.append(self._parse_paper(item))
@@ -316,7 +359,7 @@ class IEEESource(BaseSource):
                 break
         return papers
 
-    async def get_paper_by_doi(self, doi: str) -> Optional[Paper]:
+    async def get_paper_by_doi(self, doi: str) -> Paper | None:
         """Fetch an article by DOI."""
         cleaned = _normalize_doi(doi)
         if not cleaned:
@@ -355,7 +398,7 @@ class IEEESource(BaseSource):
                 return None
         return None
 
-    async def get_author_papers(self, author_name: str) -> List[Paper]:
+    async def get_author_papers(self, author_name: str) -> list[Paper]:
         """Search articles by author name."""
         name = author_name.strip()
         if not name:
@@ -369,7 +412,7 @@ class IEEESource(BaseSource):
                 "sort_field": "publication_year",
             }
         )
-        papers: List[Paper] = []
+        papers: list[Paper] = []
         for item in self._articles_from_response(data):
             try:
                 papers.append(self._parse_paper(item))
@@ -377,7 +420,7 @@ class IEEESource(BaseSource):
                 logger.debug("Skip IEEE author paper: %s", exc)
         return papers
 
-    async def get_author_profile(self, author_name: str) -> Optional[Author]:
+    async def get_author_profile(self, author_name: str) -> Author | None:
         """Build a lightweight author profile from IEEE search results."""
         name = author_name.strip()
         if not name:
@@ -387,12 +430,12 @@ class IEEESource(BaseSource):
             return None
 
         matched_name = name
-        interests: List[str] = []
+        interests: list[str] = []
         total_citations = 0
         for paper in papers:
-            for a in paper.authors:
-                if a.lower() == name.lower() or name.lower() in a.lower():
-                    matched_name = a
+            for ref in paper.authors:
+                if ref.name.lower() == name.lower() or name.lower() in ref.name.lower():
+                    matched_name = ref.name
                     break
             for kw in paper.keywords:
                 if kw and kw not in interests:
@@ -413,13 +456,17 @@ class IEEESource(BaseSource):
             citations=total_citations or None,
             interests=interests[:15],
             profile_url=profile_url if profile_url.startswith("http") else None,
-            evidence=self._evidence(
-                profile_url if profile_url.startswith("http") else "https://ieeexplore.ieee.org",
-                raw={"paper_count": len(papers)},
-            ),
+            evidence_list=[
+                self._evidence(
+                    profile_url
+                    if profile_url.startswith("http")
+                    else "https://ieeexplore.ieee.org",
+                    raw={"paper_count": len(papers)},
+                )
+            ],
         )
 
-    async def get_citations(self, paper_id: str) -> List[Citation]:
+    async def get_citations(self, paper_id: str) -> list[Citation]:
         """IEEE Metadata API does not expose full citation graphs; returns empty.
 
         Citation counts may still appear on individual Paper records when

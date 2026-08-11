@@ -1,0 +1,46 @@
+{
+  "interactions": [
+    {
+      "request": {
+        "host": "api.crossref.org",
+        "path_contains": "s41586-025-09422-z",
+        "params_contains": { "mailto": "test@example.com" }
+      },
+      "response": {
+        "status_code": 200,
+        "json": {
+          "status": "ok",
+          "message-type": "work",
+          "message": {
+            "DOI": "10.1038/s41586-025-09422-z",
+            "title": [
+              "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning"
+            ],
+            "publisher": "Springer Nature",
+            "container-title": ["Nature"],
+            "author": [
+              {
+                "given": "Dayiheng",
+                "family": "Liu",
+                "affiliation": [{ "name": "DeepSeek-AI" }]
+              },
+              {
+                "given": "Qiyuan",
+                "family": "Chen",
+                "affiliation": [{ "name": "DeepSeek-AI" }]
+              }
+            ],
+            "issued": { "date-parts": [[2025, 9, 18]] },
+            "is-referenced-by-count": 128,
+            "link": [
+              {
+                "URL": "https://www.nature.com/articles/s41586-025-09422-z.pdf",
+                "content-type": "application/pdf"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -46,8 +46,10 @@ Defined in `pyproject.toml`:
 
 ```bash
 python -c "import academic_intelligence; print(academic_intelligence.__version__)"
-ai --help
+paper --help
 ```
+
+The legacy `ai` entry point is a shim that prints `Command 'ai' was renamed to 'paper'` and exits with code 2; installs before 2026-08-11 exposed the CLI as `ai`.
 
 ## Runtime stack
 

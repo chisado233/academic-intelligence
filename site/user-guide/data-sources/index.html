@@ -710,10 +710,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-sources-v01" class="md-nav__link">
+  <a href="#supported-sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported sources (v0.1)
+        Supported sources
       
     </span>
   </a>
@@ -1353,10 +1353,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-sources-v01" class="md-nav__link">
+  <a href="#supported-sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported sources (v0.1)
+        Supported sources
       
     </span>
   </a>
@@ -1490,7 +1490,7 @@
 
 <h1 id="data-sources">Data Sources<a class="headerlink" href="#data-sources" title="Permanent link">&para;</a></h1>
 <p>Academic Intelligence talks to scholarly APIs and search services through <strong>source plugins</strong> under <code>academic_intelligence.sources</code>. Each plugin implements <code>BaseSource</code>.</p>
-<h2 id="supported-sources-v01">Supported sources (v0.1)<a class="headerlink" href="#supported-sources-v01" title="Permanent link">&para;</a></h2>
+<h2 id="supported-sources">Supported sources<a class="headerlink" href="#supported-sources" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1526,27 +1526,27 @@
 <tr>
 <td>arXiv</td>
 <td><code>arxiv</code></td>
-<td>Enumerated</td>
+<td>Implemented</td>
 <td>None</td>
-<td>Adapter planned / not wired in <code>_build_sources</code></td>
+<td>Atom XML API</td>
 </tr>
 <tr>
 <td>PubMed</td>
 <td><code>pubmed</code></td>
-<td>Enumerated</td>
+<td>Implemented</td>
 <td>None (NCBI email best practice)</td>
-<td>Adapter planned</td>
+<td>E-utilities API</td>
 </tr>
 <tr>
 <td>IEEE Xplore</td>
 <td><code>ieee</code></td>
-<td>Enumerated</td>
-<td>API key when available</td>
-<td>Adapter planned</td>
+<td>Implemented</td>
+<td>API key (<code>IEEE_API_KEY</code>)</td>
+<td>Degrades gracefully without a key</td>
 </tr>
 </tbody>
 </table>
-<p>Implemented adapters are registered in <code>AcademicIntelligence._build_sources</code>. Unknown names are skipped for forward compatibility.</p>
+<p>All six adapters are registered in <code>AcademicIntelligence._build_sources</code> and can be queried directly or through the CLI (<code>--sources</code>). Unknown names are skipped for forward compatibility.</p>
 <h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

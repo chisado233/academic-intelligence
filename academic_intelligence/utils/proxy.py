@@ -8,9 +8,34 @@ from __future__ import annotations
 
 import logging
 import random
-from typing import List, Optional
+from urllib.parse import urlsplit
+
+from academic_intelligence.core.types import mask_proxy_userinfo
 
 logger = logging.getLogger(__name__)
+
+
+def _proxy_log_label(proxy_url: str) -> str:
+    """``host:port`` (host only without a port) label for proxy logs.
+
+    Never includes the ``user:pass@`` userinfo (FIX-AF F3 / AF-3): a proxy
+    carrying credentials must not leak them through health/rotation log
+    lines.  Falls back to the masked URL when the input cannot be parsed.
+    """
+    try:
+        parts = urlsplit(proxy_url)
+    except ValueError:
+        return mask_proxy_userinfo(proxy_url)
+    host = parts.hostname
+    if not host:
+        return mask_proxy_userinfo(proxy_url)
+    if ":" in host and not host.startswith("["):
+        host = f"[{host}]"
+    try:
+        port = parts.port
+    except ValueError:
+        port = None
+    return f"{host}:{port}" if port is not None else host
 
 
 class ProxyPool:
@@ -22,7 +47,7 @@ class ProxyPool:
     - Proxy validation before use
     """
 
-    def __init__(self, proxies: Optional[List[str]] = None) -> None:
+    def __init__(self, proxies: list[str] | None = None) -> None:
         """Initialize proxy pool.
 
         Args:
@@ -30,11 +55,11 @@ class ProxyPool:
         """
         proxies = proxies or []
         self._proxies = list(proxies)
-        self._healthy: List[str] = list(proxies)
-        self._unhealthy: List[str] = []
+        self._healthy: list[str] = list(proxies)
+        self._unhealthy: list[str] = []
         self._index = 0
 
-    def get_next(self, strategy: str = "round_robin") -> Optional[str]:
+    def get_next(self, strategy: str = "round_robin") -> str | None:
         """Get next available proxy.
 
         Args:
@@ -64,7 +89,7 @@ class ProxyPool:
             self._healthy.remove(proxy)
             if proxy not in self._unhealthy:
                 self._unhealthy.append(proxy)
-            logger.warning("Proxy marked unhealthy: %s", proxy)
+            logger.warning("Proxy marked unhealthy: %s", _proxy_log_label(proxy))
             # Keep index in range
             if self._healthy:
                 self._index %= len(self._healthy)
@@ -83,7 +108,7 @@ class ProxyPool:
             self._healthy.append(proxy)
         if proxy not in self._proxies:
             self._proxies.append(proxy)
-        logger.info("Proxy marked healthy: %s", proxy)
+        logger.info("Proxy marked healthy: %s", _proxy_log_label(proxy))
 
     def add(self, proxy: str) -> None:
         """Add a new proxy to the pool as healthy."""
@@ -128,7 +153,11 @@ class ProxyPool:
                     self.mark_unhealthy(proxy)
                 return healthy
         except Exception as exc:
-            logger.debug("Proxy health check failed for %s: %s", proxy, exc)
+            logger.debug(
+                "Proxy health check failed for %s: %s",
+                _proxy_log_label(proxy),
+                exc,
+            )
             self.mark_unhealthy(proxy)
             return False
 
@@ -154,6 +183,6 @@ class ProxyPool:
         return len(self._proxies)
 
     @property
-    def healthy_proxies(self) -> List[str]:
+    def healthy_proxies(self) -> list[str]:
         """Copy of healthy proxy list."""
         return list(self._healthy)
