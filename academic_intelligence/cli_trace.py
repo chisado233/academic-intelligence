@@ -43,6 +43,8 @@ from rich.console import Console
 
 from academic_intelligence.cli_source import _run_cli
 from academic_intelligence.core.exceptions import SourceFailure
+from academic_intelligence.snapshot import default_snapshot_dir
+from academic_intelligence.snapshot.store import read_routing_config
 from academic_intelligence.trace.authors import (
     CitingPaper as AuthorsCitingPaper,
 )
@@ -54,6 +56,7 @@ from academic_intelligence.trace.citing import (
     CitingPaper,
     CitingResult,
     fetch_citing_papers,
+    lookup_citing_in_snapshot,
 )
 from academic_intelligence.trace.profiles import (
     AuthorRow as ProfileRow,
@@ -67,7 +70,12 @@ msg_console = Console(stderr=True, highlight=False)
 
 #: Source names the trace primitives know how to drive (``fetch_citing_papers``
 #: rejects anything else fail-soft; the CLI validates them upfront instead).
-_TRACE_SOURCES: tuple[str, ...] = ("openalex", "opencitations")
+_TRACE_SOURCES: tuple[str, ...] = ("openalex", "opencitations")  # 默认双源
+# 合法源集合：semantic_scholar 是 OpenAlex 失败时的自动兜底源，
+# 也可经 --sources semantic_scholar 显式指定（默认不主动拉取，S2 限流 100/5min）
+_VALID_TRACE_SOURCES: frozenset[str] = frozenset(
+    ("openalex", "opencitations", "semantic_scholar")
+)
 
 _CITING_COLUMNS: tuple[str, ...] = (
     "citing_paper_id",
@@ -156,6 +164,9 @@ def _read_csv_rows(
     citing CSV keep ``authors_detail`` optional for backward compatibility.
     """
     need = list(required) if required is not None else list(columns)
+    # `authors_detail` can embed a large compact-JSON cell (many authors on a
+    # heavy citing paper); the 128 KiB default field limit would reject it.
+    csv.field_size_limit(2**31 - 1)
     with open(path, encoding="utf-8-sig", newline="") as handle:
         reader = csv.DictReader(handle)
         if reader.fieldnames is None:
@@ -380,13 +391,72 @@ def _parse_trace_sources(sources: str | None) -> list[str] | None:
     if sources is None or sources.lower() in {"all", "*"}:
         return None
     parsed = [s.strip() for s in sources.split(",") if s.strip()]
-    unknown = [s for s in parsed if s not in _TRACE_SOURCES]
+    unknown = [s for s in parsed if s not in _VALID_TRACE_SOURCES]
     if unknown:
         raise typer.BadParameter(
             f"unknown trace source(s): {', '.join(unknown)}; "
             f"valid sources: {', '.join(_TRACE_SOURCES)}"
         )
     return parsed
+
+
+# ---------------------------------------------------------------------------
+# Snapshot routing (--use-snapshot / paper snapshot enable|disable switch)
+# ---------------------------------------------------------------------------
+
+
+def _snapshot_routing_enabled(use_snapshot: bool | None, snapshot_dir: Path | None) -> bool:
+    """Decide whether the local snapshot should be consulted first.
+
+    An explicit ``--use-snapshot``/``--no-use-snapshot`` flag wins; otherwise
+    the stored ``paper snapshot enable/disable`` switch decides (absent
+    switch → API only, keeping the pre-snapshot behavior).
+    """
+    if use_snapshot is not None:
+        return use_snapshot
+    if snapshot_dir is None:
+        return False
+    return bool(read_routing_config(snapshot_dir))
+
+
+async def _fetch_citing_with_snapshot_routing(
+    paper_id: str,
+    *,
+    sources: list[str] | None,
+    limit: int | None,
+    resume_from: str | None,
+    use_snapshot: bool | None,
+    snapshot_dir: Path | None,
+) -> CitingResult:
+    """Fetch citing papers, consulting the local snapshot when routing asks.
+
+    When the snapshot is consulted and hits, the citing rows come straight
+    from the local index (zero API quota) and the run is complete.  When it
+    is consulted but has no data (or is not built), the spec's fallback
+    message is printed and the normal API path runs.
+    """
+    if not _snapshot_routing_enabled(use_snapshot, snapshot_dir):
+        return await _fetch_citing_all(
+            paper_id, sources=sources, limit=limit, resume_from=resume_from
+        )
+    if snapshot_dir is None:
+        snapshot_dir = default_snapshot_dir()
+    routing = lookup_citing_in_snapshot(paper_id, snapshot_dir)
+    if routing.hit:
+        msg_console.print(
+            f"[green]snapshot[/green] 命中本地快照：{len(routing.papers)} 篇引用论文"
+            f"（{snapshot_dir}）"
+        )
+        papers = routing.papers[:limit] if limit is not None else routing.papers
+        return CitingResult(
+            papers=papers,
+            source_stats={"snapshot": len(papers)},
+            written_stats={"snapshot": len(papers)},
+        )
+    if routing.message:
+        # Miss / not built / unparseable id — always say so, then fall back.
+        msg_console.print(f"[yellow]snapshot[/yellow] {routing.message}")
+    return await _fetch_citing_all(paper_id, sources=sources, limit=limit, resume_from=resume_from)
 
 
 # ---------------------------------------------------------------------------
@@ -403,7 +473,7 @@ def trace_citing_cmd(
         str | None,
         typer.Option(
             "--sources",
-            help="Comma-separated trace sources: openalex,opencitations (default: both)",
+            help="Comma-separated trace sources: openalex,opencitations,semantic_scholar (default: all three; S2 兜底自动启用)",
         ),
     ] = None,
     limit: Annotated[
@@ -420,6 +490,20 @@ def trace_citing_cmd(
             help="OpenAlex cursor printed by a previous truncated run",
         ),
     ] = None,
+    use_snapshot: Annotated[
+        bool | None,
+        typer.Option(
+            "--use-snapshot/--no-use-snapshot",
+            help="先查本地 OpenAlex 快照（零 API 额度）；缺省按 paper snapshot enable/disable 开关",
+        ),
+    ] = None,
+    snapshot_dir: Annotated[
+        str | None,
+        typer.Option(
+            "--snapshot-dir",
+            help="快照数据目录（默认 <项目>/snapshot_data）",
+        ),
+    ] = None,
     output: Annotated[
         str | None,
         typer.Option(
@@ -433,11 +517,14 @@ def trace_citing_cmd(
 
     async def _run() -> None:
         parsed_sources = _parse_trace_sources(sources)
-        result = await _fetch_citing_all(
+        snap_dir = Path(snapshot_dir) if snapshot_dir else None
+        result = await _fetch_citing_with_snapshot_routing(
             paper_id,
             sources=parsed_sources,
             limit=limit,
             resume_from=resume_from,
+            use_snapshot=use_snapshot,
+            snapshot_dir=snap_dir,
         )
         _print_failures(result.errors)
         if not result.papers:
@@ -574,6 +661,20 @@ def trace_profiles_cmd(
             help="Number of OpenAlex profile fetches in flight per batch",
         ),
     ] = 20,
+    use_snapshot: Annotated[
+        bool | None,
+        typer.Option(
+            "--use-snapshot/--no-use-snapshot",
+            help="本地快照本期不支持作者画像——启用时明确提示并回退 API",
+        ),
+    ] = None,
+    snapshot_dir: Annotated[
+        str | None,
+        typer.Option(
+            "--snapshot-dir",
+            help="快照数据目录（默认 <项目>/snapshot_data）",
+        ),
+    ] = None,
     output: Annotated[
         str | None,
         typer.Option(
@@ -586,6 +687,13 @@ def trace_profiles_cmd(
     """Enrich author rows with OpenAlex profiles (trace step 3)."""
 
     async def _run() -> None:
+        snap_dir = Path(snapshot_dir) if snapshot_dir else None
+        if _snapshot_routing_enabled(use_snapshot, snap_dir):
+            # This release's snapshot index has no authors table — the
+            # routing contract is to say so explicitly, then run the API.
+            msg_console.print(
+                "[yellow]snapshot[/yellow] 快照不支持作者画像（本期 profiles 仅走 API），回退 API"
+            )
         path = Path(authors_csv)
         if not path.is_file():
             raise typer.BadParameter(f"not a file: {authors_csv}")
@@ -594,8 +702,13 @@ def trace_profiles_cmd(
             msg_console.print(f"[yellow]No input[/yellow]: no author rows in {path}")
             raise typer.Exit(code=2)
         profiles = await fetch_profiles(rows, batch_size=batch_size)
-        failed = [profile for profile in profiles if profile.errors]
-        for profile in failed:
+        # S2 兜底成功（有有效画像数据）不算失败；仅双源都失败（errors 且无数据）才计 failed
+        failed = [
+            profile for profile in profiles
+            if profile.errors and not (profile.institution or profile.h_index
+                                       or profile.fields or profile.works_count)
+        ]
+        for profile in profiles:
             for error in profile.errors:
                 msg_console.print(f"[yellow]warn[/yellow] [{profile.author_name}] {error}")
         if failed and len(failed) == len(profiles):

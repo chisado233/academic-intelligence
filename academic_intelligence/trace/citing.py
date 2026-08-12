@@ -1,10 +1,10 @@
 """Trace-citing primitive: pull papers that cite a given paper (reverse citations).
 
-Library layer consumed by the ``trace-citing`` CLI (Task 4).  Two free,
+Library layer consumed by the ``trace-citing`` CLI (Task 4).  Three free,
 unauthenticated sources are merged; a paper appears once in the output —
 the dedup key is ``doi`` when the paper carries one, else
-``citing_paper_id``, so an OpenAlex W-id row and a COCI DOI row for the
-*same* paper collapse into one entry:
+``citing_paper_id``, so an OpenAlex W-id row, a COCI DOI row and an S2
+row for the *same* paper collapse into one entry:
 
 - **OpenAlex** — ``GET https://api.openalex.org/works?filter=cites:{W-id}``
   with cursor pagination (``per-page=200``; the first page cursor must be
@@ -19,6 +19,12 @@ the dedup key is ``doi`` when the paper carries one, else
   *cited* side and the returned ``citing`` field is the citing paper — so
   that is the endpoint used here (matches
   :mod:`academic_intelligence.sources.opencitations`).
+- **Semantic Scholar** — keyed by S2 paperId (located via the ``DOI:…`` /
+  ``ARXIV:…`` paper-endpoint prefixes; offset-paginated
+  ``/paper/{locator}/citations``).  Runs when explicitly requested, or
+  automatically as a fallback after a *transient* OpenAlex failure (HTTP
+  429/5xx, timeout, transport error) so a dead OpenAlex quota does not
+  sink the whole chain.
 
 The API is fail-soft: a source that fails (network error, unresolvable id,
 HTTP error) is recorded in ``CitingResult.errors`` as a
@@ -39,7 +45,9 @@ from __future__ import annotations
 import logging
 import re
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 from academic_intelligence.core.exceptions import (
     ParseError,
@@ -55,13 +63,27 @@ _OPENALEX_PAGE_SIZE = 200
 # OpenAlex cursor pagination: the first request must pass cursor="*".
 _OPENALEX_FIRST_CURSOR = "*"
 _OPENCITATIONS_BASE = "https://opencitations.net/index/coci/api/v1"
+_S2_BASE = "https://api.semanticscholar.org/graph/v1"
+_S2_PAGE_SIZE = 100
+# Fields requested on S2 citing papers (the ``citingPaper`` of the citations
+# response); ``externalIds.DOI`` bridges the S2 and OpenAlex/COCI id-spaces
+# for cross-source dedup.
+_S2_FIELDS = "title,authors,year,venue,externalIds"
+# HTTP statuses whose OpenAlex failure triggers the automatic S2 fallback
+# (transient, quota-shaped failures; permanent ones do not fall back).
+_FALLBACK_HTTP_STATUSES = frozenset({429, 500, 502, 503, 504})
 
 # Sources the trace primitive knows how to drive.  ``fetch_citing_papers``
-# runs them in this order (deterministic ``limit`` semantics).
+# runs them in this order (deterministic ``limit`` semantics).  The default
+# remains ``openalex`` + ``opencitations``; ``semantic_scholar`` is opt-in
+# via ``sources=`` or fires automatically as a fallback after a transient
+# OpenAlex failure.
 _SOURCES: dict[str, str] = {
     "openalex": "OpenAlex reverse citations (W-id keyed)",
     "opencitations": "OpenCitations COCI citation edges (DOI keyed)",
+    "semantic_scholar": "Semantic Scholar citations (DOI/arXiv located, S2 paperId keyed)",
 }
+_DEFAULT_SOURCES: tuple[str, ...] = ("openalex", "opencitations")
 
 _DOI_PREFIXES = ("https://doi.org/", "http://doi.org/", "doi:")
 _WORK_ID_RE = re.compile(r"^(?:https?://openalex\.org/)?(W\d+)/?$", re.IGNORECASE)
@@ -87,7 +109,8 @@ class CitingPaper:
         authors_raw: Raw author display names — no Chinese/pinyin handling.
         authors_detail: OpenAlex ``authorships`` entries preserved verbatim
             (``author.id`` / ``display_name`` / ``institutions``) for
-            downstream enrichment (Task 2).
+            downstream enrichment (Task 2); S2 papers carry name-only
+            placeholders marked ``{"source": "s2", "name": ...}``.
     """
 
     citing_paper_id: str
@@ -124,6 +147,85 @@ class CitingResult:
     source_stats: dict[str, int] = field(default_factory=dict)
     written_stats: dict[str, int] = field(default_factory=dict)
     errors: list[SourceFailure] = field(default_factory=list)
+
+
+@dataclass
+class SnapshotRouting:
+    """Result of a snapshot-first lookup attempt (``--use-snapshot``).
+
+    Attributes:
+        papers: Citing works found in the local snapshot (empty on a miss).
+        consulted: True when a built snapshot index existed and was queried.
+        hit: True when the local index contained citing data for the paper.
+        message: User-facing fallback reason — printed by the CLI verbatim
+            when the snapshot was consulted but produced no data (e.g. the
+            spec wording "快照无此论文引用数据，回退 API").
+    """
+
+    papers: list[CitingPaper] = field(default_factory=list)
+    consulted: bool = False
+    hit: bool = False
+    message: str | None = None
+
+
+def lookup_citing_in_snapshot(paper_id: str, snapshot_dir: Path) -> SnapshotRouting:
+    """Consult the local OpenAlex snapshot index for citing works.
+
+    Sync SQLite lookup (no network, zero API quota).  The input is normalized
+    the same way as the API path (W-id directly; a DOI is mapped to a W-id via
+    ``snapshot_works.doi``).  A missing/unbuilt index and a no-data match both
+    yield a routing decision with an actionable ``message`` so the CLI can
+    fall back to the API with the spec's explicit wording.
+
+    Args:
+        paper_id: OpenAlex W-id (``W123`` / URL) or DOI (``10.…``).
+        snapshot_dir: Snapshot store root (``index.db`` inside it).
+
+    Returns:
+        A :class:`SnapshotRouting`; ``consulted=True`` + ``hit=True`` means
+        the caller should use ``papers`` directly.
+    """
+    from academic_intelligence.snapshot.store import SnapshotStore
+
+    db_path = snapshot_dir / "index.db"
+    if not db_path.is_file():
+        return SnapshotRouting(
+            message="本地快照未构建（先运行 paper snapshot download/build），回退 API"
+        )
+    store = SnapshotStore(db_path)
+    store.connect()
+    try:
+        if not store.is_built():
+            return SnapshotRouting(
+                consulted=True, message="本地快照未建索引（paper snapshot build），回退 API"
+            )
+        work_id = _normalize_work_id(paper_id)
+        if work_id is None:
+            doi = _normalize_doi(paper_id)
+            if doi is not None:
+                row = store.query_work_by_doi(doi)
+                if row is not None:
+                    work_id = str(row["id"])
+        if work_id is None:
+            return SnapshotRouting(
+                consulted=True,
+                message=f"快照无法解析论文标识 {paper_id!r}（需 W-id 或 DOI），回退 API",
+            )
+        rows = store.query_citing(work_id)
+        if not rows:
+            return SnapshotRouting(consulted=True, message="快照无此论文引用数据，回退 API")
+        papers = [
+            CitingPaper(
+                citing_paper_id=str(row["citing_id"]),
+                doi=row["doi"] if isinstance(row["doi"], str) else None,
+                title=row["title"] if isinstance(row["title"], str) else None,
+                year=row["year"] if isinstance(row["year"], int) else None,
+            )
+            for row in rows
+        ]
+        return SnapshotRouting(papers=papers, consulted=True, hit=True)
+    finally:
+        store.close()
 
 
 # ---------------------------------------------------------------------------
@@ -341,6 +443,186 @@ async def _fetch_opencitations(http: HTTPClient, doi: str) -> list[CitingPaper]:
 
 
 # ---------------------------------------------------------------------------
+# Semantic Scholar source fetcher (explicit source or OpenAlex fallback)
+# ---------------------------------------------------------------------------
+
+
+def _failure_is_fallback_worthy(failure: SourceFailure) -> bool:
+    """Whether an OpenAlex failure should trigger the automatic S2 fallback.
+
+    Covers transient, quota-shaped failures: HTTP 429/5xx (carried on
+    ``http_status``), timeouts and transport errors (``transient``).
+    Permanent failures (id not found, parse errors, value errors) do not
+    fall back — they are real answers, not quota problems.
+    """
+    return failure.transient or (
+        failure.http_status is not None and failure.http_status in _FALLBACK_HTTP_STATUSES
+    )
+
+
+def _s2_locator(doi: str | None, arxiv: str | None) -> str | None:
+    """Build the S2 paper-locator token (``DOI:…`` / ``ARXIV:…``) or ``None``.
+
+    The locator is embedded in the paper-endpoint path; the DOI value is
+    URL-encoded (``/`` → ``%2F``, the repository convention — see
+    :mod:`academic_intelligence.sources.semantic_scholar`).
+    """
+    if doi is not None:
+        return "DOI:" + quote(doi, safe="")
+    if arxiv is not None:
+        return "ARXIV:" + arxiv
+    return None
+
+
+def _parse_s2_paper(citing: dict[str, Any]) -> CitingPaper | None:
+    """Map an S2 ``citingPaper`` object to a :class:`CitingPaper`.
+
+    The id-space is S2 paperId (a UUID); a paper without a paperId falls
+    back to its DOI.  S2's citations response carries no author ids or
+    institutions, so the detail entries are name-only placeholders marked
+    ``{"source": "s2", "name": ...}`` — the trace-authors flattener falls
+    back to ``authors_raw`` for anything without ``author.display_name``.
+    """
+    paper_id_raw = citing.get("paperId")
+    paper_id = str(paper_id_raw) if paper_id_raw else None
+    doi: str | None = None
+    external = citing.get("externalIds")
+    if isinstance(external, dict):
+        raw_doi = external.get("DOI")
+        if isinstance(raw_doi, str):
+            doi = normalize_doi(raw_doi)
+    paper_key = paper_id if paper_id is not None else doi
+    if paper_key is None:
+        return None
+
+    title_raw = citing.get("title")
+    title = str(title_raw) if title_raw else None
+    year_raw = citing.get("year")
+    year = year_raw if isinstance(year_raw, int) and not isinstance(year_raw, bool) else None
+    venue_raw = citing.get("venue")
+    venue = str(venue_raw) if venue_raw else None
+
+    authors_raw: list[str] = []
+    authors_detail: list[dict[str, Any]] = []
+    authors = citing.get("authors")
+    if isinstance(authors, list):
+        for entry in authors:
+            if not isinstance(entry, dict):
+                continue
+            name = entry.get("name")
+            if isinstance(name, str) and name:
+                authors_raw.append(name)
+                authors_detail.append({"source": "s2", "name": name})
+
+    return CitingPaper(
+        citing_paper_id=paper_key,
+        doi=doi,
+        title=title,
+        year=year,
+        venue=venue,
+        authors_raw=authors_raw,
+        authors_detail=authors_detail,
+    )
+
+
+async def _fetch_semantic_scholar(
+    http: HTTPClient,
+    locator: str,
+    *,
+    limit: int | None,
+) -> list[CitingPaper]:
+    """Pull citing papers from Semantic Scholar (offset pagination).
+
+    S2 pagination is offset-based: each page returns ``next`` (the next
+    offset, or ``null`` when exhausted — verified against the live API).
+    The loop stops once the deduplicated count reaches ``limit`` (``<= 0``
+    fetches nothing).  Pagination is internal to the call: unlike OpenAlex
+    there is no external resume contract.
+    """
+    papers: dict[str, CitingPaper] = {}
+    if limit is not None and limit <= 0:
+        return []
+    offset: int | None = None
+    while True:
+        params: dict[str, Any] = {"fields": _S2_FIELDS, "limit": _S2_PAGE_SIZE}
+        if offset is not None:
+            params["offset"] = offset
+        data = await http.get_json(f"{_S2_BASE}/paper/{locator}/citations", params=params)
+        if not isinstance(data, dict):
+            raise ParseError(
+                "unexpected Semantic Scholar payload: expected an object with data",
+                source_name="semantic_scholar",
+                raw_snippet=str(data)[:300],
+            )
+        items = data.get("data")
+        if not isinstance(items, list):
+            raise ParseError(
+                "unexpected Semantic Scholar payload: data must be an array",
+                source_name="semantic_scholar",
+                raw_snippet=str(data)[:300],
+            )
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            citing = item.get("citingPaper")
+            if not isinstance(citing, dict):
+                continue
+            paper = _parse_s2_paper(citing)
+            if paper is None:
+                continue
+            key = paper.doi if paper.doi else paper.citing_paper_id
+            if key not in papers:
+                papers[key] = paper
+                if limit is not None and len(papers) >= limit:
+                    return list(papers.values())
+        nxt = data.get("next")
+        if nxt is None:
+            return list(papers.values())
+        try:
+            next_offset = int(nxt)
+        except (TypeError, ValueError):
+            return list(papers.values())
+        if next_offset == offset:
+            return list(papers.values())
+        offset = next_offset
+
+
+async def _resolve_s2_work_locator(
+    http: HTTPClient,
+    work_id: str,
+) -> tuple[str | None, SourceFailure | None]:
+    """Resolve a W-id input to an S2 ``DOI:…`` locator (best-effort).
+
+    S2 locates papers via ``DOI:…`` / ``ARXIV:…`` only; a bare W-id needs
+    the paper's DOI, fetched from OpenAlex ``/works/{id}?select=doi``.
+    Only useful while OpenAlex is healthy — the fallback it supports is
+    triggered by OpenAlex being down, so failure here just records an
+    error instead of silently producing nothing.
+    """
+    try:
+        data = await http.get_json(f"{_OPENALEX_BASE}/{work_id}", params={"select": "doi"})
+    except Exception as exc:
+        return None, SourceFailure.from_exception(
+            source="openalex", operation="resolve_paper_id", exc=exc
+        )
+    if isinstance(data, dict):
+        raw_doi = data.get("doi")
+        if isinstance(raw_doi, str):
+            resolved = normalize_doi(raw_doi)
+            if resolved is not None:
+                return _s2_locator(doi=resolved, arxiv=None), None
+    return None, SourceFailure.from_message(
+        source="semantic_scholar",
+        operation="resolve_paper_id",
+        message=(
+            f"Semantic Scholar locates papers by DOI or arXiv id; paper_id "
+            f"W-id {work_id!r} has no resolvable DOI"
+        ),
+        error_type="LookupError",
+    )
+
+
+# ---------------------------------------------------------------------------
 # paper_id resolution
 # ---------------------------------------------------------------------------
 
@@ -413,7 +695,10 @@ async def fetch_citing_papers(
             version suffix).  DOIs and arXiv ids are resolved to a W-id via
             OpenAlex ``filter=`` lookups.
         sources: Source names to use, defaulting to
-            ``["openalex", "opencitations"]``.  Unknown names are recorded
+            ``["openalex", "opencitations"]``.  ``semantic_scholar`` runs
+            explicitly, or automatically as a fallback after a transient
+            OpenAlex failure (HTTP 429/5xx, timeout, transport error) when
+            the paper has a DOI/arXiv id.  Unknown names are recorded
             fail-soft in ``errors``.
         limit: Cap on the deduplicated *output* paper count.  OpenAlex
             pagination is bounded by the remaining quota (``limit <= 0``
@@ -436,7 +721,7 @@ async def fetch_citing_papers(
         RuntimeError: When *http* is provided but not connected
             (``HTTPClient`` requires an explicit ``connect()``).
     """
-    names = list(sources) if sources is not None else list(_SOURCES)
+    names = list(sources) if sources is not None else list(_DEFAULT_SOURCES)
     result = CitingResult()
 
     if limit is not None and limit <= 0:
@@ -455,7 +740,8 @@ async def fetch_citing_papers(
 
     wants_openalex = "openalex" in names
     wants_opencitations = "opencitations" in names
-    if not wants_openalex and not wants_opencitations:
+    wants_semantic_scholar = "semantic_scholar" in names
+    if not wants_openalex and not wants_opencitations and not wants_semantic_scholar:
         return result
 
     # Cheap input-form classification (no network).
@@ -478,6 +764,9 @@ async def fetch_citing_papers(
         # the written counts can be attributed after ``limit`` truncation.
         merged: dict[str, CitingPaper] = {}
         origin: dict[str, str] = {}
+        # Set when OpenAlex failed in a fallback-worthy (transient) way —
+        # the trigger for the automatic Semantic Scholar fallback below.
+        oa_failed_transient = False
 
         def merge(papers: list[CitingPaper], source: str) -> None:
             for paper in papers:
@@ -494,6 +783,8 @@ async def fetch_citing_papers(
                     )
                     if work_id is None and resolve_error is not None:
                         result.errors.append(resolve_error)
+                        if _failure_is_fallback_worthy(resolve_error):
+                            oa_failed_transient = True
                 else:
                     if _LEGACY_ARXIV_ID_RE.match(paper_id.strip()):
                         resolve_message = (
@@ -524,13 +815,14 @@ async def fetch_citing_papers(
                     result.source_stats["openalex"] = len(oa_papers)
                     merge(oa_papers, "openalex")
                 except Exception as exc:
-                    result.errors.append(
-                        SourceFailure.from_exception(
-                            source="openalex",
-                            operation="fetch_citing_papers",
-                            exc=exc,
-                        )
+                    failure = SourceFailure.from_exception(
+                        source="openalex",
+                        operation="fetch_citing_papers",
+                        exc=exc,
                     )
+                    result.errors.append(failure)
+                    if _failure_is_fallback_worthy(failure):
+                        oa_failed_transient = True
 
         # OpenCitations is a single unpaginated response; it runs whenever a
         # DOI is available, even when ``limit`` was already filled by
@@ -558,6 +850,49 @@ async def fetch_citing_papers(
                     result.errors.append(
                         SourceFailure.from_exception(
                             source="opencitations",
+                            operation="fetch_citing_papers",
+                            exc=exc,
+                        )
+                    )
+
+        # Semantic Scholar: runs when explicitly requested, or automatically
+        # as a fallback after a transient OpenAlex failure (HTTP 429/5xx,
+        # timeout, transport) so a dead OpenAlex quota does not sink the
+        # chain.  S2 locates papers via ``DOI:…`` / ``ARXIV:…`` only: a
+        # direct locator is used when the input carries one; a bare W-id
+        # falls back to a best-effort OpenAlex DOI lookup in *explicit* mode
+        # (automatic mode never leans on a failing OpenAlex, so the fallback
+        # is skipped silently and the OpenAlex error stands).
+        s2_auto = not wants_semantic_scholar and oa_failed_transient
+        if wants_semantic_scholar or s2_auto:
+            locator: str | None = None
+            s2_resolve_error: SourceFailure | None = None
+            if doi is not None or arxiv is not None:
+                locator = _s2_locator(doi=doi, arxiv=arxiv)
+            elif wants_semantic_scholar and work_id is not None:
+                locator, s2_resolve_error = await _resolve_s2_work_locator(client, work_id)
+            elif wants_semantic_scholar:
+                s2_resolve_error = SourceFailure.from_message(
+                    source="semantic_scholar",
+                    operation="fetch_citing_papers",
+                    message=(
+                        f"Semantic Scholar locates papers by DOI or arXiv id; "
+                        f"paper_id {paper_id!r} provides neither"
+                    ),
+                    error_type="ValueError",
+                )
+            if s2_resolve_error is not None:
+                result.errors.append(s2_resolve_error)
+            if locator is not None:
+                try:
+                    s2_remaining = None if limit is None else max(0, limit - len(merged))
+                    s2_papers = await _fetch_semantic_scholar(client, locator, limit=s2_remaining)
+                    result.source_stats["semantic_scholar"] = len(s2_papers)
+                    merge(s2_papers, "semantic_scholar")
+                except Exception as exc:
+                    result.errors.append(
+                        SourceFailure.from_exception(
+                            source="semantic_scholar",
                             operation="fetch_citing_papers",
                             exc=exc,
                         )

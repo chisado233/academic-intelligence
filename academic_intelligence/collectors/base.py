@@ -343,11 +343,10 @@ class BaseCollector(abc.ABC):
             result.papers = self.validator.filter_valid_papers(result.papers)
 
         if result.authors:
-            # Same-name records are not necessarily the same person.  The
-            # author-specific identity stage considers authority IDs and
-            # profile context, retaining ambiguous/distinct profiles instead
-            # of applying the paper deduplicator's name-only merge rule.
-            result.authors = self.author_disambiguator.disambiguate(result.authors)
+            # 2026-08-12 决策：作者消歧不做进采集管道（自动阈值合并不可靠——
+            # 中文同名场景实测失败）。CLI 只返回原始作者 + evidence，
+            # 身份判断交给 agent 方法论（SKILL §11.2）或 paper author 命令
+            # （ID 直连 + 候选对比 + 人工 confirm）。
             result.authors = self.enricher.enrich_authors(result.authors)
 
         confidences = [

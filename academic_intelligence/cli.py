@@ -18,6 +18,7 @@ from rich.table import Table
 from academic_intelligence import AcademicIntelligence, __version__
 from academic_intelligence.cli_author import author_app
 from academic_intelligence.cli_budget import budget_cmd, build_sources_app
+from academic_intelligence.cli_snapshot import register_snapshot
 from academic_intelligence.cli_source import (
     _fulltext_storage,
     _run_cli,
@@ -56,6 +57,7 @@ app.add_typer(sources_app, name="sources")
 app.add_typer(web_app, name="web")
 app.add_typer(author_app, name="author")
 register_trace(app)
+register_snapshot(app)
 
 console = Console()
 

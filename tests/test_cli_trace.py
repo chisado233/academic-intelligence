@@ -426,6 +426,7 @@ def test_trace_profiles_all_failed_exits_2(tmp_path: Path, monkeypatch: pytest.M
             AuthorProfile(
                 author_name=row.author_name,
                 author_id=row.author_id,
+                source="",  # 双源失败无来源（新契约）
                 errors=["fetch failed: boom"],
             )
             for row in author_rows
@@ -458,6 +459,7 @@ def test_trace_profiles_partial_failure(tmp_path: Path, monkeypatch: pytest.Monk
                     AuthorProfile(
                         author_name=row.author_name,
                         author_id=row.author_id,
+                        source="",  # 双源失败无来源（新契约）
                         errors=["fetch failed: boom"],
                     )
                 )

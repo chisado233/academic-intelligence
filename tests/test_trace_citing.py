@@ -15,6 +15,7 @@ Covers, fully offline via a fake HTTP client:
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import Any
 
 import httpx
@@ -95,10 +96,14 @@ class FakeHTTP:
         pages: dict[str, Any] | None = None,
         lookup: dict[str, Any] | None = None,
         coci: list[Any] | None = None,
+        s2_handler: Callable[[str, dict[str, Any] | None], Any] | None = None,
+        work_doi: dict[str, Any] | None = None,
     ) -> None:
         self.pages = pages or {}
         self.lookup = lookup or {}
         self.coci = coci or []
+        self.s2_handler = s2_handler
+        self.work_doi = work_doi or {}
         self.calls: list[tuple[str, dict[str, Any] | None]] = []
 
     async def get_json(
@@ -112,6 +117,12 @@ class FakeHTTP:
             if isinstance(self.coci, BaseException):
                 raise self.coci
             return self.coci
+        if "api.semanticscholar.org" in url:
+            if self.s2_handler is None:
+                raise AssertionError(f"unexpected Semantic Scholar request {url}")
+            return self.s2_handler(url, params)
+        if (params or {}).get("select") == "doi":
+            return self.work_doi.get(url.rsplit("/", 1)[-1], {"results": []})
         filter_val = (params or {}).get("filter", "")
         if filter_val.startswith("cites:"):
             cursor = (params or {}).get("cursor")
@@ -694,3 +705,255 @@ def test_citing_paper_defaults() -> None:
     assert paper.venue is None
     assert paper.authors_raw == []
     assert paper.authors_detail == []
+
+
+# ---------------------------------------------------------------------------
+# Semantic Scholar source (explicit + automatic fallback)
+# ---------------------------------------------------------------------------
+
+
+def _s2_citing_paper(
+    paper_id: str,
+    *,
+    title: str = "An S2 citing paper",
+    year: int | None = 2025,
+    doi: str | None = None,
+    venue: str | None = "S2 Venue",
+    authors: list[str] | None = None,
+) -> dict[str, Any]:
+    """Build a realistic S2 ``citingPaper`` object."""
+    entry: dict[str, Any] = {
+        "paperId": paper_id,
+        "title": title,
+        "year": year,
+        "venue": venue,
+        "authors": [
+            {"authorId": str(i), "name": name}
+            for i, name in enumerate(authors or ["S2 Author"], start=1)
+        ],
+    }
+    if doi is not None:
+        entry["externalIds"] = {"DOI": doi, "CorpusId": 12345}
+    return entry
+
+
+def _s2_citations(
+    *papers: dict[str, Any], offset: int = 0, next_: int | None = None
+) -> dict[str, Any]:
+    return {"offset": offset, "next": next_, "data": [{"citingPaper": p} for p in papers]}
+
+
+def _http_429(url: str) -> httpx.HTTPStatusError:
+    request = httpx.Request("GET", url)
+    return httpx.HTTPStatusError(
+        "HTTP 429", request=request, response=httpx.Response(429, request=request)
+    )
+
+
+@pytest.mark.asyncio
+async def test_openalex_429_falls_back_to_s2() -> None:
+    # Fallback contract: a transient OpenAlex failure (429, quota-shaped)
+    # automatically routes to Semantic Scholar; the OpenAlex failure is
+    # fail-soft-recorded and the S2 result carries the run.
+    http = FakeHTTP(
+        pages={"*": _http_429("https://api.openalex.org/works")},
+        lookup={"doi:" + CITING_DOI: {"results": [_oa_item("W500")]}},
+        s2_handler=lambda url, params: _s2_citations(
+            _s2_citing_paper("aaa-bbb-ccc", title="S2 citing one", doi="10.9999/one"),
+            next_=None,
+        ),
+    )
+
+    result = await fetch_citing_papers(CITING_DOI, sources=["openalex"], http=http)
+
+    assert [p.citing_paper_id for p in result.papers] == ["aaa-bbb-ccc"]
+    assert [p.doi for p in result.papers] == ["10.9999/one"]
+    assert [p.title for p in result.papers] == ["S2 citing one"]
+    assert result.papers[0].authors_raw == ["S2 Author"]
+    assert result.papers[0].authors_detail == [{"source": "s2", "name": "S2 Author"}]
+    assert result.source_stats == {"semantic_scholar": 1}
+    assert result.resume_cursor is None
+    assert len(result.errors) == 1
+    failure = result.errors[0]
+    assert failure.source == "openalex"
+    assert failure.http_status == 429
+    # S2 was hit via the DOI locator with the documented fields.
+    s2_calls = [c for c in http.calls if "api.semanticscholar.org" in c[0]]
+    assert len(s2_calls) == 1
+    assert "paper/DOI:10.1038%2Fs41586-025-09422-z/citations" in s2_calls[0][0]
+    assert s2_calls[0][1]["fields"] == "title,authors,year,venue,externalIds"
+    assert s2_calls[0][1]["limit"] == 100
+
+
+@pytest.mark.asyncio
+async def test_s2_paginates_and_dedups_with_openalex_by_doi() -> None:
+    # S2 offset pagination (page 1 → next=100, page 2 → next=None); the same
+    # paper surfaced as an OpenAlex W-id (with DOI) and as an S2 paper (same
+    # DOI, different id-space) collapses into one row, credited to the first
+    # source that provided it.
+    page1 = _s2_citations(
+        _s2_citing_paper("s2-1", title="Same paper", doi="10.1000/1"),
+        _s2_citing_paper("s2-2", title="Only in S2", doi="10.1000/2"),
+        next_=100,
+    )
+    page2 = _s2_citations(
+        _s2_citing_paper("s2-3", title="S2 page two", doi="10.1000/3"),
+        next_=None,
+    )
+
+    def s2_handler(url: str, params: dict[str, Any] | None) -> Any:
+        return page1 if (params or {}).get("offset") is None else page2
+
+    http = FakeHTTP(
+        pages={"*": _page(_oa_item("W1", doi="10.1000/1"), next_cursor=None)},
+        lookup={"doi:" + CITING_DOI: {"results": [_oa_item("W500")]}},
+        s2_handler=s2_handler,
+    )
+
+    result = await fetch_citing_papers(
+        CITING_DOI, sources=["openalex", "semantic_scholar"], http=http
+    )
+
+    assert [p.citing_paper_id for p in result.papers] == ["W1", "s2-2", "s2-3"]
+    assert result.source_stats == {"openalex": 1, "semantic_scholar": 3}
+    # The S2 row for DOI 10.1000/1 merged into the OpenAlex W-id row.
+    assert result.written_stats == {"openalex": 1, "semantic_scholar": 2}
+    s2_offsets = [c[1].get("offset") for c in http.calls if "api.semanticscholar.org" in c[0]]
+    assert s2_offsets == [None, 100]
+
+
+@pytest.mark.asyncio
+async def test_openalex_and_s2_both_fail_is_total_failure() -> None:
+    def s2_handler(url: str, params: dict[str, Any] | None) -> Any:
+        raise RuntimeError("semantic scholar is down")
+
+    http = FakeHTTP(
+        pages={"*": _http_429("https://api.openalex.org/works")},
+        lookup={"doi:" + CITING_DOI: {"results": [_oa_item("W500")]}},
+        s2_handler=s2_handler,
+    )
+
+    result = await fetch_citing_papers(
+        CITING_DOI, sources=["openalex", "semantic_scholar"], http=http
+    )
+
+    assert result.papers == []
+    assert result.resume_cursor is None
+    assert result.source_stats == {}
+    assert {e.source for e in result.errors} == {"openalex", "semantic_scholar"}
+
+
+@pytest.mark.asyncio
+async def test_s2_rate_limit_fails_soft_without_retry() -> None:
+    def s2_handler(url: str, params: dict[str, Any] | None) -> Any:
+        raise _http_429("https://api.semanticscholar.org/graph/v1/paper/x/citations")
+
+    http = FakeHTTP(
+        pages={"*": _http_429("https://api.openalex.org/works")},
+        lookup={"doi:" + CITING_DOI: {"results": [_oa_item("W500")]}},
+        s2_handler=s2_handler,
+    )
+
+    result = await fetch_citing_papers(
+        CITING_DOI, sources=["openalex", "semantic_scholar"], http=http
+    )
+
+    assert result.papers == []
+    assert len(result.errors) == 2
+    assert {e.source for e in result.errors} == {"openalex", "semantic_scholar"}
+    s2_failure = next(e for e in result.errors if e.source == "semantic_scholar")
+    assert s2_failure.http_status == 429
+    # Exactly one S2 attempt: the 429 is recorded, not retried indefinitely.
+    assert sum(1 for c in http.calls if "api.semanticscholar.org" in c[0]) == 1
+
+
+@pytest.mark.asyncio
+async def test_w_id_with_explicit_s2_resolves_doi_via_openalex() -> None:
+    # Explicit S2 with a W-id input: the paper's DOI is fetched from OpenAlex
+    # /works/{id}?select=doi and used as the S2 locator.
+    http = FakeHTTP(
+        pages={"*": _page(_oa_item("W1", doi="10.1000/1"), next_cursor=None)},
+        work_doi={CITING_W_ID: {"doi": f"https://doi.org/{CITING_DOI}"}},
+        s2_handler=lambda url, params: _s2_citations(
+            _s2_citing_paper("s2-x", title="S2 only", doi="10.9999/x"), next_=None
+        ),
+    )
+
+    result = await fetch_citing_papers(
+        CITING_W_ID, sources=["openalex", "semantic_scholar"], http=http
+    )
+
+    assert [p.citing_paper_id for p in result.papers] == ["W1", "s2-x"]
+    assert result.source_stats == {"openalex": 1, "semantic_scholar": 1}
+    assert result.errors == []
+    work_calls = [c for c in http.calls if (c[1] or {}).get("select") == "doi"]
+    assert len(work_calls) == 1
+    assert work_calls[0][0].endswith(f"/works/{CITING_W_ID}")
+    s2_calls = [c for c in http.calls if "api.semanticscholar.org" in c[0]]
+    assert "DOI:10.1038%2Fs41586-025-09422-z" in s2_calls[0][0]
+
+
+@pytest.mark.asyncio
+async def test_explicit_s2_without_locator_fails_soft() -> None:
+    http = FakeHTTP()
+
+    result = await fetch_citing_papers("garbage-id", sources=["semantic_scholar"], http=http)
+
+    assert result.papers == []
+    assert http.calls == []
+    assert len(result.errors) == 1
+    assert result.errors[0].source == "semantic_scholar"
+    assert "DOI or arXiv" in result.errors[0].message
+
+
+@pytest.mark.asyncio
+async def test_permanent_openalex_failure_does_not_fall_back() -> None:
+    # A 404 is a real answer (wrong paper id), not a quota problem — no S2
+    # fallback is attempted.
+    request = httpx.Request("GET", "https://api.openalex.org/works")
+    not_found = httpx.HTTPStatusError(
+        "HTTP 404", request=request, response=httpx.Response(404, request=request)
+    )
+
+    def s2_handler(url: str, params: dict[str, Any] | None) -> Any:
+        raise AssertionError("S2 must not be called on a permanent OpenAlex failure")
+
+    http = FakeHTTP(
+        pages={"*": not_found},
+        lookup={"doi:" + CITING_DOI: {"results": [_oa_item("W500")]}},
+        s2_handler=s2_handler,
+    )
+
+    result = await fetch_citing_papers(CITING_DOI, sources=["openalex"], http=http)
+
+    assert result.papers == []
+    assert len(result.errors) == 1
+    assert result.errors[0].http_status == 404
+    assert not any("api.semanticscholar.org" in c[0] for c in http.calls)
+
+
+@pytest.mark.asyncio
+async def test_s2_paper_without_id_uses_doi_and_invalid_skipped() -> None:
+    http = FakeHTTP(
+        pages={"*": _page(_oa_item("W1"), next_cursor=None)},
+        lookup={"doi:" + CITING_DOI: {"results": [_oa_item("W500")]}},
+        s2_handler=lambda url, params: _s2_citations(
+            {"title": "No paperId but DOI", "externalIds": {"DOI": "10.5555/eee"}},
+            {"title": "Nothing usable"},
+            next_=None,
+        ),
+    )
+
+    result = await fetch_citing_papers(
+        CITING_DOI, sources=["openalex", "semantic_scholar"], http=http
+    )
+
+    ids = [p.citing_paper_id for p in result.papers]
+    assert "W1" in ids
+    assert "10.5555/eee" in ids
+    assert len(result.papers) == 2
+    assert result.source_stats == {"openalex": 1, "semantic_scholar": 1}
+    s2_paper = next(p for p in result.papers if p.doi == "10.5555/eee")
+    assert s2_paper.title == "No paperId but DOI"
+    assert s2_paper.authors_raw == []
+    assert s2_paper.authors_detail == []

@@ -242,7 +242,7 @@ asyncio.run(main())
 ### 4.1 高级公共 API 与错误语义（契约）
 
 - `ArxivSource.get_paper_by_arxiv_id(arxiv_id)`（async）→ `Paper | None`
-- `AuthorDisambiguator.score_pair(a, b)` / `AuthorDisambiguator.cluster(authors)` / `AuthorDisambiguator.disambiguate(authors)`（特征阈值：≥0.85 auto / 0.60-0.85 ambiguous / <0.60 不同人）
+- `AuthorDisambiguator.score_pair(a, b)` / `AuthorDisambiguator.cluster(authors)` / `AuthorDisambiguator.disambiguate(authors)`（特征阈值：≥0.85 auto / 0.60-0.85 ambiguous / <0.60 不同人；**仅作候选评分展示，采集管道不自动调用**——2026-08-12 决策：作者消歧不做进任何采集路径，判断交 agent/人工）
 - `KnowledgeGraph.add_node(...)` / `KnowledgeGraph.add_edge(...)` / `KnowledgeGraph.save_snapshot(path)` / `KnowledgeGraph.load_snapshot(path, *, cache_size=None)`；版本 1 快照含 `"node_count"`、`"edge_count"`、`version`/`directed`/`nodes`/`edges` 校验字段
 - 错误语义：单源失败软性记录于 `CollectionResult.errors`；全部源失败抛 `AllSourcesFailedError`；自动化**不得创建无界**外层重试（默认无外层重试，或至多一次显式重试并尊重 `retry_after`）；报告约定：部分成功 `PARTIAL`、全部不可用/凭证缺失 `BLOCKED` 并停止
 
@@ -340,7 +340,7 @@ config = Config(
 ## 11. 信息反向挖掘（引用者画像）
 
 > 场景：拿到一篇**种子论文**，反查"谁引用了它"，再为这批引用者建立完整画像（作者/机构/领域/代表作/venue/时间线/头衔）。
-> 定位：**CLI 给结构化原料（确定性原语），判断与融合由 agent 方法论完成**——CLI 不做自动消歧、不自动核验头衔、不落主库（分析产物即 CSV/JSON 文件）。
+> 定位：**CLI 给结构化原料（确定性原语），判断与融合由 agent 方法论完成**——CLI 不做自动消歧、不自动核验头衔、不落主库（分析产物即 CSV/JSON 文件）。**2026-08-12 起，作者自动消歧从全部采集路径移除**（阈值合并中文场景实测不可靠），采集只返回原始作者 + evidence。
 
 ### 11.1 工作流（6 步）
 
@@ -366,6 +366,22 @@ config = Config(
 - `trace-citing` 双源交叉（OpenAlex `filter=cites:` + OpenCitations `citations/{doi}`，后者以 DOI 为键；`references/{doi}` 返回的是论文自身引用了什么，方向相反，勿用），内置 429 退避与断点续传（`--resume-from`）；`--limit` 作用于合并后总结果，双源不会被静默跳过
 - `trace-authors` **只展平不合并**——同名作者各占一行，保留原始署名机构；`--affiliation-filter <关键词>` 是机械子串过滤，非消歧判断
 - `trace-profiles` 按 author_id（如有）拉 OpenAlex 档案与代表作（按引用排序）；无 ID 的行返回占位（author_id=None），**不自动搜索匹配**——留给 agent 方法论
+
+### 11.1.1 降级与快照（OpenAlex 额度不足时的路径）
+
+- **S2 自动兜底**：OpenAlex 429/超时/5xx 时，`trace-citing` 与 `trace-profiles` **自动转 Semantic Scholar**（免费 100 req/5min）——`profiles` 的 S2 结果标 `source="s2"`（同名风险，需 agent 消歧确认）；也可 `--sources openalex,opencitations,semantic_scholar` 显式指定
+- **OpenAlex 免费快照（可选下载，彻底零额度）**：
+
+```bash
+paper snapshot status          # 本地快照状态（日期/works 数/引用边数/路由开关）
+paper snapshot download        # 下载季度快照（提示大小后用户主动确认；断点续传）
+paper snapshot build           # 解压建 SQLite 索引（works + 引用倒排）
+paper snapshot enable          # 路由开关：trace-citing 默认先查本地
+paper trace-citing <id> --use-snapshot   # 查本地引用索引（未命中回退 API）
+```
+
+- 规模提示：全量 works 快照解压后约 20-60 GB，个人使用请评估磁盘；下载是**用户主动选择**（轻量使用可只靠 S2 兜底 + 免费额度）
+- `profile.source` 语义：`openalex`（主源成功）/ `s2`（兜底成功，占位质量）/ 双失败无数据（CLI 计 failed）
 
 ### 11.2 消歧方法论（agent 判断，不自动合并）
 

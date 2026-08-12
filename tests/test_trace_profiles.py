@@ -381,6 +381,161 @@ async def test_url_and_bare_forms_of_same_id_deduplicate() -> None:
 
 
 # ---------------------------------------------------------------------------
+# Semantic Scholar fallback (transient OpenAlex failure → S2 name match)
+# ---------------------------------------------------------------------------
+
+S2_SEARCH_URL = (
+    "https://api.semanticscholar.org/graph/v1/author/search"
+    "?query=Yann%20LeCun&limit=1&fields=authorId,name"
+)
+S2_AUTHOR_URL = (
+    "https://api.semanticscholar.org/graph/v1/author/1688882"
+    "?fields=name,affiliations,paperCount,hIndex,citationCount"
+)
+
+
+def _s2_search_payload() -> dict[str, Any]:
+    return {
+        "total": 1,
+        "offset": 0,
+        "next": None,
+        "data": [{"authorId": "1688882", "name": "Yann LeCun"}],
+    }
+
+
+def _s2_author_payload() -> dict[str, Any]:
+    return {
+        "authorId": "1688882",
+        "name": "Yann LeCun",
+        "affiliations": ["New York University"],
+        "paperCount": 484,
+        "hIndex": 121,
+        "citationCount": 194384,
+    }
+
+
+@pytest.mark.asyncio
+async def test_openalex_429_falls_back_to_s2_author() -> None:
+    client = _make_client(
+        {
+            AUTHOR_URL: _response(429, json={}),
+            S2_SEARCH_URL: _response(200, json=_s2_search_payload()),
+            S2_AUTHOR_URL: _response(200, json=_s2_author_payload()),
+        }
+    )
+
+    profiles = await fetch_profiles([_row("Yann LeCun", AUTHOR_ID)], http=client)
+
+    profile = profiles[0]
+    assert profile.source == "s2"
+    assert profile.author_name == "Yann LeCun"
+    assert profile.author_id == AUTHOR_ID  # input OpenAlex id preserved verbatim
+    assert profile.institution == "New York University"
+    assert profile.h_index == 121
+    assert profile.works_count == 484
+    assert profile.fields == []
+    assert profile.top_works == []
+    # errors records both the OpenAlex failure and the fallback situation.
+    assert len(profile.errors) == 2
+    assert "profile fetch failed" in profile.errors[0]
+    assert "s2 fallback" in profile.errors[1]
+    assert "disambiguation" in profile.errors[1]
+
+
+@pytest.mark.asyncio
+async def test_openalex_and_s2_failures_are_recorded() -> None:
+    client = _make_client(
+        {
+            AUTHOR_URL: _response(429, json={}),
+            S2_SEARCH_URL: _response(500, json={}),
+        }
+    )
+
+    profiles = await fetch_profiles([_row("Yann LeCun", AUTHOR_ID)], http=client)
+
+    profile = profiles[0]
+    assert profile.source == "openalex"
+    assert profile.institution is None
+    assert profile.h_index is None
+    assert profile.works_count is None
+    assert profile.top_works == []
+    assert len(profile.errors) == 2
+    assert "profile fetch failed" in profile.errors[0]
+    assert "s2 fallback failed" in profile.errors[1]
+
+
+@pytest.mark.asyncio
+async def test_s2_search_no_match_records_fallback_failure() -> None:
+    client = _make_client(
+        {
+            AUTHOR_URL: _response(429, json={}),
+            S2_SEARCH_URL: _response(200, json={"total": 0, "data": []}),
+        }
+    )
+
+    profiles = await fetch_profiles([_row("Yann LeCun", AUTHOR_ID)], http=client)
+
+    profile = profiles[0]
+    assert profile.source == "openalex"
+    assert profile.institution is None
+    assert "s2 fallback failed: no Semantic Scholar author found" in profile.errors[1]
+
+
+@pytest.mark.asyncio
+async def test_s2_rate_limit_fails_soft_single_attempt() -> None:
+    client = _make_client(
+        {
+            AUTHOR_URL: _response(429, json={}),
+            S2_SEARCH_URL: _response(429, json={}),
+        }
+    )
+
+    profiles = await fetch_profiles([_row("Yann LeCun", AUTHOR_ID)], http=client)
+
+    profile = profiles[0]
+    assert profile.source == "openalex"
+    assert len(profile.errors) == 2
+    assert "s2 fallback failed" in profile.errors[1]
+    # openalex profile + exactly one S2 search: the 429 is recorded, not retried.
+    assert client.get.await_count == 2
+
+
+@pytest.mark.asyncio
+async def test_permanent_openalex_failure_does_not_fall_back() -> None:
+    # A 404 is a real answer (author not in OpenAlex), not a quota problem —
+    # no S2 fallback is attempted.
+    client = _make_client(
+        {
+            AUTHOR_URL: _response(404, json={}),
+        }
+    )
+
+    profiles = await fetch_profiles([_row("Yann LeCun", AUTHOR_ID)], http=client)
+
+    profile = profiles[0]
+    assert profile.source == "openalex"
+    assert len(profile.errors) == 1
+    assert "profile fetch failed" in profile.errors[0]
+    assert client.get.await_count == 1
+
+
+@pytest.mark.asyncio
+async def test_openalex_success_marks_source_openalex() -> None:
+    client = _make_client(
+        {
+            AUTHOR_URL: _response(200, json=_author_payload()),
+            WORKS_URL: _response(200, json=_works_payload(5)),
+        }
+    )
+
+    profiles = await fetch_profiles([_row("Xiangyu Zhang", AUTHOR_ID)], http=client)
+
+    profile = profiles[0]
+    assert profile.source == "openalex"
+    assert profile.errors == []
+
+
+# ---------------------------------------------------------------------------
 # Empty input
 # ---------------------------------------------------------------------------
 

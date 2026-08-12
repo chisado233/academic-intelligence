@@ -18,6 +18,12 @@ unchecked name search risks merging distinct people.  They yield a placeholder
 ``AuthorProfile`` (``author_id=None`` + empty fields) for the agent methodology
 to handle explicitly.  A single author's failure is recorded in that author's
 ``errors`` and never blocks the batch.
+
+When the OpenAlex profile fetch fails *transiently* (HTTP 429/5xx, timeout,
+transport error), the author falls back to a Semantic Scholar name search —
+placeholder data only, flagged with ``source="s2"`` and annotated in ``errors``
+(homonym risk; a 404 / parse failure is a permanent answer and does not fall
+back).
 """
 
 from __future__ import annotations
@@ -25,6 +31,9 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from typing import Any
+from urllib.parse import quote
+
+import httpx
 
 from academic_intelligence.utils.http import HTTPClient
 
@@ -34,6 +43,13 @@ _WORKS_URL_TEMPLATE = (
     "&sort=cited_by_count:desc&per-page=5"
 )
 _MAX_TOP_WORKS = 5
+# Semantic Scholar fallback endpoints (public API, unauthenticated).
+_S2_AUTHOR_SEARCH_URL = "https://api.semanticscholar.org/graph/v1/author/search"
+_S2_AUTHOR_URL_TEMPLATE = "https://api.semanticscholar.org/graph/v1/author/{author_id}"
+_S2_AUTHOR_FIELDS = "name,affiliations,paperCount,hIndex,citationCount"
+# HTTP statuses whose OpenAlex author failure triggers the S2 fallback
+# (transient, quota-shaped failures; permanent ones like 404 do not).
+_FALLBACK_HTTP_STATUSES = frozenset({429, 500, 502, 503, 504})
 
 
 @dataclass(frozen=True)
@@ -61,10 +77,17 @@ class AuthorProfile:
     are sorted by ``cited_by_count`` descending, capped at 5.  ``errors`` holds
     per-author failure strings; a non-empty list means the fields are partial
     (typically all empty) but the batch proceeded.
+
+    ``source`` records where the profile data came from: ``"openalex"``
+    (primary) or ``"s2"`` — a Semantic Scholar name-match fallback used when
+    the OpenAlex profile fetch failed transiently.  An ``"s2"`` profile is
+    placeholder quality (homonym risk) and the fallback is recorded in
+    ``errors``.
     """
 
     author_name: str
     author_id: str | None
+    source: str = "openalex"
     institution: str | None = None
     h_index: int | None = None
     fields: list[str] = field(default_factory=list)
@@ -84,7 +107,10 @@ async def fetch_profiles(
     Args:
         author_rows: Flattened author rows from ``trace-authors``.  Rows with
             ``author_id=None`` are never matched automatically; they produce a
-            placeholder profile (``author_id=None``, empty fields).
+            placeholder profile (``author_id=None``, empty fields).  An author
+            whose OpenAlex profile fetch fails transiently (HTTP 429/5xx,
+            timeout, transport error) falls back to a Semantic Scholar name
+            match — see :func:`_s2_fallback`.
         batch_size: Number of authors fetched concurrently per batch (≥ 1).
         http: Optional ``HTTPClient`` to use.  A client created internally is
             closed before returning; a caller-provided client is left open
@@ -165,9 +191,15 @@ async def _fetch_one(client: HTTPClient, author_name: str, author_id: str) -> Au
 
     *author_id* is stored on the profile verbatim; URL construction uses the
     normalized form so full-URL and bare spellings both resolve.
+
+    When the OpenAlex profile fetch fails *transiently* (HTTP 429/5xx,
+    timeout, transport error), the profile falls back to a Semantic Scholar
+    name search (``source="s2"``, placeholder quality).  Permanent failures
+    (404 not found, parse errors) are real answers and do not fall back.
     """
     fetch_id = _normalize_author_id(author_id)
     errors: list[str] = []
+    source = "openalex"
     institution: str | None = None
     h_index: int | None = None
     fields: list[str] = []
@@ -177,6 +209,19 @@ async def _fetch_one(client: HTTPClient, author_name: str, author_id: str) -> Au
         institution, h_index, fields, works_count = _parse_profile(data)
     except Exception as exc:
         errors.append(f"profile fetch failed: {_format_error(exc)}")
+        if _is_fallback_worthy(exc):
+            s2_result, s2_error = await _s2_fallback(client, author_name)
+            if s2_result is not None:
+                source = "s2"
+                institution, h_index, works_count = s2_result
+                errors.append(
+                    "s2 fallback: profile from Semantic Scholar name search "
+                    "(homonym risk — requires agent disambiguation)"
+                )
+            else:
+                errors.append(
+                    f"s2 fallback failed: {s2_error or 'no Semantic Scholar author found'}"
+                )
 
     top_works: list[dict[str, Any]] = []
     if not errors:
@@ -189,6 +234,7 @@ async def _fetch_one(client: HTTPClient, author_name: str, author_id: str) -> Au
     return AuthorProfile(
         author_name=author_name,
         author_id=author_id,
+        source=source,
         institution=institution,
         h_index=h_index,
         fields=fields,
@@ -196,6 +242,97 @@ async def _fetch_one(client: HTTPClient, author_name: str, author_id: str) -> Au
         top_works=top_works,
         errors=errors,
     )
+
+
+def _is_fallback_worthy(exc: BaseException) -> bool:
+    """Whether an OpenAlex author failure should trigger the S2 fallback.
+
+    Mirrors the citing primitive's contract: transient, quota-shaped
+    failures (HTTP 429/5xx, timeouts, transport errors) fall back; permanent
+    answers (404 not found, parse errors) do not.
+    """
+    current: BaseException | None = exc
+    seen: set[int] = set()
+    while current is not None and len(seen) < 16:
+        if id(current) in seen:
+            break
+        seen.add(id(current))
+        if isinstance(current, httpx.HTTPStatusError):
+            if current.response.status_code in _FALLBACK_HTTP_STATUSES:
+                return True
+        elif isinstance(current, httpx.TransportError):
+            return True
+        current = current.__cause__
+    return False
+
+
+async def _s2_fallback(
+    client: HTTPClient,
+    author_name: str,
+) -> tuple[tuple[str | None, int | None, int | None] | None, str | None]:
+    """Best-effort Semantic Scholar author lookup by name (never raises).
+
+    Returns ``((institution, h_index, works_count), failure_reason)`` —
+    exactly one side is ``None``.  A name match is inherently ambiguous, so
+    callers must treat a hit as placeholder data and annotate it; the
+    failure reason (when the search/profile fetch itself failed) is
+    returned for the error record.
+    """
+    try:
+        search_data = await _fetch_json(
+            client,
+            f"{_S2_AUTHOR_SEARCH_URL}?query={quote(author_name, safe='')}"
+            "&limit=1&fields=authorId,name",
+        )
+    except Exception as exc:
+        return None, _format_error(exc)
+    items = search_data.get("data")
+    if not isinstance(items, list) or not items:
+        return None, "no Semantic Scholar author found"
+    first = items[0]
+    if not isinstance(first, dict):
+        return None, "malformed Semantic Scholar author search result"
+    author_id = first.get("authorId")
+    if not isinstance(author_id, str) or not author_id:
+        return None, "Semantic Scholar author search returned no author id"
+    try:
+        data = await _fetch_json(
+            client,
+            f"{_S2_AUTHOR_URL_TEMPLATE.format(author_id=author_id)}?fields={_S2_AUTHOR_FIELDS}",
+        )
+    except Exception as exc:
+        return None, _format_error(exc)
+    try:
+        parsed = _parse_s2_author(data)
+    except Exception as exc:
+        return None, _format_error(exc)
+    return parsed, None
+
+
+def _parse_s2_author(data: dict[str, Any]) -> tuple[str | None, int | None, int | None]:
+    """Extract (institution, h_index, works_count) from an S2 author doc.
+
+    S2 serves ``affiliations`` as a list of strings (first is taken, with
+    dict entries tolerated); ``hIndex`` / ``paperCount`` may be absent on
+    sparse author records.
+    """
+    affiliation: str | None = None
+    affiliations = data.get("affiliations")
+    if isinstance(affiliations, list):
+        for entry in affiliations:
+            if isinstance(entry, str) and entry:
+                affiliation = entry
+                break
+            if isinstance(entry, dict):
+                name = entry.get("name")
+                if isinstance(name, str) and name:
+                    affiliation = name
+                    break
+    h_index_raw = data.get("hIndex")
+    h_index = int(h_index_raw) if h_index_raw is not None else None
+    works_raw = data.get("paperCount")
+    works_count = int(works_raw) if works_raw is not None else None
+    return affiliation, h_index, works_count
 
 
 async def _fetch_json(client: HTTPClient, url: str) -> dict[str, Any]:

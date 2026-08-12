@@ -110,9 +110,11 @@ async def test_public_collection_merges_exact_name_and_affiliation_across_id_sys
 
     result = await collector.collect_author_papers("Geoffrey Hinton")
 
-    assert len(result.authors) == 1
-    assert result.authors[0].openalex_id == "A5023888391"
-    assert result.authors[0].semantic_scholar_id == "1695689"
+    # 2026-08-12 决策：采集管道不做作者自动合并（阈值合并不可靠）——
+    # 同名不同 ID 的记录保留为独立作者，身份判断交给 agent/人工。
+    assert len(result.authors) == 2
+    assert {a.openalex_id for a in result.authors} == {"A5023888391", None}
+    assert {a.semantic_scholar_id for a in result.authors} == {"1695689", None}
 
 
 @pytest.mark.asyncio

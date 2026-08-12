@@ -231,3 +231,21 @@ curl -G "https://api.semanticscholar.org/graph/v1/author/search" \
 - 凭证一律从环境变量读，**不硬编码、不落盘、不提交**
 - 尊重各源文档的费率与 `Retry-After`；单源失败 fail-soft 到其他源，全失败才报错
 - API 拿不到的信息（中文姓名、头衔、个人主页、最新动向）**一律走 agent web fetch 官方源确认**，参考 `docs/titles-source-map.md`
+
+---
+
+## 6. Semantic Scholar 兜底端点（OpenAlex 429 时）
+
+- 定位论文：`GET https://api.semanticscholar.org/graph/v1/paper/{paperId}?fields=title`（paperId 支持 `DOI:10.xxx` / `ARXIV:1706.03762`）
+- 反向引用：`GET https://api.semanticscholar.org/graph/v1/paper/{paperId}/citations?fields=title,authors,year,venue,externalIds&limit=100`（分页 `offset` + 响应 `next`）
+- 作者画像：`GET https://api.semanticscholar.org/graph/v1/author/{s2id}?fields=name,affiliations,paperCount,hIndex,citationCount`；s2id 用 `author/search?query={name}` 获取（**同名风险：结果仅作占位，需 agent 消歧确认**）
+- 限流：公开 API 100 req/5min（共享 IP），429 时退避，不无限重试
+- CLI：`trace-citing`/`trace-profiles` 在 OpenAlex 429/5xx 时自动转 S2（`profile.source="s2"` 标注）
+
+## 7. OpenAlex 免费快照（可选，零额度）
+
+- 来源：`https://openalex.s3.amazonaws.com/data/work/{snapshot_date}/part_000.gz ... part_009.gz`（works 10 分区，季度更新）
+- 每行 JSONL（gz）：work 含 `id`/`title`/`publication_year`/`doi`/`cited_by_count`/`referenced_works`/`authorships`
+- 引用倒排：`referenced_works` 是"它引用了谁"，建索引时倒转为 `cited_id → citing_id`（`snapshot_citations` 表）
+- CLI：`paper snapshot download/build/status/enable/disable`；`trace-citing --use-snapshot` 查本地
+- 规模：解压后约 20-60 GB，用户主动选择下载
