@@ -354,7 +354,24 @@ class Resolver:
             raise ValueError(f"不支持的作者来源 {source!r}；支持 openalex / s2 / orcid")
         if profile is None:
             raise AuthorNotFoundError(f"未找到 {source} 作者 {author_id!r}")
+        if source == "openalex":
+            await self._attach_sibling_flags(profile)
         return profile
+
+    async def _attach_sibling_flags(self, profile: AuthorProfile) -> None:
+        """Attach advisory cross-entity misattribution flags (openalex only).
+
+        The sibling scan is advisory and fail-soft: a custom/older fetcher
+        without the capability (e.g. test fakes) or a source failure never
+        blocks the profile.
+        """
+        scan = getattr(self._fetcher, "find_sibling_entities", None)
+        if scan is None:
+            return
+        try:
+            profile.entity_flags = list(await scan(profile))
+        except Exception as exc:  # noqa: BLE001 - advisory scan is fail-soft
+            logger.warning("sibling entity scan for %s failed: %s", profile.author_id, exc)
 
     async def search(
         self,

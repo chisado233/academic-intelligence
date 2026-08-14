@@ -40,13 +40,33 @@ class RepresentativePaper(BaseModel):
     doi: str | None = None
 
 
+class EntityFlag(BaseModel):
+    """A same-name sibling entity with possible misattributed works.
+
+    OpenAlex can link a paper's byline to the wrong author entity: the
+    byline's institution (e.g. ``Beihang University``) disagrees with the
+    entity's home institutions (e.g. CMA / CAS).  ``paper author profile``
+    surfaces these as advisory flags so the caller re-checks the full
+    work set before concluding "most-cited paper" — nothing is
+    auto-merged (the 2026-08-12 decision keeps identity merges manual
+    via ``author confirm``).
+    """
+
+    entity_id: str
+    entity_affiliation: str | None = None
+    reason: str = "affiliation_conflict"
+    flagged_papers: list[RepresentativePaper] = Field(default_factory=list)
+
+
 class AuthorProfile(BaseModel):
     """Full author profile fetched from one source (design §9 / §1.5).
 
     ``representative_papers`` are sorted by ``cited_by_count`` descending
     (Q3: DeepSeek-AI 代表作按引用数客观排序).  ``evidence`` carries the
     provenance chain (source / url / id / confidence) that produced the
-    profile.
+    profile.  ``entity_flags`` lists same-name sibling entities whose
+    works may belong to this author (misattribution detection, see
+    :class:`EntityFlag`); it is advisory and empty by default.
     """
 
     name: str
@@ -60,6 +80,7 @@ class AuthorProfile(BaseModel):
     interests: list[str] = Field(default_factory=list)
     profile_url: str | None = None
     representative_papers: list[RepresentativePaper] = Field(default_factory=list)
+    entity_flags: list[EntityFlag] = Field(default_factory=list)
     evidence: list[dict[str, Any]] = Field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:

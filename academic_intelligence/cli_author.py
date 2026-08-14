@@ -112,6 +112,32 @@ def _print_profile(profile: AuthorProfile) -> None:
                 escape(paper.venue or ""),
             )
         console.print(table)
+    if profile.entity_flags:
+        console.print(
+            f"[yellow]⚠ 疑似归属错误/漏检作品[/yellow]"
+            f"（OpenAlex 同名实体下发现署名为 {escape(profile.affiliation or profile.name)} "
+            f"的作品，可能属于该作者，需人工确认）"
+        )
+        for flag in profile.entity_flags:
+            console.print(
+                f"[yellow]实体 {flag.entity_id}[/yellow]"
+                f"（{escape(flag.entity_affiliation or '机构未知')}，"
+                f"reason={flag.reason}）"
+            )
+            if flag.flagged_papers:
+                flag_table = Table(show_header=True)
+                flag_table.add_column("引用", justify="right", style="cyan")
+                flag_table.add_column("年份", justify="right")
+                flag_table.add_column("标题")
+                flag_table.add_column("work_id")
+                for paper in flag.flagged_papers:
+                    flag_table.add_row(
+                        str(paper.cited_by_count),
+                        str(paper.year or ""),
+                        paper.title[:80],
+                        escape(paper.work_id or ""),
+                    )
+                console.print(flag_table)
 
 
 def _print_candidates(candidates: list[AuthorCandidate]) -> None:

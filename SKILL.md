@@ -302,6 +302,8 @@ config = Config(
 | `ai` 提示 renamed | 旧命令 shim，正式命令是 `paper` |
 | `query` 只支持 papers 实体 | 当前限制（作者查询走 `paper author`）|
 | OpenAlex 作者档案混入同名论文 | 外部源聚合噪声；身份判定以著作列表含目标论文为准 |
+| **OpenAlex 作者实体归属错误/拆分** | 同名实体可能挂载他人作品，或本人作品被挂到同名他人实体（如署名机构与实体主机构冲突）。**锁人后必须检查 `paper author profile` 输出的"疑似归属错误/漏检作品"区块**；有多个 ORCID/机构时以论文署名机构为准，勿仅凭单一实体下结论 |
+| **Google Scholar 引用数不可自动获取** | CLI 不自动爬 GS（ToS 红线），也无官方 API。需要 GS 口径引用数时：① 用 OpenAlex `cited_by_count` + S2 `citationCount`（**S2 引用图为自建口径，非 GS 数据**）双源交叉，作"GS 的独立近似源"；② 确需 GS 精确数字时，用 WebSearch 检索 GS 结果页快照（带查询日期）或人工浏览器单次查询并注明来源 |
 | 作者拼写变体（缩写）不自动合并 | 需各自 `paper author confirm` |
 
 ---
@@ -345,7 +347,10 @@ config = Config(
 ### 11.1 工作流（6 步）
 
 ```
-① 定位种子论文   paper source arxiv|openalex get <id> --persist
+① 锁人 + 作品清单多源合并（必做，见下方"多源作品清单"）  paper author profile <id>（看 entity_flags）
+①b 种子校验（必做） 确认所选种子论文在"多源合并后的完整作品集"中引用数仍为最高；
+   用 ≥2 种引用口径（OpenAlex + Semantic Scholar，`paper source ss get <DOI>`）交叉确认；
+   无 DOI 的会议论文以 S2 citationCount 为准。不满足 → 更换种子论文
 ② 反向引用       paper trace-citing <id> --sources openalex,opencitations --output citing.csv
 ③ 展平作者       paper trace-authors citing.csv --output authors.csv
 ④ 画像特征       paper trace-profiles authors.csv --output profiles.csv
@@ -353,6 +358,15 @@ config = Config(
 ⑥ 头衔核验       agent web fetch 官方源（衔接 §10 / docs/titles-source-map.md）
 → 输出：最终画像 CSV（作者/机构/领域/代表作/venue/时间/头衔/来源链）
 ```
+
+> **多源作品清单（强制，不可只信单一数据源）**：任何单一数据源的作品清单都可能是**不完整**的——OpenAlex 有实体归属错误/拆分（§8，`profile` 的 entity_flags 可提示）、Semantic Scholar 作者实体也会拆分（同一人多个 author_id，需按姓名+机构+代表作互认后合并）、Crossref 只收录有 DOI 的期刊/会议论文（**无 DOI 的会议论文如 BMVC 2018 MBLLEN 完全不在其中**）。因此锁人后**必须**用 ≥2 个独立来源构建作品清单并取并集：
+> 1. OpenAlex：`paper author profile <id>`（274 篇量级）+ 检查 entity_flags 命中的疑似漏检作品；
+> 2. Semantic Scholar：作者作品接口（`citationCount` 排序，**能覆盖无 DOI 会议论文**）；
+> 3. Crossref 按 ORCID 枚举（`filter=orcid:<id>`，只含 DOI 作品）；
+> 4. DBLP 作者页（出版记录全，辅助交叉）。
+> 任一来源都不得作为唯一清单；以并集为准，逐源标注作品归属。
+
+> **多口径引用交叉（强制）**：结论"某论文为某作者被引最多"前，必须用 ≥2 种引用口径验证（OpenAlex `cited_by_count` + S2 `citationCount`；注意 **S2 引用图是自建口径，并非 GS 数据**，只能作 GS 的独立近似源，且通常 ≤ OpenAlex ≤ GS；**无 DOI 论文 S2 常为唯一可取口径**）。两口径差异 >50% 时视作疑似归属/收录问题，先排查同名实体与归属错误（§8），再下结论。GS 精确引用数获取技巧见 **§11.4**。
 
 各原语输出列：
 
@@ -402,3 +416,27 @@ paper trace-citing <id> --use-snapshot   # 查本地引用索引（未命中回�
 | 画像融合（CLI 数据 + 搜索数据合成） | **agent** | 最终画像 CSV |
 
 **原则：API 没有的信息一律 agent 联网确认，CLI 不假装提供。**
+
+### 11.4 Google Scholar 引用数获取技巧（合规版）
+
+> 红线：GS 无官方 API，ToS 禁止自动化访问。**绝不**自动化爬 GS、绕过验证码、IP 轮换/代理池、用第三方"GS 镜像/代查 API"（含 SerpAPI 类）。以下全部为合规手段。
+
+**口径认知（先记住）**：
+- 引用数排序规律（经验，非逐篇保证）：**Crossref ≤ S2 ≈ OpenAlex ≤ GS**。GS 计入会议论文/学位论文/书籍/报告/预印本/课程讲义，通常最高；S2 引用图为**自建口径**（非 GS 数据），不收录专利、图书覆盖有限；Crossref 只统计成员提交参考文献且匹配到 DOI 的记录，通常最低。
+- **禁止**经验换算（如"S2 × 1.2 = GS"）与跨论文混用口径（A 用 GS、B 用 OpenAlex 直接比较）。
+
+**推荐（默认路径，覆盖 90% 场景）**：
+1. 用 OpenAlex `cited_by_count` 为主口径，S2 `citationCount` 互验（CLI：`paper source ss get <DOI>`）；两源差异 <25% 时即可下"量级结论"（如"OpenAlex 540 / S2 554，同量级，GS 口径未获取"）。
+2. 报告必须写**每个数字的来源与查询日期**（如"OpenAlex 540（2026-08-13）"）；GS 数字一律标"未获取"或给方向性说明（"GS 通常更高"），不编造。
+3. 需要 GS 精确值时，WebSearch 检索 `site:scholar.google.com "论文完整标题"`、`"完整标题" "Cited by"`，从**明确来自 scholar.google.com 域名**的片段取 `Cited by N`——这是带日期的**快照值**（可能滞后数周~数月），写"GS 搜索快照（YYYY-MM-DD 查询）"。
+
+**可用（补充手段）**：
+4. 检索词技巧：标题常见时加第一作者姓氏/年份/DOI 限定（`"标题" Smith 2021 "Cited by"`）；精确标题无结果时改用标题中连续 8–12 个辨识词，或试预印本/正式发表两个标题变体。
+5. `site:` 无结果 ≠ 零引用（搜索引擎可能不索引 GS 结果页）——只能标"WebSearch 未发现"，不能记 0。
+6. Crossref `is-referenced-by-count` 作"下界锚点"；OpenCitations（COCI）作可复算的审计口径（注意其开放源覆盖偏倚）。
+
+**兜底（最后手段）**：
+7. 仅当报告核心论文需精确 GS 口径裁决时，真人浏览器单次低频查询 scholar.google.com，记录：数字、查询日期、版本聚类（"Cited by N，合并 N 个版本"）、匹配标题/作者/年份。
+8. 遇 GS 反爬信号（HTTP 000、空页、"unusual traffic"验证码）**立即停止**，当天不再重试（重试加深封禁），降级到方案 1–2。
+
+**常见坑**：GS 索引更新滞后（收录约 6–9 个月）；GS 可能把预印本与正式版聚类合并而 S2/OpenAlex 不合并，比较前核对版本；"作者页 h-index / citations"与"单篇 Cited by"是不同指标不可互换；S2 `influentialCitationCount` ≠ `citationCount`，取数时别拿错字段。

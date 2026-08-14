@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 .coverage
 coverage.xml
+coverage_final.xml
 htmlcov/
 
 # Build and generated documentation output
@@ -29,3 +30,7 @@ auth.json
 
 # Temporary workspace (framework clones, one-off scripts)
 tmp/
+
+# Third-party reference materials (kept local, not for GitHub)
+参考/
+参考/*

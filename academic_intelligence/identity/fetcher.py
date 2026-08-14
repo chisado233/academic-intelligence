@@ -41,6 +41,7 @@ from academic_intelligence.identity.exceptions import IdentitySourceError
 from academic_intelligence.identity.models import (
     AuthorCandidate,
     AuthorProfile,
+    EntityFlag,
     RepresentativePaper,
     evidence_entry,
 )
@@ -444,6 +445,169 @@ class SourceFetcher:
             if normalized_doi:
                 context.dois.append(normalized_doi.lower())
         return context
+
+    # -- cross-entity misattribution detection --------------------------------
+
+    #: How many same-name sibling entities are scanned (polite cap).
+    _SIBLING_SCAN_LIMIT = 5
+
+    @staticmethod
+    def _byline_institution_keywords(affiliation: str | None) -> list[str]:
+        """Normalize the home institution into lowercase matching keywords.
+
+        The primary entity's institution string (e.g. ``"Beihang
+        University"``) is split into significant lowercase tokens
+        (stop-words like ``university`` / ``of`` / ``the`` dropped) so a
+        byline affiliation like ``"Beihang University, Beijing, China"``
+        matches on ``beihang``.
+        """
+        if not affiliation:
+            return []
+        stop_words = {"university", "universities", "of", "the", "and", "in", "at"}
+        tokens = [t for t in re.split(r"[^a-z0-9\u4e00-\u9fff]+", affiliation.lower()) if t]
+        return [t for t in tokens if t not in stop_words and len(t) >= 3]
+
+    @staticmethod
+    def _byline_institution_matches(
+        byline_institutions: list[str], keywords: list[str]
+    ) -> bool:
+        """True when any byline institution contains a home keyword."""
+        if not keywords:
+            return False
+        joined = " ".join(byline_institutions).lower()
+        return any(keyword in joined for keyword in keywords)
+
+    async def _openalex_sibling_works(
+        self, sibling_id: str, limit: int = 50
+    ) -> list[dict[str, Any]]:
+        """Top works of a same-name sibling entity (byline scan source)."""
+        data = await self._get_json(
+            "openalex",
+            f"{_OPENALEX_BASE}/works",
+            params=self._openalex_params(
+                {"filter": f"author.id:{sibling_id}", "per_page": min(limit, 50)}
+            ),
+        )
+        out: list[dict[str, Any]] = []
+        for item in (data or {}).get("results") or []:
+            if isinstance(item, dict):
+                out.append(item)
+        return out
+
+    async def find_sibling_entities(
+        self, profile: AuthorProfile
+    ) -> list[EntityFlag]:
+        """Scan same-name OpenAlex entities for misattributed works.
+
+        OpenAlex can link a byline to the wrong author entity: the work's
+        byline institution for that author disagrees with the entity's
+        home institutions.  When a same-name sibling entity hosts works
+        whose *byline institution of the same author* contains the primary
+        entity's institution, those works may belong to the primary author
+        (e.g. MBLLEN bylined Beihang but attached to a CMA/CAS GIS
+        entity).  Returns one :class:`EntityFlag` per hit, advisory only
+        (nothing is merged or written).
+
+        The scan is fail-soft: any per-candidate or per-request failure
+        skips that candidate and the whole scan returns an empty list
+        rather than raising (profile output must never be blocked by the
+        advisory scan).
+
+        Args:
+            profile: The already-fetched OpenAlex :class:`AuthorProfile`
+                (its ``name`` / ``affiliation`` / ``author_id`` drive the
+                scan).  Only the ``openalex`` source is scanned.
+        """
+        if profile.source != "openalex" or not profile.name:
+            return []
+        keywords = self._byline_institution_keywords(profile.affiliation)
+        if not keywords:
+            return []
+        try:
+            search_data = await self._get_json(
+                "openalex",
+                f"{_OPENALEX_BASE}/authors",
+                params=self._openalex_params(
+                    {
+                        "filter": f"display_name.search:{profile.name}",
+                        "per_page": max(self._SIBLING_SCAN_LIMIT * 2, 10),
+                    }
+                ),
+            )
+        except Exception as exc:  # noqa: BLE001 - advisory scan is fail-soft
+            logger.warning("sibling entity scan (search) failed: %s", exc)
+            return []
+        flags: list[EntityFlag] = []
+        scanned = 0
+        for item in (search_data or {}).get("results") or []:
+            if not isinstance(item, dict):
+                continue
+            # Only exact same display names are plausible siblings; a
+            # search hit like "Xue Feng Lu" / "Yongfeng Lu" is a different
+            # person and must not be scanned.
+            if str(item.get("display_name") or "").strip() != profile.name.strip():
+                continue
+            sibling_id = _bare_id(item.get("id"))
+            if not sibling_id or sibling_id == profile.author_id:
+                continue
+            if scanned >= self._SIBLING_SCAN_LIMIT:
+                break
+            scanned += 1
+            try:
+                works = await self._openalex_sibling_works(sibling_id)
+            except Exception as exc:  # noqa: BLE001 - fail-soft per candidate
+                logger.warning(
+                    "sibling entity scan (%s) works failed: %s", sibling_id, exc
+                )
+                continue
+            flagged: list[RepresentativePaper] = []
+            for work in works:
+                byline_institutions = self._authorship_institutions_for(
+                    work, sibling_id
+                )
+                if self._byline_institution_matches(byline_institutions, keywords):
+                    try:
+                        flagged.append(parse_openalex_work(work))
+                    except Exception as exc:  # noqa: BLE001
+                        logger.debug("skip misattributed work parse: %s", exc)
+            if flagged:
+                flagged.sort(key=lambda p: p.cited_by_count, reverse=True)
+                flags.append(
+                    EntityFlag(
+                        entity_id=sibling_id,
+                        entity_affiliation=_author_affiliation_openalex(item),
+                        reason="affiliation_conflict",
+                        flagged_papers=flagged[:5],
+                    )
+                )
+        return flags
+
+    @staticmethod
+    def _authorship_institutions_for(
+        work: dict[str, Any], author_id: str
+    ) -> list[str]:
+        """Byline institutions of *author_id* inside *work*.
+
+        Only the authorship entry whose ``author.id`` matches *author_id*
+        counts — institutions of co-authors must never trigger the flag.
+        """
+        out: list[str] = []
+        for authorship in work.get("authorships") or []:
+            if not isinstance(authorship, dict):
+                continue
+            author = authorship.get("author") or {}
+            if not isinstance(author, dict):
+                continue
+            entry_id = _bare_id(author.get("id"))
+            if entry_id != author_id:
+                continue
+            for inst in authorship.get("institutions") or []:
+                if isinstance(inst, dict) and inst.get("display_name"):
+                    out.append(str(inst["display_name"]))
+            for raw in authorship.get("raw_affiliation_strings") or []:
+                if isinstance(raw, str) and raw:
+                    out.append(raw)
+        return out
 
     # -- Semantic Scholar -----------------------------------------------------
 
