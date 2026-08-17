@@ -58,6 +58,13 @@ dev = [
     "ruff>=0.4.0",
     "mypy>=1.10",
     "pre-commit>=3.7",
+    # tests/test_fix_f.py encodes genuine brotli bodies (FIX-F offline
+    # regression) and imports brotli unconditionally
+    "brotli>=1.0.9",
+    # webcrawler offline tests (test_extractors.py / test_crawler.py) exercise
+    # the CSS rule-extraction backends
+    "beautifulsoup4>=4.12",
+    "cssselect>=1.2",
 ]
 # WebCrawler extra: TLS-fingerprint transport (curl_cffi), browser rendering
 # (scrapling) and LLM schema extraction (crawl4ai).  All three are optional,
@@ -69,6 +76,10 @@ crawler = [
     "trafilatura>=1.8",
     "scrapling>=0.1",
     "crawl4ai>=0.6",
+    # CSS rule extraction backends (extractors.py points users here when
+    # neither is importable)
+    "beautifulsoup4>=4.12",
+    "cssselect>=1.2",
 ]
 # PyMuPDF extra: AGPL-3.0-only PDF backend for the full-text parser
 # (pdfplumber, MIT, is the default and a formal dependency).  Optional per
@@ -139,6 +150,15 @@ warn_unused_ignores = true
 warn_no_return = true
 warn_unreachable = true
 strict_equality = true
+
+# Optional-dependency modules: installed, absent, or untyped depending on
+# which extras are present.  Runtime import detection handles absence; mypy
+# must tolerate every state so `mypy academic_intelligence` passes on a bare
+# `.[dev]` install and on one with extras, without per-line type: ignore
+# comments going stale as these libraries ship type information.
+[[tool.mypy.overrides]]
+module = ["bs4.*", "cssselect.*", "fitz.*"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

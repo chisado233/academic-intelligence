@@ -199,7 +199,7 @@ def _css_nodes(html: str, selector: str, root: Any) -> list[Any]:
             logger.debug("cssselect failed for %r, trying bs4: %s", selector, exc)
     if _BS4_AVAILABLE:
         try:
-            from bs4 import BeautifulSoup  # type: ignore[import-untyped]
+            from bs4 import BeautifulSoup
 
             soup = BeautifulSoup(html, "html.parser")
             return list(soup.select(selector))

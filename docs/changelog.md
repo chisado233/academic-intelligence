@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-17 — Bare `.[dev]` gate green again (fresh-install verification fixes)
+
+### Fixed
+
+- **Fresh `pip install -e ".[dev]"` now passes the offline gate as documented**: `brotli`, `beautifulsoup4`, `cssselect` added to the `dev` extra. Before, `tests/test_fix_f.py` failed at collection (`ModuleNotFoundError: brotli`) and the 5 webcrawler CSS-extraction tests failed on a bare install — both were previously masked by environments that happened to have the packages.
+- **`crawler` extra now contains what its own error message tells users to install**: `beautifulsoup4` + `cssselect` added (extractors.py advises "install the [crawler] extra" for CSS rules).
+- **`mypy academic_intelligence` is 0 errors on every environment again** (bare `.[dev]` and with extras): stale `# type: ignore` comments removed (`fulltext/parser.py`, `webcrawler/extractors.py`), redundant cast removed in `utils/retry.py`, `utils/curl_fetcher.py` loads `curl_cffi` via `importlib.import_module` (env-independent `ModuleType | None`), and a mypy override tolerates absent/untyped `bs4` / `cssselect` / `fitz`.
+- **Docs**: SKILL.md (§3.3 example, §11.1b, §11.4) and HANDOFF.md told users to run `paper source ss ...`, which fails (`No such command`); corrected to `paper source semantic_scholar ...`, plus a note under the capability matrix that short aliases (`ss`/`s2`/`oa`/`gs`) only apply to `--sources` selection — the `paper source` subcommand only mounts `europe-pmc`/`epmc`/`coci`.
+
+### Verified
+
+- bare `.[dev]` venv: quick suite 1331 passed / 4 skipped (optional-dep degradation skips), `ruff` 0, `mypy` 0
+- venv with extras: quick suite 1334 passed / 1 skipped, `ruff` 0, `mypy` 0
+- live smoke: arxiv get, crossref get, multi-source collect (crossref+oa fusion), `epmc` alias, author search all working
+
 ## 2026-08-11 — Crawler upgrade: `ai` → `paper`, new sources & pipelines
 
 ### Breaking Change

@@ -169,7 +169,7 @@ class RetryHandler:
                 result = func(*args, **kwargs)
                 if inspect.isawaitable(result):
                     return await cast(Awaitable[T], result)
-                return cast(T, result)
+                return result
             except BaseException as exc:
                 last_exc = exc
                 if attempt >= self.config.max_retries or not self.config.should_retry(exc):

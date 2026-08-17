@@ -61,7 +61,7 @@ class PDFParser:
         self.backend = backend
         if backend == "pymupdf":
             try:
-                import fitz  # type: ignore[import-untyped]  # noqa: F401
+                import fitz  # noqa: F401
             except ImportError as exc:
                 raise FulltextParseError(
                     "pymupdf backend requires PyMuPDF (AGPL-3.0-only); install "

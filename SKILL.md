@@ -98,6 +98,8 @@ paper [OPTIONS] COMMAND
 
 \* arXiv 全文经 `paper fulltext` 定位器覆盖（源适配器层不声明 fulltext）。
 
+> **别名分两层**：`--sources` 选择器（如 `collect paper --sources ss,oa`）接受 `ss`/`s2`/`oa`/`gs`/`epmc`/`coci` 等短名；`paper source <源>` 子命令只额外挂载 `europe-pmc`/`epmc`/`coci` 三个别名，其余源必须用完整名（`semantic_scholar`、`openalex`、`arxiv`……），用 `ss` 会报 `No such command`。
+
 **示例**：
 
 ```bash
@@ -107,7 +109,7 @@ paper source arxiv search "deepseek" --limit 20 --persist
 paper source crossref get 10.1038/s41586-025-09422-z --persist   # DOI 权威 + publisher
 paper source crossref search "deep learning" --limit 5
 paper source openalex get 10.1038/nature14539          # OpenAlex（限量）
-paper source ss search "graph neural network" --limit 5
+paper source semantic_scholar search "graph neural network" --limit 5
 paper source pubmed search "deepseek" --limit 5
 paper source europe_pmc search "cancer" --limit 5      # 生物医学 + OA 全文
 paper source core search "transformer" --limit 5       # 无 key 走免费 tier（限流频繁）
@@ -350,7 +352,7 @@ config = Config(
 ```
 ① 锁人 + 作品清单多源合并（必做，见下方"多源作品清单"）  paper author profile <id>（看 entity_flags）
 ①b 种子校验（必做） 确认所选种子论文在"多源合并后的完整作品集"中引用数仍为最高；
-   用 ≥2 种引用口径（OpenAlex + Semantic Scholar，`paper source ss get <DOI>`）交叉确认；
+   用 ≥2 种引用口径（OpenAlex + Semantic Scholar，`paper source semantic_scholar get <DOI>`）交叉确认；
    无 DOI 的会议论文以 S2 citationCount 为准。不满足 → 更换种子论文
 ② 反向引用       paper trace-citing <id> --sources openalex,opencitations --output citing.csv
 ③ 展平作者       paper trace-authors citing.csv --output authors.csv
@@ -427,7 +429,7 @@ paper trace-citing <id> --use-snapshot   # 查本地引用索引（未命中回�
 - **禁止**经验换算（如"S2 × 1.2 = GS"）与跨论文混用口径（A 用 GS、B 用 OpenAlex 直接比较）。
 
 **推荐（默认路径，覆盖 90% 场景）**：
-1. 用 OpenAlex `cited_by_count` 为主口径，S2 `citationCount` 互验（CLI：`paper source ss get <DOI>`）；两源差异 <25% 时即可下"量级结论"（如"OpenAlex 540 / S2 554，同量级，GS 口径未获取"）。
+1. 用 OpenAlex `cited_by_count` 为主口径，S2 `citationCount` 互验（CLI：`paper source semantic_scholar get <DOI>`）；两源差异 <25% 时即可下"量级结论"（如"OpenAlex 540 / S2 554，同量级，GS 口径未获取"）。
 2. 报告必须写**每个数字的来源与查询日期**（如"OpenAlex 540（2026-08-13）"）；GS 数字一律标"未获取"或给方向性说明（"GS 通常更高"），不编造。
 3. 需要 GS 精确值时，WebSearch 检索 `site:scholar.google.com "论文完整标题"`、`"完整标题" "Cited by"`，从**明确来自 scholar.google.com 域名**的片段取 `Cited by N`——这是带日期的**快照值**（可能滞后数周~数月），写"GS 搜索快照（YYYY-MM-DD 查询）"。
 

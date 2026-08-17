@@ -17,16 +17,22 @@ challenge solving.
 
 from __future__ import annotations
 
+import importlib
 import logging
 from dataclasses import dataclass
+from types import ModuleType
 from typing import Any
 
 logger = logging.getLogger(__name__)
 
+# importlib (instead of an ``import ... as`` statement) keeps type-checking
+# env-independent: the name is ``ModuleType | None`` whether curl_cffi is
+# installed, typed, or absent, and attribute access on ModuleType returns
+# Any, so no per-line ignores are needed that would go stale across states.
 try:
-    import curl_cffi.requests as _curl_requests
+    _curl_requests: ModuleType | None = importlib.import_module("curl_cffi.requests")
 except ImportError:  # pragma: no cover - exercised when the optional dep is absent
-    _curl_requests = None  # type: ignore[assignment]
+    _curl_requests = None
 
 CURL_CFFI_AVAILABLE: bool = _curl_requests is not None
 """Whether the optional ``curl_cffi`` package is importable in this runtime."""
@@ -121,7 +127,7 @@ class CurlFetcher:
         try:
             response: Any = _curl_requests.get(
                 url,
-                impersonate=self._impersonate,  # type: ignore[arg-type]
+                impersonate=self._impersonate,
                 timeout=timeout if timeout is not None else self._timeout,
                 verify=self._verify,
                 headers=dict(self._extra_headers),
