@@ -1,0 +1,204 @@
+{
+ "马华东": [
+  {
+   "title": "Rethinking the Low-Light Video Enhancement: Benchmark Datasets and Methods",
+   "year": 2025,
+   "venue": "IEEE Transactions on Image Processing",
+   "doi": "10.1109/TIP.2025.3616639",
+   "author_id": "2248034542"
+  },
+  {
+   "title": "Exploring in Extremely Dark: Low-Light Video Enhancement with Real Events",
+   "year": 2024,
+   "venue": "ACM Multimedia",
+   "doi": "10.1145/3664647.3681370",
+   "author_id": "2248034542"
+  },
+  {
+   "title": "Learning Exposure Correction in Dynamic Scenes",
+   "year": 2024,
+   "venue": "ACM Multimedia",
+   "doi": "10.1145/3664647.3681136",
+   "author_id": "2263653397"
+  },
+  {
+   "title": "Dancing in the Dark: A Benchmark towards General Low-light Video Enhancement",
+   "year": 2023,
+   "venue": "IEEE International Conference on Computer Vision",
+   "doi": "10.1109/ICCV51070.2023.01183",
+   "author_id": "2263653397"
+  },
+  {
+   "title": "You Do Not Need Additional Priors or Regularizers in Retinex-Based Low-Light Image Enhancement",
+   "year": 2023,
+   "venue": "Computer Vision and Pattern Recognition",
+   "doi": "10.1109/CVPR52729.2023.01738",
+   "author_id": "144258295"
+  }
+ ],
+ "黄庆明": [
+  {
+   "title": "Adaptive Multi-Exposure Image Correction via Joint Lightness and Structure Awareness",
+   "year": 2025,
+   "venue": "ACM Trans. Multim. Comput. Commun. Appl.",
+   "doi": "10.1145/3735973",
+   "author_id": "2237597856"
+  },
+  {
+   "title": "Unsupervised Low-Light Image Enhancement via Luminance Mask and Luminance-Independent Representation Decoupling",
+   "year": 2024,
+   "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence",
+   "doi": "10.1109/TETCI.2024.3369858",
+   "author_id": "2237597856"
+  },
+  {
+   "title": "Unsupervised Low-Light Video Enhancement With Spatial-Temporal Co-Attention Transformer",
+   "year": 2023,
+   "venue": "IEEE Transactions on Image Processing",
+   "doi": "10.1109/TIP.2023.3301332",
+   "author_id": "1689702"
+  },
+  {
+   "title": "LVE-S2D: Low-Light Video Enhancement From Static to Dynamic",
+   "year": 2022,
+   "venue": "IEEE transactions on circuits and systems for video technology (Print)",
+   "doi": "10.1109/TCSVT.2022.3190916",
+   "author_id": "1689702"
+  }
+ ],
+ "孟德宇": [
+  {
+   "title": "Degradation-Guided cross-consistent deep unfolding network for video restoration under diverse weathers",
+   "year": 2025,
+   "venue": "Neural Networks",
+   "doi": "10.1016/j.neunet.2025.107700",
+   "author_id": "2324996221"
+  },
+  {
+   "title": "Cross-Consistent Deep Unfolding Network for Adaptive All-In-One Video Restoration",
+   "year": 2023,
+   "venue": "arXiv.org",
+   "doi": "10.48550/arXiv.2309.01627",
+   "author_id": "2237802857"
+  },
+  {
+   "title": "Low-Light Image Enhancement by Retinex-Based Algorithm Unrolling and Adjustment",
+   "year": 2022,
+   "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+   "doi": "10.1109/TNNLS.2023.3289626",
+   "author_id": "1803714"
+  }
+ ],
+ "翟广涛": [
+  {
+   "title": "GLARE: Low Light Image Enhancement via Generative Latent Feature based Codebook Retrieval",
+   "year": 2024,
+   "venue": "European Conference on Computer Vision",
+   "doi": "10.48550/arXiv.2407.12431",
+   "author_id": "2266393212"
+  },
+  {
+   "title": "Light-VQA+: A Video Quality Assessment Model for Exposure Correction with Vision-Language Guidance",
+   "year": 2024,
+   "venue": "arXiv.org",
+   "doi": "10.48550/arXiv.2405.03333",
+   "author_id": "2266393212"
+  },
+  {
+   "title": "NTIRE 2023 Quality Assessment of Video Enhancement Challenge",
+   "year": 2023,
+   "venue": "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+   "doi": "10.1109/CVPRW59228.2023.00158",
+   "author_id": "144826390"
+  },
+  {
+   "title": "Light-VQA: A Multi-Dimensional Quality Assessment Model for Low-Light Video Enhancement",
+   "year": 2023,
+   "venue": "ACM Multimedia",
+   "doi": "10.1145/3581783.3611923",
+   "author_id": "144826390"
+  },
+  {
+   "title": "VDPVE: VQA Dataset for Perceptual Video Enhancement",
+   "year": 2023,
+   "venue": "2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)",
+   "doi": "10.1109/CVPRW59228.2023.00152",
+   "author_id": "144826390"
+  },
+  {
+   "title": "Perceptual Quality Assessment of Low-light Image Enhancement",
+   "year": 2021,
+   "venue": "ACM Trans. Multim. Comput. Commun. Appl.",
+   "doi": "10.1145/3457905",
+   "author_id": "144826390"
+  }
+ ],
+ "於志文": [
+  {
+   "title": "MoEnlight: Energy-efficient and self-adaptive Low-light Video Stream Enhancement on Mobile Devices",
+   "year": 2023,
+   "venue": "ACM Turing Celebration Conference",
+   "doi": "10.1145/3603165.3607375",
+   "author_id": "2256618"
+  },
+  {
+   "title": "AdaEnlight",
+   "year": 2022,
+   "venue": "Proceedings of the ACM on Interactive Mobile Wearable and Ubiquitous Technologies",
+   "doi": "10.1145/3569464",
+   "author_id": "2256618"
+  }
+ ],
+ "戴琼海": [
+  {
+   "title": "DarkVision: A Benchmark for Low-light Image/Video Perception",
+   "year": 2023,
+   "venue": "arXiv.org",
+   "doi": "10.48550/arXiv.2301.06269",
+   "author_id": "1491800101"
+  },
+  {
+   "title": "Computational Imaging and Artificial Intelligence: The Next Revolution of Mobile Vision",
+   "year": 2021,
+   "venue": "Proceedings of the IEEE",
+   "doi": "10.1109/JPROC.2023.3338272",
+   "author_id": "144954808"
+  }
+ ],
+ "李厚强": [
+  {
+   "title": "Low-Light Video Enhancement with Synthetic Event Guidance",
+   "year": 2022,
+   "venue": "AAAI Conference on Artificial Intelligence",
+   "doi": "10.48550/arXiv.2208.11014",
+   "author_id": "2108508109"
+  }
+ ],
+ "卢孝强": [
+  {
+   "title": "Attention-Based Multi-Branch Network for Low-Light Image Enhancement",
+   "year": 2021,
+   "venue": "2021 IEEE 2nd International Conference on Big Data, Artificial Intelligence and Internet of Things Engineering (ICBAIE)",
+   "doi": "10.1109/ICBAIE52039.2021.9389960",
+   "author_id": "7828998"
+  }
+ ],
+ "查正军": [
+  {
+   "title": "Illumination-Invariant Person Re-Identification",
+   "year": 2019,
+   "venue": "ACM Multimedia",
+   "doi": "10.1145/3343031.3350994",
+   "author_id": "143962510"
+  }
+ ],
+ "吴枫": [
+  {
+   "title": "Unsupervised Underexposed Image Enhancement via Self-Illuminated and Perceptual Guidance",
+   "year": 2023,
+   "venue": "IEEE transactions on multimedia",
+   "doi": "10.1109/TMM.2022.3193059",
+   "author_id": "144864333"
+  }
+ ]
+}

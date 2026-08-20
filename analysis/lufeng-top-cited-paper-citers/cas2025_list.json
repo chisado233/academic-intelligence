@@ -1,0 +1,30 @@
+{
+  "url": "https://casad.cas.cn/yszx/yszx2025/tzgg/202511/t20251120_5089431.html",
+  "status": "ok",
+  "title": "关于公布2025年中国科学院院士增选当选院士名单的公告----中国科学院学部与院士",
+  "content": "关于公布2025年中国科学院院士增选当选院士名单的公告\n| 来源：\n根据《中国科学院院士章程》《中国科学院院士增选工作实施办法（试行）》《中国科学院外籍院士选举办法》等规定，2025年中国科学院选举产生了73名中国科学院院士和27名中国科学院外籍院士。\n现予公布。\n中国科学院\n2025年11月21日\n© 1996 - 中国科学院 版权所有\n京ICP备05002857号-1 京公网安备110402500047号 网站标识码bm48000022",
+  "links": [
+    "https://yszx.casad.cas.cn/tzgg/202511/t20251120_5089431.html",
+    "https://yszx.casad.cas.cn/",
+    "https://yszx.casad.cas.cn/jj/",
+    "https://yszx.casad.cas.cn/tzgg/",
+    "https://yszx.casad.cas.cn/bfgd/",
+    "https://yszx.casad.cas.cn/lcmd/",
+    "https://yszx.casad.cas.cn/tzgg/202508/t20250828_5080737.html",
+    "https://www.cas.cn/",
+    "https://beian.miit.gov.cn/#/Integrated/index",
+    "http://bszs.conac.cn/sitename?method=show&id=08D02A84B89B2FB3E053022819ACFCA1"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "OK",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T10:29:09.245355+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 10,
+    "robots_allowed": true,
+    "robots_url": "https://casad.cas.cn/robots.txt"
+  },
+  "extracted": null
+}

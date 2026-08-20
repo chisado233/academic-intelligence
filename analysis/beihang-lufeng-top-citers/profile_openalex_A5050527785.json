@@ -1,0 +1,121 @@
+{
+  "name": "Feng Lu",
+  "author_id": "A5050527785",
+  "source": "openalex",
+  "affiliation": "Beihang University",
+  "homepage": null,
+  "h_index": 45,
+  "citations": 7842,
+  "paper_count": 274,
+  "interests": [],
+  "profile_url": "https://openalex.org/A5050527785",
+  "representative_papers": [
+    {
+      "title": "Understanding adversarial attacks on deep learning based medical image analysis systems",
+      "year": 2020,
+      "cited_by_count": 544,
+      "venue": "Pattern Recognition",
+      "work_id": "W3021182036",
+      "doi": "https://doi.org/10.1016/j.patcog.2020.107332"
+    },
+    {
+      "title": "Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks",
+      "year": 2020,
+      "cited_by_count": 469,
+      "venue": "Lecture notes in computer science",
+      "work_id": "W3107337211",
+      "doi": "https://doi.org/10.1007/978-3-030-58607-2_11"
+    },
+    {
+      "title": "Advancing Image Understanding in Poor Visibility Environments: A Collective Benchmark Study",
+      "year": 2020,
+      "cited_by_count": 334,
+      "venue": "IEEE Transactions on Image Processing",
+      "work_id": "W3013338555",
+      "doi": "https://doi.org/10.1109/tip.2020.2981922"
+    },
+    {
+      "title": "A deep learning system for predicting time to progression of diabetic retinopathy",
+      "year": 2024,
+      "cited_by_count": 320,
+      "venue": "Nature Medicine",
+      "work_id": "W4390588537",
+      "doi": "https://doi.org/10.1038/s41591-023-02702-z"
+    },
+    {
+      "title": "Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset",
+      "year": 2021,
+      "cited_by_count": 293,
+      "venue": "International Journal of Computer Vision",
+      "work_id": "W3161732772",
+      "doi": "https://doi.org/10.1007/s11263-021-01466-8"
+    },
+    {
+      "title": "Adaptive Linear Regression for Appearance-Based Gaze Estimation",
+      "year": 2014,
+      "cited_by_count": 246,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "work_id": "W2001252859",
+      "doi": "https://doi.org/10.1109/tpami.2014.2313123"
+    },
+    {
+      "title": "Bipolar Phenanthroimidazole Derivatives Containing Bulky Polyaromatic Hydrocarbons for Nondoped Blue Electroluminescence Devices with High Efficiency and Low Efficiency Roll-Off",
+      "year": 2013,
+      "cited_by_count": 236,
+      "venue": "Chemistry of Materials",
+      "work_id": "W1990930168",
+      "doi": "https://doi.org/10.1021/cm4030414"
+    },
+    {
+      "title": "A Coarse-to-Fine Adaptive Network for Appearance-Based Gaze Estimation",
+      "year": 2020,
+      "cited_by_count": 184,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "work_id": "W2998355285",
+      "doi": "https://doi.org/10.1609/aaai.v34i07.6636"
+    },
+    {
+      "title": "Gaze Estimation by Exploring Two-Eye Asymmetry",
+      "year": 2020,
+      "cited_by_count": 184,
+      "venue": "IEEE Transactions on Image Processing",
+      "work_id": "W3013897564",
+      "doi": "https://doi.org/10.1109/tip.2020.2982828"
+    },
+    {
+      "title": "Appearance-Based Gaze Estimation via Evaluation-Guided Asymmetric Regression",
+      "year": 2018,
+      "cited_by_count": 180,
+      "venue": "Lecture notes in computer science",
+      "work_id": "W2897890508",
+      "doi": "https://doi.org/10.1007/978-3-030-01264-9_7"
+    }
+  ],
+  "entity_flags": [
+    {
+      "entity_id": "A5101480749",
+      "entity_affiliation": "Zhejiang Normal University, China Meteorological Administration, Chinese Academy of Sciences, Jiangsu Center for Collaborative Innovation in Geographical Information Resource Development and Application, Institute of Geographic Sciences and Natural Resources Research, University of Chinese Academy of Sciences, Fuzhou University, Shanghai Maritime University",
+      "reason": "affiliation_conflict",
+      "flagged_papers": [
+        {
+          "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs.",
+          "year": 2018,
+          "cited_by_count": 316,
+          "venue": "British Machine Vision Conference",
+          "work_id": "W2893333553",
+          "doi": null
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "source": "openalex",
+      "source_url": "https://openalex.org/A5050527785",
+      "source_id": "A5050527785",
+      "collected_at": "2026-08-17T06:07:00.843914+00:00",
+      "confidence": 0.85,
+      "detail": null
+    }
+  ]
+}

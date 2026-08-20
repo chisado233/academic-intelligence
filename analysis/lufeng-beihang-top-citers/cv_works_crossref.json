@@ -1,0 +1,977 @@
+{
+ "1": {
+  "raw": "Zhimin Wang, Yuxin Zhao, Feng Lu*. Gaze-Vergence-Controlled See-Through Vision in Augmented Reality. IEEE Transactions on Visualization and Computer Graphics (TVCG), 28(11):3843-3853, 2022. (Presented at ISMAR2022)",
+  "authors": "Zhimin Wang, Yuxin Zhao, Feng Lu*",
+  "title": "Gaze-Vergence-Controlled See-Through Vision in Augmented Reality",
+  "cv_no": 1,
+  "crossref": {
+   "doi": "10.1109/tvcg.2022.3203110",
+   "title_cr": "Gaze-Vergence-Controlled See-Through Vision in Augmented Reality",
+   "is_ref_by": 31,
+   "container": "IEEE Transactions on Visualization and Computer Graphics",
+   "fuzzy": false
+  }
+ },
+ "2": {
+  "raw": "Yiwei Bao, Yunfei Liu, Haofei Wang, Feng Lu*. Generalizing Gaze Estimation with Rotation Consistency . IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2022.",
+  "authors": "Yiwei Bao, Yunfei Liu, Haofei Wang, Feng Lu*",
+  "title": "Generalizing Gaze Estimation with Rotation Consistency",
+  "cv_no": 2,
+  "crossref": {
+   "doi": "10.1109/cvpr52688.2022.00417",
+   "title_cr": "Generalizing Gaze Estimation with Rotation Consistency",
+   "is_ref_by": 55,
+   "container": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+   "fuzzy": false
+  }
+ },
+ "3": {
+  "raw": "Mingfang Zhang, Yunfei Liu, Feng Lu*. GazeOnce: Real-Time Multi-Person Gaze Estimation IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2022.",
+  "authors": "",
+  "title": "Mingfang Zhang, Yunfei Liu, Feng Lu*",
+  "cv_no": 3,
+  "crossref": {
+   "doi": "10.1109/cac.2015.7382469",
+   "title_cr": "Solving Lasso: Extended ADMM is more efficient than ADMM",
+   "is_ref_by": 2,
+   "container": "2015 Chinese Automation Congress (CAC)",
+   "fuzzy": true
+  }
+ },
+ "4": {
+  "raw": "Yunfei Liu, Yu Li, Shaodi You and Feng Lu*. Semantic Guided Single Image Reflection Removal. The ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM), 18(3s)-151:1-23, 2022.",
+  "authors": "Yunfei Liu, Yu Li, Shaodi You and Feng Lu*",
+  "title": "Semantic Guided Single Image Reflection Removal",
+  "cv_no": 4,
+  "crossref": {
+   "doi": "10.1145/3510821",
+   "title_cr": "Semantic Guided Single Image Reflection Removal",
+   "is_ref_by": 14,
+   "container": "ACM Transactions on Multimedia Computing, Communications, and Applications",
+   "fuzzy": false
+  }
+ },
+ "5": {
+  "raw": "Yuhao Niu, Lin Gu, Yitian Zhao, and Feng Lu*. Explainable Diabetic Retinopathy Detection and Retinal Image Generation. IEEE Journal of Biomedical and Health Informatics (JBHI), 26(1): 44-55, 2022.",
+  "authors": "Yuhao Niu, Lin Gu, Yitian Zhao, and Feng Lu*",
+  "title": "Explainable Diabetic Retinopathy Detection and Retinal Image Generation",
+  "cv_no": 5,
+  "crossref": {
+   "doi": "10.1109/jbhi.2021.3110593",
+   "title_cr": "Explainable Diabetic Retinopathy Detection and Retinal Image Generation",
+   "is_ref_by": 69,
+   "container": "IEEE Journal of Biomedical and Health Informatics",
+   "fuzzy": false
+  }
+ },
+ "6": {
+  "raw": "Ze Yang, Haofei Wang and Feng Lu*. Assessment of Deep Learning-based Heart Rate Estimation using Remote Photoplethysmography under Different Illuminations. IEEE Transactions on Human-Machine Systems (THMS), 52(6): 1236-1246, 2022.",
+  "authors": "Ze Yang, Haofei Wang and Feng Lu*",
+  "title": "Assessment of Deep Learning-based Heart Rate Estimation using Remote Photoplethysmography under Different Illuminations",
+  "cv_no": 6,
+  "crossref": {
+   "doi": "10.1109/thms.2022.3207755",
+   "title_cr": "Assessment of Deep Learning-Based Heart Rate Estimation Using Remote Photoplethysmography Under Different Illuminations",
+   "is_ref_by": 55,
+   "container": "IEEE Transactions on Human-Machine Systems",
+   "fuzzy": false
+  }
+ },
+ "7": {
+  "raw": "Zongji Wang, Yunfei Liu, Feng Lu*. Discriminative feature encoding for intrinsic image decomposition. Computational Visual Media (CVMJ), accepted 2022.",
+  "authors": "Zongji Wang, Yunfei Liu, Feng Lu*",
+  "title": "Discriminative feature encoding for intrinsic image decomposition",
+  "cv_no": 7,
+  "crossref": {
+   "doi": "10.1007/s41095-022-0294-4",
+   "title_cr": "Discriminative feature encoding for intrinsic image decomposition",
+   "is_ref_by": 8,
+   "container": "Computational Visual Media",
+   "fuzzy": false
+  }
+ },
+ "8": {
+  "raw": "Heng Guo, Zhipeng Mo, Boxin Shi, Feng Lu, Sai Kit Yeung, Ping Tan and Yasuyuki Matsushita. Patch-based Uncalibrated Photometric Stereo under Natural Illumination. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 44(11): 7809-7823, 2022.",
+  "authors": "",
+  "title": "Heng Guo, Zhipeng Mo, Boxin Shi, Feng Lu, Sai Kit Yeung, Ping Tan and Yasuyuki Matsushita",
+  "cv_no": 8,
+  "crossref": {
+   "doi": "10.1109/cvpr.2012.6247680",
+   "title_cr": "A biquadratic reflectance model for radiometric image analysis",
+   "is_ref_by": 4,
+   "container": "2012 IEEE Conference on Computer Vision and Pattern Recognition",
+   "fuzzy": true
+  }
+ },
+ "9": {
+  "raw": "Yihua Cheng, Yiwei Bao and Feng Lu*. PureGaze: Purifying Gaze Feature for Generalizable Gaze Estimation. AAAI Conference on Artificial Intelligence (AAAI), 2022.",
+  "authors": "Yihua Cheng, Yiwei Bao and Feng Lu*",
+  "title": "PureGaze: Purifying Gaze Feature for Generalizable Gaze Estimation",
+  "cv_no": 9,
+  "crossref": {
+   "doi": "10.1609/aaai.v36i1.19921",
+   "title_cr": "PureGaze: Purifying Gaze Feature for Generalizable Gaze Estimation",
+   "is_ref_by": 87,
+   "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "fuzzy": false
+  }
+ },
+ "10": {
+  "raw": "Jiadong Liang, Yunfei Liu, Feng Lu*. Reconstructing 3D Virtual Face with Eye Gaze from a Single Image. IEEE Conference on Virtual Reality and 3D User Interfaces (VR), 2022.",
+  "authors": "Jiadong Liang, Yunfei Liu, Feng Lu*",
+  "title": "Reconstructing 3D Virtual Face with Eye Gaze from a Single Image",
+  "cv_no": 10,
+  "crossref": {
+   "doi": "10.1109/vr51125.2022.00056",
+   "title_cr": "Reconstructing 3D Virtual Face with Eye Gaze from a Single Image",
+   "is_ref_by": 5,
+   "container": "2022 IEEE Conference on Virtual Reality and 3D User Interfaces (VR)",
+   "fuzzy": false
+  }
+ },
+ "11": {
+  "raw": "Zhimin Wang, Yuxin Zhao, Feng Lu*. Control with Vergence Eye Movement in Augmented Reality See-Through Vision. IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), 2022.",
+  "authors": "Zhimin Wang, Yuxin Zhao, Feng Lu*",
+  "title": "Control with Vergence Eye Movement in Augmented Reality See-Through Vision",
+  "cv_no": 11,
+  "crossref": {
+   "doi": "10.1109/vrw55335.2022.00125",
+   "title_cr": "Control with Vergence Eye Movement in Augmented Reality See-Through Vision",
+   "is_ref_by": 11,
+   "container": "2022 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+   "fuzzy": false
+  }
+ },
+ "12": {
+  "raw": "Yihua Cheng, Feng Lu*. Gaze Estimation using Transformer. International Conference on Pattern Recognition (ICPR), 2022.",
+  "authors": "Yihua Cheng, Feng Lu*",
+  "title": "Gaze Estimation using Transformer",
+  "cv_no": 12,
+  "crossref": {
+   "doi": "10.1109/icpr56361.2022.9956687",
+   "title_cr": "Gaze Estimation using Transformer",
+   "is_ref_by": 156,
+   "container": "2022 26th International Conference on Pattern Recognition (ICPR)",
+   "fuzzy": false
+  }
+ },
+ "13": {
+  "raw": "Bo Liu, Xuanqian Wang, Jingjin Dong, Di Li, Feng Lu*. ATC-WSA: Working State Analysis for Air Traffic Controllers. CAAI International Conference on Artificial Intelligence (CICAI), 2022.",
+  "authors": "Bo Liu, Xuanqian Wang, Jingjin Dong, Di Li, Feng Lu*",
+  "title": "ATC-WSA: Working State Analysis for Air Traffic Controllers",
+  "cv_no": 13,
+  "crossref": {
+   "doi": "10.1007/978-3-031-20503-3_42",
+   "title_cr": "ATC-WSA: Working State Analysis for Air Traffic Controllers",
+   "is_ref_by": 1,
+   "container": "Lecture Notes in Computer Science",
+   "fuzzy": false
+  }
+ },
+ "14": {
+  "raw": "Mingfang Zhang, Yinqiang Zheng, Feng Lu*. Optical Flow in the Dark. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), accepted 2021.",
+  "authors": "Mingfang Zhang, Yinqiang Zheng, Feng Lu*",
+  "title": "Optical Flow in the Dark",
+  "cv_no": 14,
+  "crossref": {
+   "doi": "10.1109/cvpr42600.2020.00678",
+   "title_cr": "Optical Flow in the Dark",
+   "is_ref_by": 49,
+   "container": "2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+   "fuzzy": false
+  }
+ },
+ "15": {
+  "raw": "Feifan Lv, Yu Li and Feng Lu*. Attention Guided Low-light Image Enhancement with a Large Scale Low-light Simulation Dataset. International Journal of Computer Vision (IJCV), 129(7): 2175-2193, 2021.",
+  "authors": "Feifan Lv, Yu Li and Feng Lu*",
+  "title": "Attention Guided Low-light Image Enhancement with a Large Scale Low-light Simulation Dataset",
+  "cv_no": 15,
+  "crossref": {
+   "doi": "10.1007/s11263-021-01466-8",
+   "title_cr": "Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset",
+   "is_ref_by": 281,
+   "container": "International Journal of Computer Vision",
+   "fuzzy": false
+  }
+ },
+ "16": {
+  "raw": "Sijia Wen, Yinqiang Zheng and Feng Lu*. Polarization Guided Specular Reflection Separation. IEEE Transactions on Image Processing (TIP), 30: 7280-7291, 2021.",
+  "authors": "Sijia Wen, Yinqiang Zheng and Feng Lu*",
+  "title": "Polarization Guided Specular Reflection Separation",
+  "cv_no": 16,
+  "crossref": {
+   "doi": "10.1109/tip.2021.3104188",
+   "title_cr": "Polarization Guided Specular Reflection Separation",
+   "is_ref_by": 57,
+   "container": "IEEE Transactions on Image Processing",
+   "fuzzy": false
+  }
+ },
+ "17": {
+  "raw": "Sijia Wen, Yinqiang Zheng* and Feng Lu*. A Sparse Representation Based Joint Demosaicing Method for Single-Chip Polarized Color Sensor. IEEE Transactions on Image Processing (TIP), 30: 4171-4182, 2021.",
+  "authors": "Sijia Wen, Yinqiang Zheng* and Feng Lu*",
+  "title": "A Sparse Representation Based Joint Demosaicing Method for Single-Chip Polarized Color Sensor",
+  "cv_no": 17,
+  "crossref": {
+   "doi": "10.1109/tip.2021.3069190",
+   "title_cr": "A Sparse Representation Based Joint Demosaicing Method for Single-Chip Polarized Color Sensor",
+   "is_ref_by": 40,
+   "container": "IEEE Transactions on Image Processing",
+   "fuzzy": false
+  }
+ },
+ "18": {
+  "raw": "Xingjun Ma, Yuhao Niu, Lin Gu, Yisen Wang, Yitian Zhao, James Bailey and Feng Lu*. Understanding Adversarial Attacks on Deep Learning Based Medical Image Analysis Systems. Pattern Recognition (PR), 110: 107332, 2021.",
+  "authors": "Xingjun Ma, Yuhao Niu, Lin Gu, Yisen Wang, Yitian Zhao, James Bailey and Feng Lu*",
+  "title": "Understanding Adversarial Attacks on Deep Learning Based Medical Image Analysis Systems",
+  "cv_no": 18,
+  "crossref": {
+   "doi": "10.1016/j.patcog.2020.107332",
+   "title_cr": "Understanding adversarial attacks on deep learning based medical image analysis systems",
+   "is_ref_by": 451,
+   "container": "Pattern Recognition",
+   "fuzzy": false
+  }
+ },
+ "19": {
+  "raw": "Zhimin Wang, Haofei Wang, Huangyue Yu, and Feng Lu*. Interaction with Gaze, Gesture and Speech in a Flexibly Configurable Augmented Reality System. IEEE Transactions on Human-Machine Systems (THMS), 51(5): 524-534, 2021.",
+  "authors": "Zhimin Wang, Haofei Wang, Huangyue Yu, and Feng Lu*",
+  "title": "Interaction with Gaze, Gesture and Speech in a Flexibly Configurable Augmented Reality System",
+  "cv_no": 19,
+  "crossref": {
+   "doi": "10.1109/thms.2021.3097973",
+   "title_cr": "Interaction With Gaze, Gesture, and Speech in a Flexibly Configurable Augmented Reality System",
+   "is_ref_by": 70,
+   "container": "IEEE Transactions on Human-Machine Systems",
+   "fuzzy": false
+  }
+ },
+ "20": {
+  "raw": "Yunfei Liu, Ruicong Liu, Haofei Wang, Feng Lu*. Generalizing Gaze Estimation with Outlier-guided Collaborative Adaptation. IEEE International Conference on Computer Vision (ICCV), 2021.",
+  "authors": "Yunfei Liu, Ruicong Liu, Haofei Wang, Feng Lu*",
+  "title": "Generalizing Gaze Estimation with Outlier-guided Collaborative Adaptation",
+  "cv_no": 20,
+  "crossref": {
+   "doi": "10.1109/iccv48922.2021.00381",
+   "title_cr": "Generalizing Gaze Estimation with Outlier-guided Collaborative Adaptation",
+   "is_ref_by": 68,
+   "container": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
+   "fuzzy": false
+  }
+ },
+ "21": {
+  "raw": "Zhimin Wang, Yuxin Zhao, Yunfei Liu, Feng Lu*. Edge-Guided Near-Eye Image Analysis for Head Mounted Displays. IEEE International Symposium on Mixed and Augmented Reality (ISMAR), 2021.",
+  "authors": "Zhimin Wang, Yuxin Zhao, Yunfei Liu, Feng Lu*",
+  "title": "Edge-Guided Near-Eye Image Analysis for Head Mounted Displays",
+  "cv_no": 21,
+  "crossref": {
+   "doi": "10.1109/ismar52148.2021.00015",
+   "title_cr": "Edge-Guided Near-Eye Image Analysis for Head Mounted Displays",
+   "is_ref_by": 12,
+   "container": "2021 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)",
+   "fuzzy": false
+  }
+ },
+ "22": {
+  "raw": "Yunfei Liu, Sijia Wen, Feng Lu*. 3D Photography with One-shot Portrait Relighting. IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Poster, 2021.",
+  "authors": "Yunfei Liu, Sijia Wen, Feng Lu*",
+  "title": "3D Photography with One-shot Portrait Relighting",
+  "cv_no": 22,
+  "crossref": {
+   "doi": "10.1109/ismar-adjunct54149.2021.00038",
+   "title_cr": "3D Photography with One-shot Portrait Relighting",
+   "is_ref_by": 3,
+   "container": "2021 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)",
+   "fuzzy": false
+  }
+ },
+ "23": {
+  "raw": "Yunfei Liu, Haofei Wang, Yang Yue, Feng Lu*. Separating Content and Style for Unsupervised Image-to-Image Translation. British Machine Vision Conference (BMVC), 2021.",
+  "authors": "Yunfei Liu, Haofei Wang, Yang Yue, Feng Lu*",
+  "title": "Separating Content and Style for Unsupervised Image-to-Image Translation",
+  "cv_no": 23,
+  "crossref": {
+   "doi": "10.5244/c.35.91",
+   "title_cr": "Separating Content and Style for Unsupervised Image-to-Image Translation",
+   "is_ref_by": 2,
+   "container": "Proceedings of the British Machine Vision Conference 2021",
+   "fuzzy": false
+  }
+ },
+ "24": {
+  "raw": "Huangyue Yu, Minjie Cai, Yunfei Liu and Feng Lu*. First- And Third-person Video Co-analysis By Learning Spatial-temporal Joint Attention. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), accepted 2020.",
+  "authors": "Huangyue Yu, Minjie Cai, Yunfei Liu and Feng Lu*",
+  "title": "First- And Third-person Video Co-analysis By Learning Spatial-temporal Joint Attention",
+  "cv_no": 24,
+  "crossref": {
+   "doi": "10.1109/tpami.2020.3030048",
+   "title_cr": "First- And Third-Person Video Co-Analysis By Learning Spatial-Temporal Joint Attention",
+   "is_ref_by": 23,
+   "container": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+   "fuzzy": false
+  }
+ },
+ "25": {
+  "raw": "Yihua Cheng, Xucong Zhang, Feng Lu* and Yoichi Sato. Gaze Estimation by Exploring Two-Eye Asymmetry. IEEE Transactions on Image Processing (TIP), 29(1): 5259-5272, 2020.",
+  "authors": "",
+  "title": "Yihua Cheng, Xucong Zhang, Feng Lu* and Yoichi Sato",
+  "cv_no": 25,
+  "crossref": {
+   "doi": "10.1016/j.device.2025.100716",
+   "title_cr": "Drug delivery using a piezoelectric microfluidic valve with sensing capabilities",
+   "is_ref_by": 8,
+   "container": "Device",
+   "fuzzy": true
+  }
+ },
+ "26": {
+  "raw": "Zongji Wang and Feng Lu*. VoxSegNet: Volumetric CNNs for Semantic Part Segmentation of 3D Shapes. IEEE Transactions on Visualization and Computer Graphics (TVCG), 26(9): 2919-2930, 2020.",
+  "authors": "Zongji Wang and Feng Lu*",
+  "title": "VoxSegNet: Volumetric CNNs for Semantic Part Segmentation of 3D Shapes",
+  "cv_no": 26,
+  "crossref": {
+   "doi": "10.1109/tvcg.2019.2896310",
+   "title_cr": "VoxSegNet: Volumetric CNNs for Semantic Part Segmentation of 3D Shapes",
+   "is_ref_by": 99,
+   "container": "IEEE Transactions on Visualization and Computer Graphics",
+   "fuzzy": false
+  }
+ },
+ "27": {
+  "raw": "Yifei Huang, Minjie Cai, Zhenqiang Li, Feng Lu, Yoichi Sato. Mutual Context Network for Jointly Estimating Egocentric Gaze and Action. IEEE Transactions on Image Processing (TIP), 29: 7795-7806, 2020.",
+  "authors": "",
+  "title": "Yifei Huang, Minjie Cai, Zhenqiang Li, Feng Lu, Yoichi Sato",
+  "cv_no": 27,
+  "crossref": {
+   "doi": "10.1109/icma.2009.5246190",
+   "title_cr": "Numerical simulation and experimental study of polymer micro extrusion flow",
+   "is_ref_by": 2,
+   "container": "2009 International Conference on Mechatronics and Automation",
+   "fuzzy": true
+  }
+ },
+ "28": {
+  "raw": "Yunfei Liu, Yu Li, Shaodi You and Feng Lu*. Unsupervised Learning for Intrinsic Image Decomposition from a Single Image. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.",
+  "authors": "Yunfei Liu, Yu Li, Shaodi You and Feng Lu*",
+  "title": "Unsupervised Learning for Intrinsic Image Decomposition from a Single Image",
+  "cv_no": 28,
+  "crossref": {
+   "doi": "10.1109/cvpr42600.2020.00331",
+   "title_cr": "Unsupervised Learning for Intrinsic Image Decomposition From a Single Image",
+   "is_ref_by": 99,
+   "container": "2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+   "fuzzy": false
+  }
+ },
+ "29": {
+  "raw": "Yinqiang Zheng, Mingfang Zhang and Feng Lu*. Optical Flow in the Dark. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.",
+  "authors": "Yinqiang Zheng, Mingfang Zhang and Feng Lu*",
+  "title": "Optical Flow in the Dark",
+  "cv_no": 29,
+  "crossref": {
+   "doi": "10.1109/cvpr42600.2020.00678",
+   "title_cr": "Optical Flow in the Dark",
+   "is_ref_by": 49,
+   "container": "2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+   "fuzzy": false
+  }
+ },
+ "30": {
+  "raw": "Minjie Cai*, Feng Lu* and Yoichi Sato. Generalizing Hand Segmentation in Egocentric Videos with Uncertainty-Guided Model Adaptation. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.",
+  "authors": "",
+  "title": "Minjie Cai*, Feng Lu* and Yoichi Sato",
+  "cv_no": 30,
+  "crossref": {
+   "doi": "10.1109/icra.2015.7139367",
+   "title_cr": "A scalable approach for understanding the visual structures of hand grasps",
+   "is_ref_by": 12,
+   "container": "2015 IEEE International Conference on Robotics and Automation (ICRA)",
+   "fuzzy": true
+  }
+ },
+ "31": {
+  "raw": "Yunfei Liu and Feng Lu*. Separate In Latent Space: Unsupervised Single Image Layer Separation. AAAI Conference on Artificial Intelligence (AAAI), 2020.",
+  "authors": "Yunfei Liu and Feng Lu*",
+  "title": "Separate In Latent Space: Unsupervised Single Image Layer Separation",
+  "cv_no": 31,
+  "crossref": {
+   "doi": "10.1609/aaai.v34i07.6835",
+   "title_cr": "Separate in Latent Space: Unsupervised Single Image Layer Separation",
+   "is_ref_by": 10,
+   "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "fuzzy": false
+  }
+ },
+ "32": {
+  "raw": "Feifan Lv, Yinqiang Zheng, Yicheng Li and Feng Lu*. An Integrated Enhancement Solution for 24-hour Colorful Imaging. AAAI Conference on Artificial Intelligence (AAAI), 2020.",
+  "authors": "Feifan Lv, Yinqiang Zheng, Yicheng Li and Feng Lu*",
+  "title": "An Integrated Enhancement Solution for 24-hour Colorful Imaging",
+  "cv_no": 32,
+  "crossref": {
+   "doi": "10.1609/aaai.v34i07.6843",
+   "title_cr": "An Integrated Enhancement Solution for 24-Hour Colorful Imaging",
+   "is_ref_by": 15,
+   "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "fuzzy": false
+  }
+ },
+ "33": {
+  "raw": "Yihua Cheng, Shiyao Huang, Fei Wang, Chen Qian and Feng Lu*. A Coarse-to-Fine Adaptive Network for Appearance-Based Gaze Estimation. AAAI Conference on Artificial Intelligence (AAAI), 2020.",
+  "authors": "Yihua Cheng, Shiyao Huang, Fei Wang, Chen Qian and Feng Lu*",
+  "title": "A Coarse-to-Fine Adaptive Network for Appearance-Based Gaze Estimation",
+  "cv_no": 33,
+  "crossref": {
+   "doi": "10.1609/aaai.v34i07.6636",
+   "title_cr": "A Coarse-to-Fine Adaptive Network for Appearance-Based Gaze Estimation",
+   "is_ref_by": 165,
+   "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "fuzzy": false
+  }
+ },
+ "34": {
+  "raw": "Jiadong Liang, Wenjie Pei and Feng Lu*. CPGAN: Content-Parsing Generative Adversarial Networks for Text-to-Image Synthesis. European Conference on Computer Vision (ECCV), 2020.",
+  "authors": "Jiadong Liang, Wenjie Pei and Feng Lu*",
+  "title": "CPGAN: Content-Parsing Generative Adversarial Networks for Text-to-Image Synthesis",
+  "cv_no": 34,
+  "crossref": {
+   "doi": "10.1007/978-3-030-58548-8_29",
+   "title_cr": "CPGAN: Content-Parsing Generative Adversarial Networks for Text-to-Image Synthesis",
+   "is_ref_by": 51,
+   "container": "Lecture Notes in Computer Science",
+   "fuzzy": false
+  }
+ },
+ "35": {
+  "raw": "Yunfei Liu, Xingjun Ma, James Bailey and Feng Lu*. Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks. European Conference on Computer Vision (ECCV), 2020.",
+  "authors": "Yunfei Liu, Xingjun Ma, James Bailey and Feng Lu*",
+  "title": "Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks",
+  "cv_no": 35,
+  "crossref": {
+   "doi": "10.1007/978-3-030-58607-2_11",
+   "title_cr": "Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks",
+   "is_ref_by": 372,
+   "container": "Lecture Notes in Computer Science",
+   "fuzzy": false
+  }
+ },
+ "36": {
+  "raw": "Feifan Lv, Bo Liu and Feng Lu*. Fast Enhancement for Non-Uniform Illumination Images using Light-weight CNNs. ACM International Conference on Multimedia (ACM MM), 2020.",
+  "authors": "Feifan Lv, Bo Liu and Feng Lu*",
+  "title": "Fast Enhancement for Non-Uniform Illumination Images using Light-weight CNNs",
+  "cv_no": 36,
+  "crossref": {
+   "doi": "10.1145/3394171.3413925",
+   "title_cr": "Fast Enhancement for Non-Uniform Illumination Images using Light-weight CNNs",
+   "is_ref_by": 58,
+   "container": "Proceedings of the 28th ACM International Conference on Multimedia",
+   "fuzzy": false
+  }
+ },
+ "37": {
+  "raw": "Haiyang Si, Zhiqiang Zhang and Feng Lu*. Real-Time Semantic Segmentation via Multiple Spatial Fusion Network. British Machine Vision Conference (BMVC), 2020.",
+  "authors": "Haiyang Si, Zhiqiang Zhang and Feng Lu*",
+  "title": "Real-Time Semantic Segmentation via Multiple Spatial Fusion Network",
+  "cv_no": 37,
+  "crossref": {
+   "doi": "10.5244/c.34.153",
+   "title_cr": "Real-Time Semantic Segmentation via Multiply Spatial Fusion Network",
+   "is_ref_by": 12,
+   "container": "Proceedings of the British Machine Vision Conference 2020",
+   "fuzzy": true
+  }
+ },
+ "38": {
+  "raw": "Yiwei Bao, Yihua Cheng, Yunfei Liu and Feng Lu*. Adaptive Feature Fusion Network for Gaze Tracking in Mobile Tablets. International Conference on Pattern Recognition (ICPR), 2020.",
+  "authors": "Yiwei Bao, Yihua Cheng, Yunfei Liu and Feng Lu*",
+  "title": "Adaptive Feature Fusion Network for Gaze Tracking in Mobile Tablets",
+  "cv_no": 38,
+  "crossref": {
+   "doi": "10.1109/icpr48806.2021.9412205",
+   "title_cr": "Adaptive Feature Fusion Network for Gaze Tracking in Mobile Tablets",
+   "is_ref_by": 75,
+   "container": "2020 25th International Conference on Pattern Recognition (ICPR)",
+   "fuzzy": false
+  }
+ },
+ "39": {
+  "raw": "Zhimin Wang, Huangyue Yu, Haofei Wang, Zongji Wang and Feng Lu*. Comparing Single-modal and Multimodal Interaction in an Augmented Reality System. International Symposium on Mixed and Augmented Reality (ISMAR), Poster, 2020.",
+  "authors": "Zhimin Wang, Huangyue Yu, Haofei Wang, Zongji Wang and Feng Lu*",
+  "title": "Comparing Single-modal and Multimodal Interaction in an Augmented Reality System",
+  "cv_no": 39,
+  "crossref": {
+   "doi": "10.1109/ismar-adjunct51615.2020.00052",
+   "title_cr": "Comparing Single-modal and Multimodal Interaction in an Augmented Reality System",
+   "is_ref_by": 25,
+   "container": "2020 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)",
+   "fuzzy": false
+  }
+ },
+ "40": {
+  "raw": "Chong Cao, Feng Lu*, Chen Li, Stephen Lin and Xukun Shen. Makeup Removal via Bidirectional Tunable De-makeup Network. IEEE Transactions on Multimedia (TMM), 21(11): 2750-2761, 2019.",
+  "authors": "",
+  "title": "Chong Cao, Feng Lu*, Chen Li, Stephen Lin and Xukun Shen",
+  "cv_no": 40,
+  "crossref": {
+   "doi": "10.1016/0038-1098(87)90680-6",
+   "title_cr": "Antiferromagnetic ordering observed in the high Tc superconductor GdBa2Cu3O7-x",
+   "is_ref_by": 11,
+   "container": "Solid State Communications",
+   "fuzzy": true
+  }
+ },
+ "41": {
+  "raw": "Minjie Cai, Feng Lu*, and Yue Gao. Desktop Action Recognition From First-Person Point-of-View. IEEE Transactions on Cybernetics (TC), 49(5): 1616-1628, 2019.",
+  "authors": "",
+  "title": "Minjie Cai, Feng Lu*, and Yue Gao",
+  "cv_no": 41,
+  "crossref": {
+   "doi": "10.14257/ijdta.2015.8.6.11",
+   "title_cr": "Fast Pedestrian Detection with Adaboost Algorithm Using GPU",
+   "is_ref_by": 4,
+   "container": "International Journal of Database Theory and Application",
+   "fuzzy": true
+  }
+ },
+ "42": {
+  "raw": "Sijia Wen, Yinqiang Zheng, Feng Lu* and Qinping Zhao. Convolutional demosaicing network for joint chromatic and polarimetric imagery. Optics Letters, 44(22), 5646-5649, 2019.",
+  "authors": "",
+  "title": "Sijia Wen, Yinqiang Zheng, Feng Lu* and Qinping Zhao",
+  "cv_no": 42,
+  "crossref": {
+   "doi": "10.2210/pdb8igr/pdb",
+   "title_cr": "Cryo-EM structure of CII-dependent transcription activation complex",
+   "is_ref_by": 0,
+   "container": "",
+   "fuzzy": true
+  }
+ },
+ "43": {
+  "raw": "Feifan Lv, Yinqiang Zheng, Bohan Zhang and Feng Lu*. Turn a Silicon Camera into an InGaAs Camera. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019.",
+  "authors": "Feifan Lv, Yinqiang Zheng, Bohan Zhang and Feng Lu*",
+  "title": "Turn a Silicon Camera into an InGaAs Camera",
+  "cv_no": 43,
+  "crossref": {
+   "doi": "10.1109/cvpr.2019.00614",
+   "title_cr": "Turn a Silicon Camera Into an InGaAs Camera",
+   "is_ref_by": 7,
+   "container": "2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+   "fuzzy": false
+  }
+ },
+ "44": {
+  "raw": "Huangyue Yu, Minjie Cai, Yunfei Liu and Feng Lu*. What I See Is What You See: Joint Attention Learning for First and Third Person Video Co-analysis. ACM International Conference on Multimedia (ACM MM), 2019.",
+  "authors": "Huangyue Yu, Minjie Cai, Yunfei Liu and Feng Lu*",
+  "title": "What I See Is What You See: Joint Attention Learning for First and Third Person Video Co-analysis",
+  "cv_no": 44,
+  "crossref": {
+   "doi": "10.1145/3343031.3350896",
+   "title_cr": "What I See Is What You See",
+   "is_ref_by": 24,
+   "container": "Proceedings of the 27th ACM International Conference on Multimedia",
+   "fuzzy": true
+  }
+ },
+ "45": {
+  "raw": "Yuhao Niu, Lin Gu, Feng Lu*, Feifan Lv, Zongji Wang, Imari Sato, Zijian Zhang, Yangyan Xiao, Xunzhang Dai and Tingting Cheng. Pathological Evidence Exploration in Deep Retinal Image Diagnosis. AAAI Conference on Artificial Intelligence (AAAI), 2019.",
+  "authors": "",
+  "title": "Yuhao Niu, Lin Gu, Feng Lu*, Feifan Lv, Zongji Wang, Imari Sato, Zijian Zhang, Yangyan Xiao, Xunzhang Dai and Tingting Cheng",
+  "cv_no": 45,
+  "crossref": {
+   "doi": "10.1609/aaai.v33i01.33011093",
+   "title_cr": "Pathological Evidence Exploration in Deep Retinal Image Diagnosis",
+   "is_ref_by": 25,
+   "container": "Proceedings of the AAAI Conference on Artificial Intelligence",
+   "fuzzy": true
+  }
+ },
+ "46": {
+  "raw": "Bo Liu, Lin Gu and Feng Lu*. Unsupervised Ensemble Strategy for Retinal Vessel Segmentation. Medical Image Computing and Computer Assisted Intervention (MICCAI), 2019.",
+  "authors": "Bo Liu, Lin Gu and Feng Lu*",
+  "title": "Unsupervised Ensemble Strategy for Retinal Vessel Segmentation",
+  "cv_no": 46,
+  "crossref": {
+   "doi": "10.1007/978-3-030-32239-7_13",
+   "title_cr": "Unsupervised Ensemble Strategy for Retinal Vessel Segmentation",
+   "is_ref_by": 22,
+   "container": "Lecture Notes in Computer Science",
+   "fuzzy": false
+  }
+ },
+ "47": {
+  "raw": "Zongji Wang and Feng Lu*. Single Image Intrinsic Decomposition with Discriminative Feature Encoding. IEEE International Conference on Computer Vision Workshop (ICCVW), 2019.",
+  "authors": "Zongji Wang and Feng Lu*",
+  "title": "Single Image Intrinsic Decomposition with Discriminative Feature Encoding",
+  "cv_no": 47,
+  "crossref": {
+   "doi": "10.1109/iccvw.2019.00531",
+   "title_cr": "Single Image Intrinsic Decomposition with Discriminative Feature Encoding",
+   "is_ref_by": 12,
+   "container": "2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)",
+   "fuzzy": false
+  }
+ },
+ "48": {
+  "raw": "Zhixiang Hao, Shaodi You, Yu Li, Kunming Li and Feng Lu*. Learning From Synthetic Photorealistic Raindrop for Single Image Raindrop Removal. IEEE International Conference on Computer Vision Workshop (ICCVW), 2019.",
+  "authors": "Zhixiang Hao, Shaodi You, Yu Li, Kunming Li and Feng Lu*",
+  "title": "Learning From Synthetic Photorealistic Raindrop for Single Image Raindrop Removal",
+  "cv_no": 48,
+  "crossref": {
+   "doi": "10.1109/iccvw.2019.00534",
+   "title_cr": "Learning From Synthetic Photorealistic Raindrop for Single Image Raindrop Removal",
+   "is_ref_by": 42,
+   "container": "2019 IEEE/CVF International Conference on Computer Vision Workshop (ICCVW)",
+   "fuzzy": false
+  }
+ },
+ "49": {
+  "raw": "Feng Lu*, Xiaowu Chen*, Imari Sato and Yoichi Sato. SymPS: BRDF Symmetry Guided Photometric Stereo for Shape and Light Source Estimation. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 40(1): 221-234, 2018.",
+  "authors": "",
+  "title": "Feng Lu*, Xiaowu Chen*, Imari Sato and Yoichi Sato",
+  "cv_no": 49,
+  "crossref": {
+   "doi": "10.1109/igarss.2007.4423232",
+   "title_cr": "Automatic classification algorithm for NOAA- AVHRR data using mixels",
+   "is_ref_by": 0,
+   "container": "2007 IEEE International Geoscience and Remote Sensing Symposium",
+   "fuzzy": true
+  }
+ },
+ "50": {
+  "raw": "Feixiang Lu, Bin Zhou, Feng Lu, Yu Zhang, Xiaowu Chen and Qinping Zhao. Reconstructing non-rigid object with large movement using a single depth camera. Computer Aided Geometric Design (CAGD), 64: 15-26, 2018.",
+  "authors": "",
+  "title": "Feixiang Lu, Bin Zhou, Feng Lu, Yu Zhang, Xiaowu Chen and Qinping Zhao",
+  "cv_no": 50,
+  "crossref": {
+   "doi": "10.1109/ceem.2003.238343",
+   "title_cr": "Study on infinite objects' scattering problems",
+   "is_ref_by": 0,
+   "container": "Asia-Pacific Conference on Environmental Electromagnetics, 2003. CEEM 2003. Proceedings.",
+   "fuzzy": true
+  }
+ },
+ "51": {
+  "raw": "Yihua Cheng, Feng Lu* and Xucong Zhang. Appearance-Based Gaze Estimation via Evaluation-Guided Asymmetric Regression. European Conference on Computer Vision (ECCV), 2018.",
+  "authors": "",
+  "title": "Yihua Cheng, Feng Lu* and Xucong Zhang",
+  "cv_no": 51,
+  "crossref": {
+   "doi": "10.1016/j.device.2025.100716",
+   "title_cr": "Drug delivery using a piezoelectric microfluidic valve with sensing capabilities",
+   "is_ref_by": 8,
+   "container": "Device",
+   "fuzzy": true
+  }
+ },
+ "52": {
+  "raw": "Zhipeng Mo, Boxin Shi, Feng Lu, Sai-Kit Yeung, and Yasuyuki Matsushita. Uncalibrated Photometric Stereo under Natural Illumination. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018.",
+  "authors": "",
+  "title": "Zhipeng Mo, Boxin Shi, Feng Lu, Sai-Kit Yeung, and Yasuyuki Matsushita",
+  "cv_no": 52,
+  "crossref": {
+   "doi": "10.1109/iembs.2005.1616289",
+   "title_cr": "Stochastic Inverse Consistent Registration",
+   "is_ref_by": 0,
+   "container": "2005 IEEE Engineering in Medicine and Biology 27th Annual Conference",
+   "fuzzy": true
+  }
+ },
+ "53": {
+  "raw": "Feifan Lv, Feng Lu*, Jianhua Wu, and Chongsoon Lim. MBLLEN: Low-light Image/Video Enhancement Using CNNs. British Machine Vision Conference (BMVC), 2018.",
+  "authors": "",
+  "title": "Feifan Lv, Feng Lu*, Jianhua Wu, and Chongsoon Lim",
+  "cv_no": 53,
+  "crossref": {
+   "doi": "10.1109/iweca.2014.6845551",
+   "title_cr": "Research on distributed power generation measurement technology",
+   "is_ref_by": 3,
+   "container": "2014 IEEE Workshop on Electronics, Computer and Applications",
+   "fuzzy": true
+  }
+ },
+ "54": {
+  "raw": "Zhixiang Hao, Yu Li, Shaodi You and Feng Lu*. Detail Preserving Depth Estimation from a Single Image Using Attention Guided Networks. International Conference on 3D Vision (3DV), 2018.",
+  "authors": "Zhixiang Hao, Yu Li, Shaodi You and Feng Lu*",
+  "title": "Detail Preserving Depth Estimation from a Single Image Using Attention Guided Networks",
+  "cv_no": 54,
+  "crossref": {
+   "doi": "10.1109/3dv.2018.00043",
+   "title_cr": "Detail Preserving Depth Estimation from a Single Image Using Attention Guided Networks",
+   "is_ref_by": 72,
+   "container": "2018 International Conference on 3D Vision (3DV)",
+   "fuzzy": false
+  }
+ },
+ "55": {
+  "raw": "Feng Lu*, Xiaowu Chen*, and Yoichi Sato. Appearance-based gaze estimation via uncalibrated gaze pattern recovery. IEEE Transactions on Image Processing (TIP), Vol. 26, Isue 4, pp. 1543-1553, 2017.",
+  "authors": "",
+  "title": "Feng Lu*, Xiaowu Chen*, and Yoichi Sato",
+  "cv_no": 55,
+  "crossref": {
+   "doi": "10.1109/iembs.2009.5334092",
+   "title_cr": "Affine motion compensation with improved reconstruction in PROPELLER MRI",
+   "is_ref_by": 1,
+   "container": "2009 Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+   "fuzzy": true
+  }
+ },
+ "56": {
+  "raw": "Feng Lu*, Lei He, Shaodi You, Xiaowu Chen*, and Zhixiang Hao. Identifying Surface BRDF from a Single 4D Light Field Image via Deep Neural Network. IEEE Journal of Selected Topics in Signal Processing (JSTSP), 11(7): 1047-1057. 2017.",
+  "authors": "",
+  "title": "Feng Lu*, Lei He, Shaodi You, Xiaowu Chen*, and Zhixiang Hao",
+  "cv_no": 56,
+  "crossref": {
+   "doi": "10.1109/iembs.2009.5334092",
+   "title_cr": "Affine motion compensation with improved reconstruction in PROPELLER MRI",
+   "is_ref_by": 1,
+   "container": "2009 Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+   "fuzzy": true
+  }
+ },
+ "57": {
+  "raw": "Weiwei Wan, Feng Lu, Zepei Wu, Kensuke Harada. Teaching Robots to Do Object Assembly using Multi-modal 3D Vision. Neurocomputing (NC), 259: 85-93, 2017.",
+  "authors": "",
+  "title": "Weiwei Wan, Feng Lu, Zepei Wu, Kensuke Harada",
+  "cv_no": 57,
+  "crossref": {
+   "doi": "10.1016/j.neucom.2017.01.077",
+   "title_cr": "Teaching robots to do object assembly using multi-modal 3D vision",
+   "is_ref_by": 44,
+   "container": "Neurocomputing",
+   "fuzzy": true
+  }
+ },
+ "58": {
+  "raw": "Xiaowu Chen, Anlin Zheng, Jia Li, Feng Lu . Look, Perceive and Segment: Finding the Salient Objects in Images via Two-Stream Fixation-Semantic CNNs. IEEE International Conference on Computer Vision (ICCV), 2017.",
+  "authors": "",
+  "title": "Xiaowu Chen, Anlin Zheng, Jia Li, Feng Lu",
+  "cv_no": 58,
+  "crossref": {
+   "doi": "10.1109/icme.2015.7177405",
+   "title_cr": "Cuboids detection in RGB-D images via Maximum Weighted Clique",
+   "is_ref_by": 0,
+   "container": "2015 IEEE International Conference on Multimedia and Expo (ICME)",
+   "fuzzy": true
+  }
+ },
+ "59": {
+  "raw": "Feng Lu, Yue Gao, Xiaowu Chen. Estimating 3D Gaze Directions Using Unlabeled Eye images via Synthetic Iris Appearance Fitting. IEEE Transactions on Multimedia (TMM), 2016.",
+  "authors": "",
+  "title": "Feng Lu, Yue Gao, Xiaowu Chen",
+  "cv_no": 59,
+  "crossref": {
+   "doi": "10.1109/iembs.2009.5334092",
+   "title_cr": "Affine motion compensation with improved reconstruction in PROPELLER MRI",
+   "is_ref_by": 1,
+   "container": "2009 Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+   "fuzzy": true
+  }
+ },
+ "60": {
+  "raw": "Weiwei Wan, Feng Lu*, and Rui Fukui. Error-tolerant Manipulation by Immobilization and Caging. Signal Processing (SP), 120: 721-730, 2016.",
+  "authors": "",
+  "title": "Weiwei Wan, Feng Lu*, and Rui Fukui",
+  "cv_no": 60,
+  "crossref": {
+   "doi": "10.1109/iros.2013.6696780",
+   "title_cr": "How to manipulate an object robustly with only one actuator (An application of caging)",
+   "is_ref_by": 2,
+   "container": "2013 IEEE/RSJ International Conference on Intelligent Robots and Systems",
+   "fuzzy": true
+  }
+ },
+ "61": {
+  "raw": "Feng Lu, Xiaowu Chen. Person-independent eye gaze prediction from eye images using patch-based features. Neurocomputing (NC), 2016.",
+  "authors": "",
+  "title": "Feng Lu, Xiaowu Chen",
+  "cv_no": 61,
+  "crossref": {
+   "doi": "10.1109/iembs.2009.5334092",
+   "title_cr": "Affine motion compensation with improved reconstruction in PROPELLER MRI",
+   "is_ref_by": 1,
+   "container": "2009 Annual International Conference of the IEEE Engineering in Medicine and Biology Society",
+   "fuzzy": true
+  }
+ },
+ "62": {
+  "raw": "Lumei Su, and Feng Lu*. Visual Facial Expression Modeling and Early Predicting from 3D Data via Subtle Feature Enhancing. Multimedia Tools and Applications (MTA), 75(20): 12563–12580, 2016.",
+  "authors": "Lumei Su, and Feng Lu*",
+  "title": "Visual Facial Expression Modeling and Early Predicting from 3D Data via Subtle Feature Enhancing",
+  "cv_no": 62,
+  "crossref": {
+   "doi": "10.1007/s11042-014-2347-x",
+   "title_cr": "Visual facial expression modeling and early predicting from 3D data via subtle feature enhancing",
+   "is_ref_by": 1,
+   "container": "Multimedia Tools and Applications",
+   "fuzzy": false
+  }
+ },
+ "63": {
+  "raw": "Jingfan Fan, Jian Yang, Feng Lu, Danni Ai, Yitian Zhao, Yongtian Wang. 3-Points Convex Hull Matching (3PCHM) for Fast and Robust Point Set registration. Neurocomputing (NC), 194: 227-240, 2016.",
+  "authors": "",
+  "title": "Jingfan Fan, Jian Yang, Feng Lu, Danni Ai, Yitian Zhao, Yongtian Wang",
+  "cv_no": 63,
+  "crossref": {
+   "doi": "10.3788/aos230742",
+   "title_cr": "多模态图像引导手术导航进展",
+   "is_ref_by": 7,
+   "container": "Acta Optica Sinica",
+   "fuzzy": true
+  }
+ },
+ "64": {
+  "raw": "Feng Lu*, Yasuyuki Matsushita, Imari Sato, Takahiro Okabe, Yoichi Sato. From intensity profile to surface normal: photometric stereo for unknown light sources and isotropic reflectances. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2015.",
+  "authors": "",
+  "title": "Feng Lu*, Yasuyuki Matsushita, Imari Sato, Takahiro Okabe, Yoichi Sato",
+  "cv_no": 64,
+  "crossref": {
+   "doi": "10.1109/cvpr.2013.196",
+   "title_cr": "Uncalibrated Photometric Stereo for Unknown Isotropic Reflectances",
+   "is_ref_by": 66,
+   "container": "2013 IEEE Conference on Computer Vision and Pattern Recognition",
+   "fuzzy": true
+  }
+ },
+ "65": {
+  "raw": "Feng Lu*, Takahiro Okabe, Yusuke Sugano, Yoichi Sato. Gaze Estimation from Eye Appearance: A Head Pose-Free Method via Eye Image Synthesis. IEEE Transactions on Image Processing (TIP), 2015.",
+  "authors": "",
+  "title": "Feng Lu*, Takahiro Okabe, Yusuke Sugano, Yoichi Sato",
+  "cv_no": 65,
+  "crossref": {
+   "doi": "10.1109/iccv.2011.6126237",
+   "title_cr": "Inferring human gaze from appearance via adaptive linear regression",
+   "is_ref_by": 83,
+   "container": "2011 International Conference on Computer Vision",
+   "fuzzy": true
+  }
+ },
+ "66": {
+  "raw": "Feng Lu*, Imari Sato, and Yoichi Sato. Uncalibrated Photometric Stereo Based on Elevation Angle Recovery from BRDF Symmetry of Isotropic Materials. IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2015), June 2015.",
+  "authors": "",
+  "title": "Feng Lu*, Imari Sato, and Yoichi Sato",
+  "cv_no": 66,
+  "crossref": {
+   "doi": "10.1109/igarss.2007.4423232",
+   "title_cr": "Automatic classification algorithm for NOAA- AVHRR data using mixels",
+   "is_ref_by": 0,
+   "container": "2007 IEEE International Geoscience and Remote Sensing Symposium",
+   "fuzzy": true
+  }
+ },
+ "67": {
+  "raw": "Feng Lu*, Yusuke Sugano, Takahiro Okabe, and Yoichi Sato. Adaptive Linear Regression for Appearance-Based Gaze Estimation. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), Vol. 36, No. 10, pp. 2033-2046, October 2014.",
+  "authors": "",
+  "title": "Feng Lu*, Yusuke Sugano, Takahiro Okabe, and Yoichi Sato",
+  "cv_no": 67,
+  "crossref": {
+   "doi": "10.1109/iccv.2011.6126237",
+   "title_cr": "Inferring human gaze from appearance via adaptive linear regression",
+   "is_ref_by": 83,
+   "container": "2011 International Conference on Computer Vision",
+   "fuzzy": true
+  }
+ },
+ "68": {
+  "raw": "Feng Lu*, Takahiro Okabe, Yusuke Sugano, and Yoichi Sato. Learning gaze biases with head motion for head pose-free gaze estimation. Image and Vision Computing (IVC), vol 32, issue 3, pp. 169-179, March 2014.",
+  "authors": "",
+  "title": "Feng Lu*, Takahiro Okabe, Yusuke Sugano, and Yoichi Sato",
+  "cv_no": 68,
+  "crossref": {
+   "doi": "10.1109/iccv.2011.6126237",
+   "title_cr": "Inferring human gaze from appearance via adaptive linear regression",
+   "is_ref_by": 83,
+   "container": "2011 International Conference on Computer Vision",
+   "fuzzy": true
+  }
+ },
+ "69": {
+  "raw": "Feng Lu*, Yasuyuki Matsushita, Imari Sato, Takahiro Okabe and Yoichi Sato. Uncalibrated photometric stereo for unknown isotropic reflectances. IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2013), July 2013.",
+  "authors": "",
+  "title": "Feng Lu*, Yasuyuki Matsushita, Imari Sato, Takahiro Okabe and Yoichi Sato",
+  "cv_no": 69,
+  "crossref": {
+   "doi": "10.1109/cvpr.2013.196",
+   "title_cr": "Uncalibrated Photometric Stereo for Unknown Isotropic Reflectances",
+   "is_ref_by": 66,
+   "container": "2013 IEEE Conference on Computer Vision and Pattern Recognition",
+   "fuzzy": true
+  }
+ },
+ "70": {
+  "raw": "Feng Lu*, Yusuke Sugano, Takahiro Okabe and Yoichi Sato. Head Pose-Free Appearance-Based Gaze Sensing via Eye Image Synthesis. IAPR International Conference on Pattern Recognition (ICPR 2012), pp. 1008-1011, November 2012.",
+  "authors": "",
+  "title": "Feng Lu*, Yusuke Sugano, Takahiro Okabe and Yoichi Sato",
+  "cv_no": 70,
+  "crossref": {
+   "doi": "10.1109/iccv.2011.6126237",
+   "title_cr": "Inferring human gaze from appearance via adaptive linear regression",
+   "is_ref_by": 83,
+   "container": "2011 International Conference on Computer Vision",
+   "fuzzy": true
+  }
+ },
+ "71": {
+  "raw": "Feng Lu*, Yusuke Sugano, Takahiro Okabe, and Yoichi Sato. Inferring Human Gaze from Appearance viai Adaptive Linear Regression. IEEE International Conference on Computer Vision (ICCV2011), November 2011.",
+  "authors": "",
+  "title": "Feng Lu*, Yusuke Sugano, Takahiro Okabe, and Yoichi Sato",
+  "cv_no": 71,
+  "crossref": {
+   "doi": "10.1109/iccv.2011.6126237",
+   "title_cr": "Inferring human gaze from appearance via adaptive linear regression",
+   "is_ref_by": 83,
+   "container": "2011 International Conference on Computer Vision",
+   "fuzzy": true
+  }
+ },
+ "72": {
+  "raw": "Feng Lu*, Yusuke Sugano, Takahiro Okabe, and Yoichi Sato. A Head Pose-free Approach for Appearance-based Gaze Estimation. British Machine Vision Conference (BMVC2011), August 2011.",
+  "authors": "",
+  "title": "Feng Lu*, Yusuke Sugano, Takahiro Okabe, and Yoichi Sato",
+  "cv_no": 72,
+  "crossref": {
+   "doi": "10.1109/iccv.2011.6126237",
+   "title_cr": "Inferring human gaze from appearance via adaptive linear regression",
+   "is_ref_by": 83,
+   "container": "2011 International Conference on Computer Vision",
+   "fuzzy": true
+  }
+ },
+ "73": {
+  "raw": "Feng Lu*, Xiangyang Ji, Qionghai Dai, Guihua Er. Multi-view stereo reconstruction with high dynamic range texture. Asian Conference on Computer Vision (ACCV), 2010.",
+  "authors": "",
+  "title": "Feng Lu*, Xiangyang Ji, Qionghai Dai, Guihua Er",
+  "cv_no": 73,
+  "crossref": {
+   "doi": "10.1109/3dtv.2009.5069630",
+   "title_cr": "Quality assessment of 3D asymmetric view coding using spatial frequency dominance model",
+   "is_ref_by": 7,
+   "container": "2009 3DTV Conference: The True Vision - Capture, Transmission and Display of 3D Video",
+   "fuzzy": true
+  }
+ },
+ "74": {
+  "raw": "Feng Lu*, Haoqian Wang, Xiangyang Ji, and Guihua Er. Bit-depth scalable coding using a perfect picture and adaptive neighboring filter. 3DTV-Conference, 2009.",
+  "authors": "",
+  "title": "Feng Lu*, Haoqian Wang, Xiangyang Ji, and Guihua Er",
+  "cv_no": 74,
+  "crossref": {
+   "doi": "10.1109/3dtv.2009.5069630",
+   "title_cr": "Quality assessment of 3D asymmetric view coding using spatial frequency dominance model",
+   "is_ref_by": 7,
+   "container": "2009 3DTV Conference: The True Vision - Capture, Transmission and Display of 3D Video",
+   "fuzzy": true
+  }
+ },
+ "75": {
+  "raw": "Feng Lu, Guihua Er, Qionghai Dai, Hongjiang Xiao. Quality assessment of 3D asymmetric view coding using spatial frequency dominance model. Tsinghua Science & Technology, 2009.",
+  "authors": "",
+  "title": "Feng Lu, Guihua Er, Qionghai Dai, Hongjiang Xiao",
+  "cv_no": 75,
+  "crossref": {
+   "doi": "10.1049/cp:20080352",
+   "title_cr": "Image retrieval based on dynamic-state Bayesian networks",
+   "is_ref_by": 0,
+   "container": "5th International Conference on Visual Information Engineering (VIE 2008)",
+   "fuzzy": true
+  }
+ }
+}

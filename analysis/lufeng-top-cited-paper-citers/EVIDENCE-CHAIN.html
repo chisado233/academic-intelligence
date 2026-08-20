@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVIDENCE-CHAIN</title>
+<style>
+  body{font-family:"Microsoft YaHei","Segoe UI",sans-serif;max-width:1080px;margin:24px auto;padding:0 24px;line-height:1.7;color:#24292f;background:#fff}
+  h1{border-bottom:2px solid #0969da;padding-bottom:8px;font-size:1.6em}
+  h2{border-bottom:1px solid #d0d7de;padding-bottom:6px;margin-top:1.8em;font-size:1.3em}
+  h3{margin-top:1.4em;font-size:1.1em;color:#0969da}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:0.92em}
+  th,td{border:1px solid #d0d7de;padding:6px 10px;text-align:left;vertical-align:top}
+  th{background:#f6f8fa}
+  tr:nth-child(even){background:#fbfcfd}
+  code{background:#f6f8fa;padding:2px 5px;border-radius:4px;font-size:0.9em}
+  pre{background:#f6f8fa;padding:14px;border-radius:8px;overflow-x:auto}
+  pre code{background:none;padding:0}
+  a{color:#0969da;text-decoration:none}
+  a:hover{text-decoration:underline}
+  blockquote{border-left:4px solid #0969da;margin:12px 0;padding:4px 16px;background:#f6f8fa;color:#57606a}
+  hr{border:none;border-top:1px solid #d0d7de;margin:2em 0}
+</style></head><body>
+<h1>EVIDENCE-CHAIN：北航陆峰被引最多论文 &amp; 引用者中的杰青/院士</h1>
+<ul>
+<li><strong>任务</strong>：① 查北京航空航天大学陆峰教授被引最多的论文；② 反查该论文的引用者中，谁是杰青、谁是院士。</li>
+<li><strong>查询日期</strong>：2026-08-17（北京时间下午/晚间）</li>
+<li><strong>方法</strong>：<code>academic-intelligence</code> skill（本仓库 CLI <code>paper</code> + Python 库形态）。流程遵循 SKILL.md §11（信息反向挖掘·引用者画像 6 步工作流）与 §10 / docs/titles-source-map.md §0.5（资历核验方法论）。<strong>约束</strong>：全程只使用本 skill；未读取任何历史探查记录（analysis/ 下旧目录一律未打开；本次使用独立数据库 <code>task.db</code> 从零采集）。</li>
+</ul>
+<hr />
+<h2>1. 结论</h2>
+<h3>1.1 陆峰被引最多的论文</h3>
+<blockquote>
+<p><strong>MBLLEN: Low-light Image/Video Enhancement Using CNNs</strong>
+Feifan Lv, <strong>Feng Lu*</strong>（通讯）, Jianhua Wu, Chongsoon Lim · British Machine Vision Conference (BMVC) 2018 · 无 DOI/arXiv · S2 paperId <code>70cb4bdd05cccc1f99cf690582e66b7637b81da7</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>论文</th>
+<th>年份</th>
+<th>S2 citationCount</th>
+<th>Crossref is-referenced-by-count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBLLEN（BMVC 2018）</strong></td>
+<td>2018</td>
+<td><strong>804</strong></td>
+<td>—（无 DOI，Crossref 不收录）</td>
+</tr>
+<tr>
+<td>Attention Guided Low-light Image Enhancement…（IJCV）</td>
+<td>2021</td>
+<td>333</td>
+<td>281</td>
+</tr>
+<tr>
+<td>Appearance-Based Gaze Estimation…Review and Benchmark（TPAMI）</td>
+<td>2024</td>
+<td>264</td>
+<td>153</td>
+</tr>
+<tr>
+<td>Appearance-Based Gaze Estimation via Evaluation-Guided Asymmetric Regression（ECCV）</td>
+<td>2018</td>
+<td>169</td>
+<td>—</td>
+</tr>
+<tr>
+<td>A Head Pose-free Approach for Appearance-based Gaze Estimation（BMVC）</td>
+<td>2011</td>
+<td>102</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SymPS: BRDF Symmetry Guided Photometric Stereo（TPAMI）</td>
+<td>2018</td>
+<td>45</td>
+<td>41</td>
+</tr>
+<tr>
+<td>Uncalibrated Photometric Stereo under Natural Illumination（CVPR）</td>
+<td>2018</td>
+<td>—</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>数字来源：S2（2026-08-17 经 skill S2 源实测）；Crossref（2026-08-17 经 skill crossref 源实测）。</li>
+<li>判定依据：SKILL §11.1①b——无 DOI 会议论文以 S2 citationCount 为准；804 对第二名 333 为断层领先（&gt;2.4×），全部有 DOI 作品的 Crossref 口径均 ≤281。两口径交叉已满足（S2 + Crossref 下界）。</li>
+<li>归属裁决：SKILL §8 硬规则——以<a href="https://phi-ai.buaa.edu.cn/publications/index.htm">陆峰实验室官方出版物页</a>逐条核对，MBLLEN 在列且陆峰标 <code>*</code>（通讯），一作吕飞帆（Feifan Lv）为其 2017-2020 硕士生（<a href="https://phi-ai.buaa.edu.cn/members/index.htm">members 页</a>）。</li>
+</ul>
+<h3>1.2 引用者中的院士（两院口径，官方名录 confirmed）</h3>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>单位</th>
+<th>头衔</th>
+<th>置信度</th>
+<th>引用 MBLLEN 的论文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>戴琼海</strong></td>
+<td>清华大学</td>
+<td>中国工程院院士（<strong>2017 年当选</strong>，信息与电子工程学部；自动控制/智能科学与技术、成像与脑认知）</td>
+<td><strong>confirmed</strong></td>
+<td>① DarkVision: A Benchmark for Low-light Image/Video Perception（2023, arXiv <a href="https://arxiv.org/abs/2301.06269">2301.06269</a>）② Computational Imaging and Artificial Intelligence: The Next Revolution（Proc. IEEE 2021）</td>
+</tr>
+<tr>
+<td><strong>吴枫</strong></td>
+<td>中国科学技术大学</td>
+<td>中国工程院院士（<strong>2025 年当选</strong>，信息与电子工程学部；计算机应用技术/多媒体压缩与网络传输）</td>
+<td><strong>confirmed</strong></td>
+<td>Unsupervised Underexposed Image Enhancement via Self-Illumination Compensation（IEEE TMM 2022, DOI <a href="https://doi.org/10.1109/TMM.2022.3193059">10.1109/TMM.2022.3193059</a>，末位作者，合作者含 USTC 傅学阳）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>高概率但未能官方核验（indeterminate，渠道不可达，详见 §5）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>单位</th>
+<th>待核头衔</th>
+<th>身份依据</th>
+<th>引用论文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>田奇（Qi Tian）</td>
+<td>华为→湖南大学</td>
+<td>中国科学院院士（2023？）</td>
+<td>末位作者+USTC 周文罡/李厚强合著指纹</td>
+<td>Low-Light Video Enhancement with Synthetic Event Guidance（ACM MM 2022, arXiv <a href="https://arxiv.org/abs/2208.11014">2208.11014</a>）</td>
+</tr>
+<tr>
+<td>杨健（Jian Yang）</td>
+<td>南京理工大学</td>
+<td>中国科学院院士（2023？）</td>
+<td>钱建军/严志强/翁江维等南理工合著指纹</td>
+<td>MambaLLIE（IJCAI 2024, arXiv <a href="https://arxiv.org/abs/2405.16105">2405.16105</a>）、Daytime-Mixed Non-Aligned Learning（2025）</td>
+</tr>
+<tr>
+<td>曹进德（Jinde Cao）</td>
+<td>东南大学</td>
+<td>欧洲科学院院士等（宽口径"院士"，非两院）</td>
+<td>LightingNet 合作群指纹</td>
+<td>LightingNet（2023，被引 116）</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 引用者中的杰青（官方/官网 confirmed）</h3>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>单位</th>
+<th>头衔</th>
+<th>置信度</th>
+<th>引用 MBLLEN 的论文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>程明明</strong>（Ming-Ming Cheng）</td>
+<td>南开大学</td>
+<td>国家杰出青年科学基金（<strong>2023.01–2027.12</strong>，面向开放环境的图像自适应感知）；另：优青、国家"万人计划"青年拔尖</td>
+<td><strong>confirmed</strong>（<a href="https://mmcheng.net/">个人官网基金列表</a>）</td>
+<td>Low-Light Image and Video Enhancement Using Deep Learning: A Survey（IJCV 2021，S2 被引 585）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>高概率杰青候选（身份指纹吻合，但当日核验渠道全部不可达 → indeterminate / not_found_after_search）</strong>：
+刘日升（大连理工，9 篇引用——外部引用者最高频之一）、刘家英（北京大学，5 篇，含 372 引 TPAMI 基准论文）、马华东（北京邮电大学，5 篇）、黄庆明（中国科学院大学，4 篇）、查正军（中科大，1 篇）、沈建冰（2 篇，含 172 引视网膜论文）、段凌宇（北大深圳，2 篇）、左旺孟（哈工大，2 篇）、熊志伟/刘东（中科大）、付莹（北理工）、薛向阳（复旦）。
+<strong>优青-track（≠杰青，仅备查）</strong>：翟广涛、闵霄阔（SJTU）、周曼（合肥工大）、方玉明（江西财大）、刘金元（大连理工）、施柏鑫（北大）、任文琦（中科院信工所）等。</p>
+<blockquote>
+<p>最高频引用者 Wenhan Yang（杨文瀚，北大，12 篇引用论文）与陆峰本人（7 篇自引）无杰青/院士主张记录。</p>
+</blockquote>
+<hr />
+<h2>2. 链路总览</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>步骤</th>
+<th>命令/脚本</th>
+<th>产出</th>
+<th>一键验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>锁人</td>
+<td><code>paper web crawl https://phi-ai.buaa.edu.cn/…</code></td>
+<td>lab_home.json / lab_members.json / lab_pubs.json</td>
+<td><a href="https://phi-ai.buaa.edu.cn/">官网</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>种子校验</td>
+<td><code>paper source semantic_scholar search/get</code>；<code>paper source crossref search</code></td>
+<td>s2_mbllen.json, s2_get_*.json, cr_tmp 等</td>
+<td><a href="https://api.semanticscholar.org/graph/v1/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7?fields=title,citationCount">S2 API</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>反查引用（804 篇）</td>
+<td><code>analysis/.../fetch_citations.py</code>（skill S2 适配器库形态，CLI 的 50 条上限/无作者字段的已知限制，见 §5-D）</td>
+<td>s2_citing_full.json → citing.csv</td>
+<td>同上（citations 端点）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>展平作者</td>
+<td><code>paper trace-authors citing.csv</code></td>
+<td>authors.csv（2908 行）</td>
+<td>本目录</td>
+</tr>
+<tr>
+<td>5</td>
+<td>候选池</td>
+<td>打分脚本（频次 × 引用论文影响力）</td>
+<td>pool.json（252 人）</td>
+<td>本目录</td>
+</tr>
+<tr>
+<td>6</td>
+<td>短名单档案</td>
+<td><code>fetch_author_profiles.py</code>（S2 /author）</td>
+<td>shortlist_profiles.json</td>
+<td><a href="https://api.semanticscholar.org/graph/v1/author/1491800101?fields=name,affiliations">S2 author API</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>头衔核验</td>
+<td><code>paper web crawl</code>（两院名录/官网/arXiv）</td>
+<td>cae_<em>.json, probe_</em>.json, titles.csv</td>
+<td>见 §3 证据卡</td>
+</tr>
+<tr>
+<td>8</td>
+<td>报告</td>
+<td>本文件 + <code>python scripts/render_report.py … --open</code></td>
+<td>EVIDENCE-CHAIN.html</td>
+<td>本目录</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 逐条证据卡（三层证据）</h2>
+<h3>3.1 戴琼海 = 工程院院士（confirmed）</h3>
+<ul>
+<li>📄 原始证据：引用论文 <a href="https://arxiv.org/abs/2301.06269">arXiv 2301.06269</a>（作者列 Bo Zhang, …, J. Suo, Qionghai Dai——清华计算成像组指纹）；Proc. IEEE 2021 综述（citing.csv 行 #（见 s2_citing_full.json））</li>
+<li>🆔 结构化实体：S2 authorId <a href="https://api.semanticscholar.org/graph/v1/author/1491800101?fields=name">1491800101</a></li>
+<li>🏅 责任主体源：<a href="https://www.cae.cn/cae/html/main/col48/column_48_1.html">工程院院士名单（信息与电子工程学部）</a>；<a href="https://www.cae.cn/cae/html/main/colys/02548488.html">院士个人页</a>："2017 年当选中国工程院院士"，自动控制学专家</li>
+<li>时效：现任（截至 2026-08-17 名录在列）</li>
+</ul>
+<h3>3.2 吴枫 = 工程院院士（confirmed）</h3>
+<ul>
+<li>📄 原始证据：引用论文 IEEE TMM 2022（DOI <a href="https://doi.org/10.1109/TMM.2022.3193059">10.1109/TMM.2022.3193059</a>，作者 Naishan Zheng, Jie Huang, Fengmei Zhao, Xueyang Fu（USTC）, Feng Wu）</li>
+<li>🆔 结构化实体：S2 authorId <a href="https://api.semanticscholar.org/graph/v1/author/144864333?fields=name,affiliations">144864333</a>（affiliations=University of Science and Technology of China）</li>
+<li>🏅 责任主体源：<a href="https://www.cae.cn/cae/html/main/col48/column_48_1.html">工程院院士名单</a>；<a href="https://www.cae.cn/cae/html/main/colys/95871425.html">院士个人页</a>："2025 年当选中国工程院院士"，计算机应用技术专家（多媒体压缩与网络传输——与 USTC 吴枫履历一致）</li>
+<li>交叉：院士页领域(多媒体压缩) × 引用论文领域(欠曝光图像增强，USTC 信息学院群体) × S2 机构——三处吻合</li>
+</ul>
+<h3>3.3 程明明 = 杰青（confirmed）</h3>
+<ul>
+<li>📄 原始证据：引用论文 IJCV 2021 低光照综述（S2 被引 585；S2 中作者名拼作 "Mingg-Ming Cheng"，源数据笔误）</li>
+<li>🆔 结构化实体：S2 authorId <a href="https://api.semanticscholar.org/graph/v1/author/1557350184?fields=name">1557350184</a></li>
+<li>🏅 责任主体源：<a href="https://mmcheng.net/">mmcheng.net 基金列表</a>——"国家杰出青年科学基金｜面向开放环境的图像自适应感知｜2023.01–2027.12｜程明明"（个人官网自述+项目明细；雇主机构官网级页面，单源 confirmed 依据 §0.5.5"一级直接证据可单独确认"的边界，标注为官网自述型直接证据）</li>
+</ul>
+<h3>3.4 田奇 / 杨健（indeterminate——身份 likely，头衔未核验）</h3>
+<ul>
+<li>📄 田奇：arXiv <a href="https://arxiv.org/abs/2208.11014">2208.11014</a>（末位作者；合著 Wen-gang Zhou、Houqiang Li 等 USTC 群体）。杨健：arXiv <a href="https://arxiv.org/abs/2405.16105">2405.16105</a>（合著 钱建军/严志强/翁江维——南理工群体）</li>
+<li>🆔 S2 authorId：田奇 2056268330；杨健 2273535040 / 2146236970</li>
+<li>🏅 责任主体源：<strong>未获取</strong>。中科院院士馆（ys.casad.cas.cn）为 JS 应用不可爬；zh.wikipedia / web.archive.org 本网络不可达；Bing/百度被 robots 拒（skill 合规 fail-closed）；湖南大学/南理工门户 JS 或反爬（202/412）。已试 query/URL 见 §5-C。</li>
+<li>结论状态：indeterminate（"未获取"≠"不存在"）</li>
+</ul>
+<h2>4. 排除与陷阱记录</h2>
+<table>
+<thead>
+<tr>
+<th>事项</th>
+<th>裁决</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Bo Zhang"（7 处引用署名）≠ 张钹院士</td>
+<td>排除</td>
+<td>GDP2023 的 Bo Zhang S2 档案=上海 AI Lab；DarkVision 的 Bo Zhang 为戴琼海组学生型作者；领域/年龄/角色均与张钹（1935 生，AI 理论）不符</td>
+</tr>
+<tr>
+<td>内窥镜修复论文（2020）的 "Jian Yang"</td>
+<td>与南理工杨健分开处理</td>
+<td>S2 id 13524601 与 MambaLLIE 的杨健（2273535040）不同实体；合著群（Alejandro Frangi 等）非南理工指纹</td>
+</tr>
+<tr>
+<td>"Ping Zhang"（2024 一篇）</td>
+<td>不采信为北邮张平院士</td>
+<td>领域不符（低光照增强 vs 通信）；单一同名无机构证据——§11.2 不硬合并</td>
+</tr>
+<tr>
+<td>陆峰自引 7 篇</td>
+<td>计入 804 但单独披露</td>
+<td>S2 口径含自引；self-citations 为常态</td>
+</tr>
+<tr>
+<td>OpenAlex 全程 429</td>
+<td>放弃当日第二口径</td>
+<td>十次重试跨 ~25 分钟全部 HTTP 429（本机 IP 当日限额）；S2+Crossref 已满足双口径（§11.1①b 无 DOI 论文以 S2 为准）</td>
+</tr>
+</tbody>
+</table>
+<h2>5. 口径与局限</h2>
+<ul>
+<li><strong>A 引用口径</strong>：S2 自建引用图（804，2026-08-17）；非 Google Scholar 数据。GS 精确值未获取（用户约束禁用其他工具；skill §11.4 的人工单查路径亦未触发）。参考：SKILL §8 教训记录中 MBLLEN 的 GS 口径曾达 1121（该数字为 skill 文档所载历史快照，本次未复核）。</li>
+<li><strong>B 覆盖范围</strong>：804 篇引用论文 → 2908 个作者行（约 3136 个不同署名）。系统性筛查覆盖：高被引引用论文作者（前 45 篇）+ 频次×影响力池（252 人）+ 约 90 个知名学者姓名正/反向扫描 + 工程院信息学部名录拼音比对。<strong>不承诺全量穷举</strong>；未入围作者中仍可能有未发现的杰青/院士。</li>
+<li><strong>C 头衔核验可达性</strong>（2026-08-17 本网络实测）：可达 ✅ cae.cn、casad.cas.cn 静态公告、phi-ai.buaa.edu.cn、mmcheng.net、arxiv.org、news.hnu.edu.cn、cs.dlut.edu.cn（目录 JS）；不可达 ❌ api.openalex.org（429 限额）、api.semanticscholar.org（间歇 429，已用退避完成关键取数）、Bing（robots）、zh.wikipedia/web.archive.org（网络不通）、多数高校师资门户（JS/202/412）、NSFC 无公开完整库（2024 起杰青不公布完整名单——docs/titles-source-map.md §1.2）。</li>
+<li><strong>D 工具边界</strong>：<code>paper source semantic_scholar citations</code> CLI 适配器单次上限 50 条且无作者字段（源码 <code>sources/semantic_scholar.py::get_citations</code>），故 804 条全量+作者字段经 skill 的 Python 库形态（<code>SemanticScholarSource._get_json</code>，SKILL §4）分页获取，礼貌退避（429 睡 75s）。</li>
+<li><strong>置信度标注</strong>：confirmed=责任主体直接证据；likely=单一/间接证据；indeterminate=渠道不可达；not_found_after_search=达终止条件无果（本次主要落在 indeterminate）。"未获取"≠"不存在"。</li>
+</ul>
+<h2>6. 归档文件清单（本目录）</h2>
+<p><code>citing.csv</code>（804 行引用论文）· <code>authors.csv</code>（2908 行作者）· <code>pool.json</code>（252 人候选池）· <code>s2_citing_full.json</code>（全量原始）· <code>shortlist_profiles.json</code>（29 人 S2 档案）· <code>titles.csv</code>（头衔结论表）· <code>fetch_citations.py</code> / <code>fetch_author_profiles.py</code>（取数脚本）· <code>task.db</code>（任务独立数据库）· <code>lab_*.json</code> <code>cae_*.json</code> <code>probe_*.json</code>（网页证据）· 各 S2/Crossref 原始响应 JSON</p>
+</body></html>

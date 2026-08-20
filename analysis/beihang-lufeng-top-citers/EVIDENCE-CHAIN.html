@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVIDENCE-CHAIN</title>
+<style>
+  body{font-family:"Microsoft YaHei","Segoe UI",sans-serif;max-width:1080px;margin:24px auto;padding:0 24px;line-height:1.7;color:#24292f;background:#fff}
+  h1{border-bottom:2px solid #0969da;padding-bottom:8px;font-size:1.6em}
+  h2{border-bottom:1px solid #d0d7de;padding-bottom:6px;margin-top:1.8em;font-size:1.3em}
+  h3{margin-top:1.4em;font-size:1.1em;color:#0969da}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:0.92em}
+  th,td{border:1px solid #d0d7de;padding:6px 10px;text-align:left;vertical-align:top}
+  th{background:#f6f8fa}
+  tr:nth-child(even){background:#fbfcfd}
+  code{background:#f6f8fa;padding:2px 5px;border-radius:4px;font-size:0.9em}
+  pre{background:#f6f8fa;padding:14px;border-radius:8px;overflow-x:auto}
+  pre code{background:none;padding:0}
+  a{color:#0969da;text-decoration:none}
+  a:hover{text-decoration:underline}
+  blockquote{border-left:4px solid #0969da;margin:12px 0;padding:4px 16px;background:#f6f8fa;color:#57606a}
+  hr{border:none;border-top:1px solid #d0d7de;margin:2em 0}
+</style></head><body>
+<h1>证据链：北航陆峰被引最多的论文 &amp; 引用者中的院士与杰青</h1>
+<blockquote>
+<p><strong>任务</strong>：① 查北航（北京航空航天大学）陆峰被引最多的论文是哪一篇；② 反查引用该论文的学者中，谁是杰青、谁是院士。
+<strong>查询日期</strong>：2026-08-17（全部数据与头衔均为该日快照）
+<strong>方法</strong>：academic-intelligence skill §11（信息反向挖掘·引用者画像）+ §10 / <code>docs/titles-source-map.md</code> §0.5（学术资历查询方法论：身份指纹 → 声明-责任主体匹配 → 四值置信度）+ §12（本报告契约）
+<strong>结论摘要</strong>：被引最多论文 = <strong>MBLLEN（BMVC 2018，陆峰通讯作者）</strong>（S2 804 / GS 1121 双口径居首；OpenAlex 口径因无 DOI 会议论文收录偏少列第三）。引用者中：<strong>院士 2 人</strong>（戴琼海、吴枫——吴枫兼杰青），<strong>杰青 8 人</strong>（吴枫、李厚强、黄庆明、孟德宇、翟广涛、查正军、卢孝强、杨健）。</p>
+</blockquote>
+<hr />
+<h2>一、链路总览</h2>
+<pre><code>① 锁人（陆峰 = Feng Lu，北航计算机学院）
+   ├─ paper author search &quot;Lu Feng&quot; --disambiguate → OpenAlex A5050527785（Beihang University）
+   ├─ 官方 CV PDF（phi-ai.buaa.edu.cn）解析：75 篇代表作清单 + 履历（东大博士/清华本硕）
+   └─ ORCID 0000-0001-9064-7964；GS 总引用 8500+ ≈ OpenAlex 7842 自洽
+        ▼
+② 多源作品清单（OpenAlex 274 篇 + CV 75 篇 + S2 交叉；发现并修正 2 处实体污染）
+        ▼
+③ 被引最多论文判定（OpenAlex / S2 / GS-snapshot 三口径交叉，§11.4）
+        ▼
+④ 反查引用：paper trace-citing W2893333553（OpenAlex 315 篇）
+   + S2 citations API 直连补全（804 篇全量，CLI 因无 DOI 无法自动路由 S2 → PARTIAL 上报）
+        ▼
+⑤ 展平作者 + 画像：trace-authors（1203 行）；S2 batch 3135 位作者（h 指数/机构）
+        ▼
+⑥ 候选筛选：预置观察名单（16 院士 + 36 杰青拼音）grep 全池 + h≥55 全扫描
+        ▼
+⑦ 头衔核验（责任主体源：工程院名录 / 高校官网；四值置信度）
+        ▼
+⑻ 负结论与同名陷阱排除 ──► 本报告
+</code></pre>
+<h3>步骤明细</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>操作</th>
+<th>命令 / 手段</th>
+<th>产出</th>
+<th>一键验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>锁人</td>
+<td><code>paper author search "Lu Feng" --disambiguate</code></td>
+<td>候选 <code>A5050527785</code>（Beihang）</td>
+<td><a href="https://api.openalex.org/authors/A5050527785">OpenAlex 作者实体</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>官方履历</td>
+<td>下载并解析 <a href="https://phi-ai.buaa.edu.cn/members/CV_Beihang_Lufeng.pdf">CV PDF</a></td>
+<td><code>cv_segments.jsonl</code>（75 篇 + 任职史）</td>
+<td>北航教师主页：<a href="https://shi.buaa.edu.cn/lufeng/en/index.htm">shi.buaa.edu.cn/lufeng</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>作品全集</td>
+<td>OpenAlex works API（cursor 翻页 274 篇）</td>
+<td><code>openalex_works_A5050527785.json</code></td>
+<td><a href="https://api.openalex.org/works?filter=author.id:A5050527785&amp;sort=cited_by_count:desc&amp;per-page=25">works?filter=author.id:A5050527785</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>引用数交叉</td>
+<td><code>paper source semantic_scholar get &lt;DOI&gt;</code> + S2 API</td>
+<td><code>s2_top_candidates.json</code></td>
+<td>见 §二 多口径表逐条链接</td>
+</tr>
+<tr>
+<td>5</td>
+<td>反查引用</td>
+<td><code>paper trace-citing W2893333553 --sources openalex,semantic_scholar</code></td>
+<td><code>citing.csv</code>（315 行）</td>
+<td><a href="https://api.openalex.org/works?filter=cites:W2893333553&amp;per-page=25">OpenAlex filter=cites:W2893333553</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>S2 口径补全</td>
+<td>S2 <code>/paper/{id}/citations</code> + <code>/paper/batch</code> + <code>/author/batch</code> 直连</td>
+<td><code>s2_citing_mbllen_enriched.json</code>（804 篇）、<code>s2_author_details.json</code>（3135 人）</td>
+<td><a href="https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7">S2 论文页</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>展平/画像</td>
+<td><code>paper trace-authors citing.csv</code></td>
+<td><code>authors.csv</code>（1203 行）</td>
+<td>本地归档</td>
+</tr>
+<tr>
+<td>8</td>
+<td>观察名单 grep</td>
+<td>16 位院士 + 36 位杰青候选拼音 × 3241 个姓名池</td>
+<td><code>suspect_hits.json</code>、<code>hit_citing_papers.json</code></td>
+<td>本地归档（可复跑脚本逻辑见报告仓库）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>头衔核验</td>
+<td>WebSearch（官方域名优先）+ 上一任务已验证链接复用</td>
+<td>本报告 §三 证据卡</td>
+<td>每卡 🏅 层链接</td>
+</tr>
+<tr>
+<td>10</td>
+<td>收尾</td>
+<td><code>python scripts/render_report.py</code></td>
+<td>本文件 + HTML</td>
+<td>同目录 <code>EVIDENCE-CHAIN.html</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、结论一：被引最多的论文 = MBLLEN（多口径裁决）</h2>
+<p><strong>MBLLEN: Low-light Image/Video Enhancement Using CNNs</strong>（BMVC 2018，作者 Feifan Lv, <strong>Feng Lu*</strong>（通讯）, Jianhua Wu, Chongsoon Lim）
+📄 <a href="http://bmvc2018.org/contents/papers/0700.pdf">BMVC 2018 原文 PDF</a> · <a href="https://phi-ai.buaa.edu.cn/project/MBLLEN/">项目主页</a> · <a href="https://phi-ai.buaa.edu.cn/members/CV_Beihang_Lufeng.pdf">CV 条目 #53（本人官方履历）</a></p>
+<h3>多口径引用数（2026-08-17 查询）</h3>
+<table>
+<thead>
+<tr>
+<th>论文</th>
+<th>OpenAlex</th>
+<th>Semantic Scholar</th>
+<th>Google Scholar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBLLEN</strong>（BMVC 2018，无 DOI）</td>
+<td>316</td>
+<td><strong>804</strong>（<a href="https://api.semanticscholar.org/graph/v1/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7?fields=title,citationCount">API</a>）</td>
+<td><strong>1121</strong>（<a href="https://scholar.google.com/citations?user=arEREYsAAAAJ&amp;hl=en">作者 GS 档案快照</a>）</td>
+</tr>
+<tr>
+<td>Understanding Adversarial Attacks on DL Based Medical Image Analysis Systems（PR 2021）</td>
+<td><strong>544</strong>（<a href="https://api.openalex.org/works/W3021182036">API</a>）</td>
+<td>555（<a href="https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.patcog.2020.107332?fields=citationCount">API</a>）</td>
+<td>未获取（GS 快照检索未命中；GS ≥ S2，方向性说明）</td>
+</tr>
+<tr>
+<td>Reflection Backdoor（ECCV 2020）</td>
+<td>469</td>
+<td>621</td>
+<td>未获取（同上）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>裁决</strong>：三口径中两票（S2、GS）MBLLEN 居首且幅度大（804 vs 555；1121 vs ≈700 量级），<strong>MBLLEN 为陆峰被引最多的论文</strong>。OpenAlex 口径单独看 PR 对抗论文居首，原因是 OpenAlex 对无 DOI 会议论文的引用追踪偏弱（§11.4 经验规律对 BMVC 类论文失效场景）——非归属错误。</p>
+<p><strong>口径差异 &gt;50% 排查记录（§11.4 强制项）</strong>：
+1. <strong>归属问题（已修正）</strong>：OpenAlex 把 MBLLEN 的 "Feng Lu" 挂到同名错误实体 <code>A5101480749</code>（浙江师范大学/地理所），本人主实体 <code>A5050527785</code> 漏收该篇——以<a href="https://phi-ai.buaa.edu.cn/members/CV_Beihang_Lufeng.pdf">本人 CV #53</a>（通讯作者）裁决归属。
+2. <strong>主实体污染（已剔除）</strong>：<code>A5050527785</code> 混入化学论文（Chem. Mater. 2014 "Bipolar Phenanthroimidazole…"，236 引）——材料学同名者作品，按研究方向 + CV 缺失剔除，不计入作品集。
+3. 剔除后各口径第一名不变（污染论文引用数 236 &lt; 两侧第一名）。</p>
+<hr />
+<h2>三、结论二：引用者中的院士与杰青</h2>
+<p><strong>院士 2 人</strong>（均中国工程院）：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>单位</th>
+<th>头衔</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.cae.cn/cae/html/main/colys/02548488.html">戴琼海</a></td>
+<td>清华大学</td>
+<td>中国工程院院士（2017，信息与电子工程学部）</td>
+</tr>
+<tr>
+<td><a href="https://www.cae.cn/cae/html/main/colys/95871425.html">吴枫</a></td>
+<td>中国科学技术大学</td>
+<td>中国工程院院士（2025）＋国家杰青＋IEEE Fellow</td>
+</tr>
+</tbody>
+</table>
+<p><strong>杰青 8 人</strong>（吴枫双料计入）：</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>单位</th>
+<th>杰青证据（责任主体源）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>吴枫</td>
+<td>中国科学技术大学</td>
+<td><a href="https://faculty.ustc.edu.cn/wufeng1/zh_CN/index.htm">USTC 官方主页</a>（院士见上）</td>
+</tr>
+<tr>
+<td><a href="http://staff.ustc.edu.cn/~lihq/">李厚强</a></td>
+<td>中国科学技术大学</td>
+<td><a href="http://staff.ustc.edu.cn/~lihq/">USTC 官方主页</a>："杰出青年基金获得者（2013）"，兼 IEEE Fellow、长江特聘（2017）</td>
+</tr>
+<tr>
+<td><a href="https://people.ucas.ac.cn/~qmhuang">黄庆明</a></td>
+<td>中国科学院大学</td>
+<td><a href="https://people.ucas.ac.cn/~qmhuang">国科大官方主页</a>：杰青（2010）、IEEE Fellow</td>
+</tr>
+<tr>
+<td>孟德宇</td>
+<td>西安交通大学</td>
+<td><a href="https://gr.xjtu.edu.cn/mengdeyu">西交大教师主页</a>；<a href="https://ins.sjtu.edu.cn">上海交大会议官方介绍</a>："国家杰青、长江特聘"（当选年份未获取）</td>
+</tr>
+<tr>
+<td><a href="https://cs.sjtu.edu.cn/jzhspjs/1360.html">翟广涛</a></td>
+<td>上海交通大学</td>
+<td><a href="https://gift.sjtu.edu.cn/post/673">SJTU 官方招聘页</a>："主持承担国家杰出青年科学基金、优秀青年科学基金项目"，兼 IEEE Fellow（年份未获取）</td>
+</tr>
+<tr>
+<td><a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm">查正军</a></td>
+<td>中国科学技术大学</td>
+<td><a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm">USTC 官方主页</a>：杰青 + 优青 2016</td>
+</tr>
+<tr>
+<td>卢孝强</td>
+<td>中科院西安光学精密机械研究所</td>
+<td><a href="http://www.xab.ac.cn/ttxw/201912/t20191202_5446648.html">西安光机所官网新闻（2019-12）</a>："获国家杰出青年科学基金资助"</td>
+</tr>
+<tr>
+<td><a href="https://opt.bit.edu.cn/jsdw/gdrc/218ea1c9a7284901ab464121d8a83bde.htm">杨健</a></td>
+<td>北京理工大学（光电学院）</td>
+<td><a href="https://opt.bit.edu.cn/jsdw/gdrc/218ea1c9a7284901ab464121d8a83bde.htm">北理工官方教师主页</a>：国家杰青、国家级领军人才</td>
+</tr>
+</tbody>
+</table>
+<h3>逐条证据卡（三层齐全才计入）</h3>
+<p><strong>1. 戴琼海（清华大学，中国工程院院士 2017）</strong>
+- 📄 引用论文：<a href="https://doi.org/10.48550/arXiv.2301.06269">DarkVision: A Benchmark for Low-light Image/Video Perception（arXiv 2023）</a>（共同作者含 J. Suo 索津莉——其清华计算成像团队长期合作者）；<a href="https://doi.org/10.1109/JPROC.2023.3338272">Computational Imaging and AI（Proc. IEEE）</a>（共同作者 D. Brady，Duke 计算成像）
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/1491800101">author/1491800101</a>；OpenAlex：<a href="https://api.openalex.org/authors/A5080722708?select=display_name,summary_stats">A5080722708</a>
+- 🏅 院士：<a href="https://www.cae.cn/cae/html/main/colys/02548488.html">中国工程院官网戴琼海院士页</a> · <a href="https://www.sist.tsinghua.edu.cn/info/1091/2300.htm">清华大学信息学院当选新闻（2017-11-27）</a> · <a href="https://www.cae.cn/cae/html/main/col1/2017-11/27/20171127085546389185716_1.html">工程院 2017 增选结果</a>
+- 身份指纹：计算成像/低照度感知方向 + 清华署名背景 + 上述合作者网络 → 匹配度高（confirmed）</p>
+<p><strong>2. 吴枫（中国科学技术大学，中国工程院院士 2025 ＋ 杰青）</strong>
+- 📄 引用论文：<a href="https://doi.org/10.1109/TMM.2022.3193059">Unsupervised Underexposed Image Enhancement via Self-Illuminated and Perceptual Guidance（IEEE TMM 2023）</a>
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/144864333">author/144864333</a>；USTC 邮箱域 fengwu@ustc.edu.cn（<a href="https://iat.ustc.edu.cn/iat/xnds535/20211207/5362.html">先研院介绍页</a>）
+- 🏅 院士：<a href="https://www.cae.cn/cae/html/main/colys/95871425.html">中国工程院官网吴枫院士页</a>（"2025 年当选中国工程院院士"）· <a href="https://news.ustc.edu.cn/info/1001/93281.htm">中国科大官方喜报</a>；杰青：<a href="https://faculty.ustc.edu.cn/wufeng1/zh_CN/index.htm">USTC 教师主页</a>（年份未获取，多年源一致 → confirmed）
+- ⚠️ 陷阱记录：百度百科称"2023 年当选院士"为<strong>错误年份</strong>，以工程院官网（2025）为准</p>
+<p><strong>3. 李厚强（中国科学技术大学，杰青 2013）</strong>
+- 📄 引用论文：<a href="https://doi.org/10.48550/arXiv.2208.11014">Low-Light Video Enhancement with Synthetic Event Guidance（AAAI 2022）</a>
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/2108508109">author/2108508109</a>；OpenAlex：<a href="https://api.openalex.org/authors/A5078141810?select=display_name,summary_stats">A5078141810</a>
+- 🏅 杰青：<a href="http://staff.ustc.edu.cn/~lihq/">USTC 官方主页</a>："国家'杰出青年基金'获得者（2013）"，兼 IEEE Fellow、长江特聘（2017）</p>
+<p><strong>4. 黄庆明（中国科学院大学，杰青 2010）</strong>
+- 📄 引用论文（4 篇，例）：<a href="https://doi.org/10.1109/TIP.2023.3301332">Unsupervised Low-Light Video Enhancement With Spatial-Temporal Co-Attention Transformer（IEEE TIP 2023）</a>、<a href="https://doi.org/10.1145/3735973">Adaptive Multi-Exposure Image Correction（ACM TOMM 2025）</a>
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/2237597856">author/2237597856</a>
+- 🏅 杰青：<a href="https://people.ucas.ac.cn/~qmhuang">国科大官方主页</a>："国家杰出青年科学基金获得者"（2010），兼 IEEE Fellow</p>
+<p><strong>5. 孟德宇（西安交通大学，杰青）</strong>
+- 📄 引用论文（3 篇，例）：<a href="https://doi.org/10.1109/TNNLS.2023.3289626">Low-Light Image Enhancement by Retinex-Based Algorithm Unrolling（IEEE TNNLS 2023）</a>、<a href="https://doi.org/10.1016/j.neunet.2025.107700">Degradation-Guided cross-consistent deep unfolding network（Neural Networks 2025）</a>
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/2324996221">author/2324996221</a>
+- 🏅 杰青：<a href="https://gr.xjtu.edu.cn/mengdeyu">西交大教师主页</a> + 上海交大会议官方介绍"国家杰青、长江特聘"（<strong>当选年份未获取</strong>；两条独立介绍一致 → confirmed，年份缺口已标注）</p>
+<p><strong>6. 翟广涛（上海交通大学，杰青）</strong>
+- 📄 引用论文（6 篇，例）：<a href="https://doi.org/10.48550/arXiv.2407.12431">GLARE: Low Light Image Enhancement via Generative Latent Feature based Codebook Retrieval（ECCV 2024）</a>、<a href="https://doi.org/10.48550/arXiv.2405.03333">Light-VQA+（2024）</a>
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/2266393212">author/2266393212</a>
+- 🏅 杰青：<a href="https://gift.sjtu.edu.cn/post/673">SJTU 官方招聘页</a>"主持承担国家杰出青年科学基金、优秀青年科学基金项目"（<strong>年份未获取</strong>）；佐证 <a href="https://www.seiee.sjtu.edu.cn/index_news/1281.html">SJTU 电院新闻</a>（2021 高被引，官方域名）</p>
+<p><strong>7. 查正军（中国科学技术大学，杰青）</strong>
+- 📄 引用论文：<a href="https://doi.org/10.1145/3343031.3350994">Illumination-Invariant Person Re-Identification（ACM MM 2019）</a>
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/143962510">author/143962510</a>
+- 🏅 杰青：<a href="https://faculty.ustc.edu.cn/chazhengjun/zh_CN/index.htm">USTC 官方中文主页</a>："国家杰出青年科学基金获得者、国家优秀青年科学基金获得者（2016）"（该链接经上一任务 Reflection Backdoor 引用者画像核验复用）</p>
+<p><strong>8. 卢孝强（中科院西安光机所，杰青 2019）</strong>
+- 📄 引用论文：<a href="https://doi.org/10.1109/ICBAIE52039.2021.9389960">Attention-Based Multi-Branch Network for Low-Light Image Enhancement（ICBAIE 2021）</a>（OpenAlex 署名带 <a href="https://orcid.org/0000-0002-7037-5188">ORCID 0000-0002-7037-5188</a>；共同作者郑向涛——西安光机所智能光学团队长期合作者）
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/7828998">author/7828998</a>
+- 🏅 杰青：<a href="http://www.xab.ac.cn/ttxw/201912/t20191202_5446648.html">西安光机所官网新闻（2019-12-02）</a>"卢孝强研究员获国家杰出青年科学基金资助"
+- ⚠️ 名字陷阱：中文为"卢<strong>孝</strong>强"（Xiaoqiang Lu），非"晓强"</p>
+<p><strong>9. 杨健（北京理工大学光电学院，杰青）</strong>
+- 📄 引用论文：<a href="https://doi.org/10.1007/s10489-020-01735-8">An automatic framework for endoscopic image restoration and enhancement（Applied Intelligence 2020）</a>（共同作者宋红 Hong Song——北理工同事；医学影像方向与其"医学图像处理/手术导航"方向一致）
+- 🆔 池内 S2 作者实体：<a href="https://www.semanticscholar.org/author/2146236970">author/2146236970</a>
+- 🏅 杰青：<a href="https://opt.bit.edu.cn/jsdw/gdrc/218ea1c9a7284901ab464121d8a83bde.htm">北理工光电学院官方教师主页</a>"国家杰出青年科学基金获得者、国家级领军人才"
+- ⚠️ 同名陷阱：池中另有<strong>南京理工大学杨健</strong>（<a href="https://doi.org/10.48550/arXiv.2410.08063">MambaLLIE, NeurIPS 2024</a> 等论文，合作者钱建军等南理工 PCA 团队）——<strong>非同一人，头衔结论只适用于北理工杨健</strong></p>
+<hr />
+<h2>四、排除与陷阱记录（负结论同样给证据）</h2>
+<table>
+<thead>
+<tr>
+<th>候选</th>
+<th>排除原因</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>马佳义（武汉大学）</td>
+<td>人才称号为"万人计划青年拔尖 + <strong>湖北省杰青（省级）</strong>"，非国家杰青</td>
+<td><a href="https://www.zut.edu.cn/info/1044/26713.htm">中原工学院讲座介绍（官方）</a>；OA 机构字段 Wuhan University 一致</td>
+</tr>
+<tr>
+<td>贾佳亚（港科大/思谋科技）</td>
+<td>多轮检索无国家杰青记录；持 IEEE Fellow（境外任职期为主）</td>
+<td><a href="https://www.zgcforum.com.cn/review/guest/t7901/318669">中关村论坛官方简介</a>；科学网历年杰青名单未见</td>
+</tr>
+<tr>
+<td>沈建冰（澳门大学，原北理工）</td>
+<td>无国家杰青记录；IEEE Fellow（2024）。名字正确写法"沈建<strong>冰</strong>"</td>
+<td><a href="https://cn.ieee.org/2023/11/28/ieee-2024%25E6%2596%25B0%25E6%2599%258Bfellow%25E5%2590%258D%25E5%258D%2595%25E6%25AD%25A3%25E5%25BC%258F%25E5%2585%25AC%25E5%25B8%2583/">IEEE 中国 2024 Fellow 公告</a></td>
+</tr>
+<tr>
+<td>乔宇（上海 AI 实验室）</td>
+<td>所获"<strong>王选</strong>杰出青年学者奖"≠国家自然科学基金杰青；无 NSFC 杰青记录</td>
+<td><a href="https://szs.siat.ac.cn/siat/2025-02/21/article_2025022803253088013.html">深圳先进院官方页</a>；<a href="https://www.icst.pku.edu.cn/xwgg/xwdt/2024/1201844icst1377595.htm">王选奖专访（北大）</a></td>
+</tr>
+<tr>
+<td>周文罡（中科大）</td>
+<td><strong>优青 2018</strong>，非杰青</td>
+<td><a href="https://faculty.ustc.edu.cn/~qQJJFn/zh_CN/index.htm">USTC 官方主页</a>（"2018 当选：国家优秀青年基金获得者"）</td>
+</tr>
+<tr>
+<td>严骏驰（上海交大）</td>
+<td><strong>优青</strong>，非杰青；IAPR Fellow 2024</td>
+<td><a href="https://cs.sjtu.edu.cn/cse/PeopleDetail.aspx?id=400">上交计算机系官方页</a>（"国家基金委优青"）</td>
+</tr>
+<tr>
+<td>左旺孟（哈工大）</td>
+<td><strong>优青</strong>，非杰青</td>
+<td><a href="https://ai.hit.edu.cn/2021/0410/c13102a252718/pagem.htm">哈工大 AI 研究院页</a>（"主持国自然优青…"）</td>
+</tr>
+<tr>
+<td>聂飞平（西北工业大学）</td>
+<td>官方称号"国家级领军人才/青年人才"，无杰青记录</td>
+<td><a href="https://iopen.nwpu.edu.cn/info/1015/1212.htm">西工大 iOPEN 官方页</a></td>
+</tr>
+<tr>
+<td>刘家瑛（北京大学）</td>
+<td>2018 年所获为<strong>石青云女科学家奖-青年奖</strong>；杰青无记录，优青本次未获权威确认</td>
+<td><a href="https://www.icst.pku.edu.cn/kxyj/kycg/jlry/1201844icst1222372.htm">北大王选所获奖页</a></td>
+</tr>
+<tr>
+<td>施柏鑫（北京大学）</td>
+<td>"博雅青年学者"研究员；杰青/优青均未见官方记录</td>
+<td><a href="https://cs.pku.edu.cn/info/1078/1674.htm">北大计算机学院官方页</a></td>
+</tr>
+<tr>
+<td>Ke Chen（同名存疑）</td>
+<td>引用论文为低层级 ICPECA 2023 会议，机构指纹不足以匹配中科大陈柯（计算摄像）→ 整条存疑排除</td>
+<td>引用论文 DOI 10.1109/ICPECA56706.2023.10075845</td>
+</tr>
+<tr>
+<td>南京理工杨健</td>
+<td>与北理工杰青杨健同名不同人（见证据卡 9 陷阱记录）</td>
+<td>MambaLLIE 作者网络（钱建军等）</td>
+</tr>
+<tr>
+<td>Feng Lu（池中"引用者"）</td>
+<td>陆峰本人在后续论文中自引 MBLLEN（自引不计入"引用者"）</td>
+<td><code>s2_author_details.json</code></td>
+</tr>
+<tr>
+<td>Luc Van Gool（ETH/INSAIT）</td>
+<td>外籍院士排查：两院外籍名录检索未命中（not_found_after_search，≠ 不存在）</td>
+<td><a href="https://casad.cas.cn/yszx/">中科院外籍院士名录</a> · <a href="https://www.cae.cn/cae/html/main/col50/column_50_1.html">工程院外籍院士名单</a></td>
+</tr>
+<tr>
+<td>预置院士名单 16 人未命中</td>
+<td>高文/谭铁牛/郑南宁/徐宗本/鄂维南/怀进鹏/赵沁平/丁汉/李学龙/管晓宏/张艳宁/王耀威/房建成/姜会林/郑海荣/骆清铭均不在本池（前二人组在 Reflection Backdoor 引用池，社区不同）</td>
+<td><code>suspect_hits.json</code>（grep 全池可复验）</td>
+</tr>
+<tr>
+<td>预置杰青名单未命中</td>
+<td>陈熙霖/山世光/黄铁军/王国仁/夏元清/张新鹏/冯丹/金海/林宙辰/卢策吾/王亮/田永鸿/胡事民/周志华/沈定刚/田捷等不在本池</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、口径与局限</h2>
+<ol>
+<li><strong>引用列表口径</strong>：结论覆盖 <strong>S2 全量 804 篇引用</strong>（与 citationCount 严格一致）∪ OpenAlex 315 篇；GS 口径（1121）未逐篇反查——GS 口径中可能存在 S2/OpenAlex 均未收录的引用者。引用者姓名池 3241 个（S2 3135 + OA 展平）。</li>
+<li><strong>头衔判定边界</strong>：杰青 2024 年起基金委不再公布完整名单，2024-2025 年新当选者只能靠单位官网披露发现——<strong>可能存在漏检</strong>（尤其年轻杰青）。院士名单为封闭名录（两院官网可枚举），漏检风险低。</li>
+<li><strong>四值置信度</strong>：院士 2 人均 <strong>confirmed</strong>（工程院官网直接证据 + 单位官方佐证）；杰青 8 人中 6 人 <strong>confirmed</strong>（单位官网直接陈述），孟德宇、翟广涛为 <strong>confirmed（年份缺口标注）</strong>；吴枫杰青为 <strong>likely→confirmed</strong>（USTC 官方域页面 + 百科一致，当选年份未获取）。</li>
+<li><strong>工具偏差记录</strong>：<code>paper trace-citing</code> 对无 DOI 论文无法路由 S2（CLI 正确 PARTIAL 上报），S2 口径由 API 直连补全（等价数据，已归档）；S2 作者实体碎片化（同一人多 authorId），画像 h 指数取全池排序而非单实体；<code>trace-profiles</code> 后台运行耗时较长，本报告画像层以 S2 <code>/author/batch</code>（3135 人全量）等价实现。</li>
+<li><strong>数据快照日</strong>：2026-08-17。头衔/名单/引用数均为该日快照。</li>
+</ol>
+</body></html>

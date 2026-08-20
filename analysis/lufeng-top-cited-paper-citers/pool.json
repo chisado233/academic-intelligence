@@ -1,0 +1,2634 @@
+[
+ {
+  "name": "Wenhan Yang",
+  "freq": 12,
+  "score": 90.6,
+  "s2_ids": [
+   "1898172",
+   "2274269967"
+  ],
+  "top_citing": [
+   "Unsupervised Night Image Enhancement: When La (188)",
+   "Low-Light Image Enhancement with Normalizing  (612)",
+   "Band Representation-Based Semi-Supervised Low (203)"
+  ]
+ },
+ {
+  "name": "Yu Guo",
+  "freq": 9,
+  "score": 42.0,
+  "s2_ids": [
+   "2143378699",
+   "2310688922"
+  ],
+  "top_citing": [
+   "OneRestore: A Universal Restoration Framework (136)"
+  ]
+ },
+ {
+  "name": "Feng Lu",
+  "freq": 9,
+  "score": 37.8,
+  "s2_ids": [
+   "1388864077",
+   "2151233362",
+   "2279610393"
+  ],
+  "top_citing": [
+   "Attention Guided Low-Light Image Enhancement  (333)"
+  ]
+ },
+ {
+  "name": "Yuxu Lu",
+  "freq": 9,
+  "score": 35.9,
+  "s2_ids": [
+   "121713030"
+  ],
+  "top_citing": [
+   "OneRestore: A Universal Restoration Framework (136)"
+  ]
+ },
+ {
+  "name": "Risheng Liu",
+  "freq": 9,
+  "score": 14.7,
+  "s2_ids": [
+   "2237951125",
+   "34469457"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Long Ma",
+  "freq": 8,
+  "score": 14.0,
+  "s2_ids": [
+   "1732160",
+   "2331460441",
+   "2340912932"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chongyi Li",
+  "freq": 7,
+  "score": 64.1,
+  "s2_ids": [
+   "2185949399",
+   "2237956540",
+   "2698424"
+  ],
+  "top_citing": [
+   "LEDNet: Joint Low-light Enhancement and Deblu (245)",
+   "Low-Light Image and Video Enhancement Using D (585)",
+   "Learning to Enhance Low-Light Image via Zero- (872)"
+  ]
+ },
+ {
+  "name": "Shiqi Wang",
+  "freq": 7,
+  "score": 27.8,
+  "s2_ids": [
+   "2279744514",
+   "2283201042",
+   "2303523184",
+   "2372435169"
+  ],
+  "top_citing": [
+   "Band Representation-Based Semi-Supervised Low (203)"
+  ]
+ },
+ {
+  "name": "Yinqiang Zheng",
+  "freq": 7,
+  "score": 26.3,
+  "s2_ids": [
+   "2037259",
+   "2242543861",
+   "2247926612"
+  ],
+  "top_citing": [
+   "Learning to See Moving Objects in the Dark (166)"
+  ]
+ },
+ {
+  "name": "Bo Zhang",
+  "freq": 7,
+  "score": 21.4,
+  "s2_ids": [
+   "2141897317",
+   "2155611061",
+   "2208118873",
+   "2208122861",
+   "2426012373"
+  ],
+  "top_citing": [
+   "Generative Diffusion Prior for Unified Image  (364)"
+  ]
+ },
+ {
+  "name": "Wenqi Ren",
+  "freq": 7,
+  "score": 20.4,
+  "s2_ids": [
+   "144850642",
+   "2053308882",
+   "2260700948",
+   "2265263152",
+   "2276950332"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jinjiang Li",
+  "freq": 7,
+  "score": 17.8,
+  "s2_ids": [
+   "2555126"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiaofang Hu",
+  "freq": 7,
+  "score": 11.5,
+  "s2_ids": [
+   "2289192561",
+   "47027727"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yue Zhou",
+  "freq": 7,
+  "score": 11.5,
+  "s2_ids": [
+   "2116451313"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jie Huang",
+  "freq": 6,
+  "score": 42.0,
+  "s2_ids": [
+   "2110284557"
+  ],
+  "top_citing": [
+   "Fourmer: An Efficient Global Modeling Paradig (172)",
+   "Deep Fourier-Based Exposure Correction Networ (239)"
+  ]
+ },
+ {
+  "name": "Lin Gu",
+  "freq": 6,
+  "score": 38.7,
+  "s2_ids": [
+   "151484085",
+   "2261518797",
+   "2290494499"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)",
+   "Multitask AET with Orthogonal Tangent Regular (180)"
+  ]
+ },
+ {
+  "name": "Ziteng Cui",
+  "freq": 6,
+  "score": 38.6,
+  "s2_ids": [
+   "2152101108"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)",
+   "Multitask AET with Orthogonal Tangent Regular (180)"
+  ]
+ },
+ {
+  "name": "Guangtao Zhai",
+  "freq": 6,
+  "score": 32.2,
+  "s2_ids": [
+   "144826390",
+   "2266393212"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Ryan Wen Liu",
+  "freq": 6,
+  "score": 26.9,
+  "s2_ids": [
+   "2124017717",
+   "2202013693",
+   "2268299485",
+   "2364546752"
+  ],
+  "top_citing": [
+   "OneRestore: A Universal Restoration Framework (136)"
+  ]
+ },
+ {
+  "name": "Xiaohong Liu",
+  "freq": 6,
+  "score": 26.3,
+  "s2_ids": [
+   "2211737291",
+   "2311271429"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhen Hua",
+  "freq": 6,
+  "score": 15.6,
+  "s2_ids": [
+   "144278699"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Dirui Xie",
+  "freq": 6,
+  "score": 10.5,
+  "s2_ids": [
+   "2211254189"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiaoyan Chen",
+  "freq": 6,
+  "score": 10.5,
+  "s2_ids": [
+   "2143799176",
+   "2143799959",
+   "2315445463"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chunle Guo",
+  "freq": 5,
+  "score": 44.3,
+  "s2_ids": [
+   "18158517"
+  ],
+  "top_citing": [
+   "Low-Light Image and Video Enhancement Using D (585)",
+   "Learning to Enhance Low-Light Image via Zero- (872)",
+   "Fourmer: An Efficient Global Modeling Paradig (172)"
+  ]
+ },
+ {
+  "name": "Jiaying Liu",
+  "freq": 5,
+  "score": 43.2,
+  "s2_ids": [
+   "2239051902",
+   "41127426"
+  ],
+  "top_citing": [
+   "Band Representation-Based Semi-Supervised Low (203)",
+   "Benchmarking Low-Light Image Enhancement and  (372)",
+   "Integrating Semantic Segmentation and Retinex (139)"
+  ]
+ },
+ {
+  "name": "Man Zhou",
+  "freq": 5,
+  "score": 34.9,
+  "s2_ids": [
+   "2121684731",
+   "2272766397"
+  ],
+  "top_citing": [
+   "Fourmer: An Efficient Global Modeling Paradig (172)",
+   "Deep Fourier-Based Exposure Correction Networ (239)"
+  ]
+ },
+ {
+  "name": "Fengmei Zhao",
+  "freq": 5,
+  "score": 31.0,
+  "s2_ids": [
+   "2152335165"
+  ],
+  "top_citing": [
+   "Deep Fourier-Based Exposure Correction Networ (239)"
+  ]
+ },
+ {
+  "name": "Feifan Lv",
+  "freq": 5,
+  "score": 27.5,
+  "s2_ids": [
+   "51290122"
+  ],
+  "top_citing": [
+   "Attention Guided Low-Light Image Enhancement  (333)"
+  ]
+ },
+ {
+  "name": "R. Timofte",
+  "freq": 5,
+  "score": 23.8,
+  "s2_ids": [
+   "1732855"
+  ],
+  "top_citing": [
+   "Retinexformer: One-stage Retinex-based Transf (725)"
+  ]
+ },
+ {
+  "name": "Huiyuan Fu",
+  "freq": 5,
+  "score": 18.2,
+  "s2_ids": [
+   "2513605"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Huadong Ma",
+  "freq": 5,
+  "score": 18.2,
+  "s2_ids": [
+   "144258295",
+   "2248034542",
+   "2263653397"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Wei Chen",
+  "freq": 5,
+  "score": 17.7,
+  "s2_ids": [
+   "2154940576",
+   "2154942699",
+   "2283009",
+   "2329164441"
+  ],
+  "top_citing": [
+   "EEMEFN: Low-Light Image Enhancement via Edge- (236)"
+  ]
+ },
+ {
+  "name": "Xiaogang Xu",
+  "freq": 5,
+  "score": 17.2,
+  "s2_ids": [
+   "2027354611",
+   "2276483420",
+   "2373442317"
+  ],
+  "top_citing": [
+   "Seeing Dynamic Scene in the Dark: A High-Qual (178)"
+  ]
+ },
+ {
+  "name": "Ruixing Wang",
+  "freq": 5,
+  "score": 17.2,
+  "s2_ids": [
+   "2108666491",
+   "2303302229"
+  ],
+  "top_citing": [
+   "Seeing Dynamic Scene in the Dark: A High-Qual (178)"
+  ]
+ },
+ {
+  "name": "Lingyu Zhu",
+  "freq": 5,
+  "score": 11.5,
+  "s2_ids": [
+   "2281724124"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "R. Soundararajan",
+  "freq": 5,
+  "score": 9.7,
+  "s2_ids": [
+   "2510315"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Shukai Duan",
+  "freq": 5,
+  "score": 9.2,
+  "s2_ids": [
+   "2159433014",
+   "2269227618"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Erkut Erdem",
+  "freq": 5,
+  "score": 8.4,
+  "s2_ids": [
+   "152330322"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Aykut Erdem",
+  "freq": 5,
+  "score": 8.4,
+  "s2_ids": [
+   "14364286",
+   "2253752451"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chen Change Loy",
+  "freq": 4,
+  "score": 35.2,
+  "s2_ids": [
+   "1717179"
+  ],
+  "top_citing": [
+   "LEDNet: Joint Low-light Enhancement and Deblu (245)",
+   "Low-Light Image and Video Enhancement Using D (585)",
+   "Learning to Enhance Low-Light Image via Zero- (872)"
+  ]
+ },
+ {
+  "name": "Xiongkuo Min",
+  "freq": 4,
+  "score": 27.0,
+  "s2_ids": [
+   "2246414"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Tatsuya Harada",
+  "freq": 4,
+  "score": 26.0,
+  "s2_ids": [
+   "2147394803",
+   "2256612994"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)"
+  ]
+ },
+ {
+  "name": "Kui Jiang",
+  "freq": 4,
+  "score": 23.2,
+  "s2_ids": [
+   "2237233392",
+   "2301686249",
+   "51360637"
+  ],
+  "top_citing": [
+   "Decomposition Makes Better Rain Removal: An I (100)"
+  ]
+ },
+ {
+  "name": "Yuan Gao",
+  "freq": 4,
+  "score": 23.0,
+  "s2_ids": [
+   "2118635326",
+   "2118635997",
+   "2244143114"
+  ],
+  "top_citing": [
+   "OneRestore: A Universal Restoration Framework (136)"
+  ]
+ },
+ {
+  "name": "Ziaur Rahman",
+  "freq": 4,
+  "score": 20.4,
+  "s2_ids": [
+   "145760130",
+   "2067838715"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xueyang Fu",
+  "freq": 4,
+  "score": 20.0,
+  "s2_ids": [
+   "2273893743",
+   "3061449"
+  ],
+  "top_citing": [
+   "Illumination-Invariant Person Re-Identificati (97)"
+  ]
+ },
+ {
+  "name": "Hufsa Khan",
+  "freq": 4,
+  "score": 19.8,
+  "s2_ids": [
+   "2147395983"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Ying Fu",
+  "freq": 4,
+  "score": 18.6,
+  "s2_ids": [
+   "143728560",
+   "2107214086",
+   "2262425671"
+  ],
+  "top_citing": [
+   "Learning Temporal Consistency for Low Light V (193)"
+  ]
+ },
+ {
+  "name": "Xiaofeng Zhang",
+  "freq": 4,
+  "score": 18.3,
+  "s2_ids": [
+   "2144525229",
+   "2257953748",
+   "2328309571"
+  ],
+  "top_citing": [
+   "Retinexmamba: Retinex-based Mamba for Low-lig (144)"
+  ]
+ },
+ {
+  "name": "Fan Zhang",
+  "freq": 4,
+  "score": 17.5,
+  "s2_ids": [
+   "2153304421",
+   "2153307863",
+   "2265620853",
+   "2346987783"
+  ],
+  "top_citing": [
+   "Learning Temporal Consistency for Low Light V (193)"
+  ]
+ },
+ {
+  "name": "Dongming Zhou",
+  "freq": 4,
+  "score": 17.1,
+  "s2_ids": [
+   "2153594632",
+   "3041495"
+  ],
+  "top_citing": [
+   "LightingNet: An Integrated Learning Method fo (116)"
+  ]
+ },
+ {
+  "name": "R. W. Liu",
+  "freq": 4,
+  "score": 16.3,
+  "s2_ids": [
+   "3136503"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jun Li",
+  "freq": 4,
+  "score": 14.5,
+  "s2_ids": [
+   "2265939036",
+   "2298349023",
+   "2330228278",
+   "2334862594"
+  ],
+  "top_citing": [
+   "MambaLLIE: Implicit Retinex-Aware Low Light E (103)"
+  ]
+ },
+ {
+  "name": "Shansi Zhang",
+  "freq": 4,
+  "score": 13.9,
+  "s2_ids": [
+   "2116577885"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "E. Lam",
+  "freq": 4,
+  "score": 13.9,
+  "s2_ids": [
+   "1725389"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Qingming Huang",
+  "freq": 4,
+  "score": 13.4,
+  "s2_ids": [
+   "1689702",
+   "2237597856"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Hao Tang",
+  "freq": 4,
+  "score": 13.1,
+  "s2_ids": [
+   "145462888",
+   "2275194660"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yunlong Dong",
+  "freq": 4,
+  "score": 12.5,
+  "s2_ids": [
+   "2115459224",
+   "2198525074",
+   "2212175505"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yixuan Gao",
+  "freq": 4,
+  "score": 12.5,
+  "s2_ids": [
+   "2118544238"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jinyuan Liu",
+  "freq": 4,
+  "score": 12.4,
+  "s2_ids": [
+   "2108510456",
+   "2293559619"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Baoliang Chen",
+  "freq": 4,
+  "score": 11.5,
+  "s2_ids": [
+   "1919597217"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yong Wang",
+  "freq": 4,
+  "score": 11.0,
+  "s2_ids": [
+   "2153952645",
+   "2153954532",
+   "2157288214",
+   "2237392111"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Bo Li",
+  "freq": 4,
+  "score": 10.4,
+  "s2_ids": [
+   "2155883252",
+   "2165247651",
+   "2246445422"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Mingwen Shao",
+  "freq": 4,
+  "score": 9.7,
+  "s2_ids": [
+   "2237783247",
+   "2350666331"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Heng Zhang",
+  "freq": 4,
+  "score": 9.5,
+  "s2_ids": [
+   "2271866730",
+   "40940525"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yutao Jin",
+  "freq": 4,
+  "score": 8.3,
+  "s2_ids": [
+   "2154182385",
+   "2308842803"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Sameer Malik",
+  "freq": 4,
+  "score": 8.3,
+  "s2_ids": [
+   "2000484626"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "He Xiao",
+  "freq": 4,
+  "score": 8.2,
+  "s2_ids": [
+   "2114210605"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jin Chen",
+  "freq": 4,
+  "score": 7.8,
+  "s2_ids": [
+   "2108458965",
+   "2108461272",
+   "2303900987"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "A. Bhandari",
+  "freq": 4,
+  "score": 7.6,
+  "s2_ids": [
+   "2019243"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Hao Zhang",
+  "freq": 4,
+  "score": 7.5,
+  "s2_ids": [
+   "2302787661",
+   "2310367327",
+   "2376113450"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jing Ye",
+  "freq": 4,
+  "score": 7.5,
+  "s2_ids": [
+   "144030865",
+   "2274013848"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Changzhen Qiu",
+  "freq": 4,
+  "score": 7.5,
+  "s2_ids": [
+   "9326186"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhiyong Zhang",
+  "freq": 4,
+  "score": 7.5,
+  "s2_ids": [
+   "2117992459"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhigang Tu",
+  "freq": 4,
+  "score": 7.4,
+  "s2_ids": [
+   "2061178292",
+   "2352932765"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Lei Zhang",
+  "freq": 4,
+  "score": 7.0,
+  "s2_ids": [
+   "2152827674",
+   "2256830888",
+   "2286036173",
+   "2290620461"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "M. Lecca",
+  "freq": 4,
+  "score": 7.0,
+  "s2_ids": [
+   "2558075"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yang Yang",
+  "freq": 4,
+  "score": 6.5,
+  "s2_ids": [
+   "2152915963",
+   "2242793598",
+   "2322063612",
+   "2365327194"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xin-Yue Fan",
+  "freq": 4,
+  "score": 6.1,
+  "s2_ids": [
+   "2117800366"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chen Chen",
+  "freq": 3,
+  "score": 29.5,
+  "s2_ids": [
+   "2141809280"
+  ],
+  "top_citing": [
+   "Decomposition Makes Better Rain Removal: An I (100)",
+   "Seeing Motion in the Dark (335)"
+  ]
+ },
+ {
+  "name": "Linghao Han",
+  "freq": 3,
+  "score": 22.3,
+  "s2_ids": [
+   "2118503811"
+  ],
+  "top_citing": [
+   "Low-Light Image and Video Enhancement Using D (585)"
+  ]
+ },
+ {
+  "name": "Haofeng Huang",
+  "freq": 3,
+  "score": 21.2,
+  "s2_ids": [
+   "48186372"
+  ],
+  "top_citing": [
+   "Benchmarking Low-Light Image Enhancement and  (372)"
+  ]
+ },
+ {
+  "name": "Zhenqi Fu",
+  "freq": 3,
+  "score": 18.1,
+  "s2_ids": [
+   "31419775"
+  ],
+  "top_citing": [
+   "Learning a Simple Low-Light Image Enhancer fr (360)"
+  ]
+ },
+ {
+  "name": "Xinghao Ding",
+  "freq": 3,
+  "score": 18.1,
+  "s2_ids": [
+   "2262201427",
+   "2713947"
+  ],
+  "top_citing": [
+   "Learning a Simple Low-Light Image Enhancer fr (360)"
+  ]
+ },
+ {
+  "name": "Junjun Jiang",
+  "freq": 3,
+  "score": 17.7,
+  "s2_ids": [
+   "1708439",
+   "2141510194",
+   "2260831387"
+  ],
+  "top_citing": [
+   "Decomposition Makes Better Rain Removal: An I (100)"
+  ]
+ },
+ {
+  "name": "Y. Qiao",
+  "freq": 3,
+  "score": 17.2,
+  "s2_ids": [
+   "145858545",
+   "2059129841"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)"
+  ]
+ },
+ {
+  "name": "Wei Sun",
+  "freq": 3,
+  "score": 17.1,
+  "s2_ids": [
+   "2153198409"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "M. Aamir",
+  "freq": 3,
+  "score": 16.3,
+  "s2_ids": [
+   "2147469944"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jian Yang",
+  "freq": 3,
+  "score": 15.7,
+  "s2_ids": [
+   "13524601",
+   "2146236970",
+   "2273535040"
+  ],
+  "top_citing": [
+   "MambaLLIE: Implicit Retinex-Aware Low Light E (103)"
+  ]
+ },
+ {
+  "name": "Wenkai Zheng",
+  "freq": 3,
+  "score": 15.3,
+  "s2_ids": [
+   "2186746235"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yong Ma",
+  "freq": 3,
+  "score": 14.1,
+  "s2_ids": [
+   "2122482757",
+   "2291680328"
+  ],
+  "top_citing": [
+   "Zero-Shot Restoration of Underexposed Images  (284)"
+  ]
+ },
+ {
+  "name": "Haiyang Jiang",
+  "freq": 3,
+  "score": 14.0,
+  "s2_ids": [
+   "152743682",
+   "2266241316"
+  ],
+  "top_citing": [
+   "Learning to See Moving Objects in the Dark (166)"
+  ]
+ },
+ {
+  "name": "Kaibing Zhang",
+  "freq": 3,
+  "score": 13.7,
+  "s2_ids": [
+   "1723685",
+   "2238968445"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jiesong Bai",
+  "freq": 3,
+  "score": 13.6,
+  "s2_ids": [
+   "2300253561"
+  ],
+  "top_citing": [
+   "Retinexmamba: Retinex-based Mamba for Low-lig (144)"
+  ]
+ },
+ {
+  "name": "Bei Yu",
+  "freq": 3,
+  "score": 13.6,
+  "s2_ids": [
+   "2121417136",
+   "2362514661"
+  ],
+  "top_citing": [
+   "Seeing Dynamic Scene in the Dark: A High-Qual (178)"
+  ]
+ },
+ {
+  "name": "Qian Zhao",
+  "freq": 3,
+  "score": 13.5,
+  "s2_ids": [
+   "2283488059",
+   "2287531441",
+   "46317290"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jiangwei Weng",
+  "freq": 3,
+  "score": 13.3,
+  "s2_ids": [
+   "2301455592"
+  ],
+  "top_citing": [
+   "MambaLLIE: Implicit Retinex-Aware Low Light E (103)"
+  ]
+ },
+ {
+  "name": "Xiao Sun",
+  "freq": 3,
+  "score": 12.7,
+  "s2_ids": [
+   "2112349534",
+   "2273669927",
+   "2318258797"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chunxiao Liu",
+  "freq": 3,
+  "score": 11.9,
+  "s2_ids": [
+   "2107927047",
+   "2337269077"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Deyu Meng",
+  "freq": 3,
+  "score": 11.8,
+  "s2_ids": [
+   "1803714",
+   "2237802857",
+   "2324996221"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jingxiang Qu",
+  "freq": 3,
+  "score": 11.5,
+  "s2_ids": [
+   "2189470689"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhiying Jiang",
+  "freq": 3,
+  "score": 10.4,
+  "s2_ids": [
+   "2292303526",
+   "3109913"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Bo Peng",
+  "freq": 3,
+  "score": 10.1,
+  "s2_ids": [
+   "2054590685"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhe Zhang",
+  "freq": 3,
+  "score": 10.1,
+  "s2_ids": [
+   "2177091563"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jianjun Lei",
+  "freq": 3,
+  "score": 10.1,
+  "s2_ids": [
+   "143879230"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Shuo Zhang",
+  "freq": 3,
+  "score": 9.6,
+  "s2_ids": [
+   "2108032962",
+   "2117777418",
+   "2350998079"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chao Xie",
+  "freq": 3,
+  "score": 9.6,
+  "s2_ids": [
+   "2064757396",
+   "2158024018"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jing Xu",
+  "freq": 3,
+  "score": 9.5,
+  "s2_ids": [
+   "2364858782"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yong Zhong",
+  "freq": 3,
+  "score": 9.3,
+  "s2_ids": [
+   "2258070450",
+   "2316544777"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jun Zhang",
+  "freq": 3,
+  "score": 9.1,
+  "s2_ids": [
+   "2155662657",
+   "2186277910",
+   "2269054494"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Tengchuan Kou",
+  "freq": 3,
+  "score": 9.1,
+  "s2_ids": [
+   "2131091027"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jue Wang",
+  "freq": 3,
+  "score": 8.8,
+  "s2_ids": [
+   "2109763930"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jiaxuan Wang",
+  "freq": 3,
+  "score": 8.5,
+  "s2_ids": [
+   "2271359439"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xicong Wang",
+  "freq": 3,
+  "score": 8.5,
+  "s2_ids": [
+   "2271362374"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "S. Kwong",
+  "freq": 3,
+  "score": 8.4,
+  "s2_ids": [
+   "121840359"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhanqiang Huo",
+  "freq": 3,
+  "score": 8.0,
+  "s2_ids": [
+   "1816039841",
+   "2293441519"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Min-Cheol Hong",
+  "freq": 3,
+  "score": 8.0,
+  "s2_ids": [
+   "2268097214",
+   "3689350"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yuanshuo Cheng",
+  "freq": 3,
+  "score": 7.4,
+  "s2_ids": [
+   "2153514280"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chaochen Gu",
+  "freq": 3,
+  "score": 7.3,
+  "s2_ids": [
+   "2253450209",
+   "5494837"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Marco Cotogni",
+  "freq": 3,
+  "score": 7.2,
+  "s2_ids": [
+   "1885493",
+   "2265674038"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhi Jin",
+  "freq": 3,
+  "score": 7.2,
+  "s2_ids": [
+   "2111471831",
+   "2297834069",
+   "2300435939"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Linwei Fan",
+  "freq": 3,
+  "score": 7.0,
+  "s2_ids": [
+   "31431421"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhen Wang",
+  "freq": 3,
+  "score": 6.7,
+  "s2_ids": [
+   "2118453658",
+   "2144787261",
+   "2304369480"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiaochun Cao",
+  "freq": 3,
+  "score": 6.6,
+  "s2_ids": [
+   "2265310728",
+   "2312733924"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jian Wang",
+  "freq": 3,
+  "score": 6.2,
+  "s2_ids": [
+   "2152765441",
+   "2152766744"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Pallavi Singh",
+  "freq": 3,
+  "score": 6.1,
+  "s2_ids": [
+   "2291444214"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiwen Liang",
+  "freq": 3,
+  "score": 6.1,
+  "s2_ids": [
+   "51291599"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xin Gao",
+  "freq": 3,
+  "score": 6.0,
+  "s2_ids": [
+   "2239459437",
+   "2321262054"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Shaodi You",
+  "freq": 2,
+  "score": 22.0,
+  "s2_ids": [
+   "2941564"
+  ],
+  "top_citing": [
+   "Multitask AET with Orthogonal Tangent Regular (180)",
+   "Learning Temporal Consistency for Low Light V (193)"
+  ]
+ },
+ {
+  "name": "Yu Li",
+  "freq": 2,
+  "score": 22.0,
+  "s2_ids": [
+   "2116609876"
+  ],
+  "top_citing": [
+   "Learning Temporal Consistency for Low Light V (193)",
+   "Attention Guided Low-Light Image Enhancement  (333)"
+  ]
+ },
+ {
+  "name": "Minhao Fan",
+  "freq": 2,
+  "score": 22.0,
+  "s2_ids": [
+   "1993384690"
+  ],
+  "top_citing": [
+   "Benchmarking Low-Light Image Enhancement and  (372)",
+   "Integrating Semantic Segmentation and Retinex (139)"
+  ]
+ },
+ {
+  "name": "Christos Sakaridis",
+  "freq": 2,
+  "score": 22.0,
+  "s2_ids": [
+   "7593607"
+  ],
+  "top_citing": [
+   "Map-Guided Curriculum Domain Adaptation and U (206)",
+   "Guided Curriculum Model Adaptation and Uncert (309)"
+  ]
+ },
+ {
+  "name": "Dengxin Dai",
+  "freq": 2,
+  "score": 22.0,
+  "s2_ids": [
+   "1778526"
+  ],
+  "top_citing": [
+   "Map-Guided Curriculum Domain Adaptation and U (206)",
+   "Guided Curriculum Model Adaptation and Uncert (309)"
+  ]
+ },
+ {
+  "name": "Yukun Huang",
+  "freq": 2,
+  "score": 21.7,
+  "s2_ids": [
+   "2372145983"
+  ],
+  "top_citing": [
+   "Illumination-Invariant Person Re-Identificati (97)",
+   "Deep Fourier-Based Exposure Correction Networ (239)"
+  ]
+ },
+ {
+  "name": "Yufei Wang",
+  "freq": 2,
+  "score": 20.6,
+  "s2_ids": [
+   "2108111745",
+   "2143696239"
+  ],
+  "top_citing": [
+   "Low-Light Image Enhancement with Normalizing  (612)"
+  ]
+ },
+ {
+  "name": "Lap-Pui Chau",
+  "freq": 2,
+  "score": 20.6,
+  "s2_ids": [
+   "145662587"
+  ],
+  "top_citing": [
+   "Low-Light Image Enhancement with Normalizing  (612)"
+  ]
+ },
+ {
+  "name": "A. Kot",
+  "freq": 2,
+  "score": 20.6,
+  "s2_ids": [
+   "1711097"
+  ],
+  "top_citing": [
+   "Low-Light Image Enhancement with Normalizing  (612)"
+  ]
+ },
+ {
+  "name": "Zhongyuan Wang",
+  "freq": 2,
+  "score": 18.5,
+  "s2_ids": [
+   "38655501"
+  ],
+  "top_citing": [
+   "Decomposition Makes Better Rain Removal: An I (100)"
+  ]
+ },
+ {
+  "name": "Peng Yi",
+  "freq": 2,
+  "score": 18.5,
+  "s2_ids": [
+   "145526138"
+  ],
+  "top_citing": [
+   "Decomposition Makes Better Rain Removal: An I (100)"
+  ]
+ },
+ {
+  "name": "Shen Zheng",
+  "freq": 2,
+  "score": 17.0,
+  "s2_ids": [
+   "2111074015",
+   "2111075146"
+  ],
+  "top_citing": [
+   "Semantic-Guided Zero-Shot Learning for Low-Li (169)"
+  ]
+ },
+ {
+  "name": "Gaurav Gupta",
+  "freq": 2,
+  "score": 17.0,
+  "s2_ids": [
+   "2104357582"
+  ],
+  "top_citing": [
+   "Semantic-Guided Zero-Shot Learning for Low-Li (169)"
+  ]
+ },
+ {
+  "name": "M. T. Rasheed",
+  "freq": 2,
+  "score": 15.8,
+  "s2_ids": [
+   "34999535"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "D. Shi",
+  "freq": 2,
+  "score": 15.8,
+  "s2_ids": [
+   "1887263"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhiwei Xiong",
+  "freq": 2,
+  "score": 15.8,
+  "s2_ids": [
+   "2352456"
+  ],
+  "top_citing": [
+   "Deep Fourier-Based Exposure Correction Networ (239)"
+  ]
+ },
+ {
+  "name": "Shuaicheng Liu",
+  "freq": 2,
+  "score": 15.7,
+  "s2_ids": [
+   "2311739754"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Kunchang Li",
+  "freq": 2,
+  "score": 14.7,
+  "s2_ids": [
+   "2115468491"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)"
+  ]
+ },
+ {
+  "name": "Sheng Su",
+  "freq": 2,
+  "score": 14.7,
+  "s2_ids": [
+   "2066629681"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)"
+  ]
+ },
+ {
+  "name": "Peng Gao",
+  "freq": 2,
+  "score": 14.7,
+  "s2_ids": [
+   "144740494"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)"
+  ]
+ },
+ {
+  "name": "Zhengkai Jiang",
+  "freq": 2,
+  "score": 14.7,
+  "s2_ids": [
+   "50676465"
+  ],
+  "top_citing": [
+   "You Only Need 90K Parameters to Adapt Light:  (300)"
+  ]
+ },
+ {
+  "name": "Yulun Zhang",
+  "freq": 2,
+  "score": 14.2,
+  "s2_ids": [
+   "2410227"
+  ],
+  "top_citing": [
+   "Retinexformer: One-stage Retinex-based Transf (725)"
+  ]
+ },
+ {
+  "name": "Jinghao Zhang",
+  "freq": 2,
+  "score": 14.1,
+  "s2_ids": [
+   "2108045911"
+  ],
+  "top_citing": [
+   "Deep Fourier-Based Exposure Correction Networ (239)"
+  ]
+ },
+ {
+  "name": "Chi-Wing Fu",
+  "freq": 2,
+  "score": 13.6,
+  "s2_ids": [
+   "144856288"
+  ],
+  "top_citing": [
+   "Seeing Dynamic Scene in the Dark: A High-Qual (178)"
+  ]
+ },
+ {
+  "name": "Jiaya Jia",
+  "freq": 2,
+  "score": 13.6,
+  "s2_ids": [
+   "1729056"
+  ],
+  "top_citing": [
+   "Seeing Dynamic Scene in the Dark: A High-Qual (178)"
+  ]
+ },
+ {
+  "name": "Jun Chen",
+  "freq": 2,
+  "score": 13.2,
+  "s2_ids": [
+   "2261186402"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jun Jiang",
+  "freq": 2,
+  "score": 13.2,
+  "s2_ids": [
+   "2107975681"
+  ],
+  "top_citing": [
+   "Low-Light Image and Video Enhancement Using D (585)"
+  ]
+ },
+ {
+  "name": "Mingg-Ming Cheng",
+  "freq": 2,
+  "score": 13.2,
+  "s2_ids": [
+   "1557350184"
+  ],
+  "top_citing": [
+   "Low-Light Image and Video Enhancement Using D (585)"
+  ]
+ },
+ {
+  "name": "Jinwei Gu",
+  "freq": 2,
+  "score": 13.2,
+  "s2_ids": [
+   "143785523"
+  ],
+  "top_citing": [
+   "Low-Light Image and Video Enhancement Using D (585)"
+  ]
+ },
+ {
+  "name": "Yue Huang",
+  "freq": 2,
+  "score": 13.0,
+  "s2_ids": [
+   "1950637"
+  ],
+  "top_citing": [
+   "Learning a Simple Low-Light Image Enhancer fr (360)"
+  ]
+ },
+ {
+  "name": "Xiaotong Tu",
+  "freq": 2,
+  "score": 13.0,
+  "s2_ids": [
+   "30693423"
+  ],
+  "top_citing": [
+   "Learning a Simple Low-Light Image Enhancer fr (360)"
+  ]
+ },
+ {
+  "name": "Fenghua Zhu",
+  "freq": 2,
+  "score": 13.0,
+  "s2_ids": [
+   "2242533246",
+   "2273630436"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yifei Pu",
+  "freq": 2,
+  "score": 12.9,
+  "s2_ids": [
+   "7805040"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Samad Wali",
+  "freq": 2,
+  "score": 12.9,
+  "s2_ids": [
+   "104452537"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Ziyi Shen",
+  "freq": 2,
+  "score": 12.7,
+  "s2_ids": [
+   "2182388"
+  ],
+  "top_citing": [
+   "Modeling and Enhancing Low-Quality Retinal Fu (172)"
+  ]
+ },
+ {
+  "name": "H. Fu",
+  "freq": 2,
+  "score": 12.7,
+  "s2_ids": [
+   "1929093"
+  ],
+  "top_citing": [
+   "Modeling and Enhancing Low-Quality Retinal Fu (172)"
+  ]
+ },
+ {
+  "name": "Jianbing Shen",
+  "freq": 2,
+  "score": 12.7,
+  "s2_ids": [
+   "145953515"
+  ],
+  "top_citing": [
+   "Modeling and Enhancing Low-Quality Retinal Fu (172)"
+  ]
+ },
+ {
+  "name": "Ling Shao",
+  "freq": 2,
+  "score": 12.7,
+  "s2_ids": [
+   "144082425"
+  ],
+  "top_citing": [
+   "Modeling and Enhancing Low-Quality Retinal Fu (172)"
+  ]
+ },
+ {
+  "name": "Shaoliang Yang",
+  "freq": 2,
+  "score": 12.6,
+  "s2_ids": [
+   "2162395521"
+  ],
+  "top_citing": [
+   "LightingNet: An Integrated Learning Method fo (116)"
+  ]
+ },
+ {
+  "name": "Boxin Shi",
+  "freq": 2,
+  "score": 12.5,
+  "s2_ids": [
+   "2273929993",
+   "35580784"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yan Yang",
+  "freq": 2,
+  "score": 12.5,
+  "s2_ids": [
+   "2108849557",
+   "2108850820"
+  ],
+  "top_citing": [
+   "Learning a Simple Low-Light Image Enhancer fr (360)"
+  ]
+ },
+ {
+  "name": "Li-Wen Wang",
+  "freq": 2,
+  "score": 12.5,
+  "s2_ids": [
+   "1837949044"
+  ],
+  "top_citing": [
+   "Lightening Network for Low-Light Image Enhanc (250)"
+  ]
+ },
+ {
+  "name": "W. Siu",
+  "freq": 2,
+  "score": 12.5,
+  "s2_ids": [
+   "144250750"
+  ],
+  "top_citing": [
+   "Lightening Network for Low-Light Image Enhanc (250)"
+  ]
+ },
+ {
+  "name": "Zhi-Song Liu",
+  "freq": 2,
+  "score": 12.5,
+  "s2_ids": [
+   "3382725"
+  ],
+  "top_citing": [
+   "Lightening Network for Low-Light Image Enhanc (250)"
+  ]
+ },
+ {
+  "name": "D. Lun",
+  "freq": 2,
+  "score": 12.5,
+  "s2_ids": [
+   "1731962"
+  ],
+  "top_citing": [
+   "Lightening Network for Low-Light Image Enhanc (250)"
+  ]
+ },
+ {
+  "name": "Ying-ji Tai",
+  "freq": 2,
+  "score": 12.3,
+  "s2_ids": [
+   "13459129"
+  ],
+  "top_citing": [
+   "MambaLLIE: Implicit Retinex-Aware Low Light E (103)"
+  ]
+ },
+ {
+  "name": "Qifeng Chen",
+  "freq": 2,
+  "score": 12.3,
+  "s2_ids": [
+   "143832240",
+   "2269692452"
+  ],
+  "top_citing": [
+   "Seeing Motion in the Dark (335)"
+  ]
+ },
+ {
+  "name": "Yuming Fang",
+  "freq": 2,
+  "score": 12.2,
+  "s2_ids": [
+   "2355404388",
+   "4639656"
+  ],
+  "top_citing": [
+   "Band Representation-Based Semi-Supervised Low (203)"
+  ]
+ },
+ {
+  "name": "Yunliang Qi",
+  "freq": 2,
+  "score": 12.2,
+  "s2_ids": [
+   "9273627"
+  ],
+  "top_citing": [
+   "A Comprehensive Overview of Image Enhancement (243)"
+  ]
+ },
+ {
+  "name": "Zhen Yang",
+  "freq": 2,
+  "score": 12.2,
+  "s2_ids": [
+   "2149232984"
+  ],
+  "top_citing": [
+   "A Comprehensive Overview of Image Enhancement (243)"
+  ]
+ },
+ {
+  "name": "Jing Lian",
+  "freq": 2,
+  "score": 12.2,
+  "s2_ids": [
+   "1561165594",
+   "3597137"
+  ],
+  "top_citing": [
+   "A Comprehensive Overview of Image Enhancement (243)"
+  ]
+ },
+ {
+  "name": "Yide Ma",
+  "freq": 2,
+  "score": 12.2,
+  "s2_ids": [
+   "1756244"
+  ],
+  "top_citing": [
+   "A Comprehensive Overview of Image Enhancement (243)"
+  ]
+ },
+ {
+  "name": "Naishan Zheng",
+  "freq": 2,
+  "score": 12.1,
+  "s2_ids": [
+   "104219880"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yuhao Yin",
+  "freq": 2,
+  "score": 12.1,
+  "s2_ids": [
+   "2301176355"
+  ],
+  "top_citing": [
+   "Retinexmamba: Retinex-based Mamba for Low-lig (144)"
+  ]
+ },
+ {
+  "name": "Guiqing Li",
+  "freq": 2,
+  "score": 12.1,
+  "s2_ids": [
+   "2146571179",
+   "2238134221"
+  ],
+  "top_citing": [
+   "DENet: Detection-driven Enhancement Network f (91)"
+  ]
+ },
+ {
+  "name": "Mengyuan Huang",
+  "freq": 2,
+  "score": 12.1,
+  "s2_ids": [
+   "2112586477"
+  ],
+  "top_citing": [
+   "DENet: Detection-driven Enhancement Network f (91)"
+  ]
+ },
+ {
+  "name": "Qingpao Qin",
+  "freq": 2,
+  "score": 12.1,
+  "s2_ids": [
+   "2210509112"
+  ],
+  "top_citing": [
+   "DENet: Detection-driven Enhancement Network f (91)"
+  ]
+ },
+ {
+  "name": "Lin Zhang",
+  "freq": 2,
+  "score": 12.0,
+  "s2_ids": [
+   "2143834929",
+   "2143838789"
+  ],
+  "top_citing": [
+   "Zero-Shot Restoration of Underexposed Images  (284)"
+  ]
+ },
+ {
+  "name": "Wencheng Wang",
+  "freq": 2,
+  "score": 12.0,
+  "s2_ids": [
+   "2120372506",
+   "2177239141"
+  ],
+  "top_citing": [
+   "An Experiment-Based Review of Low-Light Image (332)"
+  ]
+ },
+ {
+  "name": "Xiaojin Wu",
+  "freq": 2,
+  "score": 12.0,
+  "s2_ids": [
+   "50171677"
+  ],
+  "top_citing": [
+   "An Experiment-Based Review of Low-Light Image (332)"
+  ]
+ },
+ {
+  "name": "Xiaohui Yuan",
+  "freq": 2,
+  "score": 12.0,
+  "s2_ids": [
+   "2115844515",
+   "2115844662"
+  ],
+  "top_citing": [
+   "An Experiment-Based Review of Low-Light Image (332)"
+  ]
+ },
+ {
+  "name": "Xun Wang",
+  "freq": 2,
+  "score": 10.9,
+  "s2_ids": [
+   "2115535644",
+   "2261797107"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yurong Guan",
+  "freq": 2,
+  "score": 10.4,
+  "s2_ids": [
+   "2069570743"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chuanming Wang",
+  "freq": 2,
+  "score": 9.7,
+  "s2_ids": [
+   "2109153220"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "J. Suo",
+  "freq": 2,
+  "score": 8.8,
+  "s2_ids": [
+   "144036068"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Qionghai Dai",
+  "freq": 2,
+  "score": 8.8,
+  "s2_ids": [
+   "144954808",
+   "1491800101"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Linfeng Fei",
+  "freq": 2,
+  "score": 8.5,
+  "s2_ids": [
+   "2205900248"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Feng Zhang",
+  "freq": 2,
+  "score": 8.4,
+  "s2_ids": [
+   "2158118770",
+   "2373871211"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jie Li",
+  "freq": 2,
+  "score": 8.3,
+  "s2_ids": [
+   "2298095688",
+   "49298718"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Mingfang Zhang",
+  "freq": 2,
+  "score": 8.0,
+  "s2_ids": [
+   "2290240304"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yanming Hui",
+  "freq": 2,
+  "score": 7.7,
+  "s2_ids": [
+   "2172174907"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Manlu Liu",
+  "freq": 2,
+  "score": 7.6,
+  "s2_ids": [
+   "47842165"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zafar Ali",
+  "freq": 2,
+  "score": 7.5,
+  "s2_ids": [
+   "2143648228"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Gang Li",
+  "freq": 2,
+  "score": 7.4,
+  "s2_ids": [
+   "143736623",
+   "2284864325"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Masakazu Yoshimura",
+  "freq": 2,
+  "score": 7.4,
+  "s2_ids": [
+   "1516952123"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Junji Otsuka",
+  "freq": 2,
+  "score": 7.4,
+  "s2_ids": [
+   "2106282542"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Atsushi Irie",
+  "freq": 2,
+  "score": 7.4,
+  "s2_ids": [
+   "47275565"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "T. Ohashi",
+  "freq": 2,
+  "score": 7.4,
+  "s2_ids": [
+   "3358605"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Gehui Li",
+  "freq": 2,
+  "score": 7.3,
+  "s2_ids": [
+   "2237952104"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhenghao Shi",
+  "freq": 2,
+  "score": 7.3,
+  "s2_ids": [
+   "2853312"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Y. Cao",
+  "freq": 2,
+  "score": 7.3,
+  "s2_ids": [
+   "2112823820"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Mao Ye",
+  "freq": 2,
+  "score": 7.3,
+  "s2_ids": [
+   "144560364",
+   "2294040469"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yunlong Lin",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "2262081005"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Tian Ye",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "2280882260"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Sixiang Chen",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "2111636335"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yingying Wang",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "2261894410"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiaoqian Lv",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "2112411035"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Shengping Zhang",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "1761159"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhibin Yu",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "144803009"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Bing Zheng",
+  "freq": 2,
+  "score": 7.1,
+  "s2_ids": [
+   "49721778"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Zhangkai Ni",
+  "freq": 2,
+  "score": 7.0,
+  "s2_ids": [
+   "38748686"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Aizhong Mi",
+  "freq": 2,
+  "score": 7.0,
+  "s2_ids": [
+   "1894034"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Wenhui Luo",
+  "freq": 2,
+  "score": 7.0,
+  "s2_ids": [
+   "2212920973"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yonglong Jiang",
+  "freq": 2,
+  "score": 6.9,
+  "s2_ids": [
+   "2185025897"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Hongbing Ma",
+  "freq": 2,
+  "score": 6.9,
+  "s2_ids": [
+   "2153231160",
+   "2408757"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Meifang Yang",
+  "freq": 2,
+  "score": 6.8,
+  "s2_ids": [
+   "1443734899"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "K. Chui",
+  "freq": 2,
+  "score": 6.8,
+  "s2_ids": [
+   "1977592",
+   "2057073046"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Hanwei Zhu",
+  "freq": 2,
+  "score": 6.8,
+  "s2_ids": [
+   "151482176"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiaoming Liu",
+  "freq": 2,
+  "score": 6.8,
+  "s2_ids": [
+   "2108960018",
+   "2111120293"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xin Deng",
+  "freq": 2,
+  "score": 6.7,
+  "s2_ids": [
+   "2277041332"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Mai Xu",
+  "freq": 2,
+  "score": 6.7,
+  "s2_ids": [
+   "2297135177"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xiaolin Qin",
+  "freq": 2,
+  "score": 6.6,
+  "s2_ids": [
+   "2268725569",
+   "2342112963"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Ying Chen",
+  "freq": 2,
+  "score": 6.6,
+  "s2_ids": [
+   "2359764258",
+   "47558464"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Kuk-Jin Yoon",
+  "freq": 2,
+  "score": 6.6,
+  "s2_ids": [
+   "2279721731",
+   "51182421"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Gouranga Mandal",
+  "freq": 2,
+  "score": 6.4,
+  "s2_ids": [
+   "46172142"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Diptendu Bhattacharya",
+  "freq": 2,
+  "score": 6.4,
+  "s2_ids": [
+   "36513717"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Parthasarathi De",
+  "freq": 2,
+  "score": 6.4,
+  "s2_ids": [
+   "47409063"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Dongjie Ye",
+  "freq": 2,
+  "score": 6.4,
+  "s2_ids": [
+   "32198004"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yingxu Qiao",
+  "freq": 2,
+  "score": 6.3,
+  "s2_ids": [
+   "103972450"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Tiesong Zhao",
+  "freq": 2,
+  "score": 6.3,
+  "s2_ids": [
+   "2043147",
+   "2153707464"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jiachen Tu",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2360174435"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Guoyi Xu",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2315615688"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yaoxin Jiang",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2410723309"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Jiajia Liu",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2284527438",
+   "2339225957"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yaokun Shi",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2360348276"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Shijun Shi",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2260645441"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Yong Liu",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2257376004",
+   "2265222933"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Kai Hu",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "2341287465"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Xianfang Zeng",
+  "freq": 2,
+  "score": 6.2,
+  "s2_ids": [
+   "22248940"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Wei Zhou",
+  "freq": 2,
+  "score": 6.0,
+  "s2_ids": [
+   "2256662364",
+   "2337299236"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Wenhui Wu",
+  "freq": 2,
+  "score": 6.0,
+  "s2_ids": [
+   "2139644112"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Pingping Zhang",
+  "freq": 2,
+  "score": 6.0,
+  "s2_ids": [
+   "2154286605"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chao Wang",
+  "freq": 2,
+  "score": 6.0,
+  "s2_ids": [
+   "2144446642",
+   "2293588391"
+  ],
+  "top_citing": []
+ },
+ {
+  "name": "Chao Xu",
+  "freq": 2,
+  "score": 6.0,
+  "s2_ids": [
+   "2190472895"
+  ],
+  "top_citing": []
+ }
+]

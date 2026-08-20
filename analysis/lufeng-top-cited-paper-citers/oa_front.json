@@ -1,0 +1,19 @@
+{
+  "url": "https://openalex.org/works?search=MBLLEN%3A%20Low-light%20Image%2FVideo%20Enhancement%20Using%20CNNs",
+  "status": "ok",
+  "title": "OpenAlex",
+  "content": "We're sorry but ourresearch-website-2 doesn't work properly without JavaScript enabled. Please enable it to continue.",
+  "links": [],
+  "metadata": {
+    "status_code": 200,
+    "reason": "",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T10:13:40.839704+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 0,
+    "robots_allowed": true,
+    "robots_url": "https://openalex.org/robots.txt"
+  },
+  "extracted": null
+}

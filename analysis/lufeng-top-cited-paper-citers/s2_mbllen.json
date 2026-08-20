@@ -1,0 +1,310 @@
+[
+  {
+    "id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Feifan Lv",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Feng Lu",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Jianhua Wu",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "C. Lim",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2018,
+    "venue": "British Machine Vision Conference",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": null,
+    "doi": null,
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "pdf_url": null,
+    "citations": 804,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+        "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+        "collected_at": "2026-08-17T09:54:39.287839Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+          "externalIds": {
+            "MAG": "2893333553",
+            "DBLP": "conf/bmvc/LvLWL18",
+            "CorpusId": 52285038
+          },
+          "url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+          "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+          "venue": "British Machine Vision Conference",
+          "year": 2018,
+          "citationCount": 804,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://bmvc2018.org/contents/papers/0700.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "51290122",
+              "name": "Feifan Lv"
+            },
+            {
+              "authorId": "1388864077",
+              "name": "Feng Lu"
+            },
+            {
+              "authorId": "2110461678",
+              "name": "Jianhua Wu"
+            },
+            {
+              "authorId": "31628415",
+              "name": "C. Lim"
+            }
+          ],
+          "abstract": null
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "abd96cf9c0b3f90d776a7e67f2eac2b5f3a4def5",
+    "title": "Kinder: Dark light image enhancement method based on improved U-net",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Huiping Li",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yanan Yu",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yaozhi Wang",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2023,
+    "venue": "International Conference on Computer Applications Technology",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Aiming at the problems of poor visibility, color distortion, detail loss and low contrast degradation of images acquired in dark light environment, a dark light image enhancement method based on improved U-net is proposed, which is called Kinder. On the basis of Retinex theory, the network is divided into three parts: layer decomposition network, reflectance recovery network and illumination regulation network. Based on U-net, the reflectance recovery network introduces Res-Block and spatial attention mechanism. The addition of Res-Block not only deepens the network structure, but also improves the network’s ability to express features. The spatial attention mechanism could get more attention for low-light area and better solve the degradation phenomenon. The experimental results show that Kinder performs well in objective evaluation index compared with the current advanced dark light image enhancement algorithms, such as Retinex-net, MBLLEN, GLADNET and KinD. Compared with KinD, the SSIM value has increased by 1% and the PSNR value has increased by 20%. This method not only improves the overexposure problem of the enhanced image, but also maintains the color fidelity and details of the image, which has a better performance effect in visual presentation.",
+    "doi": "10.1109/CCAT59108.2023.00065",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/abd96cf9c0b3f90d776a7e67f2eac2b5f3a4def5",
+    "pdf_url": null,
+    "citations": 0,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "abd96cf9c0b3f90d776a7e67f2eac2b5f3a4def5",
+        "source_url": "https://www.semanticscholar.org/paper/abd96cf9c0b3f90d776a7e67f2eac2b5f3a4def5",
+        "collected_at": "2026-08-17T09:54:39.287839Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "abd96cf9c0b3f90d776a7e67f2eac2b5f3a4def5",
+          "externalIds": {
+            "DOI": "10.1109/CCAT59108.2023.00065",
+            "CorpusId": 267505522
+          },
+          "url": "https://www.semanticscholar.org/paper/abd96cf9c0b3f90d776a7e67f2eac2b5f3a4def5",
+          "title": "Kinder: Dark light image enhancement method based on improved U-net",
+          "venue": "International Conference on Computer Applications Technology",
+          "year": 2023,
+          "citationCount": 0,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/CCAT59108.2023.00065?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/CCAT59108.2023.00065, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": null,
+          "authors": [
+            {
+              "authorId": "2154745851",
+              "name": "Huiping Li"
+            },
+            {
+              "authorId": "2283509876",
+              "name": "Yanan Yu"
+            },
+            {
+              "authorId": "2283314616",
+              "name": "Yaozhi Wang"
+            }
+          ],
+          "abstract": "Aiming at the problems of poor visibility, color distortion, detail loss and low contrast degradation of images acquired in dark light environment, a dark light image enhancement method based on improved U-net is proposed, which is called Kinder. On the basis of Retinex theory, the network is divided into three parts: layer decomposition network, reflectance recovery network and illumination regulation network. Based on U-net, the reflectance recovery network introduces Res-Block and spatial attention mechanism. The addition of Res-Block not only deepens the network structure, but also improves the network’s ability to express features. The spatial attention mechanism could get more attention for low-light area and better solve the degradation phenomenon. The experimental results show that Kinder performs well in objective evaluation index compared with the current advanced dark light image enhancement algorithms, such as Retinex-net, MBLLEN, GLADNET and KinD. Compared with KinD, the SSIM value has increased by 1% and the PSNR value has increased by 20%. This method not only improves the overexposure problem of the enhanced image, but also maintains the color fidelity and details of the image, which has a better performance effect in visual presentation."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "0609b0643e472071503f0994a2a329781ef912cd",
+    "title": "One improve CycleGAN network for image enhancement under low illumination environment",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Long Xiao",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Fengchao Wang",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Jin Chen",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yu Sun",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Jing Yang",
+        "position": 5,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2023,
+    "venue": "International Conference on Information Systems and Computer Aided Education",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "The low-light conditions were poor, resulting in low-quality photos and image recognition errors. To address this issue, a image enhancement method was proposed based on an improved amplitude Cycle-Consistent Generative Adversarial Networks (CycleGAN) network in low light. A transformer focusing mechanism is added to the emitter CycleGAN generator network to enhance the information of images in low-light and improve image exposure rates, while identity loss is used to guarantee the enhanced quality and resolution of fuzzy images. The improved model was conducted a comparative analysis of CycleGAN, MBLLEN, Kind and DeepUPE, using the license plate dataset and found that it is more stable than the existing model in both SSIM and PSNR.",
+    "doi": "10.1109/ICISCAE59047.2023.10392948",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/0609b0643e472071503f0994a2a329781ef912cd",
+    "pdf_url": null,
+    "citations": 3,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "0609b0643e472071503f0994a2a329781ef912cd",
+        "source_url": "https://www.semanticscholar.org/paper/0609b0643e472071503f0994a2a329781ef912cd",
+        "collected_at": "2026-08-17T09:54:39.287839Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "0609b0643e472071503f0994a2a329781ef912cd",
+          "externalIds": {
+            "DBLP": "conf/iciscae/XiaoWCSY23",
+            "DOI": "10.1109/ICISCAE59047.2023.10392948",
+            "CorpusId": 267107192
+          },
+          "url": "https://www.semanticscholar.org/paper/0609b0643e472071503f0994a2a329781ef912cd",
+          "title": "One improve CycleGAN network for image enhancement under low illumination environment",
+          "venue": "International Conference on Information Systems and Computer Aided Education",
+          "year": 2023,
+          "citationCount": 3,
+          "openAccessPdf": {
+            "url": "",
+            "status": "CLOSED",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICISCAE59047.2023.10392948?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICISCAE59047.2023.10392948, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2110478202",
+              "name": "Long Xiao"
+            },
+            {
+              "authorId": "2143467439",
+              "name": "Fengchao Wang"
+            },
+            {
+              "authorId": "2274320032",
+              "name": "Jin Chen"
+            },
+            {
+              "authorId": "2117104439",
+              "name": "Yu Sun"
+            },
+            {
+              "authorId": "2279862742",
+              "name": "Jing Yang"
+            }
+          ],
+          "abstract": "The low-light conditions were poor, resulting in low-quality photos and image recognition errors. To address this issue, a image enhancement method was proposed based on an improved amplitude Cycle-Consistent Generative Adversarial Networks (CycleGAN) network in low light. A transformer focusing mechanism is added to the emitter CycleGAN generator network to enhance the information of images in low-light and improve image exposure rates, while identity loss is used to guarantee the enhanced quality and resolution of fuzzy images. The improved model was conducted a comparative analysis of CycleGAN, MBLLEN, Kind and DeepUPE, using the license plate dataset and found that it is more stable than the existing model in both SSIM and PSNR."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  }
+]

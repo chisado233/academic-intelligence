@@ -1,0 +1,89 @@
+{
+ "MBLLEN (BMVC18)": {
+  "paperId": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+  "externalIds": {
+   "MAG": "2893333553",
+   "DBLP": "conf/bmvc/LvLWL18",
+   "CorpusId": 52285038
+  },
+  "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+  "venue": "British Machine Vision Conference",
+  "year": 2018,
+  "citationCount": 804,
+  "influentialCitationCount": 105
+ },
+ "Reflection Backdoor (ECCV20)": {
+  "paperId": "9d5434885b76ed7cd83f00cb81c929d087775e9a",
+  "externalIds": {
+   "ArXiv": "2007.02343",
+   "DBLP": "conf/eccv/LiuM0020",
+   "MAG": "3039176595",
+   "DOI": "10.1007/978-3-030-58607-2_11",
+   "CorpusId": 220363879
+  },
+  "title": "Reflection Backdoor: A Natural Backdoor Attack on Deep Neural Networks",
+  "venue": "European Conference on Computer Vision",
+  "year": 2020,
+  "citationCount": 621,
+  "influentialCitationCount": 75
+ },
+ "Nature Med DR (2024)": {
+  "paperId": "d767ed8008f0ac92a58b80207140110fef656168",
+  "externalIds": {
+   "PubMedCentral": "10878973",
+   "DOI": "10.1038/s41591-023-02702-z",
+   "CorpusId": 283950936,
+   "PubMed": "38177850"
+  },
+  "title": "A deep learning system for predicting time to progression of diabetic retinopathy",
+  "venue": "Nature Medicine",
+  "year": 2024,
+  "citationCount": 96,
+  "influentialCitationCount": 5
+ },
+ "IJCV Attention Guided (2021)": {
+  "paperId": "68dec8d0c97827ce1a943152e6620b8e300d568e",
+  "externalIds": {
+   "MAG": "3012119911",
+   "ArXiv": "1908.00682",
+   "DBLP": "journals/ijcv/LvLL21",
+   "DOI": "10.1007/s11263-021-01466-8",
+   "CorpusId": 215878120
+  },
+  "title": "Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset",
+  "venue": "International Journal of Computer Vision",
+  "year": 2019,
+  "citationCount": 333,
+  "influentialCitationCount": 25
+ },
+ "TIP Poor Visibility (2020)": {
+  "paperId": "9ac5bb2be62309abc73f5e78839e807101db7ecc",
+  "externalIds": {
+   "MAG": "3013338555",
+   "DBLP": "journals/tip/YangYRLSWZZXPZQ20",
+   "ArXiv": "1904.04474",
+   "DOI": "10.1109/TIP.2020.2981922",
+   "CorpusId": 202739395,
+   "PubMed": "32224457"
+  },
+  "title": "Advancing Image Understanding in Poor Visibility Environments: A Collective Benchmark Study",
+  "venue": "IEEE Transactions on Image Processing",
+  "year": 2019,
+  "citationCount": 340,
+  "influentialCitationCount": 22
+ },
+ "GazeOnce CVPR22": {
+  "paperId": "6d95a678903347b8764e04d287c672242dae29dc",
+  "externalIds": {
+   "ArXiv": "2203.09566",
+   "DBLP": "journals/corr/abs-2203-09566",
+   "DOI": "10.1109/CVPR52688.2022.01015",
+   "CorpusId": 247595200
+  },
+  "title": "Leveraging Adversarial Examples to Quantify Membership Information Leakage",
+  "venue": "Computer Vision and Pattern Recognition",
+  "year": 2022,
+  "citationCount": 34,
+  "influentialCitationCount": 1
+ }
+}

@@ -1,0 +1,852 @@
+[
+  {
+    "citing_paper_id": "e0ec3e2eaf2c091fcc95f54749f2a1419c63263e",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "e0ec3e2eaf2c091fcc95f54749f2a1419c63263e",
+          "title": "SPIM-FUSE: Sparsely-Coded Image Fusion for Low-Light Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "ad8afccbec3dc798ec11eb2192307b3f77a47c8b",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "ad8afccbec3dc798ec11eb2192307b3f77a47c8b",
+          "title": "ViD-EnlightenGAN: A Temporally Aware GAN for Unsupervised Low-Light Video Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "2558070b1c2e5b9cf3a867d3a9d70eaa7f814062",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "2558070b1c2e5b9cf3a867d3a9d70eaa7f814062",
+          "title": "Bright-Channel Retinex Enhancement with a Conditional Overdispered-Noise Analysis"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "d7665fb470327d388cbebbbbfb4143908445c2cd",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "d7665fb470327d388cbebbbbfb4143908445c2cd",
+          "title": "UBLLIE: Unified Backlight and Low-Light Image Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "94b12640c1ef5a6f3586a4529d1bb99a729eac58",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "94b12640c1ef5a6f3586a4529d1bb99a729eac58",
+          "title": "UAV-LIENet: a low-light UAV image enhancement network via illumination estimation and guidance"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "12f83d029aa039d41c997f3e0ab52618fe17298b",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "12f83d029aa039d41c997f3e0ab52618fe17298b",
+          "title": "PSO-based parameter optimization of intuitionistic fuzzy generator for low-light image enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "0024e561025f20a598f477407646ec2bda40bdab",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "0024e561025f20a598f477407646ec2bda40bdab",
+          "title": "Thresholded Cross-Attention for Reliable Intensity-Chromaticity Fusion in Low-Light Image Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "2ac225ed6edb52c70ac924908af73695c47b7ef9",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "2ac225ed6edb52c70ac924908af73695c47b7ef9",
+          "title": "Probabilistic-Based Learning for Joint Light Field Image Compression and Enhancement Under Low-Light Conditions"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "500ae7ee37662ef23a6ac4a9ba77340186a8b0cd",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "500ae7ee37662ef23a6ac4a9ba77340186a8b0cd",
+          "title": "Integration of KAN with an enhanced multi-scale mamba architecture for low-light image enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "fc0d6115c1d3e1806339eaef3b79cdac03d0e559",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "fc0d6115c1d3e1806339eaef3b79cdac03d0e559",
+          "title": "Unleashing the potential of Mamba: A novel approach for low-light image enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "c3832c68ac3cceb4105af2e6cf4fdb5a11cd112a",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "c3832c68ac3cceb4105af2e6cf4fdb5a11cd112a",
+          "title": "Diffusion-guided knowledge absorption for robust object detection under rainy night conditions"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "e44e202dc19c9c57e8050f0fe41806ec9a97f12c",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "e44e202dc19c9c57e8050f0fe41806ec9a97f12c",
+          "title": "FRT-Net: A Lightweight Frequency-Spatial Framework for Low-Light Enhancement via Retinex Decomposition and FFT Filtering"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "1ce0351f318bb42c3d217c10fa96dd4b75e3fa60",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "1ce0351f318bb42c3d217c10fa96dd4b75e3fa60",
+          "title": "GAformer: Low-Light Image Enhancement Based on Gradient-Aware Kernel and Frequency-Modulated Transformer"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "78fcd41d22e896dd08cfd9a574d801fc9ee6a8ed",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "78fcd41d22e896dd08cfd9a574d801fc9ee6a8ed",
+          "title": "Deep multi-patch hierarchical network for coal-mine roller tank lug low-light image enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "95c2c99787c133a5c0156fef6fc64fe35481ccf9",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "95c2c99787c133a5c0156fef6fc64fe35481ccf9",
+          "title": "Seeing in the Dark with Ambient Guidance"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "47298d6f6faf953a41d57d7ab8bd7a5c08369946",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "47298d6f6faf953a41d57d7ab8bd7a5c08369946",
+          "title": "SEGCA-Net: Structure-exposure guided cross attention network for low-light image enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "b9919071c867f25fbaf394c0b833c53c20a6e69f",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "b9919071c867f25fbaf394c0b833c53c20a6e69f",
+          "title": "CS³-Diff: Collaborative spatio-spectral-scale guided diffusion for low-light image enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "a363d08af884fb0b425156099555cd27eca23741",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "a363d08af884fb0b425156099555cd27eca23741",
+          "title": "Lightweight Low-Light Enhancement Network with Multi-Bio-Inspired Visual Mechanisms"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+          "title": "Low-Light Video Frame Enhancement with High-Frequency Reflectance Boosting and Adaptive Illumination Adjustment"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "1b2711b84d6abaf3bbcf182a2c27a357a166b727",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "1b2711b84d6abaf3bbcf182a2c27a357a166b727",
+          "title": "PenPy-DETR: A Penta-Pyramid Framework for Small Target Perception in Low-Light"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "f032ef0a283f237c57449bb2bb220ddfabaaee09",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "f032ef0a283f237c57449bb2bb220ddfabaaee09",
+          "title": "Internally Referenced Low-Light Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "1a5f2a0dd475755922778d6c95dfba69d56bc785",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "1a5f2a0dd475755922778d6c95dfba69d56bc785",
+          "title": "PixIE: Prompted Pixel-Space Low-Light Image Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "3826c2988bb6f03b0ca2da518545134e2e24a1ed",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "3826c2988bb6f03b0ca2da518545134e2e24a1ed",
+          "title": "Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "19d2f3701c200928f52b6fc6f94d919f76f41a12",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "19d2f3701c200928f52b6fc6f94d919f76f41a12",
+          "title": "Making the Discrete Continuous: Synthetic RAW Augmentations for Fine-Grained Evaluation of Person Detection Performance in Low Light"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "7838b9795e995310ef06a552e4f2215ba03eda5c",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "7838b9795e995310ef06a552e4f2215ba03eda5c",
+          "title": "Moment-Reenacting: Inverse Motion Degradation with Cross-shutter Guidance"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "0a4601df6d5a9d39946c05aece1c70d1c107db08",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "0a4601df6d5a9d39946c05aece1c70d1c107db08",
+          "title": "A Survey on Weak Contrast Image Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "fb8e78777949e17a6492c5de6517240145fccff3",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "fb8e78777949e17a6492c5de6517240145fccff3",
+          "title": "A low-light image enhancement network with attention and cross-branch interaction for real-world low-illumination scenes"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "ea7f4fb3521989004186ddbc81c2bb68c2687cc0",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "ea7f4fb3521989004186ddbc81c2bb68c2687cc0",
+          "title": "AMIEOD: Adaptive Multi-Experts Image Enhancement for Object Detection in Low-Illumination Scenes"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "94b99de142cbeededc861f10bcd594da9de1f6ea",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "94b99de142cbeededc861f10bcd594da9de1f6ea",
+          "title": "A two-stage low-light image enhancement network combining spatial and frequency information"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "05f3adfc38fca23385b27c210f37b03edd5a45cf",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "05f3adfc38fca23385b27c210f37b03edd5a45cf",
+          "title": "LIVE-Net: A unified lightweight network for low-light image and video enhancement with temporal consistency"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "8872519c1eb863cc5bc67fa66e5ca4306910bc1e",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "8872519c1eb863cc5bc67fa66e5ca4306910bc1e",
+          "title": "LADC: A Dual-Branch Adaptive Image Enhancement Method Based on Feature Decoupling"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "277888ed55e84bdd7148d3cf99d4f92c5f478dce",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "277888ed55e84bdd7148d3cf99d4f92c5f478dce",
+          "title": "An Online Alignment Method for Pixel Misalignment Between Inputs and Ground Truth"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "919041dd9587343cb799833c2dc235f595ddba31",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "919041dd9587343cb799833c2dc235f595ddba31",
+          "title": "Light 'em Up: Enabling Few-Shot Low-Light 3D Gaussian Splatting with Multi-Scale Explicit Retinex Illumination Decoupling"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "a4619621fe01a821aa6cfecb4778c31683b660b0",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "a4619621fe01a821aa6cfecb4778c31683b660b0",
+          "title": "Low Light Image Enhancement Challenge at NTIRE 2026"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "440abefc2c0ddff7c7c0c5bea3bcc5b5162cee6c",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "440abefc2c0ddff7c7c0c5bea3bcc5b5162cee6c",
+          "title": "DRE-YOLO: A dual-path retinex enhancement network for low-light object detection"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "0f1f6925965405918e25d7ea84958837f84ebf13",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "0f1f6925965405918e25d7ea84958837f84ebf13",
+          "title": "RZSL-PSR: Noise-Disentangled Retinex Zero-Shot Framework for Lunar PSR Image Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "4e1eec57223adef054e396bf6d91f1f1babd50d8",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "4e1eec57223adef054e396bf6d91f1f1babd50d8",
+          "title": "NTIRE 2026 The 3rd Restore Any Image Model (RAIM) Challenge: AI Flash Portrait (Track 3)"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "afa86e42ae30272489debb9d4fdb388c8bcf30c2",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "afa86e42ae30272489debb9d4fdb388c8bcf30c2",
+          "title": "Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "99a42d8dfdea47593b1ac3d955abe1626fbb95ab",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "99a42d8dfdea47593b1ac3d955abe1626fbb95ab",
+          "title": "Analysis of DCE Iterations Using ResNetDCE for Low-Light Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "7b508ff2499b13014e593d8e1efdc0c488e4acc4",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "7b508ff2499b13014e593d8e1efdc0c488e4acc4",
+          "title": "Single-Stage Signal Attenuation Diffusion Model for Low-Light Image Enhancement and Denoising"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "7711a6b179eb36f66aaf4cdf338fd5454019277e",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "7711a6b179eb36f66aaf4cdf338fd5454019277e",
+          "title": "SG-CIDNet: structure-guided low-light image enhancement network in HVI space"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "67f6aa723071b1eb68692ceb6a74b08d5dd76145",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "67f6aa723071b1eb68692ceb6a74b08d5dd76145",
+          "title": "EeveeDark: A Binary Neural Framework for Low-Light Video Enhancement via Event-Guided Sensor-Level Fusion"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "3dd0297a4e9133a38231a7744d56612b8cd8dfc3",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "3dd0297a4e9133a38231a7744d56612b8cd8dfc3",
+          "title": "DarkCORE: Efficient low-light object detection via collaborative reflectance denoising and object-oriented feature enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "9d7332dcc5222a31cfa001fc442082ac0abed1d7",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "9d7332dcc5222a31cfa001fc442082ac0abed1d7",
+          "title": "SNRD-Net: SNR-aware dual enhancement network for low-light images"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "1a7ad1717df80cb8bf1b5e072aedc748f3e79f6d",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.728508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "1a7ad1717df80cb8bf1b5e072aedc748f3e79f6d",
+          "title": "DADNet: Dual-Branch Low-Light Image Enhancement Network Based on Attention Mechanism and Dark Channel Prior"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "de2cf5d002f911b1ef96e220dabea1c958f0d76e",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.729508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "de2cf5d002f911b1ef96e220dabea1c958f0d76e",
+          "title": "HVIFormer: A Dual-Stage Low-Light Image Enhancement Method Based on HVI Representation"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "cd05df06b7616e4c07415155af1a186d611dd2a6",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.729508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "cd05df06b7616e4c07415155af1a186d611dd2a6",
+          "title": "Low-Light Image Enhancement for Edge-Based Security Surveillance in 6G-IoT Visual Systems"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "7ac171d1c4d141c740c1a084b8fbfc58030026ef",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.729508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "7ac171d1c4d141c740c1a084b8fbfc58030026ef",
+          "title": "Low-Light Image Enhancement via Deep Curve Estimation with Feature Refinement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "5786b87bf2492a759f3b130c5dd3d53a73a8eb05",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.729508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "5786b87bf2492a759f3b130c5dd3d53a73a8eb05",
+          "title": "Target Detection in Underground Mines Based on Low-Light Image Enhancement"
+        }
+      }
+    }
+  },
+  {
+    "citing_paper_id": "207be8dcde32a570c3453510d7caa5c6cf324a20",
+    "cited_paper_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "evidence": {
+      "source": "semantic_scholar",
+      "source_id": null,
+      "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+      "collected_at": "2026-08-17T10:11:58.729508Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "citingPaper": {
+          "paperId": "207be8dcde32a570c3453510d7caa5c6cf324a20",
+          "title": "IGDBT: Illumination-guide dual branch transformer for low-light image enhancement"
+        }
+      }
+    }
+  }
+]

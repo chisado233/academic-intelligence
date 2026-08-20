@@ -1,0 +1,110 @@
+{
+  "id": "776a288043825213ff3e259c1e570721aff12d99",
+  "title": "SymPS: BRDF Symmetry Guided Photometric Stereo for Shape and Light Source Estimation",
+  "authors": [
+    {
+      "author_id": null,
+      "name": "Feng Lu",
+      "position": 1,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Xiaowu Chen",
+      "position": 2,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Imari Sato",
+      "position": 3,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Yoichi Sato",
+      "position": 4,
+      "is_corresponding": false,
+      "affiliation": null
+    }
+  ],
+  "year": 2018,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "venue_type": null,
+  "publisher": null,
+  "abstract": null,
+  "doi": "10.1109/TPAMI.2017.2655525",
+  "arxiv_id": null,
+  "pmid": null,
+  "url": "https://www.semanticscholar.org/paper/776a288043825213ff3e259c1e570721aff12d99",
+  "pdf_url": null,
+  "citations": 45,
+  "reference_count": null,
+  "keywords": [
+    "Computer Science",
+    "Medicine"
+  ],
+  "fields_of_study": [
+    "Computer Science",
+    "Medicine"
+  ],
+  "references": null,
+  "citations_list": null,
+  "evidence_list": [
+    {
+      "source": "semantic_scholar",
+      "source_id": "776a288043825213ff3e259c1e570721aff12d99",
+      "source_url": "https://www.semanticscholar.org/paper/776a288043825213ff3e259c1e570721aff12d99",
+      "collected_at": "2026-08-17T09:56:41.202778Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "paperId": "776a288043825213ff3e259c1e570721aff12d99",
+        "externalIds": {
+          "DBLP": "journals/pami/LuCSS18",
+          "MAG": "2576378358",
+          "DOI": "10.1109/TPAMI.2017.2655525",
+          "CorpusId": 21256030,
+          "PubMed": "28113338"
+        },
+        "url": "https://www.semanticscholar.org/paper/776a288043825213ff3e259c1e570721aff12d99",
+        "title": "SymPS: BRDF Symmetry Guided Photometric Stereo for Shape and Light Source Estimation",
+        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "year": 2018,
+        "citationCount": 45,
+        "openAccessPdf": {
+          "url": "",
+          "status": "CLOSED",
+          "license": null,
+          "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/TPAMI.2017.2655525?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/TPAMI.2017.2655525, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "fieldsOfStudy": [
+          "Computer Science",
+          "Medicine"
+        ],
+        "authors": [
+          {
+            "authorId": "1388864077",
+            "name": "Feng Lu"
+          },
+          {
+            "authorId": "1425091532",
+            "name": "Xiaowu Chen"
+          },
+          {
+            "authorId": "1746794",
+            "name": "Imari Sato"
+          },
+          {
+            "authorId": "9467266",
+            "name": "Yoichi Sato"
+          }
+        ],
+        "abstract": null
+      }
+    }
+  ],
+  "synthetic_confidence": null
+}

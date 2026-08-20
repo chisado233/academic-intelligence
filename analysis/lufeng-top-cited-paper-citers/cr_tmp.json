@@ -1,0 +1,969 @@
+[
+  {
+    "id": null,
+    "title": "Uncalibrated Photometric Stereo Under Natural Illumination",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Zhipeng Mo",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Boxin Shi",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Feng Lu",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Sai-Kit Yeung",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yasuyuki Matsushita",
+        "position": 5,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2018,
+    "venue": "2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+    "venue_type": null,
+    "publisher": "IEEE",
+    "abstract": null,
+    "doi": "10.1109/cvpr.2018.00310",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "http://xplorestaging.ieee.org/ielx7/8576498/8578098/08578408.pdf?arnumber=8578408",
+    "pdf_url": null,
+    "citations": 29,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "crossref",
+        "source_id": "10.1109/cvpr.2018.00310",
+        "source_url": "https://doi.org/10.1109/cvpr.2018.00310",
+        "collected_at": "2026-08-17T09:53:42.731377Z",
+        "confidence": 0.9,
+        "raw_data": {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                5,
+                1
+              ]
+            ],
+            "date-time": "2026-05-01T17:04:16Z",
+            "timestamp": 1777655056423,
+            "version": "3.51.4"
+          },
+          "reference-count": 36,
+          "publisher": "IEEE",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2018,
+                6
+              ]
+            ]
+          },
+          "DOI": "10.1109/cvpr.2018.00310",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2018,
+                12,
+                18
+              ]
+            ],
+            "date-time": "2018-12-18T01:49:37Z",
+            "timestamp": 1545097777000
+          },
+          "page": "2936-2945",
+          "source": "Crossref",
+          "is-referenced-by-count": 29,
+          "title": [
+            "Uncalibrated Photometric Stereo Under Natural Illumination"
+          ],
+          "prefix": "10.1109",
+          "author": [
+            {
+              "given": "Zhipeng",
+              "family": "Mo",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Boxin",
+              "family": "Shi",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Feng",
+              "family": "Lu",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Sai-Kit",
+              "family": "Yeung",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Yasuyuki",
+              "family": "Matsushita",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2013.197"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2009.15"
+            },
+            {
+              "key": "ref31",
+              "article-title": "Robust photometric stereo via low-rank matrix completion and recovery",
+              "author": "wu",
+              "year": "2010",
+              "journal-title": "Proc of Asian Conference on Computer Vision (ACCV)"
+            },
+            {
+              "key": "ref30",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1117/12.7972479"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1023/A:1008180726317"
+            },
+            {
+              "key": "ref35",
+              "article-title": "Outdoor photometric stereo",
+              "author": "yu",
+              "year": "2013",
+              "journal-title": "IEEE International Conference on Computational Photography (ICCP)"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2014.2343211"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/280814.280864"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2012.6247754"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1364/JOSAA.11.003079"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2007.70820"
+            },
+            {
+              "key": "ref14",
+              "first-page": "1234",
+              "article-title": "A handheld photometric stereo camera for 3-D modeling",
+              "author": "higo",
+              "year": "2009",
+              "journal-title": "Proc of International Conference on Computer Vision (ICCV)"
+            },
+            {
+              "key": "ref15",
+              "article-title": "x-hour photometric stereo",
+              "author": "hold-geoffroy",
+              "year": "2015",
+              "journal-title": "International Conference on 3D Vision (3DV)"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2015.7299082"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2013.196"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11263-009-0262-9"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1364/JOSAA.24.003326"
+            },
+            {
+              "key": "ref28",
+              "article-title": "Visibility subspaces: uncalibrated photometric stereo with shadows",
+              "author": "sunkavalli",
+              "year": "2010",
+              "journal-title": "Proc of European Conference on Computer Vision (ECCV)"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2007.4408881"
+            },
+            {
+              "key": "ref27",
+              "article-title": "A benchmark dataset and evaluation for non-Iambertian and uncalibrated photometric stereo",
+              "author": "shi",
+              "year": "2018",
+              "journal-title": "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+            },
+            {
+              "key": "ref3",
+              "article-title": "Removing the example from example-based photometric stereo",
+              "author": "ackermann",
+              "year": "2010",
+              "journal-title": "Proc RMLE Workshop in ECCV"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11263-006-8815-7"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2007.383207"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2007.383208"
+            },
+            {
+              "key": "ref8",
+              "article-title": "A microfacet-based refectance model for photometric stereo with highly specular surfaces",
+              "author": "chen",
+              "year": "2017",
+              "journal-title": "Proc of International Conference on Computer Vision (ICCV)"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1023/A:1008154927611"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2012.6247684"
+            },
+            {
+              "key": "ref9",
+              "article-title": "Photometric stereo under non-uniform light intensities and exposures",
+              "author": "cho",
+              "year": "2016",
+              "journal-title": "Proc of European Conference on Computer Vision (ECCV)"
+            },
+            {
+              "key": "ref1",
+              "article-title": "Heliometric stereo",
+              "author": "abrams",
+              "year": "2012",
+              "journal-title": "Proc of European Conference on Computer Vision (ECCV)"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2009.5459381"
+            },
+            {
+              "key": "ref22",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11263-013-0665-5"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2014.277"
+            },
+            {
+              "key": "ref24",
+              "article-title": "Photometric stereo using internet images",
+              "author": "shi",
+              "year": "2014",
+              "journal-title": "International Conference on 3D Vision (3DV)"
+            },
+            {
+              "key": "ref23",
+              "article-title": "Photometric stereo and weather estimation using internet images",
+              "author": "shen",
+              "year": "2009",
+              "journal-title": "Proc of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2013.196"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2010.5540091"
+            }
+          ],
+          "event": {
+            "name": "2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+            "location": "Salt Lake City, UT",
+            "start": {
+              "date-parts": [
+                [
+                  2018,
+                  6,
+                  18
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2018,
+                  6,
+                  23
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/8576498/8578098/08578408.pdf?arnumber=8578408",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2022,
+                1,
+                27
+              ]
+            ],
+            "date-time": "2022-01-27T14:04:31Z",
+            "timestamp": 1643292271000
+          },
+          "score": 50.213062,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/8578408/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2018,
+                6
+              ]
+            ]
+          },
+          "references-count": 36,
+          "URL": "https://doi.org/10.1109/cvpr.2018.00310",
+          "published": {
+            "date-parts": [
+              [
+                2018,
+                6
+              ]
+            ]
+          }
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": null,
+    "title": "Polar-Photometric Stereo Under Natural Illumination",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Yuqi Ding",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": "Louisiana State University"
+      },
+      {
+        "author_id": null,
+        "name": "Yu Ji",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": "Tencent Pixel Lab"
+      },
+      {
+        "author_id": null,
+        "name": "Jinwei Ye",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": "George Mason University"
+      }
+    ],
+    "year": 2022,
+    "venue": "2022 International Conference on 3D Vision (3DV)",
+    "venue_type": null,
+    "publisher": "IEEE",
+    "abstract": null,
+    "doi": "10.1109/3dv57658.2022.00079",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "http://xplorestaging.ieee.org/ielx7/10044366/10044387/10044442.pdf?arnumber=10044442",
+    "pdf_url": null,
+    "citations": 2,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "crossref",
+        "source_id": "10.1109/3dv57658.2022.00079",
+        "source_url": "https://doi.org/10.1109/3dv57658.2022.00079",
+        "collected_at": "2026-08-17T09:53:42.731377Z",
+        "confidence": 0.9,
+        "raw_data": {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                2,
+                28
+              ]
+            ],
+            "date-time": "2026-02-28T18:30:48Z",
+            "timestamp": 1772303448845,
+            "version": "3.50.1"
+          },
+          "reference-count": 47,
+          "publisher": "IEEE",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2022-09-01T00:00:00Z",
+                "timestamp": 1661990400000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2022-09-01T00:00:00Z",
+                "timestamp": 1661990400000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/100000001",
+              "name": "NSF",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "CRII-1948524,NRI-2024795"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "CRII-1948524,NRI-2024795"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/100000001",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2022,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/3dv57658.2022.00079",
+          "type": "proceedings-article",
+          "created": {
+            "date-parts": [
+              [
+                2023,
+                2,
+                22
+              ]
+            ],
+            "date-time": "2023-02-22T18:25:03Z",
+            "timestamp": 1677090303000
+          },
+          "page": "690-699",
+          "source": "Crossref",
+          "is-referenced-by-count": 2,
+          "title": [
+            "Polar-Photometric Stereo Under Natural Illumination"
+          ],
+          "prefix": "10.1109",
+          "author": [
+            {
+              "given": "Yuqi",
+              "family": "Ding",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Louisiana State University"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Yu",
+              "family": "Ji",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Tencent Pixel Lab"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Jinwei",
+              "family": "Ye",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "George Mason University"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "volume-title": "Mitsuba 2"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-33709-3_26"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2012.6247684"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-35740-4_16"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.cviu.2017.04.014"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2005.160"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TIP.2006.871114"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2007.1099"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-030-58586-0_33"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3386569.3392387"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11263-006-8815-7"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-030-01270-0_2"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2017.47"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1401132.1401175"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR46437.2021.01531"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV48922.2021.00499"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2001.937570"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/3DV.2015.11"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/WACV.2015.47"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2010.5539828"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR46437.2021.01459"
+            },
+            {
+              "key": "ref22",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2012.6247691"
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2015.7299082"
+            },
+            {
+              "key": "ref24",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2015.385"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11263-017-1025-7"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/3DIMPVT.2012.14"
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2003.1238455"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2018.00310"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1117/12.586815"
+            },
+            {
+              "key": "ref30",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1364/JOSAA.24.003326"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2015.7298844"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2001.990468"
+            },
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1126/science.aax1839"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/cgf.12504"
+            },
+            {
+              "key": "ref35",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2009.5206732"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/3DV.2014.9"
+            },
+            {
+              "key": "ref37",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-46484-8_7"
+            },
+            {
+              "key": "ref38",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2018.2868065"
+            },
+            {
+              "key": "ref39",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-15552-9_19"
+            },
+            {
+              "key": "ref40",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCV.2017.250"
+            },
+            {
+              "key": "ref41",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2021.3078101"
+            },
+            {
+              "key": "ref42",
+              "volume-title": "Light probes",
+              "author": "Vogl"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1117/12.7972479"
+            },
+            {
+              "key": "ref44",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-19318-7_55"
+            },
+            {
+              "key": "ref45",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TPAMI.2009.15"
+            },
+            {
+              "key": "ref46",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICCPhot.2013.6528306"
+            },
+            {
+              "key": "ref47",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2019.00777"
+            }
+          ],
+          "event": {
+            "name": "2022 International Conference on 3D Vision (3DV)",
+            "location": "Prague, Czech Republic",
+            "start": {
+              "date-parts": [
+                [
+                  2022,
+                  9,
+                  12
+                ]
+              ]
+            },
+            "end": {
+              "date-parts": [
+                [
+                  2022,
+                  9,
+                  16
+                ]
+              ]
+            }
+          },
+          "container-title": [
+            "2022 International Conference on 3D Vision (3DV)"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/10044366/10044387/10044442.pdf?arnumber=10044442",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                2
+              ]
+            ],
+            "date-time": "2024-03-02T19:54:10Z",
+            "timestamp": 1709409250000
+          },
+          "score": 42.340504,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/10044442/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2022,
+                9
+              ]
+            ]
+          },
+          "references-count": 47,
+          "URL": "https://doi.org/10.1109/3dv57658.2022.00079",
+          "published": {
+            "date-parts": [
+              [
+                2022,
+                9
+              ]
+            ]
+          }
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  }
+]

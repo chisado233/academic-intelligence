@@ -1,0 +1,21 @@
+{
+  "url": "https://casad.cas.cn/yszx/",
+  "status": "ok",
+  "title": "院士增选",
+  "content": "",
+  "links": [
+    "https://casad.cas.cn/yszx/"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "OK",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T10:17:37.552795+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": false,
+    "links_count": 1,
+    "robots_allowed": true,
+    "robots_url": "https://casad.cas.cn/robots.txt"
+  },
+  "extracted": null
+}

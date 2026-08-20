@@ -1,0 +1,21 @@
+{
+  "url": "https://faculty.dlut.edu.cn/lirisheng/zh_CN/index.htm",
+  "status": "ok",
+  "title": "error",
+  "content": "遇到错误啦，请\n返回首页\n你访问的主页不存在或没有上线发布",
+  "links": [
+    "http://faculty.dlut.edu.cn"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T10:32:46.868903+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 1,
+    "robots_allowed": true,
+    "robots_url": "https://faculty.dlut.edu.cn/robots.txt"
+  },
+  "extracted": null
+}

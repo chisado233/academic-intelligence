@@ -1,0 +1,143 @@
+{
+  "id": "2172552b917ef3757b0af47d17fce18586d56cba",
+  "title": "Understanding Adversarial Attacks on Deep Learning Based Medical Image Analysis Systems",
+  "authors": [
+    {
+      "author_id": null,
+      "name": "Xingjun Ma",
+      "position": 1,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Yuhao Niu",
+      "position": 2,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Lin Gu",
+      "position": 3,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Yisen Wang",
+      "position": 4,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Yitian Zhao",
+      "position": 5,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "J. Bailey",
+      "position": 6,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Feng Lu",
+      "position": 7,
+      "is_corresponding": false,
+      "affiliation": null
+    }
+  ],
+  "year": 2019,
+  "venue": "Pattern Recognition",
+  "venue_type": null,
+  "publisher": null,
+  "abstract": "Deep neural networks (DNNs) have become popular for medical image analysis tasks like cancer diagnosis and lesion detection. However, a recent study demonstrates that medical deep learning systems can be compromised by carefully-engineered adversarial examples/attacks with small imperceptible perturbations. This raises safety concerns about the deployment of these systems in clinical settings. In this paper, we provide a deeper understanding of adversarial examples in the context of medical images. We find that medical DNN models can be more vulnerable to adversarial attacks compared to models for natural images, according to two different viewpoints. Surprisingly, we also find that medical adversarial attacks can be easily detected, i.e., simple detectors can achieve over 98% detection AUC against state-of-the-art attacks, due to fundamental feature differences compared to normal examples. We believe these findings may be a useful basis to approach the design of more explainable and secure medical deep learning systems.",
+  "doi": "10.1016/j.patcog.2020.107332",
+  "arxiv_id": "1907.10456",
+  "pmid": null,
+  "url": "https://www.semanticscholar.org/paper/2172552b917ef3757b0af47d17fce18586d56cba",
+  "pdf_url": "https://arxiv.org/pdf/1907.10456",
+  "citations": 555,
+  "reference_count": null,
+  "keywords": [
+    "Computer Science",
+    "Engineering"
+  ],
+  "fields_of_study": [
+    "Computer Science",
+    "Engineering"
+  ],
+  "references": null,
+  "citations_list": null,
+  "evidence_list": [
+    {
+      "source": "semantic_scholar",
+      "source_id": "2172552b917ef3757b0af47d17fce18586d56cba",
+      "source_url": "https://www.semanticscholar.org/paper/2172552b917ef3757b0af47d17fce18586d56cba",
+      "collected_at": "2026-08-17T06:09:16.234784Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "paperId": "2172552b917ef3757b0af47d17fce18586d56cba",
+        "externalIds": {
+          "DBLP": "journals/pr/MaNGWZBL21",
+          "ArXiv": "1907.10456",
+          "MAG": "2963271708",
+          "DOI": "10.1016/j.patcog.2020.107332",
+          "CorpusId": 198229815
+        },
+        "url": "https://www.semanticscholar.org/paper/2172552b917ef3757b0af47d17fce18586d56cba",
+        "title": "Understanding Adversarial Attacks on Deep Learning Based Medical Image Analysis Systems",
+        "venue": "Pattern Recognition",
+        "year": 2019,
+        "citationCount": 555,
+        "openAccessPdf": {
+          "url": "https://arxiv.org/pdf/1907.10456",
+          "status": "GREEN",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1907.10456, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "fieldsOfStudy": [
+          "Computer Science",
+          "Engineering"
+        ],
+        "authors": [
+          {
+            "authorId": "9576855",
+            "name": "Xingjun Ma"
+          },
+          {
+            "authorId": "40492421",
+            "name": "Yuhao Niu"
+          },
+          {
+            "authorId": "2069590499",
+            "name": "Lin Gu"
+          },
+          {
+            "authorId": "1919541",
+            "name": "Yisen Wang"
+          },
+          {
+            "authorId": "2407762880",
+            "name": "Yitian Zhao"
+          },
+          {
+            "authorId": "145148600",
+            "name": "J. Bailey"
+          },
+          {
+            "authorId": "1388864077",
+            "name": "Feng Lu"
+          }
+        ],
+        "abstract": "Deep neural networks (DNNs) have become popular for medical image analysis tasks like cancer diagnosis and lesion detection. However, a recent study demonstrates that medical deep learning systems can be compromised by carefully-engineered adversarial examples/attacks with small imperceptible perturbations. This raises safety concerns about the deployment of these systems in clinical settings. In this paper, we provide a deeper understanding of adversarial examples in the context of medical images. We find that medical DNN models can be more vulnerable to adversarial attacks compared to models for natural images, according to two different viewpoints. Surprisingly, we also find that medical adversarial attacks can be easily detected, i.e., simple detectors can achieve over 98% detection AUC against state-of-the-art attacks, due to fundamental feature differences compared to normal examples. We believe these findings may be a useful basis to approach the design of more explainable and secure medical deep learning systems."
+      }
+    }
+  ],
+  "synthetic_confidence": null
+}

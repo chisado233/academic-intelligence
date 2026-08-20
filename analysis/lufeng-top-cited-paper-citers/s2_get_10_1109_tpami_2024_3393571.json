@@ -1,0 +1,110 @@
+{
+  "id": "50d6c00b90ddcfa55bb23a7c5f6c31002b3f1495",
+  "title": "Appearance-Based Gaze Estimation With Deep Learning: A Review and Benchmark",
+  "authors": [
+    {
+      "author_id": null,
+      "name": "Yihua Cheng",
+      "position": 1,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Haofei Wang",
+      "position": 2,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Yiwei Bao",
+      "position": 3,
+      "is_corresponding": false,
+      "affiliation": null
+    },
+    {
+      "author_id": null,
+      "name": "Feng Lu",
+      "position": 4,
+      "is_corresponding": false,
+      "affiliation": null
+    }
+  ],
+  "year": 2021,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "venue_type": null,
+  "publisher": null,
+  "abstract": "Human gaze provides valuable information on human focus and intentions, making it a crucial area of research. Recently, deep learning has revolutionized appearance-based gaze estimation. However, due to the unique features of gaze estimation research, such as the unfair comparison between 2D gaze positions and 3D gaze vectors and the different pre-processing and post-processing methods, there is a lack of a definitive guideline for developing deep learning-based gaze estimation algorithms. In this paper, we present a systematic review of the appearance-based gaze estimation methods using deep learning. First, we survey the existing gaze estimation algorithms along the typical gaze estimation pipeline: deep feature extraction, deep learning model design, personal calibration and platforms. Second, to fairly compare the performance of different approaches, we summarize the data pre-processing and post-processing methods, including face/eye detection, data rectification, 2D/3D gaze conversion and gaze origin conversion. Finally, we set up a comprehensive benchmark for deep learning-based gaze estimation. We characterize all the public datasets and provide the source code of typical gaze estimation algorithms. This paper serves not only as a reference to develop deep learning-based gaze estimation methods, but also a guideline for future gaze estimation research.",
+  "doi": "10.1109/TPAMI.2024.3393571",
+  "arxiv_id": "2104.12668",
+  "pmid": null,
+  "url": "https://www.semanticscholar.org/paper/50d6c00b90ddcfa55bb23a7c5f6c31002b3f1495",
+  "pdf_url": "https://arxiv.org/pdf/2104.12668",
+  "citations": 264,
+  "reference_count": null,
+  "keywords": [
+    "Medicine",
+    "Computer Science"
+  ],
+  "fields_of_study": [
+    "Medicine",
+    "Computer Science"
+  ],
+  "references": null,
+  "citations_list": null,
+  "evidence_list": [
+    {
+      "source": "semantic_scholar",
+      "source_id": "50d6c00b90ddcfa55bb23a7c5f6c31002b3f1495",
+      "source_url": "https://www.semanticscholar.org/paper/50d6c00b90ddcfa55bb23a7c5f6c31002b3f1495",
+      "collected_at": "2026-08-17T09:56:07.613381Z",
+      "confidence": 0.88,
+      "raw_data": {
+        "paperId": "50d6c00b90ddcfa55bb23a7c5f6c31002b3f1495",
+        "externalIds": {
+          "DBLP": "journals/pami/ChengWBL24",
+          "ArXiv": "2104.12668",
+          "DOI": "10.1109/TPAMI.2024.3393571",
+          "CorpusId": 233393952,
+          "PubMed": "38662567"
+        },
+        "url": "https://www.semanticscholar.org/paper/50d6c00b90ddcfa55bb23a7c5f6c31002b3f1495",
+        "title": "Appearance-Based Gaze Estimation With Deep Learning: A Review and Benchmark",
+        "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "year": 2021,
+        "citationCount": 264,
+        "openAccessPdf": {
+          "url": "https://arxiv.org/pdf/2104.12668",
+          "status": "GREEN",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2104.12668, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "fieldsOfStudy": [
+          "Medicine",
+          "Computer Science"
+        ],
+        "authors": [
+          {
+            "authorId": "2117232731",
+            "name": "Yihua Cheng"
+          },
+          {
+            "authorId": "2038517164",
+            "name": "Haofei Wang"
+          },
+          {
+            "authorId": "1996108822",
+            "name": "Yiwei Bao"
+          },
+          {
+            "authorId": "1388864077",
+            "name": "Feng Lu"
+          }
+        ],
+        "abstract": "Human gaze provides valuable information on human focus and intentions, making it a crucial area of research. Recently, deep learning has revolutionized appearance-based gaze estimation. However, due to the unique features of gaze estimation research, such as the unfair comparison between 2D gaze positions and 3D gaze vectors and the different pre-processing and post-processing methods, there is a lack of a definitive guideline for developing deep learning-based gaze estimation algorithms. In this paper, we present a systematic review of the appearance-based gaze estimation methods using deep learning. First, we survey the existing gaze estimation algorithms along the typical gaze estimation pipeline: deep feature extraction, deep learning model design, personal calibration and platforms. Second, to fairly compare the performance of different approaches, we summarize the data pre-processing and post-processing methods, including face/eye detection, data rectification, 2D/3D gaze conversion and gaze origin conversion. Finally, we set up a comprehensive benchmark for deep learning-based gaze estimation. We characterize all the public datasets and provide the source code of typical gaze estimation algorithms. This paper serves not only as a reference to develop deep learning-based gaze estimation methods, but also a guideline for future gaze estimation research."
+      }
+    }
+  ],
+  "synthetic_confidence": null
+}

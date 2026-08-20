@@ -1,0 +1,416 @@
+[
+ {
+  "name": "Jiaya Jia",
+  "h": 107,
+  "cites": 71375,
+  "papers": 278,
+  "s2_id": "1729056",
+  "aff_s2": "",
+  "aff_oa": "Chinese University of Hong Kong"
+ },
+ {
+  "name": "Jiayi Ma",
+  "h": 89,
+  "cites": 35014,
+  "papers": 273,
+  "s2_id": "8555475",
+  "aff_s2": "",
+  "aff_oa": "Wuhan University"
+ },
+ {
+  "name": "Qingming Huang",
+  "h": 84,
+  "cites": 33376,
+  "papers": 650,
+  "s2_id": "1689702",
+  "aff_s2": "",
+  "aff_oa": "University of Chinese Academy of Sciences"
+ },
+ {
+  "name": "Guangtao Zhai",
+  "h": 74,
+  "cites": 21323,
+  "papers": 539,
+  "s2_id": "144826390",
+  "aff_s2": "",
+  "aff_oa": "Shanghai Jiao Tong University"
+ },
+ {
+  "name": "Ying Chen",
+  "h": 73,
+  "cites": 31960,
+  "papers": 1793,
+  "s2_id": "47558464",
+  "aff_s2": "China Agricultural University",
+  "aff_oa": ""
+ },
+ {
+  "name": "Junchi Yan",
+  "h": 73,
+  "cites": 24722,
+  "papers": 358,
+  "s2_id": "3063894",
+  "aff_s2": "",
+  "aff_oa": "Shanghai Jiao Tong University"
+ },
+ {
+  "name": "Fan Wang",
+  "h": 72,
+  "cites": 22092,
+  "papers": 784,
+  "s2_id": "49451350",
+  "aff_s2": "",
+  "aff_oa": "Zhejiang University"
+ },
+ {
+  "name": "Jiaying Liu",
+  "h": 63,
+  "cites": 20392,
+  "papers": 255,
+  "s2_id": "41127426",
+  "aff_s2": "",
+  "aff_oa": "Peking University"
+ },
+ {
+  "name": "Xiaoqiang Lu",
+  "h": 63,
+  "cites": 17454,
+  "papers": 194,
+  "s2_id": "7828998",
+  "aff_s2": "",
+  "aff_oa": "Chinese Academy of Sciences"
+ },
+ {
+  "name": "Feng Wu",
+  "h": 63,
+  "cites": 20429,
+  "papers": 710,
+  "s2_id": "144864333",
+  "aff_s2": "University of Science and Technology of China",
+  "aff_oa": ""
+ },
+ {
+  "name": "Gang Li",
+  "h": 59,
+  "cites": 14331,
+  "papers": 576,
+  "s2_id": "143736623",
+  "aff_s2": "Nanjing University of Science and Technology",
+  "aff_oa": ""
+ },
+ {
+  "name": "Junjun Jiang",
+  "h": 57,
+  "cites": 17419,
+  "papers": 187,
+  "s2_id": "1708439",
+  "aff_s2": "",
+  "aff_oa": "Peng Cheng Laboratory"
+ },
+ {
+  "name": "Xinghao Ding",
+  "h": 56,
+  "cites": 13880,
+  "papers": 242,
+  "s2_id": "2713947",
+  "aff_s2": "",
+  "aff_oa": "Xiamen University"
+ },
+ {
+  "name": "Wei Chen",
+  "h": 56,
+  "cites": 13892,
+  "papers": 675,
+  "s2_id": "2283009",
+  "aff_s2": "Leiden institute of advanced computer science",
+  "aff_oa": "China University of Mining and Technology; Zhejiang University"
+ },
+ {
+  "name": "Wenqi Ren",
+  "h": 55,
+  "cites": 17977,
+  "papers": 126,
+  "s2_id": "144850642",
+  "aff_s2": "",
+  "aff_oa": "Chinese Academy of Sciences"
+ },
+ {
+  "name": "Boxin Shi",
+  "h": 53,
+  "cites": 9122,
+  "papers": 191,
+  "s2_id": "35580784",
+  "aff_s2": "",
+  "aff_oa": "Peking University"
+ },
+ {
+  "name": "Risheng Liu",
+  "h": 52,
+  "cites": 13923,
+  "papers": 235,
+  "s2_id": "34469457",
+  "aff_s2": "",
+  "aff_oa": "Dalian University of Technology"
+ },
+ {
+  "name": "Xiongkuo Min",
+  "h": 51,
+  "cites": 12533,
+  "papers": 436,
+  "s2_id": "2246414",
+  "aff_s2": "",
+  "aff_oa": "Shanghai Jiao Tong University"
+ },
+ {
+  "name": "Xiaojie Guo",
+  "h": 51,
+  "cites": 17562,
+  "papers": 247,
+  "s2_id": "33465926",
+  "aff_s2": "",
+  "aff_oa": "Tianjin University"
+ },
+ {
+  "name": "Bo Dai",
+  "h": 50,
+  "cites": 12799,
+  "papers": 152,
+  "s2_id": "144445937",
+  "aff_s2": "",
+  "aff_oa": "ShangHai JiAi Genetics & IVF Institute"
+ },
+ {
+  "name": "Zhiwei Xiong",
+  "h": 50,
+  "cites": 8676,
+  "papers": 221,
+  "s2_id": "2352456",
+  "aff_s2": "",
+  "aff_oa": "University of Science and Technology of China"
+ },
+ {
+  "name": "Xueyang Fu",
+  "h": 48,
+  "cites": 11212,
+  "papers": 105,
+  "s2_id": "3061449",
+  "aff_s2": "",
+  "aff_oa": "University of Science and Technology of China"
+ },
+ {
+  "name": "Zhongyuan Wang",
+  "h": 47,
+  "cites": 9647,
+  "papers": 281,
+  "s2_id": "38655501",
+  "aff_s2": "",
+  "aff_oa": "Wuhan University"
+ },
+ {
+  "name": "Yue Huang",
+  "h": 46,
+  "cites": 11488,
+  "papers": 229,
+  "s2_id": "1950637",
+  "aff_s2": "",
+  "aff_oa": "Xiamen University"
+ },
+ {
+  "name": "Ying Tai",
+  "h": 44,
+  "cites": 11929,
+  "papers": 96,
+  "s2_id": "144970872",
+  "aff_s2": "",
+  "aff_oa": "Tencent (China)"
+ },
+ {
+  "name": "Shengping Zhang",
+  "h": 42,
+  "cites": 7852,
+  "papers": 142,
+  "s2_id": "1761159",
+  "aff_s2": "",
+  "aff_oa": "Harbin Institute of Technology"
+ },
+ {
+  "name": "Jing Ye",
+  "h": 40,
+  "cites": 5979,
+  "papers": 326,
+  "s2_id": "144030865",
+  "aff_s2": "",
+  "aff_oa": "Sun Yat-sen University"
+ },
+ {
+  "name": "T. Zhang",
+  "h": 40,
+  "cites": 6084,
+  "papers": 396,
+  "s2_id": "103245682",
+  "aff_s2": "Shenyang Institute of Automation, Chinese Academy of Sciences",
+  "aff_oa": ""
+ },
+ {
+  "name": "Jianjun Lei",
+  "h": 39,
+  "cites": 4823,
+  "papers": 177,
+  "s2_id": "143879230",
+  "aff_s2": "",
+  "aff_oa": "Tianjin University"
+ },
+ {
+  "name": "Ying Fu",
+  "h": 39,
+  "cites": 4542,
+  "papers": 89,
+  "s2_id": "143728560",
+  "aff_s2": "",
+  "aff_oa": "Beijing Institute of Technology"
+ },
+ {
+  "name": "Xin Fan",
+  "h": 38,
+  "cites": 8753,
+  "papers": 219,
+  "s2_id": "144309189",
+  "aff_s2": "",
+  "aff_oa": "Dalian University of Technology"
+ },
+ {
+  "name": "Wei Sun",
+  "h": 36,
+  "cites": 4308,
+  "papers": 173,
+  "s2_id": "2153198409",
+  "aff_s2": "",
+  "aff_oa": "Shanghai Jiao Tong University"
+ },
+ {
+  "name": "Youfang Lin",
+  "h": 36,
+  "cites": 10544,
+  "papers": 132,
+  "s2_id": "2624174",
+  "aff_s2": "",
+  "aff_oa": "Civil Aviation Administration of China"
+ },
+ {
+  "name": "Xiaoan Yan",
+  "h": 35,
+  "cites": 3765,
+  "papers": 71,
+  "s2_id": "120456578",
+  "aff_s2": "",
+  "aff_oa": "Nanjing Forestry University"
+ },
+ {
+  "name": "Jian Yang",
+  "h": 35,
+  "cites": 4426,
+  "papers": 224,
+  "s2_id": "13524601",
+  "aff_s2": "",
+  "aff_oa": "Beijing Institute of Technology"
+ },
+ {
+  "name": "Hua Huang",
+  "h": 34,
+  "cites": 4714,
+  "papers": 96,
+  "s2_id": "143814264",
+  "aff_s2": "",
+  "aff_oa": "Beijing Institute of Technology"
+ },
+ {
+  "name": "Jie Huang",
+  "h": 33,
+  "cites": 4305,
+  "papers": 74,
+  "s2_id": "2110284557",
+  "aff_s2": "",
+  "aff_oa": "University of Science and Technology of China"
+ },
+ {
+  "name": "Feng Lu",
+  "h": 33,
+  "cites": 5283,
+  "papers": 61,
+  "s2_id": "1388864077",
+  "aff_s2": "",
+  "aff_oa": "Peng Cheng Laboratory"
+ },
+ {
+  "name": "Zhongxuan Luo",
+  "h": 33,
+  "cites": 5901,
+  "papers": 239,
+  "s2_id": "145865683",
+  "aff_s2": "",
+  "aff_oa": "Dalian University of Technology"
+ },
+ {
+  "name": "Kui Jiang",
+  "h": 32,
+  "cites": 5269,
+  "papers": 74,
+  "s2_id": "51360637",
+  "aff_s2": "",
+  "aff_oa": "Wuhan University"
+ },
+ {
+  "name": "Xiangtao Zheng",
+  "h": 32,
+  "cites": 5113,
+  "papers": 79,
+  "s2_id": "2263014",
+  "aff_s2": "",
+  "aff_oa": "Chinese Academy of Sciences"
+ },
+ {
+  "name": "Jun Cheng",
+  "h": 32,
+  "cites": 7811,
+  "papers": 122,
+  "s2_id": "50995454",
+  "aff_s2": "Institute for Infocomm Research",
+  "aff_oa": "Chinese Academy of Sciences"
+ },
+ {
+  "name": "Guangtao Zhai",
+  "h": 31,
+  "cites": 3552,
+  "papers": 208,
+  "s2_id": "2266393212",
+  "aff_s2": "",
+  "aff_oa": "Shanghai Jiao Tong University"
+ },
+ {
+  "name": "Yitian Zhao",
+  "h": 30,
+  "cites": 5626,
+  "papers": 111,
+  "s2_id": "1956017",
+  "aff_s2": "",
+  "aff_oa": "Chinese Academy of Sciences"
+ },
+ {
+  "name": "Yanpeng Cao",
+  "h": 30,
+  "cites": 2792,
+  "papers": 99,
+  "s2_id": "3245182",
+  "aff_s2": "",
+  "aff_oa": "Zhejiang University"
+ },
+ {
+  "name": "Zheng Wang",
+  "h": 30,
+  "cites": 3024,
+  "papers": 83,
+  "s2_id": "40072305",
+  "aff_s2": "University of Leeds",
+  "aff_oa": "Wuhan University"
+ }
+]

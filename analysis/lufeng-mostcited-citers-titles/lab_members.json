@@ -1,0 +1,28 @@
+{
+  "url": "https://phi-ai.buaa.edu.cn/members/index.htm",
+  "status": "ok",
+  "title": "Members",
+  "content": "Faculty & Staff\nFeng Lu陆峰\nProfessor\n\t\t\t\tState Key Laboratory of Virtual Reality Technology and Systems, School of Computer Science and Engineering, Beihang University\n\t\t\tlufeng@buaa.edu.cn\nAssistant Researcher\n\t\t\t\tResearch Studio of Virtual Reality, Peng Cheng Laboratory\n\t\t\twanghf@pcl.ac.cn\nPhD Students\nZe Yang杨泽(Co-supervised with Prof. Qin-Ping Zhao)\nSchool of Computer Science and Engineering, 2017~\nJiadong Liang梁家栋\nSchool of Computer Science and Engineering, 2018~\nYuhao Niu牛钰浩\nSchool of Computer Science and Engineering, 2018~\nZhimin Wang王智敏(Co-supervised with Prof. Qin-Ping Zhao)\nSchool of Computer Science and Engineering, 2019~\nYiwei Bao鲍屹伟\nSchool of Computer Science and Engineering, 2020~\nYaokun Yang杨耀坤\nSchool of Computer Science and Engineering, 2020~\nBo Liu刘铂\nSchool of Computer Science and Engineering, 2021~\nYang Xu徐杨\nSchool of Computer Science and Engineering, 2022~\nMaster Students\nJiaxi Wang王嘉茜\nSchool of Computer Science and Engineering, 2021~\nYihan Yin尹逸寒\nSino-French Engineer School of Beihang University, 2021~\nShijun Liang梁世俊\nSchool of Computer Science and Engineering, 2021~\nMingjie Xu许明杰\nSchool of Computer Science and Engineering, 2021~\nJingkai Hong洪靖凯\nSchool of Computer Science and Engineering, 2022~\nZheng Liu刘铮\nSchool of Computer Science and Engineering, 2022~\nChenxi Cui崔晨曦\nSchool of Computer Science and Engineering, 2022~\nZhuojiang Cai蔡卓江\nSino-French Engineer School of Beihang University, 2022~\nAlumni\nZhixiang Hao郝智翔（优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2016~2019\nLei He贺磊\nSchool of Computer Science and Engineering, 2016~2019\nFeifan Lv吕飞帆（北京市优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2017~2020\nXinxin Mao毛新鑫\nSchool of Computer Science and Engineering, 2017~2020\nKai Li李凯\nBeihang Qingdao Institute, 2017~2020\nYuwei Jiang蒋雨薇\nBeihang Qingdao Institute, 2017~2020\nHuangyue Yu俞璜悦（北京市优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2018~2021\nBo Liu刘铂（优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2018~2021\nYicheng Li李奕成\nSchool of Computer Science and Engineering, 2018~2021\nXin Liu刘欣\nBeihang Qingdao Institute, 2018~2021\nYumin Xue薛玉敏\nBeihang Qingdao Institute, 2018~2021\nZongji Wang王宗继\nSchool of Computer Science and Engineering, 2014~2021\nSijia Wen温思嘉(Co-supervised with Prof. Qin-Ping Zhao)\nSchool of Computer Science and Engineering, 2016~2021\nZhuo Yang杨卓\nSchool of Computer Science and Engineering, 2019~2022\nHaiyang Si斯海洋\nSchool of Computer Science and Engineering, 2019~2022\nMingfei Jiang姜茗飞（优秀硕士毕业生）\nBeihang Qingdao Institute, 2019~2022\nYifei Fu傅奕飞\nSchool of Computer Science and Engineering, 2019~2022\nXiaochuan Li李小川\nSino-French Engineer School of Beihang University, 2019~2022\nYunfei Liu刘云飞\nSchool of Computer Science and Engineering, 2017~2022\nYihua Cheng程义华\nSchool of Computer Science and Engineering, 2017~2022\nChaoqun Zhuang庄超群（优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2020~2023\nRuicong Liu刘锐聪（优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2020~2023\nYuxin Zhao赵玉鑫（优秀硕士毕业生）\nSchool of Computer Science and Engineering, 2020~2023",
+  "links": [
+    "https://phi-ai.buaa.edu.cn/index.htm",
+    "https://phi-ai.buaa.edu.cn/members/index.htm#main",
+    "https://phi-ai.buaa.edu.cn/research/index.htm",
+    "https://phi-ai.buaa.edu.cn/publications/index.htm",
+    "https://phi-ai.buaa.edu.cn/members/index.htm",
+    "https://phi-ai.buaa.edu.cn/address/index.htm",
+    "https://scse.buaa.edu.cn/info/1078/2673.htm",
+    "https://beian.miit.gov.cn"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "OK",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T09:52:25.430493+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 8,
+    "robots_allowed": true,
+    "robots_url": "https://phi-ai.buaa.edu.cn/robots.txt"
+  },
+  "extracted": null
+}

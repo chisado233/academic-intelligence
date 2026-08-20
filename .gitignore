@@ -34,3 +34,7 @@ tmp/
 # Third-party reference materials (kept local, not for GitHub)
 参考/
 参考/*
+
+# one-off probe scratch
+/out.json
+/xplore.json

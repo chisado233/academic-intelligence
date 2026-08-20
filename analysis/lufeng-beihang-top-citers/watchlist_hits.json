@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Bo Zhang",
+  "author_ids": "2141897317;2155611061;2208118873;2208122861;2426012373",
+  "n_citing_papers": "7",
+  "affiliations": "",
+  "sample_papers": "NTIRE 2026 The 3rd Restore Any Image Model (RAIM) Challenge: ;; An adaptive weight fusion low-light image enhancement based  ;; Generative Diffusion Prior for Unified Image Restoration and",
+  "watch_cn": [
+   "张钹"
+  ]
+ },
+ {
+  "name": "Huadong Ma",
+  "author_ids": "144258295;2248034542;2263653397",
+  "n_citing_papers": "5",
+  "affiliations": "",
+  "sample_papers": "Rethinking the Low-Light Video Enhancement: Benchmark Datase ;; Exploring in Extremely Dark: Low-Light Video Enhancement wit ;; Learning Exposure Correction in Dynamic Scenes",
+  "watch_cn": [
+   "马华东"
+  ]
+ },
+ {
+  "name": "Qionghai Dai",
+  "author_ids": "144954808;1491800101",
+  "n_citing_papers": "2",
+  "affiliations": "",
+  "sample_papers": "DarkVision: A Benchmark for Low-light Image/Video Perception ;; Computational Imaging and Artificial Intelligence: The Next ",
+  "watch_cn": [
+   "戴琼海"
+  ]
+ },
+ {
+  "name": "Ping Zhang",
+  "author_ids": "2154286304",
+  "n_citing_papers": "1",
+  "affiliations": "",
+  "sample_papers": "Low-Light Image Enhancement Method Based on Optimized Genera",
+  "watch_cn": [
+   "张平"
+  ]
+ },
+ {
+  "name": "Feng Wu",
+  "author_ids": "144864333",
+  "n_citing_papers": "1",
+  "affiliations": "",
+  "sample_papers": "Unsupervised Underexposed Image Enhancement via Self-Illumin",
+  "watch_cn": [
+   "吴枫"
+  ]
+ }
+]

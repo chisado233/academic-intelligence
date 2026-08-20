@@ -1,0 +1,38 @@
+{
+ "Qionghai Dai": {
+  "id": "https://openalex.org/A5080722708",
+  "inst": "McGovern Institute for Brain Research; Chinese Institute for Brain Research; Beijing Tsinghua Chang Gung Hospital; Tsinghua University",
+  "works": 1014,
+  "h": 95
+ },
+ "Feng Wu": {
+  "id": "https://openalex.org/A5100625583",
+  "inst": "Hohai University; Tsinghua University",
+  "works": 974,
+  "h": 140
+ },
+ "Houqiang Li": {
+  "id": "https://openalex.org/A5078141810",
+  "inst": "University of Science and Technology of China; Hefei University of Technology; Nantong University; Affiliated Hospital of Nantong University",
+  "works": 949,
+  "h": 77
+ },
+ "Qingming Huang": {
+  "id": "https://openalex.org/A5028597017",
+  "inst": "Guangxi Medical University; Nanchang Normal University; Peng Cheng Laboratory; University of Chinese Academy of Sciences; Jiangxi Normal University",
+  "works": 919,
+  "h": 83
+ },
+ "Deyu Meng": {
+  "id": "https://openalex.org/A5091017287",
+  "inst": "Leiden University; Shandong University; Northeast Normal University; Jilin University; University of Macau; First Affiliated Hospital of Xi'an Jiaotong University; Changchun University; Xi'an Jiaotong University",
+  "works": 579,
+  "h": 78
+ },
+ "Guangtao Zhai": {
+  "id": "https://openalex.org/A5064168853",
+  "inst": "Shanghai Jiao Tong University; Beijing Academy of Artificial Intelligence; Peng Cheng Laboratory; Shanghai Artificial Intelligence Laboratory",
+  "works": 964,
+  "h": 73
+ }
+}

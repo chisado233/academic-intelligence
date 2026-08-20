@@ -1,0 +1,1967 @@
+[
+ {
+  "authorId": "1681236",
+  "name": "L. Gool",
+  "affiliations": [],
+  "paperCount": 1532,
+  "citationCount": 181641,
+  "hIndex": 195
+ },
+ {
+  "authorId": "31843833",
+  "name": "Xiaogang Wang",
+  "affiliations": [],
+  "paperCount": 638,
+  "citationCount": 104133,
+  "hIndex": 132
+ },
+ {
+  "authorId": "1717179",
+  "name": "Chen Change Loy",
+  "affiliations": [],
+  "paperCount": 341,
+  "citationCount": 93932,
+  "hIndex": 131
+ },
+ {
+  "authorId": "144082425",
+  "name": "Ling Shao",
+  "affiliations": [],
+  "paperCount": 586,
+  "citationCount": 56609,
+  "hIndex": 122
+ },
+ {
+  "authorId": "145231047",
+  "name": "V. Koltun",
+  "affiliations": [],
+  "paperCount": 239,
+  "citationCount": 90197,
+  "hIndex": 114
+ },
+ {
+  "authorId": "1750470",
+  "name": "S. Nayar",
+  "affiliations": [],
+  "paperCount": 363,
+  "citationCount": 46109,
+  "hIndex": 108
+ },
+ {
+  "authorId": "1729056",
+  "name": "Jiaya Jia",
+  "affiliations": [],
+  "paperCount": 278,
+  "citationCount": 71375,
+  "hIndex": 107
+ },
+ {
+  "authorId": "1724520",
+  "name": "W. Zuo",
+  "affiliations": [],
+  "paperCount": 575,
+  "citationCount": 66163,
+  "hIndex": 104
+ },
+ {
+  "authorId": "144962210",
+  "name": "F. Nie",
+  "affiliations": [],
+  "paperCount": 715,
+  "citationCount": 42786,
+  "hIndex": 104
+ },
+ {
+  "authorId": "1732855",
+  "name": "R. Timofte",
+  "affiliations": [],
+  "paperCount": 595,
+  "citationCount": 57078,
+  "hIndex": 101
+ },
+ {
+  "authorId": "48016595",
+  "name": "Hao Wang",
+  "affiliations": [],
+  "paperCount": 2748,
+  "citationCount": 56869,
+  "hIndex": 101
+ },
+ {
+  "authorId": "144954808",
+  "name": "Qionghai Dai",
+  "affiliations": [],
+  "paperCount": 717,
+  "citationCount": 28231,
+  "hIndex": 92
+ },
+ {
+  "authorId": "8555475",
+  "name": "Jiayi Ma",
+  "affiliations": [],
+  "paperCount": 273,
+  "citationCount": 35014,
+  "hIndex": 89
+ },
+ {
+  "authorId": "145953515",
+  "name": "Jianbing Shen",
+  "affiliations": [],
+  "paperCount": 258,
+  "citationCount": 29602,
+  "hIndex": 88
+ },
+ {
+  "authorId": "32811782",
+  "name": "Ke Chen",
+  "affiliations": [],
+  "paperCount": 1182,
+  "citationCount": 35377,
+  "hIndex": 87
+ },
+ {
+  "authorId": "2969311",
+  "name": "Zhangyang Wang",
+  "affiliations": [],
+  "paperCount": 374,
+  "citationCount": 36323,
+  "hIndex": 85
+ },
+ {
+  "authorId": "1689702",
+  "name": "Qingming Huang",
+  "affiliations": [],
+  "paperCount": 650,
+  "citationCount": 33376,
+  "hIndex": 84
+ },
+ {
+  "authorId": "1929093",
+  "name": "H. Fu",
+  "affiliations": [],
+  "paperCount": 270,
+  "citationCount": 30265,
+  "hIndex": 82
+ },
+ {
+  "authorId": "47119537",
+  "name": "X. Wang",
+  "affiliations": [],
+  "paperCount": 1267,
+  "citationCount": 29717,
+  "hIndex": 81
+ },
+ {
+  "authorId": "143962510",
+  "name": "Zhengjun Zha",
+  "affiliations": [],
+  "paperCount": 412,
+  "citationCount": 19640,
+  "hIndex": 79
+ },
+ {
+  "authorId": "2108508109",
+  "name": "Houqiang Li",
+  "affiliations": [],
+  "paperCount": 491,
+  "citationCount": 23746,
+  "hIndex": 78
+ },
+ {
+  "authorId": "1803714",
+  "name": "Deyu Meng",
+  "affiliations": [],
+  "paperCount": 294,
+  "citationCount": 31231,
+  "hIndex": 78
+ },
+ {
+  "authorId": "143715293",
+  "name": "W. Zhang",
+  "affiliations": [],
+  "paperCount": 1343,
+  "citationCount": 26667,
+  "hIndex": 75
+ },
+ {
+  "authorId": "144826390",
+  "name": "Guangtao Zhai",
+  "affiliations": [],
+  "paperCount": 539,
+  "citationCount": 21323,
+  "hIndex": 74
+ },
+ {
+  "authorId": "1681129",
+  "name": "Alejandro F Frangi",
+  "affiliations": [
+   "The University of Manchester"
+  ],
+  "paperCount": 685,
+  "citationCount": 31423,
+  "hIndex": 74
+ },
+ {
+  "authorId": "47558464",
+  "name": "Ying Chen",
+  "affiliations": [
+   "China Agricultural University"
+  ],
+  "paperCount": 1793,
+  "citationCount": 31960,
+  "hIndex": 73
+ },
+ {
+  "authorId": "3063894",
+  "name": "Junchi Yan",
+  "affiliations": [],
+  "paperCount": 358,
+  "citationCount": 24722,
+  "hIndex": 73
+ },
+ {
+  "authorId": "49451350",
+  "name": "Fan Wang",
+  "affiliations": [],
+  "paperCount": 784,
+  "citationCount": 22092,
+  "hIndex": 72
+ },
+ {
+  "authorId": "38272296",
+  "name": "Wen-gang Zhou",
+  "affiliations": [],
+  "paperCount": 389,
+  "citationCount": 20534,
+  "hIndex": 71
+ },
+ {
+  "authorId": "2108960018",
+  "name": "Xiaoming Liu",
+  "affiliations": [
+   "Michigan State University"
+  ],
+  "paperCount": 188,
+  "citationCount": 22318,
+  "hIndex": 70
+ },
+ {
+  "authorId": "1752192",
+  "name": "W. Heidrich",
+  "affiliations": [],
+  "paperCount": 328,
+  "citationCount": 18811,
+  "hIndex": 68
+ },
+ {
+  "authorId": "144856288",
+  "name": "Chi-Wing Fu",
+  "affiliations": [],
+  "paperCount": 222,
+  "citationCount": 21524,
+  "hIndex": 66
+ },
+ {
+  "authorId": "1711097",
+  "name": "A. Kot",
+  "affiliations": [],
+  "paperCount": 441,
+  "citationCount": 19048,
+  "hIndex": 64
+ },
+ {
+  "authorId": "48368645",
+  "name": "B. Jalali",
+  "affiliations": [],
+  "paperCount": 658,
+  "citationCount": 22311,
+  "hIndex": 63
+ },
+ {
+  "authorId": "41127426",
+  "name": "Jiaying Liu",
+  "affiliations": [],
+  "paperCount": 255,
+  "citationCount": 20392,
+  "hIndex": 63
+ },
+ {
+  "authorId": "7828998",
+  "name": "Xiaoqiang Lu",
+  "affiliations": [],
+  "paperCount": 194,
+  "citationCount": 17454,
+  "hIndex": 63
+ },
+ {
+  "authorId": "3049217",
+  "name": "Yicong Zhou",
+  "affiliations": [
+   "Tufts University",
+   "University of Macau"
+  ],
+  "paperCount": 305,
+  "citationCount": 15894,
+  "hIndex": 63
+ },
+ {
+  "authorId": "144864333",
+  "name": "Feng Wu",
+  "affiliations": [
+   "University of Science and Technology of China"
+  ],
+  "paperCount": 710,
+  "citationCount": 20429,
+  "hIndex": 63
+ },
+ {
+  "authorId": "36620472",
+  "name": "Hao Chen",
+  "affiliations": [
+   "The Hong Kong University of Science and Technology"
+  ],
+  "paperCount": 481,
+  "citationCount": 23986,
+  "hIndex": 63
+ },
+ {
+  "authorId": "2515916",
+  "name": "Fabio Remondino",
+  "affiliations": [],
+  "paperCount": 399,
+  "citationCount": 17160,
+  "hIndex": 62
+ },
+ {
+  "authorId": "145858545",
+  "name": "Y. Qiao",
+  "affiliations": [],
+  "paperCount": 203,
+  "citationCount": 16586,
+  "hIndex": 60
+ },
+ {
+  "authorId": "1834451",
+  "name": "M. Do",
+  "affiliations": [],
+  "paperCount": 287,
+  "citationCount": 22191,
+  "hIndex": 60
+ },
+ {
+  "authorId": "143736623",
+  "name": "Gang Li",
+  "affiliations": [
+   "Nanjing University of Science and Technology"
+  ],
+  "paperCount": 576,
+  "citationCount": 14331,
+  "hIndex": 59
+ },
+ {
+  "authorId": "1795716",
+  "name": "Derui Ding",
+  "affiliations": [],
+  "paperCount": 210,
+  "citationCount": 12821,
+  "hIndex": 59
+ },
+ {
+  "authorId": "2272096",
+  "name": "Guo-Jun Qi",
+  "affiliations": [],
+  "paperCount": 194,
+  "citationCount": 13916,
+  "hIndex": 59
+ },
+ {
+  "authorId": "1778526",
+  "name": "Dengxin Dai",
+  "affiliations": [],
+  "paperCount": 155,
+  "citationCount": 15711,
+  "hIndex": 58
+ },
+ {
+  "authorId": "1708439",
+  "name": "Junjun Jiang",
+  "affiliations": [],
+  "paperCount": 187,
+  "citationCount": 17419,
+  "hIndex": 57
+ },
+ {
+  "authorId": "1741299",
+  "name": "D. Brady",
+  "affiliations": [],
+  "paperCount": 485,
+  "citationCount": 14331,
+  "hIndex": 57
+ },
+ {
+  "authorId": "2713947",
+  "name": "Xinghao Ding",
+  "affiliations": [],
+  "paperCount": 242,
+  "citationCount": 13880,
+  "hIndex": 56
+ },
+ {
+  "authorId": "144968846",
+  "name": "Kun Xu",
+  "affiliations": [],
+  "paperCount": 570,
+  "citationCount": 12798,
+  "hIndex": 56
+ },
+ {
+  "authorId": "2283009",
+  "name": "Wei Chen",
+  "affiliations": [
+   "Leiden institute of advanced computer science"
+  ],
+  "paperCount": 675,
+  "citationCount": 13892,
+  "hIndex": 56
+ },
+ {
+  "authorId": "1898172",
+  "name": "Wenhan Yang",
+  "affiliations": [],
+  "paperCount": 174,
+  "citationCount": 16585,
+  "hIndex": 55
+ },
+ {
+  "authorId": "1725937",
+  "name": "Debin Zhao",
+  "affiliations": [],
+  "paperCount": 417,
+  "citationCount": 12368,
+  "hIndex": 55
+ },
+ {
+  "authorId": "144850642",
+  "name": "Wenqi Ren",
+  "affiliations": [],
+  "paperCount": 126,
+  "citationCount": 17977,
+  "hIndex": 55
+ },
+ {
+  "authorId": "1700569",
+  "name": "T. Moeslund",
+  "affiliations": [],
+  "paperCount": 593,
+  "citationCount": 15186,
+  "hIndex": 55
+ },
+ {
+  "authorId": "1700892",
+  "name": "Z. Li",
+  "affiliations": [],
+  "paperCount": 868,
+  "citationCount": 17849,
+  "hIndex": 54
+ },
+ {
+  "authorId": "1964397",
+  "name": "Junyu Dong",
+  "affiliations": [],
+  "paperCount": 479,
+  "citationCount": 10998,
+  "hIndex": 54
+ },
+ {
+  "authorId": "35580784",
+  "name": "Boxin Shi",
+  "affiliations": [],
+  "paperCount": 191,
+  "citationCount": 9122,
+  "hIndex": 53
+ },
+ {
+  "authorId": "144258295",
+  "name": "Huadong Ma",
+  "affiliations": [],
+  "paperCount": 468,
+  "citationCount": 12638,
+  "hIndex": 53
+ },
+ {
+  "authorId": "7667912",
+  "name": "Ling-yu Duan",
+  "affiliations": [],
+  "paperCount": 262,
+  "citationCount": 11907,
+  "hIndex": 53
+ },
+ {
+  "authorId": "4639656",
+  "name": "Yuming Fang",
+  "affiliations": [],
+  "paperCount": 231,
+  "citationCount": 9999,
+  "hIndex": 53
+ },
+ {
+  "authorId": "38620434",
+  "name": "Jiang Liu",
+  "affiliations": [],
+  "paperCount": 317,
+  "citationCount": 13693,
+  "hIndex": 53
+ },
+ {
+  "authorId": "34469457",
+  "name": "Risheng Liu",
+  "affiliations": [],
+  "paperCount": 235,
+  "citationCount": 13923,
+  "hIndex": 52
+ },
+ {
+  "authorId": "2246414",
+  "name": "Xiongkuo Min",
+  "affiliations": [],
+  "paperCount": 436,
+  "citationCount": 12533,
+  "hIndex": 51
+ },
+ {
+  "authorId": "40630305",
+  "name": "Junhui Hou",
+  "affiliations": [],
+  "paperCount": 223,
+  "citationCount": 13256,
+  "hIndex": 51
+ },
+ {
+  "authorId": "2256618",
+  "name": "Zhiwen Yu",
+  "affiliations": [],
+  "paperCount": 525,
+  "citationCount": 11285,
+  "hIndex": 51
+ },
+ {
+  "authorId": "33465926",
+  "name": "Xiaojie Guo",
+  "affiliations": [],
+  "paperCount": 247,
+  "citationCount": 17562,
+  "hIndex": 51
+ },
+ {
+  "authorId": "144445937",
+  "name": "Bo Dai",
+  "affiliations": [],
+  "paperCount": 152,
+  "citationCount": 12799,
+  "hIndex": 50
+ },
+ {
+  "authorId": "145666784",
+  "name": "Guy Hoffman",
+  "affiliations": [],
+  "paperCount": 155,
+  "citationCount": 13846,
+  "hIndex": 50
+ },
+ {
+  "authorId": "2352456",
+  "name": "Zhiwei Xiong",
+  "affiliations": [],
+  "paperCount": 221,
+  "citationCount": 8676,
+  "hIndex": 50
+ },
+ {
+  "authorId": "145066132",
+  "name": "Bin Guo",
+  "affiliations": [],
+  "paperCount": 372,
+  "citationCount": 10603,
+  "hIndex": 49
+ },
+ {
+  "authorId": "145166399",
+  "name": "Duoqian Miao",
+  "affiliations": [],
+  "paperCount": 305,
+  "citationCount": 8568,
+  "hIndex": 49
+ },
+ {
+  "authorId": "1720100",
+  "name": "H. Yao",
+  "affiliations": [],
+  "paperCount": 377,
+  "citationCount": 10557,
+  "hIndex": 48
+ },
+ {
+  "authorId": "143940718",
+  "name": "R. Schettini",
+  "affiliations": [],
+  "paperCount": 427,
+  "citationCount": 10200,
+  "hIndex": 48
+ },
+ {
+  "authorId": "2735715",
+  "name": "Zimu Zhou",
+  "affiliations": [],
+  "paperCount": 131,
+  "citationCount": 8147,
+  "hIndex": 48
+ },
+ {
+  "authorId": "2698424",
+  "name": "Chongyi Li",
+  "affiliations": [],
+  "paperCount": 87,
+  "citationCount": 16649,
+  "hIndex": 48
+ },
+ {
+  "authorId": "3061449",
+  "name": "Xueyang Fu",
+  "affiliations": [],
+  "paperCount": 105,
+  "citationCount": 11212,
+  "hIndex": 48
+ },
+ {
+  "authorId": "1726720",
+  "name": "R. Tan",
+  "affiliations": [],
+  "paperCount": 151,
+  "citationCount": 12841,
+  "hIndex": 47
+ },
+ {
+  "authorId": "8973902",
+  "name": "S. Agaian",
+  "affiliations": [],
+  "paperCount": 765,
+  "citationCount": 14605,
+  "hIndex": 47
+ },
+ {
+  "authorId": "38655501",
+  "name": "Zhongyuan Wang",
+  "affiliations": [],
+  "paperCount": 281,
+  "citationCount": 9647,
+  "hIndex": 47
+ },
+ {
+  "authorId": "1950637",
+  "name": "Yue Huang",
+  "affiliations": [],
+  "paperCount": 229,
+  "citationCount": 11488,
+  "hIndex": 46
+ },
+ {
+  "authorId": "145956876",
+  "name": "Chi-Man Pun",
+  "affiliations": [
+   "University of Macau"
+  ],
+  "paperCount": 344,
+  "citationCount": 8170,
+  "hIndex": 46
+ },
+ {
+  "authorId": "49298718",
+  "name": "Jie Li",
+  "affiliations": [],
+  "paperCount": 426,
+  "citationCount": 8830,
+  "hIndex": 46
+ },
+ {
+  "authorId": "1725389",
+  "name": "E. Lam",
+  "affiliations": [],
+  "paperCount": 455,
+  "citationCount": 8514,
+  "hIndex": 46
+ },
+ {
+  "authorId": "1953808",
+  "name": "M. Dianati",
+  "affiliations": [],
+  "paperCount": 229,
+  "citationCount": 8822,
+  "hIndex": 45
+ },
+ {
+  "authorId": "2410227",
+  "name": "Yulun Zhang",
+  "affiliations": [
+   "ETH Zurich"
+  ],
+  "paperCount": 92,
+  "citationCount": 21107,
+  "hIndex": 45
+ },
+ {
+  "authorId": "37498905",
+  "name": "L. Li",
+  "affiliations": [],
+  "paperCount": 597,
+  "citationCount": 13456,
+  "hIndex": 45
+ },
+ {
+  "authorId": "144250750",
+  "name": "W. Siu",
+  "affiliations": [],
+  "paperCount": 584,
+  "citationCount": 8589,
+  "hIndex": 45
+ },
+ {
+  "authorId": "144740494",
+  "name": "Peng Gao",
+  "affiliations": [],
+  "paperCount": 67,
+  "citationCount": 13769,
+  "hIndex": 44
+ },
+ {
+  "authorId": "1790553",
+  "name": "T. Harada",
+  "affiliations": [],
+  "paperCount": 260,
+  "citationCount": 11741,
+  "hIndex": 44
+ },
+ {
+  "authorId": "143784265",
+  "name": "D. Mahapatra",
+  "affiliations": [],
+  "paperCount": 158,
+  "citationCount": 6052,
+  "hIndex": 44
+ },
+ {
+  "authorId": "1720747",
+  "name": "V. Athitsos",
+  "affiliations": [],
+  "paperCount": 168,
+  "citationCount": 7692,
+  "hIndex": 44
+ },
+ {
+  "authorId": "144970872",
+  "name": "Ying Tai",
+  "affiliations": [],
+  "paperCount": 96,
+  "citationCount": 11929,
+  "hIndex": 44
+ },
+ {
+  "authorId": "143832240",
+  "name": "Qifeng Chen",
+  "affiliations": [
+   "HKUST"
+  ],
+  "paperCount": 97,
+  "citationCount": 11968,
+  "hIndex": 44
+ },
+ {
+  "authorId": "3151219",
+  "name": "Wadii Boulila",
+  "affiliations": [
+   "Prince Sultan University"
+  ],
+  "paperCount": 266,
+  "citationCount": 6405,
+  "hIndex": 43
+ },
+ {
+  "authorId": "7622560",
+  "name": "G. Slabaugh",
+  "affiliations": [],
+  "paperCount": 355,
+  "citationCount": 9828,
+  "hIndex": 43
+ },
+ {
+  "authorId": "1761159",
+  "name": "Shengping Zhang",
+  "affiliations": [],
+  "paperCount": 142,
+  "citationCount": 7852,
+  "hIndex": 42
+ },
+ {
+  "authorId": "2144167531",
+  "name": "Jianzhuang Liu",
+  "affiliations": [],
+  "paperCount": 91,
+  "citationCount": 8514,
+  "hIndex": 42
+ },
+ {
+  "authorId": "1716836",
+  "name": "Winston H. Hsu",
+  "affiliations": [],
+  "paperCount": 214,
+  "citationCount": 7950,
+  "hIndex": 42
+ },
+ {
+  "authorId": "1696306",
+  "name": "Yalin Zheng",
+  "affiliations": [],
+  "paperCount": 249,
+  "citationCount": 7615,
+  "hIndex": 42
+ },
+ {
+  "authorId": "153021240",
+  "name": "Weihua Li",
+  "affiliations": [],
+  "paperCount": 139,
+  "citationCount": 8506,
+  "hIndex": 41
+ },
+ {
+  "authorId": "144110274",
+  "name": "K. Zhang",
+  "affiliations": [],
+  "paperCount": 65,
+  "citationCount": 31296,
+  "hIndex": 41
+ },
+ {
+  "authorId": "2601522",
+  "name": "S. Yogamani",
+  "affiliations": [],
+  "paperCount": 132,
+  "citationCount": 7784,
+  "hIndex": 41
+ },
+ {
+  "authorId": "1752590",
+  "name": "Chang-Tien Lu",
+  "affiliations": [
+   "Virginia Tech"
+  ],
+  "paperCount": 257,
+  "citationCount": 7152,
+  "hIndex": 41
+ },
+ {
+  "authorId": "8683310",
+  "name": "R. Naqvi",
+  "affiliations": [],
+  "paperCount": 136,
+  "citationCount": 4792,
+  "hIndex": 40
+ },
+ {
+  "authorId": "144030865",
+  "name": "Jing Ye",
+  "affiliations": [],
+  "paperCount": 326,
+  "citationCount": 5979,
+  "hIndex": 40
+ },
+ {
+  "authorId": "2233269",
+  "name": "Kede Ma",
+  "affiliations": [],
+  "paperCount": 84,
+  "citationCount": 11841,
+  "hIndex": 40
+ },
+ {
+  "authorId": "145906580",
+  "name": "M. Glavin",
+  "affiliations": [],
+  "paperCount": 214,
+  "citationCount": 5960,
+  "hIndex": 40
+ },
+ {
+  "authorId": "103245682",
+  "name": "T. Zhang",
+  "affiliations": [
+   "Shenyang Institute of Automation, Chinese Academy of Sciences"
+  ],
+  "paperCount": 396,
+  "citationCount": 6084,
+  "hIndex": 40
+ },
+ {
+  "authorId": "143879230",
+  "name": "Jianjun Lei",
+  "affiliations": [],
+  "paperCount": 177,
+  "citationCount": 4823,
+  "hIndex": 39
+ },
+ {
+  "authorId": "10212005",
+  "name": "Kai-Kuang Ma",
+  "affiliations": [],
+  "paperCount": 222,
+  "citationCount": 10778,
+  "hIndex": 39
+ },
+ {
+  "authorId": "143728560",
+  "name": "Ying Fu",
+  "affiliations": [],
+  "paperCount": 89,
+  "citationCount": 4542,
+  "hIndex": 39
+ },
+ {
+  "authorId": "143785523",
+  "name": "Jinwei Gu",
+  "affiliations": [],
+  "paperCount": 107,
+  "citationCount": 6511,
+  "hIndex": 39
+ },
+ {
+  "authorId": "38203359",
+  "name": "Jialie Shen",
+  "affiliations": [],
+  "paperCount": 156,
+  "citationCount": 5696,
+  "hIndex": 39
+ },
+ {
+  "authorId": "34463165",
+  "name": "Jie Yang",
+  "affiliations": [],
+  "paperCount": 402,
+  "citationCount": 6189,
+  "hIndex": 38
+ },
+ {
+  "authorId": "145775490",
+  "name": "G. Jiang",
+  "affiliations": [],
+  "paperCount": 526,
+  "citationCount": 6401,
+  "hIndex": 38
+ },
+ {
+  "authorId": "144309189",
+  "name": "Xin Fan",
+  "affiliations": [],
+  "paperCount": 219,
+  "citationCount": 8753,
+  "hIndex": 38
+ },
+ {
+  "authorId": "144155678",
+  "name": "J. Paik",
+  "affiliations": [],
+  "paperCount": 570,
+  "citationCount": 6992,
+  "hIndex": 38
+ },
+ {
+  "authorId": "143949085",
+  "name": "Yo-Sung Ho",
+  "affiliations": [],
+  "paperCount": 624,
+  "citationCount": 6854,
+  "hIndex": 38
+ },
+ {
+  "authorId": "2019243",
+  "name": "A. Bhandari",
+  "affiliations": [],
+  "paperCount": 149,
+  "citationCount": 4396,
+  "hIndex": 37
+ },
+ {
+  "authorId": "145662587",
+  "name": "Lap-Pui Chau",
+  "affiliations": [],
+  "paperCount": 245,
+  "citationCount": 6433,
+  "hIndex": 37
+ },
+ {
+  "authorId": "1766554",
+  "name": "B. Wen",
+  "affiliations": [],
+  "paperCount": 132,
+  "citationCount": 6107,
+  "hIndex": 37
+ },
+ {
+  "authorId": "48354614",
+  "name": "Zhenzhong Chen",
+  "affiliations": [],
+  "paperCount": 285,
+  "citationCount": 5646,
+  "hIndex": 37
+ },
+ {
+  "authorId": "1715148",
+  "name": "Jiangbo Lu",
+  "affiliations": [],
+  "paperCount": 92,
+  "citationCount": 6322,
+  "hIndex": 37
+ },
+ {
+  "authorId": "2800947",
+  "name": "Liangcai Cao",
+  "affiliations": [],
+  "paperCount": 323,
+  "citationCount": 4856,
+  "hIndex": 37
+ },
+ {
+  "authorId": "144763839",
+  "name": "G. Ramponi",
+  "affiliations": [],
+  "paperCount": 313,
+  "citationCount": 5600,
+  "hIndex": 37
+ },
+ {
+  "authorId": "144811861",
+  "name": "Mooi Choo Choo Chuah",
+  "affiliations": [
+   "Lehigh University"
+  ],
+  "paperCount": 206,
+  "citationCount": 4952,
+  "hIndex": 36
+ },
+ {
+  "authorId": "143837075",
+  "name": "S. Samavi",
+  "affiliations": [],
+  "paperCount": 264,
+  "citationCount": 4843,
+  "hIndex": 36
+ },
+ {
+  "authorId": "2153198409",
+  "name": "Wei Sun",
+  "affiliations": [],
+  "paperCount": 173,
+  "citationCount": 4308,
+  "hIndex": 36
+ },
+ {
+  "authorId": "2624174",
+  "name": "Youfang Lin",
+  "affiliations": [],
+  "paperCount": 132,
+  "citationCount": 10544,
+  "hIndex": 36
+ },
+ {
+  "authorId": "2307915077",
+  "name": "S. A",
+  "affiliations": [],
+  "paperCount": 700,
+  "citationCount": 6542,
+  "hIndex": 35
+ },
+ {
+  "authorId": "1827383",
+  "name": "Subrahmanyam Murala",
+  "affiliations": [],
+  "paperCount": 148,
+  "citationCount": 4698,
+  "hIndex": 35
+ },
+ {
+  "authorId": "40177644",
+  "name": "Q. Ling",
+  "affiliations": [],
+  "paperCount": 239,
+  "citationCount": 4470,
+  "hIndex": 35
+ },
+ {
+  "authorId": "120070100",
+  "name": "Xinyu Zhang",
+  "affiliations": [],
+  "paperCount": 225,
+  "citationCount": 4919,
+  "hIndex": 35
+ },
+ {
+  "authorId": "8049880",
+  "name": "Penghui Zhao",
+  "affiliations": [],
+  "paperCount": 322,
+  "citationCount": 5396,
+  "hIndex": 35
+ },
+ {
+  "authorId": "2037259",
+  "name": "Yinqiang Zheng",
+  "affiliations": [],
+  "paperCount": 126,
+  "citationCount": 5058,
+  "hIndex": 35
+ },
+ {
+  "authorId": "144734955",
+  "name": "Homer H. Chen",
+  "affiliations": [],
+  "paperCount": 227,
+  "citationCount": 5373,
+  "hIndex": 35
+ },
+ {
+  "authorId": "120456578",
+  "name": "Xiaoan Yan",
+  "affiliations": [],
+  "paperCount": 71,
+  "citationCount": 3765,
+  "hIndex": 35
+ },
+ {
+  "authorId": "13524601",
+  "name": "Jian Yang",
+  "affiliations": [],
+  "paperCount": 224,
+  "citationCount": 4426,
+  "hIndex": 35
+ },
+ {
+  "authorId": "1755176",
+  "name": "Shanshe Wang",
+  "affiliations": [],
+  "paperCount": 210,
+  "citationCount": 5301,
+  "hIndex": 34
+ },
+ {
+  "authorId": "134909078",
+  "name": "Zebin Wu",
+  "affiliations": [],
+  "paperCount": 256,
+  "citationCount": 4989,
+  "hIndex": 34
+ },
+ {
+  "authorId": "2116459218",
+  "name": "Zicheng Zhang",
+  "affiliations": [],
+  "paperCount": 245,
+  "citationCount": 4704,
+  "hIndex": 34
+ },
+ {
+  "authorId": "2147469944",
+  "name": "M. Aamir",
+  "affiliations": [],
+  "paperCount": 182,
+  "citationCount": 3490,
+  "hIndex": 34
+ },
+ {
+  "authorId": "2164214077",
+  "name": "Xinbo Gao",
+  "affiliations": [],
+  "paperCount": 131,
+  "citationCount": 3766,
+  "hIndex": 34
+ },
+ {
+  "authorId": "2108846176",
+  "name": "Yanfeng Wang",
+  "affiliations": [],
+  "paperCount": 110,
+  "citationCount": 7332,
+  "hIndex": 34
+ },
+ {
+  "authorId": "46317290",
+  "name": "Qian Zhao",
+  "affiliations": [],
+  "paperCount": 83,
+  "citationCount": 6513,
+  "hIndex": 34
+ },
+ {
+  "authorId": "1693757",
+  "name": "K. Panetta",
+  "affiliations": [],
+  "paperCount": 284,
+  "citationCount": 6815,
+  "hIndex": 34
+ },
+ {
+  "authorId": "37833805",
+  "name": "Kai Wang",
+  "affiliations": [],
+  "paperCount": 207,
+  "citationCount": 4974,
+  "hIndex": 34
+ },
+ {
+  "authorId": "1756244",
+  "name": "Yide Ma",
+  "affiliations": [
+   "LANZHOU UNIVERSITY"
+  ],
+  "paperCount": 208,
+  "citationCount": 4335,
+  "hIndex": 34
+ },
+ {
+  "authorId": "143814264",
+  "name": "Hua Huang",
+  "affiliations": [],
+  "paperCount": 96,
+  "citationCount": 4714,
+  "hIndex": 34
+ },
+ {
+  "authorId": "2110284557",
+  "name": "Jie Huang",
+  "affiliations": [],
+  "paperCount": 74,
+  "citationCount": 4305,
+  "hIndex": 33
+ },
+ {
+  "authorId": "1388864077",
+  "name": "Feng Lu",
+  "affiliations": [],
+  "paperCount": 61,
+  "citationCount": 5283,
+  "hIndex": 33
+ },
+ {
+  "authorId": "2031695",
+  "name": "Junchang Wang",
+  "affiliations": [],
+  "paperCount": 333,
+  "citationCount": 4492,
+  "hIndex": 33
+ },
+ {
+  "authorId": "2483916",
+  "name": "Suha Kwak",
+  "affiliations": [],
+  "paperCount": 86,
+  "citationCount": 6430,
+  "hIndex": 33
+ },
+ {
+  "authorId": "2125159330",
+  "name": "Xiao Xiang Zhu",
+  "affiliations": [],
+  "paperCount": 141,
+  "citationCount": 3658,
+  "hIndex": 33
+ },
+ {
+  "authorId": "145865683",
+  "name": "Zhongxuan Luo",
+  "affiliations": [],
+  "paperCount": 239,
+  "citationCount": 5901,
+  "hIndex": 33
+ },
+ {
+  "authorId": "144036068",
+  "name": "J. Suo",
+  "affiliations": [],
+  "paperCount": 142,
+  "citationCount": 3743,
+  "hIndex": 32
+ },
+ {
+  "authorId": "2941564",
+  "name": "Shaodi You",
+  "affiliations": [],
+  "paperCount": 96,
+  "citationCount": 4126,
+  "hIndex": 32
+ },
+ {
+  "authorId": "51360637",
+  "name": "Kui Jiang",
+  "affiliations": [],
+  "paperCount": 74,
+  "citationCount": 5269,
+  "hIndex": 32
+ },
+ {
+  "authorId": "2263014",
+  "name": "Xiangtao Zheng",
+  "affiliations": [],
+  "paperCount": 79,
+  "citationCount": 5113,
+  "hIndex": 32
+ },
+ {
+  "authorId": "50995454",
+  "name": "Jun Cheng",
+  "affiliations": [
+   "Institute for Infocomm Research"
+  ],
+  "paperCount": 122,
+  "citationCount": 7811,
+  "hIndex": 32
+ },
+ {
+  "authorId": "2115844515",
+  "name": "Xiaohui Yuan",
+  "affiliations": [],
+  "paperCount": 100,
+  "citationCount": 4996,
+  "hIndex": 32
+ },
+ {
+  "authorId": "2266393212",
+  "name": "Guangtao Zhai",
+  "affiliations": [],
+  "paperCount": 208,
+  "citationCount": 3552,
+  "hIndex": 31
+ },
+ {
+  "authorId": "120155330",
+  "name": "Haoning Wu",
+  "affiliations": [],
+  "paperCount": 63,
+  "citationCount": 4679,
+  "hIndex": 31
+ },
+ {
+  "authorId": "50379842",
+  "name": "Liang Pan",
+  "affiliations": [],
+  "paperCount": 43,
+  "citationCount": 5309,
+  "hIndex": 31
+ },
+ {
+  "authorId": "145231572",
+  "name": "Mei Yu",
+  "affiliations": [],
+  "paperCount": 408,
+  "citationCount": 4079,
+  "hIndex": 31
+ },
+ {
+  "authorId": "71425092",
+  "name": "Jian Zhao",
+  "affiliations": [],
+  "paperCount": 49,
+  "citationCount": 2887,
+  "hIndex": 31
+ },
+ {
+  "authorId": "7523259",
+  "name": "Shangchen Zhou",
+  "affiliations": [],
+  "paperCount": 58,
+  "citationCount": 6343,
+  "hIndex": 31
+ },
+ {
+  "authorId": "46246806",
+  "name": "Chia-Wen Lin",
+  "affiliations": [],
+  "paperCount": 59,
+  "citationCount": 4889,
+  "hIndex": 31
+ },
+ {
+  "authorId": "2027757",
+  "name": "K. Jia",
+  "affiliations": [],
+  "paperCount": 373,
+  "citationCount": 3218,
+  "hIndex": 31
+ },
+ {
+  "authorId": "152891407",
+  "name": "Yonghuai Liu",
+  "affiliations": [],
+  "paperCount": 195,
+  "citationCount": 5283,
+  "hIndex": 31
+ },
+ {
+  "authorId": "144328091",
+  "name": "R. Hu",
+  "affiliations": [],
+  "paperCount": 424,
+  "citationCount": 4813,
+  "hIndex": 31
+ },
+ {
+  "authorId": "134339866",
+  "name": "L. Van Gool",
+  "affiliations": [],
+  "paperCount": 80,
+  "citationCount": 5860,
+  "hIndex": 31
+ },
+ {
+  "authorId": "152330322",
+  "name": "Erkut Erdem",
+  "affiliations": [
+   "Hacettepe University"
+  ],
+  "paperCount": 158,
+  "citationCount": 7340,
+  "hIndex": 30
+ },
+ {
+  "authorId": "2555126",
+  "name": "Jinjiang Li",
+  "affiliations": [],
+  "paperCount": 279,
+  "citationCount": 3451,
+  "hIndex": 30
+ },
+ {
+  "authorId": "3367248",
+  "name": "Jiangxin Dong",
+  "affiliations": [],
+  "paperCount": 73,
+  "citationCount": 2709,
+  "hIndex": 30
+ },
+ {
+  "authorId": "1956017",
+  "name": "Yitian Zhao",
+  "affiliations": [],
+  "paperCount": 111,
+  "citationCount": 5626,
+  "hIndex": 30
+ },
+ {
+  "authorId": "2104357582",
+  "name": "Gaurav Gupta",
+  "affiliations": [],
+  "paperCount": 101,
+  "citationCount": 2851,
+  "hIndex": 30
+ },
+ {
+  "authorId": "3198851",
+  "name": "Z. Gao",
+  "affiliations": [],
+  "paperCount": 75,
+  "citationCount": 2514,
+  "hIndex": 30
+ },
+ {
+  "authorId": "3245182",
+  "name": "Yanpeng Cao",
+  "affiliations": [],
+  "paperCount": 99,
+  "citationCount": 2792,
+  "hIndex": 30
+ },
+ {
+  "authorId": "2163097",
+  "name": "Huihui Song",
+  "affiliations": [],
+  "paperCount": 68,
+  "citationCount": 4994,
+  "hIndex": 30
+ },
+ {
+  "authorId": "2059129841",
+  "name": "Y. Qiao",
+  "affiliations": [],
+  "paperCount": 46,
+  "citationCount": 10349,
+  "hIndex": 30
+ },
+ {
+  "authorId": "51182421",
+  "name": "Kuk-Jin Yoon",
+  "affiliations": [],
+  "paperCount": 72,
+  "citationCount": 3523,
+  "hIndex": 30
+ },
+ {
+  "authorId": "144999037",
+  "name": "F. Jiang",
+  "affiliations": [],
+  "paperCount": 118,
+  "citationCount": 3438,
+  "hIndex": 30
+ },
+ {
+  "authorId": "3041495",
+  "name": "Dongming Zhou",
+  "affiliations": [],
+  "paperCount": 115,
+  "citationCount": 3093,
+  "hIndex": 30
+ },
+ {
+  "authorId": "40072305",
+  "name": "Zheng Wang",
+  "affiliations": [
+   "University of Leeds"
+  ],
+  "paperCount": 83,
+  "citationCount": 3024,
+  "hIndex": 30
+ },
+ {
+  "authorId": "14364286",
+  "name": "Aykut Erdem",
+  "affiliations": [
+   "Koç University, Istanbul, Turkey"
+  ],
+  "paperCount": 122,
+  "citationCount": 5333,
+  "hIndex": 30
+ },
+ {
+  "authorId": "7805040",
+  "name": "Yifei Pu",
+  "affiliations": [],
+  "paperCount": 94,
+  "citationCount": 2807,
+  "hIndex": 30
+ },
+ {
+  "authorId": "2774427",
+  "name": "Hanli Wang",
+  "affiliations": [],
+  "paperCount": 177,
+  "citationCount": 4517,
+  "hIndex": 30
+ },
+ {
+  "authorId": "1701934",
+  "name": "Cosmin Ancuți",
+  "affiliations": [],
+  "paperCount": 95,
+  "citationCount": 7472,
+  "hIndex": 29
+ },
+ {
+  "authorId": "2834956",
+  "name": "Hanwen Yu",
+  "affiliations": [],
+  "paperCount": 171,
+  "citationCount": 2688,
+  "hIndex": 29
+ },
+ {
+  "authorId": "46397019",
+  "name": "Xiaohua Xie",
+  "affiliations": [],
+  "paperCount": 157,
+  "citationCount": 5179,
+  "hIndex": 29
+ },
+ {
+  "authorId": "145462888",
+  "name": "Hao Tang",
+  "affiliations": [],
+  "paperCount": 57,
+  "citationCount": 3339,
+  "hIndex": 29
+ },
+ {
+  "authorId": "1931304",
+  "name": "W. Hamidouche",
+  "affiliations": [],
+  "paperCount": 258,
+  "citationCount": 3226,
+  "hIndex": 29
+ },
+ {
+  "authorId": "2035529",
+  "name": "Yanlong Cao",
+  "affiliations": [],
+  "paperCount": 144,
+  "citationCount": 3234,
+  "hIndex": 29
+ },
+ {
+  "authorId": "144515403",
+  "name": "N. Ling",
+  "affiliations": [],
+  "paperCount": 241,
+  "citationCount": 2880,
+  "hIndex": 29
+ },
+ {
+  "authorId": "2141510194",
+  "name": "Junjun Jiang",
+  "affiliations": [],
+  "paperCount": 81,
+  "citationCount": 3934,
+  "hIndex": 29
+ },
+ {
+  "authorId": "72514806",
+  "name": "Yadong Xu",
+  "affiliations": [],
+  "paperCount": 52,
+  "citationCount": 2236,
+  "hIndex": 29
+ },
+ {
+  "authorId": "3223068",
+  "name": "Zhenhong Du",
+  "affiliations": [],
+  "paperCount": 96,
+  "citationCount": 2436,
+  "hIndex": 29
+ },
+ {
+  "authorId": "144897720",
+  "name": "Y. Ou",
+  "affiliations": [],
+  "paperCount": 209,
+  "citationCount": 2712,
+  "hIndex": 29
+ },
+ {
+  "authorId": "7593607",
+  "name": "Christos Sakaridis",
+  "affiliations": [],
+  "paperCount": 60,
+  "citationCount": 7253,
+  "hIndex": 29
+ },
+ {
+  "authorId": "40124146",
+  "name": "C. Ancuti",
+  "affiliations": [],
+  "paperCount": 73,
+  "citationCount": 7199,
+  "hIndex": 28
+ },
+ {
+  "authorId": "73329364",
+  "name": "Jiangning Zhang",
+  "affiliations": [],
+  "paperCount": 77,
+  "citationCount": 3303,
+  "hIndex": 28
+ },
+ {
+  "authorId": "5332972",
+  "name": "Kunyan Zhang",
+  "affiliations": [],
+  "paperCount": 87,
+  "citationCount": 7757,
+  "hIndex": 28
+ },
+ {
+  "authorId": "1904697",
+  "name": "Zhenbing Liu",
+  "affiliations": [],
+  "paperCount": 161,
+  "citationCount": 2514,
+  "hIndex": 28
+ },
+ {
+  "authorId": "2121684731",
+  "name": "Man Zhou",
+  "affiliations": [],
+  "paperCount": 58,
+  "citationCount": 2913,
+  "hIndex": 28
+ },
+ {
+  "authorId": "2108510456",
+  "name": "Jinyuan Liu",
+  "affiliations": [],
+  "paperCount": 72,
+  "citationCount": 4708,
+  "hIndex": 28
+ },
+ {
+  "authorId": "2141897317",
+  "name": "Bo Zhang",
+  "affiliations": [
+   "Shanghai AI Laboratory"
+  ],
+  "paperCount": 74,
+  "citationCount": 4023,
+  "hIndex": 28
+ },
+ {
+  "authorId": "1779338",
+  "name": "Huanjing Yue",
+  "affiliations": [],
+  "paperCount": 109,
+  "citationCount": 2731,
+  "hIndex": 28
+ },
+ {
+  "authorId": "1491800101",
+  "name": "Qionghai Dai",
+  "affiliations": [],
+  "paperCount": 73,
+  "citationCount": 2402,
+  "hIndex": 28
+ },
+ {
+  "authorId": "36034272",
+  "name": "Rushi Lan",
+  "affiliations": [],
+  "paperCount": 141,
+  "citationCount": 2764,
+  "hIndex": 28
+ },
+ {
+  "authorId": "7526783",
+  "name": "F. Zhu",
+  "affiliations": [],
+  "paperCount": 161,
+  "citationCount": 3874,
+  "hIndex": 28
+ },
+ {
+  "authorId": "2115468491",
+  "name": "Kunchang Li",
+  "affiliations": [],
+  "paperCount": 46,
+  "citationCount": 8904,
+  "hIndex": 28
+ },
+ {
+  "authorId": "3345616",
+  "name": "Chastine Fatichah",
+  "affiliations": [],
+  "paperCount": 364,
+  "citationCount": 2701,
+  "hIndex": 27
+ },
+ {
+  "authorId": "40074541",
+  "name": "J. Qian",
+  "affiliations": [],
+  "paperCount": 116,
+  "citationCount": 2768,
+  "hIndex": 27
+ },
+ {
+  "authorId": "9152493",
+  "name": "Linfei Yin",
+  "affiliations": [],
+  "paperCount": 139,
+  "citationCount": 2219,
+  "hIndex": 27
+ },
+ {
+  "authorId": "1714410",
+  "name": "W. Jia",
+  "affiliations": [],
+  "paperCount": 157,
+  "citationCount": 4115,
+  "hIndex": 27
+ },
+ {
+  "authorId": "18158517",
+  "name": "Chunle Guo",
+  "affiliations": [],
+  "paperCount": 56,
+  "citationCount": 10217,
+  "hIndex": 27
+ },
+ {
+  "authorId": "3181359",
+  "name": "Qican Zhang",
+  "affiliations": [],
+  "paperCount": 129,
+  "citationCount": 3164,
+  "hIndex": 27
+ },
+ {
+  "authorId": "2055457999",
+  "name": "Qi Xie",
+  "affiliations": [],
+  "paperCount": 69,
+  "citationCount": 5337,
+  "hIndex": 27
+ },
+ {
+  "authorId": "6019653",
+  "name": "Rencan Nie",
+  "affiliations": [],
+  "paperCount": 112,
+  "citationCount": 2346,
+  "hIndex": 27
+ },
+ {
+  "authorId": "1794500",
+  "name": "Qiong Liu",
+  "affiliations": [],
+  "paperCount": 213,
+  "citationCount": 2886,
+  "hIndex": 27
+ },
+ {
+  "authorId": "40513331",
+  "name": "Fan Fan",
+  "affiliations": [],
+  "paperCount": 107,
+  "citationCount": 3873,
+  "hIndex": 26
+ },
+ {
+  "authorId": "145353981",
+  "name": "Santosh Kumar Vipparthi",
+  "affiliations": [],
+  "paperCount": 108,
+  "citationCount": 1684,
+  "hIndex": 26
+ },
+ {
+  "authorId": "2211737291",
+  "name": "Xiaohong Liu",
+  "affiliations": [],
+  "paperCount": 114,
+  "citationCount": 1835,
+  "hIndex": 26
+ },
+ {
+  "authorId": "3136503",
+  "name": "R. W. Liu",
+  "affiliations": [],
+  "paperCount": 85,
+  "citationCount": 2462,
+  "hIndex": 26
+ },
+ {
+  "authorId": "2117101322",
+  "name": "Ke Xu",
+  "affiliations": [],
+  "paperCount": 152,
+  "citationCount": 2170,
+  "hIndex": 26
+ },
+ {
+  "authorId": "2491927",
+  "name": "Jiangxin Yang",
+  "affiliations": [],
+  "paperCount": 140,
+  "citationCount": 2630,
+  "hIndex": 26
+ },
+ {
+  "authorId": "1686808",
+  "name": "C. Cusano",
+  "affiliations": [],
+  "paperCount": 100,
+  "citationCount": 2579,
+  "hIndex": 26
+ },
+ {
+  "authorId": "3333257",
+  "name": "Qiang Ning",
+  "affiliations": [
+   "Amazon Alexa AI"
+  ],
+  "paperCount": 76,
+  "citationCount": 2856,
+  "hIndex": 26
+ },
+ {
+  "authorId": "1882137",
+  "name": "Zenghui Zhang",
+  "affiliations": [],
+  "paperCount": 160,
+  "citationCount": 2969,
+  "hIndex": 26
+ },
+ {
+  "authorId": "1575684088",
+  "name": "Dejia Xu",
+  "affiliations": [],
+  "paperCount": 54,
+  "citationCount": 3481,
+  "hIndex": 26
+ },
+ {
+  "authorId": "2427085416",
+  "name": "Zhongmin Liang",
+  "affiliations": [],
+  "paperCount": 124,
+  "citationCount": 2582,
+  "hIndex": 26
+ },
+ {
+  "authorId": "2142867508",
+  "name": "Xiaofei Zhou",
+  "affiliations": [],
+  "paperCount": 119,
+  "citationCount": 2353,
+  "hIndex": 25
+ },
+ {
+  "authorId": "1777100",
+  "name": "H. Afzal",
+  "affiliations": [],
+  "paperCount": 117,
+  "citationCount": 1902,
+  "hIndex": 25
+ },
+ {
+  "authorId": "1723685",
+  "name": "Kaibing Zhang",
+  "affiliations": [],
+  "paperCount": 83,
+  "citationCount": 3040,
+  "hIndex": 25
+ },
+ {
+  "authorId": "2043147",
+  "name": "Tiesong Zhao",
+  "affiliations": [],
+  "paperCount": 110,
+  "citationCount": 1747,
+  "hIndex": 25
+ },
+ {
+  "authorId": "50268261",
+  "name": "Ren-yi Liu",
+  "affiliations": [],
+  "paperCount": 96,
+  "citationCount": 1678,
+  "hIndex": 25
+ },
+ {
+  "authorId": "3349497",
+  "name": "Sarah Parisot",
+  "affiliations": [],
+  "paperCount": 57,
+  "citationCount": 6417,
+  "hIndex": 25
+ },
+ {
+  "authorId": "1783801",
+  "name": "M. Pagnucco",
+  "affiliations": [],
+  "paperCount": 195,
+  "citationCount": 2324,
+  "hIndex": 25
+ }
+]

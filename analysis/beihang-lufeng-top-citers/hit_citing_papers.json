@@ -1,0 +1,704 @@
+{
+ "刘家瑛": {
+  "name_variants": [
+   "Jiaying Liu"
+  ],
+  "papers": [
+   {
+    "title": "Seeing in the Dark with Ambient Guidance",
+    "year": 2026,
+    "venue": "ACM Trans. Multim. Comput. Commun. Appl.",
+    "n_authors": 5,
+    "cites": 0,
+    "doi": "10.1145/3815421",
+    "s2": "95c2c99787c133a5c0156fef6fc64fe35481ccf9"
+   },
+   {
+    "title": "Towards Low Light Enhancement With RAW Images",
+    "year": 2021,
+    "venue": "IEEE Transactions on Image Processing",
+    "n_authors": 5,
+    "cites": 82,
+    "doi": "10.1109/TIP.2022.3140610",
+    "s2": "3337cadc962fefd09344ed90a44cf30951841fa7"
+   },
+   {
+    "title": "Band Representation-Based Semi-Supervised Low-Light Image Enhancement: Bridging the Gap Be",
+    "year": 2021,
+    "venue": "IEEE Transactions on Image Processing",
+    "n_authors": 5,
+    "cites": 203,
+    "doi": "10.1109/TIP.2021.3062184",
+    "s2": "078958642cc4e5fd915ca2dce3b9d5c14dd6df27"
+   },
+   {
+    "title": "Benchmarking Low-Light Image Enhancement and Beyond",
+    "year": 2021,
+    "venue": "International Journal of Computer Vision",
+    "n_authors": 5,
+    "cites": 372,
+    "doi": "10.1007/s11263-020-01418-8",
+    "s2": "ef11f84c6cce12bbce40d7a49643f8cf4c0511f8"
+   },
+   {
+    "title": "Integrating Semantic Segmentation and Retinex Model for Low-Light Image Enhancement",
+    "year": 2020,
+    "venue": "ACM Multimedia",
+    "n_authors": 4,
+    "cites": 139,
+    "doi": "10.1145/3394171.3413757",
+    "s2": "d86d02b7e1bfebfa0155d7960c81bce17953d2c5"
+   }
+  ]
+ },
+ "刘日升": {
+  "name_variants": [
+   "Risheng Liu"
+  ],
+  "papers": [
+   {
+    "title": "SNRD-Net: SNR-aware dual enhancement network for low-light images",
+    "year": 2026,
+    "venue": "Computer Vision and Image Understanding",
+    "n_authors": 4,
+    "cites": 0,
+    "doi": "10.1016/j.cviu.2026.104776",
+    "s2": "9d7332dcc5222a31cfa001fc442082ac0abed1d7"
+   },
+   {
+    "title": "DEAL: Data-Efficient Adversarial Learning for High-Quality Infrared Imaging",
+    "year": 2025,
+    "venue": "Computer Vision and Pattern Recognition",
+    "n_authors": 6,
+    "cites": 10,
+    "doi": "10.1109/CVPR52734.2025.02626",
+    "s2": "9653ce2bdb8d6aa8b08e9ad703a4447286fad203"
+   },
+   {
+    "title": "Fearless Luminance Adaptation: A Macro-Micro-Hierarchical Transformer for Exposure Correct",
+    "year": 2023,
+    "venue": "ACM Multimedia",
+    "n_authors": 6,
+    "cites": 16,
+    "doi": "10.1145/3581783.3612436",
+    "s2": "ea2aba7ac6a556cb541564af11ae794e5301e518"
+   },
+   {
+    "title": "MonoTDP: Twin Depth Perception for Monocular 3D Object Detection in Adverse Scenes",
+    "year": 2023,
+    "venue": "arXiv.org",
+    "n_authors": 6,
+    "cites": 5,
+    "doi": "10.48550/arXiv.2305.10974",
+    "s2": "96e1e100cd3967124d435f84a59f56bee087d992"
+   },
+   {
+    "title": "Advancing Unsupervised Low-light Image Enhancement: Noise Estimation, Illumination Interpo",
+    "year": 2023,
+    "venue": "",
+    "n_authors": 4,
+    "cites": 0,
+    "doi": null,
+    "s2": "9f184d5bc2ebe2df0483c1cd3d55f88577f7b5f8"
+   },
+   {
+    "title": "Best of Both Worlds: See and Understand Clearly in the Dark",
+    "year": 2022,
+    "venue": "ACM Multimedia",
+    "n_authors": 6,
+    "cites": 19,
+    "doi": "10.1145/3503161.3548259",
+    "s2": "37b108653979f570ce2cf148776d99624f8e7277"
+   },
+   {
+    "title": "Hierarchical Bilevel Learning with Architecture and Loss Search for Hadamard-based Image R",
+    "year": 2022,
+    "venue": "International Joint Conference on Artifi",
+    "n_authors": 4,
+    "cites": 5,
+    "doi": "10.24963/ijcai.2022/245",
+    "s2": "c1890fda11e05f3eaea539e069b3c6cf678e5004"
+   },
+   {
+    "title": "Collaborative Reflectance-And-Illumination Learning For High-Efficient Low-Light Image Enh",
+    "year": 2021,
+    "venue": "IEEE International Conference on Multime",
+    "n_authors": 5,
+    "cites": 2,
+    "doi": "10.1109/ICME51207.2021.9428268",
+    "s2": "cfb4160bab74b7d17d9cf5ae79387f00917dc8e4"
+   },
+   {
+    "title": "NFI2: Learning Noise-Free Illuminance-Interpolator for Unsupervised Low-Light Image Enhanc",
+    "year": 2023,
+    "venue": "arXiv.org",
+    "n_authors": 5,
+    "cites": 0,
+    "doi": "10.48550/arXiv.2305.10223",
+    "s2": "e810e493b96bc9c2fb4f40bba568ac2e5235197e"
+   }
+  ]
+ },
+ "黄庆明": {
+  "name_variants": [
+   "Qingming Huang"
+  ],
+  "papers": [
+   {
+    "title": "Adaptive Multi-Exposure Image Correction via Joint Lightness and Structure Awareness",
+    "year": 2025,
+    "venue": "ACM Trans. Multim. Comput. Commun. Appl.",
+    "n_authors": 7,
+    "cites": 1,
+    "doi": "10.1145/3735973",
+    "s2": "f4a31575a055204d0f9ab565d8b74c6b2d80d101"
+   },
+   {
+    "title": "Unsupervised Low-Light Image Enhancement via Luminance Mask and Luminance-Independent Repr",
+    "year": 2024,
+    "venue": "IEEE Transactions on Emerging Topics in ",
+    "n_authors": 6,
+    "cites": 8,
+    "doi": "10.1109/TETCI.2024.3369858",
+    "s2": "e28a2008c524b93407357b401d596842851d927b"
+   },
+   {
+    "title": "Unsupervised Low-Light Video Enhancement With Spatial-Temporal Co-Attention Transformer",
+    "year": 2023,
+    "venue": "IEEE Transactions on Image Processing",
+    "n_authors": 6,
+    "cites": 23,
+    "doi": "10.1109/TIP.2023.3301332",
+    "s2": "e464ec8421fcdfb43d6f67a6c3fa0d89b2031164"
+   },
+   {
+    "title": "LVE-S2D: Low-Light Video Enhancement From Static to Dynamic",
+    "year": 2022,
+    "venue": "IEEE transactions on circuits and system",
+    "n_authors": 6,
+    "cites": 62,
+    "doi": "10.1109/TCSVT.2022.3190916",
+    "s2": "555b2d78d93fc9119f9e20c676b0764b1f20a178"
+   }
+  ]
+ },
+ "左旺孟": {
+  "name_variants": [
+   "W. Zuo",
+   "Wangmeng Zuo"
+  ],
+  "papers": [
+   {
+    "title": "Degradation-Guided cross-consistent deep unfolding network for video restoration under div",
+    "year": 2025,
+    "venue": "Neural Networks",
+    "n_authors": 6,
+    "cites": 2,
+    "doi": "10.1016/j.neunet.2025.107700",
+    "s2": "b680c96323a8bb37003c61d6310343a39af6f0cf"
+   },
+   {
+    "title": "Degraded Structure and Hue Guided Auxiliary Learning for low-light image enhancement",
+    "year": 2024,
+    "venue": "Knowledge-Based Systems",
+    "n_authors": 5,
+    "cites": 24,
+    "doi": "10.1016/j.knosys.2024.111779",
+    "s2": "c9ed01a2a4d93c8aef914e730e4996ba5fdfeea3"
+   },
+   {
+    "title": "Cross-Consistent Deep Unfolding Network for Adaptive All-In-One Video Restoration",
+    "year": 2023,
+    "venue": "arXiv.org",
+    "n_authors": 6,
+    "cites": 7,
+    "doi": "10.48550/arXiv.2309.01627",
+    "s2": "1e4b9fb2efa19a026c644665abfab70c4215508c"
+   },
+   {
+    "title": "Invertible network for unpaired low-light image enhancement",
+    "year": 2021,
+    "venue": "The Visual Computer",
+    "n_authors": 4,
+    "cites": 10,
+    "doi": "10.1007/s00371-023-02769-2",
+    "s2": "02465bd3a371cd40a8d13eda92f9e97f8adeb25b"
+   }
+  ]
+ },
+ "孟德宇": {
+  "name_variants": [
+   "Deyu Meng"
+  ],
+  "papers": [
+   {
+    "title": "Degradation-Guided cross-consistent deep unfolding network for video restoration under div",
+    "year": 2025,
+    "venue": "Neural Networks",
+    "n_authors": 6,
+    "cites": 2,
+    "doi": "10.1016/j.neunet.2025.107700",
+    "s2": "b680c96323a8bb37003c61d6310343a39af6f0cf"
+   },
+   {
+    "title": "Cross-Consistent Deep Unfolding Network for Adaptive All-In-One Video Restoration",
+    "year": 2023,
+    "venue": "arXiv.org",
+    "n_authors": 6,
+    "cites": 7,
+    "doi": "10.48550/arXiv.2309.01627",
+    "s2": "1e4b9fb2efa19a026c644665abfab70c4215508c"
+   },
+   {
+    "title": "Low-Light Image Enhancement by Retinex-Based Algorithm Unrolling and Adjustment",
+    "year": 2022,
+    "venue": "IEEE Transactions on Neural Networks and",
+    "n_authors": 5,
+    "cites": 79,
+    "doi": "10.1109/TNNLS.2023.3289626",
+    "s2": "8411b32a2df053414d381c8c6c4ba5591e7a7006"
+   }
+  ]
+ },
+ "江俊君": {
+  "name_variants": [
+   "Junjun Jiang"
+  ],
+  "papers": [
+   {
+    "title": "Image Enhancement via Associated Perturbation Removal and Texture Reconstruction Learning",
+    "year": 2024,
+    "venue": "IEEE/CAA Journal of Automatica Sinica",
+    "n_authors": 6,
+    "cites": 14,
+    "doi": "10.1109/JAS.2024.124521",
+    "s2": "f0da348a4c4bdcd46a9f609025e84d3d0bcd6227"
+   },
+   {
+    "title": "ChebyLighter: Optimal Curve Estimation for Low-light Image Enhancement",
+    "year": 2022,
+    "venue": "ACM Multimedia",
+    "n_authors": 6,
+    "cites": 33,
+    "doi": "10.1145/3503161.3548135",
+    "s2": "4cdf30bb87f654317c327487209da9f2a6b8c7cc"
+   },
+   {
+    "title": "Decomposition Makes Better Rain Removal: An Improved Attention-Guided Deraining Network",
+    "year": 2021,
+    "venue": "IEEE transactions on circuits and system",
+    "n_authors": 8,
+    "cites": 100,
+    "doi": "10.1109/tcsvt.2020.3044887",
+    "s2": "4b04338ace0331af97392029aca6cb6203da9411"
+   }
+  ]
+ },
+ "闵雄阔": {
+  "name_variants": [
+   "Xiongkuo Min"
+  ],
+  "papers": [
+   {
+    "title": "GLARE: Low Light Image Enhancement via Generative Latent Feature based Codebook Retrieval",
+    "year": 2024,
+    "venue": "European Conference on Computer Vision",
+    "n_authors": 7,
+    "cites": 89,
+    "doi": "10.48550/arXiv.2407.12431",
+    "s2": "7534645cceb13394fe2298d573401e40c913b70d"
+   },
+   {
+    "title": "NTIRE 2023 Quality Assessment of Video Enhancement Challenge",
+    "year": 2023,
+    "venue": "2023 IEEE/CVF Conference on Computer Vis",
+    "n_authors": 72,
+    "cites": 22,
+    "doi": "10.1109/CVPRW59228.2023.00158",
+    "s2": "963e564405b948ebb77a24e0f1e5e8bda10acfc8"
+   },
+   {
+    "title": "VDPVE: VQA Dataset for Perceptual Video Enhancement",
+    "year": 2023,
+    "venue": "2023 IEEE/CVF Conference on Computer Vis",
+    "n_authors": 8,
+    "cites": 31,
+    "doi": "10.1109/CVPRW59228.2023.00152",
+    "s2": "097a500b7c22a9b13b16272982627f03c8a295ed"
+   },
+   {
+    "title": "Perceptual Quality Assessment of Low-light Image Enhancement",
+    "year": 2021,
+    "venue": "ACM Trans. Multim. Comput. Commun. Appl.",
+    "n_authors": 4,
+    "cites": 88,
+    "doi": "10.1145/3457905",
+    "s2": "26ebc50e2aada008b5683c6f30e9d4b20b8c5c59"
+   }
+  ]
+ },
+ "翟广涛": {
+  "name_variants": [
+   "Guangtao Zhai"
+  ],
+  "papers": [
+   {
+    "title": "GLARE: Low Light Image Enhancement via Generative Latent Feature based Codebook Retrieval",
+    "year": 2024,
+    "venue": "European Conference on Computer Vision",
+    "n_authors": 7,
+    "cites": 89,
+    "doi": "10.48550/arXiv.2407.12431",
+    "s2": "7534645cceb13394fe2298d573401e40c913b70d"
+   },
+   {
+    "title": "Light-VQA+: A Video Quality Assessment Model for Exposure Correction with Vision-Language ",
+    "year": 2024,
+    "venue": "arXiv.org",
+    "n_authors": 9,
+    "cites": 8,
+    "doi": "10.48550/arXiv.2405.03333",
+    "s2": "89c966eda932d8182bd2033bd6a2fb232d4e6e7a"
+   },
+   {
+    "title": "NTIRE 2023 Quality Assessment of Video Enhancement Challenge",
+    "year": 2023,
+    "venue": "2023 IEEE/CVF Conference on Computer Vis",
+    "n_authors": 72,
+    "cites": 22,
+    "doi": "10.1109/CVPRW59228.2023.00158",
+    "s2": "963e564405b948ebb77a24e0f1e5e8bda10acfc8"
+   },
+   {
+    "title": "Light-VQA: A Multi-Dimensional Quality Assessment Model for Low-Light Video Enhancement",
+    "year": 2023,
+    "venue": "ACM Multimedia",
+    "n_authors": 6,
+    "cites": 24,
+    "doi": "10.1145/3581783.3611923",
+    "s2": "70ddb64e489c8a602ff75bb586e82610d023f793"
+   },
+   {
+    "title": "VDPVE: VQA Dataset for Perceptual Video Enhancement",
+    "year": 2023,
+    "venue": "2023 IEEE/CVF Conference on Computer Vis",
+    "n_authors": 8,
+    "cites": 31,
+    "doi": "10.1109/CVPRW59228.2023.00152",
+    "s2": "097a500b7c22a9b13b16272982627f03c8a295ed"
+   },
+   {
+    "title": "Perceptual Quality Assessment of Low-light Image Enhancement",
+    "year": 2021,
+    "venue": "ACM Trans. Multim. Comput. Commun. Appl.",
+    "n_authors": 4,
+    "cites": 88,
+    "doi": "10.1145/3457905",
+    "s2": "26ebc50e2aada008b5683c6f30e9d4b20b8c5c59"
+   }
+  ]
+ },
+ "施柏鑫": {
+  "name_variants": [
+   "Boxin Shi"
+  ],
+  "papers": [
+   {
+    "title": "Coherent Event Guided Low-Light Video Enhancement",
+    "year": 2023,
+    "venue": "IEEE International Conference on Compute",
+    "n_authors": 6,
+    "cites": 65,
+    "doi": "10.1109/ICCV51070.2023.00974",
+    "s2": "f47ec81f6fac8aaca3afb1f109205754d66e1fcd"
+   },
+   {
+    "title": "Polarization-Aware Low-Light Image Enhancement",
+    "year": 2023,
+    "venue": "AAAI Conference on Artificial Intelligen",
+    "n_authors": 6,
+    "cites": 40,
+    "doi": "10.1609/aaai.v37i3.25486",
+    "s2": "1956f7770663fc45d9035278e39eb14fefcdd76a"
+   }
+  ]
+ },
+ "乔宇": {
+  "name_variants": [
+   "Y. Qiao"
+  ],
+  "papers": [
+   {
+    "title": "Aleth-NeRF: Low-light Condition View Synthesis with Concealing Fields",
+    "year": 2023,
+    "venue": "arXiv.org",
+    "n_authors": 5,
+    "cites": 15,
+    "doi": "10.48550/arXiv.2303.05807",
+    "s2": "a16a3cd92d147b2caaf41b20aa28b8b36188ae70"
+   },
+   {
+    "title": "You Only Need 90K Parameters to Adapt Light: a Light Weight Transformer for Image Enhancem",
+    "year": 2022,
+    "venue": "British Machine Vision Conference",
+    "n_authors": 8,
+    "cites": 300,
+    "doi": null,
+    "s2": "a0bd9b23713ed53bc63adab678be2c165a1358f5"
+   },
+   {
+    "title": "Illumination Adaptive Transformer",
+    "year": 2022,
+    "venue": "arXiv.org",
+    "n_authors": 8,
+    "cites": 27,
+    "doi": "10.48550/arXiv.2205.14871",
+    "s2": "a5ea2904ccd93be210053da719c3d26a7f0b0e96"
+   }
+  ]
+ },
+ "陈柯?": {
+  "name_variants": [
+   "Ke Chen"
+  ],
+  "papers": [
+   {
+    "title": "Back-projection Residual Low-light Image Enhancement Network with Color Correction Matrix",
+    "year": 2023,
+    "venue": "2023 IEEE 3rd International Conference o",
+    "n_authors": 2,
+    "cites": 1,
+    "doi": "10.1109/ICPECA56706.2023.10075845",
+    "s2": "074f212b957ebdb68130b1cb3dedf8382bc80a6a"
+   }
+  ]
+ },
+ "戴琼海(院士候选)": {
+  "name_variants": [
+   "Qionghai Dai"
+  ],
+  "papers": [
+   {
+    "title": "DarkVision: A Benchmark for Low-light Image/Video Perception",
+    "year": 2023,
+    "venue": "arXiv.org",
+    "n_authors": 7,
+    "cites": 11,
+    "doi": "10.48550/arXiv.2301.06269",
+    "s2": "f766ecfe23a0a515d721a3e464be08af9a0bc2d2"
+   },
+   {
+    "title": "Computational Imaging and Artificial Intelligence: The Next Revolution of Mobile Vision",
+    "year": 2021,
+    "venue": "Proceedings of the IEEE",
+    "n_authors": 6,
+    "cites": 57,
+    "doi": "10.1109/JPROC.2023.3338272",
+    "s2": "23964a91d992f67f7d3df9dbd5c32e7650cad357"
+   }
+  ]
+ },
+ "聂飞平": {
+  "name_variants": [
+   "F. Nie"
+  ],
+  "papers": [
+   {
+    "title": "Reference-free low-light image enhancement by associating hierarchical wavelet representat",
+    "year": 2022,
+    "venue": "Expert systems with applications",
+    "n_authors": 6,
+    "cites": 19,
+    "doi": "10.1016/j.eswa.2022.118920",
+    "s2": "ad694777050bd12297871229fe8842ab32aa938e"
+   }
+  ]
+ },
+ "周文罡": {
+  "name_variants": [
+   "Wen-gang Zhou"
+  ],
+  "papers": [
+   {
+    "title": "Low-Light Video Enhancement with Synthetic Event Guidance",
+    "year": 2022,
+    "venue": "AAAI Conference on Artificial Intelligen",
+    "n_authors": 9,
+    "cites": 58,
+    "doi": "10.48550/arXiv.2208.11014",
+    "s2": "15837a406a4f6859ca89b1cbbd7b391464164195"
+   }
+  ]
+ },
+ "李厚强": {
+  "name_variants": [
+   "Houqiang Li"
+  ],
+  "papers": [
+   {
+    "title": "Low-Light Video Enhancement with Synthetic Event Guidance",
+    "year": 2022,
+    "venue": "AAAI Conference on Artificial Intelligen",
+    "n_authors": 9,
+    "cites": 58,
+    "doi": "10.48550/arXiv.2208.11014",
+    "s2": "15837a406a4f6859ca89b1cbbd7b391464164195"
+   }
+  ]
+ },
+ "马佳义": {
+  "name_variants": [
+   "Jiayi Ma"
+  ],
+  "papers": [
+   {
+    "title": "DRLIE: Flexible Low-Light Image Enhancement via Disentangled Representations",
+    "year": 2022,
+    "venue": "IEEE Transactions on Neural Networks and",
+    "n_authors": 4,
+    "cites": 30,
+    "doi": "10.1109/TNNLS.2022.3190880",
+    "s2": "8bb4324c831a80f113b4316f3fa0b146c54c741c"
+   }
+  ]
+ },
+ "贾佳亚": {
+  "name_variants": [
+   "Jiaya Jia"
+  ],
+  "papers": [
+   {
+    "title": "Deep Parametric 3D Filters for Joint Video Denoising and Illumination Enhancement in Video",
+    "year": 2022,
+    "venue": "AAAI Conference on Artificial Intelligen",
+    "n_authors": 4,
+    "cites": 16,
+    "doi": "10.48550/arXiv.2207.01797",
+    "s2": "e64440b53317fa8b5b800f238d500d586ae5e17f"
+   },
+   {
+    "title": "Seeing Dynamic Scene in the Dark: A High-Quality Video Dataset with Mechatronic Alignment",
+    "year": 2021,
+    "venue": "IEEE International Conference on Compute",
+    "n_authors": 6,
+    "cites": 178,
+    "doi": "10.1109/ICCV48922.2021.00956",
+    "s2": "914e29068503742eb2407ec9fd651371dbe72dc0"
+   }
+  ]
+ },
+ "严骏驰": {
+  "name_variants": [
+   "Junchi Yan"
+  ],
+  "papers": [
+   {
+    "title": "Optimal LED Spectral Multiplexing for NIR2RGB Translation",
+    "year": 2022,
+    "venue": "Computer Vision and Pattern Recognition",
+    "n_authors": 4,
+    "cites": 5,
+    "doi": "10.1109/CVPR52688.2022.01232",
+    "s2": "9734317bec70f0c887792ebf0d4651a6e9ac9065"
+   }
+  ]
+ },
+ "卢晓强": {
+  "name_variants": [
+   "Xiaoqiang Lu"
+  ],
+  "papers": [
+   {
+    "title": "Attention-Based Multi-Branch Network for Low-Light Image Enhancement",
+    "year": 2021,
+    "venue": "2021 IEEE 2nd International Conference o",
+    "n_authors": 3,
+    "cites": 2,
+    "doi": "10.1109/ICBAIE52039.2021.9389960",
+    "s2": "1273093508b47eb854f358b740d3fea09a4b558c"
+   }
+  ]
+ },
+ "沈建斌": {
+  "name_variants": [
+   "Jianbing Shen"
+  ],
+  "papers": [
+   {
+    "title": "Modeling and Enhancing Low-Quality Retinal Fundus Images",
+    "year": 2020,
+    "venue": "IEEE Transactions on Medical Imaging",
+    "n_authors": 4,
+    "cites": 172,
+    "doi": "10.1109/TMI.2020.3043495",
+    "s2": "6fcccca02671b9e4bd6a832bb8fec49c0da55979"
+   },
+   {
+    "title": "Understanding and Correcting Low-quality Retinal Fundus Images for Clinical Analysis",
+    "year": 2020,
+    "venue": "arXiv.org",
+    "n_authors": 4,
+    "cites": 7,
+    "doi": null,
+    "s2": "b7eedc4671785072a0b444a5bb85ff8fa1ed50a6"
+   }
+  ]
+ },
+ "查正军": {
+  "name_variants": [
+   "Zhengjun Zha"
+  ],
+  "papers": [
+   {
+    "title": "Illumination-Invariant Person Re-Identification",
+    "year": 2019,
+    "venue": "ACM Multimedia",
+    "n_authors": 4,
+    "cites": 97,
+    "doi": "10.1145/3343031.3350994",
+    "s2": "3d402f1ef2185695a33ca0a6cc21985f4dea4b3e"
+   }
+  ]
+ },
+ "熊志伟": {
+  "name_variants": [
+   "Zhiwei Xiong"
+  ],
+  "papers": [
+   {
+    "title": "Low-Light Stereo Image Enhancement",
+    "year": 2023,
+    "venue": "IEEE transactions on multimedia",
+    "n_authors": 5,
+    "cites": 38,
+    "doi": "10.1109/TMM.2022.3154152",
+    "s2": "db295b4bd1ef52f2664ea225d4eee4cf87542aad"
+   },
+   {
+    "title": "Deep Fourier-Based Exposure Correction Network with Spatial-Frequency Interaction",
+    "year": 2022,
+    "venue": "European Conference on Computer Vision",
+    "n_authors": 8,
+    "cites": 239,
+    "doi": "10.1007/978-3-031-19800-7_10",
+    "s2": "f330e64b263af1c0631418619fd130e9a2314525"
+   }
+  ]
+ },
+ "吴枫": {
+  "name_variants": [
+   "Feng Wu"
+  ],
+  "papers": [
+   {
+    "title": "Unsupervised Underexposed Image Enhancement via Self-Illuminated and Perceptual Guidance",
+    "year": 2023,
+    "venue": "IEEE transactions on multimedia",
+    "n_authors": 5,
+    "cites": 23,
+    "doi": "10.1109/TMM.2022.3193059",
+    "s2": "dd6c5e1e8e1bbb47a8abc93813f5588ad3275400"
+   }
+  ]
+ }
+}

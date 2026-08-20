@@ -1,0 +1,31 @@
+{
+ "mbllen": {
+  "paperId": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+  "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+  "citationCount": 804,
+  "authors": [
+   {
+    "authorId": "51290122",
+    "name": "Feifan Lv"
+   },
+   {
+    "authorId": "1388864077",
+    "name": "Feng Lu"
+   },
+   {
+    "authorId": "2110461678",
+    "name": "Jianhua Wu"
+   },
+   {
+    "authorId": "31628415",
+    "name": "C. Lim"
+   }
+  ]
+ },
+ "pr_adversarial": {
+  "paperId": "2172552b917ef3757b0af47d17fce18586d56cba",
+  "title": "Understanding Adversarial Attacks on Deep Learning Based Medical Image Analysis Systems",
+  "year": 2019,
+  "citationCount": 555
+ }
+}

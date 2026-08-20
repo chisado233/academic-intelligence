@@ -1,0 +1,214 @@
+[
+  {
+    "id": "6ca21247f5963f6d459e09278812d60c35d10335",
+    "title": "Appearance-Based Gaze Estimation via Evaluation-Guided Asymmetric Regression",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Yihua Cheng",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Feng Lu",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Xucong Zhang",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2018,
+    "venue": "European Conference on Computer Vision",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": null,
+    "doi": "10.1007/978-3-030-01264-9_7",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/6ca21247f5963f6d459e09278812d60c35d10335",
+    "pdf_url": null,
+    "citations": 169,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "6ca21247f5963f6d459e09278812d60c35d10335",
+        "source_url": "https://www.semanticscholar.org/paper/6ca21247f5963f6d459e09278812d60c35d10335",
+        "collected_at": "2026-08-17T10:41:33.793217Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "6ca21247f5963f6d459e09278812d60c35d10335",
+          "externalIds": {
+            "MAG": "2897890508",
+            "DBLP": "conf/eccv/ChengLZ18",
+            "DOI": "10.1007/978-3-030-01264-9_7",
+            "CorpusId": 52967476
+          },
+          "url": "https://www.semanticscholar.org/paper/6ca21247f5963f6d459e09278812d60c35d10335",
+          "title": "Appearance-Based Gaze Estimation via Evaluation-Guided Asymmetric Regression",
+          "venue": "European Conference on Computer Vision",
+          "year": 2018,
+          "citationCount": 169,
+          "openAccessPdf": {
+            "url": "",
+            "status": "CLOSED",
+            "license": null,
+            "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/978-3-030-01264-9_7?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/978-3-030-01264-9_7, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "51310992",
+              "name": "Yihua Cheng"
+            },
+            {
+              "authorId": "1388864077",
+              "name": "Feng Lu"
+            },
+            {
+              "authorId": "2520795",
+              "name": "Xucong Zhang"
+            }
+          ],
+          "abstract": null
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "9f7db12f6864d2b0bf82eee472e584a6c27a822c",
+    "title": "Real-time Appearance-based Gaze Estimation for Open Domains",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Zhenhao Li",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Zheng Liu",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Seung-Hee Lee",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Amin Fadaeinejad",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yuanhao Yu",
+        "position": 5,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2026,
+    "venue": "arXiv.org",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Appearance-based gaze estimation (AGE) has achieved remarkable performance in constrained settings, yet we reveal a significant generalization gap where existing AGE models often fail in practical, unconstrained scenarios, particularly those involving facial wearables and poor lighting conditions. We attribute this failure to two core factors: limited image diversity and inconsistent label fidelity across different datasets, especially along the pitch axis. To address these, we propose a robust AGE framework that enhances generalization without requiring additional human-annotated data. First, we expand the image manifold via an ensemble of augmentation techniques, including synthesis of eyeglasses, masks, and varied lighting. Second, to mitigate the impact of anisotropic inter-dataset label deviation, we reformulate gaze regression as a multi-task learning problem, incorporating multi-view supervised contrastive (SupCon) learning, discretized label classification, and eye-region segmentation as auxiliary objectives. To rigorously validate our approach, we curate new benchmark datasets designed to evaluate gaze robustness under challenging conditions, a dimension largely overlooked by existing evaluation protocols. Our MobileNet-based lightweight model achieves generalization performance competitive with the state-of-the-art (SOTA) UniGaze-H, while utilizing less than 1\\% of its parameters, enabling high-fidelity, real-time gaze tracking on mobile devices.",
+    "doi": "10.48550/arXiv.2603.26945",
+    "arxiv_id": "2603.26945",
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/9f7db12f6864d2b0bf82eee472e584a6c27a822c",
+    "pdf_url": null,
+    "citations": 0,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "9f7db12f6864d2b0bf82eee472e584a6c27a822c",
+        "source_url": "https://www.semanticscholar.org/paper/9f7db12f6864d2b0bf82eee472e584a6c27a822c",
+        "collected_at": "2026-08-17T10:41:33.793217Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "9f7db12f6864d2b0bf82eee472e584a6c27a822c",
+          "externalIds": {
+            "DBLP": "journals/corr/abs-2603-26945",
+            "ArXiv": "2603.26945",
+            "DOI": "10.48550/arXiv.2603.26945",
+            "CorpusId": 286961259
+          },
+          "url": "https://www.semanticscholar.org/paper/9f7db12f6864d2b0bf82eee472e584a6c27a822c",
+          "title": "Real-time Appearance-based Gaze Estimation for Open Domains",
+          "venue": "arXiv.org",
+          "year": 2026,
+          "citationCount": 0,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2603.26945, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2235963135",
+              "name": "Zhenhao Li"
+            },
+            {
+              "authorId": "2367487552",
+              "name": "Zheng Liu"
+            },
+            {
+              "authorId": "2281716956",
+              "name": "Seung-Hee Lee"
+            },
+            {
+              "authorId": "2331038494",
+              "name": "Amin Fadaeinejad"
+            },
+            {
+              "authorId": "1787848",
+              "name": "Yuanhao Yu"
+            }
+          ],
+          "abstract": "Appearance-based gaze estimation (AGE) has achieved remarkable performance in constrained settings, yet we reveal a significant generalization gap where existing AGE models often fail in practical, unconstrained scenarios, particularly those involving facial wearables and poor lighting conditions. We attribute this failure to two core factors: limited image diversity and inconsistent label fidelity across different datasets, especially along the pitch axis. To address these, we propose a robust AGE framework that enhances generalization without requiring additional human-annotated data. First, we expand the image manifold via an ensemble of augmentation techniques, including synthesis of eyeglasses, masks, and varied lighting. Second, to mitigate the impact of anisotropic inter-dataset label deviation, we reformulate gaze regression as a multi-task learning problem, incorporating multi-view supervised contrastive (SupCon) learning, discretized label classification, and eye-region segmentation as auxiliary objectives. To rigorously validate our approach, we curate new benchmark datasets designed to evaluate gaze robustness under challenging conditions, a dimension largely overlooked by existing evaluation protocols. Our MobileNet-based lightweight model achieves generalization performance competitive with the state-of-the-art (SOTA) UniGaze-H, while utilizing less than 1\\% of its parameters, enabling high-fidelity, real-time gaze tracking on mobile devices."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  }
+]

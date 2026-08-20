@@ -1,0 +1,30 @@
+{
+  "url": "http://staff.ustc.edu.cn/~lihq/",
+  "status": "ok",
+  "title": "个人简介",
+  "content": "个人简介\n李厚强\n中国科学技术大学电子工程与信息科学系教授、博士生导师，IEEE Fellow，国家“杰出青年基金”获得者（2013），长江学者特聘教授（2017）。现为多媒体计算与通信教育部－微软重点实验室主任。主要研究方向包括：计算机视觉与模式识别、人工智能与机器博弈、视频编码与通信、多媒体信息检索等。\n招生信息\n欢迎对本课题组研究方向感兴趣的同学与我们联系，保送或报考我们的研究生。我们注重学生的工作态度和研究兴趣，偏爱“三好”学生：数学好，编程好，英语好。\n联系方式\nEmail：lihq@ustc.edu.cn\n邮编：230027\n地址：安徽省合肥市黄山路443号，中国科学技术大学，六系\n教育经历\n- \n1987/09~1992/07 中国科学技术大学，电子工程与信息科学系 学士学位\n- \n1994/09~1997/07 中国科学技术大学，电子工程与信息科学系 硕士学位\n- \n1997/09~2000/10 中国科学技术大学，电子工程与信息科学系 博士学位\n工作经历\n- \n2000/11~2002/11 中国科学技术大学，电子工程与信息科学系 博士后\n- \n2002/12~2007/11 中国科学技术大学，电子工程与信息科学系 副教授\n- \n2007/12~ 中国科学技术大学，电子工程与信息科学系 教授\n学术任职\n- \nIEEE Fellow\n- \n国际期刊 IEEE Transactions on Multimedia 副编辑 (Associate Editor) (2020~ )\n- \n国际期刊 IEEE Transactions on Circuits and Systems for Video Technology 副编辑 (Associate Editor) (2010~2013)\n- \n国际期刊 Signal Processing (Elsevier) 客座编辑 (Guest Editor)\n- \n国际会议 2021 IEEE International Conference on Multimedia and Expo (ICME 2021) 大会共同主席(General Co-Chair)\n- \n国际会议 2010 Visual Communications and Image Processing (VCIP 2010) 程序委员会共同主席 (Program Co-Chair)\n- \nIEEE 电路与系统协会 (Circuits and Systems Society) 视觉信号处理与通信技术委员会委员 (Member of Visual Signal Processing and Communications Technical Committee, VSPC TC) 和多媒体信号处理技术委员会委员 (Member of Multimedia Signal Processing Technical Committee, MMSP TC)\n- \n国际和国内标准化组织 JCTVC (Joint Collaborative Team on Video Coding), JVT (Joint Video Team), MPEG (Moving Picture Experts Group) 和 AVS (Audio Video coding Standard) 等成员",
+  "links": [
+    "http://staff.ustc.edu.cn/~lihq/#_1",
+    "http://staff.ustc.edu.cn/~lihq/",
+    "http://staff.ustc.edu.cn/~lihq/en/",
+    "http://staff.ustc.edu.cn/~lihq/academic/",
+    "http://staff.ustc.edu.cn/~lihq/puclication/",
+    "http://staff.ustc.edu.cn/~lihq/#_2",
+    "http://staff.ustc.edu.cn/~lihq/#_3",
+    "http://staff.ustc.edu.cn/~lihq/#_4",
+    "http://staff.ustc.edu.cn/~lihq/#_5",
+    "http://staff.ustc.edu.cn/~lihq/#_6"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "OK",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T11:07:30.257201+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 10,
+    "robots_allowed": true,
+    "robots_url": "http://staff.ustc.edu.cn/robots.txt"
+  },
+  "extracted": null
+}

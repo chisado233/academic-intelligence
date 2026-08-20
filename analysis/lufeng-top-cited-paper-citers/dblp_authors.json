@@ -1,0 +1,19 @@
+{
+  "url": "https://dblp.org/search/author/api?q=Feng+Lu&format=json&h=30",
+  "status": "ok",
+  "title": "",
+  "content": "",
+  "links": [],
+  "metadata": {
+    "status_code": 200,
+    "reason": "",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T09:54:14.841100+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": false,
+    "links_count": 0,
+    "robots_allowed": true,
+    "robots_url": "https://dblp.org/robots.txt"
+  },
+  "extracted": null
+}

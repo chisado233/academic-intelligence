@@ -1,0 +1,100 @@
+{
+ "张艳宁": [
+  {
+   "title": "Contrastive Neuron Pruning for Backdoor Defense",
+   "year": "2025",
+   "doi": "10.1109/tip.2025.3539466",
+   "inst": "Northwestern Polytechnical University"
+  }
+ ],
+ "黄铁军": [
+  {
+   "title": "Neuromorphic computing paradigms enhance robustness through spiking ne",
+   "year": "2025",
+   "doi": "10.1038/s41467-025-65197-x",
+   "inst": "Peking University"
+  }
+ ],
+ "金海": [
+  {
+   "title": "BadHash: Invisible Backdoor Attacks against Deep Hashing with Clean La",
+   "year": "2022",
+   "doi": "10.1145/3503161.3548272",
+   "inst": "Huazhong University of Science and Technology"
+  }
+ ],
+ "冯丹": [
+  {
+   "title": "Physical Backdoor: Towards Temperature-Based Backdoor Attacks in the P",
+   "year": "2024",
+   "doi": "10.1109/cvpr52733.2024.01210",
+   "inst": "Wuhan National Laboratory for Optoelectronics"
+  },
+  {
+   "title": "Backdoor Attacks on Bimodal Salient Object Detection with RGB-Thermal ",
+   "year": "2024",
+   "doi": "10.1145/3664647.3681096",
+   "inst": "Wuhan National Laboratory for Optoelectronics"
+  }
+ ],
+ "山世光": [
+  {
+   "title": "T2IShield: Defending Against Backdoors on Text-to-Image Diffusion Mode",
+   "year": "2024",
+   "doi": "10.1007/978-3-031-73013-9_7",
+   "inst": "Chinese Academy of Sciences"
+  },
+  {
+   "title": "Dynamic Attention Analysis for Backdoor Detection in Text-to-Image Dif",
+   "year": "2025",
+   "doi": "10.1109/tpami.2025.3644016",
+   "inst": "Chinese Academy of Sciences"
+  }
+ ],
+ "陈熙霖": [
+  {
+   "title": "T2IShield: Defending Against Backdoors on Text-to-Image Diffusion Mode",
+   "year": "2024",
+   "doi": "10.1007/978-3-031-73013-9_7",
+   "inst": "Chinese Academy of Sciences"
+  },
+  {
+   "title": "Dynamic Attention Analysis for Backdoor Detection in Text-to-Image Dif",
+   "year": "2025",
+   "doi": "10.1109/tpami.2025.3644016",
+   "inst": "Chinese Academy of Sciences"
+  }
+ ],
+ "张新鹏": [
+  {
+   "title": "Physical Invisible Backdoor Based on Camera Imaging",
+   "year": "2023",
+   "doi": "10.1145/3581783.3612476",
+   "inst": "Fudan University"
+  }
+ ],
+ "夏元清": [
+  {
+   "title": "PerVK: A Robust Personalized Federated Framework to Defend Against Bac",
+   "year": "2023",
+   "doi": "10.1109/tii.2023.3329688",
+   "inst": "Beijing Institute of Technology"
+  }
+ ],
+ "王国仁": [
+  {
+   "title": "Backdoor Attacks on Graph Classification via Data Augmentation and Dyn",
+   "year": "2025",
+   "doi": "10.1007/978-3-032-06066-2_16",
+   "inst": "Beijing Institute of Technology"
+  }
+ ],
+ "管晓宏": [
+  {
+   "title": "De <sup>2</sup> Trojan: Deployable Trojan Analysis Tool and Benchmark ",
+   "year": "2025",
+   "doi": "10.1109/tifs.2025.3632218",
+   "inst": "Xi'an Jiaotong University"
+  }
+ ]
+}

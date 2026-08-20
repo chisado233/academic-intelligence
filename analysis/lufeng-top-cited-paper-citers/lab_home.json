@@ -1,0 +1,31 @@
+{
+  "url": "https://phi-ai.buaa.edu.cn/",
+  "status": "ok",
+  "title": "Phi-Ai Laboratory",
+  "content": "【欢迎编程能力、动手能力突出的同学报考本团队博士、硕士研究生】\n感知交互增强智能 研究室\n\t   虚拟现实技术与系统全国重点实验室，北京航空航天大学\n 计算医学研究所，大数据精准医疗北京市高精尖创新中心\n\t\t\t\nPerception & Hybrid Interaction (PHI) for Augmented Intelligence (AI)\nWe are working on various research topics in the field of artificial intelligence (AI) with a particular focus on the following areas: computer vision (CV), human computer interaction (HCI), virtual/augmented reality (VR/AR) and embodied AI.\nThe goal of our research is to develop intelligent systems that can perceive and interact with the real world and also interact with human beings simultaneously. In this manner, we aim at achieving Augmented Intelligence (AI) beyond both the human intelligence and the artificial intelligence, which lays the foundation for Cobodied AI — a new paradigm of human-AI unified cognition and co-embodiment.\nOur research group (PHI-AI Lab.) is affiliated with the state key laboratory of virtual reality technology and systems, the school of computer science and engineering, Beihang University. For more information, please visit our website, or contact Prof. Feng Lu by email.",
+  "links": [
+    "https://phi-ai.buaa.edu.cn/index.htm",
+    "https://phi-ai.buaa.edu.cn/#main",
+    "https://phi-ai.buaa.edu.cn/research/index.htm",
+    "https://phi-ai.buaa.edu.cn/publications/index.htm",
+    "https://phi-ai.buaa.edu.cn/members/index.htm",
+    "https://phi-ai.buaa.edu.cn/address/index.htm",
+    "http://vrlab.buaa.edu.cn/",
+    "http://ygy.buaa.edu.cn/index.htm",
+    "http://scse.buaa.edu.cn/",
+    "http://www.buaa.edu.cn/",
+    "https://beian.miit.gov.cn"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "OK",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T09:52:06.891189+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 11,
+    "robots_allowed": true,
+    "robots_url": "https://phi-ai.buaa.edu.cn/robots.txt"
+  },
+  "extracted": null
+}

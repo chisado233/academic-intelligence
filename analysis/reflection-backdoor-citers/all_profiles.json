@@ -1,0 +1,6218 @@
+{
+ "A5100436740": {
+  "name": "Jie Zhang",
+  "h": 26,
+  "cites": 3241,
+  "inst": "Agency for Science, Technology and Research",
+  "freq": 1,
+  "citing_name": "Jie Zhang"
+ },
+ "A5078711649": {
+  "name": "Xingjun Ma",
+  "h": 33,
+  "cites": 7351,
+  "inst": "The University of Melbourne",
+  "freq": 1,
+  "citing_name": "Xingjun Ma"
+ },
+ "A5100346332": {
+  "name": "Yiming Li",
+  "h": 29,
+  "cites": 3527,
+  "inst": "Nanyang Technological University",
+  "freq": 1,
+  "citing_name": "Yiming Li"
+ },
+ "A5101626204": {
+  "name": "Yong Jiang",
+  "h": 42,
+  "cites": 6733,
+  "inst": "Shanghai International Studies University",
+  "freq": 1,
+  "citing_name": "Yong Jiang"
+ },
+ "A5058616951": {
+  "name": "Qidong Huang",
+  "h": 9,
+  "cites": 660,
+  "inst": "HUI Research (Sweden)",
+  "freq": 1,
+  "citing_name": "Qidong Huang"
+ },
+ "A5034104790": {
+  "name": "Shu‐Tao Xia",
+  "h": 49,
+  "cites": 11668,
+  "inst": "University Town of Shenzhen",
+  "freq": 1,
+  "citing_name": "Shu‐Tao Xia"
+ },
+ "A5100636286": {
+  "name": "Qiang Yang",
+  "h": 129,
+  "cites": 105454,
+  "inst": "Beijing Institute of Petrochemical Technology",
+  "freq": 1,
+  "citing_name": "Qiang Yang"
+ },
+ "A5100634431": {
+  "name": "Zhifeng Li",
+  "h": 38,
+  "cites": 10530,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Zhifeng Li"
+ },
+ "A5067689180": {
+  "name": "Weiming Zhang",
+  "h": 60,
+  "cites": 15506,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Weiming Zhang"
+ },
+ "A5060034830": {
+  "name": "Benteng Ma",
+  "h": 11,
+  "cites": 564,
+  "inst": "Central South University",
+  "freq": 1,
+  "citing_name": "Benteng Ma"
+ },
+ "A5064573190": {
+  "name": "Nenghai Yu",
+  "h": 77,
+  "cites": 25051,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Nenghai Yu"
+ },
+ "A5069429555": {
+  "name": "Shanshan Zhao",
+  "h": 12,
+  "cites": 2106,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Shanshan Zhao"
+ },
+ "A5046533227": {
+  "name": "Yu Feng",
+  "h": 10,
+  "cites": 391,
+  "inst": "Shanxi Agricultural University",
+  "freq": 1,
+  "citing_name": "Yu Feng"
+ },
+ "A5109860620": {
+  "name": "Huamin Feng",
+  "h": 7,
+  "cites": 488,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Huamin Feng"
+ },
+ "A5100670074": {
+  "name": "Yong Xia",
+  "h": 60,
+  "cites": 20434,
+  "inst": "Nanchang University",
+  "freq": 1,
+  "citing_name": "Yong Xia"
+ },
+ "A5068643894": {
+  "name": "Yuan Yao",
+  "h": 22,
+  "cites": 1747,
+  "inst": "Nanjing University",
+  "freq": 1,
+  "citing_name": "Yuan Yao"
+ },
+ "A5053365003": {
+  "name": "Wenkai Yang",
+  "h": 15,
+  "cites": 809,
+  "inst": "Australian National University",
+  "freq": 1,
+  "citing_name": "Wenkai Yang"
+ },
+ "A5071461704": {
+  "name": "Feng Xu",
+  "h": 48,
+  "cites": 14364,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Feng Xu"
+ },
+ "A5100440407": {
+  "name": "Lei Li",
+  "h": 47,
+  "cites": 12607,
+  "inst": "Xi’an University",
+  "freq": 1,
+  "citing_name": "Lei Li"
+ },
+ "A5101441137": {
+  "name": "Xu Sun",
+  "h": 49,
+  "cites": 7271,
+  "inst": "Shandong University",
+  "freq": 1,
+  "citing_name": "Xu Sun"
+ },
+ "A5049239373": {
+  "name": "Xuancheng Ren",
+  "h": 28,
+  "cites": 3007,
+  "inst": "National University of Singapore",
+  "freq": 1,
+  "citing_name": "Xuancheng Ren"
+ },
+ "A5101946076": {
+  "name": "Bin He",
+  "h": 22,
+  "cites": 1969,
+  "inst": "Wuhan University of Technology",
+  "freq": 1,
+  "citing_name": "Bin He"
+ },
+ "A5015455705": {
+  "name": "Zhiyuan Zhang",
+  "h": 19,
+  "cites": 1281,
+  "inst": "Dalian Ocean University",
+  "freq": 1,
+  "citing_name": "Zhiyuan Zhang"
+ },
+ "A5066542952": {
+  "name": "Wenbo Jiang",
+  "h": 13,
+  "cites": 723,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Wenbo Jiang"
+ },
+ "A5100325334": {
+  "name": "Hongwei Li",
+  "h": 54,
+  "cites": 12462,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Hongwei Li"
+ },
+ "A5041204026": {
+  "name": "Zhendong Zhao",
+  "h": 32,
+  "cites": 11480,
+  "inst": "Shandong University",
+  "freq": 1,
+  "citing_name": "Zhendong Zhao"
+ },
+ "A5074107460": {
+  "name": "Yuexin Xuan",
+  "h": 4,
+  "cites": 136,
+  "inst": "Beijing Institute of Petrochemical Technology",
+  "freq": 1,
+  "citing_name": "Yuexin Xuan"
+ },
+ "A5100369438": {
+  "name": "Xiaojun Chen",
+  "h": 36,
+  "cites": 4154,
+  "inst": "Harbin Engineering University",
+  "freq": 1,
+  "citing_name": "Xiaojun Chen"
+ },
+ "A5102783832": {
+  "name": "Dakui Wang",
+  "h": 14,
+  "cites": 954,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Dakui Wang"
+ },
+ "A5101239059": {
+  "name": "Ye Dong",
+  "h": 1,
+  "cites": 81,
+  "inst": "Harbin Institute of Technology",
+  "freq": 1,
+  "citing_name": "Ye Dong"
+ },
+ "A5043098453": {
+  "name": "Yankai Lin",
+  "h": 44,
+  "cites": 13573,
+  "inst": "Renmin University of China",
+  "freq": 1,
+  "citing_name": "Yankai Lin"
+ },
+ "A5100770462": {
+  "name": "Jie Zhou",
+  "h": 29,
+  "cites": 2960,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Jie Zhou"
+ },
+ "A5045255048": {
+  "name": "Rongjun Tang",
+  "h": 10,
+  "cites": 505,
+  "inst": "Hangzhou Cancer Hospital",
+  "freq": 1,
+  "citing_name": "Rongjun Tang"
+ },
+ "A5021347960": {
+  "name": "Runkai Zheng",
+  "h": 4,
+  "cites": 191,
+  "inst": "Beijing Forestry University",
+  "freq": 1,
+  "citing_name": "Runkai Zheng"
+ },
+ "A5044963450": {
+  "name": "Yang Bai",
+  "h": 16,
+  "cites": 1137,
+  "inst": "Argonne National Laboratory",
+  "freq": 1,
+  "citing_name": "Yang Bai"
+ },
+ "A5100609598": {
+  "name": "Yong Yang",
+  "h": 6,
+  "cites": 403,
+  "inst": "Tiangong University",
+  "freq": 1,
+  "citing_name": "Yong Yang"
+ },
+ "A5006497264": {
+  "name": "Xu Sun",
+  "h": 18,
+  "cites": 1887,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Xu Sun"
+ },
+ "A5038862367": {
+  "name": "Kuofeng Gao",
+  "h": 7,
+  "cites": 230,
+  "inst": "University Town of Shenzhen",
+  "freq": 1,
+  "citing_name": "Kuofeng Gao"
+ },
+ "A5068755794": {
+  "name": "Yinpeng Dong",
+  "h": 34,
+  "cites": 8886,
+  "inst": "Tsinghua University",
+  "freq": 1,
+  "citing_name": "Yinpeng Dong"
+ },
+ "A5048196007": {
+  "name": "Songfeng Lu",
+  "h": 39,
+  "cites": 6019,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Songfeng Lu"
+ },
+ "A5045140292": {
+  "name": "Jun Zhou",
+  "h": 32,
+  "cites": 4281,
+  "inst": "Zhejiang Energy Group (China)",
+  "freq": 1,
+  "citing_name": "Jun Zhou"
+ },
+ "A5100460435": {
+  "name": "Junjun Wu",
+  "h": 6,
+  "cites": 155,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Junjun Wu"
+ },
+ "A5100523132": {
+  "name": "Zhu Jian-xin",
+  "h": 2,
+  "cites": 58,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhu Jian-xin"
+ },
+ "A5100746437": {
+  "name": "Xiaolu Zhang",
+  "h": 25,
+  "cites": 2369,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Xiaolu Zhang"
+ },
+ "A5051783170": {
+  "name": "Hewang Nie",
+  "h": 7,
+  "cites": 229,
+  "inst": "Guangxi Normal University",
+  "freq": 1,
+  "citing_name": "Hewang Nie"
+ },
+ "A5100758099": {
+  "name": "Jiwei Li",
+  "h": 45,
+  "cites": 13817,
+  "inst": "State Grid Corporation of China (China)",
+  "freq": 1,
+  "citing_name": "Jiwei Li"
+ },
+ "A5063733770": {
+  "name": "Zaixi Zhang",
+  "h": 15,
+  "cites": 1374,
+  "inst": "Harvard University",
+  "freq": 1,
+  "citing_name": "Zaixi Zhang"
+ },
+ "A5100453144": {
+  "name": "Qi Liu",
+  "h": 68,
+  "cites": 23556,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Qi Liu"
+ },
+ "A5069950706": {
+  "name": "Zepu Lu",
+  "h": 3,
+  "cites": 53,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Zepu Lu"
+ },
+ "A5102971294": {
+  "name": "Zhicai Wang",
+  "h": 36,
+  "cites": 5759,
+  "inst": "Anhui Science and Technology University",
+  "freq": 1,
+  "citing_name": "Zhicai Wang"
+ },
+ "A5100657575": {
+  "name": "Shaobo Zhang",
+  "h": 40,
+  "cites": 15391,
+  "inst": "Hunan University",
+  "freq": 1,
+  "citing_name": "Shaobo Zhang"
+ },
+ "A5036921959": {
+  "name": "Qingyong Hu",
+  "h": 26,
+  "cites": 7732,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Qingyong Hu"
+ },
+ "A5109521360": {
+  "name": "Yizhen Pan",
+  "h": 1,
+  "cites": 37,
+  "inst": "Hunan University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yizhen Pan"
+ },
+ "A5100432505": {
+  "name": "Qin Liu",
+  "h": 26,
+  "cites": 2630,
+  "inst": "Hunan University",
+  "freq": 1,
+  "citing_name": "Qin Liu"
+ },
+ "A5078219471": {
+  "name": "Zheng Yan",
+  "h": 66,
+  "cites": 16448,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Zheng Yan"
+ },
+ "A5100386726": {
+  "name": "Guojun Wang",
+  "h": 66,
+  "cites": 16948,
+  "inst": "Harbin Engineering University",
+  "freq": 1,
+  "citing_name": "Guojun Wang"
+ },
+ "A5101619232": {
+  "name": "Wenyuan Yang",
+  "h": 21,
+  "cites": 1376,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Wenyuan Yang"
+ },
+ "A5035753510": {
+  "name": "Shuo Shao",
+  "h": 5,
+  "cites": 162,
+  "inst": "Zhejiang University",
+  "freq": 1,
+  "citing_name": "Shuo Shao"
+ },
+ "A5100369313": {
+  "name": "Yue Yang",
+  "h": 18,
+  "cites": 967,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Yue Yang"
+ },
+ "A5038314969": {
+  "name": "Ying He",
+  "h": 9,
+  "cites": 336,
+  "inst": "Tianjin Normal University",
+  "freq": 1,
+  "citing_name": "Ying He"
+ },
+ "A5101950654": {
+  "name": "Jingyu Hua",
+  "h": 14,
+  "cites": 931,
+  "inst": "University of Ottawa",
+  "freq": 1,
+  "citing_name": "Jingyu Hua"
+ },
+ "A5103257772": {
+  "name": "Qixuan Dong",
+  "h": 8,
+  "cites": 161,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Qixuan Dong"
+ },
+ "A5014040279": {
+  "name": "Zenghui Yuan",
+  "h": 7,
+  "cites": 295,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Zenghui Yuan"
+ },
+ "A5083813347": {
+  "name": "Zhili Shen",
+  "h": 6,
+  "cites": 115,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhili Shen"
+ },
+ "A5100686240": {
+  "name": "Jun Zhu",
+  "h": 28,
+  "cites": 4359,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Jun Zhu"
+ },
+ "A5100693197": {
+  "name": "Pan Zhou",
+  "h": 61,
+  "cites": 16496,
+  "inst": "China University of Geosciences",
+  "freq": 1,
+  "citing_name": "Pan Zhou"
+ },
+ "A5100390708": {
+  "name": "Xinyu Zhang",
+  "h": 12,
+  "cites": 501,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Xinyu Zhang"
+ },
+ "A5072485378": {
+  "name": "Zhongjie Ba",
+  "h": 18,
+  "cites": 1413,
+  "inst": "Zhejiang University of Technology",
+  "freq": 1,
+  "citing_name": "Zhongjie Ba"
+ },
+ "A5060268538": {
+  "name": "Sheng Zhong",
+  "h": 41,
+  "cites": 6783,
+  "inst": "Nanjing Tech University",
+  "freq": 1,
+  "citing_name": "Sheng Zhong"
+ },
+ "A5078406349": {
+  "name": "Feng Lin",
+  "h": 34,
+  "cites": 4201,
+  "inst": "Zhejiang University of Technology",
+  "freq": 1,
+  "citing_name": "Feng Lin"
+ },
+ "A5091687257": {
+  "name": "Tianhang Zheng",
+  "h": 19,
+  "cites": 1863,
+  "inst": "Northeast Agricultural University",
+  "freq": 1,
+  "citing_name": "Tianhang Zheng"
+ },
+ "A5100658678": {
+  "name": "Li Lü",
+  "h": 30,
+  "cites": 4229,
+  "inst": "Ministry of Public Security of the People's Republic of China",
+  "freq": 1,
+  "citing_name": "Li Lü"
+ },
+ "A5100688242": {
+  "name": "Kaiping Xue",
+  "h": 52,
+  "cites": 8278,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Kaiping Xue"
+ },
+ "A5105297718": {
+  "name": "Kui Ren",
+  "h": 42,
+  "cites": 6440,
+  "inst": "Zhejiang Sci-Tech University",
+  "freq": 1,
+  "citing_name": "Kui Ren"
+ },
+ "A5100375796": {
+  "name": "Tao Zhang",
+  "h": 25,
+  "cites": 2014,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Tao Zhang"
+ },
+ "A5109651929": {
+  "name": "Jiacheng Niu",
+  "h": 1,
+  "cites": 33,
+  "inst": "Nanjing University",
+  "freq": 1,
+  "citing_name": "Jiacheng Niu"
+ },
+ "A5021538603": {
+  "name": "Wei Tong",
+  "h": 10,
+  "cites": 543,
+  "inst": "Nanjing Tech University",
+  "freq": 1,
+  "citing_name": "Wei Tong"
+ },
+ "A5111922675": {
+  "name": "Yanli Yuan",
+  "h": 5,
+  "cites": 105,
+  "inst": "Jiangnan University",
+  "freq": 1,
+  "citing_name": "Yanli Yuan"
+ },
+ "A5064237960": {
+  "name": "Cairong Zhao",
+  "h": 28,
+  "cites": 2327,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Cairong Zhao"
+ },
+ "A5023045741": {
+  "name": "Wenli Sun",
+  "h": 1,
+  "cites": 26,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Wenli Sun"
+ },
+ "A5015874725": {
+  "name": "Cheng Deng",
+  "h": 59,
+  "cites": 13282,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Cheng Deng"
+ },
+ "A5024791074": {
+  "name": "Duoqian Miao",
+  "h": 50,
+  "cites": 9125,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Duoqian Miao"
+ },
+ "A5100440920": {
+  "name": "Dongsheng Li",
+  "h": 33,
+  "cites": 4359,
+  "inst": "State Grid Corporation of China (China)",
+  "freq": 1,
+  "citing_name": "Dongsheng Li"
+ },
+ "A5011424573": {
+  "name": "Xinyang Jiang",
+  "h": 24,
+  "cites": 2190,
+  "inst": "Inner Mongolia Agricultural University",
+  "freq": 1,
+  "citing_name": "Xinyang Jiang"
+ },
+ "A5076675337": {
+  "name": "Weiting Zhang",
+  "h": 19,
+  "cites": 1308,
+  "inst": "Nanjing University of Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Weiting Zhang"
+ },
+ "A5039546706": {
+  "name": "Shuguang Dou",
+  "h": 8,
+  "cites": 761,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Shuguang Dou"
+ },
+ "A5100750198": {
+  "name": "Qingjie Zhang",
+  "h": 12,
+  "cites": 645,
+  "inst": "Shandong Jianzhu University",
+  "freq": 1,
+  "citing_name": "Qingjie Zhang"
+ },
+ "A5079007635": {
+  "name": "Xueyang Fu",
+  "h": 49,
+  "cites": 12065,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Xueyang Fu"
+ },
+ "A5019692903": {
+  "name": "Han Qiu",
+  "h": 29,
+  "cites": 3798,
+  "inst": "Nanchang University",
+  "freq": 1,
+  "citing_name": "Han Qiu"
+ },
+ "A5101183338": {
+  "name": "Yurui Zhu",
+  "h": 8,
+  "cites": 311,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Yurui Zhu"
+ },
+ "A5003217535": {
+  "name": "Zheng-Jun Zha",
+  "h": 73,
+  "cites": 20209,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Zheng-Jun Zha"
+ },
+ "A5102908901": {
+  "name": "Qibin Sun",
+  "h": 34,
+  "cites": 5192,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Qibin Sun"
+ },
+ "A5053775539": {
+  "name": "Gaojie Xing",
+  "h": 4,
+  "cites": 51,
+  "inst": "Chengdu University of Information Technology",
+  "freq": 1,
+  "citing_name": "Gaojie Xing"
+ },
+ "A5103221383": {
+  "name": "Chuan Ma",
+  "h": 11,
+  "cites": 608,
+  "inst": "Chongqing University",
+  "freq": 1,
+  "citing_name": "Chuan Ma"
+ },
+ "A5000846172": {
+  "name": "Jia-Le Kang",
+  "h": 3,
+  "cites": 35,
+  "inst": "Northwest University",
+  "freq": 1,
+  "citing_name": "Jia-Le Kang"
+ },
+ "A5100442739": {
+  "name": "Xiaolei Liu",
+  "h": 16,
+  "cites": 978,
+  "inst": "State Grid Corporation of China (China)",
+  "freq": 1,
+  "citing_name": "Xiaolei Liu"
+ },
+ "A5108047844": {
+  "name": "Libing Wu",
+  "h": 36,
+  "cites": 4703,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Libing Wu"
+ },
+ "A5070361846": {
+  "name": "Zhuangzhuang Zhang",
+  "h": 7,
+  "cites": 267,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Zhuangzhuang Zhang"
+ },
+ "A5085805626": {
+  "name": "Enshu Wang",
+  "h": 12,
+  "cites": 407,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Enshu Wang"
+ },
+ "A5086581834": {
+  "name": "Bingyi Liu",
+  "h": 16,
+  "cites": 1011,
+  "inst": "Wuhan University of Technology",
+  "freq": 1,
+  "citing_name": "Bingyi Liu"
+ },
+ "A5001225785": {
+  "name": "Yichen Li",
+  "h": 7,
+  "cites": 170,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yichen Li"
+ },
+ "A5027119797": {
+  "name": "Haozhao Wang",
+  "h": 18,
+  "cites": 1086,
+  "inst": "Huazhong University of Science and Technology Hospital",
+  "freq": 1,
+  "citing_name": "Haozhao Wang"
+ },
+ "A5115595829": {
+  "name": "Hong Liu",
+  "h": 22,
+  "cites": 1529,
+  "inst": "Ruijin Hospital",
+  "freq": 1,
+  "citing_name": "Hong Liu"
+ },
+ "A5061171733": {
+  "name": "Tianzhe Xiao",
+  "h": 2,
+  "cites": 25,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Tianzhe Xiao"
+ },
+ "A5111880089": {
+  "name": "Minzhu Tu",
+  "h": 4,
+  "cites": 66,
+  "inst": "Zhejiang Sci-Tech University",
+  "freq": 1,
+  "citing_name": "Minzhu Tu"
+ },
+ "A5043464306": {
+  "name": "Song Guo",
+  "h": 88,
+  "cites": 32118,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Song Guo"
+ },
+ "A5100422092": {
+  "name": "Rui Zhang",
+  "h": 51,
+  "cites": 12684,
+  "inst": "University of Minnesota",
+  "freq": 1,
+  "citing_name": "Rui Zhang"
+ },
+ "A5039670436": {
+  "name": "Ruixuan Li",
+  "h": 31,
+  "cites": 4545,
+  "inst": "Beijing Technology and Business University",
+  "freq": 1,
+  "citing_name": "Ruixuan Li"
+ },
+ "A5067232865": {
+  "name": "Hong Zhu",
+  "h": 7,
+  "cites": 154,
+  "inst": "Shandong University",
+  "freq": 1,
+  "citing_name": "Hong Zhu"
+ },
+ "A5100458078": {
+  "name": "Yue Zhao",
+  "h": 14,
+  "cites": 2583,
+  "inst": "St Petersburg University",
+  "freq": 1,
+  "citing_name": "Yue Zhao"
+ },
+ "A5029875220": {
+  "name": "Ruofei Wang",
+  "h": 15,
+  "cites": 880,
+  "inst": "Yanshan University",
+  "freq": 1,
+  "citing_name": "Ruofei Wang"
+ },
+ "A5100437976": {
+  "name": "Kai Chen",
+  "h": 39,
+  "cites": 7027,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Kai Chen"
+ },
+ "A5019699241": {
+  "name": "Zongyu Guo",
+  "h": 12,
+  "cites": 654,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Zongyu Guo"
+ },
+ "A5022571340": {
+  "name": "Rui Huang",
+  "h": 18,
+  "cites": 2001,
+  "inst": "Civil Aviation University of China",
+  "freq": 1,
+  "citing_name": "Rui Huang"
+ },
+ "A5103133635": {
+  "name": "Weixuan Tang",
+  "h": 3,
+  "cites": 26,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Weixuan Tang"
+ },
+ "A5101423126": {
+  "name": "Yuan Rao",
+  "h": 20,
+  "cites": 1527,
+  "inst": "Air Force Engineering University",
+  "freq": 1,
+  "citing_name": "Yuan Rao"
+ },
+ "A5049120636": {
+  "name": "Fei Peng",
+  "h": 31,
+  "cites": 3560,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Fei Peng"
+ },
+ "A5089418255": {
+  "name": "Zhili Zhou",
+  "h": 45,
+  "cites": 6788,
+  "inst": "University of Illinois Urbana-Champaign",
+  "freq": 1,
+  "citing_name": "Zhili Zhou"
+ },
+ "A5028235866": {
+  "name": "Yanning Zhang",
+  "h": 76,
+  "cites": 23705,
+  "inst": "Northwestern Polytechnical University",
+  "freq": 1,
+  "citing_name": "Yanning Zhang"
+ },
+ "A5030879654": {
+  "name": "Jianhao Ding",
+  "h": 10,
+  "cites": 921,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Jianhao Ding"
+ },
+ "A5048087489": {
+  "name": "Zhaofei Yu",
+  "h": 30,
+  "cites": 3855,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Zhaofei Yu"
+ },
+ "A5058066577": {
+  "name": "Tiejun Huang",
+  "h": 60,
+  "cites": 15364,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Tiejun Huang"
+ },
+ "A5081287468": {
+  "name": "Shengshan Hu",
+  "h": 24,
+  "cites": 2130,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Shengshan Hu"
+ },
+ "A5089387872": {
+  "name": "Ziqi Zhou",
+  "h": 24,
+  "cites": 1976,
+  "inst": "North Sichuan Medical University",
+  "freq": 1,
+  "citing_name": "Ziqi Zhou"
+ },
+ "A5056377873": {
+  "name": "Yechao Zhang",
+  "h": 8,
+  "cites": 384,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Yechao Zhang"
+ },
+ "A5017426295": {
+  "name": "Yifeng Zheng",
+  "h": 13,
+  "cites": 642,
+  "inst": "Minnan Normal University",
+  "freq": 1,
+  "citing_name": "Yifeng Zheng"
+ },
+ "A5100739224": {
+  "name": "Yuanyuan He",
+  "h": 14,
+  "cites": 1483,
+  "inst": "Zunyi Medical University",
+  "freq": 1,
+  "citing_name": "Yuanyuan He"
+ },
+ "A5022262922": {
+  "name": "Hai Jin",
+  "h": 79,
+  "cites": 34276,
+  "inst": "National University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Hai Jin"
+ },
+ "A5102943054": {
+  "name": "Can He",
+  "h": 10,
+  "cites": 375,
+  "inst": "Guizhou University",
+  "freq": 1,
+  "citing_name": "Can He"
+ },
+ "A5022068526": {
+  "name": "Mingfu Xue",
+  "h": 16,
+  "cites": 1062,
+  "inst": "East China Normal University",
+  "freq": 1,
+  "citing_name": "Mingfu Xue"
+ },
+ "A5005224500": {
+  "name": "Shichang Sun",
+  "h": 13,
+  "cites": 598,
+  "inst": "Nanjing University of Aeronautics and Astronautics",
+  "freq": 1,
+  "citing_name": "Shichang Sun"
+ },
+ "A5024861014": {
+  "name": "Yinghao Wu",
+  "h": 22,
+  "cites": 2126,
+  "inst": "Albert Einstein College of Medicine",
+  "freq": 1,
+  "citing_name": "Yinghao Wu"
+ },
+ "A5085698418": {
+  "name": "Yushu Zhang",
+  "h": 61,
+  "cites": 12353,
+  "inst": "Sun Yat-sen University",
+  "freq": 1,
+  "citing_name": "Yushu Zhang"
+ },
+ "A5100370498": {
+  "name": "Jian Wang",
+  "h": 18,
+  "cites": 1349,
+  "inst": "Xinzhou Teachers University",
+  "freq": 1,
+  "citing_name": "Jian Wang"
+ },
+ "A5081669284": {
+  "name": "Jun Xia",
+  "h": 7,
+  "cites": 253,
+  "inst": "University of Notre Dame",
+  "freq": 1,
+  "citing_name": "Jun Xia"
+ },
+ "A5067164243": {
+  "name": "Ting Wang",
+  "h": 27,
+  "cites": 4109,
+  "inst": "Shanghai Key Laboratory of Trustworthy Computing",
+  "freq": 1,
+  "citing_name": "Ting Wang"
+ },
+ "A5025619718": {
+  "name": "Jiepin Ding",
+  "h": 9,
+  "cites": 254,
+  "inst": "East China Normal University",
+  "freq": 1,
+  "citing_name": "Jiepin Ding"
+ },
+ "A5030210439": {
+  "name": "Xian Wei",
+  "h": 36,
+  "cites": 3765,
+  "inst": "Software Engineering Institute",
+  "freq": 1,
+  "citing_name": "Xian Wei"
+ },
+ "A5025413633": {
+  "name": "Mingsong Chen",
+  "h": 36,
+  "cites": 4567,
+  "inst": "East China Normal University",
+  "freq": 1,
+  "citing_name": "Mingsong Chen"
+ },
+ "A5023734605": {
+  "name": "Weiqiang Liu",
+  "h": 41,
+  "cites": 6448,
+  "inst": "Nanjing University of Aeronautics and Astronautics",
+  "freq": 1,
+  "citing_name": "Weiqiang Liu"
+ },
+ "A5049847547": {
+  "name": "Pengfei Xia",
+  "h": 11,
+  "cites": 432,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Pengfei Xia"
+ },
+ "A5056229595": {
+  "name": "Hongjing Niu",
+  "h": 7,
+  "cites": 259,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Hongjing Niu"
+ },
+ "A5100757234": {
+  "name": "Ziqiang Li",
+  "h": 14,
+  "cites": 756,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Ziqiang Li"
+ },
+ "A5100365157": {
+  "name": "Bin Li",
+  "h": 30,
+  "cites": 4021,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Bin Li"
+ },
+ "A5100605609": {
+  "name": "Xiaoyuan Liu",
+  "h": 12,
+  "cites": 1214,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Xiaoyuan Liu"
+ },
+ "A5015924721": {
+  "name": "Jianbin Ye",
+  "h": 21,
+  "cites": 1762,
+  "inst": "Fujian Medical University",
+  "freq": 1,
+  "citing_name": "Jianbin Ye"
+ },
+ "A5087791868": {
+  "name": "Guowei Li",
+  "h": 2,
+  "cites": 42,
+  "inst": "Harbin Institute of Technology",
+  "freq": 1,
+  "citing_name": "Guowei Li"
+ },
+ "A5050900731": {
+  "name": "Bo Liu",
+  "h": 14,
+  "cites": 957,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Bo Liu"
+ },
+ "A5000833104": {
+  "name": "Zhenzhu Chen",
+  "h": 18,
+  "cites": 1126,
+  "inst": "Southwestern University of Finance and Economics",
+  "freq": 1,
+  "citing_name": "Zhenzhu Chen"
+ },
+ "A5100346376": {
+  "name": "Shang Wang",
+  "h": 12,
+  "cites": 726,
+  "inst": "China University of Mining and Technology",
+  "freq": 1,
+  "citing_name": "Shang Wang"
+ },
+ "A5048592388": {
+  "name": "Anmin Fu",
+  "h": 30,
+  "cites": 3404,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Anmin Fu"
+ },
+ "A5101863680": {
+  "name": "Yansong Gao",
+  "h": 18,
+  "cites": 1682,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Yansong Gao"
+ },
+ "A5006616888": {
+  "name": "Shan Ai",
+  "h": 13,
+  "cites": 537,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Shan Ai"
+ },
+ "A5036757740": {
+  "name": "Ruitao Hou",
+  "h": 8,
+  "cites": 255,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Ruitao Hou"
+ },
+ "A5100340130": {
+  "name": "Qi Chen",
+  "h": 13,
+  "cites": 381,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Qi Chen"
+ },
+ "A5111123738": {
+  "name": "Hongyang Yan",
+  "h": 5,
+  "cites": 210,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Hongyang Yan"
+ },
+ "A5101424450": {
+  "name": "Teng Huang",
+  "h": 8,
+  "cites": 202,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Teng Huang"
+ },
+ "A5075512625": {
+  "name": "Kongyang Chen",
+  "h": 19,
+  "cites": 1132,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Kongyang Chen"
+ },
+ "A5003198271": {
+  "name": "Yu‐an Tan",
+  "h": 29,
+  "cites": 3135,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Yu‐an Tan"
+ },
+ "A5100455413": {
+  "name": "Yajie Wang",
+  "h": 17,
+  "cites": 969,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Yajie Wang"
+ },
+ "A5070424852": {
+  "name": "Shuxin Huang",
+  "h": 16,
+  "cites": 563,
+  "inst": "Fujian Medical University",
+  "freq": 1,
+  "citing_name": "Shuxin Huang"
+ },
+ "A5074461054": {
+  "name": "Wencong Ma",
+  "h": 2,
+  "cites": 35,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Wencong Ma"
+ },
+ "A5026287089": {
+  "name": "Yuanzhang Li",
+  "h": 24,
+  "cites": 1717,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Yuanzhang Li"
+ },
+ "A5100441817": {
+  "name": "Wei Zhang",
+  "h": 42,
+  "cites": 7223,
+  "inst": "Institute of Applied Physics",
+  "freq": 1,
+  "citing_name": "Wei Zhang"
+ },
+ "A5053298425": {
+  "name": "Bo Wang",
+  "h": 12,
+  "cites": 462,
+  "inst": "Dalian University of Technology",
+  "freq": 1,
+  "citing_name": "Bo Wang"
+ },
+ "A5030123507": {
+  "name": "Sungwon Han",
+  "h": 13,
+  "cites": 667,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Sungwon Han"
+ },
+ "A5100735922": {
+  "name": "Sungwon Park",
+  "h": 10,
+  "cites": 364,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Sungwon Park"
+ },
+ "A5076423724": {
+  "name": "Fangzhao Wu",
+  "h": 51,
+  "cites": 8886,
+  "inst": "Microsoft Research (United Kingdom)",
+  "freq": 1,
+  "citing_name": "Fangzhao Wu"
+ },
+ "A5044651577": {
+  "name": "Xing Xie",
+  "h": 97,
+  "cites": 47682,
+  "inst": "Nantong University",
+  "freq": 1,
+  "citing_name": "Xing Xie"
+ },
+ "A5081758219": {
+  "name": "Bin Zhu",
+  "h": 16,
+  "cites": 1073,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Bin Zhu"
+ },
+ "A5078359928": {
+  "name": "Meng Hao",
+  "h": 18,
+  "cites": 1487,
+  "inst": "Singapore Management University",
+  "freq": 1,
+  "citing_name": "Meng Hao"
+ },
+ "A5061810530": {
+  "name": "Meeyoung Cha",
+  "h": 47,
+  "cites": 16912,
+  "inst": "Max Planck Institute for Security and Privacy",
+  "freq": 1,
+  "citing_name": "Meeyoung Cha"
+ },
+ "A5097740375": {
+  "name": "Wenshu Fan",
+  "h": 2,
+  "cites": 45,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Wenshu Fan"
+ },
+ "A5027718772": {
+  "name": "Mengnan Zhao",
+  "h": 7,
+  "cites": 136,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Mengnan Zhao"
+ },
+ "A5045161763": {
+  "name": "Xiangshan Gao",
+  "h": 6,
+  "cites": 220,
+  "inst": "Zhejiang University",
+  "freq": 1,
+  "citing_name": "Xiangshan Gao"
+ },
+ "A5058611515": {
+  "name": "Shouling Ji",
+  "h": 47,
+  "cites": 8230,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Shouling Ji"
+ },
+ "A5100757829": {
+  "name": "Wei Wang",
+  "h": 46,
+  "cites": 9931,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Wei Wang"
+ },
+ "A5065172324": {
+  "name": "Yuqiu Kong",
+  "h": 11,
+  "cites": 302,
+  "inst": "Dalian University of Technology",
+  "freq": 1,
+  "citing_name": "Yuqiu Kong"
+ },
+ "A5051951845": {
+  "name": "Peng Cheng",
+  "h": 58,
+  "cites": 11753,
+  "inst": "Guangdong University of Technology",
+  "freq": 1,
+  "citing_name": "Peng Cheng"
+ },
+ "A5084161986": {
+  "name": "Linkun Fan",
+  "h": 7,
+  "cites": 127,
+  "inst": "Henan University",
+  "freq": 1,
+  "citing_name": "Linkun Fan"
+ },
+ "A5100660581": {
+  "name": "Fazhi He",
+  "h": 37,
+  "cites": 4810,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Fazhi He"
+ },
+ "A5057635087": {
+  "name": "Tongzhen Si",
+  "h": 14,
+  "cites": 1103,
+  "inst": "University of Jinan",
+  "freq": 1,
+  "citing_name": "Tongzhen Si"
+ },
+ "A5100451253": {
+  "name": "Bing Li",
+  "h": 31,
+  "cites": 3457,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Bing Li"
+ },
+ "A5102535240": {
+  "name": "Rubin Fan",
+  "h": 5,
+  "cites": 130,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Rubin Fan"
+ },
+ "A5014216659": {
+  "name": "Daizong Ding",
+  "h": 10,
+  "cites": 538,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Daizong Ding"
+ },
+ "A5071959369": {
+  "name": "Yuanmin Huang",
+  "h": 7,
+  "cites": 133,
+  "inst": "Guizhou University",
+  "freq": 1,
+  "citing_name": "Yuanmin Huang"
+ },
+ "A5001257337": {
+  "name": "Chuanlong Ye",
+  "h": 6,
+  "cites": 93,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Chuanlong Ye"
+ },
+ "A5101652939": {
+  "name": "Mi Zhang",
+  "h": 15,
+  "cites": 1805,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Mi Zhang"
+ },
+ "A5051925942": {
+  "name": "Fuli Feng",
+  "h": 47,
+  "cites": 8925,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Fuli Feng"
+ },
+ "A5075978061": {
+  "name": "Erling Jiang",
+  "h": 4,
+  "cites": 47,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Erling Jiang"
+ },
+ "A5047962986": {
+  "name": "Yu–Gang Jiang",
+  "h": 79,
+  "cites": 25702,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Yu–Gang Jiang"
+ },
+ "A5074846459": {
+  "name": "Xudong Pan",
+  "h": 11,
+  "cites": 546,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Xudong Pan"
+ },
+ "A5023834030": {
+  "name": "Jitao Sang",
+  "h": 27,
+  "cites": 2276,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Jitao Sang"
+ },
+ "A5101413852": {
+  "name": "Qi Yi",
+  "h": 13,
+  "cites": 621,
+  "inst": "Hunan Normal University",
+  "freq": 1,
+  "citing_name": "Qi Yi"
+ },
+ "A5100453782": {
+  "name": "Jiaming Zhang",
+  "h": 11,
+  "cites": 362,
+  "inst": "Université Libre de Kinshasa",
+  "freq": 1,
+  "citing_name": "Jiaming Zhang"
+ },
+ "A5101552487": {
+  "name": "Changsheng Xu",
+  "h": 4,
+  "cites": 44,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Changsheng Xu"
+ },
+ "A5012207220": {
+  "name": "Mohammad Sabokrou",
+  "h": 22,
+  "cites": 2736,
+  "inst": "Okinawa Institute of Science and Technology Graduate University",
+  "freq": 1,
+  "citing_name": "Mohammad Sabokrou"
+ },
+ "A5052437722": {
+  "name": "Min Yang",
+  "h": 30,
+  "cites": 5226,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Min Yang"
+ },
+ "A5054813950": {
+  "name": "Xiangyu Wen",
+  "h": 7,
+  "cites": 135,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Xiangyu Wen"
+ },
+ "A5082893987": {
+  "name": "Jinyu Zhan",
+  "h": 14,
+  "cites": 777,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Jinyu Zhan"
+ },
+ "A5101460603": {
+  "name": "Wei Jiang",
+  "h": 21,
+  "cites": 1432,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Wei Jiang"
+ },
+ "A5018927991": {
+  "name": "Xupeng Wang",
+  "h": 16,
+  "cites": 1061,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Xupeng Wang"
+ },
+ "A5019374620": {
+  "name": "Ziwei Song",
+  "h": 21,
+  "cites": 1373,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Ziwei Song"
+ },
+ "A5047808228": {
+  "name": "Chen Bian",
+  "h": 3,
+  "cites": 42,
+  "inst": "Hefei University of Technology",
+  "freq": 1,
+  "citing_name": "Chen Bian"
+ },
+ "A5020975592": {
+  "name": "Bingxu Mu",
+  "h": 6,
+  "cites": 120,
+  "inst": "Northwestern Polytechnical University",
+  "freq": 1,
+  "citing_name": "Bingxu Mu"
+ },
+ "A5111863979": {
+  "name": "Xu Sun",
+  "h": 40,
+  "cites": 7420,
+  "inst": "Northeast Agricultural University",
+  "freq": 1,
+  "citing_name": "Xu Sun"
+ },
+ "A5113948735": {
+  "name": "Zhenxing Niu",
+  "h": 20,
+  "cites": 2167,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Zhenxing Niu"
+ },
+ "A5103837552": {
+  "name": "Hong Zhu",
+  "h": 11,
+  "cites": 613,
+  "inst": "Shandong University",
+  "freq": 1,
+  "citing_name": "Hong Zhu"
+ },
+ "A5092675597": {
+  "name": "Qiguang Mia",
+  "h": 1,
+  "cites": 15,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Qiguang Mia"
+ },
+ "A5101843177": {
+  "name": "Chao Shen",
+  "h": 42,
+  "cites": 6540,
+  "inst": "East China Jiaotong University",
+  "freq": 1,
+  "citing_name": "Chao Shen"
+ },
+ "A5006308815": {
+  "name": "Kaidi Jin",
+  "h": 1,
+  "cites": 13,
+  "inst": "Xi'an Jiaotong University",
+  "freq": 1,
+  "citing_name": "Kaidi Jin"
+ },
+ "A5100692958": {
+  "name": "Ming Fan",
+  "h": 24,
+  "cites": 2517,
+  "inst": "Oak Ridge National Laboratory",
+  "freq": 1,
+  "citing_name": "Ming Fan"
+ },
+ "A5046723920": {
+  "name": "Chenhao Lin",
+  "h": 17,
+  "cites": 1564,
+  "inst": "Zhejiang University of Technology",
+  "freq": 1,
+  "citing_name": "Chenhao Lin"
+ },
+ "A5101554099": {
+  "name": "Ting Liu",
+  "h": 47,
+  "cites": 9767,
+  "inst": "Shanghai University",
+  "freq": 1,
+  "citing_name": "Ting Liu"
+ },
+ "A5060434363": {
+  "name": "Shifeng Ni",
+  "h": 3,
+  "cites": 25,
+  "inst": "Jiangxi Science and Technology Normal University",
+  "freq": 1,
+  "citing_name": "Shifeng Ni"
+ },
+ "A5072973227": {
+  "name": "Yinghao Wu",
+  "h": 4,
+  "cites": 41,
+  "inst": "Nanjing University of Aeronautics and Astronautics",
+  "freq": 1,
+  "citing_name": "Yinghao Wu"
+ },
+ "A5114859590": {
+  "name": "Yuyao Sun",
+  "h": 2,
+  "cites": 16,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Yuyao Sun"
+ },
+ "A5103213763": {
+  "name": "Qiguang Miao",
+  "h": 15,
+  "cites": 661,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Qiguang Miao"
+ },
+ "A5103202637": {
+  "name": "Zizhen Liu",
+  "h": 17,
+  "cites": 891,
+  "inst": "Wuhan Polytechnic University",
+  "freq": 1,
+  "citing_name": "Zizhen Liu"
+ },
+ "A5100394414": {
+  "name": "Jing Ye",
+  "h": 22,
+  "cites": 1597,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Jing Ye"
+ },
+ "A5100768288": {
+  "name": "Huawei Li",
+  "h": 31,
+  "cites": 4798,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Huawei Li"
+ },
+ "A5023380073": {
+  "name": "Xiaowei Li",
+  "h": 43,
+  "cites": 10912,
+  "inst": "Liaoning Technical University",
+  "freq": 1,
+  "citing_name": "Xiaowei Li"
+ },
+ "A5030902303": {
+  "name": "Rongfang Bie",
+  "h": 32,
+  "cites": 5044,
+  "inst": "Beijing Normal University",
+  "freq": 1,
+  "citing_name": "Rongfang Bie"
+ },
+ "A5053956835": {
+  "name": "Jinxiu Jiang",
+  "h": 5,
+  "cites": 90,
+  "inst": "Harbin Engineering University",
+  "freq": 1,
+  "citing_name": "Jinxiu Jiang"
+ },
+ "A5021523270": {
+  "name": "Yu Guo",
+  "h": 20,
+  "cites": 1384,
+  "inst": "Beijing Normal University",
+  "freq": 1,
+  "citing_name": "Yu Guo"
+ },
+ "A5102885964": {
+  "name": "Yinbin Miao",
+  "h": 40,
+  "cites": 5439,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Yinbin Miao"
+ },
+ "A5006624972": {
+  "name": "Chengkun Wei",
+  "h": 9,
+  "cites": 268,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Chengkun Wei"
+ },
+ "A5032995108": {
+  "name": "Wenlong Meng",
+  "h": 3,
+  "cites": 27,
+  "inst": "Indiana University Bloomington",
+  "freq": 1,
+  "citing_name": "Wenlong Meng"
+ },
+ "A5065750423": {
+  "name": "Zihao Xiao",
+  "h": 12,
+  "cites": 900,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Zihao Xiao"
+ },
+ "A5100746182": {
+  "name": "Zhikun Zhang",
+  "h": 28,
+  "cites": 2183,
+  "inst": "Zhejiang University",
+  "freq": 1,
+  "citing_name": "Zhikun Zhang"
+ },
+ "A5068853349": {
+  "name": "Minghu Zhao",
+  "h": 3,
+  "cites": 33,
+  "inst": "Southern University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Minghu Zhao"
+ },
+ "A5102008204": {
+  "name": "Zihui Zhang",
+  "h": 10,
+  "cites": 252,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Zihui Zhang"
+ },
+ "A5101562847": {
+  "name": "Wenzhi Chen",
+  "h": 24,
+  "cites": 1758,
+  "inst": "Zhejiang University",
+  "freq": 1,
+  "citing_name": "Wenzhi Chen"
+ },
+ "A5103240401": {
+  "name": "Huaibing Peng",
+  "h": 3,
+  "cites": 30,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Huaibing Peng"
+ },
+ "A5039324800": {
+  "name": "Huming Qiu",
+  "h": 7,
+  "cites": 119,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Huming Qiu"
+ },
+ "A5005165463": {
+  "name": "Honglong Chen",
+  "h": 32,
+  "cites": 2996,
+  "inst": "Shenzhen University",
+  "freq": 1,
+  "citing_name": "Honglong Chen"
+ },
+ "A5101218044": {
+  "name": "Yudong Gao",
+  "h": 6,
+  "cites": 102,
+  "inst": "Qingdao University",
+  "freq": 1,
+  "citing_name": "Yudong Gao"
+ },
+ "A5101616378": {
+  "name": "Anqing Zhang",
+  "h": 10,
+  "cites": 229,
+  "inst": "Anhui University",
+  "freq": 1,
+  "citing_name": "Anqing Zhang"
+ },
+ "A5089450416": {
+  "name": "Peng Sun",
+  "h": 22,
+  "cites": 1775,
+  "inst": "Hunan University",
+  "freq": 1,
+  "citing_name": "Peng Sun"
+ },
+ "A5008181744": {
+  "name": "Nan Jiang",
+  "h": 38,
+  "cites": 6435,
+  "inst": "Nanjing Agricultural University",
+  "freq": 1,
+  "citing_name": "Nan Jiang"
+ },
+ "A5100444156": {
+  "name": "Weifeng Liu",
+  "h": 36,
+  "cites": 6520,
+  "inst": "China University of Petroleum, East China",
+  "freq": 1,
+  "citing_name": "Weifeng Liu"
+ },
+ "A5003381743": {
+  "name": "Yuhao Bian",
+  "h": 3,
+  "cites": 112,
+  "inst": "Dalian University of Technology",
+  "freq": 1,
+  "citing_name": "Yuhao Bian"
+ },
+ "A5084435909": {
+  "name": "Shengjing Tian",
+  "h": 7,
+  "cites": 175,
+  "inst": "China University of Mining and Technology",
+  "freq": 1,
+  "citing_name": "Shengjing Tian"
+ },
+ "A5100645085": {
+  "name": "Xiuping Liu",
+  "h": 29,
+  "cites": 2662,
+  "inst": "Dalian University of Technology",
+  "freq": 1,
+  "citing_name": "Xiuping Liu"
+ },
+ "A5100693198": {
+  "name": "Pan Zhou",
+  "h": 13,
+  "cites": 375,
+  "inst": "Economic Research Institute",
+  "freq": 1,
+  "citing_name": "Pan Zhou"
+ },
+ "A5051731173": {
+  "name": "Yulai Xie",
+  "h": 10,
+  "cites": 510,
+  "inst": "China Telecom (China)",
+  "freq": 1,
+  "citing_name": "Yulai Xie"
+ },
+ "A5102658991": {
+  "name": "Wen Yin",
+  "h": 1,
+  "cites": 10,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Wen Yin"
+ },
+ "A5041918034": {
+  "name": "Jian Lou",
+  "h": 19,
+  "cites": 1293,
+  "inst": "Sun Yat-sen University",
+  "freq": 1,
+  "citing_name": "Jian Lou"
+ },
+ "A5102658992": {
+  "name": "Dan Feng",
+  "h": 2,
+  "cites": 15,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Dan Feng"
+ },
+ "A5108009600": {
+  "name": "Yuhua Sun",
+  "h": 15,
+  "cites": 637,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yuhua Sun"
+ },
+ "A5035942632": {
+  "name": "Zhongqi Wang",
+  "h": 3,
+  "cites": 33,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Zhongqi Wang"
+ },
+ "A5010618416": {
+  "name": "Jie Zhang",
+  "h": 14,
+  "cites": 977,
+  "inst": "Anhui Agricultural University",
+  "freq": 1,
+  "citing_name": "Jie Zhang"
+ },
+ "A5006901308": {
+  "name": "Tailai Zhang",
+  "h": 4,
+  "cites": 48,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Tailai Zhang"
+ },
+ "A5083420537": {
+  "name": "Xilin Chen",
+  "h": 94,
+  "cites": 36543,
+  "inst": "Central South University",
+  "freq": 1,
+  "citing_name": "Xilin Chen"
+ },
+ "A5050297728": {
+  "name": "Shiguang Shan",
+  "h": 94,
+  "cites": 35481,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Shiguang Shan"
+ },
+ "A5016214742": {
+  "name": "Haipeng Peng",
+  "h": 48,
+  "cites": 8094,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Haipeng Peng"
+ },
+ "A5070992149": {
+  "name": "Shuang Bao",
+  "h": 5,
+  "cites": 66,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Shuang Bao"
+ },
+ "A5100734103": {
+  "name": "Lixiang Li",
+  "h": 54,
+  "cites": 9808,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Lixiang Li"
+ },
+ "A5101972163": {
+  "name": "Xiao Yang",
+  "h": 78,
+  "cites": 22438,
+  "inst": "Goethe University Frankfurt",
+  "freq": 1,
+  "citing_name": "Xiao Yang"
+ },
+ "A5056756764": {
+  "name": "Xiaoyi Tao",
+  "h": 9,
+  "cites": 516,
+  "inst": "Tianjin University of Commerce",
+  "freq": 1,
+  "citing_name": "Xiaoyi Tao"
+ },
+ "A5110670970": {
+  "name": "Jianhua Li",
+  "h": 43,
+  "cites": 6308,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Jianhua Li"
+ },
+ "A5007267530": {
+  "name": "Gaolei Li",
+  "h": 26,
+  "cites": 2251,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Gaolei Li"
+ },
+ "A5100716586": {
+  "name": "Qiang Liu",
+  "h": 9,
+  "cites": 361,
+  "inst": "Hunan University of Technology",
+  "freq": 1,
+  "citing_name": "Qiang Liu"
+ },
+ "A5004418846": {
+  "name": "Feng Xu",
+  "h": 15,
+  "cites": 673,
+  "inst": "Anhui University",
+  "freq": 1,
+  "citing_name": "Feng Xu"
+ },
+ "A5019512392": {
+  "name": "Yanlong Qiu",
+  "h": 6,
+  "cites": 126,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Yanlong Qiu"
+ },
+ "A5044661002": {
+  "name": "Lishan Ke",
+  "h": 12,
+  "cites": 464,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Lishan Ke"
+ },
+ "A5006334685": {
+  "name": "Zhiping Cai",
+  "h": 45,
+  "cites": 8517,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Zhiping Cai"
+ },
+ "A5024879728": {
+  "name": "Ling‐Yu Duan",
+  "h": 51,
+  "cites": 10502,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Ling‐Yu Duan"
+ },
+ "A5100403518": {
+  "name": "Fan Zhang",
+  "h": 15,
+  "cites": 991,
+  "inst": "Georgia Institute of Technology",
+  "freq": 1,
+  "citing_name": "Fan Zhang"
+ },
+ "A5044528861": {
+  "name": "Tongqing Zhou",
+  "h": 25,
+  "cites": 1739,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Tongqing Zhou"
+ },
+ "A5011972758": {
+  "name": "Weixuan Tang",
+  "h": 16,
+  "cites": 1375,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Weixuan Tang"
+ },
+ "A5026694481": {
+  "name": "Ming Xu",
+  "h": 42,
+  "cites": 6193,
+  "inst": "Xi'an Technological University",
+  "freq": 1,
+  "citing_name": "Ming Xu"
+ },
+ "A5100362891": {
+  "name": "Chao Liu",
+  "h": 22,
+  "cites": 2325,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Chao Liu"
+ },
+ "A5101572893": {
+  "name": "Lukun Wang",
+  "h": 10,
+  "cites": 537,
+  "inst": "Shandong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Lukun Wang"
+ },
+ "A5101333303": {
+  "name": "Rubing Xue",
+  "h": 1,
+  "cites": 8,
+  "inst": "Shandong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Rubing Xue"
+ },
+ "A5010660404": {
+  "name": "Teng Huang",
+  "h": 30,
+  "cites": 3052,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Teng Huang"
+ },
+ "A5101756360": {
+  "name": "Xingzhi Zhou",
+  "h": 10,
+  "cites": 671,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Xingzhi Zhou"
+ },
+ "A5044207082": {
+  "name": "Lingxin Jin",
+  "h": 2,
+  "cites": 18,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Lingxin Jin"
+ },
+ "A5055842190": {
+  "name": "Hongyang Yan",
+  "h": 26,
+  "cites": 2358,
+  "inst": "Yichun University",
+  "freq": 1,
+  "citing_name": "Hongyang Yan"
+ },
+ "A5100422102": {
+  "name": "Rui Zhang",
+  "h": 153,
+  "cites": 113229,
+  "inst": "National University of Singapore",
+  "freq": 1,
+  "citing_name": "Rui Zhang"
+ },
+ "A5100418451": {
+  "name": "Chen Chen",
+  "h": 7,
+  "cites": 254,
+  "inst": "Zunyi Medical University",
+  "freq": 1,
+  "citing_name": "Chen Chen"
+ },
+ "A5079461118": {
+  "name": "Tao Xiang",
+  "h": 42,
+  "cites": 5946,
+  "inst": "Chongqing University",
+  "freq": 1,
+  "citing_name": "Tao Xiang"
+ },
+ "A5083588975": {
+  "name": "Haibo Hong",
+  "h": 9,
+  "cites": 282,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Haibo Hong"
+ },
+ "A5028632571": {
+  "name": "Beihao Xia",
+  "h": 11,
+  "cites": 678,
+  "inst": "Fujian Special Equipment Inspection Institute",
+  "freq": 1,
+  "citing_name": "Beihao Xia"
+ },
+ "A5100660299": {
+  "name": "Mande Xie",
+  "h": 27,
+  "cites": 2532,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Mande Xie"
+ },
+ "A5103655695": {
+  "name": "Xue Rui",
+  "h": 5,
+  "cites": 79,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Xue Rui"
+ },
+ "A5114833394": {
+  "name": "Hong Sun",
+  "h": 5,
+  "cites": 94,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Hong Sun"
+ },
+ "A5072389850": {
+  "name": "Qinglang Guo",
+  "h": 8,
+  "cites": 248,
+  "inst": "Suzhou University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Qinglang Guo"
+ },
+ "A5102202439": {
+  "name": "Yongjie Xu",
+  "h": 4,
+  "cites": 48,
+  "inst": "ShanghaiTech University",
+  "freq": 1,
+  "citing_name": "Yongjie Xu"
+ },
+ "A5048390686": {
+  "name": "Haomiao Yang",
+  "h": 21,
+  "cites": 2497,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Haomiao Yang"
+ },
+ "A5066341740": {
+  "name": "Zhangjie Fu",
+  "h": 34,
+  "cites": 6069,
+  "inst": "Nanjing University of Information Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhangjie Fu"
+ },
+ "A5026181425": {
+  "name": "Yuqi Chen",
+  "h": 7,
+  "cites": 536,
+  "inst": "ShanghaiTech University",
+  "freq": 1,
+  "citing_name": "Yuqi Chen"
+ },
+ "A5074481036": {
+  "name": "Yusheng Guo",
+  "h": 5,
+  "cites": 76,
+  "inst": "State Key Laboratory of Information Engineering in Surveying Mapping and Remote Sensing",
+  "freq": 1,
+  "citing_name": "Yusheng Guo"
+ },
+ "A5027425633": {
+  "name": "Fu Song",
+  "h": 23,
+  "cites": 1646,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Fu Song"
+ },
+ "A5100965242": {
+  "name": "Yanxin Yang",
+  "h": 4,
+  "cites": 52,
+  "inst": "East China Normal University",
+  "freq": 1,
+  "citing_name": "Yanxin Yang"
+ },
+ "A5101889358": {
+  "name": "Xinpeng Zhang",
+  "h": 41,
+  "cites": 6786,
+  "inst": "Shanghai University",
+  "freq": 1,
+  "citing_name": "Xinpeng Zhang"
+ },
+ "A5102795710": {
+  "name": "Pengyu Zhang",
+  "h": 1,
+  "cites": 6,
+  "inst": "East China Normal University",
+  "freq": 1,
+  "citing_name": "Pengyu Zhang"
+ },
+ "A5036715206": {
+  "name": "Zhenxing Qian",
+  "h": 19,
+  "cites": 1224,
+  "inst": "Fudan University",
+  "freq": 1,
+  "citing_name": "Zhenxing Qian"
+ },
+ "A5109737648": {
+  "name": "Hanfeng Xia",
+  "h": 1,
+  "cites": 5,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Hanfeng Xia"
+ },
+ "A5060167465": {
+  "name": "Nan Zhong",
+  "h": 39,
+  "cites": 5450,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Nan Zhong"
+ },
+ "A5083271889": {
+  "name": "Yiru Sun",
+  "h": 10,
+  "cites": 667,
+  "inst": "Xi’an University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Yiru Sun"
+ },
+ "A5011300626": {
+  "name": "Hao Ding",
+  "h": 23,
+  "cites": 1933,
+  "inst": "Anhui University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Hao Ding"
+ },
+ "A5100626958": {
+  "name": "Xinghua Li",
+  "h": 37,
+  "cites": 4981,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Xinghua Li"
+ },
+ "A5063026980": {
+  "name": "S.W. Yuan",
+  "h": 12,
+  "cites": 493,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "S.W. Yuan"
+ },
+ "A5075541712": {
+  "name": "Weijie Zhao",
+  "h": 20,
+  "cites": 1632,
+  "inst": "Beijing University of Technology",
+  "freq": 1,
+  "citing_name": "Weijie Zhao"
+ },
+ "A5103062985": {
+  "name": "Mengyao Zhu",
+  "h": 6,
+  "cites": 156,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Mengyao Zhu"
+ },
+ "A5062774626": {
+  "name": "Jinwen Xin",
+  "h": 1,
+  "cites": 15,
+  "inst": "Shaanxi Provincial Hospital of Traditional Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Jinwen Xin"
+ },
+ "A5110729471": {
+  "name": "Xixiang Lyu",
+  "h": 7,
+  "cites": 850,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Xixiang Lyu"
+ },
+ "A5040179664": {
+  "name": "Jing Ma",
+  "h": 6,
+  "cites": 601,
+  "inst": "Nanjing University of Aeronautics and Astronautics",
+  "freq": 1,
+  "citing_name": "Jing Ma"
+ },
+ "A5046057883": {
+  "name": "Peizhuo Lv",
+  "h": 8,
+  "cites": 225,
+  "inst": "Software Engineering Institute",
+  "freq": 1,
+  "citing_name": "Peizhuo Lv"
+ },
+ "A5101574528": {
+  "name": "Yang Jin",
+  "h": 8,
+  "cites": 158,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Yang Jin"
+ },
+ "A5072373338": {
+  "name": "Ruigang Liang",
+  "h": 13,
+  "cites": 603,
+  "inst": "Institute of Information Engineering",
+  "freq": 1,
+  "citing_name": "Ruigang Liang"
+ },
+ "A5028877572": {
+  "name": "Yadong Mu",
+  "h": 35,
+  "cites": 9377,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Yadong Mu"
+ },
+ "A5063489530": {
+  "name": "Zichuan Xu",
+  "h": 45,
+  "cites": 5763,
+  "inst": "Dalian University of Technology",
+  "freq": 1,
+  "citing_name": "Zichuan Xu"
+ },
+ "A5104141596": {
+  "name": "Yining Mao",
+  "h": 7,
+  "cites": 684,
+  "inst": "Electric Power Research Institute",
+  "freq": 1,
+  "citing_name": "Yining Mao"
+ },
+ "A5047371218": {
+  "name": "Jie Song",
+  "h": 31,
+  "cites": 3969,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jie Song"
+ },
+ "A5100625873": {
+  "name": "Cheng Jin",
+  "h": 22,
+  "cites": 1779,
+  "inst": "Xinyang Normal University",
+  "freq": 1,
+  "citing_name": "Cheng Jin"
+ },
+ "A5114860602": {
+  "name": "Chang Yue",
+  "h": 6,
+  "cites": 131,
+  "inst": "Princeton University",
+  "freq": 1,
+  "citing_name": "Chang Yue"
+ },
+ "A5026532752": {
+  "name": "Mingli Song",
+  "h": 50,
+  "cites": 9865,
+  "inst": "Beijing Institute of Fashion Technology",
+  "freq": 1,
+  "citing_name": "Mingli Song"
+ },
+ "A5068837264": {
+  "name": "Xiaochun Cao",
+  "h": 75,
+  "cites": 28714,
+  "inst": "Sun Yat-sen University",
+  "freq": 1,
+  "citing_name": "Xiaochun Cao"
+ },
+ "A5003720636": {
+  "name": "Zhihao Yue",
+  "h": 6,
+  "cites": 116,
+  "inst": "East China Normal University",
+  "freq": 1,
+  "citing_name": "Zhihao Yue"
+ },
+ "A5010967874": {
+  "name": "Zhiwei Ling",
+  "h": 4,
+  "cites": 49,
+  "inst": "Zhejiang University",
+  "freq": 1,
+  "citing_name": "Zhiwei Ling"
+ },
+ "A5100346885": {
+  "name": "Peng Liu",
+  "h": 11,
+  "cites": 422,
+  "inst": "Jinzhong University",
+  "freq": 1,
+  "citing_name": "Peng Liu"
+ },
+ "A5100602366": {
+  "name": "Shuyi Zhang",
+  "h": 12,
+  "cites": 704,
+  "inst": "Xi'an Jiaotong University",
+  "freq": 1,
+  "citing_name": "Shuyi Zhang"
+ },
+ "A5062105888": {
+  "name": "Chuanjian Yao",
+  "h": 3,
+  "cites": 40,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Chuanjian Yao"
+ },
+ "A5026777964": {
+  "name": "Wenzhe Ye",
+  "h": 2,
+  "cites": 14,
+  "inst": "Guangxi Normal University",
+  "freq": 1,
+  "citing_name": "Wenzhe Ye"
+ },
+ "A5085539729": {
+  "name": "Luyao Chen",
+  "h": 28,
+  "cites": 2949,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Luyao Chen"
+ },
+ "A5003611668": {
+  "name": "Na Yan",
+  "h": 29,
+  "cites": 3004,
+  "inst": "Jiamusi University",
+  "freq": 1,
+  "citing_name": "Na Yan"
+ },
+ "A5100677423": {
+  "name": "Boyang Zhang",
+  "h": 10,
+  "cites": 369,
+  "inst": "Twitter (United States)",
+  "freq": 1,
+  "citing_name": "Boyang Zhang"
+ },
+ "A5100356534": {
+  "name": "Zhaoyang Wang",
+  "h": 8,
+  "cites": 266,
+  "inst": "Hebei University of Technology",
+  "freq": 1,
+  "citing_name": "Zhaoyang Wang"
+ },
+ "A5008201587": {
+  "name": "Wen Yu",
+  "h": 55,
+  "cites": 13839,
+  "inst": "Nanchang University",
+  "freq": 1,
+  "citing_name": "Wen Yu"
+ },
+ "A5037037839": {
+  "name": "Xianxian Li",
+  "h": 27,
+  "cites": 3010,
+  "inst": "Guangxi Normal University",
+  "freq": 1,
+  "citing_name": "Xianxian Li"
+ },
+ "A5029966401": {
+  "name": "Yanfei Hu",
+  "h": 4,
+  "cites": 46,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Yanfei Hu"
+ },
+ "A5101529425": {
+  "name": "Hui Wei",
+  "h": 7,
+  "cites": 257,
+  "inst": "University of Oulu",
+  "freq": 1,
+  "citing_name": "Hui Wei"
+ },
+ "A5051594448": {
+  "name": "Hanxun Yu",
+  "h": 4,
+  "cites": 116,
+  "inst": "Zhejiang University",
+  "freq": 1,
+  "citing_name": "Hanxun Yu"
+ },
+ "A5073036566": {
+  "name": "Kewei Zhang",
+  "h": 2,
+  "cites": 16,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Kewei Zhang"
+ },
+ "A5100700404": {
+  "name": "Zhixiang Wang",
+  "h": 14,
+  "cites": 1102,
+  "inst": "Yantai University",
+  "freq": 1,
+  "citing_name": "Zhixiang Wang"
+ },
+ "A5062252650": {
+  "name": "Jianke Zhu",
+  "h": 40,
+  "cites": 8176,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jianke Zhu"
+ },
+ "A5100401164": {
+  "name": "Zheng Wang",
+  "h": 42,
+  "cites": 7185,
+  "inst": "Zhejiang Sci-Tech University",
+  "freq": 1,
+  "citing_name": "Zheng Wang"
+ },
+ "A5074589029": {
+  "name": "Yalun Wu",
+  "h": 7,
+  "cites": 134,
+  "inst": "University of Macau",
+  "freq": 1,
+  "citing_name": "Yalun Wu"
+ },
+ "A5034748006": {
+  "name": "Yanfeng Gu",
+  "h": 37,
+  "cites": 8126,
+  "inst": "Harbin Institute of Technology",
+  "freq": 1,
+  "citing_name": "Yanfeng Gu"
+ },
+ "A5033817796": {
+  "name": "Yuanwan Chen",
+  "h": 3,
+  "cites": 23,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Yuanwan Chen"
+ },
+ "A5111270853": {
+  "name": "Xiaoshu Cui",
+  "h": 4,
+  "cites": 36,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Xiaoshu Cui"
+ },
+ "A5049446052": {
+  "name": "Yingxiao Xiang",
+  "h": 9,
+  "cites": 311,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Yingxiao Xiang"
+ },
+ "A5100358436": {
+  "name": "Qiong Li",
+  "h": 7,
+  "cites": 314,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Qiong Li"
+ },
+ "A5085778638": {
+  "name": "Endong Tong",
+  "h": 11,
+  "cites": 528,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Endong Tong"
+ },
+ "A5059369429": {
+  "name": "Zhen Han",
+  "h": 18,
+  "cites": 1450,
+  "inst": "Nanjing University of Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Zhen Han"
+ },
+ "A5070828650": {
+  "name": "Jiqiang Liu",
+  "h": 33,
+  "cites": 4880,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Jiqiang Liu"
+ },
+ "A5101027221": {
+  "name": "Hanqi Sun",
+  "h": 5,
+  "cites": 231,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Hanqi Sun"
+ },
+ "A5100551294": {
+  "name": "Ziyu Sun",
+  "h": 3,
+  "cites": 105,
+  "inst": "University of British Columbia",
+  "freq": 1,
+  "citing_name": "Ziyu Sun"
+ },
+ "A5088153559": {
+  "name": "Mingsheng Cao",
+  "h": 13,
+  "cites": 601,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Mingsheng Cao"
+ },
+ "A5100373255": {
+  "name": "Wenbin Liu",
+  "h": 29,
+  "cites": 11150,
+  "inst": "Jilin University",
+  "freq": 1,
+  "citing_name": "Wenbin Liu"
+ },
+ "A5078220957": {
+  "name": "Daizong Liu",
+  "h": 21,
+  "cites": 1519,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Daizong Liu"
+ },
+ "A5059045087": {
+  "name": "Wei Hu",
+  "h": 32,
+  "cites": 3839,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Wei Hu"
+ },
+ "A5094220601": {
+  "name": "Yuan Xun",
+  "h": 3,
+  "cites": 19,
+  "inst": "Institute of Information Engineering",
+  "freq": 1,
+  "citing_name": "Yuan Xun"
+ },
+ "A5109602541": {
+  "name": "Yongkang Wang",
+  "h": 15,
+  "cites": 596,
+  "inst": "North University of China",
+  "freq": 1,
+  "citing_name": "Yongkang Wang"
+ },
+ "A5078047051": {
+  "name": "Di‐Hua Zhai",
+  "h": 29,
+  "cites": 2806,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Di‐Hua Zhai"
+ },
+ "A5064231378": {
+  "name": "Yuanqing Xia",
+  "h": 88,
+  "cites": 30341,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Yuanqing Xia"
+ },
+ "A5100754460": {
+  "name": "Danyang Liu",
+  "h": 16,
+  "cites": 919,
+  "inst": "Central South University",
+  "freq": 1,
+  "citing_name": "Danyang Liu"
+ },
+ "A5014900230": {
+  "name": "Xue Yang",
+  "h": 10,
+  "cites": 526,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Xue Yang"
+ },
+ "A5100681184": {
+  "name": "Tao Chen",
+  "h": 15,
+  "cites": 733,
+  "inst": "Harbin Engineering University",
+  "freq": 1,
+  "citing_name": "Tao Chen"
+ },
+ "A5022790312": {
+  "name": "Lei Guo",
+  "h": 21,
+  "cites": 1385,
+  "inst": "The University of Queensland",
+  "freq": 1,
+  "citing_name": "Lei Guo"
+ },
+ "A5017191320": {
+  "name": "Ji Guo",
+  "h": 3,
+  "cites": 46,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Ji Guo"
+ },
+ "A5101721206": {
+  "name": "Jiaming He",
+  "h": 12,
+  "cites": 520,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Jiaming He"
+ },
+ "A5084205574": {
+  "name": "Wassim Hamidouche",
+  "h": 26,
+  "cites": 2732,
+  "inst": "Khalifa University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Wassim Hamidouche"
+ },
+ "A5024595046": {
+  "name": "Paul Montague",
+  "h": 15,
+  "cites": 1725,
+  "inst": "Defence Science and Technology Group",
+  "freq": 1,
+  "citing_name": "Paul Montague"
+ },
+ "A5077639290": {
+  "name": "Tamas Abraham",
+  "h": 9,
+  "cites": 547,
+  "inst": "Defence Science and Technology Group",
+  "freq": 1,
+  "citing_name": "Tamas Abraham"
+ },
+ "A5101958458": {
+  "name": "Yujia Zhu",
+  "h": 2,
+  "cites": 4,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Yujia Zhu"
+ },
+ "A5101902621": {
+  "name": "Ruoxi Wang",
+  "h": 11,
+  "cites": 921,
+  "inst": "Shanghai Medical College of Fudan University",
+  "freq": 1,
+  "citing_name": "Ruoxi Wang"
+ },
+ "A5035484030": {
+  "name": "Daoxun Xia",
+  "h": 10,
+  "cites": 427,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Daoxun Xia"
+ },
+ "A5079706175": {
+  "name": "Jianhua Dai",
+  "h": 5,
+  "cites": 174,
+  "inst": "China University of Political Science and Law",
+  "freq": 1,
+  "citing_name": "Jianhua Dai"
+ },
+ "A5041184605": {
+  "name": "Yifan Hu",
+  "h": 13,
+  "cites": 670,
+  "inst": "Jiangnan University",
+  "freq": 1,
+  "citing_name": "Yifan Hu"
+ },
+ "A5059919326": {
+  "name": "Xiyuan Jia",
+  "h": 4,
+  "cites": 106,
+  "inst": "Nanjing Agricultural University",
+  "freq": 1,
+  "citing_name": "Xiyuan Jia"
+ },
+ "A5070196338": {
+  "name": "Cunqiao Hou",
+  "h": 4,
+  "cites": 29,
+  "inst": "Minzu University of China",
+  "freq": 1,
+  "citing_name": "Cunqiao Hou"
+ },
+ "A5031848612": {
+  "name": "Gaoning Pan",
+  "h": 4,
+  "cites": 143,
+  "inst": "Hangzhou Dianzi University",
+  "freq": 1,
+  "citing_name": "Gaoning Pan"
+ },
+ "A5045262050": {
+  "name": "Qiuhua Wang",
+  "h": 20,
+  "cites": 1356,
+  "inst": "Southwest Forestry University",
+  "freq": 1,
+  "citing_name": "Qiuhua Wang"
+ },
+ "A5032600929": {
+  "name": "Qiule Sun",
+  "h": 13,
+  "cites": 379,
+  "inst": "Dalian University of Technology",
+  "freq": 1,
+  "citing_name": "Qiule Sun"
+ },
+ "A5100614965": {
+  "name": "Yizhi Ren",
+  "h": 18,
+  "cites": 1296,
+  "inst": "Hangzhou Dianzi University",
+  "freq": 1,
+  "citing_name": "Yizhi Ren"
+ },
+ "A5100392130": {
+  "name": "Wei Wang",
+  "h": 68,
+  "cites": 18487,
+  "inst": "Sun Yat-sen University",
+  "freq": 1,
+  "citing_name": "Wei Wang"
+ },
+ "A5073957898": {
+  "name": "Yanyu Cheng",
+  "h": 12,
+  "cites": 841,
+  "inst": "Nanyang Technological University",
+  "freq": 1,
+  "citing_name": "Yanyu Cheng"
+ },
+ "A5100413537": {
+  "name": "Jianxin Zhang",
+  "h": 28,
+  "cites": 3555,
+  "inst": "Xiangtan University",
+  "freq": 1,
+  "citing_name": "Jianxin Zhang"
+ },
+ "A5021825605": {
+  "name": "Rui Jiang",
+  "h": 7,
+  "cites": 205,
+  "inst": "South China Agricultural University",
+  "freq": 1,
+  "citing_name": "Rui Jiang"
+ },
+ "A5076130502": {
+  "name": "Jiatao Li",
+  "h": 6,
+  "cites": 223,
+  "inst": "Shanghai Maritime University",
+  "freq": 1,
+  "citing_name": "Jiatao Li"
+ },
+ "A5038642274": {
+  "name": "Yier Wei",
+  "h": 1,
+  "cites": 6,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Yier Wei"
+ },
+ "A5086029723": {
+  "name": "Haichang Gao",
+  "h": 24,
+  "cites": 1726,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Haichang Gao"
+ },
+ "A5039492436": {
+  "name": "Chongqing Chen",
+  "h": 14,
+  "cites": 949,
+  "inst": "Anhui Medical University",
+  "freq": 1,
+  "citing_name": "Chongqing Chen"
+ },
+ "A5113033096": {
+  "name": "Weifeng Bu",
+  "h": 2,
+  "cites": 12,
+  "inst": "Dongguan University of Technology",
+  "freq": 1,
+  "citing_name": "Weifeng Bu"
+ },
+ "A5100374831": {
+  "name": "Yufei Wang",
+  "h": 19,
+  "cites": 2262,
+  "inst": "Shenyang Institute of Automation",
+  "freq": 1,
+  "citing_name": "Yufei Wang"
+ },
+ "A5100338946": {
+  "name": "Huan Liu",
+  "h": 103,
+  "cites": 49618,
+  "inst": "Google (United States)",
+  "freq": 1,
+  "citing_name": "Huan Liu"
+ },
+ "A5020945039": {
+  "name": "Zonghao Ying",
+  "h": 5,
+  "cites": 143,
+  "inst": "Vaughn College of Aeronautics and Technology",
+  "freq": 1,
+  "citing_name": "Zonghao Ying"
+ },
+ "A5081437968": {
+  "name": "Yipeng Gao",
+  "h": 41,
+  "cites": 4290,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Yipeng Gao"
+ },
+ "A5022894420": {
+  "name": "Bin Wu",
+  "h": 18,
+  "cites": 925,
+  "inst": "China Mobile (China)",
+  "freq": 1,
+  "citing_name": "Bin Wu"
+ },
+ "A5100361413": {
+  "name": "Li Li",
+  "h": 11,
+  "cites": 406,
+  "inst": "Shanghai University",
+  "freq": 1,
+  "citing_name": "Li Li"
+ },
+ "A5100314060": {
+  "name": "Yunfan Yang",
+  "h": 16,
+  "cites": 774,
+  "inst": "Tianjin University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yunfan Yang"
+ },
+ "A5012982390": {
+  "name": "Huiwen Dong",
+  "h": 3,
+  "cites": 61,
+  "inst": "Beijing Normal University",
+  "freq": 1,
+  "citing_name": "Huiwen Dong"
+ },
+ "A5054925527": {
+  "name": "Jian Yu",
+  "h": 11,
+  "cites": 400,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jian Yu"
+ },
+ "A5094048421": {
+  "name": "Mouke Mo",
+  "h": 2,
+  "cites": 12,
+  "inst": "South China Agricultural University",
+  "freq": 1,
+  "citing_name": "Mouke Mo"
+ },
+ "A5089528037": {
+  "name": "Shan Bian",
+  "h": 9,
+  "cites": 245,
+  "inst": "South China Agricultural University",
+  "freq": 1,
+  "citing_name": "Shan Bian"
+ },
+ "A5064383463": {
+  "name": "Chuntao Wang",
+  "h": 28,
+  "cites": 2514,
+  "inst": "South China Agricultural University",
+  "freq": 1,
+  "citing_name": "Chuntao Wang"
+ },
+ "A5041285904": {
+  "name": "Yue Zhao",
+  "h": 10,
+  "cites": 423,
+  "inst": "Tianjin University of Technology and Education",
+  "freq": 1,
+  "citing_name": "Yue Zhao"
+ },
+ "A5101322824": {
+  "name": "Congyi Li",
+  "h": 1,
+  "cites": 5,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Congyi Li"
+ },
+ "A5100664328": {
+  "name": "Kai Chen",
+  "h": 12,
+  "cites": 618,
+  "inst": "Shaanxi University of Technology",
+  "freq": 1,
+  "citing_name": "Kai Chen"
+ },
+ "A5009029522": {
+  "name": "Yanyan Xu",
+  "h": 17,
+  "cites": 1109,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Yanyan Xu"
+ },
+ "A5044391608": {
+  "name": "Peihao Li",
+  "h": 15,
+  "cites": 2155,
+  "inst": "Jianghan University",
+  "freq": 1,
+  "citing_name": "Peihao Li"
+ },
+ "A5086543250": {
+  "name": "Shuaishuai Zhang",
+  "h": 4,
+  "cites": 50,
+  "inst": "Beijing Technology and Business University",
+  "freq": 1,
+  "citing_name": "Shuaishuai Zhang"
+ },
+ "A5066530788": {
+  "name": "Chunyang Qi",
+  "h": 5,
+  "cites": 111,
+  "inst": "Guodian Institute of Science and Technology",
+  "freq": 1,
+  "citing_name": "Chunyang Qi"
+ },
+ "A5103088506": {
+  "name": "Chuang Liang",
+  "h": 3,
+  "cites": 12,
+  "inst": "Southeast University",
+  "freq": 1,
+  "citing_name": "Chuang Liang"
+ },
+ "A5072932160": {
+  "name": "Yonghao Tang",
+  "h": 6,
+  "cites": 343,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Yonghao Tang"
+ },
+ "A5100409523": {
+  "name": "Qiang Liu",
+  "h": 20,
+  "cites": 1225,
+  "inst": "ETC International",
+  "freq": 1,
+  "citing_name": "Qiang Liu"
+ },
+ "A5069951778": {
+  "name": "Qiang Ni",
+  "h": 65,
+  "cites": 14774,
+  "inst": "Lancaster University",
+  "freq": 1,
+  "citing_name": "Qiang Ni"
+ },
+ "A5114222091": {
+  "name": "Junjie Sun",
+  "h": 4,
+  "cites": 161,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Junjie Sun"
+ },
+ "A5084180297": {
+  "name": "Qiong Li",
+  "h": 3,
+  "cites": 25,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Qiong Li"
+ },
+ "A5036007592": {
+  "name": "Jinkai Zheng",
+  "h": 13,
+  "cites": 770,
+  "inst": "Dongguan University of Technology",
+  "freq": 1,
+  "citing_name": "Jinkai Zheng"
+ },
+ "A5046292480": {
+  "name": "Xingyu Wu",
+  "h": 2,
+  "cites": 21,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Xingyu Wu"
+ },
+ "A5037200751": {
+  "name": "Wenjia Niu",
+  "h": 11,
+  "cites": 294,
+  "inst": "Australian National University",
+  "freq": 1,
+  "citing_name": "Wenjia Niu"
+ },
+ "A5100938790": {
+  "name": "Dong Shu",
+  "h": 4,
+  "cites": 86,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Dong Shu"
+ },
+ "A5049361130": {
+  "name": "B.V.A. Rao",
+  "h": 12,
+  "cites": 424,
+  "inst": "University Transportation Research Center",
+  "freq": 1,
+  "citing_name": "B.V.A. Rao"
+ },
+ "A5101060579": {
+  "name": "Guiqin Zhu",
+  "h": 5,
+  "cites": 235,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Guiqin Zhu"
+ },
+ "A5111260421": {
+  "name": "Qiaolong Ding",
+  "h": 1,
+  "cites": 4,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Qiaolong Ding"
+ },
+ "A5114125431": {
+  "name": "Dajiang Chen",
+  "h": 7,
+  "cites": 370,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Dajiang Chen"
+ },
+ "A5006912201": {
+  "name": "Wenbo Jiang",
+  "h": 26,
+  "cites": 2806,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Wenbo Jiang"
+ },
+ "A5000444026": {
+  "name": "Guoming Lu",
+  "h": 13,
+  "cites": 657,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Guoming Lu"
+ },
+ "A5014388368": {
+  "name": "Feiping Wang",
+  "h": 1,
+  "cites": 5,
+  "inst": "North China Electric Power University",
+  "freq": 1,
+  "citing_name": "Feiping Wang"
+ },
+ "A5068027800": {
+  "name": "Baoyuan Wu",
+  "h": 41,
+  "cites": 7612,
+  "inst": "Chinese University of Hong Kong, Shenzhen",
+  "freq": 1,
+  "citing_name": "Baoyuan Wu"
+ },
+ "A5002810045": {
+  "name": "Hongrui Chen",
+  "h": 4,
+  "cites": 127,
+  "inst": "Fujian Normal University",
+  "freq": 1,
+  "citing_name": "Hongrui Chen"
+ },
+ "A5101995242": {
+  "name": "Mingda Zhang",
+  "h": 15,
+  "cites": 756,
+  "inst": "Hebei Agricultural University",
+  "freq": 1,
+  "citing_name": "Mingda Zhang"
+ },
+ "A5113070845": {
+  "name": "Shaokui Wei",
+  "h": 6,
+  "cites": 173,
+  "inst": "Chinese University of Hong Kong, Shenzhen",
+  "freq": 1,
+  "citing_name": "Shaokui Wei"
+ },
+ "A5101190196": {
+  "name": "Zihao Zhu",
+  "h": 11,
+  "cites": 577,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Zihao Zhu"
+ },
+ "A5023267854": {
+  "name": "Danni Yuan",
+  "h": 12,
+  "cites": 620,
+  "inst": "Changjiang Water Resources Commission",
+  "freq": 1,
+  "citing_name": "Danni Yuan"
+ },
+ "A5120017279": {
+  "name": "Mingli Zhu",
+  "h": 20,
+  "cites": 1498,
+  "inst": "Zhejiang Chinese Medical University",
+  "freq": 1,
+  "citing_name": "Mingli Zhu"
+ },
+ "A5014621529": {
+  "name": "Ruotong Wang",
+  "h": 22,
+  "cites": 2276,
+  "inst": "Dalian Ocean University",
+  "freq": 1,
+  "citing_name": "Ruotong Wang"
+ },
+ "A5026788605": {
+  "name": "Xinwei Liu",
+  "h": 3,
+  "cites": 18,
+  "inst": "China University of Mining and Technology",
+  "freq": 1,
+  "citing_name": "Xinwei Liu"
+ },
+ "A5064997871": {
+  "name": "Chao Shen",
+  "h": 23,
+  "cites": 2881,
+  "inst": "Jinan University",
+  "freq": 1,
+  "citing_name": "Chao Shen"
+ },
+ "A5100450141": {
+  "name": "Jun Chen",
+  "h": 65,
+  "cites": 19255,
+  "inst": "East China Jiaotong University",
+  "freq": 1,
+  "citing_name": "Jun Chen"
+ },
+ "A5067532429": {
+  "name": "Xinyang Deng",
+  "h": 2,
+  "cites": 10,
+  "inst": "Northwestern Polytechnical University",
+  "freq": 1,
+  "citing_name": "Xinyang Deng"
+ },
+ "A5100600705": {
+  "name": "Tao Xiao",
+  "h": 13,
+  "cites": 485,
+  "inst": "Kyushu University",
+  "freq": 1,
+  "citing_name": "Tao Xiao"
+ },
+ "A5101555620": {
+  "name": "Wen Jiang",
+  "h": 3,
+  "cites": 60,
+  "inst": "Northwestern Polytechnical University",
+  "freq": 1,
+  "citing_name": "Wen Jiang"
+ },
+ "A5057327129": {
+  "name": "Liepiao Zhang",
+  "h": 2,
+  "cites": 34,
+  "inst": "The Fairbanking Foundation",
+  "freq": 1,
+  "citing_name": "Liepiao Zhang"
+ },
+ "A5078928722": {
+  "name": "Ziqi Zhou",
+  "h": 6,
+  "cites": 160,
+  "inst": "Kunming University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Ziqi Zhou"
+ },
+ "A5101243560": {
+  "name": "Menghao Deng",
+  "h": 2,
+  "cites": 10,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Menghao Deng"
+ },
+ "A5102772000": {
+  "name": "Yongjian Hu",
+  "h": 25,
+  "cites": 2592,
+  "inst": "South China University of Technology",
+  "freq": 1,
+  "citing_name": "Yongjian Hu"
+ },
+ "A5036365195": {
+  "name": "Hangtao Zhang",
+  "h": 6,
+  "cites": 133,
+  "inst": "Taiyuan University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Hangtao Zhang"
+ },
+ "A5106439087": {
+  "name": "Yufei Song",
+  "h": 6,
+  "cites": 226,
+  "inst": "Shijiazhuang University",
+  "freq": 1,
+  "citing_name": "Yufei Song"
+ },
+ "A5100400052": {
+  "name": "Minghui Li",
+  "h": 23,
+  "cites": 1928,
+  "inst": "Vaughn College of Aeronautics and Technology",
+  "freq": 1,
+  "citing_name": "Minghui Li"
+ },
+ "A5018644308": {
+  "name": "Dezhong Yao",
+  "h": 57,
+  "cites": 11134,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Dezhong Yao"
+ },
+ "A5049057309": {
+  "name": "Wenmin Chen",
+  "h": 3,
+  "cites": 25,
+  "inst": "Ocean University of China",
+  "freq": 1,
+  "citing_name": "Wenmin Chen"
+ },
+ "A5101571975": {
+  "name": "Xiaowei Xu",
+  "h": 16,
+  "cites": 2239,
+  "inst": "University of California, Davis",
+  "freq": 1,
+  "citing_name": "Xiaowei Xu"
+ },
+ "A5101408584": {
+  "name": "Zewen Li",
+  "h": 15,
+  "cites": 6050,
+  "inst": "Hangzhou Normal University",
+  "freq": 1,
+  "citing_name": "Zewen Li"
+ },
+ "A5100382658": {
+  "name": "Xiaodong Wang",
+  "h": 84,
+  "cites": 28319,
+  "inst": "Chengdu University of Technology",
+  "freq": 1,
+  "citing_name": "Xiaodong Wang"
+ },
+ "A5002581913": {
+  "name": "Yangming Chen",
+  "h": 3,
+  "cites": 22,
+  "inst": "Ocean University of China",
+  "freq": 1,
+  "citing_name": "Yangming Chen"
+ },
+ "A5100857013": {
+  "name": "Weida Xu",
+  "h": 4,
+  "cites": 54,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Weida Xu"
+ },
+ "A5100729477": {
+  "name": "Yang Xu",
+  "h": 10,
+  "cites": 479,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Yang Xu"
+ },
+ "A5101933467": {
+  "name": "Sicong Zhang",
+  "h": 14,
+  "cites": 716,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Sicong Zhang"
+ },
+ "A5101468884": {
+  "name": "Xiaowei Xu",
+  "h": 10,
+  "cites": 602,
+  "inst": "Ocean University of China",
+  "freq": 1,
+  "citing_name": "Xiaowei Xu"
+ },
+ "A5101408585": {
+  "name": "Zewen Li",
+  "h": 10,
+  "cites": 401,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zewen Li"
+ },
+ "A5100741720": {
+  "name": "Junjian Li",
+  "h": 12,
+  "cites": 527,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Junjian Li"
+ },
+ "A5101872220": {
+  "name": "Jiayi Yu",
+  "h": 10,
+  "cites": 324,
+  "inst": "National Defense University",
+  "freq": 1,
+  "citing_name": "Jiayi Yu"
+ },
+ "A5045678705": {
+  "name": "Junwei Li",
+  "h": 2,
+  "cites": 11,
+  "inst": "China University of Petroleum, East China",
+  "freq": 1,
+  "citing_name": "Junwei Li"
+ },
+ "A5063090253": {
+  "name": "Chaoying Yuan",
+  "h": 2,
+  "cites": 18,
+  "inst": "China Telecom (China)",
+  "freq": 1,
+  "citing_name": "Chaoying Yuan"
+ },
+ "A5088985361": {
+  "name": "Shumei Yuan",
+  "h": 1,
+  "cites": 6,
+  "inst": "China Telecom (China)",
+  "freq": 1,
+  "citing_name": "Shumei Yuan"
+ },
+ "A5101557177": {
+  "name": "Shuai Yuan",
+  "h": 8,
+  "cites": 202,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Shuai Yuan"
+ },
+ "A5114767808": {
+  "name": "Haotian Zhu",
+  "h": 7,
+  "cites": 167,
+  "inst": "China University of Geosciences",
+  "freq": 1,
+  "citing_name": "Haotian Zhu"
+ },
+ "A5032111604": {
+  "name": "Yuxin Lu",
+  "h": 2,
+  "cites": 46,
+  "inst": "Electric Power Research Institute",
+  "freq": 1,
+  "citing_name": "Yuxin Lu"
+ },
+ "A5010410320": {
+  "name": "Wei Wu",
+  "h": 9,
+  "cites": 297,
+  "inst": "Shandong Normal University",
+  "freq": 1,
+  "citing_name": "Wei Wu"
+ },
+ "A5021527965": {
+  "name": "Wei Ni",
+  "h": 47,
+  "cites": 10010,
+  "inst": "University of Technology Sydney",
+  "freq": 1,
+  "citing_name": "Wei Ni"
+ },
+ "A5034065699": {
+  "name": "Jinghan Qiu",
+  "h": 4,
+  "cites": 172,
+  "inst": "China University of Petroleum, East China",
+  "freq": 1,
+  "citing_name": "Jinghan Qiu"
+ },
+ "A5106445229": {
+  "name": "Rui Zhang",
+  "h": 1,
+  "cites": 1,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Rui Zhang"
+ },
+ "A5067310940": {
+  "name": "Jingpeng Bai",
+  "h": 2,
+  "cites": 23,
+  "inst": "China Telecom (China)",
+  "freq": 1,
+  "citing_name": "Jingpeng Bai"
+ },
+ "A5100380103": {
+  "name": "Zihan Wang",
+  "h": 13,
+  "cites": 524,
+  "inst": "Shenyang Aerospace University",
+  "freq": 1,
+  "citing_name": "Zihan Wang"
+ },
+ "A5001892361": {
+  "name": "Qiyang Song",
+  "h": 5,
+  "cites": 122,
+  "inst": "Institute of Information Engineering",
+  "freq": 1,
+  "citing_name": "Qiyang Song"
+ },
+ "A5017433297": {
+  "name": "Dongxiao Liu",
+  "h": 28,
+  "cites": 3692,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Dongxiao Liu"
+ },
+ "A5104344103": {
+  "name": "Haipeng Jiang",
+  "h": 1,
+  "cites": 20,
+  "inst": "Beijing Normal University",
+  "freq": 1,
+  "citing_name": "Haipeng Jiang"
+ },
+ "A5101544074": {
+  "name": "Jian‐Kang Chen",
+  "h": 32,
+  "cites": 9513,
+  "inst": "Augusta University",
+  "freq": 1,
+  "citing_name": "Jian‐Kang Chen"
+ },
+ "A5100311070": {
+  "name": "Yuxin Xi",
+  "h": 4,
+  "cites": 35,
+  "inst": "Beijing Normal University",
+  "freq": 1,
+  "citing_name": "Yuxin Xi"
+ },
+ "A5126128609": {
+  "name": "Shuai Yuan",
+  "h": 1,
+  "cites": 1,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Shuai Yuan"
+ },
+ "A5048741916": {
+  "name": "C. H. Li",
+  "h": 8,
+  "cites": 227,
+  "inst": "National Power (United Kingdom)",
+  "freq": 1,
+  "citing_name": "C. H. Li"
+ },
+ "A5126108879": {
+  "name": "Rui Zhang",
+  "h": 1,
+  "cites": 1,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Rui Zhang"
+ },
+ "A5076565994": {
+  "name": "Junan Yang",
+  "h": 16,
+  "cites": 860,
+  "inst": "Shanxi Province Hospital of Traditional Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Junan Yang"
+ },
+ "A5100433544": {
+  "name": "Yu Zhang",
+  "h": 12,
+  "cites": 522,
+  "inst": "Northwestern Polytechnical University",
+  "freq": 1,
+  "citing_name": "Yu Zhang"
+ },
+ "A5122932244": {
+  "name": "Xinyuan Qian",
+  "h": 1,
+  "cites": 1,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Xinyuan Qian"
+ },
+ "A5056896393": {
+  "name": "Kun Shao",
+  "h": 6,
+  "cites": 206,
+  "inst": "Huawei Technologies (United Kingdom)",
+  "freq": 1,
+  "citing_name": "Kun Shao"
+ },
+ "A5021403424": {
+  "name": "Hui Liu",
+  "h": 30,
+  "cites": 4018,
+  "inst": "University of Bremen",
+  "freq": 1,
+  "citing_name": "Hui Liu"
+ },
+ "A5068350092": {
+  "name": "Xiangkai Yang",
+  "h": 3,
+  "cites": 36,
+  "inst": "Guizhou Minzu University",
+  "freq": 1,
+  "citing_name": "Xiangkai Yang"
+ },
+ "A5001184471": {
+  "name": "Wenjian Luo",
+  "h": 25,
+  "cites": 3139,
+  "inst": "Ministry of Public Security of the People's Republic of China",
+  "freq": 1,
+  "citing_name": "Wenjian Luo"
+ },
+ "A5029027592": {
+  "name": "Licai Zhang",
+  "h": 17,
+  "cites": 825,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Licai Zhang"
+ },
+ "A5101698803": {
+  "name": "Jiahai Wang",
+  "h": 40,
+  "cites": 6504,
+  "inst": "Sun Yat-sen University",
+  "freq": 1,
+  "citing_name": "Jiahai Wang"
+ },
+ "A5046877016": {
+  "name": "Huasong Zhou",
+  "h": 4,
+  "cites": 158,
+  "inst": "Shandong University",
+  "freq": 1,
+  "citing_name": "Huasong Zhou"
+ },
+ "A5100716616": {
+  "name": "Zhijian Chen",
+  "h": 25,
+  "cites": 2010,
+  "inst": "Baptist Hospital of Miami",
+  "freq": 1,
+  "citing_name": "Zhijian Chen"
+ },
+ "A5024095871": {
+  "name": "Leon Bevan Bullock",
+  "h": 4,
+  "cites": 72,
+  "inst": "Ocean University of China",
+  "freq": 1,
+  "citing_name": "Leon Bevan Bullock"
+ },
+ "A5102948836": {
+  "name": "Honglong Chen",
+  "h": 2,
+  "cites": 13,
+  "inst": "China University of Petroleum, East China",
+  "freq": 1,
+  "citing_name": "Honglong Chen"
+ },
+ "A5000563958": {
+  "name": "Yong Xiao",
+  "h": 10,
+  "cites": 266,
+  "inst": "Chang'an University",
+  "freq": 1,
+  "citing_name": "Yong Xiao"
+ },
+ "A5000818065": {
+  "name": "Jin Ma",
+  "h": 59,
+  "cites": 13207,
+  "inst": "The University of Sydney",
+  "freq": 1,
+  "citing_name": "Jin Ma"
+ },
+ "A5101382266": {
+  "name": "Ping Yi",
+  "h": 6,
+  "cites": 471,
+  "inst": "Nankai University",
+  "freq": 1,
+  "citing_name": "Ping Yi"
+ },
+ "A5061185006": {
+  "name": "Xiuzhen Chen",
+  "h": 23,
+  "cites": 1424,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Xiuzhen Chen"
+ },
+ "A5032122694": {
+  "name": "Shao-Zhong Guo",
+  "h": 3,
+  "cites": 48,
+  "inst": "China National Petroleum Corporation (China)",
+  "freq": 1,
+  "citing_name": "Shao-Zhong Guo"
+ },
+ "A5045403869": {
+  "name": "Chan‐Hyun Youn",
+  "h": 21,
+  "cites": 2157,
+  "inst": "Korea Advanced Institute of Science and Technology",
+  "freq": 1,
+  "citing_name": "Chan‐Hyun Youn"
+ },
+ "A5038111153": {
+  "name": "Kai Lin",
+  "h": 12,
+  "cites": 491,
+  "inst": "Qingdao University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Kai Lin"
+ },
+ "A5100673297": {
+  "name": "Yuping Liu",
+  "h": 9,
+  "cites": 1704,
+  "inst": "China University of Petroleum, East China",
+  "freq": 1,
+  "citing_name": "Yuping Liu"
+ },
+ "A5058029288": {
+  "name": "Wen Yin",
+  "h": 3,
+  "cites": 39,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Wen Yin"
+ },
+ "A5101883857": {
+  "name": "Bin Zhu",
+  "h": 5,
+  "cites": 177,
+  "inst": "Microsoft Research Asia (China)",
+  "freq": 1,
+  "citing_name": "Bin Zhu"
+ },
+ "A5054468864": {
+  "name": "Yulai Xie",
+  "h": 16,
+  "cites": 822,
+  "inst": "Shenzhen Technology University",
+  "freq": 1,
+  "citing_name": "Yulai Xie"
+ },
+ "A5100693194": {
+  "name": "Pan Zhou",
+  "h": 4,
+  "cites": 103,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Pan Zhou"
+ },
+ "A5109534821": {
+  "name": "Zhihuan Xing",
+  "h": 4,
+  "cites": 34,
+  "inst": "Beihang University",
+  "freq": 1,
+  "citing_name": "Zhihuan Xing"
+ },
+ "A5102978367": {
+  "name": "Yuqing Lan",
+  "h": 1,
+  "cites": 5,
+  "inst": "Northeastern University",
+  "freq": 1,
+  "citing_name": "Yuqing Lan"
+ },
+ "A5057421680": {
+  "name": "Dan Feng",
+  "h": 49,
+  "cites": 14145,
+  "inst": "Wuhan National Laboratory for Optoelectronics",
+  "freq": 1,
+  "citing_name": "Dan Feng"
+ },
+ "A5103207935": {
+  "name": "Yong Cao",
+  "h": 20,
+  "cites": 1263,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Yong Cao"
+ },
+ "A5110847464": {
+  "name": "Yin Yu",
+  "h": 4,
+  "cites": 115,
+  "inst": "Heidelberg University",
+  "freq": 1,
+  "citing_name": "Yin Yu"
+ },
+ "A5077125315": {
+  "name": "Xiaoyi Yang",
+  "h": 32,
+  "cites": 3326,
+  "inst": "Ningbo University",
+  "freq": 1,
+  "citing_name": "Xiaoyi Yang"
+ },
+ "A5104192893": {
+  "name": "Yichun Yu",
+  "h": 1,
+  "cites": 1,
+  "inst": "Beihang University",
+  "freq": 1,
+  "citing_name": "Yichun Yu"
+ },
+ "A5012669200": {
+  "name": "Dan Yu",
+  "h": 24,
+  "cites": 1344,
+  "inst": "United Imaging Healthcare (China)",
+  "freq": 1,
+  "citing_name": "Dan Yu"
+ },
+ "A5103209175": {
+  "name": "Ruoxi Chen",
+  "h": 16,
+  "cites": 892,
+  "inst": "Beijing University of Technology",
+  "freq": 1,
+  "citing_name": "Ruoxi Chen"
+ },
+ "A5036410193": {
+  "name": "Yulin Jin",
+  "h": 2,
+  "cites": 20,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Yulin Jin"
+ },
+ "A5072212265": {
+  "name": "Haibin Zheng",
+  "h": 21,
+  "cites": 1299,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Haibin Zheng"
+ },
+ "A5109034588": {
+  "name": "Howell Tong",
+  "h": 41,
+  "cites": 8534,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Howell Tong"
+ },
+ "A5037706636": {
+  "name": "Kai Wu",
+  "h": 27,
+  "cites": 2216,
+  "inst": "Tongji University",
+  "freq": 1,
+  "citing_name": "Kai Wu"
+ },
+ "A5087050704": {
+  "name": "Shangxi Wu",
+  "h": 5,
+  "cites": 126,
+  "inst": "Hangzhou Center for Disease Control and Prevention",
+  "freq": 1,
+  "citing_name": "Shangxi Wu"
+ },
+ "A5101758654": {
+  "name": "Jinyin Chen",
+  "h": 27,
+  "cites": 2936,
+  "inst": "Zhejiang University of Technology",
+  "freq": 1,
+  "citing_name": "Jinyin Chen"
+ },
+ "A5100549389": {
+  "name": "Qiuyang He",
+  "h": 3,
+  "cites": 29,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Qiuyang He"
+ },
+ "A5002882527": {
+  "name": "Jian Yu",
+  "h": 10,
+  "cites": 285,
+  "inst": "Zhejiang Sci-Tech University",
+  "freq": 1,
+  "citing_name": "Jian Yu"
+ },
+ "A5071050711": {
+  "name": "Hongzi Zhu",
+  "h": 36,
+  "cites": 3821,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Hongzi Zhu"
+ },
+ "A5090587210": {
+  "name": "Zhenbo Song",
+  "h": 10,
+  "cites": 303,
+  "inst": "Northeast Normal University",
+  "freq": 1,
+  "citing_name": "Zhenbo Song"
+ },
+ "A5081929109": {
+  "name": "Wenhao Gao",
+  "h": 9,
+  "cites": 204,
+  "inst": "Anhui Agricultural University",
+  "freq": 1,
+  "citing_name": "Wenhao Gao"
+ },
+ "A5101825902": {
+  "name": "Zhenyuan Zhang",
+  "h": 3,
+  "cites": 54,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhenyuan Zhang"
+ },
+ "A5037595310": {
+  "name": "Jianfeng Lu",
+  "h": 36,
+  "cites": 6318,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jianfeng Lu"
+ },
+ "A5000432413": {
+  "name": "Kailong Wang",
+  "h": 15,
+  "cites": 1791,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Kailong Wang"
+ },
+ "A5101544595": {
+  "name": "Meizhen Wang",
+  "h": 5,
+  "cites": 64,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Meizhen Wang"
+ },
+ "A5059129452": {
+  "name": "Haoyu Wang",
+  "h": 6,
+  "cites": 274,
+  "inst": "University of Shanghai for Science and Technology",
+  "freq": 1,
+  "citing_name": "Haoyu Wang"
+ },
+ "A5102328626": {
+  "name": "Xinzhe Zhou",
+  "h": 9,
+  "cites": 699,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Xinzhe Zhou"
+ },
+ "A5024453719": {
+  "name": "Wenhao Jiang",
+  "h": 24,
+  "cites": 2523,
+  "inst": "Guangdong University Of Finances and Economics",
+  "freq": 1,
+  "citing_name": "Wenhao Jiang"
+ },
+ "A5040032951": {
+  "name": "Sheng Qi",
+  "h": 42,
+  "cites": 5096,
+  "inst": "University of East Anglia",
+  "freq": 1,
+  "citing_name": "Sheng Qi"
+ },
+ "A5101949155": {
+  "name": "Peng Zhang",
+  "h": 24,
+  "cites": 3119,
+  "inst": "Xi'an Jiaotong University",
+  "freq": 1,
+  "citing_name": "Peng Zhang"
+ },
+ "A5100412474": {
+  "name": "Gang Liu",
+  "h": 17,
+  "cites": 1044,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Gang Liu"
+ },
+ "A5100625998": {
+  "name": "Zhiyu Chen",
+  "h": 31,
+  "cites": 3598,
+  "inst": "Kunming University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhiyu Chen"
+ },
+ "A5005556501": {
+  "name": "Jianwei Guo",
+  "h": 2,
+  "cites": 36,
+  "inst": "Beijing Academy of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jianwei Guo"
+ },
+ "A5100346912": {
+  "name": "Peng Liu",
+  "h": 13,
+  "cites": 1258,
+  "inst": "Hangzhou Dianzi University",
+  "freq": 1,
+  "citing_name": "Peng Liu"
+ },
+ "A5010197002": {
+  "name": "Xingbo Hu",
+  "h": 6,
+  "cites": 158,
+  "inst": "Pennsylvania State University",
+  "freq": 1,
+  "citing_name": "Xingbo Hu"
+ },
+ "A5017417068": {
+  "name": "Guozhu Meng",
+  "h": 25,
+  "cites": 2760,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Guozhu Meng"
+ },
+ "A5104167537": {
+  "name": "Yibing Lan",
+  "h": 10,
+  "cites": 363,
+  "inst": "Zhejiang Provincial People's Hospital",
+  "freq": 1,
+  "citing_name": "Yibing Lan"
+ },
+ "A5112114826": {
+  "name": "Ming Gu",
+  "h": 38,
+  "cites": 5726,
+  "inst": "Hong Kong Polytechnic University",
+  "freq": 1,
+  "citing_name": "Ming Gu"
+ },
+ "A5062041652": {
+  "name": "Bi-Ru Zhu",
+  "h": 9,
+  "cites": 285,
+  "inst": "Beijing Normal University",
+  "freq": 1,
+  "citing_name": "Bi-Ru Zhu"
+ },
+ "A5101879293": {
+  "name": "Yige Li",
+  "h": 13,
+  "cites": 686,
+  "inst": "Harvard University",
+  "freq": 1,
+  "citing_name": "Yige Li"
+ },
+ "A5101431030": {
+  "name": "Yisen Wang",
+  "h": 30,
+  "cites": 5603,
+  "inst": "PLA Information Engineering University",
+  "freq": 1,
+  "citing_name": "Yisen Wang"
+ },
+ "A5052115680": {
+  "name": "Dongxian Wu",
+  "h": 11,
+  "cites": 748,
+  "inst": "Tsinghua University",
+  "freq": 1,
+  "citing_name": "Dongxian Wu"
+ },
+ "A5024163245": {
+  "name": "Guiyu Tian",
+  "h": 6,
+  "cites": 123,
+  "inst": "China Academy of Engineering Physics",
+  "freq": 1,
+  "citing_name": "Guiyu Tian"
+ },
+ "A5046787369": {
+  "name": "Shihao Zhao",
+  "h": 11,
+  "cites": 814,
+  "inst": "University of Hong Kong",
+  "freq": 1,
+  "citing_name": "Shihao Zhao"
+ },
+ "A5049073944": {
+  "name": "Lue Tao",
+  "h": 7,
+  "cites": 148,
+  "inst": "Nanjing University",
+  "freq": 1,
+  "citing_name": "Lue Tao"
+ },
+ "A5100682348": {
+  "name": "Lei Feng",
+  "h": 29,
+  "cites": 2959,
+  "inst": "Southeast University",
+  "freq": 1,
+  "citing_name": "Lei Feng"
+ },
+ "A5103204774": {
+  "name": "Sheng-Jun Huang",
+  "h": 28,
+  "cites": 4528,
+  "inst": "Nanjing University of Aeronautics and Astronautics",
+  "freq": 1,
+  "citing_name": "Sheng-Jun Huang"
+ },
+ "A5101596072": {
+  "name": "Songcan Chen",
+  "h": 55,
+  "cites": 14065,
+  "inst": "Nanjing University of Aeronautics and Astronautics",
+  "freq": 1,
+  "citing_name": "Songcan Chen"
+ },
+ "A5100349476": {
+  "name": "Lei Liu",
+  "h": 84,
+  "cites": 26056,
+  "inst": "Suizhou Central Hospital",
+  "freq": 1,
+  "citing_name": "Lei Liu"
+ },
+ "A5052002691": {
+  "name": "Bin Li",
+  "h": 24,
+  "cites": 1773,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Bin Li"
+ },
+ "A5034415838": {
+  "name": "Yifan Zhu",
+  "h": 24,
+  "cites": 2005,
+  "inst": "Nanjing University of Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Yifan Zhu"
+ },
+ "A5100362543": {
+  "name": "Wei Yang",
+  "h": 34,
+  "cites": 4481,
+  "inst": "Chiba University",
+  "freq": 1,
+  "citing_name": "Wei Yang"
+ },
+ "A5101933768": {
+  "name": "Guohong Wang",
+  "h": 12,
+  "cites": 742,
+  "inst": "Xi'an University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Guohong Wang"
+ },
+ "A5043414541": {
+  "name": "Gongxuan Zhang",
+  "h": 27,
+  "cites": 2696,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Gongxuan Zhang"
+ },
+ "A5023890038": {
+  "name": "Jiaming He",
+  "h": 12,
+  "cites": 556,
+  "inst": "East China University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jiaming He"
+ },
+ "A5113368675": {
+  "name": "Rui Zhang",
+  "h": 1,
+  "cites": 4,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Rui Zhang"
+ },
+ "A5101684253": {
+  "name": "Jiachen Li",
+  "h": 3,
+  "cites": 40,
+  "inst": "Wuhan University of Technology",
+  "freq": 1,
+  "citing_name": "Jiachen Li"
+ },
+ "A5100445368": {
+  "name": "Yu Wang",
+  "h": 67,
+  "cites": 21888,
+  "inst": "University of Oregon",
+  "freq": 1,
+  "citing_name": "Yu Wang"
+ },
+ "A5100446916": {
+  "name": "Jiahui Wang",
+  "h": 11,
+  "cites": 513,
+  "inst": "Minzu University of China",
+  "freq": 1,
+  "citing_name": "Jiahui Wang"
+ },
+ "A5100710053": {
+  "name": "Jiasheng Li",
+  "h": 8,
+  "cites": 268,
+  "inst": "Foshan University",
+  "freq": 1,
+  "citing_name": "Jiasheng Li"
+ },
+ "A5025136044": {
+  "name": "Dejun Wang",
+  "h": 1,
+  "cites": 4,
+  "inst": "Minzu University of China",
+  "freq": 1,
+  "citing_name": "Dejun Wang"
+ },
+ "A5102879486": {
+  "name": "Chenyang Chen",
+  "h": 4,
+  "cites": 60,
+  "inst": "Nanjing Agricultural University",
+  "freq": 1,
+  "citing_name": "Chenyang Chen"
+ },
+ "A5040350578": {
+  "name": "Shufan Yang",
+  "h": 24,
+  "cites": 2640,
+  "inst": "Xi'an Shiyou University",
+  "freq": 1,
+  "citing_name": "Shufan Yang"
+ },
+ "A5090335612": {
+  "name": "Qianmu Li",
+  "h": 34,
+  "cites": 4172,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Qianmu Li"
+ },
+ "A5100453495": {
+  "name": "Tao Wang",
+  "h": 35,
+  "cites": 7767,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Tao Wang"
+ },
+ "A5016645765": {
+  "name": "Zhichao Lian",
+  "h": 14,
+  "cites": 773,
+  "inst": "Nanjing University of Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Zhichao Lian"
+ },
+ "A5080854999": {
+  "name": "Pengchuan Wang",
+  "h": 4,
+  "cites": 101,
+  "inst": "Hefei University",
+  "freq": 1,
+  "citing_name": "Pengchuan Wang"
+ },
+ "A5027590471": {
+  "name": "Jun Hou",
+  "h": 16,
+  "cites": 767,
+  "inst": "Nanjing University of Industry Technology",
+  "freq": 1,
+  "citing_name": "Jun Hou"
+ },
+ "A5108276428": {
+  "name": "Mengyu Ge",
+  "h": 11,
+  "cites": 389,
+  "inst": "China Land Surveying and Planning Institute",
+  "freq": 1,
+  "citing_name": "Mengyu Ge"
+ },
+ "A5100419413": {
+  "name": "Xiaoyu Zhang",
+  "h": 15,
+  "cites": 720,
+  "inst": "New York Institute of Technology",
+  "freq": 1,
+  "citing_name": "Xiaoyu Zhang"
+ },
+ "A5057513927": {
+  "name": "Ya Rao",
+  "h": 3,
+  "cites": 111,
+  "inst": "Université Lumière Lyon 2",
+  "freq": 1,
+  "citing_name": "Ya Rao"
+ },
+ "A5065046158": {
+  "name": "Baolin Zheng",
+  "h": 8,
+  "cites": 399,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Baolin Zheng"
+ },
+ "A5100401884": {
+  "name": "Yuqing Zhang",
+  "h": 40,
+  "cites": 7356,
+  "inst": "Xinjiang Normal University",
+  "freq": 1,
+  "citing_name": "Yuqing Zhang"
+ },
+ "A5100362298": {
+  "name": "Xuan Liu",
+  "h": 24,
+  "cites": 1979,
+  "inst": "Hunan University",
+  "freq": 1,
+  "citing_name": "Xuan Liu"
+ },
+ "A5028090195": {
+  "name": "Lei Zhang",
+  "h": 2,
+  "cites": 15,
+  "inst": "Nanjing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Lei Zhang"
+ },
+ "A5100564738": {
+  "name": "Yuping Liu",
+  "h": 8,
+  "cites": 325,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Yuping Liu"
+ },
+ "A5114182341": {
+  "name": "Kai Lin",
+  "h": 0,
+  "cites": 0,
+  "inst": "China University of Petroleum, East China",
+  "freq": 1,
+  "citing_name": "Kai Lin"
+ },
+ "A5045686722": {
+  "name": "Jiayin Song",
+  "h": 2,
+  "cites": 15,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Jiayin Song"
+ },
+ "A5085371338": {
+  "name": "Zhenguo Zhang",
+  "h": 2,
+  "cites": 27,
+  "inst": "Hebei Science and Technology Department",
+  "freq": 1,
+  "citing_name": "Zhenguo Zhang"
+ },
+ "A5047248381": {
+  "name": "Wenjia Niu",
+  "h": 15,
+  "cites": 875,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Wenjia Niu"
+ },
+ "A5007332382": {
+  "name": "Yunzhe Tian",
+  "h": 8,
+  "cites": 165,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Yunzhe Tian"
+ },
+ "A5109432448": {
+  "name": "Jiangxing Wu",
+  "h": 10,
+  "cites": 334,
+  "inst": "PLA Information Engineering University",
+  "freq": 1,
+  "citing_name": "Jiangxing Wu"
+ },
+ "A5017920487": {
+  "name": "Chenyu Zhou",
+  "h": 15,
+  "cites": 440,
+  "inst": "Yangtze University",
+  "freq": 1,
+  "citing_name": "Chenyu Zhou"
+ },
+ "A5086835948": {
+  "name": "Guangze Yang",
+  "h": 33,
+  "cites": 4284,
+  "inst": "ARC Centre of Excellence for Enabling Eco-Efficient Beneficiation of Minerals",
+  "freq": 1,
+  "citing_name": "Guangze Yang"
+ },
+ "A5045240151": {
+  "name": "Yike Li",
+  "h": 11,
+  "cites": 318,
+  "inst": "Xi'an Shiyou University",
+  "freq": 1,
+  "citing_name": "Yike Li"
+ },
+ "A5100673890": {
+  "name": "Zijie Zhang",
+  "h": 12,
+  "cites": 508,
+  "inst": "The University of Texas at San Antonio",
+  "freq": 1,
+  "citing_name": "Zijie Zhang"
+ },
+ "A5059296628": {
+  "name": "Xixiang Lv",
+  "h": 12,
+  "cites": 427,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Xixiang Lv"
+ },
+ "A5100378919": {
+  "name": "Yaqi Zhang",
+  "h": 11,
+  "cites": 655,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Yaqi Zhang"
+ },
+ "A5110368326": {
+  "name": "Yongqing Tang",
+  "h": 4,
+  "cites": 48,
+  "inst": "First Affiliated Hospital of Sichuan Medical University",
+  "freq": 1,
+  "citing_name": "Yongqing Tang"
+ },
+ "A5103466697": {
+  "name": "Haohui Sun",
+  "h": 2,
+  "cites": 10,
+  "inst": "Hebei University of Technology",
+  "freq": 1,
+  "citing_name": "Haohui Sun"
+ },
+ "A5064725095": {
+  "name": "Yiming Li",
+  "h": 1,
+  "cites": 7,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Yiming Li"
+ },
+ "A5100679241": {
+  "name": "Jie Li",
+  "h": 57,
+  "cites": 16467,
+  "inst": "Central University of Finance and Economics",
+  "freq": 1,
+  "citing_name": "Jie Li"
+ },
+ "A5103269241": {
+  "name": "Yuliang Lu",
+  "h": 6,
+  "cites": 144,
+  "inst": "National Defense University",
+  "freq": 1,
+  "citing_name": "Yuliang Lu"
+ },
+ "A5104268369": {
+  "name": "Zeshan Pang",
+  "h": 1,
+  "cites": 2,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Zeshan Pang"
+ },
+ "A5053412095": {
+  "name": "Aolin Che",
+  "h": 2,
+  "cites": 28,
+  "inst": "Guangdong Polytechnic Normal University",
+  "freq": 1,
+  "citing_name": "Aolin Che"
+ },
+ "A5009959674": {
+  "name": "Cai Guo",
+  "h": 0,
+  "cites": 0,
+  "inst": "Hanshan Normal University",
+  "freq": 1,
+  "citing_name": "Cai Guo"
+ },
+ "A5100677319": {
+  "name": "Wei Yang",
+  "h": 15,
+  "cites": 906,
+  "inst": "Chongqing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Wei Yang"
+ },
+ "A5069294224": {
+  "name": "Yonghao Yang",
+  "h": 6,
+  "cites": 128,
+  "inst": "Northwest Normal University",
+  "freq": 1,
+  "citing_name": "Yonghao Yang"
+ },
+ "A5078234650": {
+  "name": "Bo Liu",
+  "h": 16,
+  "cites": 690,
+  "inst": "Chongqing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Bo Liu"
+ },
+ "A5058968827": {
+  "name": "Miaoxia Chen",
+  "h": 3,
+  "cites": 32,
+  "inst": "Hanshan Normal University",
+  "freq": 1,
+  "citing_name": "Miaoxia Chen"
+ },
+ "A5064113420": {
+  "name": "Bin Xiao",
+  "h": 41,
+  "cites": 7278,
+  "inst": "Chongqing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Bin Xiao"
+ },
+ "A5100701883": {
+  "name": "Xu Ma",
+  "h": 5,
+  "cites": 129,
+  "inst": "Beijing Information Science & Technology University",
+  "freq": 1,
+  "citing_name": "Xu Ma"
+ },
+ "A5082886782": {
+  "name": "Yuan Ma",
+  "h": 29,
+  "cites": 3124,
+  "inst": "Fujian University of Traditional Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Yuan Ma"
+ },
+ "A5057867117": {
+  "name": "Yaguan Qian",
+  "h": 12,
+  "cites": 678,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yaguan Qian"
+ },
+ "A5104175557": {
+  "name": "Boyuan Ji",
+  "h": 1,
+  "cites": 12,
+  "inst": "Biomechanics Institute of Valencia",
+  "freq": 1,
+  "citing_name": "Boyuan Ji"
+ },
+ "A5102527335": {
+  "name": "Zejie Lian",
+  "h": 2,
+  "cites": 13,
+  "inst": "Zhejiang University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zejie Lian"
+ },
+ "A5069792429": {
+  "name": "Wei Wang",
+  "h": 8,
+  "cites": 704,
+  "inst": "China Academy of Art",
+  "freq": 1,
+  "citing_name": "Wei Wang"
+ },
+ "A5106482064": {
+  "name": "Bin Wang",
+  "h": 4,
+  "cites": 123,
+  "inst": "Beijing Institute of Petrochemical Technology",
+  "freq": 1,
+  "citing_name": "Bin Wang"
+ },
+ "A5100708138": {
+  "name": "Xiwen Lu",
+  "h": 4,
+  "cites": 66,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Xiwen Lu"
+ },
+ "A5100645665": {
+  "name": "Li Yang",
+  "h": 16,
+  "cites": 831,
+  "inst": "Beihang University",
+  "freq": 1,
+  "citing_name": "Li Yang"
+ },
+ "A5057015645": {
+  "name": "Guibo Luo",
+  "h": 12,
+  "cites": 499,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Guibo Luo"
+ },
+ "A5100560952": {
+  "name": "Yuesheng Zhu",
+  "h": 4,
+  "cites": 151,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Yuesheng Zhu"
+ },
+ "A5100689288": {
+  "name": "Yu Pan",
+  "h": 9,
+  "cites": 719,
+  "inst": "Jiangsu University",
+  "freq": 1,
+  "citing_name": "Yu Pan"
+ },
+ "A5100434472": {
+  "name": "Jiahao Chen",
+  "h": 23,
+  "cites": 1892,
+  "inst": "Zhejiang Sci-Tech University",
+  "freq": 1,
+  "citing_name": "Jiahao Chen"
+ },
+ "A5045289658": {
+  "name": "Jing Wang",
+  "h": 59,
+  "cites": 12095,
+  "inst": "Fujian Normal University",
+  "freq": 1,
+  "citing_name": "Jing Wang"
+ },
+ "A5073484896": {
+  "name": "Lin Wang",
+  "h": 27,
+  "cites": 2457,
+  "inst": "Tufts University",
+  "freq": 1,
+  "citing_name": "Lin Wang"
+ },
+ "A5067114640": {
+  "name": "Qihuan Li",
+  "h": 12,
+  "cites": 549,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Qihuan Li"
+ },
+ "A5024597522": {
+  "name": "Xiaolin Chang",
+  "h": 30,
+  "cites": 3885,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Xiaolin Chang"
+ },
+ "A5016621833": {
+  "name": "Jianye Mo",
+  "h": 1,
+  "cites": 6,
+  "inst": "Hangzhou Dianzi University",
+  "freq": 1,
+  "citing_name": "Jianye Mo"
+ },
+ "A5041210918": {
+  "name": "Ming Xu",
+  "h": 24,
+  "cites": 1919,
+  "inst": "National University of Defense Technology",
+  "freq": 1,
+  "citing_name": "Ming Xu"
+ },
+ "A5106884197": {
+  "name": "Xiaogang Xing",
+  "h": 2,
+  "cites": 20,
+  "inst": "Hangzhou Dianzi University",
+  "freq": 1,
+  "citing_name": "Xiaogang Xing"
+ },
+ "A5101910406": {
+  "name": "Wenqian Xu",
+  "h": 7,
+  "cites": 146,
+  "inst": "Shandong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Wenqian Xu"
+ },
+ "A5101454824": {
+  "name": "Zhihong Liang",
+  "h": 10,
+  "cites": 532,
+  "inst": "Shenyang Ligong University",
+  "freq": 1,
+  "citing_name": "Zhihong Liang"
+ },
+ "A5101822454": {
+  "name": "Yiwei Yang",
+  "h": 8,
+  "cites": 244,
+  "inst": "University of Michigan",
+  "freq": 1,
+  "citing_name": "Yiwei Yang"
+ },
+ "A5043063705": {
+  "name": "Ximing Zhang",
+  "h": 35,
+  "cites": 3959,
+  "inst": "Nanjing Normal University",
+  "freq": 1,
+  "citing_name": "Ximing Zhang"
+ },
+ "A5059085983": {
+  "name": "Yixin Jiang",
+  "h": 27,
+  "cites": 2963,
+  "inst": "Electric Power Research Institute",
+  "freq": 1,
+  "citing_name": "Yixin Jiang"
+ },
+ "A5101459593": {
+  "name": "Chao Hong",
+  "h": 9,
+  "cites": 249,
+  "inst": "China Southern Power Grid (China)",
+  "freq": 1,
+  "citing_name": "Chao Hong"
+ },
+ "A5013340112": {
+  "name": "Peiming Xu",
+  "h": 6,
+  "cites": 249,
+  "inst": "Nanshan Group (China)",
+  "freq": 1,
+  "citing_name": "Peiming Xu"
+ },
+ "A5076898126": {
+  "name": "Leyu Bi",
+  "h": 5,
+  "cites": 69,
+  "inst": "City University of Hong Kong",
+  "freq": 1,
+  "citing_name": "Leyu Bi"
+ },
+ "A5101827229": {
+  "name": "Yunan Zhang",
+  "h": 14,
+  "cites": 584,
+  "inst": "Sichuan University",
+  "freq": 1,
+  "citing_name": "Yunan Zhang"
+ },
+ "A5072729601": {
+  "name": "Yuwen Pu",
+  "h": 11,
+  "cites": 483,
+  "inst": "Chongqing University",
+  "freq": 1,
+  "citing_name": "Yuwen Pu"
+ },
+ "A5062802890": {
+  "name": "Yadong Wang",
+  "h": 1,
+  "cites": 139,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Yadong Wang"
+ },
+ "A5054438623": {
+  "name": "Yan Cao",
+  "h": 2,
+  "cites": 13,
+  "inst": "Zhengzhou University",
+  "freq": 1,
+  "citing_name": "Yan Cao"
+ },
+ "A5085548702": {
+  "name": "Zhiwei Zhang",
+  "h": 1,
+  "cites": 72,
+  "inst": "Pennsylvania State University",
+  "freq": 1,
+  "citing_name": "Zhiwei Zhang"
+ },
+ "A5007408033": {
+  "name": "Chunqiang Hu",
+  "h": 28,
+  "cites": 3584,
+  "inst": "Chongqing University",
+  "freq": 1,
+  "citing_name": "Chunqiang Hu"
+ },
+ "A5100337347": {
+  "name": "Ye Yuan",
+  "h": 17,
+  "cites": 1132,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Ye Yuan"
+ },
+ "A5100449211": {
+  "name": "Yulong Wang",
+  "h": 21,
+  "cites": 1560,
+  "inst": "Hunan University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yulong Wang"
+ },
+ "A5101456975": {
+  "name": "Chang Liu",
+  "h": 2,
+  "cites": 10,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Chang Liu"
+ },
+ "A5054991337": {
+  "name": "Guoren Wang",
+  "h": 41,
+  "cites": 7860,
+  "inst": "Beijing Institute of Technology",
+  "freq": 1,
+  "citing_name": "Guoren Wang"
+ },
+ "A5036865453": {
+  "name": "Sen Su",
+  "h": 33,
+  "cites": 4954,
+  "inst": "Chongqing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Sen Su"
+ },
+ "A5113111582": {
+  "name": "Jinlin Xiao",
+  "h": 4,
+  "cites": 77,
+  "inst": "Nanchang University",
+  "freq": 1,
+  "citing_name": "Jinlin Xiao"
+ },
+ "A5055685570": {
+  "name": "Yi Ke",
+  "h": 2,
+  "cites": 27,
+  "inst": "Silicon Works (South Korea)",
+  "freq": 1,
+  "citing_name": "Yi Ke"
+ },
+ "A5101273562": {
+  "name": "Zhengqiong Li",
+  "h": 0,
+  "cites": 0,
+  "inst": "Lanzhou University of Technology",
+  "freq": 1,
+  "citing_name": "Zhengqiong Li"
+ },
+ "A5050329667": {
+  "name": "Shivanshu Shrivastava",
+  "h": 5,
+  "cites": 114,
+  "inst": "Rajiv Gandhi Institute of Petroleum Technology",
+  "freq": 1,
+  "citing_name": "Shivanshu Shrivastava"
+ },
+ "A5089596159": {
+  "name": "F. Li",
+  "h": 2,
+  "cites": 20,
+  "inst": "Agricultural Bank of China",
+  "freq": 1,
+  "citing_name": "F. Li"
+ },
+ "A5046374848": {
+  "name": "Jiao Peng",
+  "h": 2,
+  "cites": 23,
+  "inst": "Changsha University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Jiao Peng"
+ },
+ "A5120168645": {
+  "name": "Zhenyan Luo",
+  "h": 0,
+  "cites": 0,
+  "inst": "Changsha University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhenyan Luo"
+ },
+ "A5100775646": {
+  "name": "Muhammad Rizwan",
+  "h": 6,
+  "cites": 138,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Muhammad Rizwan"
+ },
+ "A5058084433": {
+  "name": "Zhengyu Zhao",
+  "h": 17,
+  "cites": 1160,
+  "inst": "Xi'an Jiaotong University",
+  "freq": 1,
+  "citing_name": "Zhengyu Zhao"
+ },
+ "A5029627390": {
+  "name": "Zheng Yang",
+  "h": 42,
+  "cites": 8044,
+  "inst": "Fuyang Normal University",
+  "freq": 1,
+  "citing_name": "Zheng Yang"
+ },
+ "A5075845093": {
+  "name": "Xiaohong Guan",
+  "h": 73,
+  "cites": 17256,
+  "inst": "Henan Normal University",
+  "freq": 1,
+  "citing_name": "Xiaohong Guan"
+ },
+ "A5034211796": {
+  "name": "Changyu Dong",
+  "h": 27,
+  "cites": 2837,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Changyu Dong"
+ },
+ "A5100391116": {
+  "name": "Qian Wang",
+  "h": 76,
+  "cites": 32061,
+  "inst": "Mahasarakham University",
+  "freq": 1,
+  "citing_name": "Qian Wang"
+ },
+ "A5004966418": {
+  "name": "Keyu Chen",
+  "h": 22,
+  "cites": 2282,
+  "inst": "Guangzhou University",
+  "freq": 1,
+  "citing_name": "Keyu Chen"
+ },
+ "A5101545461": {
+  "name": "Dong Liang",
+  "h": 16,
+  "cites": 1011,
+  "inst": "North University of China",
+  "freq": 1,
+  "citing_name": "Dong Liang"
+ },
+ "A5001927761": {
+  "name": "Wenhan Yao",
+  "h": 3,
+  "cites": 35,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Wenhan Yao"
+ },
+ "A5035423120": {
+  "name": "Fen Xiao",
+  "h": 17,
+  "cites": 1356,
+  "inst": "Xiangtan University",
+  "freq": 1,
+  "citing_name": "Fen Xiao"
+ },
+ "A5101360689": {
+  "name": "Jia Liu",
+  "h": 7,
+  "cites": 231,
+  "inst": "Jiangyin People's Hospital",
+  "freq": 1,
+  "citing_name": "Jia Liu"
+ },
+ "A5112459328": {
+  "name": "Yongqiang He",
+  "h": 3,
+  "cites": 53,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Yongqiang He"
+ },
+ "A5013595393": {
+  "name": "Yiru Zhao",
+  "h": 15,
+  "cites": 901,
+  "inst": "Shanxi Agricultural University",
+  "freq": 1,
+  "citing_name": "Yiru Zhao"
+ },
+ "A5100671319": {
+  "name": "Lei Zhao",
+  "h": 11,
+  "cites": 863,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Lei Zhao"
+ },
+ "A5017110406": {
+  "name": "Wenhao Lan",
+  "h": 1,
+  "cites": 1,
+  "inst": "",
+  "freq": 1,
+  "citing_name": "Wenhao Lan"
+ },
+ "A5060410658": {
+  "name": "Yunjie Ge",
+  "h": 7,
+  "cites": 313,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Yunjie Ge"
+ },
+ "A5030015523": {
+  "name": "Lingchen Zhao",
+  "h": 16,
+  "cites": 1064,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Lingchen Zhao"
+ },
+ "A5101922356": {
+  "name": "Yijun Yang",
+  "h": 9,
+  "cites": 286,
+  "inst": "Chinese University of Hong Kong",
+  "freq": 1,
+  "citing_name": "Yijun Yang"
+ },
+ "A5007464765": {
+  "name": "Haihua Shen",
+  "h": 9,
+  "cites": 275,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Haihua Shen"
+ },
+ "A5100324727": {
+  "name": "Shan Li",
+  "h": 21,
+  "cites": 2019,
+  "inst": "University of Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Shan Li"
+ },
+ "A5027427522": {
+  "name": "Heng Li",
+  "h": 6,
+  "cites": 197,
+  "inst": "Hong Kong Polytechnic University",
+  "freq": 1,
+  "citing_name": "Heng Li"
+ },
+ "A5067189569": {
+  "name": "Zhiying Yao",
+  "h": 4,
+  "cites": 299,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhiying Yao"
+ },
+ "A5008919430": {
+  "name": "Cuiying Gao",
+  "h": 7,
+  "cites": 336,
+  "inst": "Huazhong University of Science and Technology Hospital",
+  "freq": 1,
+  "citing_name": "Cuiying Gao"
+ },
+ "A5101494795": {
+  "name": "Bang Wu",
+  "h": 1,
+  "cites": 32,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Bang Wu"
+ },
+ "A5015204786": {
+  "name": "Weiping Wen",
+  "h": 37,
+  "cites": 5139,
+  "inst": "Sun Yat-sen University",
+  "freq": 1,
+  "citing_name": "Weiping Wen"
+ },
+ "A5101957538": {
+  "name": "Wei Yuan",
+  "h": 22,
+  "cites": 1553,
+  "inst": "Tianjin Agricultural University",
+  "freq": 1,
+  "citing_name": "Wei Yuan"
+ },
+ "A5100782051": {
+  "name": "Junhong Li",
+  "h": 28,
+  "cites": 2452,
+  "inst": "Shenzhen University",
+  "freq": 1,
+  "citing_name": "Junhong Li"
+ },
+ "A5101750181": {
+  "name": "Yijia Zheng",
+  "h": 15,
+  "cites": 793,
+  "inst": "China Meteorological Administration",
+  "freq": 1,
+  "citing_name": "Yijia Zheng"
+ },
+ "A5031854980": {
+  "name": "Patrick P. K. Chan",
+  "h": 24,
+  "cites": 2565,
+  "inst": "South China University of Technology",
+  "freq": 1,
+  "citing_name": "Patrick P. K. Chan"
+ },
+ "A5121379227": {
+  "name": "Weida Xu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Weida Xu"
+ },
+ "A5121391133": {
+  "name": "Yang Xu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Guizhou Normal University",
+  "freq": 1,
+  "citing_name": "Yang Xu"
+ },
+ "A5121760649": {
+  "name": "Zhenzhi Teng",
+  "h": 0,
+  "cites": 0,
+  "inst": "Qufu Normal University",
+  "freq": 1,
+  "citing_name": "Zhenzhi Teng"
+ },
+ "A5100701890": {
+  "name": "Xu Ma",
+  "h": 10,
+  "cites": 738,
+  "inst": "Qufu Normal University",
+  "freq": 1,
+  "citing_name": "Xu Ma"
+ },
+ "A5146771519": {
+  "name": "Zhen Zhuang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Zhen Zhuang"
+ },
+ "A5100419434": {
+  "name": "Xiaoyu Zhang",
+  "h": 30,
+  "cites": 2948,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Xiaoyu Zhang"
+ },
+ "A5103096617": {
+  "name": "Yijian Ding",
+  "h": 1,
+  "cites": 3,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Yijian Ding"
+ },
+ "A5122881459": {
+  "name": "Jun Shao",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Jun Shao"
+ },
+ "A5127727493": {
+  "name": "Youjun Wang",
+  "h": 1,
+  "cites": 3,
+  "inst": "Chinese Academy of Sciences",
+  "freq": 1,
+  "citing_name": "Youjun Wang"
+ },
+ "A5102865973": {
+  "name": "Shuyu Zheng",
+  "h": 3,
+  "cites": 30,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Shuyu Zheng"
+ },
+ "A5122906927": {
+  "name": "Donghai Zhu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Donghai Zhu"
+ },
+ "A5122854304": {
+  "name": "Huiyan Wang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Gongshang University",
+  "freq": 1,
+  "citing_name": "Huiyan Wang"
+ },
+ "A5041393155": {
+  "name": "Fangchao Yu",
+  "h": 11,
+  "cites": 372,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Fangchao Yu"
+ },
+ "A5123954772": {
+  "name": "Bo Zeng",
+  "h": 0,
+  "cites": 0,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Bo Zeng"
+ },
+ "A5123960585": {
+  "name": "Kai Zhao",
+  "h": 0,
+  "cites": 0,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Kai Zhao"
+ },
+ "A5123954982": {
+  "name": "Zhi Pang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Zhi Pang"
+ },
+ "A5124003223": {
+  "name": "Chuangliang Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xiamen University",
+  "freq": 1,
+  "citing_name": "Chuangliang Zhang"
+ },
+ "A5123952895": {
+  "name": "Yunpeng Gong",
+  "h": 1,
+  "cites": 1,
+  "inst": "Xiamen University",
+  "freq": 1,
+  "citing_name": "Yunpeng Gong"
+ },
+ "A5123931271": {
+  "name": "Lina Wang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Lina Wang"
+ },
+ "A5123945130": {
+  "name": "Qingyuan Zeng",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xiamen University",
+  "freq": 1,
+  "citing_name": "Qingyuan Zeng"
+ },
+ "A5124024017": {
+  "name": "Zhenzhong Wang",
+  "h": 1,
+  "cites": 1,
+  "inst": "Xiamen University",
+  "freq": 1,
+  "citing_name": "Zhenzhong Wang"
+ },
+ "A5124022316": {
+  "name": "Jiajing Lin",
+  "h": 1,
+  "cites": 1,
+  "inst": "Xiamen University",
+  "freq": 1,
+  "citing_name": "Jiajing Lin"
+ },
+ "A5124002867": {
+  "name": "Min Jiang",
+  "h": 1,
+  "cites": 1,
+  "inst": "Xiamen University",
+  "freq": 1,
+  "citing_name": "Min Jiang"
+ },
+ "A5125241293": {
+  "name": "Guanghua Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Hebei University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Guanghua Zhang"
+ },
+ "A5125449753": {
+  "name": "Hao Liu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Hao Liu"
+ },
+ "A5125169263": {
+  "name": "Xianghong Wang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Hebei University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Xianghong Wang"
+ },
+ "A5125463022": {
+  "name": "Renshuai Tao",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Renshuai Tao"
+ },
+ "A5125451328": {
+  "name": "Xianglong Liu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beihang University",
+  "freq": 1,
+  "citing_name": "Xianglong Liu"
+ },
+ "A5125443806": {
+  "name": "Yao Zhao",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Yao Zhao"
+ },
+ "A5128185878": {
+  "name": "Liming Lu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Liming Lu"
+ },
+ "A5125756078": {
+  "name": "Shuchao Pang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Shuchao Pang"
+ },
+ "A5103574569": {
+  "name": "Xiang Gu",
+  "h": 8,
+  "cites": 190,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Xiang Gu"
+ },
+ "A5082653046": {
+  "name": "Yunhuai Liu",
+  "h": 41,
+  "cites": 4914,
+  "inst": "Peking University",
+  "freq": 1,
+  "citing_name": "Yunhuai Liu"
+ },
+ "A5128167031": {
+  "name": "Xianglong Liu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beihang University",
+  "freq": 1,
+  "citing_name": "Xianglong Liu"
+ },
+ "A5128460006": {
+  "name": "Haojie Shen",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Provincial Public Security Department",
+  "freq": 1,
+  "citing_name": "Haojie Shen"
+ },
+ "A5128178677": {
+  "name": "Yongbin Zhou",
+  "h": 0,
+  "cites": 0,
+  "inst": "Nanjing University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yongbin Zhou"
+ },
+ "A5128617305": {
+  "name": "Lifeng Yuan",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Provincial Public Security Department",
+  "freq": 1,
+  "citing_name": "Lifeng Yuan"
+ },
+ "A5128382897": {
+  "name": "Shuochao Sun",
+  "h": 0,
+  "cites": 0,
+  "inst": "Zhejiang Zanyu Technology (China)",
+  "freq": 1,
+  "citing_name": "Shuochao Sun"
+ },
+ "A5033732842": {
+  "name": "Yizhi Ren",
+  "h": 4,
+  "cites": 105,
+  "inst": "Zhejiang Provincial Public Security Department",
+  "freq": 1,
+  "citing_name": "Yizhi Ren"
+ },
+ "A5130955769": {
+  "name": "Xiaoxiao Chen",
+  "h": 0,
+  "cites": 0,
+  "inst": "Shanghai Electric (China)",
+  "freq": 1,
+  "citing_name": "Xiaoxiao Chen"
+ },
+ "A5133110397": {
+  "name": "Tao Jiang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Tao Jiang"
+ },
+ "A5109125924": {
+  "name": "Yi Hu",
+  "h": 27,
+  "cites": 3023,
+  "inst": "Jiangxi University of Traditional Chinese Medicine",
+  "freq": 1,
+  "citing_name": "Yi Hu"
+ },
+ "A5133090462": {
+  "name": "Rui Su",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Rui Su"
+ },
+ "A5058177640": {
+  "name": "Peihan Qi",
+  "h": 20,
+  "cites": 1704,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Peihan Qi"
+ },
+ "A5133226268": {
+  "name": "Wenhao Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "University of Science and Technology Beijing",
+  "freq": 1,
+  "citing_name": "Wenhao Zhang"
+ },
+ "A5133217075": {
+  "name": "Lianheng Zou",
+  "h": 0,
+  "cites": 0,
+  "inst": "University of Science and Technology Beijing",
+  "freq": 1,
+  "citing_name": "Lianheng Zou"
+ },
+ "A5079979171": {
+  "name": "Yingying Xiong",
+  "h": 1,
+  "cites": 9,
+  "inst": "University of Science and Technology Beijing",
+  "freq": 1,
+  "citing_name": "Yingying Xiong"
+ },
+ "A5108459503": {
+  "name": "Xiao He",
+  "h": 15,
+  "cites": 760,
+  "inst": "University of Science and Technology Beijing",
+  "freq": 1,
+  "citing_name": "Xiao He"
+ },
+ "A5104469547": {
+  "name": "Guofu Xie",
+  "h": 2,
+  "cites": 6,
+  "inst": "Renmin University of China",
+  "freq": 1,
+  "citing_name": "Guofu Xie"
+ },
+ "A5101497182": {
+  "name": "Bingyan Liu",
+  "h": 16,
+  "cites": 949,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Bingyan Liu"
+ },
+ "A5134153976": {
+  "name": "Yu Zhou",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing University of Posts and Telecommunications",
+  "freq": 1,
+  "citing_name": "Yu Zhou"
+ },
+ "A5135152565": {
+  "name": "Xinghua Li",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Xinghua Li"
+ },
+ "A5129551972": {
+  "name": "Shunjie Yuan",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Shunjie Yuan"
+ },
+ "A5135214052": {
+  "name": "Xuelin Cao",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Xuelin Cao"
+ },
+ "A5135245817": {
+  "name": "Haiyan Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Xidian University",
+  "freq": 1,
+  "citing_name": "Haiyan Zhang"
+ },
+ "A5104292778": {
+  "name": "Fan Hong",
+  "h": 10,
+  "cites": 406,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Fan Hong"
+ },
+ "A5135143379": {
+  "name": "Ping Yi",
+  "h": 0,
+  "cites": 0,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Ping Yi"
+ },
+ "A5135199279": {
+  "name": "Xiaolong Li",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Xiaolong Li"
+ },
+ "A5135189964": {
+  "name": "Jian Xu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Shandong University of Finance and Economics",
+  "freq": 1,
+  "citing_name": "Jian Xu"
+ },
+ "A5123489463": {
+  "name": "Y Wu",
+  "h": 1,
+  "cites": 5,
+  "inst": "Shenzhen University",
+  "freq": 1,
+  "citing_name": "Y Wu"
+ },
+ "A5136358042": {
+  "name": "Kejun Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Electronic Science and Technology Institute",
+  "freq": 1,
+  "citing_name": "Kejun Zhang"
+ },
+ "A5136377699": {
+  "name": "Tao Gong",
+  "h": 0,
+  "cites": 0,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Tao Gong"
+ },
+ "A5135232860": {
+  "name": "Haiyang Yu",
+  "h": 1,
+  "cites": 1,
+  "inst": "Shanghai Jiao Tong University",
+  "freq": 1,
+  "citing_name": "Haiyang Yu"
+ },
+ "A5034730224": {
+  "name": "Haojie Yuan",
+  "h": 3,
+  "cites": 21,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Haojie Yuan"
+ },
+ "A5078681499": {
+  "name": "Junchi Chen",
+  "h": 19,
+  "cites": 1590,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Junchi Chen"
+ },
+ "A5136401136": {
+  "name": "Qi Chu",
+  "h": 0,
+  "cites": 0,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Qi Chu"
+ },
+ "A5136366652": {
+  "name": "NengHai Yu",
+  "h": 0,
+  "cites": 0,
+  "inst": "University of Science and Technology of China",
+  "freq": 1,
+  "citing_name": "NengHai Yu"
+ },
+ "A5136400028": {
+  "name": "Dongmei Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Microsoft Research Asia (China)",
+  "freq": 1,
+  "citing_name": "Dongmei Zhang"
+ },
+ "A5072339552": {
+  "name": "Jue Xiao",
+  "h": 3,
+  "cites": 37,
+  "inst": "Fiberhome Technology Group (China)",
+  "freq": 1,
+  "citing_name": "Jue Xiao"
+ },
+ "A5136437825": {
+  "name": "Bin Benjamin Zhu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Microsoft Research Asia (China)",
+  "freq": 1,
+  "citing_name": "Bin Benjamin Zhu"
+ },
+ "A5088224525": {
+  "name": "Zhi Lu",
+  "h": 8,
+  "cites": 224,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Zhi Lu"
+ },
+ "A5084098394": {
+  "name": "Renfei Shen",
+  "h": 2,
+  "cites": 78,
+  "inst": "Huazhong University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Renfei Shen"
+ },
+ "A5136987349": {
+  "name": "Zhenjun Tang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Guangxi Normal University",
+  "freq": 1,
+  "citing_name": "Zhenjun Tang"
+ },
+ "A5136926937": {
+  "name": "Chunqiang Yu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Guangxi Normal University",
+  "freq": 1,
+  "citing_name": "Chunqiang Yu"
+ },
+ "A5100335132": {
+  "name": "Xiong Li",
+  "h": 74,
+  "cites": 17938,
+  "inst": "University of Electronic Science and Technology of China",
+  "freq": 1,
+  "citing_name": "Xiong Li"
+ },
+ "A5138117969": {
+  "name": "Xingchun Ru",
+  "h": 0,
+  "cites": 0,
+  "inst": "North China University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Xingchun Ru"
+ },
+ "A5138153272": {
+  "name": "Yazhi Liu",
+  "h": 0,
+  "cites": 0,
+  "inst": "North China University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Yazhi Liu"
+ },
+ "A5138641247": {
+  "name": "Chun Zhou",
+  "h": 0,
+  "cites": 0,
+  "inst": "Southwest Jiaotong University",
+  "freq": 1,
+  "citing_name": "Chun Zhou"
+ },
+ "A5105729109": {
+  "name": "Wei Li",
+  "h": 2,
+  "cites": 9,
+  "inst": "North China University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Wei Li"
+ },
+ "A5138676066": {
+  "name": "Mingxing Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Southwest Jiaotong University",
+  "freq": 1,
+  "citing_name": "Mingxing Zhang"
+ },
+ "A5022455662": {
+  "name": "Zhiguo Long",
+  "h": 8,
+  "cites": 287,
+  "inst": "Southwest Jiaotong University",
+  "freq": 1,
+  "citing_name": "Zhiguo Long"
+ },
+ "A5004913173": {
+  "name": "Zhengchun Zhou",
+  "h": 35,
+  "cites": 4565,
+  "inst": "Southwest Jiaotong University",
+  "freq": 1,
+  "citing_name": "Zhengchun Zhou"
+ },
+ "A5140135586": {
+  "name": "HuaQing Wang",
+  "h": 0,
+  "cites": 0,
+  "inst": "China Internet Network Information Center",
+  "freq": 1,
+  "citing_name": "HuaQing Wang"
+ },
+ "A5140150450": {
+  "name": "Aolin Hu",
+  "h": 0,
+  "cites": 0,
+  "inst": "Chongqing University",
+  "freq": 1,
+  "citing_name": "Aolin Hu"
+ },
+ "A5100387644": {
+  "name": "Hui Liu",
+  "h": 19,
+  "cites": 1236,
+  "inst": "Central China Normal University",
+  "freq": 1,
+  "citing_name": "Hui Liu"
+ },
+ "A5140976087": {
+  "name": "Abhishek Jain",
+  "h": 0,
+  "cites": 0,
+  "inst": "Deenbandhu Chhotu Ram University of Science and Technology",
+  "freq": 1,
+  "citing_name": "Abhishek Jain"
+ },
+ "A5140115663": {
+  "name": "Xin Chen",
+  "h": 0,
+  "cites": 0,
+  "inst": "Chongqing University",
+  "freq": 1,
+  "citing_name": "Xin Chen"
+ },
+ "A5144099574": {
+  "name": "Yibo Zhou",
+  "h": 0,
+  "cites": 0,
+  "inst": "Central China Normal University",
+  "freq": 1,
+  "citing_name": "Yibo Zhou"
+ },
+ "A5144138723": {
+  "name": "Weidong Li",
+  "h": 0,
+  "cites": 0,
+  "inst": "Wuhan University",
+  "freq": 1,
+  "citing_name": "Weidong Li"
+ },
+ "A5144139769": {
+  "name": "Liguo Dong",
+  "h": 0,
+  "cites": 0,
+  "inst": "Central China Normal University",
+  "freq": 1,
+  "citing_name": "Liguo Dong"
+ },
+ "A5069870464": {
+  "name": "江厚训",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "江厚训"
+ },
+ "A5144419833": {
+  "name": "Zikai Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Zikai Zhang"
+ },
+ "A5144428109": {
+  "name": "Ziyi Li",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Ziyi Li"
+ },
+ "A5144432757": {
+  "name": "Yaoyue Zhang",
+  "h": 0,
+  "cites": 0,
+  "inst": "Beijing Jiaotong University",
+  "freq": 1,
+  "citing_name": "Yaoyue Zhang"
+ },
+ "A5010019122": {
+  "name": "Yidong Li",
+  "h": 47,
+  "cites": 7646,
+  "inst": "The University of Queensland",
+  "freq": 1,
+  "citing_name": "Yidong Li"
+ },
+ "A5109681315": {
+  "name": "Hongyao Yu",
+  "h": 2,
+  "cites": 25,
+  "inst": "Tsinghua–Berkeley Shenzhen Institute",
+  "freq": 1,
+  "citing_name": "Hongyao Yu"
+ },
+ "A5109393372": {
+  "name": "Hao F",
+  "h": 2,
+  "cites": 13,
+  "inst": "Tsinghua–Berkeley Shenzhen Institute",
+  "freq": 1,
+  "citing_name": "Hao F"
+ },
+ "A5145541064": {
+  "name": "Yuxin Peng",
+  "h": 0,
+  "cites": 0,
+  "inst": "South China University of Technology",
+  "freq": 1,
+  "citing_name": "Yuxin Peng"
+ },
+ "A5108050442": {
+  "name": "Jiawei Li",
+  "h": 17,
+  "cites": 1259,
+  "inst": "Wenzhou University",
+  "freq": 1,
+  "citing_name": "Jiawei Li"
+ },
+ "A5086235570": {
+  "name": "Xin-Shun Xu",
+  "h": 33,
+  "cites": 3304,
+  "inst": "Shandong University",
+  "freq": 1,
+  "citing_name": "Xin-Shun Xu"
+ }
+}

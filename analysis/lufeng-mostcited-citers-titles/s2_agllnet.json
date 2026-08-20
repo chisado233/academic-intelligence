@@ -1,0 +1,218 @@
+[
+  {
+    "id": "68dec8d0c97827ce1a943152e6620b8e300d568e",
+    "title": "Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Feifan Lv",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yu Li",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Feng Lu",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2019,
+    "venue": "International Journal of Computer Vision",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Low-light image enhancement is challenging in that it needs to consider not only brightness recovery but also complex issues like color distortion and noise, which usually hide in the dark. Simply adjusting the brightness of a low-light image will inevitably amplify those artifacts. To address this difficult problem, this paper proposes a novel end-to-end attention-guided method based on multi-branch convolutional neural network. To this end, we first construct a synthetic dataset with carefully designed low-light simulation strategies. The dataset is much larger and more diverse than existing ones. With the new dataset for training, our method learns two attention maps to guide the brightness enhancement and denoising tasks respectively. The first attention map distinguishes underexposed regions from well lit regions, and the second attention map distinguishes noises from real textures. With their guidance, the proposed multi-branch decomposition-and-fusion enhancement network works in an input adaptive way. Moreover, a reinforcement-net further enhances color and contrast of the output image. Extensive experiments on multiple datasets demonstrate that our method can produce high fidelity enhancement results for low-light images and outperforms the current state-of-the-art methods by a large margin both quantitatively and visually.",
+    "doi": "10.1007/s11263-021-01466-8",
+    "arxiv_id": "1908.00682",
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/68dec8d0c97827ce1a943152e6620b8e300d568e",
+    "pdf_url": null,
+    "citations": 333,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science",
+      "Engineering"
+    ],
+    "fields_of_study": [
+      "Computer Science",
+      "Engineering"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "68dec8d0c97827ce1a943152e6620b8e300d568e",
+        "source_url": "https://www.semanticscholar.org/paper/68dec8d0c97827ce1a943152e6620b8e300d568e",
+        "collected_at": "2026-08-17T10:09:56.915740Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "68dec8d0c97827ce1a943152e6620b8e300d568e",
+          "externalIds": {
+            "MAG": "3012119911",
+            "ArXiv": "1908.00682",
+            "DBLP": "journals/ijcv/LvLL21",
+            "DOI": "10.1007/s11263-021-01466-8",
+            "CorpusId": 215878120
+          },
+          "url": "https://www.semanticscholar.org/paper/68dec8d0c97827ce1a943152e6620b8e300d568e",
+          "title": "Attention Guided Low-Light Image Enhancement with a Large Scale Low-Light Simulation Dataset",
+          "venue": "International Journal of Computer Vision",
+          "year": 2019,
+          "citationCount": 333,
+          "openAccessPdf": {
+            "url": "",
+            "status": "CLOSED",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1908.00682, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science",
+            "Engineering"
+          ],
+          "authors": [
+            {
+              "authorId": "51290122",
+              "name": "Feifan Lv"
+            },
+            {
+              "authorId": "2116609876",
+              "name": "Yu Li"
+            },
+            {
+              "authorId": "1388864077",
+              "name": "Feng Lu"
+            }
+          ],
+          "abstract": "Low-light image enhancement is challenging in that it needs to consider not only brightness recovery but also complex issues like color distortion and noise, which usually hide in the dark. Simply adjusting the brightness of a low-light image will inevitably amplify those artifacts. To address this difficult problem, this paper proposes a novel end-to-end attention-guided method based on multi-branch convolutional neural network. To this end, we first construct a synthetic dataset with carefully designed low-light simulation strategies. The dataset is much larger and more diverse than existing ones. With the new dataset for training, our method learns two attention maps to guide the brightness enhancement and denoising tasks respectively. The first attention map distinguishes underexposed regions from well lit regions, and the second attention map distinguishes noises from real textures. With their guidance, the proposed multi-branch decomposition-and-fusion enhancement network works in an input adaptive way. Moreover, a reinforcement-net further enhances color and contrast of the output image. Extensive experiments on multiple datasets demonstrate that our method can produce high fidelity enhancement results for low-light images and outperforms the current state-of-the-art methods by a large margin both quantitatively and visually."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "95c900205dcbdfa166a62d3833fe45bd75f47fba",
+    "title": "Towards Robust Event-guided Low-Light Image Enhancement: A Large-Scale Real-World Event-Image Dataset and Novel Approach",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Guoqiang Liang",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Kanghao Chen",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Hangyu Li",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yunfan Lu",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Lin Wang",
+        "position": 5,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2024,
+    "venue": "Computer Vision and Pattern Recognition",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Event camera has recently received much attention for low-light image enhancement (LIE) thanks to their distinct advantages, such as high dynamic range. However, current research is prohibitively restricted by the lack of large-scale, real-world, and spatial-temporally aligned event-image datasets. To this end, we propose a real-world (indoor and outdoor) dataset comprising over 30K pairs of images and events under both low and normal illumination conditions. To achieve this, we utilize a robotic arm that traces a consistent non-linear trajectory to curate the dataset with spatial alignment precision under 0.03mm. We then introduce a matching alignment strategy, rendering 90% of our dataset with errors less than 0.01s. Based on the dataset, we propose a novel event-guided LIE approach, called EvLight, towards robust performance in real-world low-light scenes. Specifically, we first design the multiscale holistic fusion branch to extract holistic structural and textural information from both events and images. To ensure robustness against variations in the regional illumination and noise, we then introduce a Signal-to-Noise-Ratio (SNR)-guided regional feature selection to selectively fuse features of images from regions with high SNR and enhance those with low SNR by extracting regional structure information from events. Extensive experiments on our dataset and the synthetic SDSD dataset demonstrate our EvLight significantly surpasses the frame-based methods, e.g., [4] by 1.14 dB and 2.62 dB, respectively.",
+    "doi": "10.1109/CVPR52733.2024.00011",
+    "arxiv_id": "2404.00834",
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/95c900205dcbdfa166a62d3833fe45bd75f47fba",
+    "pdf_url": "https://arxiv.org/pdf/2404.00834",
+    "citations": 76,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "95c900205dcbdfa166a62d3833fe45bd75f47fba",
+        "source_url": "https://www.semanticscholar.org/paper/95c900205dcbdfa166a62d3833fe45bd75f47fba",
+        "collected_at": "2026-08-17T10:09:56.915740Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "95c900205dcbdfa166a62d3833fe45bd75f47fba",
+          "externalIds": {
+            "ArXiv": "2404.00834",
+            "DBLP": "journals/corr/abs-2404-00834",
+            "DOI": "10.1109/CVPR52733.2024.00011",
+            "CorpusId": 268819467
+          },
+          "url": "https://www.semanticscholar.org/paper/95c900205dcbdfa166a62d3833fe45bd75f47fba",
+          "title": "Towards Robust Event-guided Low-Light Image Enhancement: A Large-Scale Real-World Event-Image Dataset and Novel Approach",
+          "venue": "Computer Vision and Pattern Recognition",
+          "year": 2024,
+          "citationCount": 76,
+          "openAccessPdf": {
+            "url": "https://arxiv.org/pdf/2404.00834",
+            "status": "GREEN",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2404.00834, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2294359232",
+              "name": "Guoqiang Liang"
+            },
+            {
+              "authorId": "2294580844",
+              "name": "Kanghao Chen"
+            },
+            {
+              "authorId": "2294767989",
+              "name": "Hangyu Li"
+            },
+            {
+              "authorId": "2014217",
+              "name": "Yunfan Lu"
+            },
+            {
+              "authorId": "2294355997",
+              "name": "Lin Wang"
+            }
+          ],
+          "abstract": "Event camera has recently received much attention for low-light image enhancement (LIE) thanks to their distinct advantages, such as high dynamic range. However, current research is prohibitively restricted by the lack of large-scale, real-world, and spatial-temporally aligned event-image datasets. To this end, we propose a real-world (indoor and outdoor) dataset comprising over 30K pairs of images and events under both low and normal illumination conditions. To achieve this, we utilize a robotic arm that traces a consistent non-linear trajectory to curate the dataset with spatial alignment precision under 0.03mm. We then introduce a matching alignment strategy, rendering 90% of our dataset with errors less than 0.01s. Based on the dataset, we propose a novel event-guided LIE approach, called EvLight, towards robust performance in real-world low-light scenes. Specifically, we first design the multiscale holistic fusion branch to extract holistic structural and textural information from both events and images. To ensure robustness against variations in the regional illumination and noise, we then introduce a Signal-to-Noise-Ratio (SNR)-guided regional feature selection to selectively fuse features of images from regions with high SNR and enhance those with low SNR by extracting regional structure information from events. Extensive experiments on our dataset and the synthetic SDSD dataset demonstrate our EvLight significantly surpasses the frame-based methods, e.g., [4] by 1.14 dB and 2.62 dB, respectively."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  }
+]

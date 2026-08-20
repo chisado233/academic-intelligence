@@ -1,0 +1,397 @@
+{
+"result":{
+"query":"Feng* Lu*",
+"status":{
+"@code":"200",
+"text":"OK"
+},
+"time":{
+"@unit":"msecs",
+"text":"36.36"
+},
+"completions":{
+"@total":"46",
+"@computed":"46",
+"@sent":"10",
+"c":[
+{
+"@sc":"1",
+"@dc":"99",
+"@oc":"137",
+"@id":"23160128",
+"text":"lu"
+},
+{
+"@sc":"1",
+"@dc":"59",
+"@oc":"79",
+"@id":"23163776",
+"text":"luo"
+},
+{
+"@sc":"1",
+"@dc":"8",
+"@oc":"8",
+"@id":"23160155",
+"text":"luan"
+},
+{
+"@sc":"1",
+"@dc":"6",
+"@oc":"6",
+"@id":"23161800",
+"text":"lufeng"
+},
+{
+"@sc":"1",
+"@dc":"4",
+"@oc":"6",
+"@id":"23168145",
+"text":"lü"
+},
+{
+"@sc":"1",
+"@dc":"4",
+"@oc":"4",
+"@id":"23163125",
+"text":"lun"
+},
+{
+"@sc":"1",
+"@dc":"3",
+"@oc":"3",
+"@id":"23163443",
+"text":"lung"
+},
+{
+"@sc":"1",
+"@dc":"2",
+"@oc":"2",
+"@id":"23160461",
+"text":"lubin"
+},
+{
+"@sc":"1",
+"@dc":"2",
+"@oc":"2",
+"@id":"23165181",
+"text":"luwei"
+},
+{
+"@sc":"1",
+"@dc":"2",
+"@oc":"2",
+"@id":"23165270",
+"text":"luyao"
+}
+]
+},
+"hits":{
+"@total":"215",
+"@computed":"100",
+"@sent":"50",
+"@first":"0",
+"hit":[{
+"@score":"3",
+"@id":"988378",
+"info":{"author":"Chen-lu Feng","url":"https://dblp.org/pid/174/3785"},
+"url":"URL#988378"
+},
+{
+"@score":"3",
+"@id":"988456",
+"info":{"author":"Chi-Luen Feng","url":"https://dblp.org/pid/319/9749"},
+"url":"URL#988456"
+},
+{
+"@score":"3",
+"@id":"988457",
+"info":{"author":"Chi-Lun Feng","url":"https://dblp.org/pid/385/8347"},
+"url":"URL#988457"
+},
+{
+"@score":"3",
+"@id":"988511",
+"info":{"author":"Chun-Lung Feng","url":"https://dblp.org/pid/158/2789"},
+"url":"URL#988511"
+},
+{
+"@score":"3",
+"@id":"990322",
+"info":{"author":"Lu-Bin Feng","url":"https://dblp.org/pid/249/3598"},
+"url":"URL#990322"
+},
+{
+"@score":"3",
+"@id":"990323",
+"info":{"author":"Lu-Qi Feng","url":"https://dblp.org/pid/183/4010"},
+"url":"URL#990323"
+},
+{
+"@score":"3",
+"@id":"990324",
+"info":{"author":"Lu-Wei Feng","url":"https://dblp.org/pid/332/7202"},
+"url":"URL#990324"
+},
+{
+"@score":"3",
+"@id":"991172",
+"info":{"author":"Shih-Lun Feng","url":"https://dblp.org/pid/125/0190"},
+"url":"URL#991172"
+},
+{
+"@score":"3",
+"@id":"2089111",
+"info":{"author":"Feng-Lung Liu","url":"https://dblp.org/pid/397/5809"},
+"url":"URL#2089111"
+},
+{
+"@score":"3",
+"@id":"2143957",
+"info":{"author":"Feng-Lin Lu","url":"https://dblp.org/pid/116/3674"},
+"url":"URL#2143957"
+},
+{
+"@score":"3",
+"@id":"2143958",
+"info":{"author":"Feng-Mao Lü","url":"https://dblp.org/pid/220/5616"},
+"url":"URL#2143958"
+},
+{
+"@score":"3",
+"@id":"2143959",
+"info":{"author":"Feng-Pin Lu","url":"https://dblp.org/pid/50/1330"},
+"url":"URL#2143959"
+},
+{
+"@score":"3",
+"@id":"2143960",
+"info":{"author":"Feng-Yu Lu","url":"https://dblp.org/pid/278/0789"},
+"url":"URL#2143960"
+},
+{
+"@score":"3",
+"@id":"2144774",
+"info":{"author":"Hsiao-feng Lu","aliases":{"alias":"Hsiao-feng Francis Lu"},"url":"https://dblp.org/pid/80/718"},
+"url":"URL#2144774"
+},
+{
+"@score":"3",
+"@id":"2149005",
+"info":{"author":"Wen Feng Lu","aliases":{"alias":"Wen-Feng Lu"},"notes":{"note":[{"@type":"affiliation","text":"National University of Singapore, Singapore"},{"@type":"affiliation","text":"Singapore-MIT Alliance, Singapore"}]},"url":"https://dblp.org/pid/02/7395"},
+"url":"URL#2149005"
+},
+{
+"@score":"3",
+"@id":"2162174",
+"info":{"author":"Feng-Hua Luo","url":"https://dblp.org/pid/431/9614"},
+"url":"URL#2162174"
+},
+{
+"@score":"3",
+"@id":"2171679",
+"info":{"author":"Fenglin Lv 0001","aliases":{"alias":"Fenglin Lü"},"notes":{"note":{"@type":"affiliation","text":"Shanghai Jiao Tong University, Welding Engineering Institute of Material Science and Engineering, China"}},"url":"https://dblp.org/pid/63/7491-1"},
+"url":"URL#2171679"
+},
+{
+"@score":"2",
+"@id":"471383",
+"info":{"author":"Lu Fenga c","url":"https://dblp.org/pid/358/0603"},
+"url":"URL#471383"
+},
+{
+"@score":"2",
+"@id":"573011",
+"info":{"author":"Lu feng Che","url":"https://dblp.org/pid/205/4906"},
+"url":"URL#573011"
+},
+{
+"@score":"2",
+"@id":"590291",
+"info":{"author":"Luan Feng Chen","url":"https://dblp.org/pid/43/1024"},
+"url":"URL#590291"
+},
+{
+"@score":"2",
+"@id":"590309",
+"info":{"author":"Luefeng Chen","aliases":{"alias":"Lue-Feng Chen"},"notes":{"note":{"@type":"affiliation","text":"China University of Geosciences, Wuhan, China"}},"url":"https://dblp.org/pid/129/0686"},
+"url":"URL#590309"
+},
+{
+"@score":"2",
+"@id":"790437",
+"info":{"author":"Luo-Feng Deng","url":"https://dblp.org/pid/62/1297"},
+"url":"URL#790437"
+},
+{
+"@score":"2",
+"@id":"990315",
+"info":{"author":"Lu Feng","url":"https://dblp.org/pid/48/4233"},
+"url":"URL#990315"
+},
+{
+"@score":"2",
+"@id":"990316",
+"info":{"author":"Lu Feng 0001","notes":{"note":[{"@type":"affiliation","text":"University of Virginia, School of Engineering and Applied Science, Charlottesville, VA, USA"},{"@type":"affiliation","text":"University of Oxford, UK"}]},"url":"https://dblp.org/pid/48/4233-1"},
+"url":"URL#990316"
+},
+{
+"@score":"2",
+"@id":"990317",
+"info":{"author":"Lu Feng 0002","notes":{"note":{"@type":"affiliation","text":"NEC Laboratories China, Beijing, China"}},"url":"https://dblp.org/pid/48/4233-2"},
+"url":"URL#990317"
+},
+{
+"@score":"2",
+"@id":"990318",
+"info":{"author":"Lu Feng 0003","notes":{"note":{"@type":"affiliation","text":"Beihang University, Department of Computer Science, Beijing, China"}},"url":"https://dblp.org/pid/48/4233-3"},
+"url":"URL#990318"
+},
+{
+"@score":"2",
+"@id":"990319",
+"info":{"author":"Lu Feng 0004","notes":{"note":{"@type":"affiliation","text":"Saint Louis University, Department of Mathematics and Computer Science, MO, USA"}},"url":"https://dblp.org/pid/48/4233-4"},
+"url":"URL#990319"
+},
+{
+"@score":"2",
+"@id":"990320",
+"info":{"author":"Lu Feng 0005","notes":{"note":{"@type":"affiliation","text":"Nanjing University of Information Science and Technology, School of Computer and Software, China"}},"url":"https://dblp.org/pid/48/4233-5"},
+"url":"URL#990320"
+},
+{
+"@score":"2",
+"@id":"990321",
+"info":{"author":"Lu Kun Feng","url":"https://dblp.org/pid/193/7709"},
+"url":"URL#990321"
+},
+{
+"@score":"2",
+"@id":"990325",
+"info":{"author":"Luan Feng","url":"https://dblp.org/pid/144/9915"},
+"url":"URL#990325"
+},
+{
+"@score":"2",
+"@id":"990326",
+"info":{"author":"Luanluan Feng","url":"https://dblp.org/pid/259/9608"},
+"url":"URL#990326"
+},
+{
+"@score":"2",
+"@id":"990327",
+"info":{"author":"Luanye Feng","url":"https://dblp.org/pid/240/3815"},
+"url":"URL#990327"
+},
+{
+"@score":"2",
+"@id":"990328",
+"info":{"author":"Lubin Feng","url":"https://dblp.org/pid/262/1132"},
+"url":"URL#990328"
+},
+{
+"@score":"2",
+"@id":"990329",
+"info":{"author":"Lufeng Feng","url":"https://dblp.org/pid/385/9345"},
+"url":"URL#990329"
+},
+{
+"@score":"2",
+"@id":"990330",
+"info":{"author":"Lugaoze Feng","url":"https://dblp.org/pid/380/6330"},
+"url":"URL#990330"
+},
+{
+"@score":"2",
+"@id":"990331",
+"info":{"author":"Luhua Feng","url":"https://dblp.org/pid/382/4740"},
+"url":"URL#990331"
+},
+{
+"@score":"2",
+"@id":"990332",
+"info":{"author":"Lujia Feng","url":"https://dblp.org/pid/202/5852"},
+"url":"URL#990332"
+},
+{
+"@score":"2",
+"@id":"990333",
+"info":{"author":"Lujun Feng","url":"https://dblp.org/pid/385/0415"},
+"url":"URL#990333"
+},
+{
+"@score":"2",
+"@id":"990334",
+"info":{"author":"Lulei Feng","url":"https://dblp.org/pid/387/2404"},
+"url":"URL#990334"
+},
+{
+"@score":"2",
+"@id":"990335",
+"info":{"author":"Lulu Feng","url":"https://dblp.org/pid/181/7460"},
+"url":"URL#990335"
+},
+{
+"@score":"2",
+"@id":"990336",
+"info":{"author":"Luming Feng","url":"https://dblp.org/pid/133/4016"},
+"url":"URL#990336"
+},
+{
+"@score":"2",
+"@id":"990337",
+"info":{"author":"Luna Feng","url":"https://dblp.org/pid/281/1480"},
+"url":"URL#990337"
+},
+{
+"@score":"2",
+"@id":"990338",
+"info":{"author":"Luna Yue Feng","url":"https://dblp.org/pid/289/3386"},
+"url":"URL#990338"
+},
+{
+"@score":"2",
+"@id":"990339",
+"info":{"author":"Lungang Feng","url":"https://dblp.org/pid/203/1513"},
+"url":"URL#990339"
+},
+{
+"@score":"2",
+"@id":"990340",
+"info":{"author":"Lunxin Feng","url":"https://dblp.org/pid/391/1105"},
+"url":"URL#990340"
+},
+{
+"@score":"2",
+"@id":"990341",
+"info":{"author":"Luo Feng","url":"https://dblp.org/pid/83/2197"},
+"url":"URL#990341"
+},
+{
+"@score":"2",
+"@id":"990342",
+"info":{"author":"Luoduo Feng","url":"https://dblp.org/pid/199/7629"},
+"url":"URL#990342"
+},
+{
+"@score":"2",
+"@id":"990343",
+"info":{"author":"Luoluo Feng","url":"https://dblp.org/pid/302/8605"},
+"url":"URL#990343"
+},
+{
+"@score":"2",
+"@id":"990344",
+"info":{"author":"Luoyi Feng","url":"https://dblp.org/pid/426/2219"},
+"url":"URL#990344"
+},
+{
+"@score":"2",
+"@id":"990345",
+"info":{"author":"Luping Feng","url":"https://dblp.org/pid/319/3648"},
+"url":"URL#990345"
+}
+]
+}
+}
+}

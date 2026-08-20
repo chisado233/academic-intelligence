@@ -1,0 +1,11 @@
+canonical_name,category,claim_year,normalized_role,status,evidence_url_1,evidence_url_2,identity_evidence,citing_paper
+戴琼海 Qionghai Dai,院士,2017,中国工程院院士（信息与电子工程学部）,confirmed,https://www.cae.cn/cae/html/main/colys/02548488.html,https://www.cae.cn/cae/html/main/col48/column_48_1.html,DarkVision 作者群=清华计算成像组（J. Suo 等）; Proc IEEE 2021 计算成像综述,DarkVision (arXiv 2301.06269 2023); Computational Imaging and AI: The Next Revolution (Proc IEEE 2021)
+吴枫 Feng Wu,院士,2025,中国工程院院士（信息与电子工程学部）,confirmed,https://www.cae.cn/cae/html/main/colys/95871425.html,https://www.cae.cn/cae/html/main/col48/column_48_1.html,S2 作者档案机构=USTC; 合著者 Xueyang Fu（USTC）; 领域=多媒体压缩（与院士页履历一致）,Unsupervised Underexposed Image Enhancement via Self-Illumination Compensation (IEEE TMM 2022 DOI 10.1109/TMM.2022.3193059)
+程明明 Ming-Ming Cheng,杰青,2023,国家杰出青年科学基金获得者（南开大学）,confirmed,https://mmcheng.net/,S2 记录名 "Mingg-Ming Cheng"（源拼写笔误）; 引用论文为 585 引综述一作之外作者,Low-Light Image and Video Enhancement Using Deep Learning: A Survey (IJCV 2021 S2 585 引)
+田奇 Qi Tian,院士,未知,中国科学院院士（未核验）,indeterminate,https://arxiv.org/abs/2208.11014,未找到,合著者含 USTC 周文罡/李厚强; 末位作者; 领域吻合——身份 likely; CAS 名录 JS 不可爬/维基与 Wayback 网络不可达,Low-Light Video Enhancement with Synthetic Event Guidance (ACM MM 2022 / arXiv 2208.11014)
+杨健 Jian Yang,院士,未知,中国科学院院士（未核验）,indeterminate,https://arxiv.org/abs/2405.16105,未找到,合著者=南理工 钱建军/严志强/翁江维——身份 likely; 院士身份未能核验（渠道不可达）,MambaLLIE (IJCAI 2024 / arXiv 2405.16105); Daytime-Mixed Non-Aligned Learning (2025)
+刘日升 Risheng Liu,杰青,未知,待核验（高概率）,indeterminate,未找到,未找到,9 篇引用论文（外部引用者中并列最高频之一）; DUT 团队合著指纹——身份 likely; 头衔未能核验（DUT 门户 JS/新闻站无检索）,SNRD-Net 等 9 篇
+刘家英 Jiaying Liu,杰青,未知,待核验（高概率）,indeterminate,未找到,未找到,5 篇引用论文（含 372 引 Benchmarking LLIE）; PKU 团队合著指纹（Wenhan Yang 等）,Benchmarking Low-Light Image Enhancement and Beyond (TPAMI 2021 S2 372 引) 等 5 篇
+马华东 Huadong Ma,杰青,未知,待核验（高概率）,indeterminate,未找到,未找到,5 篇引用论文; BUPT 团队指纹——身份 likely,5 篇（2023-2025）
+黄庆明 Qingming Huang,杰青,未知,待核验（高概率）,indeterminate,未找到,未找到,4 篇引用论文; UCAS 指纹——身份 likely,Adaptive Multi-Exposure Image Correction 等 4 篇
+曹进德 Jinde Cao,院士（宽口径）,未知,IEEE Fellow/欧洲科学院院士（未核验）,indeterminate,未找到,未找到,LightingNet 116 引用论文作者; SEU 团队指纹,LightingNet (IEEE TCSVT/TII 2023)

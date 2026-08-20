@@ -1,0 +1,285 @@
+[
+  {
+    "id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Feifan Lv",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Feng Lu",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Jianhua Wu",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "C. Lim",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2018,
+    "venue": "British Machine Vision Conference",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": null,
+    "doi": null,
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "pdf_url": null,
+    "citations": 804,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+        "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+        "collected_at": "2026-08-17T10:00:46.109167Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+          "externalIds": {
+            "MAG": "2893333553",
+            "DBLP": "conf/bmvc/LvLWL18",
+            "CorpusId": 52285038
+          },
+          "url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+          "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+          "venue": "British Machine Vision Conference",
+          "year": 2018,
+          "citationCount": 804,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://bmvc2018.org/contents/papers/0700.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "51290122",
+              "name": "Feifan Lv"
+            },
+            {
+              "authorId": "1388864077",
+              "name": "Feng Lu"
+            },
+            {
+              "authorId": "2110461678",
+              "name": "Jianhua Wu"
+            },
+            {
+              "authorId": "31628415",
+              "name": "C. Lim"
+            }
+          ],
+          "abstract": null
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "07d060ad91ec4cc73a1f1b615bfea57df859d298",
+    "title": "Semantic-Guided Zero-Shot Learning for Low-Light Image/Video Enhancement",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Shen Zheng",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Gaurav Gupta",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2021,
+    "venue": "2022 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Low-light images challenge both human perceptions and computer vision algorithms. It is crucial to make algorithms robust to enlighten low-light images for computational photography and computer vision applications such as real-time detection and segmentation. This paper proposes a semantic-guided zero-shot low-light enhancement network (SGZ) which is trained in the absence of paired images, unpaired datasets, and segmentation annotation. Firstly, we design an enhancement factor extraction network using depthwise separable convolution for an efficient estimate of the pixel-wise light deficiency of an low-light image. Secondly, we propose a recurrent image enhancement network to progressively enhance the low-light image with affordable model size. Finally, we introduce an unsupervised semantic segmentation network for preserving the semantic information during intensive enhancement. Extensive experiments on benchmark datasets and a low-light video demonstrate that our model outperforms the previous state-of-the-art. We further discuss the benefits of the proposed method for low-light detection and segmentation. Code is available at https://github.com/ShenZheng2000/SemanticGuided-Low-Light-Image-Enhancement.",
+    "doi": "10.1109/WACVW54805.2022.00064",
+    "arxiv_id": "2110.00970",
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/07d060ad91ec4cc73a1f1b615bfea57df859d298",
+    "pdf_url": "https://arxiv.org/pdf/2110.00970",
+    "citations": 169,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "07d060ad91ec4cc73a1f1b615bfea57df859d298",
+        "source_url": "https://www.semanticscholar.org/paper/07d060ad91ec4cc73a1f1b615bfea57df859d298",
+        "collected_at": "2026-08-17T10:00:46.109167Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "07d060ad91ec4cc73a1f1b615bfea57df859d298",
+          "externalIds": {
+            "ArXiv": "2110.00970",
+            "DBLP": "conf/wacv/ZhengG22",
+            "DOI": "10.1109/WACVW54805.2022.00064",
+            "CorpusId": 238259062
+          },
+          "url": "https://www.semanticscholar.org/paper/07d060ad91ec4cc73a1f1b615bfea57df859d298",
+          "title": "Semantic-Guided Zero-Shot Learning for Low-Light Image/Video Enhancement",
+          "venue": "2022 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)",
+          "year": 2021,
+          "citationCount": 169,
+          "openAccessPdf": {
+            "url": "https://arxiv.org/pdf/2110.00970",
+            "status": "GREEN",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2110.00970, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2111075146",
+              "name": "Shen Zheng"
+            },
+            {
+              "authorId": "2104357582",
+              "name": "Gaurav Gupta"
+            }
+          ],
+          "abstract": "Low-light images challenge both human perceptions and computer vision algorithms. It is crucial to make algorithms robust to enlighten low-light images for computational photography and computer vision applications such as real-time detection and segmentation. This paper proposes a semantic-guided zero-shot low-light enhancement network (SGZ) which is trained in the absence of paired images, unpaired datasets, and segmentation annotation. Firstly, we design an enhancement factor extraction network using depthwise separable convolution for an efficient estimate of the pixel-wise light deficiency of an low-light image. Secondly, we propose a recurrent image enhancement network to progressively enhance the low-light image with affordable model size. Finally, we introduce an unsupervised semantic segmentation network for preserving the semantic information during intensive enhancement. Extensive experiments on benchmark datasets and a low-light video demonstrate that our model outperforms the previous state-of-the-art. We further discuss the benefits of the proposed method for low-light detection and segmentation. Code is available at https://github.com/ShenZheng2000/SemanticGuided-Low-Light-Image-Enhancement."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "85321fd7bfaafe472f03167538e0fc97bdbb6f6c",
+    "title": "A novel approach to low-light image and video enhancement using adaptive dual super-resolution generative adversarial networks and top-hat filtering",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Vishalakshi",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Shobha Rani",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Hanumantharaju",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2025,
+    "venue": "Computers & electrical engineering",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": null,
+    "doi": "10.1016/j.compeleceng.2024.110052",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/85321fd7bfaafe472f03167538e0fc97bdbb6f6c",
+    "pdf_url": null,
+    "citations": 5,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "85321fd7bfaafe472f03167538e0fc97bdbb6f6c",
+        "source_url": "https://www.semanticscholar.org/paper/85321fd7bfaafe472f03167538e0fc97bdbb6f6c",
+        "collected_at": "2026-08-17T10:00:46.109167Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "85321fd7bfaafe472f03167538e0fc97bdbb6f6c",
+          "externalIds": {
+            "DBLP": "journals/cee/VishalakshiRH25",
+            "DOI": "10.1016/j.compeleceng.2024.110052",
+            "CorpusId": 275521811
+          },
+          "url": "https://www.semanticscholar.org/paper/85321fd7bfaafe472f03167538e0fc97bdbb6f6c",
+          "title": "A novel approach to low-light image and video enhancement using adaptive dual super-resolution generative adversarial networks and top-hat filtering",
+          "venue": "Computers & electrical engineering",
+          "year": 2025,
+          "citationCount": 5,
+          "openAccessPdf": {
+            "url": "",
+            "status": "CLOSED",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.compeleceng.2024.110052?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.compeleceng.2024.110052, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2340063259",
+              "name": "Vishalakshi"
+            },
+            {
+              "authorId": "2300949760",
+              "name": "Shobha Rani"
+            },
+            {
+              "authorId": "2340064525",
+              "name": "Hanumantharaju"
+            }
+          ],
+          "abstract": null
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  }
+]

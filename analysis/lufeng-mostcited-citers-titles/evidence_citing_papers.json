@@ -1,0 +1,498 @@
+{
+ "刘家瑛": {
+  "papers": [
+   {
+    "title": "Seeing in the Dark with Ambient Guidance",
+    "year": "2026",
+    "venue": "ACM Trans. Multim. Comput. Com",
+    "doi": "10.1145/3815421",
+    "s2": "95c2c99787c1"
+   },
+   {
+    "title": "Towards Low Light Enhancement With RAW Images",
+    "year": "2021",
+    "venue": "IEEE Transactions on Image Pro",
+    "doi": "10.1109/TIP.2022.3140610",
+    "s2": "3337cadc962f"
+   },
+   {
+    "title": "Band Representation-Based Semi-Supervised Low-Light Image Enhancement: Brid",
+    "year": "2021",
+    "venue": "IEEE Transactions on Image Pro",
+    "doi": "10.1109/TIP.2021.3062184",
+    "s2": "078958642cc4"
+   },
+   {
+    "title": "Benchmarking Low-Light Image Enhancement and Beyond",
+    "year": "2021",
+    "venue": "International Journal of Compu",
+    "doi": "10.1007/s11263-020-01418-8",
+    "s2": "ef11f84c6cce"
+   },
+   {
+    "title": "Integrating Semantic Segmentation and Retinex Model for Low-Light Image Enh",
+    "year": "2020",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3394171.3413757",
+    "s2": "d86d02b7e1bf"
+   }
+  ]
+ },
+ "刘日升": {
+  "papers": [
+   {
+    "title": "SNRD-Net: SNR-aware dual enhancement network for low-light images",
+    "year": "2026",
+    "venue": "Computer Vision and Image Unde",
+    "doi": "10.1016/j.cviu.2026.104776",
+    "s2": "9d7332dcc522"
+   },
+   {
+    "title": "DEAL: Data-Efficient Adversarial Learning for High-Quality Infrared Imaging",
+    "year": "2025",
+    "venue": "Computer Vision and Pattern Re",
+    "doi": "10.1109/CVPR52734.2025.02626",
+    "s2": "9653ce2bdb8d"
+   },
+   {
+    "title": "Fearless Luminance Adaptation: A Macro-Micro-Hierarchical Transformer for E",
+    "year": "2023",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3581783.3612436",
+    "s2": "ea2aba7ac6a5"
+   },
+   {
+    "title": "MonoTDP: Twin Depth Perception for Monocular 3D Object Detection in Adverse",
+    "year": "2023",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2305.10974",
+    "s2": "96e1e100cd39"
+   },
+   {
+    "title": "Advancing Unsupervised Low-light Image Enhancement: Noise Estimation, Illum",
+    "year": "2023",
+    "venue": "",
+    "doi": "",
+    "s2": "9f184d5bc2eb"
+   },
+   {
+    "title": "Best of Both Worlds: See and Understand Clearly in the Dark",
+    "year": "2022",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3503161.3548259",
+    "s2": "37b108653979"
+   },
+   {
+    "title": "Hierarchical Bilevel Learning with Architecture and Loss Search for Hadamar",
+    "year": "2022",
+    "venue": "International Joint Conference",
+    "doi": "10.24963/ijcai.2022/245",
+    "s2": "c1890fda11e0"
+   },
+   {
+    "title": "Collaborative Reflectance-And-Illumination Learning For High-Efficient Low-",
+    "year": "2021",
+    "venue": "IEEE International Conference ",
+    "doi": "10.1109/ICME51207.2021.9428268",
+    "s2": "cfb4160bab74"
+   },
+   {
+    "title": "NFI2: Learning Noise-Free Illuminance-Interpolator for Unsupervised Low-Lig",
+    "year": "2023",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2305.10223",
+    "s2": "e810e493b96b"
+   }
+  ]
+ },
+ "任文琦": {
+  "papers": [
+   {
+    "title": "SGNet: Style-Guided Network With Temporal Compensation for Unpaired Low-Lig",
+    "year": "2025",
+    "venue": "IEEE Transactions on Image Pro",
+    "doi": "10.1109/TIP.2025.3644172",
+    "s2": "03700ff0f827"
+   },
+   {
+    "title": "DI-Retinex: Digital-Imaging Retinex Model for Low-Light Image Enhancement",
+    "year": "2025",
+    "venue": "International Journal of Compu",
+    "doi": "10.1007/s11263-025-02542-z",
+    "s2": "9b5f149b92be"
+   },
+   {
+    "title": "DI-Retinex: Digital-Imaging Retinex Theory for Low-Light Image Enhancement",
+    "year": "2024",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2404.03327",
+    "s2": "934775a29e91"
+   },
+   {
+    "title": "AiOENet: All-in-One Low-Visibility Enhancement to Improve Visual Perception",
+    "year": "2024",
+    "venue": "IEEE Transactions on Intellige",
+    "doi": "10.1109/TIV.2023.3347952",
+    "s2": "11c52757c7dd"
+   },
+   {
+    "title": "Linear Contrast Enhancement Network for Low-Illumination Image Enhancement",
+    "year": "2023",
+    "venue": "IEEE Transactions on Instrumen",
+    "doi": "10.1109/TIM.2022.3232641",
+    "s2": "6507196db1bf"
+   },
+   {
+    "title": "MDSFE: Multiscale Deep Stacking Fusion Enhancer Network for Visual Data Enh",
+    "year": "2023",
+    "venue": "IEEE Transactions on Instrumen",
+    "doi": "10.1109/TIM.2022.3222517",
+    "s2": "cc3b299ea3cc"
+   },
+   {
+    "title": "LCA-Net: A Context-Aware Lightweight Network for Low-Illumination Image Enh",
+    "year": "2023",
+    "venue": "IEEE Transactions on Instrumen",
+    "doi": "10.1109/TIM.2023.3301049",
+    "s2": "64741709b904"
+   }
+  ]
+ },
+ "马华东": {
+  "papers": [
+   {
+    "title": "Rethinking the Low-Light Video Enhancement: Benchmark Datasets and Methods",
+    "year": "2025",
+    "venue": "IEEE Transactions on Image Pro",
+    "doi": "10.1109/TIP.2025.3616639",
+    "s2": "05ba639c0fa9"
+   },
+   {
+    "title": "Exploring in Extremely Dark: Low-Light Video Enhancement with Real Events",
+    "year": "2024",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3664647.3681370",
+    "s2": "06343cb261eb"
+   },
+   {
+    "title": "Learning Exposure Correction in Dynamic Scenes",
+    "year": "2024",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3664647.3681136",
+    "s2": "af69b2bc0192"
+   },
+   {
+    "title": "Dancing in the Dark: A Benchmark towards General Low-light Video Enhancemen",
+    "year": "2023",
+    "venue": "IEEE International Conference ",
+    "doi": "10.1109/ICCV51070.2023.01183",
+    "s2": "7043818c120a"
+   },
+   {
+    "title": "You Do Not Need Additional Priors or Regularizers in Retinex-Based Low-Ligh",
+    "year": "2023",
+    "venue": "Computer Vision and Pattern Re",
+    "doi": "10.1109/CVPR52729.2023.01738",
+    "s2": "bc786ceae3f1"
+   }
+  ]
+ },
+ "杨健": {
+  "papers": [
+   {
+    "title": "Daytime-Mixed Non-Aligned Learning for Real Nighttime Image Enhancement",
+    "year": "2025",
+    "venue": "IEEE transactions on intellige",
+    "doi": "10.1109/TITS.2025.3553106",
+    "s2": "cc65c6566708"
+   },
+   {
+    "title": "MambaLLIE: Implicit Retinex-Aware Low Light Enhancement with Global-then-Lo",
+    "year": "2024",
+    "venue": "Neural Information Processing ",
+    "doi": "10.48550/arXiv.2405.16105",
+    "s2": "f35573beb971"
+   },
+   {
+    "title": "An automatic framework for endoscopic image restoration and enhancement",
+    "year": "2020",
+    "venue": "Applied intelligence (Boston)",
+    "doi": "10.1007/s10489-020-01923-w",
+    "s2": "76e3a73e4829"
+   }
+  ]
+ },
+ "黄庆明": {
+  "papers": [
+   {
+    "title": "Adaptive Multi-Exposure Image Correction via Joint Lightness and Structure ",
+    "year": "2025",
+    "venue": "ACM Trans. Multim. Comput. Com",
+    "doi": "10.1145/3735973",
+    "s2": "f4a31575a055"
+   },
+   {
+    "title": "Unsupervised Low-Light Image Enhancement via Luminance Mask and Luminance-I",
+    "year": "2024",
+    "venue": "IEEE Transactions on Emerging ",
+    "doi": "10.1109/TETCI.2024.3369858",
+    "s2": "e28a2008c524"
+   },
+   {
+    "title": "Unsupervised Low-Light Video Enhancement With Spatial-Temporal Co-Attention",
+    "year": "2023",
+    "venue": "IEEE Transactions on Image Pro",
+    "doi": "10.1109/TIP.2023.3301332",
+    "s2": "e464ec8421fc"
+   },
+   {
+    "title": "LVE-S2D: Low-Light Video Enhancement From Static to Dynamic",
+    "year": "2022",
+    "venue": "IEEE transactions on circuits ",
+    "doi": "10.1109/TCSVT.2022.3190916",
+    "s2": "555b2d78d93f"
+   }
+  ]
+ },
+ "左旺孟": {
+  "papers": [
+   {
+    "title": "Degradation-Guided cross-consistent deep unfolding network for video restor",
+    "year": "2025",
+    "venue": "Neural Networks",
+    "doi": "10.1016/j.neunet.2025.107700",
+    "s2": "b680c96323a8"
+   },
+   {
+    "title": "Degraded Structure and Hue Guided Auxiliary Learning for low-light image en",
+    "year": "2024",
+    "venue": "Knowledge-Based Systems",
+    "doi": "10.1016/j.knosys.2024.111779",
+    "s2": "c9ed01a2a4d9"
+   },
+   {
+    "title": "Cross-Consistent Deep Unfolding Network for Adaptive All-In-One Video Resto",
+    "year": "2023",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2309.01627",
+    "s2": "1e4b9fb2efa1"
+   },
+   {
+    "title": "Invertible network for unpaired low-light image enhancement",
+    "year": "2021",
+    "venue": "The Visual Computer",
+    "doi": "10.1007/s00371-023-02769-2",
+    "s2": "02465bd3a371"
+   }
+  ]
+ },
+ "孟德宇": {
+  "papers": [
+   {
+    "title": "Degradation-Guided cross-consistent deep unfolding network for video restor",
+    "year": "2025",
+    "venue": "Neural Networks",
+    "doi": "10.1016/j.neunet.2025.107700",
+    "s2": "b680c96323a8"
+   },
+   {
+    "title": "Cross-Consistent Deep Unfolding Network for Adaptive All-In-One Video Resto",
+    "year": "2023",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2309.01627",
+    "s2": "1e4b9fb2efa1"
+   },
+   {
+    "title": "Low-Light Image Enhancement by Retinex-Based Algorithm Unrolling and Adjust",
+    "year": "2022",
+    "venue": "IEEE Transactions on Neural Ne",
+    "doi": "10.1109/TNNLS.2023.3289626",
+    "s2": "8411b32a2df0"
+   }
+  ]
+ },
+ "江俊君": {
+  "papers": [
+   {
+    "title": "Image Enhancement via Associated Perturbation Removal and Texture Reconstru",
+    "year": "2024",
+    "venue": "IEEE/CAA Journal of Automatica",
+    "doi": "10.1109/JAS.2024.124521",
+    "s2": "f0da348a4c4b"
+   },
+   {
+    "title": "ChebyLighter: Optimal Curve Estimation for Low-light Image Enhancement",
+    "year": "2022",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3503161.3548135",
+    "s2": "4cdf30bb87f6"
+   },
+   {
+    "title": "Decomposition Makes Better Rain Removal: An Improved Attention-Guided Derai",
+    "year": "2021",
+    "venue": "IEEE transactions on circuits ",
+    "doi": "10.1109/tcsvt.2020.3044887",
+    "s2": "4b04338ace03"
+   }
+  ]
+ },
+ "翟广涛": {
+  "papers": [
+   {
+    "title": "GLARE: Low Light Image Enhancement via Generative Latent Feature based Code",
+    "year": "2024",
+    "venue": "European Conference on Compute",
+    "doi": "10.48550/arXiv.2407.12431",
+    "s2": "7534645cceb1"
+   },
+   {
+    "title": "Light-VQA+: A Video Quality Assessment Model for Exposure Correction with V",
+    "year": "2024",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2405.03333",
+    "s2": "89c966eda932"
+   },
+   {
+    "title": "NTIRE 2023 Quality Assessment of Video Enhancement Challenge",
+    "year": "2023",
+    "venue": "2023 IEEE/CVF Conference on Co",
+    "doi": "10.1109/CVPRW59228.2023.00158",
+    "s2": "963e564405b9"
+   },
+   {
+    "title": "Light-VQA: A Multi-Dimensional Quality Assessment Model for Low-Light Video",
+    "year": "2023",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3581783.3611923",
+    "s2": "70ddb64e489c"
+   },
+   {
+    "title": "VDPVE: VQA Dataset for Perceptual Video Enhancement",
+    "year": "2023",
+    "venue": "2023 IEEE/CVF Conference on Co",
+    "doi": "10.1109/CVPRW59228.2023.00152",
+    "s2": "097a500b7c22"
+   },
+   {
+    "title": "Perceptual Quality Assessment of Low-light Image Enhancement",
+    "year": "2021",
+    "venue": "ACM Trans. Multim. Comput. Com",
+    "doi": "10.1145/3457905",
+    "s2": "26ebc50e2aad"
+   }
+  ]
+ },
+ "高新波": {
+  "papers": [
+   {
+    "title": "Multi-Branch and Progressive Network for Low-Light Image Enhancement",
+    "year": "2023",
+    "venue": "IEEE Transactions on Image Pro",
+    "doi": "10.1109/TIP.2023.3266171",
+    "s2": "83761e5a30c1"
+   }
+  ]
+ },
+ "戴琼海": {
+  "papers": [
+   {
+    "title": "DarkVision: A Benchmark for Low-light Image/Video Perception",
+    "year": "2023",
+    "venue": "arXiv.org",
+    "doi": "10.48550/arXiv.2301.06269",
+    "s2": "f766ecfe23a0"
+   },
+   {
+    "title": "Computational Imaging and Artificial Intelligence: The Next Revolution of M",
+    "year": "2021",
+    "venue": "Proceedings of the IEEE",
+    "doi": "10.1109/JPROC.2023.3338272",
+    "s2": "23964a91d992"
+   }
+  ]
+ },
+ "周文罡": {
+  "papers": [
+   {
+    "title": "Low-Light Video Enhancement with Synthetic Event Guidance",
+    "year": "2022",
+    "venue": "AAAI Conference on Artificial ",
+    "doi": "10.48550/arXiv.2208.11014",
+    "s2": "15837a406a4f"
+   }
+  ]
+ },
+ "李厚强": {
+  "papers": [
+   {
+    "title": "Low-Light Video Enhancement with Synthetic Event Guidance",
+    "year": "2022",
+    "venue": "AAAI Conference on Artificial ",
+    "doi": "10.48550/arXiv.2208.11014",
+    "s2": "15837a406a4f"
+   }
+  ]
+ },
+ "马佳义": {
+  "papers": [
+   {
+    "title": "DRLIE: Flexible Low-Light Image Enhancement via Disentangled Representation",
+    "year": "2022",
+    "venue": "IEEE Transactions on Neural Ne",
+    "doi": "10.1109/TNNLS.2022.3190880",
+    "s2": "8bb4324c831a"
+   }
+  ]
+ },
+ "卢晓强": {
+  "papers": [
+   {
+    "title": "Attention-Based Multi-Branch Network for Low-Light Image Enhancement",
+    "year": "2021",
+    "venue": "2021 IEEE 2nd International Co",
+    "doi": "10.1109/ICBAIE52039.2021.9389960",
+    "s2": "1273093508b4"
+   }
+  ]
+ },
+ "沈建冰": {
+  "papers": [
+   {
+    "title": "Modeling and Enhancing Low-Quality Retinal Fundus Images",
+    "year": "2020",
+    "venue": "IEEE Transactions on Medical I",
+    "doi": "10.1109/TMI.2020.3043495",
+    "s2": "6fcccca02671"
+   },
+   {
+    "title": "Understanding and Correcting Low-quality Retinal Fundus Images for Clinical",
+    "year": "2020",
+    "venue": "arXiv.org",
+    "doi": "",
+    "s2": "b7eedc467178"
+   }
+  ]
+ },
+ "查正军": {
+  "papers": [
+   {
+    "title": "Illumination-Invariant Person Re-Identification",
+    "year": "2019",
+    "venue": "ACM Multimedia",
+    "doi": "10.1145/3343031.3350994",
+    "s2": "3d402f1ef218"
+   }
+  ]
+ },
+ "吴枫": {
+  "papers": [
+   {
+    "title": "Unsupervised Underexposed Image Enhancement via Self-Illuminated and Percep",
+    "year": "2023",
+    "venue": "IEEE transactions on multimedi",
+    "doi": "10.1109/TMM.2022.3193059",
+    "s2": "dd6c5e1e8e1b"
+   }
+  ]
+ }
+}

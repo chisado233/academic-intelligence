@@ -1,0 +1,19 @@
+{
+  "url": "https://cs.njust.edu.cn/",
+  "status": "ok",
+  "title": "",
+  "content": "",
+  "links": [],
+  "metadata": {
+    "status_code": 202,
+    "reason": "Accepted",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T10:28:37.999315+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": false,
+    "links_count": 0,
+    "robots_allowed": true,
+    "robots_url": "https://cs.njust.edu.cn/robots.txt"
+  },
+  "extracted": null
+}

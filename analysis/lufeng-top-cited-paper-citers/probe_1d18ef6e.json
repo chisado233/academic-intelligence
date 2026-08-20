@@ -1,0 +1,21 @@
+{
+  "url": "https://faculty.ustc.edu.cn/zhazhengjun",
+  "status": "ok",
+  "title": "error",
+  "content": "遇到错误啦，请\n返回首页\n你访问的主页不存在或没有上线发布",
+  "links": [
+    "http://faculty.ustc.edu.cn"
+  ],
+  "metadata": {
+    "status_code": 200,
+    "reason": "",
+    "fetcher": "curl_cffi",
+    "fetched_at": "2026-08-17T10:32:53.882234+00:00",
+    "content_extractor": "trafilatura",
+    "content_extracted": true,
+    "links_count": 1,
+    "robots_allowed": true,
+    "robots_url": "https://faculty.ustc.edu.cn/robots.txt"
+  },
+  "extracted": null
+}

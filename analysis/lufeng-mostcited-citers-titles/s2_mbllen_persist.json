@@ -1,0 +1,469 @@
+[
+  {
+    "id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Feifan Lv",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Feng Lu",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Jianhua Wu",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "C. Lim",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2018,
+    "venue": "British Machine Vision Conference",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": null,
+    "doi": null,
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+    "pdf_url": null,
+    "citations": 804,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+        "source_url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+        "collected_at": "2026-08-17T10:24:52.875741Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+          "externalIds": {
+            "MAG": "2893333553",
+            "DBLP": "conf/bmvc/LvLWL18",
+            "CorpusId": 52285038
+          },
+          "url": "https://www.semanticscholar.org/paper/70cb4bdd05cccc1f99cf690582e66b7637b81da7",
+          "title": "MBLLEN: Low-Light Image/Video Enhancement Using CNNs",
+          "venue": "British Machine Vision Conference",
+          "year": 2018,
+          "citationCount": 804,
+          "openAccessPdf": {
+            "url": "",
+            "status": null,
+            "license": null,
+            "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://bmvc2018.org/contents/papers/0700.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "51290122",
+              "name": "Feifan Lv"
+            },
+            {
+              "authorId": "1388864077",
+              "name": "Feng Lu"
+            },
+            {
+              "authorId": "2110461678",
+              "name": "Jianhua Wu"
+            },
+            {
+              "authorId": "31628415",
+              "name": "C. Lim"
+            }
+          ],
+          "abstract": null
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "765cb21b150a6ce44cd68a3d63a0cb27a754a531",
+    "title": "Development of Optimized Adaptive Multiscale Retinex Deep Learning Model for Image Enhancement",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Lakshmi Kumari",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Neetu Mittal",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Megha Modi",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2026,
+    "venue": "IEEE Access",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "High-quality image plays a crucial role in many applications, including medical diagnosis, communications and remote sensing and reflect the details of the target scene more clearly, which guarantee the subsequent image processing strongly. Many image enhancement techniques have been used to bring the images closer to their natural quality to improve perception and interpretability of such images. Loss functions, network architecture, training data quantitative analysis of performance on the benchmark data set, and learning algorithms are the main components of deep learning technology. In this paper, different deep learning-based image enhancement methods, LiCENT, MBLLEN, Retinex-Net, EDDLIE-Net, ZERO-DCE, URetinex-Net, KinD,MIRNEt,DiffLL and Retinex-DIP have been implemented on covid-19 CT images, MIT Adobe 5k, SID and LOL dataset. The different Image Quality assessment methods including full reference as well as no reference have been used to do the analysis and comparison of the different methods. In this study we have proposed an optimized low light image enhancement technique based on Retinex theory named as Optimized Adaptive Multi-scale Retinex (OAMSR) method. This method uses guided filters to avoid halos and artifacts. It combines illumination maps with adaptive weights in order to balance details and smooth areas. In reflectance step, gradient shrinkage and poisson reconstruction is done followed by adaptive denoising and color restoration at the end. By using experimental validation this method demonstrates a high-performance way of improving the low light images. The different loss functions are analyzed for the different methods to enhance the low light image for better visualization and accurate diagnosis for patients.",
+    "doi": "10.1109/ACCESS.2026.3681020",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/765cb21b150a6ce44cd68a3d63a0cb27a754a531",
+    "pdf_url": "https://doi.org/10.1109/access.2026.3681020",
+    "citations": 0,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "765cb21b150a6ce44cd68a3d63a0cb27a754a531",
+        "source_url": "https://www.semanticscholar.org/paper/765cb21b150a6ce44cd68a3d63a0cb27a754a531",
+        "collected_at": "2026-08-17T10:24:52.875741Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "765cb21b150a6ce44cd68a3d63a0cb27a754a531",
+          "externalIds": {
+            "DBLP": "journals/access/KumariMM26",
+            "DOI": "10.1109/ACCESS.2026.3681020",
+            "CorpusId": 287211111
+          },
+          "url": "https://www.semanticscholar.org/paper/765cb21b150a6ce44cd68a3d63a0cb27a754a531",
+          "title": "Development of Optimized Adaptive Multiscale Retinex Deep Learning Model for Image Enhancement",
+          "venue": "IEEE Access",
+          "year": 2026,
+          "citationCount": 0,
+          "openAccessPdf": {
+            "url": "https://doi.org/10.1109/access.2026.3681020",
+            "status": "GOLD",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ACCESS.2026.3681020?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ACCESS.2026.3681020, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2292765872",
+              "name": "Lakshmi Kumari"
+            },
+            {
+              "authorId": "2281348097",
+              "name": "Neetu Mittal"
+            },
+            {
+              "authorId": "49779047",
+              "name": "Megha Modi"
+            }
+          ],
+          "abstract": "High-quality image plays a crucial role in many applications, including medical diagnosis, communications and remote sensing and reflect the details of the target scene more clearly, which guarantee the subsequent image processing strongly. Many image enhancement techniques have been used to bring the images closer to their natural quality to improve perception and interpretability of such images. Loss functions, network architecture, training data quantitative analysis of performance on the benchmark data set, and learning algorithms are the main components of deep learning technology. In this paper, different deep learning-based image enhancement methods, LiCENT, MBLLEN, Retinex-Net, EDDLIE-Net, ZERO-DCE, URetinex-Net, KinD,MIRNEt,DiffLL and Retinex-DIP have been implemented on covid-19 CT images, MIT Adobe 5k, SID and LOL dataset. The different Image Quality assessment methods including full reference as well as no reference have been used to do the analysis and comparison of the different methods. In this study we have proposed an optimized low light image enhancement technique based on Retinex theory named as Optimized Adaptive Multi-scale Retinex (OAMSR) method. This method uses guided filters to avoid halos and artifacts. It combines illumination maps with adaptive weights in order to balance details and smooth areas. In reflectance step, gradient shrinkage and poisson reconstruction is done followed by adaptive denoising and color restoration at the end. By using experimental validation this method demonstrates a high-performance way of improving the low light images. The different loss functions are analyzed for the different methods to enhance the low light image for better visualization and accurate diagnosis for patients."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "cca999590007cf203ce60aeaa780163b22c61fe2",
+    "title": "Research on Encrypted Transmission and Recognition of Garbage Images in Low-Illumination Environments",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Zhenwei Lv",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Yapeng Diao",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Chunnian Zeng",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Weiping Wang",
+        "position": 4,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Shufan An",
+        "position": 5,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2026,
+    "venue": "Electronics",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Low-illumination conditions significantly degrade the performance of vision-based garbage recognition systems in practical smart city applications. To address this issue, this paper presents a garbage recognition framework that combines low-light image enhancement with attention-guided feature learning. A multi-branch low-light enhancement network (MBLLEN) is employed as the enhancement backbone, and a Convolutional Block Attention Module (CBAM) is integrated to alleviate local over-enhancement and guide feature responses under uneven illumination. The enhanced images are then used as inputs for a deep learning-based garbage classification model. In addition, a lightweight encryption mechanism is considered at the system level to support secure data transmission in practical deployment scenarios. Experiments conducted on a self-collected low-light garbage dataset show that the proposed framework achieves improved image quality and recognition performance compared with baseline approaches. These results suggest that integrating low-light enhancement with attention-guided feature learning can be beneficial for garbage recognition tasks under challenging illumination conditions.",
+    "doi": "10.3390/electronics15020302",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/cca999590007cf203ce60aeaa780163b22c61fe2",
+    "pdf_url": "https://www.mdpi.com/2079-9292/15/2/302/pdf?version=1767970448",
+    "citations": 0,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "cca999590007cf203ce60aeaa780163b22c61fe2",
+        "source_url": "https://www.semanticscholar.org/paper/cca999590007cf203ce60aeaa780163b22c61fe2",
+        "collected_at": "2026-08-17T10:24:52.875741Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "cca999590007cf203ce60aeaa780163b22c61fe2",
+          "externalIds": {
+            "DOI": "10.3390/electronics15020302",
+            "CorpusId": 284619155
+          },
+          "url": "https://www.semanticscholar.org/paper/cca999590007cf203ce60aeaa780163b22c61fe2",
+          "title": "Research on Encrypted Transmission and Recognition of Garbage Images in Low-Illumination Environments",
+          "venue": "Electronics",
+          "year": 2026,
+          "citationCount": 0,
+          "openAccessPdf": {
+            "url": "https://www.mdpi.com/2079-9292/15/2/302/pdf?version=1767970448",
+            "status": "GOLD",
+            "license": "CCBY",
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/electronics15020302?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/electronics15020302, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": null,
+          "authors": [
+            {
+              "authorId": "2238102485",
+              "name": "Zhenwei Lv"
+            },
+            {
+              "authorId": "2403809586",
+              "name": "Yapeng Diao"
+            },
+            {
+              "authorId": "2055608966",
+              "name": "Chunnian Zeng"
+            },
+            {
+              "authorId": "2154492234",
+              "name": "Weiping Wang"
+            },
+            {
+              "authorId": "2404438937",
+              "name": "Shufan An"
+            }
+          ],
+          "abstract": "Low-illumination conditions significantly degrade the performance of vision-based garbage recognition systems in practical smart city applications. To address this issue, this paper presents a garbage recognition framework that combines low-light image enhancement with attention-guided feature learning. A multi-branch low-light enhancement network (MBLLEN) is employed as the enhancement backbone, and a Convolutional Block Attention Module (CBAM) is integrated to alleviate local over-enhancement and guide feature responses under uneven illumination. The enhanced images are then used as inputs for a deep learning-based garbage classification model. In addition, a lightweight encryption mechanism is considered at the system level to support secure data transmission in practical deployment scenarios. Experiments conducted on a self-collected low-light garbage dataset show that the proposed framework achieves improved image quality and recognition performance compared with baseline approaches. These results suggest that integrating low-light enhancement with attention-guided feature learning can be beneficial for garbage recognition tasks under challenging illumination conditions."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+    "title": "Low-Light Video Frame Enhancement with High-Frequency Reflectance Boosting and Adaptive Illumination Adjustment",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Hao Li",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2026,
+    "venue": "2026 International Conference on Computer Intelligence and Software Engineering (CICSE)",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "Low-light video frame enhancement aims to improve visibility while preserving details and temporal stability. Image-based Retinex methods can enhance single frames, but often produce unstable illumination and blurred details on video sequences. To address this issue, we propose HRIA-Net, which separately enhances reflectance and illumination. A high- frequency reflectance boosting module strengthens texture and edge information, while an adaptive illumination adjustment module stabilizes brightness using regional illumination statistics. The two branches are fused to reconstruct enhanced frames. Experiments on the LOL dataset for restoration quality and on the SMID-sRGB video benchmark for temporal consistency show that the proposed method outperforms RetinexNet, MBLLEN, LTCV, and two ablation variants in PSNR, SSIM, and a temporal consistency metric.",
+    "doi": "10.1109/CICSE70286.2026.11620715",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+    "pdf_url": null,
+    "citations": 0,
+    "reference_count": null,
+    "keywords": [],
+    "fields_of_study": [],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+        "source_url": "https://www.semanticscholar.org/paper/6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+        "collected_at": "2026-08-17T10:24:52.875741Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+          "externalIds": {
+            "DOI": "10.1109/CICSE70286.2026.11620715",
+            "CorpusId": 290649662
+          },
+          "url": "https://www.semanticscholar.org/paper/6da9fa0fe9b3b41fe7ba627d47a784a32056a84d",
+          "title": "Low-Light Video Frame Enhancement with High-Frequency Reflectance Boosting and Adaptive Illumination Adjustment",
+          "venue": "2026 International Conference on Computer Intelligence and Software Engineering (CICSE)",
+          "year": 2026,
+          "citationCount": 0,
+          "openAccessPdf": {
+            "url": "",
+            "status": "CLOSED",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/CICSE70286.2026.11620715?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/CICSE70286.2026.11620715, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": null,
+          "authors": [
+            {
+              "authorId": "2353793617",
+              "name": "Hao Li"
+            }
+          ],
+          "abstract": "Low-light video frame enhancement aims to improve visibility while preserving details and temporal stability. Image-based Retinex methods can enhance single frames, but often produce unstable illumination and blurred details on video sequences. To address this issue, we propose HRIA-Net, which separately enhances reflectance and illumination. A high- frequency reflectance boosting module strengthens texture and edge information, while an adaptive illumination adjustment module stabilizes brightness using regional illumination statistics. The two branches are fused to reconstruct enhanced frames. Experiments on the LOL dataset for restoration quality and on the SMID-sRGB video benchmark for temporal consistency show that the proposed method outperforms RetinexNet, MBLLEN, LTCV, and two ablation variants in PSNR, SSIM, and a temporal consistency metric."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  },
+  {
+    "id": "15f2630e054aae73438abebf5d98c379c06f16a5",
+    "title": "Visual-Based Detection Method for Oil Leakage in Antarctic Power-Generation Cabin",
+    "authors": [
+      {
+        "author_id": null,
+        "name": "Xiaoxi Ge",
+        "position": 1,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Tao Wang",
+        "position": 2,
+        "is_corresponding": false,
+        "affiliation": null
+      },
+      {
+        "author_id": null,
+        "name": "Kanjian Zhang",
+        "position": 3,
+        "is_corresponding": false,
+        "affiliation": null
+      }
+    ],
+    "year": 2024,
+    "venue": "International Conference on Machine Learning and Computing",
+    "venue_type": null,
+    "publisher": null,
+    "abstract": "In the unattended periods of Antarctic Power-Generation Cabin, it is imperative to promptly identify oil leakage within the cabin to assess potential malfunctions in the oil storage module or generator. We proposed a visual-based method for oil leakage detection in the Antarctic Power-Generation Cabin, employing an orbital-type inspection robot platform. The detection method integrates an improved MBLLEN image enhancement algorithm, utilizing color features in the HSV color space for image segmentation and combines prior knowledge with perspective transformation for size estimation. The proposed image enhancement algorithm outperforms the mainstream algorithms in terms of brightness enhancement and color restoration. We also established an image set depicting oil leakage scenarios within the cabin where the method achieved an accuracy of about 98% and a precision of about 10 . Furthermore, it exhibited resilience to robot positioning errors and insensitivity to varying lighting conditions, thereby demonstrating robust applicability.",
+    "doi": "10.1145/3651671.3651761",
+    "arxiv_id": null,
+    "pmid": null,
+    "url": "https://www.semanticscholar.org/paper/15f2630e054aae73438abebf5d98c379c06f16a5",
+    "pdf_url": null,
+    "citations": 0,
+    "reference_count": null,
+    "keywords": [
+      "Computer Science"
+    ],
+    "fields_of_study": [
+      "Computer Science"
+    ],
+    "references": null,
+    "citations_list": null,
+    "evidence_list": [
+      {
+        "source": "semantic_scholar",
+        "source_id": "15f2630e054aae73438abebf5d98c379c06f16a5",
+        "source_url": "https://www.semanticscholar.org/paper/15f2630e054aae73438abebf5d98c379c06f16a5",
+        "collected_at": "2026-08-17T10:24:52.875741Z",
+        "confidence": 0.88,
+        "raw_data": {
+          "paperId": "15f2630e054aae73438abebf5d98c379c06f16a5",
+          "externalIds": {
+            "DBLP": "conf/icmlc2/GeWZ24",
+            "DOI": "10.1145/3651671.3651761",
+            "CorpusId": 270354640
+          },
+          "url": "https://www.semanticscholar.org/paper/15f2630e054aae73438abebf5d98c379c06f16a5",
+          "title": "Visual-Based Detection Method for Oil Leakage in Antarctic Power-Generation Cabin",
+          "venue": "International Conference on Machine Learning and Computing",
+          "year": 2024,
+          "citationCount": 0,
+          "openAccessPdf": {
+            "url": "",
+            "status": "CLOSED",
+            "license": null,
+            "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3651671.3651761?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3651671.3651761, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+          },
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "authors": [
+            {
+              "authorId": "2314452489",
+              "name": "Xiaoxi Ge"
+            },
+            {
+              "authorId": "2156018085",
+              "name": "Tao Wang"
+            },
+            {
+              "authorId": "2197323448",
+              "name": "Kanjian Zhang"
+            }
+          ],
+          "abstract": "In the unattended periods of Antarctic Power-Generation Cabin, it is imperative to promptly identify oil leakage within the cabin to assess potential malfunctions in the oil storage module or generator. We proposed a visual-based method for oil leakage detection in the Antarctic Power-Generation Cabin, employing an orbital-type inspection robot platform. The detection method integrates an improved MBLLEN image enhancement algorithm, utilizing color features in the HSV color space for image segmentation and combines prior knowledge with perspective transformation for size estimation. The proposed image enhancement algorithm outperforms the mainstream algorithms in terms of brightness enhancement and color restoration. We also established an image set depicting oil leakage scenarios within the cabin where the method achieved an accuracy of about 98% and a precision of about 10 . Furthermore, it exhibited resilience to robot positioning errors and insensitivity to varying lighting conditions, thereby demonstrating robust applicability."
+        }
+      }
+    ],
+    "synthetic_confidence": null
+  }
+]
